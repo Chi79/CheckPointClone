@@ -1,0 +1,98 @@
+
+CREATE TABLE [ADDRESS]
+( 
+	[PostalCode]         int  NOT NULL ,
+	[City]               varchar(18)  NOT NULL ,
+	CONSTRAINT [XPKADDRESS] PRIMARY KEY  CLUSTERED ([PostalCode] ASC)
+)
+go
+
+CREATE TABLE [APPOINTMENT]
+( 
+	[AppointmentId]      int  NOT NULL ,
+	[CourseId]           int  NULL ,
+	[FromTime]           Time  NULL ,
+	[ToTime]             Time  NULL ,
+	[PostalCode]         int  NOT NULL ,
+	[EMail]              varchar(20)  NOT NULL ,
+	[Name]               varchar(20)  NOT NULL ,
+	[Description]        varchar(200)  NULL ,
+	[Location]           varchar(20)  NULL ,
+	[Date]               date  NOT NULL ,
+	CONSTRAINT [XPKAPPOINTMENT] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC)
+)
+go
+
+CREATE TABLE [ATTENDEE]
+( 
+	[TagId]              int  NOT NULL ,
+	[HasAttended]        binary  NULL ,
+	[AppointmentId]      int  NOT NULL ,
+	[PersonalNote]       varchar(20)  NULL ,
+	CONSTRAINT [XPKATTENDEE] PRIMARY KEY  CLUSTERED ([TagId] ASC,[AppointmentId] ASC)
+)
+go
+
+CREATE TABLE [COURSE]
+( 
+	[CourseId]           int  NOT NULL ,
+	[Name]               varchar(20)  NOT NULL ,
+	[Description]        varchar(200)  NULL ,
+	CONSTRAINT [XPKCOURSE] PRIMARY KEY  CLUSTERED ([CourseId] ASC)
+)
+go
+
+CREATE TABLE [HOST]
+( 
+	[EMail]              varchar(20)  NOT NULL ,
+	[FirstName]          varchar(18)  NOT NULL ,
+	[LastName]           varchar(18)  NOT NULL ,
+	[Password]           varchar(20)  NOT NULL ,
+	[PhoneNumber]        int  NULL ,
+	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([EMail] ASC)
+)
+go
+
+CREATE TABLE [USER]
+( 
+	[TagId]              int  NOT NULL ,
+	[EMail]              varchar(20)  NOT NULL ,
+	[PhoneNumber]        int  NULL ,
+	[FirstName]          varchar(18)  NOT NULL ,
+	[LastName]           varchar(18)  NOT NULL ,
+	[Password]           char(18)  NOT NULL ,
+	CONSTRAINT [XPKUSER] PRIMARY KEY  CLUSTERED ([TagId] ASC)
+)
+go
+
+
+ALTER TABLE [APPOINTMENT]
+	ADD CONSTRAINT [R_1] FOREIGN KEY ([CourseId]) REFERENCES [COURSE]([CourseId])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+ALTER TABLE [APPOINTMENT]
+	ADD CONSTRAINT [R_3] FOREIGN KEY ([PostalCode]) REFERENCES [ADDRESS]([PostalCode])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+ALTER TABLE [APPOINTMENT]
+	ADD CONSTRAINT [R_16] FOREIGN KEY ([EMail]) REFERENCES [HOST]([EMail])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+
+ALTER TABLE [ATTENDEE]
+	ADD CONSTRAINT [R_5] FOREIGN KEY ([TagId]) REFERENCES [USER]([TagId])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+ALTER TABLE [ATTENDEE]
+	ADD CONSTRAINT [R_15] FOREIGN KEY ([AppointmentId]) REFERENCES [APPOINTMENT]([AppointmentId])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
