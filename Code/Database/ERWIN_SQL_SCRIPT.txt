@@ -1,4 +1,5 @@
-
+use [CheckpointDatabase]
+go
 
 CREATE TABLE [USER]
 ( 
