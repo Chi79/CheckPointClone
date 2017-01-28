@@ -1,16 +1,14 @@
 use [CheckpointDatabase]
-go
 
 CREATE TABLE [USER]
 ( 
 	[TagId]              int  NOT NULL ,
-	[EMail]              varchar(20) UNIQUE  NOT NULL ,
+	[EMail]              varchar(30) UNIQUE NOT NULL ,
 	[PhoneNumber]        int  NULL ,
-	[FirstName]          varchar(18)  NOT NULL ,
-	[LastName]           varchar(18)  NOT NULL ,
-	[Password]           char(18)  NOT NULL ,
+	[FirstName]          varchar(20)  NOT NULL ,
+	[LastName]           varchar(20)  NOT NULL ,
+	[Password]           char(20)  NOT NULL ,
 	CONSTRAINT [XPKUSER] PRIMARY KEY  CLUSTERED ([TagId] ASC)
-	
 )
 go
 
@@ -26,16 +24,16 @@ go
 CREATE TABLE [ADDRESS]
 ( 
 	[PostalCode]         int  NOT NULL ,
-	[City]               varchar(18)  NOT NULL ,
+	[City]               varchar(25)  NOT NULL ,
 	CONSTRAINT [XPKADDRESS] PRIMARY KEY  CLUSTERED ([PostalCode] ASC)
 )
 go
 
 CREATE TABLE [HOST]
 ( 
-	[EMail]              varchar(20)  NOT NULL ,
-	[FirstName]          varchar(18)  NOT NULL ,
-	[LastName]           varchar(18)  NOT NULL ,
+	[EMail]              varchar(30)  NOT NULL ,
+	[FirstName]          varchar(20)  NOT NULL ,
+	[LastName]           varchar(20)  NOT NULL ,
 	[Password]           varchar(20)  NOT NULL ,
 	[PhoneNumber]        int  NULL ,
 	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([EMail] ASC)
@@ -49,20 +47,20 @@ CREATE TABLE [APPOINTMENT]
 	[FromTime]           Time  NULL ,
 	[ToTime]             Time  NULL ,
 	[PostalCode]         int  NOT NULL ,
-	[EMail]              varchar(20)  NOT NULL ,
-	[Name]               varchar(20)  NOT NULL ,
+	[EMail]              varchar(30)  NOT NULL ,
+	[Name]               varchar(40)  NOT NULL ,
 	[Description]        varchar(200)  NULL ,
-	[Location]           varchar(20)  NULL ,
+	[Location]           varchar(40)  NULL ,
 	[Date]               date  NOT NULL ,
 	[Private]            bit  NULL ,
 	CONSTRAINT [XPKAPPOINTMENT] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC),
-	CONSTRAINT [R_1] FOREIGN KEY ([CourseId]) REFERENCES [COURSE]([CourseId])
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION,
-CONSTRAINT [R_3] FOREIGN KEY ([PostalCode]) REFERENCES [ADDRESS]([PostalCode])
+	CONSTRAINT [R_3] FOREIGN KEY ([PostalCode]) REFERENCES [ADDRESS]([PostalCode])
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
 CONSTRAINT [R_16] FOREIGN KEY ([EMail]) REFERENCES [HOST]([EMail])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+CONSTRAINT [R_1] FOREIGN KEY ([CourseId]) REFERENCES [COURSE]([CourseId])
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION
 )
@@ -73,7 +71,7 @@ CREATE TABLE [ATTENDEE]
 	[TagId]              int  NOT NULL ,
 	[HasAttended]        bit  NULL ,
 	[AppointmentId]      int  NOT NULL ,
-	[PersonalNote]       varchar(20)  NULL ,
+	[PersonalNote]       varchar(100)  NULL ,
 	CONSTRAINT [XPKATTENDEE] PRIMARY KEY  CLUSTERED ([TagId] ASC,[AppointmentId] ASC),
 	CONSTRAINT [R_5] FOREIGN KEY ([TagId]) REFERENCES [USER]([TagId])
 		ON DELETE NO ACTION
