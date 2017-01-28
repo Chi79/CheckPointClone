@@ -1,9 +1,7 @@
-use [CheckpointDatabase]
-
 CREATE TABLE [USER]
 ( 
 	[TagId]              int  NOT NULL ,
-	[EMail]              varchar(30) UNIQUE NOT NULL ,
+	[UserEMail]          varchar(30) UNIQUE NOT NULL ,
 	[PhoneNumber]        int  NULL ,
 	[FirstName]          varchar(20)  NOT NULL ,
 	[LastName]           varchar(20)  NOT NULL ,
@@ -15,7 +13,7 @@ go
 CREATE TABLE [COURSE]
 ( 
 	[CourseId]           int  NOT NULL  IDENTITY ( 1,1 ) ,
-	[Name]               varchar(20)  NOT NULL ,
+	[CourseName]         varchar(20)  NOT NULL ,
 	[Description]        varchar(200)  NULL ,
 	CONSTRAINT [XPKCOURSE] PRIMARY KEY  CLUSTERED ([CourseId] ASC)
 )
@@ -31,12 +29,13 @@ go
 
 CREATE TABLE [HOST]
 ( 
-	[EMail]              varchar(30)  NOT NULL ,
-	[FirstName]          varchar(20)  NOT NULL ,
+	[HostEMail]          varchar(30) UNIQUE NOT NULL ,
+	[HostId]             int  NOT NULL  IDENTITY ( 1,1 ) ,
+	[FirstName]           varchar(20)  NOT NULL ,
 	[LastName]           varchar(20)  NOT NULL ,
 	[Password]           varchar(20)  NOT NULL ,
 	[PhoneNumber]        int  NULL ,
-	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([EMail] ASC)
+	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([HostId] ASC)
 )
 go
 
@@ -47,17 +46,17 @@ CREATE TABLE [APPOINTMENT]
 	[FromTime]           Time  NULL ,
 	[ToTime]             Time  NULL ,
 	[PostalCode]         int  NOT NULL ,
-	[EMail]              varchar(30)  NOT NULL ,
-	[Name]               varchar(40)  NOT NULL ,
+	[AppointmentName]    varchar(40)  NOT NULL ,
 	[Description]        varchar(200)  NULL ,
 	[Location]           varchar(40)  NULL ,
 	[Date]               date  NOT NULL ,
 	[Private]            bit  NULL ,
+	[HostId]             int  NOT NULL ,
 	CONSTRAINT [XPKAPPOINTMENT] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC),
 	CONSTRAINT [R_3] FOREIGN KEY ([PostalCode]) REFERENCES [ADDRESS]([PostalCode])
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
-CONSTRAINT [R_16] FOREIGN KEY ([EMail]) REFERENCES [HOST]([EMail])
+CONSTRAINT [R_16] FOREIGN KEY ([HostId]) REFERENCES [HOST]([HostId])
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION,
 CONSTRAINT [R_1] FOREIGN KEY ([CourseId]) REFERENCES [COURSE]([CourseId])
