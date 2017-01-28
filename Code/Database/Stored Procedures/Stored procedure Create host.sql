@@ -1,6 +1,6 @@
 USE [CheckpointDatabase]
 GO
-CREATE PROCEDURE InsertIntoHost
+CREATE PROCEDURE CreateHost
            (@hostEMail varchar(30),
            @firstName varchar(20),
            @lastName varchar(20),

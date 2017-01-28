@@ -1,6 +1,6 @@
 USE [CheckpointDatabase]
 GO
-CREATE PROCEDURE InsertIntoCourse
+CREATE PROCEDURE CreateCourse
            (@name varchar(40),
            @description varchar(200))
 as

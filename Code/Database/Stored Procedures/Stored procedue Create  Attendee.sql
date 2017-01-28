@@ -1,6 +1,6 @@
 USE [CheckpointDatabase]
 GO
-CREATE PROCEDURE InsertIntoAttendee
+CREATE PROCEDURE CreateAttendee
            (@tagId int,
 		    @appointmentId int,
            @hasAttended bit,          

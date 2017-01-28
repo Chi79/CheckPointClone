@@ -1,7 +1,7 @@
 USE [CheckpointDatabase]
 GO
 
-CREATE PROCEDURE InsertIntoUser
+CREATE PROCEDURE CreateUser
            @tagId int,
 		   @firstName varchar(20),
            @lastName varchar(20),

@@ -1,6 +1,6 @@
 USE [CheckpointDatabase]
 GO
-CREATE PROCEDURE InsertIntoAppoitment
+CREATE PROCEDURE CreateAppoitment
            (@appointmentName varchar(40),
 		   @description varchar(200),
 		   @date date,
