@@ -6,7 +6,10 @@ CREATE TABLE [USER]
 	[FirstName]          varchar(20)  NOT NULL ,
 	[LastName]           varchar(20)  NOT NULL ,
 	[Password]           char(20)  NOT NULL ,
-	CONSTRAINT [XPKUSER] PRIMARY KEY  CLUSTERED ([TagId] ASC)
+	CONSTRAINT [XPKUSER] PRIMARY KEY  CLUSTERED ([TagId] ASC),
+    CONSTRAINT chk_UserEMail CHECK (UserEMail like '%@%.%'),
+	CONSTRAINT chk_UserPassword CHECK (LEN([Password])>5),
+    CONSTRAINT chk_UserPhoneNumber CHECK (LEN([PhoneNumber])>7)
 )
 go
 
@@ -35,7 +38,10 @@ CREATE TABLE [HOST]
 	[LastName]           varchar(20)  NOT NULL ,
 	[Password]           varchar(20)  NOT NULL ,
 	[PhoneNumber]        int  NULL ,
-	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([HostId] ASC)
+	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([HostId] ASC),
+	CONSTRAINT chk_HostEMail CHECK (HostEMail like '%@%.%'),
+	CONSTRAINT chk_HostPassword CHECK (LEN([Password])>5),
+	CONSTRAINT chk_HostPhoneNumber CHECK (LEN([PhoneNumber])>7)
 )
 go
 
@@ -68,7 +74,7 @@ go
 CREATE TABLE [ATTENDEE]
 ( 
 	[TagId]              int  NOT NULL ,
-	[HasAttended]        bit  NULL ,
+	[HasAttended]        bit  NULL,
 	[AppointmentId]      int  NOT NULL ,
 	[PersonalNote]       varchar(100)  NULL ,
 	CONSTRAINT [XPKATTENDEE] PRIMARY KEY  CLUSTERED ([TagId] ASC,[AppointmentId] ASC),
