@@ -26,11 +26,11 @@ go
 CREATE TABLE [HOST]
 ( 
 	[HostUserName]       Varchar(20)  NOT NULL ,
-	[FirstName]          Varchar(20)  NULL ,
-	[LastName]           Varchar(20)  NULL ,
-	[Password]           Varchar(20)  NULL ,
+	[FirstName]          Varchar(20)  NOT NULL ,
+	[LastName]           Varchar(20)  NOT NULL ,
+	[Password]           Varchar(20)  NOT NULL ,
 	[PhoneNumber]        int  NULL ,
-	[HostEmail]          Varchar(30)  NULL ,
+	[HostEmail]          Varchar(30)  NOT NULL ,
 	[StreetAddress]      varchar(50)  NULL ,
 	[PostalCode]         int  NOT NULL ,
 	CONSTRAINT [XPKHOST] PRIMARY KEY  CLUSTERED ([HostUserName] ASC),
