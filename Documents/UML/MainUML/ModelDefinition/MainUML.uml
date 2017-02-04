@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="26380729-a01a-4e5f-b067-2b3646c71b0d"
+  name="MainUML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="4b600ebd-8fe8-402e-b8dd-4c01d64bbf50"
+        name="Host"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="0cb20921-1928-4583-8bce-a022f35bbf8c"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="Reports"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b68f447b-9132-4de9-8d99-af6dc9c23445"
+              LastKnownName="Create reports"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9b2f212b-b4e7-4ac4-886d-8fd421505406"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ba58894-fb56-4bb5-920c-27eb8d2c1490"
+                  name="Reports"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="78192006-c21c-4d59-86d9-4e6972036458"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="Create appointment"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0a89e952-1cb6-411b-8a44-9e0c6c15d6fc"
+              LastKnownName="Create appointment"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fd6b0b2a-4c40-4bfe-b179-f80f09fd46f6"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a04fedfa-ec29-4e4c-a857-1dd4dd64d4af"
+                  name="Create appointment"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e86ba074-1cff-4e8e-a875-558413ef9398"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="Update appointment"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="dc6abb79-ebdd-4e70-a31e-bc4bf9a90850"
+              LastKnownName="Manage appointment"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0bf7af25-c916-49cd-8784-c10b6c404517"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c7b0512-72de-40da-8c57-07a6b584345b"
+                  name="Update appointment"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5a7b4213-1994-42a0-be53-9bf4c12f6260"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="View appointments"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="be52bb9e-c323-498c-8396-3769db5f40fe"
+              LastKnownName="View appointments"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2be2007-74cc-4d9a-9d27-8a942d124a26"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5471131c-1c02-47a1-b841-f68fea729695"
+                  name="View appointments"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fe5cb17b-8fce-477d-ad5b-6adda985e0cc"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="Updating account"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="50883c89-6601-4249-92c0-b4b6287042b4"
+              LastKnownName="Manage profie"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ecb6e48d-5085-4608-80f9-24981229cc78"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="81d9f8f8-aff3-4c15-8079-972b1d497ba0"
+                  name="Updating account"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="31c64a48-85a8-4641-b494-59e412f37d2b"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="log in"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4be6541c-3971-488e-8c40-afb975132a5b"
+              LastKnownName="log in"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="60a9f7f1-99dd-4a12-abf9-a35d8181053b"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1bb9c4e8-e7cd-4dd6-85aa-7e551868b7d9"
+                  name="log in"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="7582a7a8-217d-4686-9f62-9b30ffa8f176"
+        name="User"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="61edf561-419c-4207-bb92-f26f39e80908"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="log in"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4be6541c-3971-488e-8c40-afb975132a5b"
+              LastKnownName="log in"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7dca8154-ffe9-49ce-a9be-a2e2ebf9821b"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="05c80a4e-40c1-4aef-9296-1968b85a9f1a"
+                  name="log in"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e5212ac2-3978-4413-8b04-90a2aa59bf13"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Attend an appointment"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a2d846cb-9dd6-45d7-9ced-10fa925493f0"
+              LastKnownName="Attend appointment"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dbd9f0b8-eba7-4705-8ed2-b6dd72507b65"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d79983cc-c377-4bde-80fa-011da3d7776d"
+                  name="Attend an appointment"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0cecc644-37c6-4ac9-ad0a-0acf50c29639"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Become attendee"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1b2f91ce-7c6e-40f0-8a8b-40c876f2ba54"
+              LastKnownName="Become attendee"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4e16d151-0fb7-4c7a-ba8e-2aa4a4d34a78"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b7078682-49c6-4e1a-b1fa-746bc1779a50"
+                  name="Become attendee"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9c75f8f0-e45c-43da-9791-b39d7e332d98"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Updating account"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="50883c89-6601-4249-92c0-b4b6287042b4"
+              LastKnownName="Manage profie"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eb2997dc-e79d-4d73-a7b5-d5478b8b59ab"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d91b2725-bf44-41fa-89df-19806e15aaaa"
+                  name="Updating account"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c7e466ae-4ea3-4381-8527-20794d79af86"
+        name="Client"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="770ea714-9934-4965-83cb-403139c69012"
+            isDerived="false"
+            sourceEndRoleName="Client"
+            targetEndRoleName="Registration"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4930a1be-a8f2-4d32-a048-c41ec7932523"
+              LastKnownName="Registration"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="083823da-f082-49cc-a562-ad59367f4b6b"
+                  name="Client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="70212208-718c-40e6-b083-a4b79683eb45"
+                  name="Registration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="38ed7545-d0c5-4421-b098-a42c7f61104e"
+        name="Registration"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b68f447b-9132-4de9-8d99-af6dc9c23445"
+        name="Create reports"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="be52bb9e-c323-498c-8396-3769db5f40fe"
+        name="View appointments"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a2d846cb-9dd6-45d7-9ced-10fa925493f0"
+        name="Attend appointment"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0a89e952-1cb6-411b-8a44-9e0c6c15d6fc"
+        name="Create appointment"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1b2f91ce-7c6e-40f0-8a8b-40c876f2ba54"
+        name="Become attendee"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4be6541c-3971-488e-8c40-afb975132a5b"
+        name="log in"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4930a1be-a8f2-4d32-a048-c41ec7932523"
+        name="Registration"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c4412e1f-e3e1-4770-b407-9d2d786dba59"
+            isDerived="false"
+            sourceEndRoleName="Registration"
+            targetEndRoleName="User"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="7582a7a8-217d-4686-9f62-9b30ffa8f176"
+              LastKnownName="User"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="425ab615-6b73-49ac-9f50-eb007cda2f5a"
+                  name="Registration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0a16d547-a0c8-48b6-8170-aba5a25c3f8e"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="48d124f8-cf24-4553-8bec-4f2da2deb765"
+            isDerived="false"
+            sourceEndRoleName="Registration"
+            targetEndRoleName="Host"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="4b600ebd-8fe8-402e-b8dd-4c01d64bbf50"
+              LastKnownName="Host"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a51b8946-2a0c-4341-9340-11e96c6f71ad"
+                  name="Registration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eb07698e-1892-4d72-924f-bc3266e311d0"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="b1118f4a-f8cd-499a-a6f8-5aefabdd9be3"
+        name="Client"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d954c4e3-0cd4-4d73-ae71-db3f50429d2a"
+            isDerived="false"
+            sourceEndRoleName="Client"
+            targetEndRoleName="Registration"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="38ed7545-d0c5-4421-b098-a42c7f61104e"
+              LastKnownName="Registration"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="130671b0-eefb-48c3-b3fa-052f745afc35"
+                  name="Client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a57ec8e8-1f1d-41c4-be70-d920ba71f576"
+                  name="Registration"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="404b3a7f-e840-4cd4-a0eb-cecb14dfe4bc"
+        name="Actor122"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="616b1b16-40a5-418b-9a99-b34b29e7fefe"
+        name="Actor123"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="50883c89-6601-4249-92c0-b4b6287042b4"
+        name="Manage profie"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dc6abb79-ebdd-4e70-a31e-bc4bf9a90850"
+        name="Manage appointment"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="f73baade-1fa4-48dd-864b-fd3e4596a002"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

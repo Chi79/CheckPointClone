@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bcd8f165-f7c6-4862-90b2-72c39c94e0a8" name="MainUML" linkedPackageId="d7aeb5b0-1824-4f64-81d1-ef819bc110bf" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="495b98ff-baa6-43f8-91a8-a91367a68ed9">
+      <profileInstance Id="0945211f-8164-4ce6-ad1d-353821fe0eb8" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b181e079-b328-4f98-946d-2e04482036a5">
+      <profileInstance Id="1b94f9fa-e4ed-430d-a2c0-6fee80012184" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="64d6a44a-bb28-4e54-9819-ddebd77bca83" name="Host" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4b600ebd-8fe8-402e-b8dd-4c01d64bbf50" />
+        <targetEnds>
+          <association Id="ac8fac45-aebb-4fa4-a714-5e2fb8c66ecd" isDerived="false" sourceEndRoleName="Host" targetEndRoleName="Reports" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d9088be0-164b-4850-8b5b-9c324d28b460" LastKnownName="Create reports" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="97c1d1b3-cabe-4ef7-9e7f-716e8d031887" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9b2f212b-b4e7-4ac4-886d-8fd421505406" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="76da9477-64e6-4ccc-b121-5f64543376ee" name="Reports" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3ba58894-fb56-4bb5-920c-27eb8d2c1490" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0cb20921-1928-4583-8bce-a022f35bbf8c" />
+          </association>
+          <association Id="04885d76-b223-45fb-bb53-f34448feefa5" isDerived="false" sourceEndRoleName="Host" targetEndRoleName="Create appointment" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9b1dc231-13e6-4469-bcdf-a25b2c482883" LastKnownName="Create appointment" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="62d60484-5dbe-49e1-bf5a-4fbc2398ad5f" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fd6b0b2a-4c40-4bfe-b179-f80f09fd46f6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8861e642-744f-4a79-907d-f3c896f30fa5" name="Create appointment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a04fedfa-ec29-4e4c-a857-1dd4dd64d4af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="78192006-c21c-4d59-86d9-4e6972036458" />
+          </association>
+          <association Id="6f395251-238f-4b9b-83bb-f163344cc2b5" isDerived="false" sourceEndRoleName="Host" targetEndRoleName="Update appointment" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="47cea2c1-bd6f-44cb-b647-4718dcf33002" LastKnownName="Manage appointment" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0ad7a036-fde1-47d8-b3ff-a9bb34808339" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0bf7af25-c916-49cd-8784-c10b6c404517" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="110818c3-0cd9-4627-acfa-dedb36fc3a20" name="Update appointment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2c7b0512-72de-40da-8c57-07a6b584345b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e86ba074-1cff-4e8e-a875-558413ef9398" />
+          </association>
+          <association Id="316cc8a9-af13-45b0-822b-58f196b2e24d" isDerived="false" sourceEndRoleName="Host" targetEndRoleName="Updating account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ec6e6ae5-d722-454e-a53a-731e2ce8b0f3" LastKnownName="Manage profie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="26eecf1c-6f54-4a1b-96e5-0759e9a1e97d" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ecb6e48d-5085-4608-80f9-24981229cc78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e137d241-7ad4-4a8b-9f46-8ef345b2370a" name="Updating account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="81d9f8f8-aff3-4c15-8079-972b1d497ba0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe5cb17b-8fce-477d-ad5b-6adda985e0cc" />
+          </association>
+          <association Id="9caf6bc5-95e4-42e6-b899-76d9ca65812b" isDerived="false" sourceEndRoleName="Host" targetEndRoleName="log in" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bb710337-70e7-4d4e-946a-d7f15d03f33e" LastKnownName="log in" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0e38c8f0-5e0b-454e-abf2-c3cf002fac64" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="60a9f7f1-99dd-4a12-abf9-a35d8181053b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="03a20d22-e413-4d41-88ac-9e3eddf27a9f" name="log in" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1bb9c4e8-e7cd-4dd6-85aa-7e551868b7d9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="31c64a48-85a8-4641-b494-59e412f37d2b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="3736a457-65d1-431d-9ed8-42084518cd4d" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7582a7a8-217d-4686-9f62-9b30ffa8f176" />
+        <targetEnds>
+          <association Id="18a51871-b603-4460-9c3a-7f4849f997ea" isDerived="false" sourceEndRoleName="User" targetEndRoleName="log in" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bb710337-70e7-4d4e-946a-d7f15d03f33e" LastKnownName="log in" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="501ffc92-9154-4a3c-bd0d-39a7ffd48f30" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7dca8154-ffe9-49ce-a9be-a2e2ebf9821b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2089bb91-b883-4738-9c91-9f19041ea7c4" name="log in" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="05c80a4e-40c1-4aef-9296-1968b85a9f1a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="61edf561-419c-4207-bb92-f26f39e80908" />
+          </association>
+          <association Id="673ce906-c06c-4e33-8096-c1570601f72e" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Attend an appointment" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7ff90482-99d5-47b4-a6bb-12ae2e9afa10" LastKnownName="Attend appointment" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c479a3a8-86d7-4b1a-8efb-499c4bd886ad" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dbd9f0b8-eba7-4705-8ed2-b6dd72507b65" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6ca54a02-f05f-4ea6-a48a-16d36bc22aec" name="Attend an appointment" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d79983cc-c377-4bde-80fa-011da3d7776d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e5212ac2-3978-4413-8b04-90a2aa59bf13" />
+          </association>
+          <association Id="9363186c-a42e-4f55-9899-9710e4552f17" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Become attendee" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="050f6db3-6144-4d74-abc5-4b012b627fb7" LastKnownName="Become attendee" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0d427da-9541-429c-8d92-ae795dd1e7e8" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4e16d151-0fb7-4c7a-ba8e-2aa4a4d34a78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a2dbc49c-d952-45d3-83c9-e339c06fbfbf" name="Become attendee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b7078682-49c6-4e1a-b1fa-746bc1779a50" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0cecc644-37c6-4ac9-ad0a-0acf50c29639" />
+          </association>
+          <association Id="bea82214-5da9-4a0f-9ccd-88ad53ed622f" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Updating account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ec6e6ae5-d722-454e-a53a-731e2ce8b0f3" LastKnownName="Manage profie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="41eb1959-a4a1-4512-a664-172648e86918" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eb2997dc-e79d-4d73-a7b5-d5478b8b59ab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a41dfee-38ad-4eeb-871d-d0c57a990c2b" name="Updating account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d91b2725-bf44-41fa-89df-19806e15aaaa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9c75f8f0-e45c-43da-9791-b39d7e332d98" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="31bf986a-050c-4784-a532-ffb54395f4e8" name="Registration" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="38ed7545-d0c5-4421-b098-a42c7f61104e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d9088be0-164b-4850-8b5b-9c324d28b460" name="Create reports" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b68f447b-9132-4de9-8d99-af6dc9c23445" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7ff90482-99d5-47b4-a6bb-12ae2e9afa10" name="Attend appointment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a2d846cb-9dd6-45d7-9ced-10fa925493f0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9b1dc231-13e6-4469-bcdf-a25b2c482883" name="Create appointment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0a89e952-1cb6-411b-8a44-9e0c6c15d6fc" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="050f6db3-6144-4d74-abc5-4b012b627fb7" name="Become attendee" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1b2f91ce-7c6e-40f0-8a8b-40c876f2ba54" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bb710337-70e7-4d4e-946a-d7f15d03f33e" name="log in" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4be6541c-3971-488e-8c40-afb975132a5b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="15359523-35ad-43b0-99a4-9cc501e55798" name="Client" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b1118f4a-f8cd-499a-a6f8-5aefabdd9be3" />
+        <targetEnds>
+          <association Id="dc259074-54e4-4001-8165-b03007f2bc93" isDerived="false" sourceEndRoleName="Client" targetEndRoleName="Registration" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="31bf986a-050c-4784-a532-ffb54395f4e8" LastKnownName="Registration" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="404895da-b496-4b96-9bbf-5c278fbe304d" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="130671b0-eefb-48c3-b3fa-052f745afc35" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b79e35be-9595-4b22-b2eb-5a9e0dd03ba6" name="Registration" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a57ec8e8-1f1d-41c4-be70-d920ba71f576" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d954c4e3-0cd4-4d73-ae71-db3f50429d2a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ec6e6ae5-d722-454e-a53a-731e2ce8b0f3" name="Manage profie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="50883c89-6601-4249-92c0-b4b6287042b4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="47cea2c1-bd6f-44cb-b647-4718dcf33002" name="Manage appointment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dc6abb79-ebdd-4e70-a31e-bc4bf9a90850" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="d7aeb5b0-1824-4f64-81d1-ef819bc110bf" name="MainUML">
+    <elementDefinition Id="26380729-a01a-4e5f-b067-2b3646c71b0d" />
+  </package>
+</useCaseModelRoot>
