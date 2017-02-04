@@ -1,22 +1,22 @@
 USE [CheckpointDatabase]
 GO
 CREATE PROCEDURE UpdateAttendee
-@tagId int,
+@userName varchar(20),
 @appointmentId int,
-@hasAttended bit,
-@personalNote varchar(100)
+@statusId int,
+@personalNote varchar(200)
 
 as
  SET NOCOUNT ON
 if (@hasAttended is not null)
 UPDATE [dbo].[ATTENDEE]
-set [HasAttended]= @hasAttended
-where [AppointmentId]=@appointmentId and [TagId]=@tagId
+set [StatusId]= @statusId
+where [AppointmentId]=@appointmentId and [UserName]=@userName
 
 if (@personalNote is not null)
 UPDATE [dbo].[ATTENDEE]
 set [PersonalNote]= @personalNote
-where [AppointmentId]=@appointmentId and [TagId]=@tagId
+where [AppointmentId]=@appointmentId and [UserName]=@userName
 
 GO
 
