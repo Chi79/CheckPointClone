@@ -8,6 +8,8 @@ CREATE PROCEDURE CreateAttendee
            @statusId int,
 		   @personalNote varchar(200)
 		   )
+		   ------is Appointment cancelled??
+		   ------is the appointment active?
 as
 INSERT INTO [dbo].[ATTENDEE]
            ([AppointmentId]
