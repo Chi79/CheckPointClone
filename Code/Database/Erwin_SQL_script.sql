@@ -54,7 +54,7 @@ CREATE TABLE [APPOINTMENT]
 	[Description]        varchar(200)  NULL ,
 	[StreetAddress]      varchar(50)  NULL ,
 	[Date]               date  NOT NULL ,
-	[Private]            bit  NULL ,
+	[IsPrivate]            bit  NULL ,
 	[IsCancelled]        bit  NULL ,
 	[HostUserName]       Varchar(20)  NULL ,
 	CONSTRAINT [XPKAPPOINTMENT] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC),
