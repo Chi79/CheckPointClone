@@ -86,7 +86,7 @@ go
 
 CREATE TABLE [USER]
 ( 
-	[TagId]              int  NOT NULL ,
+	[TagId]              varchar(30)  NOT NULL ,
 	[UserEmail]          varchar(30)  NOT NULL ,
 	[PhoneNumber]        int  NULL ,
 	[FirstName]          varchar(20)  NOT NULL ,
