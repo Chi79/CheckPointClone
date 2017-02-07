@@ -47,8 +47,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -86,8 +85,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -125,8 +123,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -203,8 +200,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -242,13 +238,50 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="1bb9c4e8-e7cd-4dd6-85aa-7e551868b7d9"
                   name="log in"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c8f1d401-cd40-4898-a25f-f0dc5281c284"
+            isDerived="false"
+            sourceEndRoleName="Host"
+            targetEndRoleName="Log out"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fbbb8c41-1954-4bd6-8db9-34bc974de762"
+              LastKnownName="Log out"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c969b581-6dda-46ff-aaa0-63c89b35dd04"
+                  name="Host"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3391f04e-dd71-438f-9071-b268f0c310f0"
+                  name="Log out"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -291,8 +324,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -330,8 +362,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -369,8 +400,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -408,13 +438,50 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="d91b2725-bf44-41fa-89df-19806e15aaaa"
                   name="Updating account"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b3d7af9e-d440-408d-98df-32e86dc3993f"
+            isDerived="false"
+            sourceEndRoleName="User"
+            targetEndRoleName="Log out"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fbbb8c41-1954-4bd6-8db9-34bc974de762"
+              LastKnownName="Log out"
+              LastKnownLocation="MainUML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ae08bdd8-0511-4220-95a2-564287d88ed8"
+                  name="User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7726e56c-333e-4ffc-9e6f-0714f7ee4d28"
+                  name="Log out"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -480,7 +547,7 @@
     <packageHasNamedElement>
       <useCase
         Id="38ed7545-d0c5-4421-b098-a42c7f61104e"
-        name="Registration"
+        name="Registrate"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -630,7 +697,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="38ed7545-d0c5-4421-b098-a42c7f61104e"
-              LastKnownName="Registration"
+              LastKnownName="Registrate"
               LastKnownLocation="MainUML.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -643,8 +710,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -698,6 +764,13 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fbbb8c41-1954-4bd6-8db9-34bc974de762"
+        name="Log out"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
