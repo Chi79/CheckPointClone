@@ -9,7 +9,7 @@
             <useCaseMoniker Id="d9088be0-164b-4850-8b5b-9c324d28b460" LastKnownName="Create reports" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="97c1d1b3-cabe-4ef7-9e7f-716e8d031887" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="97c1d1b3-cabe-4ef7-9e7f-716e8d031887" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="9b2f212b-b4e7-4ac4-886d-8fd421505406" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -25,7 +25,7 @@
             <useCaseMoniker Id="9b1dc231-13e6-4469-bcdf-a25b2c482883" LastKnownName="Create appointment" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="62d60484-5dbe-49e1-bf5a-4fbc2398ad5f" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="62d60484-5dbe-49e1-bf5a-4fbc2398ad5f" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="fd6b0b2a-4c40-4bfe-b179-f80f09fd46f6" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -41,7 +41,7 @@
             <useCaseMoniker Id="47cea2c1-bd6f-44cb-b647-4718dcf33002" LastKnownName="Manage appointment" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="0ad7a036-fde1-47d8-b3ff-a9bb34808339" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="0ad7a036-fde1-47d8-b3ff-a9bb34808339" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="0bf7af25-c916-49cd-8784-c10b6c404517" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -57,7 +57,7 @@
             <useCaseMoniker Id="ec6e6ae5-d722-454e-a53a-731e2ce8b0f3" LastKnownName="Manage profie" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="26eecf1c-6f54-4a1b-96e5-0759e9a1e97d" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="26eecf1c-6f54-4a1b-96e5-0759e9a1e97d" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="ecb6e48d-5085-4608-80f9-24981229cc78" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -73,7 +73,7 @@
             <useCaseMoniker Id="bb710337-70e7-4d4e-946a-d7f15d03f33e" LastKnownName="log in" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="0e38c8f0-5e0b-454e-abf2-c3cf002fac64" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="0e38c8f0-5e0b-454e-abf2-c3cf002fac64" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="60a9f7f1-99dd-4a12-abf9-a35d8181053b" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -84,6 +84,22 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="31c64a48-85a8-4641-b494-59e412f37d2b" />
+          </association>
+          <association Id="a0335ec0-e484-4d2e-a90c-2ce9cdae699c" isDerived="false" sourceEndRoleName="Host" targetEndRoleName="Log out" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9745713a-fb56-4575-9854-20630d15cef4" LastKnownName="Log out" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b581cbce-e5e9-49b3-9eaa-f7e108bfa8d7" name="Host" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c969b581-6dda-46ff-aaa0-63c89b35dd04" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="17ed916f-af9e-4204-8d33-de8eeae55c4c" name="Log out" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3391f04e-dd71-438f-9071-b268f0c310f0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c8f1d401-cd40-4898-a25f-f0dc5281c284" />
           </association>
         </targetEnds>
       </actor>
@@ -96,7 +112,7 @@
             <useCaseMoniker Id="bb710337-70e7-4d4e-946a-d7f15d03f33e" LastKnownName="log in" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="501ffc92-9154-4a3c-bd0d-39a7ffd48f30" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="501ffc92-9154-4a3c-bd0d-39a7ffd48f30" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="7dca8154-ffe9-49ce-a9be-a2e2ebf9821b" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -112,7 +128,7 @@
             <useCaseMoniker Id="7ff90482-99d5-47b4-a6bb-12ae2e9afa10" LastKnownName="Attend appointment" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="c479a3a8-86d7-4b1a-8efb-499c4bd886ad" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="c479a3a8-86d7-4b1a-8efb-499c4bd886ad" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="dbd9f0b8-eba7-4705-8ed2-b6dd72507b65" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -128,7 +144,7 @@
             <useCaseMoniker Id="050f6db3-6144-4d74-abc5-4b012b627fb7" LastKnownName="Become attendee" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="b0d427da-9541-429c-8d92-ae795dd1e7e8" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="b0d427da-9541-429c-8d92-ae795dd1e7e8" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="4e16d151-0fb7-4c7a-ba8e-2aa4a4d34a78" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -144,7 +160,7 @@
             <useCaseMoniker Id="ec6e6ae5-d722-454e-a53a-731e2ce8b0f3" LastKnownName="Manage profie" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="41eb1959-a4a1-4512-a664-172648e86918" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="41eb1959-a4a1-4512-a664-172648e86918" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="eb2997dc-e79d-4d73-a7b5-d5478b8b59ab" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -156,11 +172,27 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="9c75f8f0-e45c-43da-9791-b39d7e332d98" />
           </association>
+          <association Id="646d47ed-389a-42a7-92ff-a54de7455d39" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Log out" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9745713a-fb56-4575-9854-20630d15cef4" LastKnownName="Log out" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="498b9663-098f-4979-9026-eeb3e7452820" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ae08bdd8-0511-4220-95a2-564287d88ed8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec0a6a84-371d-4aef-864e-252f171fea19" name="Log out" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7726e56c-333e-4ffc-9e6f-0714f7ee4d28" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b3d7af9e-d440-408d-98df-32e86dc3993f" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="31bf986a-050c-4784-a532-ffb54395f4e8" name="Registration" isAbstract="false" isLeaf="false">
+      <useCase Id="31bf986a-050c-4784-a532-ffb54395f4e8" name="Registrate" isAbstract="false" isLeaf="false">
         <elementDefinition Id="38ed7545-d0c5-4421-b098-a42c7f61104e" />
       </useCase>
     </useCaseModelRootHasTypes>
@@ -194,10 +226,10 @@
         <elementDefinition Id="b1118f4a-f8cd-499a-a6f8-5aefabdd9be3" />
         <targetEnds>
           <association Id="dc259074-54e4-4001-8165-b03007f2bc93" isDerived="false" sourceEndRoleName="Client" targetEndRoleName="Registration" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="31bf986a-050c-4784-a532-ffb54395f4e8" LastKnownName="Registration" />
+            <useCaseMoniker Id="31bf986a-050c-4784-a532-ffb54395f4e8" LastKnownName="Registrate" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="404895da-b496-4b96-9bbf-5c278fbe304d" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="404895da-b496-4b96-9bbf-5c278fbe304d" name="Client" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="130671b0-eefb-48c3-b3fa-052f745afc35" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -220,6 +252,11 @@
     <useCaseModelRootHasTypes>
       <useCase Id="47cea2c1-bd6f-44cb-b647-4718dcf33002" name="Manage appointment" isAbstract="false" isLeaf="false">
         <elementDefinition Id="dc6abb79-ebdd-4e70-a31e-bc4bf9a90850" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9745713a-fb56-4575-9854-20630d15cef4" name="Log out" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fbbb8c41-1954-4bd6-8db9-34bc974de762" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
