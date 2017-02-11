@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentsPresenter", "AppointmentPresenter\AppointmentsPresenter.csproj", "{7A22610D-DC3F-45A5-8F70-A175878185F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentModel", "AppointmentModel\AppointmentModel.csproj", "{90FD0033-BD8B-4B71-93DA-C121739B888A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver", "Driver\Driver.csproj", "{84301A93-EA31-45E1-8C04-77559D4889BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentsView", "AppointmentsView\AppointmentsView.csproj", "{4FF0D2AC-5550-444A-BAC4-BCF9D169FCEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceLibrary", "InterfaceLibrary\InterfaceLibrary.csproj", "{B211F9E2-2765-41C9-B1E7-72B3830F4138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCOClassLibrary", "POCOLibrary\POCOClassLibrary.csproj", "{6D5A79CB-44CD-47EC-BAFD-B65375FFABF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A22610D-DC3F-45A5-8F70-A175878185F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A22610D-DC3F-45A5-8F70-A175878185F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A22610D-DC3F-45A5-8F70-A175878185F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A22610D-DC3F-45A5-8F70-A175878185F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FD0033-BD8B-4B71-93DA-C121739B888A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FD0033-BD8B-4B71-93DA-C121739B888A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FD0033-BD8B-4B71-93DA-C121739B888A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FD0033-BD8B-4B71-93DA-C121739B888A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84301A93-EA31-45E1-8C04-77559D4889BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84301A93-EA31-45E1-8C04-77559D4889BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84301A93-EA31-45E1-8C04-77559D4889BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84301A93-EA31-45E1-8C04-77559D4889BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF0D2AC-5550-444A-BAC4-BCF9D169FCEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF0D2AC-5550-444A-BAC4-BCF9D169FCEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF0D2AC-5550-444A-BAC4-BCF9D169FCEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF0D2AC-5550-444A-BAC4-BCF9D169FCEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B211F9E2-2765-41C9-B1E7-72B3830F4138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B211F9E2-2765-41C9-B1E7-72B3830F4138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B211F9E2-2765-41C9-B1E7-72B3830F4138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B211F9E2-2765-41C9-B1E7-72B3830F4138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D5A79CB-44CD-47EC-BAFD-B65375FFABF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D5A79CB-44CD-47EC-BAFD-B65375FFABF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D5A79CB-44CD-47EC-BAFD-B65375FFABF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D5A79CB-44CD-47EC-BAFD-B65375FFABF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
