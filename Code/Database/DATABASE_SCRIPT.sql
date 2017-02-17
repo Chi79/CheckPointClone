@@ -131,5 +131,6 @@ INSERT INTO ATTENDEE_STATUS
 		   ('Is an attende not obligatory',1),
 		   ('Is an attende obligatory',2),           
 		   ('Has attended not obligatory',3),
-		   ('Has attended Obligatory',4)
+		   ('Has attended Obligatory',4),
+		   ('Is invited to appointment',5)
 		  
