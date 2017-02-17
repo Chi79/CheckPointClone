@@ -122,3 +122,14 @@ CONSTRAINT [R_34] FOREIGN KEY ([TagId]) REFERENCES [CLIENT_TAG]([TagId])
 
 )
 go
+INSERT INTO CLIENT_TYPE
+VALUES(0,'User'),(1,'Host')
+
+INSERT INTO ATTENDEE_STATUS
+     VALUES
+	       ('Has requested to attend',0),
+		   ('Is an attende not obligatory',1),
+		   ('Is an attende obligatory',2),           
+		   ('Has attended not obligatory',3),
+		   ('Has attended Obligatory',4)
+		  
