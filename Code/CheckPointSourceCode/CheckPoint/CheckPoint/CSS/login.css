@@ -95,6 +95,9 @@
 	color: #fff;
 	border-radius: 15px;
 	box-shadow: 0 6px #999;
+    padding:2px;
+    font-weight:bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .btnLogIn:hover{
