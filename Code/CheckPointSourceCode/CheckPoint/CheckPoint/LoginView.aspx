@@ -5,8 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="CSS/login.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
     <title>CheckPoint System Login</title>
-
+    "Scripts/jquery-ui-1.10.3.min.js"
 </head>
 <body>
     <form id="form1" runat="server" defaultFocus="txtUserName" DefaultButton="btnLogin">>
