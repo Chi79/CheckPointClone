@@ -9,14 +9,14 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" defaultFocus="txtUserName" DefaultButton="btnLogin">>
     <div id="container">
     <div id="logo" ></div>
         <asp:Label ID="lblUserName" runat="server" Text="Username"></asp:Label>
         <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" TabIndex="0"></asp:TextBox>
         <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-        <asp:Button ID="btnLogIn" runat="server" Text="Log In"  CssClass="btnLogIn" OnClick="btnLogIn_Click"/>
+        <asp:Button ID="btnLogIn" runat="server" Text="Log In"  CssClass="btnLogIn" OnClick="btnLogIn_Click" TabIndex="1"/>
         <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
     </div>
     </form>
