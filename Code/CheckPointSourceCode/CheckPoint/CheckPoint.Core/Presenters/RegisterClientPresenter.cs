@@ -97,7 +97,8 @@ namespace CheckPointPresenters.Presenters
         private bool AttemptSaveToDb()
         {
             string errorMessage;
-            if (_unitOfWork.Complete(out errorMessage) == 0)
+            bool savedToDb = (_unitOfWork.Complete(out errorMessage) > 0);
+            if (!savedToDb)
             {
                 _errorMessage = errorMessage;
                 return false;
