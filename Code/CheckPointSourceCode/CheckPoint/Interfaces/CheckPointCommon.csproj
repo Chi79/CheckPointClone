@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\AttendeeStatus.cs" />
     <Compile Include="Enums\ClientType.cs" />
     <Compile Include="ModelInterfaces\ICreateAppointmentModel.cs" />
     <Compile Include="ModelInterfaces\ICreateCourseModel.cs" />
