@@ -49,7 +49,7 @@ AS
 		 @IsObligatory         	                                               
 	      )
 		  else 
-		  RAISERROR('To many appointments in this timespan',16,1)
+		  RAISERROR('Too many appointments scheduled in the same timespan',16,1)
 
 		
 		
