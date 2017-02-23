@@ -33,6 +33,10 @@ namespace CheckPointModel.Validation
             {
                 base.AddBrokenRule("Dates must be in correct format! Please enter a date mm/dd/yyyy: hh:mm:ss . ");
             }
+            if(appointment.PostalCode.Length > 4)
+            {
+                base.AddBrokenRule("PostCode cannot exceed 4 characters!");
+            }
         }
     }
 }
