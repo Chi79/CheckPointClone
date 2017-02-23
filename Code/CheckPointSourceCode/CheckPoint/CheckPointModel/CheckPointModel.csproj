@@ -50,9 +50,12 @@
     <Compile Include="Entities\AttendeeModel.cs" />
     <Compile Include="Entities\ClientModel.cs" />
     <Compile Include="Entities\CourseModel.cs" />
-    <Compile Include="Utilities\AppointmentModelToAppointmentMapper.cs" />
-    <Compile Include="Utilities\AttendeeModelToAttendeeMapper.cs" />
-    <Compile Include="Utilities\CourseModelToCourseMapper.cs" />
+    <Compile Include="Utilities\AppointmentModelMapper.cs" />
+    <Compile Include="Utilities\AttendeeModelMapper.cs" />
+    <Compile Include="Utilities\CourseModelMapper.cs" />
+    <Compile Include="Utilities\DateTimeParser.cs" />
+    <Compile Include="Utilities\ValidateDateInput.cs" />
+    <Compile Include="Utilities\DateTimeToTimeConverter.cs" />
     <Compile Include="Validation\CourseValidator.cs" />
     <Compile Include="Models\CreateAppointmentModel.cs" />
     <Compile Include="Models\CreateCourseModel.cs" />
@@ -65,7 +68,7 @@
     <Compile Include="Models\ManageAttendanceModel.cs" />
     <Compile Include="Models\ManageCourseModel.cs" />
     <Compile Include="Models\UpdateProfileModel.cs" />
-    <Compile Include="Utilities\ClientModelToClientMapper.cs" />
+    <Compile Include="Utilities\ClientModelMapper.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Utilities\ProperiesToStringListConverter.cs" />
     <Compile Include="Models\RegisterClientModel.cs" />

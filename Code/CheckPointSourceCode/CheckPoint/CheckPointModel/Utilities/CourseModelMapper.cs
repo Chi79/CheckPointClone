@@ -8,7 +8,7 @@ using CheckPointModel.Entities;
 
 namespace CheckPointModel.Utilities
 {
-    public class AttendeeModelToAttendeeMapper
+    public class CourseModelMapper
     {
         //TODO
     }

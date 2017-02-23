@@ -14,23 +14,24 @@ namespace CheckPointPresenters.Presenters
 {
     public class RegisterClientPresenter : PresenterBase
     {
-        private readonly IRegisterClientModel<ClientModel, CLIENT> _registerClientModel;
+        private readonly IRegisterClientModel<CLIENT, ClientModel> _registerClientModel;
         private readonly IRegisterClientView _registerClientView;
         private readonly IUnitOfWork _unitOfWork;
 
-        private ClientModel _clientModel = new ClientModel();
-        private CLIENT _client;
+        private ClientModel _clientModel = new ClientModel(); 
+        private CLIENT _newClient;
         private string _errorMessage = null;
 
-        List<string> validationErrorMessage;
+        private List<string> validationErrorMessage;
 
-        public RegisterClientPresenter(IRegisterClientModel<ClientModel, CLIENT> registerClientModel, IRegisterClientView registerClientView, IUnitOfWork unitOfWork)
+        public RegisterClientPresenter(IRegisterClientModel<CLIENT, ClientModel> registerClientModel, IRegisterClientView registerClientView, IUnitOfWork unitOfWork)
         {
             _registerClientModel = registerClientModel;
             _registerClientView = registerClientView;
             _unitOfWork = unitOfWork;
-
+  
             _registerClientView.RegisterNewClient += RegisterNewClientButtonCLicked;
+      
         }
 
         private void RegisterNewClientButtonCLicked(object sender, EventArgs e)
@@ -38,10 +39,11 @@ namespace CheckPointPresenters.Presenters
             CreateClientModelFromInput();
             _clientModel.FillPropertyList(_clientModel);
 
-            if (ClientToRegisterIsValid())
+            bool ClientDataIsValid = ClientToRegisterIsValid();
+            if (ClientDataIsValid)
             {
-                _client = _registerClientModel.ConvertClientModelToClient(_clientModel);
-                SaveClientToDatabase(_client);
+                _newClient = _registerClientModel.ConvertClientModelToClient(_clientModel);
+                SaveClientToDatabase(_newClient);
             }    
         }
         private void CreateClientModelFromInput()
@@ -56,9 +58,9 @@ namespace CheckPointPresenters.Presenters
             _clientModel.Password = _registerClientView.Password;
             _clientModel.ClientType = _registerClientView.ClientType;
         }
-        private void SaveClientToDatabase(CLIENT client)
+        private void SaveClientToDatabase(CLIENT newClient)
         {
-            _unitOfWork.CLIENTs.Add(client);
+            _unitOfWork.CLIENTs.Add(newClient);
             bool saveCompleted = AttemptSaveToDb();
             if (saveCompleted)
             {
@@ -75,7 +77,7 @@ namespace CheckPointPresenters.Presenters
             bool clientFieldsAreValid = _clientModel.IsValid(_clientModel);
             if (clientFieldsAreValid)
             {
-                _client = _registerClientModel.ConvertClientModelToClient(_clientModel);
+                _newClient = _registerClientModel.ConvertClientModelToClient(_clientModel);
                 return true;
             }
             else

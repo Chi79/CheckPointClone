@@ -9,7 +9,7 @@ using CheckPointModel.Validation;
 
 namespace CheckPointModel.Entities
 {
-    public class ClientModel : RegisterClientValidator
+    public class ClientModel : RegisterClientValidator 
     {
         public int ClientType { get; set; }
         public string UserName { get; set; }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ValidationInterfaces
 {
-     public interface IAppointmentValidator<T> : IValidator<T> where T : class
+    public interface IAppointmentValidator<T> : IValidator<T> where T : class
     {
+        List<string> FillPropertyList(T client);
         //TODO
     }
 }

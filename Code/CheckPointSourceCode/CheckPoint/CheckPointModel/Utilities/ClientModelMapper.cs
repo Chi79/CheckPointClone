@@ -8,7 +8,7 @@ using CheckPointModel.Entities;
 
 namespace CheckPointModel.Utilities
 {
-    public class ClientModelToClientMapper
+    public class ClientModelMapper
     {
         public static CLIENT convertToClient(ClientModel clientModel)
         {

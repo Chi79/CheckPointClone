@@ -8,7 +8,7 @@ using CheckPointModel.Entities;
 
 namespace CheckPointModel.Validation
 {
-    public class CourseValidator : Validator<CourseModel> , IAppointmentValidator<CourseModel>
+    public class CourseValidator : Validator<CourseModel> , ICourseValidator<CourseModel>
     {
         //TODO
     }

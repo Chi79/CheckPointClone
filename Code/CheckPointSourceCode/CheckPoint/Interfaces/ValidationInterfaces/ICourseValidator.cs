@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ValidationInterfaces
 {
-    interface ICourseValidator<T> : IValidator<T> where T : class
+    public interface ICourseValidator<T> : IValidator<T> where T : class
     {
         //TODO
     }

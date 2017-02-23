@@ -8,7 +8,7 @@ using CheckPointDataTables.Tables;
 
 namespace CheckPointCommon.ModelInterfaces
 {
-    public interface IRegisterClientModel<T, U> where T: class where U: class
+    public interface IRegisterClientModel<U, T> where U: class where T: class
     {
         U ConvertClientModelToClient(T entityModel);
         //bool ValidateRegistrationData(T entityModel);

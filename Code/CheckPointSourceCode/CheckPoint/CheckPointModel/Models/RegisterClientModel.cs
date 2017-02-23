@@ -10,11 +10,11 @@ using CheckPointModel.Entities;
 
 namespace CheckPointModel.Models
 {
-    public class RegisterClientModel : IRegisterClientModel<ClientModel, CLIENT>
+    public class RegisterClientModel : IRegisterClientModel<CLIENT, ClientModel> 
     {
         public CLIENT ConvertClientModelToClient(ClientModel client)
         {
-            return ClientModelToClientMapper.convertToClient(client);
+            return ClientModelMapper.convertToClient(client);
         }
     }
 }
