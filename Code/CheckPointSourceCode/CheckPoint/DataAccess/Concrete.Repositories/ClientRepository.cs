@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.Enums;
+using CheckPointCommon.Structs;
 
 namespace DataAccess
 {
@@ -28,22 +29,7 @@ namespace DataAccess
         {
             return CheckPointContext.CLIENTs.Where(c => c.UserName == name);
         }
-        public bool Login(string userName, string Password, out int clientType)
-        {
-            clientType = 0;
-
-            var result = CheckPointContext.CLIENTs
-                .Where(c => c.UserName == userName)
-                .Where(c => c.Password == Password);
-
-            if (!result.Any())
-            {
-                return false;
-            }
-            var myresult = result.FirstOrDefault();
-            clientType = myresult.ClientType;
-            return true;
-        }
+   
         public CLIENT GetAClientByName(string clientName)
         {
             return CheckPointContext.CLIENTs
@@ -55,6 +41,27 @@ namespace DataAccess
             return CheckPointContext.CLIENTs
                 .Select(client => client.FirstName + " " + client.LastName)
                 .ToList();
+        }
+        public LoginResult Login(string userName, string Password)
+        {
+            var myLoginResult = new LoginResult { };
+
+            var result = CheckPointContext.CLIENTs
+                .Where(c => c.UserName == userName)
+                .Where(c => c.Password == Password);
+
+            if (!result.Any())
+            {
+                myLoginResult.ClientType = 0;
+                myLoginResult.Result = false;
+            }
+            else
+            {
+                var myresult = result.FirstOrDefault();
+                myLoginResult.ClientType = myresult.ClientType;
+                myLoginResult.Result = true;
+            }
+            return myLoginResult;
         }
     }
 }

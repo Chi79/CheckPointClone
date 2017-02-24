@@ -8,6 +8,7 @@ using CheckPointCommon.RepositoryInterfaces;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.Enums;
+using CheckPointCommon.Structs;
 using CheckPointDataTables.Tables;
 
 namespace CheckPointPresenters.Presenters
@@ -59,13 +60,12 @@ namespace CheckPointPresenters.Presenters
 
         private void AttemptToLogin()
         {
-            int clientType;
-            bool loginAttemptSuccessful = _unitOfWork.CLIENTs.Login(_username, _password, out clientType);
-            if (loginAttemptSuccessful)
+            LoginResult loginResult = _unitOfWork.CLIENTs.Login(_username, _password);
+            bool loginAttemptSuccessful = loginResult.Result;
+            if(loginAttemptSuccessful)
             {
-                _clientType = (ClientType)clientType;
+                _clientType = (ClientType)loginResult.ClientType;
                 _loginView.Message = "Login Succesfull!";
-
 
                 CheckClientType();
             }

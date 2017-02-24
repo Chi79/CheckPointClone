@@ -8,6 +8,7 @@ using System.Data.Entity.Validation;
 using System.Data.Entity.Infrastructure;
 using System.Data;
 using DataAccess.Concrete.Repositories;
+using CheckPointCommon.Structs;
 
 namespace DataAccess
 {
@@ -39,12 +40,20 @@ namespace DataAccess
         //{
         //    return _context.SaveChanges();
         //}
-        public int Complete(out string errorMessage)
+        public void Dispose()
         {
-            errorMessage = string.Empty;
+            _context.Dispose();
+        }
+        public SaveResult myComplete()
+        {
+            SaveResult SaveResult = new SaveResult { };
+            SaveResult.Result = 0;
+            SaveResult.ErrorMessage = string.Empty;
+
             try
             {
-                return _context.SaveChanges();
+                SaveResult.Result = _context.SaveChanges();
+                return SaveResult;
             }
             catch (DbEntityValidationException e)
             {
@@ -57,10 +66,10 @@ namespace DataAccess
                     {
                         System.Diagnostics.Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
                             validation_error.PropertyName, validation_error.ErrorMessage);
-                    }         
+                    }
                 }
-                errorMessage = e.Message;
-                return 0;
+                SaveResult.ErrorMessage = e.Message;
+                return SaveResult;
             }
             catch (DbUpdateException e)
             {
@@ -69,25 +78,21 @@ namespace DataAccess
                 System.Data.Entity.Core.UpdateException update_error = (System.Data.Entity.Core.UpdateException)e.InnerException;
                 System.Data.SqlClient.SqlException error = (System.Data.SqlClient.SqlException)update_error.InnerException;
 
-                errorMessage = error.Message;
-                return 0;
+                SaveResult.ErrorMessage = error.Message;
+                return SaveResult;
             }
-            catch(System.Data.SqlClient.SqlException e)
+            catch (System.Data.SqlClient.SqlException e)
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
-                errorMessage = e.Message;
-                return 0;
+                SaveResult.ErrorMessage = e.Message;
+                return SaveResult;
             }
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
-                errorMessage = e.Message;
-                return 0;
+                SaveResult.ErrorMessage = e.Message;
+                return SaveResult;
             }
-        }
-        public void Dispose()
-        {
-            _context.Dispose();
         }
     }
 }

@@ -9,6 +9,7 @@ using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointModel.Entities;
 using CheckPointDataTables.Tables;
+using CheckPointCommon.Structs;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -96,16 +97,36 @@ namespace CheckPointPresenters.Presenters
                 _registerClientView.Message += message;
             }
         }
+        //private bool AttemptSaveToDb()
+        //{
+        //    string errorMessage;
+        //    bool savedToDb = (_unitOfWork.Complete(out errorMessage) > 0);
+        //    if (!savedToDb)
+        //    {
+        //        _errorMessage = errorMessage;
+        //        return false;
+        //    }
+        //    return true;
+        //}
         private bool AttemptSaveToDb()
         {
-            string errorMessage;
-            bool savedToDb = (_unitOfWork.Complete(out errorMessage) > 0);
-            if (!savedToDb)
+            SaveResult saveResult = _unitOfWork.myComplete();
+            bool IsSavedToDb = saveResult.Result > 0;
+            if (!IsSavedToDb)
             {
-                _errorMessage = errorMessage;
+                _errorMessage = saveResult.ErrorMessage;
                 return false;
             }
             return true;
+
+            //string errorMessage;
+            //bool savedToDb = (_unitOfWork.Complete(out errorMessage) > 0);
+            //if (!savedToDb)
+            //{
+            //    _errorMessage = errorMessage;
+            //    return false;
+            //}
+            //return true;
         }
     }
 }

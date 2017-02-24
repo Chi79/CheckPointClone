@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ModelInterfaces
 {
-    interface IManageCourseModel
+    public interface IManageCourseModel
     {
         //TODO
     }

@@ -60,6 +60,7 @@
     <Compile Include="ModelInterfaces\IUpdateProfileModel.cs" />
     <Compile Include="RepositoryInterfaces\IAttendeeRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
+    <Compile Include="Structs\Structs.cs" />
     <Compile Include="ValidationInterfaces\IAppointmentValidator.cs" />
     <Compile Include="ValidationInterfaces\IAttendeeValidator.cs" />
     <Compile Include="ValidationInterfaces\ICourseValidator.cs" />

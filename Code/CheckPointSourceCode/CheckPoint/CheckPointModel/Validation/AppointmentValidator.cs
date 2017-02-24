@@ -27,11 +27,15 @@ namespace CheckPointModel.Validation
             }
             if (!ValidateDateInput.IsDateValidate(appointment.FromTime))
             {
-                base.AddBrokenRule("Dates must be in correct format! Please enter a date mm/dd/yyyy: hh:mm:ss . ");
+                base.AddBrokenRule("Time must be in correct format! Please enter a time hh:mm. ");
+            }
+            if (!ValidateDateInput.IsDateValidate(appointment.Date))
+            {
+                base.AddBrokenRule("Dates must be in correct format! Please enter a date mm/dd/yyyy:  ");
             }
             if (!ValidateDateInput.IsDateValidate(appointment.ToTime))
             {
-                base.AddBrokenRule("Dates must be in correct format! Please enter a date mm/dd/yyyy: hh:mm:ss . ");
+                base.AddBrokenRule("Time must be in correct format! Please enter a time hh:mm. ");
             }
             if(appointment.PostalCode.Length > 4)
             {

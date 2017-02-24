@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
+using CheckPointCommon.Structs;
 
 namespace CheckPointCommon.RepositoryInterfaces
 {
@@ -11,7 +12,7 @@ namespace CheckPointCommon.RepositoryInterfaces
     {
         IEnumerable<CLIENT> GetAllUsers();
         IEnumerable<CLIENT> GetClientByName(string name);
-        bool Login(string userName, string Password , out int clientType);
+        LoginResult Login(string userName, string Password);
         CLIENT GetAClientByName(string clientName);
         List<string> GetAllUserNames();
     }

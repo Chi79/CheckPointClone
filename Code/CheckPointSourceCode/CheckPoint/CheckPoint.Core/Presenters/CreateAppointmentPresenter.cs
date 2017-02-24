@@ -9,6 +9,7 @@ using CheckPointCommon.RepositoryInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.Entities;
+using CheckPointCommon.Structs;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -20,9 +21,9 @@ namespace CheckPointPresenters.Presenters
 
         private AppointmentModel _appointmentModel = new AppointmentModel();
         private APPOINTMENT _newAppointment;
-        private string _errorMessage = null;
 
-        List<string> validationErrorMessage;
+        private string _errorMessage = null;
+        private List<string> _validationErrorMessage;
 
         public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
                                           ICreateAppointmentModel<APPOINTMENT, AppointmentModel> createAppointmentModel,
@@ -72,7 +73,7 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
-                validationErrorMessage = _appointmentModel.GetBrokenBusinessRules().ToList();
+                _validationErrorMessage = _appointmentModel.GetBrokenBusinessRules().ToList();
                 DisplayValidationMessage();
                 return false;
             }
@@ -81,7 +82,7 @@ namespace CheckPointPresenters.Presenters
         {
             _createAppointmentView.Message = string.Empty;
 
-            foreach (string message in validationErrorMessage)
+            foreach (string message in _validationErrorMessage)
             {
                 _createAppointmentView.Message += message;
             }
@@ -101,11 +102,11 @@ namespace CheckPointPresenters.Presenters
         }
         private bool AttemptSaveToDb()
         {
-            string errorMessage;
-            bool savedToDb = (_unitOfWork.Complete(out errorMessage) > 0);
-            if (!savedToDb)
+            SaveResult saveResult = _unitOfWork.myComplete();
+            bool IsSavedToDb = saveResult.Result > 0;
+            if (!IsSavedToDb)
             {
-                _errorMessage = errorMessage;
+                _errorMessage = saveResult.ErrorMessage;
                 return false;
             }
             return true;

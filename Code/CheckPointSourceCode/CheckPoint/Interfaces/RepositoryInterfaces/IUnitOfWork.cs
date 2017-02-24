@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CheckPointCommon.Structs;
 
 namespace CheckPointCommon.RepositoryInterfaces
 {
@@ -11,8 +12,8 @@ namespace CheckPointCommon.RepositoryInterfaces
         IClientRepository CLIENTs { get; }   //exposes our repositories via interfaces (testable)
         IAppointmentRepository APPOINTMENTs { get; }
         ICourseRepository COURSEs { get; }
-        IAttendeeRepository ATTENDEEs { get; }
-        int Complete(out string ErrorCode);   // method saves to the db   
+        IAttendeeRepository ATTENDEEs { get; } 
+        SaveResult myComplete();
         
     }
 }
