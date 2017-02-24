@@ -12,9 +12,8 @@ namespace CheckPointModel.Validation
     {
         //not tested
 
-
         /// <summary>
-        /// Validates the AttendeeModel proporties
+        /// Checks the AttendeeModel for Broken Business Rules
         /// </summary>
         /// <param name="attendee"></param>
         public override void CheckForBrokenRules(AttendeeModel attendee)
