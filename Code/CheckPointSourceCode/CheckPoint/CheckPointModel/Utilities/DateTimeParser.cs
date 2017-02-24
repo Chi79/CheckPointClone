@@ -12,5 +12,12 @@ namespace CheckPointModel.Utilities
         {
           return DateTime.Parse(dateTimeData);      
         }
+
+
+        // is not tested
+        public static DateTime ParseTimeAttended(string timeAttended)
+        {
+                return DateTime.Parse(timeAttended);          
+        }
     }
 }

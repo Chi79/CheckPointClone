@@ -19,44 +19,43 @@ namespace CheckPointModel.Validation
         /// <param name="attendee"></param>
         public override void CheckForBrokenRules(AttendeeModel attendee)
         {
-            string errorMessage=null;         
+            string errorMessage;         
 
             if (!ValidateIntergerInput.IsIntergerValid(attendee.AppointmentId))
                 base.AddBrokenRule("AppointmentId is not valid");                       
 
             if(!ValidateStringInput.IsStringValid(attendee.TagId))
-                base.AddBrokenRule("TagId Is not valid");
+                base.AddBrokenRule("TagId field is empty");
 
             if (!Enum.IsDefined(typeof(AttendeeStatus), attendee.StatusId))
                 base.AddBrokenRule("StatusId is not valid");
+           
 
-            if (!ValidateStringInput.IsStringValid(attendee.TagId))
-                base.AddBrokenRule("TagId is not valid");
-
-            if (!(ValidateTimeAttended(attendee.TimeAttended, attendee.StatusId, ref errorMessage)))
-                base.AddBrokenRule("TimeAttended is not valid:  "+errorMessage);
+            if (!(ValidateTimeAttended(attendee, out errorMessage)))
+                base.AddBrokenRule("TimeAttended is not valid because:  "+errorMessage);
         }
 
-        public bool ValidateTimeAttended(string timeAttended, int statusId, ref string message)
+        public bool ValidateTimeAttended(AttendeeModel attendee, out string message)
         {       
-            if (!(statusId == (int)AttendeeStatus.ObligHasAttended || statusId == (int)AttendeeStatus.HasAttended))
+            if (!(attendee.StatusId == (int)AttendeeStatus.ObligHasAttended || attendee.StatusId == (int)AttendeeStatus.HasAttended))
             {
                 message = "Status is not "+ AttendeeStatus.HasAttended.ToString()+" or "+AttendeeStatus.ObligHasAttended.ToString();                
                 return false;
             }
 
-            if(!ValidateStringInput.IsStringValid(timeAttended))
+            if(!ValidateStringInput.IsStringValid(attendee.TimeAttended))
             {
                 message = "Field is empty "; ;
                 return false;
             }
 
-            if (!ValidateDateInput.IsDateValidate(timeAttended))            
+            if (!ValidateDateInput.IsDateValidate(attendee.TimeAttended))            
                 {
                 message = "Dates must be in correct format mm/dd/yyyy: hh:mm:ss . ";
                 return false;
                 }
 
+            message=null;
             return true;
                                                    
          }
