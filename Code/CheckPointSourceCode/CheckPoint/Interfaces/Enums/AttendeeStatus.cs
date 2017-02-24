@@ -9,7 +9,7 @@ namespace CheckPointCommon.Enums
    public enum AttendeeStatus
     {
         RequestedToAttend,
-        RequestApporved,
+        RequestApproved,
         ObligRequestApproved,
         HasAttended,
         ObligHasAttended,

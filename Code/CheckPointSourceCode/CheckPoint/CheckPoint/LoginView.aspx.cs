@@ -19,11 +19,11 @@ namespace CheckPoint.Views
         }
         public string Password
         {
-            get { return txtPassword.Text; }
+            get { return txtUserName.Text; }
         }
         public string Username
         {
-            get { return txtUserName.Text; }
+            get { return txtPassword.Text; }
         }
         public event EventHandler<EventArgs> Login;
         protected void Page_Load(object sender, EventArgs e)

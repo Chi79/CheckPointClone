@@ -32,7 +32,7 @@ namespace CheckPointModel.Validation
            
 
             if (!(ValidateTimeAttended(attendee, out errorMessage)))
-                base.AddBrokenRule("TimeAttended is not valid because:  "+errorMessage);
+                base.AddBrokenRule("Time Attended is not valid because:  " + errorMessage);
         }
 
         public bool ValidateTimeAttended(AttendeeModel attendee, out string message)

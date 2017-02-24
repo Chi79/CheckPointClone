@@ -46,7 +46,7 @@
     font-weight:bold;
 }
 
-#txtPassword{
+#txtUserName{
     position:absolute;
     left:20%;
     width:60%;
@@ -55,7 +55,7 @@
     font-size:32px;
 }
 
-#txtUserName{
+#txtPassword{
     position:absolute;
     width:60%;
     height:5%;
