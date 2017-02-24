@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using CheckPointModel.Entities;
 using CheckPointModel.Utilities;
 using CheckPointCommon.Enums;
+using CheckPointCommon.ValidationInterfaces;
 namespace CheckPointModel.Validation
 {
-    public class AttendeeValidator:Validator<AttendeeModel>
+    public class AttendeeValidator:Validator<AttendeeModel>,IAttendeeValidator<AttendeeModel>
     {
         //not tested
 
@@ -34,7 +35,7 @@ namespace CheckPointModel.Validation
                 base.AddBrokenRule("TimeAttended is not Valid");
         }
 
-        private bool ValidateTimeAttended(string timeAttended, int statusId)
+        public bool ValidateTimeAttended(string timeAttended, int statusId)
         {       
             if (!(statusId == (int)AttendeeStatus.ObligHasAttended || statusId == (int)AttendeeStatus.HasAttended))
             {
