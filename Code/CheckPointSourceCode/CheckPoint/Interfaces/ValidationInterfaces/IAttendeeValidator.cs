@@ -10,6 +10,6 @@ namespace CheckPointCommon.ValidationInterfaces
    public interface IAttendeeValidator<T>:IValidator<T> where T:class
     {
         //ToDO
-        bool ValidateTimeAttended(string timeAttended, int statusId);
+        bool ValidateTimeAttended(string timeAttended, int statusId, ref string message);
     }
 }

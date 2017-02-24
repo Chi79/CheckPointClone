@@ -8,8 +8,7 @@ using CheckPointModel.Validation;
 namespace CheckPointModel.Entities
 {
     public class AttendeeModel: AttendeeValidator
-    {
-        //TODO
+    {       
         //Not tested
 
         public int AppointmentId { get; set; }

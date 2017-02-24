@@ -11,14 +11,16 @@ namespace CheckPointModel.Validation
 {
     public class AttendeeValidator:Validator<AttendeeModel>,IAttendeeValidator<AttendeeModel>
     {
-        //not tested
+        //this class is not tested
 
         /// <summary>
         /// Checks the AttendeeModel for Broken Business Rules
         /// </summary>
         /// <param name="attendee"></param>
         public override void CheckForBrokenRules(AttendeeModel attendee)
-        {            
+        {
+            string errorMessage=null;         
+
             if (!ValidateIntergerInput.IsIntergerValid(attendee.AppointmentId))
                 base.AddBrokenRule("AppointmentId is not valid");                       
 
@@ -31,24 +33,27 @@ namespace CheckPointModel.Validation
             if (!ValidateStringInput.IsStringValid(attendee.TagId))
                 base.AddBrokenRule("TagId is not valid");
 
-            if (!(ValidateTimeAttended(attendee.TimeAttended, attendee.StatusId)))
-                base.AddBrokenRule("TimeAttended is not Valid");
+            if (!(ValidateTimeAttended(attendee.TimeAttended, attendee.StatusId, ref errorMessage)))
+                base.AddBrokenRule("TimeAttended is not valid:  "+errorMessage);
         }
 
-        public bool ValidateTimeAttended(string timeAttended, int statusId)
+        public bool ValidateTimeAttended(string timeAttended, int statusId, ref string message)
         {       
             if (!(statusId == (int)AttendeeStatus.ObligHasAttended || statusId == (int)AttendeeStatus.HasAttended))
             {
+                message = "Status is not "+ AttendeeStatus.HasAttended.ToString()+" or "+AttendeeStatus.ObligHasAttended.ToString();                
                 return false;
             }
 
             if(!ValidateStringInput.IsStringValid(timeAttended))
             {
+                message = "Field is empty "; ;
                 return false;
             }
 
             if (!ValidateDateInput.IsDateValidate(timeAttended))            
                 {
+                message = "Dates must be in correct format mm/dd/yyyy: hh:mm:ss . ";
                 return false;
                 }
 
