@@ -56,6 +56,8 @@
     <Compile Include="Utilities\DateTimeParser.cs" />
     <Compile Include="Utilities\ValidateDateInput.cs" />
     <Compile Include="Utilities\DateTimeToTimeConverter.cs" />
+    <Compile Include="Utilities\ValidateIntergerInput.cs" />
+    <Compile Include="Validation\AttendeeValidator.cs" />
     <Compile Include="Validation\CourseValidator.cs" />
     <Compile Include="Models\CreateAppointmentModel.cs" />
     <Compile Include="Models\CreateCourseModel.cs" />
