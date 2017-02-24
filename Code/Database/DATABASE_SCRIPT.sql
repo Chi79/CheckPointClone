@@ -58,8 +58,8 @@ CREATE TABLE [APPOINTMENT]
 ( 
 	[AppointmentId]      int  NOT NULL  IDENTITY ( 1,1 ) ,
 	[CourseId]           int  NOT NULL ,
-	[StartTime]           Time  NULL ,
-	[EndTime]             Time  NULL ,
+	[StartTime]           Time NOT NULL ,
+	[EndTime]             Time  NOT NULL ,
 	[PostalCode]         int  NOT NULL ,
 	[AppointmentName]    varchar(40)  NOT NULL ,
 	[Description]        varchar(200)  NULL ,
