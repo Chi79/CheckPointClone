@@ -31,7 +31,7 @@ namespace CheckPointPresenters.Presenters
         private APPOINTMENT _appointmentToDisplay;
         private string _selectedapp;
 
-        private string _loggedInUsername = "Kevin";  //TODO..this will be auto set later :D
+        private string _loggedInUsername = "Morten";  //TODO..this will be auto set later :D
 
         public ManageAppointmentPresenter(IManageAppointmentView manageAppointmentView,
                                           IManageAppointmentModel<APPOINTMENT, AppointmentModel>
