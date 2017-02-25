@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ValidationInterfaces;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 using CheckPointModel.Utilities;
 
 
 namespace CheckPointModel.Validation
 {
-    public class AppointmentValidator : Validator<AppointmentModel> , IAppointmentValidator<AppointmentModel>
+    public class AppointmentValidator : Validator<AppointmentDTO> , IAppointmentValidator<AppointmentDTO>
     {
         //TODO
         private List<string> propertyList;
-        public List<string> FillPropertyList(AppointmentModel appointment)
+        public List<string> FillPropertyList(AppointmentDTO appointment)
         {
-            propertyList = ProperiesToStringListConverter<AppointmentModel>.ConvertPropertiesToStringList(appointment);
+            propertyList = ProperiesToStringListConverter<AppointmentDTO>.ConvertPropertiesToStringList(appointment);
             return propertyList;
         }
-        public override void CheckForBrokenRules(AppointmentModel appointment)
+        public override void CheckForBrokenRules(AppointmentDTO appointment)
         {
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {

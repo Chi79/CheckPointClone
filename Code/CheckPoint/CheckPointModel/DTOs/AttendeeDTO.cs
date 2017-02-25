@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointModel.Validation;
 
-namespace CheckPointModel.Entities
+namespace CheckPointModel.DTOs
 {
-    public class AttendeeModel: AttendeeValidator
+    public class AttendeeDTO: AttendeeValidator
     {       
         //Not tested
 
@@ -17,7 +17,7 @@ namespace CheckPointModel.Entities
         public int StatusId { get; set; }
         public string TagId { get; set; }
 
-        public override void CheckForBrokenRules(AttendeeModel entity)
+        public override void CheckForBrokenRules(AttendeeDTO entity)
         {
             base.CheckForBrokenRules(this);
         }

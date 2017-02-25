@@ -9,6 +9,6 @@ namespace CheckPointCommon.ModelInterfaces
     public interface IManageAppointmentModel<U,T> where U: class where T: class
     {
         //TODO
-        U ConvertAppointmentModelToAppointment(T entityModel);
+        U ConvertAppointmentDTOToAppointment(T entityModel);
     }
 }

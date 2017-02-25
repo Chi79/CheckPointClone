@@ -7,7 +7,7 @@ using CheckPointPresenters.Bases;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.Structs;
 
@@ -15,17 +15,17 @@ namespace CheckPointPresenters.Presenters
 {
     public class RegisterClientPresenter : PresenterBase
     {
-        private readonly IRegisterClientModel<CLIENT, ClientModel> _model;
+        private readonly IRegisterClientModel<CLIENT, ClientDTO> _model;
         private readonly IRegisterClientView _view;
         private readonly IUnitOfWork _uOW;
 
-        private ClientModel _clientModel = new ClientModel(); 
+        private ClientDTO _clientModel = new ClientDTO(); 
         private CLIENT _newClient;
         private string _errorMessage = null;
 
         private List<string> validationErrorMessage;
 
-        public RegisterClientPresenter(IRegisterClientModel<CLIENT, ClientModel> registerClientModel, 
+        public RegisterClientPresenter(IRegisterClientModel<CLIENT, ClientDTO> registerClientModel, 
                                        IRegisterClientView registerClientView, IUnitOfWork unitOfWork)
 
         {

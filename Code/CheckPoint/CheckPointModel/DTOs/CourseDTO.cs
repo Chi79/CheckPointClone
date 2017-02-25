@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckPointModel.Entities
+namespace CheckPointModel.DTOs
 {
-    public class CourseModel
+    public class CourseDTO
     {
         //TODO
     }

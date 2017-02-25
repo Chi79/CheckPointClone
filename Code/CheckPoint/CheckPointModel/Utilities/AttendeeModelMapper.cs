@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Utilities
 {
@@ -12,7 +12,7 @@ namespace CheckPointModel.Utilities
     {
         //TODO
 
-        public static ATTENDEE ConvertAttendeeModelToAttendee( AttendeeModel attendeModel)
+        public static ATTENDEE ConvertAttendeeModelToAttendee(AttendeeDTO attendeModel)
         {
            
 

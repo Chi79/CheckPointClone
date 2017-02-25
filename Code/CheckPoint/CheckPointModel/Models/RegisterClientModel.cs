@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointModel.Utilities;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Models
 {
-    public class RegisterClientModel : IRegisterClientModel<CLIENT, ClientModel> 
+    public class RegisterClientModel : IRegisterClientModel<CLIENT, ClientDTO> 
     {
-        public CLIENT ConvertClientModelToClient(ClientModel client)
+        public CLIENT ConvertClientModelToClient(ClientDTO client)
         {
             return ClientModelMapper.convertToClient(client);
         }

@@ -46,10 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLists\UserNameList.cs" />
-    <Compile Include="Entities\AppointmentModel.cs" />
-    <Compile Include="Entities\AttendeeModel.cs" />
-    <Compile Include="Entities\ClientModel.cs" />
-    <Compile Include="Entities\CourseModel.cs" />
+    <Compile Include="DTOs\AppointmentDTO.cs" />
+    <Compile Include="DTOs\AttendeeDTO.cs" />
+    <Compile Include="DTOs\ClientDTO.cs" />
+    <Compile Include="DTOs\CourseDTO.cs" />
     <Compile Include="Utilities\AppointmentModelMapper.cs" />
     <Compile Include="Utilities\AttendeeModelMapper.cs" />
     <Compile Include="Utilities\CourseModelMapper.cs" />

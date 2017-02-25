@@ -22,8 +22,9 @@ namespace CheckPointCommon.ViewInterfaces
         string IsObligatory { get; set; }
 
         string AppointmentNameList { get; set; }
+        List<string> SetDataSource { set; }
 
-        void FillAppointmentList(List<string> list);
+        void BindAppointmentList();
         void RedirectAfterClickEvent();
 
         string Message { get; set; }

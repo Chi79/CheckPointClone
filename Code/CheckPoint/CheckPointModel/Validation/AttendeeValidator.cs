@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 using CheckPointModel.Utilities;
 using CheckPointCommon.Enums;
 using CheckPointCommon.ValidationInterfaces;
 namespace CheckPointModel.Validation
 {
-    public class AttendeeValidator:Validator<AttendeeModel>,IAttendeeValidator<AttendeeModel>
+    public class AttendeeValidator:Validator<AttendeeDTO>,IAttendeeValidator<AttendeeDTO>
     {
         //this class is not tested
 
@@ -17,7 +17,7 @@ namespace CheckPointModel.Validation
         /// Checks the AttendeeModel for Broken Business Rules
         /// </summary>
         /// <param name="attendee"></param>
-        public override void CheckForBrokenRules(AttendeeModel attendee)
+        public override void CheckForBrokenRules(AttendeeDTO attendee)
         {
             string errorMessage;         
 
@@ -35,7 +35,7 @@ namespace CheckPointModel.Validation
                 base.AddBrokenRule("Time Attended is not valid because:  " + errorMessage);
         }
 
-        public bool ValidateTimeAttended(AttendeeModel attendee, out string message)
+        public bool ValidateTimeAttended(AttendeeDTO attendee, out string message)
         {       
             if (!(attendee.StatusId == (int)AttendeeStatus.ObligHasAttended || attendee.StatusId == (int)AttendeeStatus.HasAttended))
             {

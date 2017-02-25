@@ -92,10 +92,14 @@ namespace CheckPoint.Views
         public bool ContinueButtonVisible { set { btnContinue.Visible = value; } }
         public bool UpdateButtonVisible { set { btnUpdateAppointment.Visible = value; } }
 
-        public void FillAppointmentList(List<string> list)
+        public void BindAppointmentList()
         {
-            ddlSelectAppointment.DataSource = list;
+            //ddlSelectAppointment.DataSource = list;
             ddlSelectAppointment.DataBind();
+        }
+        public List<string> SetDataSource
+        {
+            set { ddlSelectAppointment.DataSource = value; }
         }
         public void RedirectAfterClickEvent()
         {

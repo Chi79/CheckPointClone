@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using CheckPointModel.Validation;
 using CheckPointDataTables.Tables;
 
-namespace CheckPointModel.Entities
+namespace CheckPointModel.DTOs
 {
-    public class AppointmentModel : AppointmentValidator
+    public class AppointmentDTO : AppointmentValidator
     {
         //TODO
        public int AppointmentID { get; set; }
@@ -24,7 +24,7 @@ namespace CheckPointModel.Entities
        public bool IsCancelled { get; set; }
        public bool IsObligatory { get; set; }
 
-        public override void CheckForBrokenRules(AppointmentModel appointment)
+        public override void CheckForBrokenRules(AppointmentDTO appointment)
         {
             base.CheckForBrokenRules(this);
         }

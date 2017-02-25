@@ -4,32 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Utilities
 {
-    public class AppointmentModelMapper
+    public class AppointmentDTOMapper
     {
-        public static APPOINTMENT ConvertAppointmentModelToAppointment(AppointmentModel appointmentModel)
+        public static APPOINTMENT ConvertAppointmentDTOToAppointment(AppointmentDTO appointmentDTO)
         {
             DateTime parsedFromTime, parsedToTime, parsedDate;
-            parsedFromTime = DateTimeParser.ParseAppointmentData(appointmentModel.StartTime);
-            parsedToTime = DateTimeParser.ParseAppointmentData(appointmentModel.EndTime);
-            parsedDate = DateTimeParser.ParseAppointmentData(appointmentModel.Date);
+            parsedFromTime = DateTimeParser.ParseAppointmentData(appointmentDTO.StartTime);
+            parsedToTime = DateTimeParser.ParseAppointmentData(appointmentDTO.EndTime);
+            parsedDate = DateTimeParser.ParseAppointmentData(appointmentDTO.Date);
 
             APPOINTMENT appointment = new APPOINTMENT()
             {
-                CourseId = appointmentModel.CourseId,
-                AppointmentName = appointmentModel.AppointmentName,
-                Description = appointmentModel.Description,
+                CourseId = appointmentDTO.CourseId,
+                AppointmentName = appointmentDTO.AppointmentName,
+                Description = appointmentDTO.Description,
                 Date = parsedDate,
                 StartTime = parsedFromTime.TimeOfDay,
                 EndTime = parsedToTime.TimeOfDay,
-                Address = appointmentModel.Address,
-                PostalCode = Convert.ToInt32(appointmentModel.PostalCode),
-                UserName = appointmentModel.UserName,
-                IsCancelled = appointmentModel.IsCancelled,
-                IsObligatory = appointmentModel.IsObligatory,
+                Address = appointmentDTO.Address,
+                PostalCode = Convert.ToInt32(appointmentDTO.PostalCode),
+                UserName = appointmentDTO.UserName,
+                IsCancelled = appointmentDTO.IsCancelled,
+                IsObligatory = appointmentDTO.IsObligatory,
             }; 
             return appointment;
         }    //TODO

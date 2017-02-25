@@ -8,9 +8,9 @@ using CheckPointModel.Validation;
 using CheckPointCommon.ValidationInterfaces;
 
 
-namespace CheckPointModel.Entities
+namespace CheckPointModel.DTOs
 {
-    public class ClientModel : RegisterClientValidator
+    public class ClientDTO : RegisterClientValidator
     {          
         public int ClientType { get; set; }
         public string UserName { get; set; }
@@ -22,7 +22,7 @@ namespace CheckPointModel.Entities
         public string PhoneNumber { get; set; }
         public string PostalCode { get; set; }
     
-        public override void CheckForBrokenRules(ClientModel client)
+        public override void CheckForBrokenRules(ClientDTO client)
         {
             base.CheckForBrokenRules(this);
 

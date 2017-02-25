@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ValidationInterfaces;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 using CheckPointModel.Utilities;
 
 
 namespace CheckPointModel.Validation
 {
-    public class RegisterClientValidator : Validator<ClientModel>, IRegisterClientValidator<ClientModel>
+    public class RegisterClientValidator : Validator<ClientDTO>, IRegisterClientValidator<ClientDTO>
     {
         private List<string> propertyList;
-        public List<string> FillPropertyList(ClientModel client)
+        public List<string> FillPropertyList(ClientDTO client)
         {
-           propertyList = ProperiesToStringListConverter<ClientModel>.ConvertPropertiesToStringList(client);
+           propertyList = ProperiesToStringListConverter<ClientDTO>.ConvertPropertiesToStringList(client);
            return propertyList;
         }
-        public override void CheckForBrokenRules(ClientModel client)
+        public override void CheckForBrokenRules(ClientDTO client)
         {
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {

@@ -8,7 +8,7 @@ using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
 
 namespace CheckPointPresenters.Presenters
@@ -16,10 +16,10 @@ namespace CheckPointPresenters.Presenters
     public class ManageAppointmentPresenter : PresenterBase
     {
         private readonly IManageAppointmentView _view;
-        private readonly IManageAppointmentModel<APPOINTMENT, AppointmentModel> _model;
+        private readonly IManageAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
         private readonly IUnitOfWork _uOW;
 
-        private AppointmentModel _appointmentModel = new AppointmentModel();
+        private AppointmentDTO _appointmentDTO = new AppointmentDTO();
         private APPOINTMENT _appointmentToSave;
 
         private string _errorMessage;
@@ -34,7 +34,7 @@ namespace CheckPointPresenters.Presenters
         private string _loggedInUsername = "Morten";  //TODO..this will be auto set later :D
 
         public ManageAppointmentPresenter(IManageAppointmentView manageAppointmentView,
-                                          IManageAppointmentModel<APPOINTMENT, AppointmentModel>
+                                          IManageAppointmentModel<APPOINTMENT, AppointmentDTO>
                                           manageAppointmentModel, IUnitOfWork unitOfWork)
         {
             _view = manageAppointmentView;
@@ -48,34 +48,35 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-            PopulateAppointmentList();
+            GetAppointmentList();
+            SetAppointmentList();
         }
 
         private void CreateAppointmentModelFromInput()
         {
-            _appointmentModel.CourseId = Convert.ToInt32(_view.CourseId);
-            _appointmentModel.AppointmentName = _view.AppointmentName;
-            _appointmentModel.Description = _view.Description;
-            _appointmentModel.Date = _view.Date;
-            _appointmentModel.StartTime = _view.StartTime;
-            _appointmentModel.EndTime = _view.EndTime;
-            _appointmentModel.UserName = _view.UserName;
-            _appointmentModel.Address = _view.Address;
-            _appointmentModel.PostalCode = _view.PostalCode;
-            _appointmentModel.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
-            _appointmentModel.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
+            _appointmentDTO.CourseId = Convert.ToInt32(_view.CourseId);
+            _appointmentDTO.AppointmentName = _view.AppointmentName;
+            _appointmentDTO.Description = _view.Description;
+            _appointmentDTO.Date = _view.Date;
+            _appointmentDTO.StartTime = _view.StartTime;
+            _appointmentDTO.EndTime = _view.EndTime;
+            _appointmentDTO.UserName = _view.UserName;
+            _appointmentDTO.Address = _view.Address;
+            _appointmentDTO.PostalCode = _view.PostalCode;
+            _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
+            _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
         private bool AppointmentToCreateIsValid()
         {
-            bool AppointmentFieldsAreValid = _appointmentModel.IsValid(_appointmentModel);
+            bool AppointmentFieldsAreValid = _appointmentDTO.IsValid(_appointmentDTO);
             if (AppointmentFieldsAreValid)
             {
-                _appointmentToSave = _model.ConvertAppointmentModelToAppointment(_appointmentModel);
+                _appointmentToSave = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
                 return true;
             }
             else
             {
-                _validationErrorMessage = _appointmentModel.GetBrokenBusinessRules().ToList();
+                _validationErrorMessage = _appointmentDTO.GetBrokenBusinessRules().ToList();
                 DisplayValidationMessage();
                 return false;
             }
@@ -92,6 +93,7 @@ namespace CheckPointPresenters.Presenters
         private void SaveAppointmentToDatabase(APPOINTMENT newAppointment)
         {
             _uOW.APPOINTMENTs.Add(newAppointment);
+
             bool saveCompleted = AttemptSaveToDb();
             if (saveCompleted)
             {
@@ -107,6 +109,7 @@ namespace CheckPointPresenters.Presenters
         private bool AttemptSaveToDb()
         {
             SaveResult saveResult = _uOW.Complete();
+
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
@@ -116,14 +119,19 @@ namespace CheckPointPresenters.Presenters
             return true;
         }
 
-        private void PopulateAppointmentList()
+        private void GetAppointmentList()
         {
             string user = _loggedInUsername;
+
             _listOfAppointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(user).ToList();                                          
             _listOfAppointmentNames = _listOfAppointments.Select(app => app.AppointmentName).ToList();
-
-            _view.FillAppointmentList(_listOfAppointmentNames);
         }
+        private void SetAppointmentList()
+        {
+            _view.SetDataSource = (_listOfAppointmentNames);
+            _view.BindAppointmentList();
+        }
+
         private void SelectAppointmentToDisplay()
         {
             _selectedAppointment = _listOfAppointments 
@@ -151,12 +159,12 @@ namespace CheckPointPresenters.Presenters
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
             CreateAppointmentModelFromInput();
-            _appointmentModel.FillPropertyList(_appointmentModel);
+            _appointmentDTO.FillPropertyList(_appointmentDTO);
 
             bool appointmentDataIsValid = AppointmentToCreateIsValid();
             if (appointmentDataIsValid)
             {
-                _appointmentToSave = _model.ConvertAppointmentModelToAppointment(_appointmentModel);
+                _appointmentToSave = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
                 SaveAppointmentToDatabase(_appointmentToSave);
             }
         }
@@ -164,19 +172,31 @@ namespace CheckPointPresenters.Presenters
         {
             _selectedapp = _view.AppointmentNameList;
 
-            bool listIsNull = (_listOfAppointments == null);
-            bool listNotEmpty = (_listOfAppointments.Count > 0);
+            IsListNull();
+            IsListFull();
+            IsListEmpty();
 
+        }
+        private void IsListNull()
+        {
+            bool listIsNull = (_listOfAppointments == null);
             if (listIsNull)
             {
-                PopulateAppointmentList();
-                DisplaySelectedAppointmentData();
+                GetAppointmentList();
             }
-            else if (listNotEmpty)
+        }
+        private void IsListFull()
+        {
+            bool listIsFull = (_listOfAppointments.Count > 0);
+            if (listIsFull)
             {
                 DisplaySelectedAppointmentData();
             }
-            else
+        }
+        private void IsListEmpty()
+        {
+            bool ListIsEmpty = (_listOfAppointments.Count == 0);
+            if (ListIsEmpty)
             {
                 _view.UpdateButtonVisible = false;
                 _view.Message = "No appointments to manage.";

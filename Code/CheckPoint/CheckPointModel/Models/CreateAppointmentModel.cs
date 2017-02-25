@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointDataTables.Tables;
-using CheckPointModel.Entities;
+using CheckPointModel.DTOs;
 using CheckPointModel.Utilities;
 
 namespace CheckPointModel.Models
 {
-    public class CreateAppointmentModel : ICreateAppointmentModel<APPOINTMENT, AppointmentModel>
+    public class CreateAppointmentModel : ICreateAppointmentModel<APPOINTMENT, AppointmentDTO>
     {
-        public APPOINTMENT ConvertAppointmentModelToAppointment(AppointmentModel appointmentModel)
+        public APPOINTMENT ConvertAppointmentDTOToAppointment(AppointmentDTO appointmentDTO)
         {
-            return AppointmentModelMapper.ConvertAppointmentModelToAppointment(appointmentModel);
+            return AppointmentDTOMapper.ConvertAppointmentDTOToAppointment(appointmentDTO);
         }
     }
 }
