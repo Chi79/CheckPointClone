@@ -11,7 +11,7 @@
     <div>
     
     &nbsp;&nbsp; <asp:Label ID="Label1" runat="server" Text="Select Appointment"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="ddlSelectAppointment" runat="server" Height="16px" Width="191px" AutoPostBack="True" OnSelectedIndexChanged="ddlSelectAppointment_SelectedIndexChanged" >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="ddlSelectAppointment" runat="server" Height="16px" Width="191px" AutoPostBack="True" OnSelectedIndexChanged="ddlSelectAppointment_SelectedIndexChanged" OnLoad="ddlSelectAppointment_Load" >
         </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Appointment Name&nbsp;<asp:TextBox ID="txtAppointmentName" runat="server"></asp:TextBox>
         <br />

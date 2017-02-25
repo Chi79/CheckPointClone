@@ -35,6 +35,12 @@ namespace CheckPointPresenters.Presenters
             _unitOfWork = unitOfWork;
 
             _createAppointmentView.CreateNewAppointment += OnCreateNewAppointmentButtonCLicked;
+            _createAppointmentView.Continue += OnContinueEvent;
+        }
+
+        private void OnContinueEvent(object sender, EventArgs e)
+        {
+            _createAppointmentView.RedirectAfterClickEvent();
         }
 
         private void OnCreateNewAppointmentButtonCLicked(object sender, EventArgs e)
@@ -94,6 +100,7 @@ namespace CheckPointPresenters.Presenters
             if(saveCompleted)
             {
                 _createAppointmentView.Message = "New Appointment Saved Succesfully!";
+                SetButtonVisiblity();
             }
             else
             {
@@ -102,7 +109,7 @@ namespace CheckPointPresenters.Presenters
         }
         private bool AttemptSaveToDb()
         {
-            SaveResult saveResult = _unitOfWork.myComplete();
+            SaveResult saveResult = _unitOfWork.Complete();
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
@@ -110,6 +117,11 @@ namespace CheckPointPresenters.Presenters
                 return false;
             }
             return true;
+        }
+        private void SetButtonVisiblity()
+        {
+            _createAppointmentView.CreateButtonVisible = false;
+            _createAppointmentView.ContinueButtonVisible = true;
         }
     }
 }

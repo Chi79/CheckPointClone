@@ -71,8 +71,16 @@ namespace CheckPoint.Views
         {
             get { return txtUserName.Text; }
         }
+        public bool ContinueButtonVisible { set { btnContinue.Visible = value; } }
+        public bool CreateButtonVisible { set { btnCreateAppointment.Visible = value; } }
+
+        public void RedirectAfterClickEvent()
+        {
+            Response.Redirect("CreateAppointmentView.aspx");
+        }
 
         public event EventHandler<EventArgs> CreateNewAppointment;
+        public event EventHandler<EventArgs> Continue;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -84,6 +92,14 @@ namespace CheckPoint.Views
             if(CreateNewAppointment != null)
             {
                 CreateNewAppointment(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnContinue_Click(object sender, EventArgs e)
+        {
+            if(Continue != null)
+            {
+                Continue(this, EventArgs.Empty);
             }
         }
     }

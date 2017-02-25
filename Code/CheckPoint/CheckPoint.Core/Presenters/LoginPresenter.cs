@@ -15,9 +15,9 @@ namespace CheckPointPresenters.Presenters
 {
     public class LoginPresenter : PresenterBase
     {
-        private readonly ILoginView _loginView;
-        private readonly ILoginModel _loginModel;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ILoginView _view;
+        private readonly ILoginModel _model;
+        private readonly IUnitOfWork _uOW;
 
         private List<string> _LoginData = new List<string>();
         private ClientType _clientType;
@@ -27,16 +27,16 @@ namespace CheckPointPresenters.Presenters
 
         public LoginPresenter(ILoginView loginView, ILoginModel loginModel, IUnitOfWork unitOfWork)
         {
-            this._loginView = loginView;
-            this._loginModel = loginModel;
-            this._unitOfWork = unitOfWork;
+            this._view = loginView;
+            this._model = loginModel;
+            this._uOW = unitOfWork;
 
-            _loginView.Login += _loginView_OnLoginButtonClicked;
+            _view.Login += _loginView_OnLoginButtonClicked;
         }
         private void _loginView_OnLoginButtonClicked(object sender, EventArgs e)
         {
-            _username = _loginView.Username;
-            _password = _loginView.Password;
+            _username = _view.Username;
+            _password = _view.Password;
 
             _LoginData.Add(_username);
             _LoginData.Add(_password);
@@ -49,29 +49,29 @@ namespace CheckPointPresenters.Presenters
 
         private bool ValidateLoginData()
         {
-            bool allFieldsValid = _loginModel.LoginDataIsValid(_LoginData);
+            bool allFieldsValid = _model.LoginDataIsValid(_LoginData);
             if (allFieldsValid)
             {
                 return true;
             } 
-            _loginView.Message = "Please fill out all fields.";
+            _view.Message = "Please fill out all fields.";
             return false;     
         }
 
         private void AttemptToLogin()
         {
-            LoginResult loginResult = _unitOfWork.CLIENTs.Login(_username, _password);
+            LoginResult loginResult = _uOW.CLIENTs.Login(_username, _password);
             bool loginAttemptSuccessful = loginResult.Result;
             if(loginAttemptSuccessful)
             {
                 _clientType = (ClientType)loginResult.ClientType;
-                _loginView.Message = "Login Succesfull!";
+                _view.Message = "Login Succesfull!";
 
                 CheckClientType();
             }
             else
             {
-                _loginView.Message = "Login Failed!";
+                _view.Message = "Login Failed!";
             }
         }
         private void CheckClientType()
@@ -79,11 +79,11 @@ namespace CheckPointPresenters.Presenters
             switch(_clientType)
             {
                 case ClientType.User:
-                    _loginView.Message = "Logged in as User.";
-                    _loginView.RedirectToUserHomePage();
+                    _view.Message = "Logged in as User.";
+                    _view.RedirectToUserHomePage();
                     break;
                 case ClientType.Host:
-                    _loginView.Message = "Logged in as Host.";
+                    _view.Message = "Logged in as Host.";
                     break;
             }
         }   

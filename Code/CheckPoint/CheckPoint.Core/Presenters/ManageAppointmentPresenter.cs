@@ -15,9 +15,9 @@ namespace CheckPointPresenters.Presenters
 {
     public class ManageAppointmentPresenter : PresenterBase
     {
-        private readonly IManageAppointmentView _manageAppointmentView;
-        private readonly IManageAppointmentModel<APPOINTMENT, AppointmentModel> _manageAppointmentModel;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IManageAppointmentView _view;
+        private readonly IManageAppointmentModel<APPOINTMENT, AppointmentModel> _model;
+        private readonly IUnitOfWork _uOW;
 
         private AppointmentModel _appointmentModel = new AppointmentModel();
         private APPOINTMENT _appointmentToSave;
@@ -31,18 +31,19 @@ namespace CheckPointPresenters.Presenters
         private APPOINTMENT _appointmentToDisplay;
         private string _selectedapp;
 
-        private string _loggedInUsername = "Morten";  //TODO..this will be auto set later :D
+        private string _loggedInUsername = "Kevin";  //TODO..this will be auto set later :D
 
-        public ManageAppointmentPresenter(IManageAppointmentView manageAppointmentView, IManageAppointmentModel<APPOINTMENT, AppointmentModel>
+        public ManageAppointmentPresenter(IManageAppointmentView manageAppointmentView,
+                                          IManageAppointmentModel<APPOINTMENT, AppointmentModel>
                                           manageAppointmentModel, IUnitOfWork unitOfWork)
         {
-            _manageAppointmentView = manageAppointmentView;
-            _manageAppointmentModel = manageAppointmentModel;
-            _unitOfWork = unitOfWork;
+            _view = manageAppointmentView;
+            _model = manageAppointmentModel;
+            _uOW = unitOfWork;
 
-            _manageAppointmentView.UpdateAppointment += OnUpdateAppointmentButtonClicked;
-            _manageAppointmentView.FetchData += OnFetchDataEvent;
-            _manageAppointmentView.ReloadPage += OnReloadPageEvent;
+            _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
+            _view.FetchData += OnFetchDataEvent;
+            _view.ReloadPage += OnReloadPageEvent;
 
         }
         public override void FirstTimeInit()
@@ -52,24 +53,24 @@ namespace CheckPointPresenters.Presenters
 
         private void CreateAppointmentModelFromInput()
         {
-            _appointmentModel.CourseId = Convert.ToInt32(_manageAppointmentView.CourseId);
-            _appointmentModel.AppointmentName = _manageAppointmentView.AppointmentName;
-            _appointmentModel.Description = _manageAppointmentView.Description;
-            _appointmentModel.Date = _manageAppointmentView.Date;
-            _appointmentModel.StartTime = _manageAppointmentView.StartTime;
-            _appointmentModel.EndTime = _manageAppointmentView.EndTime;
-            _appointmentModel.UserName = _manageAppointmentView.UserName;
-            _appointmentModel.Address = _manageAppointmentView.Address;
-            _appointmentModel.PostalCode = _manageAppointmentView.PostalCode;
-            _appointmentModel.IsObligatory = Convert.ToBoolean(_manageAppointmentView.IsObligatory);
-            _appointmentModel.IsCancelled = Convert.ToBoolean(_manageAppointmentView.IsCancelled);
+            _appointmentModel.CourseId = Convert.ToInt32(_view.CourseId);
+            _appointmentModel.AppointmentName = _view.AppointmentName;
+            _appointmentModel.Description = _view.Description;
+            _appointmentModel.Date = _view.Date;
+            _appointmentModel.StartTime = _view.StartTime;
+            _appointmentModel.EndTime = _view.EndTime;
+            _appointmentModel.UserName = _view.UserName;
+            _appointmentModel.Address = _view.Address;
+            _appointmentModel.PostalCode = _view.PostalCode;
+            _appointmentModel.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
+            _appointmentModel.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
         private bool AppointmentToCreateIsValid()
         {
             bool AppointmentFieldsAreValid = _appointmentModel.IsValid(_appointmentModel);
             if (AppointmentFieldsAreValid)
             {
-                _appointmentToSave = _manageAppointmentModel.ConvertAppointmentModelToAppointment(_appointmentModel);
+                _appointmentToSave = _model.ConvertAppointmentModelToAppointment(_appointmentModel);
                 return true;
             }
             else
@@ -81,31 +82,31 @@ namespace CheckPointPresenters.Presenters
         }
         private void DisplayValidationMessage()
         {
-            _manageAppointmentView.Message = string.Empty;
+            _view.Message = string.Empty;
 
             foreach (string message in _validationErrorMessage)
             {
-                _manageAppointmentView.Message += message;
+                _view.Message += message;
             }
         }
         private void SaveAppointmentToDatabase(APPOINTMENT newAppointment)
         {
-            _unitOfWork.APPOINTMENTs.Add(newAppointment);
+            _uOW.APPOINTMENTs.Add(newAppointment);
             bool saveCompleted = AttemptSaveToDb();
             if (saveCompleted)
             {
-                _manageAppointmentView.Message = "New Appointment Saved Succesfully!";
+                _view.Message = "New Appointment Saved Succesfully!";
                 SetButtonVisibilityState();
             }
             else
             {
-                _manageAppointmentView.Message = "Failed to Save Appointment" + _errorMessage;
+                _view.Message = "Failed to Save Appointment" + _errorMessage;
             }
         }
 
         private bool AttemptSaveToDb()
         {
-            SaveResult saveResult = _unitOfWork.myComplete();
+            SaveResult saveResult = _uOW.Complete();
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
@@ -118,14 +119,14 @@ namespace CheckPointPresenters.Presenters
         private void PopulateAppointmentList()
         {
             string user = _loggedInUsername;
-            _listOfAppointments = _unitOfWork.APPOINTMENTs.GetAllAppointmentsFor(user).ToList();                                          
+            _listOfAppointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(user).ToList();                                          
             _listOfAppointmentNames = _listOfAppointments.Select(app => app.AppointmentName).ToList();
 
-            _manageAppointmentView.FillAppointmentList(_listOfAppointmentNames);
+            _view.FillAppointmentList(_listOfAppointmentNames);
         }
         private void SelectAppointmentToDisplay()
         {
-            _selectedAppointment = _listOfAppointments
+            _selectedAppointment = _listOfAppointments 
                                   .Where(app => app.AppointmentName == _selectedapp).ToList();
 
             _appointmentToDisplay = _selectedAppointment.FirstOrDefault();
@@ -134,18 +135,18 @@ namespace CheckPointPresenters.Presenters
         {
             SelectAppointmentToDisplay();
 
-            _manageAppointmentView.CourseId = _appointmentToDisplay.CourseId.ToString();
-            _manageAppointmentView.AppointmentName = _appointmentToDisplay.AppointmentName;
-            _manageAppointmentView.Description = _appointmentToDisplay.Description;
-            _manageAppointmentView.Date = _appointmentToDisplay.Date.ToString("dd/MM/yyyy");
-            _manageAppointmentView.StartTime = _appointmentToDisplay.StartTime.ToString();
-            _manageAppointmentView.EndTime = _appointmentToDisplay.EndTime.ToString();
-            _manageAppointmentView.Address = _appointmentToDisplay.Address;
-            _manageAppointmentView.PostalCode = _appointmentToDisplay.PostalCode.ToString();
-            _manageAppointmentView.UserName = _appointmentToDisplay.UserName;
-            _manageAppointmentView.IsObligatory = _appointmentToDisplay.IsObligatory.ToString();
-            _manageAppointmentView.IsCancelled = _appointmentToDisplay.IsCancelled.ToString();
-            _manageAppointmentView.AppointmentNameList = _selectedapp;
+            _view.CourseId = _appointmentToDisplay.CourseId.ToString();
+            _view.AppointmentName = _appointmentToDisplay.AppointmentName;
+            _view.Description = _appointmentToDisplay.Description;
+            _view.Date = _appointmentToDisplay.Date.ToString("dd/MM/yyyy");
+            _view.StartTime = _appointmentToDisplay.StartTime.ToString();
+            _view.EndTime = _appointmentToDisplay.EndTime.ToString();
+            _view.Address = _appointmentToDisplay.Address;
+            _view.PostalCode = _appointmentToDisplay.PostalCode.ToString();
+            _view.UserName = _appointmentToDisplay.UserName;
+            _view.IsObligatory = _appointmentToDisplay.IsObligatory.ToString();
+            _view.IsCancelled = _appointmentToDisplay.IsCancelled.ToString();
+            _view.AppointmentNameList = _selectedapp;
         }
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
@@ -155,27 +156,40 @@ namespace CheckPointPresenters.Presenters
             bool appointmentDataIsValid = AppointmentToCreateIsValid();
             if (appointmentDataIsValid)
             {
-                _appointmentToSave = _manageAppointmentModel.ConvertAppointmentModelToAppointment(_appointmentModel);
+                _appointmentToSave = _model.ConvertAppointmentModelToAppointment(_appointmentModel);
                 SaveAppointmentToDatabase(_appointmentToSave);
             }
         }
         private void OnFetchDataEvent(object sender, EventArgs e)
         {
-            _selectedapp = _manageAppointmentView.AppointmentNameList;
-            if (_listOfAppointments == null)
+            _selectedapp = _view.AppointmentNameList;
+
+            bool listIsNull = (_listOfAppointments == null);
+            bool listNotEmpty = (_listOfAppointments.Count > 0);
+
+            if (listIsNull)
             {
                 PopulateAppointmentList();
                 DisplaySelectedAppointmentData();
             }
+            else if (listNotEmpty)
+            {
+                DisplaySelectedAppointmentData();
+            }
+            else
+            {
+                _view.UpdateButtonVisible = false;
+                _view.Message = "No appointments to manage.";
+            }
         }
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
-            _manageAppointmentView.RedirectAfterClickEvent();
+            _view.RedirectAfterClickEvent();
         }
         private void SetButtonVisibilityState()
         {
-            _manageAppointmentView.UpdateButtonVisible = false;
-            _manageAppointmentView.ContinueButtonVisible = true;
+            _view.UpdateButtonVisible = false;
+            _view.ContinueButtonVisible = true;
         }
     }
 }

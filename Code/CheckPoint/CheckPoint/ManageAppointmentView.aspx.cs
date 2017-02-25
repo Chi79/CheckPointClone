@@ -134,5 +134,13 @@ namespace CheckPoint.Views
                 ReloadPage(this, EventArgs.Empty);
             }
         }
+
+        protected void ddlSelectAppointment_Load(object sender, EventArgs e)
+        {
+            if (FetchData != null)
+            {
+                FetchData(this, EventArgs.Empty);
+            }
+        }
     }
 }

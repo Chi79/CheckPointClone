@@ -20,9 +20,13 @@ namespace CheckPointCommon.ViewInterfaces
         string UserName { get; }
         string IsCancelled { get; }
         string IsObligatory { get; }
+        bool ContinueButtonVisible { set; }
+        bool CreateButtonVisible { set; }
+        void RedirectAfterClickEvent();
 
         string Message { get;  set; }
 
         event EventHandler<EventArgs> CreateNewAppointment;
+        event EventHandler<EventArgs> Continue;
     }
 }

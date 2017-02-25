@@ -13,7 +13,7 @@ namespace CheckPointCommon.RepositoryInterfaces
         IAppointmentRepository APPOINTMENTs { get; }
         ICourseRepository COURSEs { get; }
         IAttendeeRepository ATTENDEEs { get; } 
-        SaveResult myComplete();
+        SaveResult Complete();
         
     }
 }

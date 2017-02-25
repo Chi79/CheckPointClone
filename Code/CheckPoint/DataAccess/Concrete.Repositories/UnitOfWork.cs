@@ -43,7 +43,7 @@ namespace DataAccess.Concrete.Repositories
         {
             _context.Dispose();
         }
-        public SaveResult myComplete()
+        public SaveResult Complete()
         {
             SaveResult SaveResult = new SaveResult { };
             SaveResult.Result = 0;
