@@ -33,11 +33,13 @@ namespace CheckPointPresenters.Presenters
         private APPOINTMENT _appointmentToDisplay;
         private string _selectedAppointmentName;
 
+
         private string _loggedInUsername = "Morten";  //TODO..this will be auto set later :D
 
         public ManageAppointmentPresenter(IManageAppointmentView manageAppointmentView,
                                           IManageAppointmentModel<APPOINTMENT, AppointmentDTO>
                                           manageAppointmentModel, IUnitOfWork unitOfWork)
+
         {
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
@@ -47,7 +49,9 @@ namespace CheckPointPresenters.Presenters
             _view.AddAppointment += OnAddAppointmentButtonClicked;
             _view.FetchData += OnFetchDataEvent;
             _view.ReloadPage += OnReloadPageEvent;
-
+            _view.DeleteAppointment += OnDeleteAppointmentButtonClicked;
+            _view.YesButtonClicked += _OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
         }
 
         public override void FirstTimeInit()
@@ -56,21 +60,42 @@ namespace CheckPointPresenters.Presenters
             SetAppointmentList();
             CheckAppointmentStatus();
         }
+
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
             _view.RedirectAfterClickEvent();
         }
+
         private void OnFetchDataEvent(object sender, EventArgs e)
         {
             CheckAppointmentStatus();
         }
+
         private void OnAddAppointmentButtonClicked(object sender, EventArgs e)
         {
             Execute(DbAction.Create);
         }
+
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
             Execute(DbAction.Update);
+        }
+
+        private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            Execute(DbAction.Delete);
+        }
+
+        private void OnNoButtonClicked(object sender, EventArgs e)
+        {
+            DecisionButtonsHide();
+            _view.Message = "Ready.";
+        }
+
+        private void _OnYesButtonClicked(object sender, EventArgs e)
+        {      
+            DecisionButtonsHide();
+            PerformJob();
         }
 
         private void CreateAppointmentDTOFromInput()
@@ -87,6 +112,7 @@ namespace CheckPointPresenters.Presenters
             _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
+
         private bool ValidateDTO()
         {
             _appointmentDTO.FillPropertyList(_appointmentDTO);
@@ -114,7 +140,80 @@ namespace CheckPointPresenters.Presenters
                 _view.Message += message;
             }
         }
-   
+
+        private void DisplayActionMessage(DbAction action)
+        {
+            if(action == DbAction.Create)
+            {
+                _view.Message = "New Appointment Added Succesfully!";
+            }
+            if (action == DbAction.Update)
+            {
+                _view.Message = "New Appointment Updated Succesfully!";
+            }
+            if (action == DbAction.Delete)
+            {
+                _view.Message = "Appointment Deleted Succesfully!";
+            }
+            ContinueButtonsShow();
+        }
+
+        private void Execute(DbAction action)
+        {
+            CreateAppointmentDTOFromInput();
+            bool DataIsValid = ValidateDTO();
+            if(DataIsValid)
+            {
+                ConfirmAction(action);
+            }  
+        }
+
+        private void ConfirmAction(DbAction action)
+        {
+            _view.JobState = (int)action;
+
+            if(action == DbAction.Delete)
+            {
+                _view.Message = "You are about to delete this appointment! Do you wish to continue?";
+            }
+            if (action == DbAction.Create)
+            {
+                _view.Message = "You are about to add this appointment! Do you wish to continue?";
+            }
+            if (action == DbAction.Update)
+            {
+                _view.Message = "You are about to update this appointment! Do you wish to continue?";
+            }
+            DecisionButtonsShow();
+
+        }
+
+        private void PerformJob()
+        {
+            if(_view.JobState == (int)DbAction.Delete)
+            {
+                CheckAppointmentStatus();
+                _uOW.APPOINTMENTs.Remove(_appointmentToDisplay);
+            }
+            if (_view.JobState == (int)DbAction.Create)
+            {
+                FinalCheck();
+                _uOW.APPOINTMENTs.Add(_validatedAppointment);
+            }
+            if (_view.JobState == (int)DbAction.Update)
+            {
+                FinalCheck();
+                UpdateAppointmentData();
+            }
+            UpdateDatabaseWithChanges((DbAction)_view.JobState);
+        }
+
+        private void FinalCheck()
+        {
+            CreateAppointmentDTOFromInput();
+            ValidateDTO();
+        }
+
         private void UpdateDatabaseWithChanges(DbAction action)
         {
             bool saveCompleted = AttemptSaveToDb();
@@ -124,44 +223,10 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
-                _view.Message = "Failed to Add Appointment" + _errorMessage;
+                _view.Message = "Failed to save changes!" + _errorMessage;
             }
         }
-        private void DisplayActionMessage(DbAction action)
-        {
-            if(action == DbAction.Create)
-            {
-                _view.Message = "New Appointment Added Succesfully!";
-                SetButtonVisibilityState();
-            }
-            if (action == DbAction.Update)
-            {
-                _view.Message = "New Appointment Updated Succesfully!";
-                SetButtonVisibilityState();
-            }
-        }
-        private void Execute(DbAction action)
-        {
-            CreateAppointmentDTOFromInput();
-            bool appointmentIsValidated = ValidateDTO();
-            if (appointmentIsValidated)
-            {
-                PerformAction(action);
-            }
-        }
-        private void PerformAction(DbAction action)
-        {
-            if (action == DbAction.Create)
-            {
-                _uOW.APPOINTMENTs.Add(_validatedAppointment);
-                UpdateDatabaseWithChanges(action);
-            }
-            if (action == DbAction.Update)
-            {
-                UpdateAppointmentData();
-                UpdateDatabaseWithChanges(action);
-            }
-        }
+
         private bool AttemptSaveToDb()
         {
             SaveResult saveResult = _uOW.Complete();
@@ -174,6 +239,7 @@ namespace CheckPointPresenters.Presenters
             }
             return true;
         }
+
         private void UpdateAppointmentData()
         {
             _appointmentToUpdate = _uOW.APPOINTMENTs.GetAppointmentByAppointmentName(_view.AppointmentNameList);
@@ -212,6 +278,7 @@ namespace CheckPointPresenters.Presenters
 
             _appointmentToDisplay = _selectedAppointment.FirstOrDefault();
         }
+
         private void DisplaySelectedAppointmentData()
         {
             SelectAppointmentToDisplay();
@@ -257,17 +324,45 @@ namespace CheckPointPresenters.Presenters
             bool ListIsEmpty = (_listOfAppointments.Count == 0);
             if (ListIsEmpty)
             {
-                _view.UpdateButtonVisible = false;
-                _view.AddButtonVisible = false;
+                AllButtonsHide();
                 _view.Message = "No appointments to manage.";
             }
         }
 
-        private void SetButtonVisibilityState()
+        private void ContinueButtonsShow()
         {
             _view.UpdateButtonVisible = false;
             _view.AddButtonVisible = false;
+            _view.DeleteButtonVisible = false;
             _view.ContinueButtonVisible = true;
+        }
+
+        private void DecisionButtonsShow()
+        {
+            _view.UpdateButtonVisible = false;
+            _view.AddButtonVisible = false;
+            _view.DeleteButtonVisible = false;
+            _view.ContinueButtonVisible = false;
+            _view.NoButtonVisible = true;
+            _view.YesButtonVisible = true;
+        }
+
+        private void DecisionButtonsHide()
+        {
+            _view.UpdateButtonVisible = true;
+            _view.AddButtonVisible = true;
+            _view.DeleteButtonVisible = true;
+            _view.ContinueButtonVisible = false;
+            _view.NoButtonVisible = false;
+            _view.YesButtonVisible = false;
+        }
+
+        private void AllButtonsHide()
+        {
+            _view.UpdateButtonVisible = false;
+            _view.AddButtonVisible = false;
+            _view.DeleteButtonVisible = false;
+            _view.ContinueButtonVisible = false;
         }
     }
 }

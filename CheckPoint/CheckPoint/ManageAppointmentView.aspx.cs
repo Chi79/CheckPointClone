@@ -103,6 +103,23 @@ namespace CheckPoint.Views
         {
             set { btnAddAppointment.Visible = value; }
         }
+        public bool DeleteButtonVisible
+        {
+            set { btnDeleteAppointment.Visible = value; }
+        }
+        public bool YesButtonVisible
+        {
+            set { btnYes.Visible = value; }
+        }
+        public bool NoButtonVisible
+        {
+            set { btnNo.Visible = value; }
+        }
+        public int JobState
+        {
+            get { return (int)Session["job"]; }
+            set { Session["job"] = value; }
+        }
 
         public void BindAppointmentList()
         {
@@ -118,9 +135,12 @@ namespace CheckPoint.Views
         {
             Response.Redirect("ManageAppointmentView.aspx");
         }
+        public event EventHandler<EventArgs> YesButtonClicked;
+        public event EventHandler<EventArgs> NoButtonClicked;
 
         public event EventHandler<EventArgs> UpdateAppointment;
         public event EventHandler<EventArgs> AddAppointment;
+        public event EventHandler<EventArgs> DeleteAppointment;
         public event EventHandler<EventArgs> FetchData;
         public event EventHandler<EventArgs> ReloadPage;
 
@@ -158,6 +178,30 @@ namespace CheckPoint.Views
             if (AddAppointment != null)
             {
                 AddAppointment(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (DeleteAppointment != null)
+            {
+                DeleteAppointment(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            if (YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            if (NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
             }
         }
     }
