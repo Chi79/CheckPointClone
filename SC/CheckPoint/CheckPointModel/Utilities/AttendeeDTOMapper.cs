@@ -12,21 +12,21 @@ namespace CheckPointModel.Utilities
     {
         //TODO
 
-        public static ATTENDEE ConvertAttendeeDTOToAttendee(AttendeeDTO attendeModel)
+        public static ATTENDEE ConvertAttendeeDTOToAttendee(AttendeeDTO attendeDTO)
         {
            
 
             ATTENDEE attendee = new ATTENDEE();
 
 
-            attendee.AppointmentId = attendeModel.AppointmentId;
-            attendee.TagId = attendeModel.TagId;
-            attendee.StatusId = attendeModel.StatusId;
-            attendee.PersonalNote = attendeModel.PersonalNote;
+            attendee.AppointmentId = attendeDTO.AppointmentId;
+            attendee.TagId = attendeDTO.TagId;
+            attendee.StatusId = attendeDTO.StatusId;
+            attendee.PersonalNote = attendeDTO.PersonalNote;
 
-            if (ValidateStringInput.IsStringValid(attendeModel.TimeAttended))  // allows timeattended to be null
+            if (ValidateStringInput.IsStringValid(attendeDTO.TimeAttended))  // allows timeattended to be null
             {
-                DateTime parsedTimeAttended = DateTimeParser.ParseTimeAttended(attendeModel.TimeAttended);
+                DateTime parsedTimeAttended = DateTimeParser.ParseTimeAttended(attendeDTO.TimeAttended);
                 attendee.TimeAttended = parsedTimeAttended;
             }
             

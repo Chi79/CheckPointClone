@@ -305,12 +305,12 @@ namespace CheckPointPresenters.Presenters
                 _selectedAppointmentName = _view.AppointmentNameList;
 
                 GetAppointmentList();
-                IsListFull();
+                IsListFilled();
                 IsListEmpty();
             }
         }
 
-        private void IsListFull()
+        private void IsListFilled()
         {
             bool listIsFull = (_listOfAppointments.Count > 0);
             if (listIsFull)
@@ -321,7 +321,7 @@ namespace CheckPointPresenters.Presenters
 
         private void IsListEmpty()
         {
-            bool ListIsEmpty = (_listOfAppointments.Count == 0);
+            bool ListIsEmpty = (_listOfAppointments.Count == 0); 
             if (ListIsEmpty)
             {
                 AllButtonsHide();
