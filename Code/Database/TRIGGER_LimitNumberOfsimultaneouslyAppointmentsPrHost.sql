@@ -56,7 +56,7 @@ AS
 		 and @Description = Description and @Address = Address and @Date = Date and  @IsCancelled = IsCancelled and @UserName = UserName and @IsObligatory = IsObligatory)
 		 END
 		 ELSE	 
-		  RAISERROR('Too many appointments scheduled in the same timespan',16,1)
+		  RAISERROR(' Too many appointments scheduled in the same timespan ',16,1)
 		 
 		 
 		 
