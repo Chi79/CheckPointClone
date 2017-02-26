@@ -32,9 +32,19 @@ namespace CheckPointCommon.ViewInterfaces
         bool ContinueButtonVisible { set; }
         bool UpdateButtonVisible { set; }
         bool AddButtonVisible { set; }
+        bool DeleteButtonVisible { set; }
+
+        bool YesButtonVisible { set; }
+        bool NoButtonVisible { set; }
+
+        int JobState { get; set; }
+
+        event EventHandler<EventArgs> YesButtonClicked;
+        event EventHandler<EventArgs> NoButtonClicked;
 
         event EventHandler<EventArgs> UpdateAppointment;
         event EventHandler<EventArgs> AddAppointment;
+        event EventHandler<EventArgs> DeleteAppointment;
         event EventHandler<EventArgs> FetchData;
         event EventHandler<EventArgs> ReloadPage;
 
