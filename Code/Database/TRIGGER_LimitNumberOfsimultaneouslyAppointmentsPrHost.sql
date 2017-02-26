@@ -33,6 +33,7 @@ AS
 			where (Date = @Date and  (StartTime <= @StartTime and @StartTime < EndTime)))
 			<10
 		  )
+		  BEGIN
 		  INSERT INTO APPOINTMENT
 		  VALUES
 		  (
@@ -52,7 +53,12 @@ AS
           FROM [dbo].[APPOINTMENT]
           WHERE (@@ROWCOUNT > 0 AND [AppointmentId] = scope_identity()
 		 and CourseId = @CourseId and @StartTime =StartTime and @EndTime = EndTime and @PostalCode = PostalCode and @AppointmentName = AppointmentName
-		 and @Description = Description and @Address = Address and @Date = Date and  @IsCancelled = IsCancelled and @UserName = UserName and @IsObligatory = IsObligatory)		 		
+		 and @Description = Description and @Address = Address and @Date = Date and  @IsCancelled = IsCancelled and @UserName = UserName and @IsObligatory = IsObligatory)
+		 END
+		 ELSE	 
+		  RAISERROR('Too many appointments scheduled in the same timespan',16,1)
+		 
+		 
 		 
 
 		
