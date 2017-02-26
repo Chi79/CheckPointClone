@@ -14,7 +14,7 @@ namespace CheckPointModel.Models
     {
         public CLIENT ConvertClientModelToClient(ClientDTO client)
         {
-            return ClientModelMapper.convertToClient(client);
+            return ClientDTOMapper.convertClientDTOToClient(client);
         }
     }
 }

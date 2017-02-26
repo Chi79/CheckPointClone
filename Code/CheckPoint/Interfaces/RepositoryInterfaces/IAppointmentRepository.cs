@@ -10,5 +10,7 @@ namespace CheckPointCommon.RepositoryInterfaces
     public interface IAppointmentRepository : IRepository<APPOINTMENT>
     {
         IEnumerable<APPOINTMENT> GetAllAppointmentsFor(string userName);
+
+        APPOINTMENT GetAppointmentByAppointmentName(string appointmentName);
     }
 }

@@ -50,9 +50,9 @@
     <Compile Include="DTOs\AttendeeDTO.cs" />
     <Compile Include="DTOs\ClientDTO.cs" />
     <Compile Include="DTOs\CourseDTO.cs" />
-    <Compile Include="Utilities\AppointmentModelMapper.cs" />
-    <Compile Include="Utilities\AttendeeModelMapper.cs" />
-    <Compile Include="Utilities\CourseModelMapper.cs" />
+    <Compile Include="Utilities\AppointmentDTOMapper.cs" />
+    <Compile Include="Utilities\AttendeeDTOMapper.cs" />
+    <Compile Include="Utilities\CourseDTOMapper.cs" />
     <Compile Include="Utilities\DateTimeParser.cs" />
     <Compile Include="Utilities\ValidateDateInput.cs" />
     <Compile Include="Utilities\DateTimeToTimeConverter.cs" />
@@ -70,7 +70,7 @@
     <Compile Include="Models\ManageAttendanceModel.cs" />
     <Compile Include="Models\ManageCourseModel.cs" />
     <Compile Include="Models\UpdateProfileModel.cs" />
-    <Compile Include="Utilities\ClientModelMapper.cs" />
+    <Compile Include="Utilities\ClientDTOMapper.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Utilities\ProperiesToStringListConverter.cs" />
     <Compile Include="Models\RegisterClientModel.cs" />

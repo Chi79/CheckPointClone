@@ -8,9 +8,9 @@ using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Utilities
 {
-    public class ClientModelMapper
+    public class ClientDTOMapper
     {
-        public static CLIENT convertToClient(ClientDTO clientModel)
+        public static CLIENT convertClientDTOToClient(ClientDTO clientModel)
         {
             CLIENT client = new CLIENT()
             {

@@ -8,11 +8,11 @@ using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Utilities
 {
-    public class AttendeeModelMapper
+    public class AttendeeDTOMapper
     {
         //TODO
 
-        public static ATTENDEE ConvertAttendeeModelToAttendee(AttendeeDTO attendeModel)
+        public static ATTENDEE ConvertAttendeeDTOToAttendee(AttendeeDTO attendeModel)
         {
            
 

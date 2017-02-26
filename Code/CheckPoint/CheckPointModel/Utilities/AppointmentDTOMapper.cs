@@ -11,7 +11,7 @@ namespace CheckPointModel.Utilities
     public class AppointmentDTOMapper
     {
         public static APPOINTMENT ConvertAppointmentDTOToAppointment(AppointmentDTO appointmentDTO)
-        {
+        {  
             DateTime parsedFromTime, parsedToTime, parsedDate;
             parsedFromTime = DateTimeParser.ParseAppointmentData(appointmentDTO.StartTime);
             parsedToTime = DateTimeParser.ParseAppointmentData(appointmentDTO.EndTime);
@@ -19,12 +19,12 @@ namespace CheckPointModel.Utilities
 
             APPOINTMENT appointment = new APPOINTMENT()
             {
-                CourseId = appointmentDTO.CourseId,
+                CourseId = Convert.ToInt32(appointmentDTO.CourseId),
                 AppointmentName = appointmentDTO.AppointmentName,
                 Description = appointmentDTO.Description,
                 Date = parsedDate,
-                StartTime = parsedFromTime.TimeOfDay,
-                EndTime = parsedToTime.TimeOfDay,
+                StartTime = (TimeSpan?)parsedFromTime.TimeOfDay,
+                EndTime = (TimeSpan?)parsedToTime.TimeOfDay,
                 Address = appointmentDTO.Address,
                 PostalCode = Convert.ToInt32(appointmentDTO.PostalCode),
                 UserName = appointmentDTO.UserName,

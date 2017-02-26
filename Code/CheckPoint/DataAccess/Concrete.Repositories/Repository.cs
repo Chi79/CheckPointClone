@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.RepositoryInterfaces;
 using System.Data.Entity;
+using System.Linq.Expressions;
 
 namespace DataAccess.Concrete.Repositories
 {
@@ -29,6 +30,14 @@ namespace DataAccess.Concrete.Repositories
         {
             Context.Set<T>().Add(type);
         }
-    
+        public void Remove(T type)
+        {
+            Context.Set<T>().Remove(type);
+        }
+        public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
+        {
+            return Context.Set<T>().Where(predicate);
+        }
+
     }
 }

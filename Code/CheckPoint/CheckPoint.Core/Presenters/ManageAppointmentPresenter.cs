@@ -10,6 +10,7 @@ using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
+using CheckPointCommon.Enums;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -20,7 +21,8 @@ namespace CheckPointPresenters.Presenters
         private readonly IUnitOfWork _uOW;
 
         private AppointmentDTO _appointmentDTO = new AppointmentDTO();
-        private APPOINTMENT _appointmentToSave;
+        private APPOINTMENT _validatedAppointment;
+        private APPOINTMENT _appointmentToUpdate;
 
         private string _errorMessage;
         private List<string> _validationErrorMessage;
@@ -42,19 +44,38 @@ namespace CheckPointPresenters.Presenters
             _uOW = unitOfWork;
 
             _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
+            _view.AddAppointment += OnAddAppointmentButtonClicked;
             _view.FetchData += OnFetchDataEvent;
             _view.ReloadPage += OnReloadPageEvent;
 
         }
+
         public override void FirstTimeInit()
         {
             GetAppointmentList();
             SetAppointmentList();
+            CheckAppointmentStatus();
+        }
+        private void OnReloadPageEvent(object sender, EventArgs e)
+        {
+            _view.RedirectAfterClickEvent();
+        }
+        private void OnFetchDataEvent(object sender, EventArgs e)
+        {
+            CheckAppointmentStatus();
+        }
+        private void OnAddAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            Execute(DbAction.Create);
+        }
+        private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            Execute(DbAction.Update);
         }
 
-        private void CreateAppointmentModelFromInput()
+        private void CreateAppointmentDTOFromInput()
         {
-            _appointmentDTO.CourseId = Convert.ToInt32(_view.CourseId);
+            _appointmentDTO.CourseId = _view.CourseId;
             _appointmentDTO.AppointmentName = _view.AppointmentName;
             _appointmentDTO.Description = _view.Description;
             _appointmentDTO.Date = _view.Date;
@@ -66,12 +87,14 @@ namespace CheckPointPresenters.Presenters
             _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
-        private bool AppointmentToCreateIsValid()
+        private bool ValidateDTO()
         {
-            bool AppointmentFieldsAreValid = _appointmentDTO.IsValid(_appointmentDTO);
-            if (AppointmentFieldsAreValid)
+            _appointmentDTO.FillPropertyList(_appointmentDTO);
+
+            bool appointmentDataIsValid = _appointmentDTO.IsValid(_appointmentDTO);
+            if (appointmentDataIsValid)
             {
-                _appointmentToSave = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
+                _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
                 return true;
             }
             else
@@ -81,6 +104,7 @@ namespace CheckPointPresenters.Presenters
                 return false;
             }
         }
+
         private void DisplayValidationMessage()
         {
             _view.Message = string.Empty;
@@ -90,22 +114,54 @@ namespace CheckPointPresenters.Presenters
                 _view.Message += message;
             }
         }
-        private void SaveAppointmentToDatabase(APPOINTMENT newAppointment)
+   
+        private void UpdateDatabaseWithChanges(DbAction action)
         {
-            _uOW.APPOINTMENTs.Add(newAppointment);
-
             bool saveCompleted = AttemptSaveToDb();
             if (saveCompleted)
             {
-                _view.Message = "New Appointment Saved Succesfully!";
-                SetButtonVisibilityState();
+                DisplayActionMessage(action);
             }
             else
             {
-                _view.Message = "Failed to Save Appointment" + _errorMessage;
+                _view.Message = "Failed to Add Appointment" + _errorMessage;
             }
         }
-
+        private void DisplayActionMessage(DbAction action)
+        {
+            if(action == DbAction.Create)
+            {
+                _view.Message = "New Appointment Added Succesfully!";
+                SetButtonVisibilityState();
+            }
+            if (action == DbAction.Update)
+            {
+                _view.Message = "New Appointment Updated Succesfully!";
+                SetButtonVisibilityState();
+            }
+        }
+        private void Execute(DbAction action)
+        {
+            CreateAppointmentDTOFromInput();
+            bool appointmentIsValidated = ValidateDTO();
+            if (appointmentIsValidated)
+            {
+                PerformAction(action);
+            }
+        }
+        private void PerformAction(DbAction action)
+        {
+            if (action == DbAction.Create)
+            {
+                _uOW.APPOINTMENTs.Add(_validatedAppointment);
+                UpdateDatabaseWithChanges(action);
+            }
+            if (action == DbAction.Update)
+            {
+                UpdateAppointmentData();
+                UpdateDatabaseWithChanges(action);
+            }
+        }
         private bool AttemptSaveToDb()
         {
             SaveResult saveResult = _uOW.Complete();
@@ -118,14 +174,31 @@ namespace CheckPointPresenters.Presenters
             }
             return true;
         }
+        private void UpdateAppointmentData()
+        {
+            _appointmentToUpdate = _uOW.APPOINTMENTs.GetAppointmentByAppointmentName(_view.AppointmentNameList);
+
+            _appointmentToUpdate.CourseId = _validatedAppointment.CourseId;
+            _appointmentToUpdate.AppointmentName = _validatedAppointment.AppointmentName;
+            _appointmentToUpdate.UserName = _validatedAppointment.UserName;
+            _appointmentToUpdate.Description = _validatedAppointment.Description;
+            _appointmentToUpdate.Date = _validatedAppointment.Date;
+            _appointmentToUpdate.StartTime = _validatedAppointment.StartTime;
+            _appointmentToUpdate.EndTime = _validatedAppointment.EndTime;
+            _appointmentToUpdate.Address = _validatedAppointment.Address;
+            _appointmentToUpdate.PostalCode = _validatedAppointment.PostalCode;
+            _appointmentToUpdate.IsObligatory = _validatedAppointment.IsObligatory;
+            _appointmentToUpdate.IsCancelled = _validatedAppointment.IsCancelled;
+        }
 
         private void GetAppointmentList()
         {
             string user = _loggedInUsername;
 
-            _listOfAppointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(user).ToList();                                          
+            _listOfAppointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(user).ToList();
             _listOfAppointmentNames = _listOfAppointments.Select(app => app.AppointmentName).ToList();
         }
+
         private void SetAppointmentList()
         {
             _view.SetDataSource = (_listOfAppointmentNames);
@@ -146,7 +219,7 @@ namespace CheckPointPresenters.Presenters
             _view.CourseId = _appointmentToDisplay.CourseId.ToString();
             _view.AppointmentName = _appointmentToDisplay.AppointmentName;
             _view.Description = _appointmentToDisplay.Description;
-            _view.Date = _appointmentToDisplay.Date.ToString("dd/MM/yyyy");
+            _view.Date = _appointmentToDisplay.Date.ToString("MM/dd/yyyy");
             _view.StartTime = _appointmentToDisplay.StartTime.ToString();
             _view.EndTime = _appointmentToDisplay.EndTime.ToString();
             _view.Address = _appointmentToDisplay.Address;
@@ -156,35 +229,20 @@ namespace CheckPointPresenters.Presenters
             _view.IsCancelled = _appointmentToDisplay.IsCancelled.ToString();
             _view.AppointmentNameList = _selectedapp;
         }
-        private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
-        {
-            CreateAppointmentModelFromInput();
-            _appointmentDTO.FillPropertyList(_appointmentDTO);
 
-            bool appointmentDataIsValid = AppointmentToCreateIsValid();
-            if (appointmentDataIsValid)
+        private void CheckAppointmentStatus()
+        {
+            bool newAppointmentIsSelected = !(_view.AppointmentNameList == _selectedapp);
+            if (newAppointmentIsSelected)
             {
-                _appointmentToSave = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
-                SaveAppointmentToDatabase(_appointmentToSave);
-            }
-        }
-        private void OnFetchDataEvent(object sender, EventArgs e)
-        {
-            _selectedapp = _view.AppointmentNameList;
+                _selectedapp = _view.AppointmentNameList;
 
-            IsListNull();
-            IsListFull();
-            IsListEmpty();
-
-        }
-        private void IsListNull()
-        {
-            bool listIsNull = (_listOfAppointments == null);
-            if (listIsNull)
-            {
                 GetAppointmentList();
+                IsListFull();
+                IsListEmpty();
             }
         }
+
         private void IsListFull()
         {
             bool listIsFull = (_listOfAppointments.Count > 0);
@@ -193,22 +251,22 @@ namespace CheckPointPresenters.Presenters
                 DisplaySelectedAppointmentData();
             }
         }
+
         private void IsListEmpty()
         {
             bool ListIsEmpty = (_listOfAppointments.Count == 0);
             if (ListIsEmpty)
             {
                 _view.UpdateButtonVisible = false;
+                _view.AddButtonVisible = false;
                 _view.Message = "No appointments to manage.";
             }
         }
-        private void OnReloadPageEvent(object sender, EventArgs e)
-        {
-            _view.RedirectAfterClickEvent();
-        }
+
         private void SetButtonVisibilityState()
         {
             _view.UpdateButtonVisible = false;
+            _view.AddButtonVisible = false;
             _view.ContinueButtonVisible = true;
         }
     }

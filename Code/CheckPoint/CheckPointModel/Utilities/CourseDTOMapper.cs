@@ -8,7 +8,7 @@ using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Utilities
 {
-    public class CourseModelMapper
+    public class CourseDTOMapper
     {
         //TODO
     }

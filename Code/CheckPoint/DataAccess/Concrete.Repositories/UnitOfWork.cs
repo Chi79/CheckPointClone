@@ -52,6 +52,7 @@ namespace DataAccess.Concrete.Repositories
             try
             {
                 SaveResult.Result = _context.SaveChanges();
+                SaveResult.Result = 1;
                 return SaveResult;
             }
             catch (DbEntityValidationException e)

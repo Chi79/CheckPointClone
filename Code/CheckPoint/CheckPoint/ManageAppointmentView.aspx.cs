@@ -89,24 +89,38 @@ namespace CheckPoint.Views
             get { return txtUserName.Text; }
             set { txtUserName.Text = value; }
         }
-        public bool ContinueButtonVisible { set { btnContinue.Visible = value; } }
-        public bool UpdateButtonVisible { set { btnUpdateAppointment.Visible = value; } }
+
+        public bool ContinueButtonVisible
+        {
+            set { btnContinue.Visible = value; }
+        }
+
+        public bool UpdateButtonVisible
+        {
+            set { btnUpdateAppointment.Visible = value; }
+        }
+        public bool AddButtonVisible
+        {
+            set { btnAddAppointment.Visible = value; }
+        }
 
         public void BindAppointmentList()
         {
-            //ddlSelectAppointment.DataSource = list;
             ddlSelectAppointment.DataBind();
         }
+
         public List<string> SetDataSource
         {
             set { ddlSelectAppointment.DataSource = value; }
         }
+
         public void RedirectAfterClickEvent()
         {
             Response.Redirect("ManageAppointmentView.aspx");
         }
 
         public event EventHandler<EventArgs> UpdateAppointment;
+        public event EventHandler<EventArgs> AddAppointment;
         public event EventHandler<EventArgs> FetchData;
         public event EventHandler<EventArgs> ReloadPage;
 
@@ -131,19 +145,19 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnFindAppoimtments_Click(object sender, EventArgs e)
+        protected void btnContinue_Click(object sender, EventArgs e)
         {
-            if(ReloadPage != null)
+            if (ReloadPage!= null)
             {
                 ReloadPage(this, EventArgs.Empty);
             }
         }
 
-        protected void ddlSelectAppointment_Load(object sender, EventArgs e)
+        protected void btnAddAppointment_Click(object sender, EventArgs e)
         {
-            if (FetchData != null)
+            if (AddAppointment != null)
             {
-                FetchData(this, EventArgs.Empty);
+                AddAppointment(this, EventArgs.Empty);
             }
         }
     }

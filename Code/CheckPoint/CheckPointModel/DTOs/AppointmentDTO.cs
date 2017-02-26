@@ -11,8 +11,7 @@ namespace CheckPointModel.DTOs
     public class AppointmentDTO : AppointmentValidator
     {
         //TODO
-       public int AppointmentID { get; set; }
-       public int CourseId { get; set; }
+       public string CourseId { get; set; }
        public string StartTime { get; set; }
        public string EndTime { get; set; }
        public string PostalCode { get; set; }

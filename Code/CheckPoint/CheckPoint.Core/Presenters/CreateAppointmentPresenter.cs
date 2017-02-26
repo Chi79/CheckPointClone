@@ -57,7 +57,7 @@ namespace CheckPointPresenters.Presenters
         }
         private void CreateAppointmentDTOFromInput()
         {
-            _appointmentDTO.CourseId = Convert.ToInt32(_view.CourseId);
+            _appointmentDTO.CourseId = _view.CourseId;
             _appointmentDTO.AppointmentName = _view.AppointmentName;
             _appointmentDTO.Description = _view.Description;
             _appointmentDTO.Date = _view.Date;
