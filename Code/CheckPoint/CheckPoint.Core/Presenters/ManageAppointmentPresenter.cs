@@ -31,7 +31,7 @@ namespace CheckPointPresenters.Presenters
         private List<APPOINTMENT> _listOfAppointments;
         private List<APPOINTMENT> _selectedAppointment;
         private APPOINTMENT _appointmentToDisplay;
-        private string _selectedapp;
+        private string _selectedAppointmentName;
 
         private string _loggedInUsername = "Morten";  //TODO..this will be auto set later :D
 
@@ -208,7 +208,7 @@ namespace CheckPointPresenters.Presenters
         private void SelectAppointmentToDisplay()
         {
             _selectedAppointment = _listOfAppointments 
-                                  .Where(app => app.AppointmentName == _selectedapp).ToList();
+                                  .Where(app => app.AppointmentName == _selectedAppointmentName).ToList();
 
             _appointmentToDisplay = _selectedAppointment.FirstOrDefault();
         }
@@ -227,15 +227,15 @@ namespace CheckPointPresenters.Presenters
             _view.UserName = _appointmentToDisplay.UserName;
             _view.IsObligatory = _appointmentToDisplay.IsObligatory.ToString();
             _view.IsCancelled = _appointmentToDisplay.IsCancelled.ToString();
-            _view.AppointmentNameList = _selectedapp;
+            _view.AppointmentNameList = _selectedAppointmentName;
         }
 
         private void CheckAppointmentStatus()
         {
-            bool newAppointmentIsSelected = !(_view.AppointmentNameList == _selectedapp);
+            bool newAppointmentIsSelected = !(_view.AppointmentNameList == _selectedAppointmentName);
             if (newAppointmentIsSelected)
             {
-                _selectedapp = _view.AppointmentNameList;
+                _selectedAppointmentName = _view.AppointmentNameList;
 
                 GetAppointmentList();
                 IsListFull();
