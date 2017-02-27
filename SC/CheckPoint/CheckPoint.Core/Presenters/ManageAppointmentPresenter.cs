@@ -27,8 +27,8 @@ namespace CheckPointPresenters.Presenters
         private string _errorMessage;
         private List<string> _validationErrorMessage;
 
-        private List<string> _listOfAppointmentNames;
-        private List<APPOINTMENT> _listOfAppointments;
+        private List<string> _allAppointmentNames;
+        private List<APPOINTMENT> _allAppointmentsForClient;
         private List<APPOINTMENT> _selectedAppointment;
         private APPOINTMENT _appointmentToDisplay;
         private string _selectedAppointmentName;
@@ -56,9 +56,9 @@ namespace CheckPointPresenters.Presenters
 
         public override void FirstTimeInit()
         {
-            GetAppointmentList();
-            SetAppointmentList();
-            CheckAppointmentStatus();
+            GetAllAppointmentForClient();
+            BindAppointmentNamesToViewList();
+            CheckSelectedAppointmentStatus();
         }
 
         private void OnReloadPageEvent(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnFetchDataEvent(object sender, EventArgs e)
         {
-            CheckAppointmentStatus();
+            CheckSelectedAppointmentStatus();
         }
 
         private void OnAddAppointmentButtonClicked(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace CheckPointPresenters.Presenters
         {
             if(_view.JobState == (int)DbAction.Delete)
             {
-                CheckAppointmentStatus();
+                CheckSelectedAppointmentStatus();
                 _uOW.APPOINTMENTs.Remove(_appointmentToDisplay);
             }
             if (_view.JobState == (int)DbAction.Create)
@@ -257,23 +257,23 @@ namespace CheckPointPresenters.Presenters
             _appointmentToUpdate.IsCancelled = _validatedAppointment.IsCancelled;
         }
 
-        private void GetAppointmentList()
+        private void GetAllAppointmentForClient()
         {
-            string user = _loggedInUsername;
+            string client = _loggedInUsername;
 
-            _listOfAppointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(user).ToList();
-            _listOfAppointmentNames = _listOfAppointments.Select(app => app.AppointmentName).ToList();
+            _allAppointmentsForClient = _uOW.APPOINTMENTs.GetAllAppointmentsFor(client).ToList();
+            _allAppointmentNames = _allAppointmentsForClient.Select(app => app.AppointmentName).ToList();
         }
 
-        private void SetAppointmentList()
+        private void BindAppointmentNamesToViewList()
         {
-            _view.SetDataSource = (_listOfAppointmentNames);
+            _view.SetDataSource = (_allAppointmentNames);
             _view.BindAppointmentList();
         }
 
         private void SelectAppointmentToDisplay()
         {
-            _selectedAppointment = _listOfAppointments 
+            _selectedAppointment = _allAppointmentsForClient 
                                   .Where(app => app.AppointmentName == _selectedAppointmentName).ToList();
 
             _appointmentToDisplay = _selectedAppointment.FirstOrDefault();
@@ -297,14 +297,14 @@ namespace CheckPointPresenters.Presenters
             _view.AppointmentNameList = _selectedAppointmentName;
         }
 
-        private void CheckAppointmentStatus()
+        private void CheckSelectedAppointmentStatus()
         {
             bool newAppointmentIsSelected = !(_view.AppointmentNameList == _selectedAppointmentName);
             if (newAppointmentIsSelected)
             {
                 _selectedAppointmentName = _view.AppointmentNameList;
 
-                GetAppointmentList();
+                GetAllAppointmentForClient();
                 IsListFilled();
                 IsListEmpty();
             }
@@ -312,7 +312,7 @@ namespace CheckPointPresenters.Presenters
 
         private void IsListFilled()
         {
-            bool listIsFull = (_listOfAppointments.Count > 0);
+            bool listIsFull = (_allAppointmentsForClient.Count > 0);
             if (listIsFull)
             {
                 DisplaySelectedAppointmentData();
@@ -321,7 +321,7 @@ namespace CheckPointPresenters.Presenters
 
         private void IsListEmpty()
         {
-            bool ListIsEmpty = (_listOfAppointments.Count == 0); 
+            bool ListIsEmpty = (_allAppointmentsForClient.Count == 0); 
             if (ListIsEmpty)
             {
                 AllButtonsHide();
