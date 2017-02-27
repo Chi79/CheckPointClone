@@ -197,18 +197,18 @@ namespace CheckPointPresenters.Presenters
             }
             if (_view.JobState == (int)DbAction.Create)
             {
-                FinalCheck();
+                ReCheckDataAfterConfirmation();
                 _uOW.APPOINTMENTs.Add(_validatedAppointment);
             }
             if (_view.JobState == (int)DbAction.Update)
             {
-                FinalCheck();
+                ReCheckDataAfterConfirmation();
                 UpdateAppointmentData();
             }
             UpdateDatabaseWithChanges((DbAction)_view.JobState);
         }
 
-        private void FinalCheck()
+        private void ReCheckDataAfterConfirmation()
         {
             CreateAppointmentDTOFromInput();
             ValidateDTO();
