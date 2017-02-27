@@ -25,7 +25,7 @@ namespace CheckPointPresenters.Presenters
         private APPOINTMENT _appointmentToUpdate;
 
         private string _errorMessage;
-        private List<string> _validationErrorMessage;
+        private List<string> _validationErrorMessages;
 
         private List<string> _allAppointmentNames;
         private List<APPOINTMENT> _allAppointmentsForClient;
@@ -73,17 +73,17 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAddAppointmentButtonClicked(object sender, EventArgs e)
         {
-            Execute(DbAction.Create);
+            CreateAndValidateAppointment(DbAction.Create);
         }
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
-            Execute(DbAction.Update);
+            CreateAndValidateAppointment(DbAction.Update);
         }
 
         private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
         {
-            Execute(DbAction.Delete);
+            CreateAndValidateAppointment(DbAction.Delete);
         }
 
         private void OnNoButtonClicked(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
-                _validationErrorMessage = _appointmentDTO.GetBrokenBusinessRules().ToList();
+                _validationErrorMessages = _appointmentDTO.GetBrokenBusinessRules().ToList();
                 DisplayValidationMessage();
                 return false;
             }
@@ -135,7 +135,7 @@ namespace CheckPointPresenters.Presenters
         {
             _view.Message = string.Empty;
 
-            foreach (string message in _validationErrorMessage)
+            foreach (string message in _validationErrorMessages)
             {
                 _view.Message += message;
             }
@@ -158,7 +158,7 @@ namespace CheckPointPresenters.Presenters
             ContinueButtonsShow();
         }
 
-        private void Execute(DbAction action)
+        private void CreateAndValidateAppointment(DbAction action)
         {
             CreateAppointmentDTOFromInput();
             bool DataIsValid = ValidateDTO();
