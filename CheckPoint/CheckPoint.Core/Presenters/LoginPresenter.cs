@@ -66,7 +66,6 @@ namespace CheckPointPresenters.Presenters
             {
                 _clientType = (ClientType)loginResult.ClientType;
                 _view.Message = "Login Succesfull!";
-
                 CheckClientType();
             }
             else

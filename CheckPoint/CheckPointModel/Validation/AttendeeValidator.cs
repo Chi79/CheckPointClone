@@ -18,48 +18,52 @@ namespace CheckPointModel.Validation
         /// </summary>
         /// <param name="attendee"></param>
         public override void CheckForBrokenRules(AttendeeDTO attendee)
-        {
-            string errorMessage;         
+        {        
 
             if (!ValidateIntergerInput.IsIntergerValid(attendee.AppointmentId))
-                base.AddBrokenRule("AppointmentId is not valid");                       
-
+            {
+                base.AddBrokenRule("AppointmentId is not valid");
+            }
             if(!ValidateStringInput.IsStringValid(attendee.TagId))
+            {
                 base.AddBrokenRule("TagId field is empty");
-
+            }
             if (!Enum.IsDefined(typeof(AttendeeStatus), attendee.StatusId))
+            {
                 base.AddBrokenRule("StatusId is not valid");
-           
-
-            if (!(ValidateTimeAttended(attendee, out errorMessage)))
-                base.AddBrokenRule("Time Attended is not valid because:  " + errorMessage);
+            }
+            if (!ValidateStringInput.IsStringValid(attendee.TimeAttended)) //if false & TimeAttended is null/empty..
+            {
+                ValidateTimeAttendedIsEmpty(attendee); 
+            }
+            if (ValidateStringInput.IsStringValid(attendee.TimeAttended)) //if false & TimeAttended is not null..
+            {
+                ValidateTimeAttendedIsFilled(attendee);
+            }
         }
 
-        public bool ValidateTimeAttended(AttendeeDTO attendee, out string message)
-        {       
-            if (!(attendee.StatusId == (int)AttendeeStatus.ObligHasAttended || attendee.StatusId == (int)AttendeeStatus.HasAttended))
+        public void ValidateTimeAttendedIsEmpty(AttendeeDTO attendee)
+        {
+            if (attendee.StatusId == (int)AttendeeStatus.ObligHasAttended)   //if attended is true, TimeAttended cannot be null
             {
-                message = "Status is not "+ AttendeeStatus.HasAttended.ToString()+" or "+AttendeeStatus.ObligHasAttended.ToString();                
-                return false;
+                base.AddBrokenRule("Time attended field cannot be empty if an obligatory appointment has been attended!");
             }
-
-            if(!ValidateStringInput.IsStringValid(attendee.TimeAttended))
+            if (attendee.StatusId == (int)AttendeeStatus.HasAttended)
             {
-                message = "Field is empty "; ;
-                return false;
+                base.AddBrokenRule("Time attended field cannot be empty if an appointment has been attended!");
             }
+        }
 
-            if (!ValidateDateInput.IsDateValidate(attendee.TimeAttended))            
-                {
-                message = "Dates must be in correct format mm/dd/yyyy: hh:mm:ss . ";
-                return false;
-                }
-
-            message=null;
-            return true;
-                                                   
-         }
-
-
+        public void ValidateTimeAttendedIsFilled(AttendeeDTO attendee)
+        {
+            if (!ValidateDateInput.IsDateValidate(attendee.TimeAttended)) 
+            {
+                base.AddBrokenRule("All dates and times must be in correct format mm/dd/yyyy: hh:mm:ss . ");
+            }
+            if (attendee.StatusId != (int)AttendeeStatus.HasAttended || attendee.StatusId != (int)AttendeeStatus.ObligHasAttended)
+            {
+                base.AddBrokenRule("Time attended field cannot exist before the appointment has been attended.");
+            }
+        }
     }
 }

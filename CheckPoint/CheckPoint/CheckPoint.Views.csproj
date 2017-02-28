@@ -114,6 +114,7 @@
     <Content Include="HomePageView.aspx" />
     <Content Include="HostHomeView.aspx" />
     <Content Include="Images\logo_white2.png" />
+    <Content Include="Images\small_logo.png" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="Scripts\LoginView.js" />
     <Content Include="LoginView.aspx" />

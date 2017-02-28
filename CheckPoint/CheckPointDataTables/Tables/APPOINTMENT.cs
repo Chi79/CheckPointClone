@@ -47,9 +47,9 @@ namespace CheckPointDataTables.Tables
 
         public bool? IsObligatory { get; set; }
 
-        public virtual ADDRESS ADDRESS1 { get; set; }
+        public ADDRESS ADDRESS1 { get; set; }
 
-        public virtual COURSE COURSE { get; set; }
+        public COURSE COURSE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ATTENDEE> ATTENDEEs { get; set; }
