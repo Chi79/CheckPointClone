@@ -56,13 +56,13 @@ namespace CheckPointModel.Validation
 
         public void ValidateTimeAttendedIsFilled(AttendeeDTO attendee)
         {
-            if (!ValidateDateInput.IsDateValidate(attendee.TimeAttended)) 
-            {
-                base.AddBrokenRule("All dates and times must be in correct format mm/dd/yyyy: hh:mm:ss . ");
-            }
             if (attendee.StatusId != (int)AttendeeStatus.HasAttended || attendee.StatusId != (int)AttendeeStatus.ObligHasAttended)
             {
-                base.AddBrokenRule("Time attended field cannot exist before the appointment has been attended.");
+                base.AddBrokenRule("Time attended field cannot contain data before the appointment has been attended.");
+            }
+            if (!ValidateDateInput.IsDateValidate(attendee.TimeAttended))
+            {
+                base.AddBrokenRule("All dates and times must be in correct format mm/dd/yyyy: hh:mm:ss . ");
             }
         }
     }
