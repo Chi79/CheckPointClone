@@ -7,7 +7,6 @@ using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointPresenters.Bases;
-using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
