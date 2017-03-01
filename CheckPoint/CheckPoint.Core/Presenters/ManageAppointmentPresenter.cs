@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
+using CheckPointCommon.ServiceInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
@@ -18,32 +19,23 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IManageAppointmentView _view;
         private readonly IManageAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IUnitOfWork _uOW;
+        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
 
         private AppointmentDTO _appointmentDTO = new AppointmentDTO();
         private APPOINTMENT _validatedAppointment;
-        private APPOINTMENT _appointmentToUpdate;
 
-        private string _errorMessage;
-        private List<string> _validationErrorMessages;
+        private string client = "Morten";  //TODO..this will be auto set later :D
 
-        private List<string> _allAppointmentNames;
-        private List<APPOINTMENT> _allAppointmentsForClient;
-        private List<APPOINTMENT> _selectedAppointment;
-        private APPOINTMENT _appointmentToDisplay;
-        private string _selectedAppointmentName;
-
-
-        private string _loggedInUsername = "Morten";  //TODO..this will be auto set later :D
-
-        public ManageAppointmentPresenter(IManageAppointmentView manageAppointmentView,
-                                          IManageAppointmentModel<APPOINTMENT, AppointmentDTO>
-                                          manageAppointmentModel, IUnitOfWork unitOfWork)
+        public ManageAppointmentPresenter(
+                                          IManageAppointmentView manageAppointmentView,
+                                          IManageAppointmentModel<APPOINTMENT, AppointmentDTO> manageAppointmentModel,
+                                          IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler
+                                          )
 
         {
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
-            _uOW = unitOfWork;
+            _appointmentHandler = appointmentHandler;
 
             _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
             _view.AddAppointment += OnAddAppointmentButtonClicked;
@@ -56,7 +48,6 @@ namespace CheckPointPresenters.Presenters
 
         public override void FirstTimeInit()
         {
-            GetAllAppointmentForClient();
             BindAppointmentNamesToViewList();
             CheckSelectedAppointmentStatus();
         }
@@ -120,22 +111,22 @@ namespace CheckPointPresenters.Presenters
             bool appointmentDataIsValid = _appointmentDTO.IsValid(_appointmentDTO);
             if (appointmentDataIsValid)
             {
-                _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
+                 _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
                 return true;
             }
             else
             {
-                _validationErrorMessages = _appointmentDTO.GetBrokenBusinessRules().ToList();
-                DisplayValidationMessage();
+                List<string> validationMessages = _appointmentDTO.GetBrokenBusinessRules().ToList();
+                DisplayValidationMessage(validationMessages);
                 return false;
             }
         }
 
-        private void DisplayValidationMessage()
+        private void DisplayValidationMessage(List<string> validationMessages)
         {
             _view.Message = string.Empty;
 
-            foreach (string message in _validationErrorMessages)
+            foreach (string message in validationMessages)
             {
                 _view.Message += message;
             }
@@ -185,20 +176,18 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = "You are about to update this appointment! Do you wish to continue?";
             }
             DecisionButtonsShow();
-
         }
 
         private void PerformJob()
         {
             if(_view.JobState == (int)DbAction.Delete)
             {
-                CheckSelectedAppointmentStatus();
-                _uOW.APPOINTMENTs.Remove(_appointmentToDisplay);
+                _appointmentHandler.Delete(_appointmentHandler.GetAppointmentByName(_view.AppointmentName));
             }
             if (_view.JobState == (int)DbAction.Create)
             {
                 ReCheckDataAfterConfirmation();
-                _uOW.APPOINTMENTs.Add(_validatedAppointment);
+                _appointmentHandler.Create(_validatedAppointment);
             }
             if (_view.JobState == (int)DbAction.Update)
             {
@@ -216,25 +205,22 @@ namespace CheckPointPresenters.Presenters
 
         private void UpdateDatabaseWithChanges(DbAction action)
         {
-            bool saveCompleted = AttemptSaveToDb();
+            bool saveCompleted = AttemptSaveChangesToAppointments();
             if (saveCompleted)
             {
                 DisplayActionMessage(action);
             }
-            else
-            {
-                _view.Message = "Failed to save changes!" + _errorMessage;
-            }
         }
 
-        private bool AttemptSaveToDb()
+        private bool AttemptSaveChangesToAppointments()
         {
-            SaveResult saveResult = _uOW.Complete();
+            SaveResult saveResult = _appointmentHandler.SaveChengesToAppointments();
 
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
-                _errorMessage = saveResult.ErrorMessage;
+                _view.Message = "Failed to save changes!" + saveResult.ErrorMessage;
+                ContinueButtonsShow();
                 return false;
             }
             return true;
@@ -242,77 +228,57 @@ namespace CheckPointPresenters.Presenters
 
         private void UpdateAppointmentData()
         {
-            _appointmentToUpdate = _uOW.APPOINTMENTs.GetAppointmentByAppointmentName(_view.AppointmentNameList);
+            var appointmentToUpdate = _appointmentHandler.GetAppointmentByName(_view.AppointmentNameList);
 
-            _appointmentToUpdate.CourseId = _validatedAppointment.CourseId;
-            _appointmentToUpdate.AppointmentName = _validatedAppointment.AppointmentName;
-            _appointmentToUpdate.UserName = _validatedAppointment.UserName;
-            _appointmentToUpdate.Description = _validatedAppointment.Description;
-            _appointmentToUpdate.Date = _validatedAppointment.Date;
-            _appointmentToUpdate.StartTime = _validatedAppointment.StartTime;
-            _appointmentToUpdate.EndTime = _validatedAppointment.EndTime;
-            _appointmentToUpdate.Address = _validatedAppointment.Address;
-            _appointmentToUpdate.PostalCode = _validatedAppointment.PostalCode;
-            _appointmentToUpdate.IsObligatory = _validatedAppointment.IsObligatory;
-            _appointmentToUpdate.IsCancelled = _validatedAppointment.IsCancelled;
-        }
-
-        private void GetAllAppointmentForClient()
-        {
-            string client = _loggedInUsername;
-
-            _allAppointmentsForClient = _uOW.APPOINTMENTs.GetAllAppointmentsFor(client).ToList();
-            _allAppointmentNames = _allAppointmentsForClient.Select(app => app.AppointmentName).ToList();
+            appointmentToUpdate.CourseId = _validatedAppointment.CourseId;
+            appointmentToUpdate.AppointmentName = _validatedAppointment.AppointmentName;
+            appointmentToUpdate.UserName = _validatedAppointment.UserName;
+            appointmentToUpdate.Description = _validatedAppointment.Description;
+            appointmentToUpdate.Date = _validatedAppointment.Date;
+            appointmentToUpdate.StartTime = _validatedAppointment.StartTime;
+            appointmentToUpdate.EndTime = _validatedAppointment.EndTime;
+            appointmentToUpdate.Address = _validatedAppointment.Address;
+            appointmentToUpdate.PostalCode = _validatedAppointment.PostalCode;
+            appointmentToUpdate.IsObligatory = _validatedAppointment.IsObligatory;
+            appointmentToUpdate.IsCancelled = _validatedAppointment.IsCancelled;
         }
 
         private void BindAppointmentNamesToViewList()
         {
-            _view.SetDataSource = (_allAppointmentNames);
+            var allAppointmentNames = _appointmentHandler.GetAllAppointmentNamesForClient(client).ToList();
+            _view.SetDataSource = (allAppointmentNames);
             _view.BindAppointmentList();
-        }
-
-        private void SelectAppointmentToDisplay()
-        {
-            _selectedAppointment = _allAppointmentsForClient 
-                                  .Where(app => app.AppointmentName == _selectedAppointmentName).ToList();
-
-            _appointmentToDisplay = _selectedAppointment.FirstOrDefault();
         }
 
         private void DisplaySelectedAppointmentData()
         {
-            SelectAppointmentToDisplay();
+            var appointmentToDisplay = _appointmentHandler.GetAppointmentByName(_view.AppointmentName);
 
-            _view.CourseId = _appointmentToDisplay.CourseId.ToString();
-            _view.AppointmentName = _appointmentToDisplay.AppointmentName;
-            _view.Description = _appointmentToDisplay.Description;
-            _view.Date = _appointmentToDisplay.Date.ToString("MM/dd/yyyy");
-            _view.StartTime = _appointmentToDisplay.StartTime.ToString();
-            _view.EndTime = _appointmentToDisplay.EndTime.ToString();
-            _view.Address = _appointmentToDisplay.Address;
-            _view.PostalCode = _appointmentToDisplay.PostalCode.ToString();
-            _view.UserName = _appointmentToDisplay.UserName;
-            _view.IsObligatory = _appointmentToDisplay.IsObligatory.ToString();
-            _view.IsCancelled = _appointmentToDisplay.IsCancelled.ToString();
-            _view.AppointmentNameList = _selectedAppointmentName;
+            _view.CourseId = appointmentToDisplay.CourseId.ToString();
+            _view.AppointmentName = appointmentToDisplay.AppointmentName;
+            _view.Description = appointmentToDisplay.Description;
+            _view.Date = appointmentToDisplay.Date.ToString("MM/dd/yyyy");
+            _view.StartTime = appointmentToDisplay.StartTime.ToString();
+            _view.EndTime = appointmentToDisplay.EndTime.ToString();
+            _view.Address = appointmentToDisplay.Address;
+            _view.PostalCode = appointmentToDisplay.PostalCode.ToString();
+            _view.UserName = appointmentToDisplay.UserName;
+            _view.IsObligatory = appointmentToDisplay.IsObligatory.ToString();
+            _view.IsCancelled = appointmentToDisplay.IsCancelled.ToString();
+
+            _view.AppointmentNameList = _view.AppointmentName;
         }
 
         private void CheckSelectedAppointmentStatus()
         {
-            bool newAppointmentIsSelected = !(_view.AppointmentNameList == _selectedAppointmentName);
-            if (newAppointmentIsSelected)
-            {
-                _selectedAppointmentName = _view.AppointmentNameList;
-
-                GetAllAppointmentForClient();
-                IsListFilled();
-                IsListEmpty();
-            }
+            _view.AppointmentName = _view.AppointmentNameList;
+            IsListFilled();
+            IsListEmpty();
         }
 
         private void IsListFilled()
         {
-            bool listIsFull = (_allAppointmentsForClient.Count > 0);
+            bool listIsFull = (_appointmentHandler.GetAllAppointmentsForClient(client).ToList().Count > 0);
             if (listIsFull)
             {
                 DisplaySelectedAppointmentData();
@@ -321,7 +287,7 @@ namespace CheckPointPresenters.Presenters
 
         private void IsListEmpty()
         {
-            bool ListIsEmpty = (_allAppointmentsForClient.Count == 0); 
+            bool ListIsEmpty = (_appointmentHandler.GetAllAppointmentsForClient(client).ToList().Count == 0);
             if (ListIsEmpty)
             {
                 AllButtonsHide();
