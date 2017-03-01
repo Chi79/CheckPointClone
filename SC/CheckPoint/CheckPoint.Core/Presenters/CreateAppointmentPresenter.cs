@@ -64,6 +64,7 @@ namespace CheckPointPresenters.Presenters
             _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
+
         private bool ValidateDTO()
         {
 
