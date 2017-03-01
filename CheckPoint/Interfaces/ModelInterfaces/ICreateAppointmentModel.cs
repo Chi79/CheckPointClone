@@ -8,7 +8,7 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface ICreateAppointmentModel<U,T> where U: class where T: class
     {
-        U ConvertAppointmentDTOToAppointment(T entityModel);
+        U ConvertToAppointment(T entityModel);
         //TODO
     }
 }

@@ -10,6 +10,7 @@ using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
 using CheckPointCommon.ServiceInterfaces;
+using CheckPointCommon.Enums;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -17,9 +18,9 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly ICreateAppointmentView _view;
         private readonly ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
+        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler; 
 
-        private AppointmentDTO _appointmentDTO = new AppointmentDTO();
+        private AppointmentDTO _dTO = new AppointmentDTO();
         private APPOINTMENT _validatedAppointment;
 
         public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
@@ -31,8 +32,22 @@ namespace CheckPointPresenters.Presenters
             _model = createAppointmentModel;
             _appointmentHandler = appointmentHandler;
 
-            _view.CreateNewAppointment += OnCreateNewAppointmentButtonCLicked;
+            _view.CreateNewAppointment += OnCreateNewAppointmentButtonClicked;
             _view.Continue += OnContinueEvent;
+            _view.YesButtonClicked += OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
+        }
+
+        private void OnNoButtonClicked(object sender, EventArgs e)
+        {
+            DecisionButtonsHide();
+            _view.Message = "Ready.";
+        }
+
+        private void OnYesButtonClicked(object sender, EventArgs e)
+        {
+            DecisionButtonsHide();
+            PerformJob();
         }
 
         private void OnContinueEvent(object sender, EventArgs e)
@@ -40,47 +55,81 @@ namespace CheckPointPresenters.Presenters
             _view.RedirectAfterClickEvent();
         }
 
-        private void OnCreateNewAppointmentButtonCLicked(object sender, EventArgs e)
+        private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            CreateAndValidateAppointment(DbAction.Create);
+        }
+
+        private void CreateAndValidateAppointment(DbAction action)
         {
             CreateAppointmentDTOFromInput();
-
-            bool appointmentDataIsValid = ValidateDTO();
-            if(appointmentDataIsValid)
+            bool dataIsValid = ValidateDTO();
+            if (dataIsValid)
             {
-                SaveAppointmentToDatabase(_validatedAppointment);
+                ConfirmAction(action);
             }
         }
+
+        private void ConfirmAction(DbAction action)
+        {
+            _view.JobState = (int)action;
+
+            if (action == DbAction.Create)
+            {
+                _view.Message = "You are about to add this appointment! Do you wish to continue?";
+            }
+            DecisionButtonsShow();
+        }
+
+        private void PerformJob()
+        {
+            if (_view.JobState == (int)DbAction.Create)
+            {
+                ReCheckDataAfterConfirmation();
+                _appointmentHandler.Create(_validatedAppointment);
+            }
+            UpdateDatabaseWithChanges((DbAction)_view.JobState);
+        }
+
+        private void ReCheckDataAfterConfirmation()
+        {
+            CreateAppointmentDTOFromInput();
+            ValidateDTO();
+        }
+
         private void CreateAppointmentDTOFromInput()
         {
-            _appointmentDTO.CourseId = _view.CourseId;
-            _appointmentDTO.AppointmentName = _view.AppointmentName;
-            _appointmentDTO.Description = _view.Description;
-            _appointmentDTO.Date = _view.Date;
-            _appointmentDTO.StartTime = _view.StartTime;
-            _appointmentDTO.EndTime = _view.EndTime;
-            _appointmentDTO.UserName = _view.UserName;
-            _appointmentDTO.Address = _view.Address;
-            _appointmentDTO.PostalCode = _view.PostalCode;
-            _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
-            _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
+  
+            _dTO.CourseId = _view.CourseId;
+            _dTO.AppointmentName = _view.AppointmentName;
+            _dTO.Description = _view.Description;
+            _dTO.Date = _view.Date;
+            _dTO.StartTime = _view.StartTime;
+            _dTO.EndTime = _view.EndTime;
+            _dTO.UserName = _view.UserName;
+            _dTO.Address = _view.Address;
+            _dTO.PostalCode = _view.PostalCode;
+            _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
+            _dTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
 
         private bool ValidateDTO()
         {
 
-            bool AppointmentFieldsAreValid = _appointmentDTO.IsValid(_appointmentDTO);
-            if(AppointmentFieldsAreValid)
+            bool appointmentDataIsValid = _dTO.IsValid(_dTO);
+            if (appointmentDataIsValid)
             {
-                _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
+                _validatedAppointment = _model.ConvertToAppointment(_dTO);
                 return true;
             }
             else
             {
-                List<string >validationMessages = _appointmentDTO.GetBrokenBusinessRules().ToList();
+                List<string> validationMessages = _dTO.GetBrokenBusinessRules().ToList();
                 DisplayValidationMessage(validationMessages);
                 return false;
             }
         }
+
         private void DisplayValidationMessage(List<string> validationMessages)
         {
             _view.Message = string.Empty;
@@ -90,16 +139,25 @@ namespace CheckPointPresenters.Presenters
                 _view.Message += message;
             }
         }
-        private void SaveAppointmentToDatabase(APPOINTMENT validatedAppointment)
+
+        private void UpdateDatabaseWithChanges(DbAction action)
         {
-            _appointmentHandler.Create(validatedAppointment);
 
             bool saveCompleted = AttemptSaveChangesToDb();
             if(saveCompleted)
             {
-                _view.Message = "New Appointment Saved Succesfully!";
-                SetButtonVisiblity();
+                DisplayActionMessage(action);
+                ContinueButtonsShow();
             }
+        }
+
+        private void DisplayActionMessage(DbAction action)
+        {
+            if(action == DbAction.Create)
+            {
+                _view.Message = "New Appointment Saved Succesfully!";
+            }
+            ContinueButtonsShow();
         }
 
         private bool AttemptSaveChangesToDb()
@@ -115,10 +173,26 @@ namespace CheckPointPresenters.Presenters
             return true;
         }
 
-        private void SetButtonVisiblity()
+        private void ContinueButtonsShow()
         {
             _view.CreateButtonVisible = false;
             _view.ContinueButtonVisible = true;
+        }
+
+        private void DecisionButtonsShow()
+        {
+            _view.ContinueButtonVisible = false;
+            _view.CreateButtonVisible = false;
+            _view.NoButtonVisible = true;
+            _view.YesButtonVisible = true;
+        }
+
+        private void DecisionButtonsHide()
+        {
+            _view.ContinueButtonVisible = false;
+            _view.CreateButtonVisible = true;
+            _view.NoButtonVisible = false;
+            _view.YesButtonVisible = false;
         }
     }
 }

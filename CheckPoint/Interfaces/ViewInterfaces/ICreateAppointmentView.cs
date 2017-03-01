@@ -22,11 +22,15 @@ namespace CheckPointCommon.ViewInterfaces
         string IsObligatory { get; }
         bool ContinueButtonVisible { set; }
         bool CreateButtonVisible { set; }
+        bool YesButtonVisible { set; }
+        bool NoButtonVisible { set; }
         void RedirectAfterClickEvent();
-
+        int JobState { get; set; }
         string Message { get;  set; }
 
         event EventHandler<EventArgs> CreateNewAppointment;
         event EventHandler<EventArgs> Continue;
+        event EventHandler<EventArgs> YesButtonClicked;
+        event EventHandler<EventArgs> NoButtonClicked;
     }
 }
