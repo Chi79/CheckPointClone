@@ -15,6 +15,5 @@ namespace CheckPointCommon.Structs
     {
         public string ErrorMessage;
         public int Result;
-
     }
 }
