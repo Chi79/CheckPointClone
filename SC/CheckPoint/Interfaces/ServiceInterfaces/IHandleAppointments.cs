@@ -16,6 +16,6 @@ namespace CheckPointCommon.ServiceInterfaces
         T GetAppointmentByName(string appointmentName);
         void Delete(T appointment);
         void Create(T appointment);
-        U SaveChengesToAppointments();
+        U SaveChangesToAppointments();
     }
 }

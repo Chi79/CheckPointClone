@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.RepositoryInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
+using CheckPointCommon.ServiceInterfaces;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -17,22 +17,19 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly ICreateAppointmentView _view;
         private readonly ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IUnitOfWork _uOW;
+        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
 
         private AppointmentDTO _appointmentDTO = new AppointmentDTO();
-        private APPOINTMENT _newAppointment;
-
-        private string _errorMessage = null;
-        private List<string> _validationErrorMessage;
+        private APPOINTMENT _validatedAppointment;
 
         public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
                                           ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> createAppointmentModel,
-                                          IUnitOfWork unitOfWork)
+                                           IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler)
         {
 
             _view = createAppointmentView;
             _model = createAppointmentModel;
-            _uOW = unitOfWork;
+            _appointmentHandler = appointmentHandler;
 
             _view.CreateNewAppointment += OnCreateNewAppointmentButtonCLicked;
             _view.Continue += OnContinueEvent;
@@ -46,13 +43,11 @@ namespace CheckPointPresenters.Presenters
         private void OnCreateNewAppointmentButtonCLicked(object sender, EventArgs e)
         {
             CreateAppointmentDTOFromInput();
-            _appointmentDTO.FillPropertyList(_appointmentDTO);
 
-            bool appointmentDataIsValid = AppointmentToCreateIsValid();
+            bool appointmentDataIsValid = ValidateDTO();
             if(appointmentDataIsValid)
             {
-                _newAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
-                SaveAppointmentToDatabase(_newAppointment);
+                SaveAppointmentToDatabase(_validatedAppointment);
             }
         }
         private void CreateAppointmentDTOFromInput()
@@ -69,54 +64,51 @@ namespace CheckPointPresenters.Presenters
             _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
-        private bool AppointmentToCreateIsValid()
+        private bool ValidateDTO()
         {
+
             bool AppointmentFieldsAreValid = _appointmentDTO.IsValid(_appointmentDTO);
             if(AppointmentFieldsAreValid)
             {
-                _newAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
+                _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
                 return true;
             }
             else
             {
-                _validationErrorMessage = _appointmentDTO.GetBrokenBusinessRules().ToList();
-                DisplayValidationMessage();
+                List<string >validationMessages = _appointmentDTO.GetBrokenBusinessRules().ToList();
+                DisplayValidationMessage(validationMessages);
                 return false;
             }
         }
-        private void DisplayValidationMessage()
+        private void DisplayValidationMessage(List<string> validationMessages)
         {
             _view.Message = string.Empty;
 
-            foreach (string message in _validationErrorMessage)
+            foreach (string message in validationMessages)
             {
                 _view.Message += message;
             }
         }
-        private void SaveAppointmentToDatabase(APPOINTMENT newAppointment)
+        private void SaveAppointmentToDatabase(APPOINTMENT validatedAppointment)
         {
-            _uOW.APPOINTMENTs.Add(newAppointment);
+            _appointmentHandler.Create(validatedAppointment);
 
-            bool saveCompleted = AttemptSaveToDb();
+            bool saveCompleted = AttemptSaveChangesToDb();
             if(saveCompleted)
             {
                 _view.Message = "New Appointment Saved Succesfully!";
                 SetButtonVisiblity();
             }
-            else
-            {
-                _view.Message = "Failed to Save Appointment" + _errorMessage;
-            }
         }
 
-        private bool AttemptSaveToDb()
+        private bool AttemptSaveChangesToDb()
         {
-            SaveResult saveResult = _uOW.Complete();
+            SaveResult saveResult = _appointmentHandler.SaveChangesToAppointments();
 
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
-                _errorMessage = saveResult.ErrorMessage;
+                _view.Message = "Failed to Save Appointment " + saveResult.ErrorMessage; 
                 return false;
             }
             return true;

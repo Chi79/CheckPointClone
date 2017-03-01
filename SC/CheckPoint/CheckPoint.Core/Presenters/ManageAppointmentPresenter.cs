@@ -105,7 +105,6 @@ namespace CheckPointPresenters.Presenters
 
         private bool ValidateDTO()
         {
-            _appointmentDTO.FillPropertyList(_appointmentDTO);
 
             bool appointmentDataIsValid = _appointmentDTO.IsValid(_appointmentDTO);
             if (appointmentDataIsValid)
@@ -213,7 +212,7 @@ namespace CheckPointPresenters.Presenters
 
         private bool AttemptSaveChangesToAppointments()
         {
-            SaveResult saveResult = _appointmentHandler.SaveChengesToAppointments();
+            SaveResult saveResult = _appointmentHandler.SaveChangesToAppointments();
 
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
