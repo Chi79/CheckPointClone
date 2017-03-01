@@ -13,14 +13,14 @@ namespace CheckPointModel.Validation
     public class AppointmentValidator : Validator<AppointmentDTO> , IAppointmentValidator<AppointmentDTO>
     {
         //TODO
-        private List<string> propertyList;
         public List<string> FillPropertyList(AppointmentDTO appointment)
         {
-            propertyList = ProperiesToStringListConverter<AppointmentDTO>.ConvertPropertiesToStringList(appointment);
-            return propertyList;
+            return ProperiesToStringListConverter<AppointmentDTO>.ConvertPropertiesToStringList(appointment);
         }
         public override void CheckForBrokenRules(AppointmentDTO appointment)
         {
+            var propertyList = FillPropertyList(appointment);
+
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {
                 base.AddBrokenRule("One or more field is empty! Please fill in all fields. ");

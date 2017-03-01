@@ -7,10 +7,11 @@ using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.Structs;
+using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Services
 {
-    public class AppointmentHandler : IHandleAppointments<APPOINTMENT, SaveResult>
+    public class AppointmentHandler : IHandleAppointments<APPOINTMENT, SaveResult> 
     {
         private readonly IUnitOfWork _uOW;
 
@@ -57,7 +58,7 @@ namespace CheckPointModel.Services
             _uOW.APPOINTMENTs.Add(appointment);
         }
 
-        public SaveResult SaveChengesToAppointments()
+        public SaveResult SaveChangesToAppointments()
         {
             return _uOW.Complete();
         }
