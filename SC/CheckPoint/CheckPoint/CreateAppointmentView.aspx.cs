@@ -71,8 +71,31 @@ namespace CheckPoint.Views
         {
             get { return txtUserName.Text; }
         }
-        public bool ContinueButtonVisible { set { btnContinue.Visible = value; } }
-        public bool CreateButtonVisible { set { btnCreateAppointment.Visible = value; } }
+        public bool ContinueButtonVisible
+        {
+            set { btnContinue.Visible = value; }
+        }
+
+        public bool CreateButtonVisible
+        {
+            set { btnCreateAppointment.Visible = value; }
+        }
+
+        public bool YesButtonVisible
+        {
+            set { btnYes.Visible = value; }
+        }
+
+        public bool NoButtonVisible
+        {
+            set { btnNo.Visible = value; }
+        }
+
+        public int JobState
+        {
+            get { return (int)Session["job"]; }
+            set { Session["job"] = value; }
+        }
 
         public void RedirectAfterClickEvent()
         {
@@ -81,6 +104,8 @@ namespace CheckPoint.Views
 
         public event EventHandler<EventArgs> CreateNewAppointment;
         public event EventHandler<EventArgs> Continue;
+        public event EventHandler<EventArgs> YesButtonClicked;
+        public event EventHandler<EventArgs> NoButtonClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -100,6 +125,22 @@ namespace CheckPoint.Views
             if(Continue != null)
             {
                 Continue(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            if(YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            if(NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
             }
         }
     }

@@ -20,7 +20,7 @@ namespace CheckPointPresenters.Presenters
         private readonly IManageAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
         private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
 
-        private AppointmentDTO _appointmentDTO = new AppointmentDTO();
+        private AppointmentDTO _dTO = new AppointmentDTO();
         private APPOINTMENT _validatedAppointment;
 
         private string client = "Morten";  //TODO..this will be auto set later :D
@@ -90,31 +90,31 @@ namespace CheckPointPresenters.Presenters
 
         private void CreateAppointmentDTOFromInput()
         {
-            _appointmentDTO.CourseId = _view.CourseId;
-            _appointmentDTO.AppointmentName = _view.AppointmentName;
-            _appointmentDTO.Description = _view.Description;
-            _appointmentDTO.Date = _view.Date;
-            _appointmentDTO.StartTime = _view.StartTime;
-            _appointmentDTO.EndTime = _view.EndTime;
-            _appointmentDTO.UserName = _view.UserName;
-            _appointmentDTO.Address = _view.Address;
-            _appointmentDTO.PostalCode = _view.PostalCode;
-            _appointmentDTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
-            _appointmentDTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
+            _dTO.CourseId = _view.CourseId;
+            _dTO.AppointmentName = _view.AppointmentName;
+            _dTO.Description = _view.Description;
+            _dTO.Date = _view.Date;
+            _dTO.StartTime = _view.StartTime;
+            _dTO.EndTime = _view.EndTime;
+            _dTO.UserName = _view.UserName;
+            _dTO.Address = _view.Address;
+            _dTO.PostalCode = _view.PostalCode;
+            _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
+            _dTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
         }
 
         private bool ValidateDTO()
         {
 
-            bool appointmentDataIsValid = _appointmentDTO.IsValid(_appointmentDTO);
+            bool appointmentDataIsValid = _dTO.IsValid(_dTO);
             if (appointmentDataIsValid)
             {
-                 _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_appointmentDTO);
+                 _validatedAppointment = _model.ConvertAppointmentDTOToAppointment(_dTO);
                 return true;
             }
             else
             {
-                List<string> validationMessages = _appointmentDTO.GetBrokenBusinessRules().ToList();
+                List<string> validationMessages = _dTO.GetBrokenBusinessRules().ToList();
                 DisplayValidationMessage(validationMessages);
                 return false;
             }
