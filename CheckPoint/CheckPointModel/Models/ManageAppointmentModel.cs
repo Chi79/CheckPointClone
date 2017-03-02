@@ -13,7 +13,7 @@ namespace CheckPointModel.Models
     public class ManageAppointmentModel : IManageAppointmentModel<APPOINTMENT, AppointmentDTO>
     {
         //TODO
-        public APPOINTMENT ConvertAppointmentDTOToAppointment(AppointmentDTO appointmentModel)
+        public APPOINTMENT ConvertToAppointment(AppointmentDTO appointmentModel)
         {
             return AppointmentDTOMapper.ConvertAppointmentDTOToAppointment(appointmentModel);
         }
