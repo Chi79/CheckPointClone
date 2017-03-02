@@ -151,7 +151,7 @@ namespace CheckPointPresenters.Presenters
             var appointment = ConvertDTOToAppointment();
 
             job.AppointmentName = _view.AppointmentNameList;
-            job.Perform(appointment);
+            job.PerformTask(appointment);
 
             UpdateDatabaseWithChanges(job);
         }

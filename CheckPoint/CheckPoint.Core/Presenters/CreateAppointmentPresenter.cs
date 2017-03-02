@@ -28,7 +28,7 @@ namespace CheckPointPresenters.Presenters
         public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
                                           ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> createAppointmentModel,
                                           IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler,
-                                          IFactory<JobServiceBase,DbAction> factory
+                                          IFactory<JobServiceBase, DbAction> factory
                                           )
         {
 
@@ -120,7 +120,7 @@ namespace CheckPointPresenters.Presenters
             var appointment = ConvertDTOToAppointment();
 
             job.AppointmentName = _view.AppointmentName;
-            job.Perform(appointment);
+            job.PerformTask(appointment);
 
             UpdateDatabaseWithChanges(job);
         }

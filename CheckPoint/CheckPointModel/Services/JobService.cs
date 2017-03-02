@@ -10,13 +10,13 @@ using CheckPointDataTables.Tables;
 
 namespace CheckPointModel.Services
 {
-    public class JobServiceBase
+    public class JobServiceBase 
     {
         public virtual DbAction Actiontype { get; set; }
         public virtual string AppointmentName { get; set; }
         public virtual string ConfirmationMessage { get; }
         public virtual string CompletedMessage { get; }
-        public virtual void Perform(APPOINTMENT appointment)
+        public virtual void PerformTask(APPOINTMENT appointment)
         {
             //not implemented
         }
@@ -46,7 +46,7 @@ namespace CheckPointModel.Services
         {
             get  { return "New Appointment Added Succesfully!"; }
         }
-        public override void Perform(APPOINTMENT appointment)
+        public override void PerformTask(APPOINTMENT appointment)
         {
             _handler.Create(appointment);
         }
@@ -76,7 +76,7 @@ namespace CheckPointModel.Services
         {
             get { return "New Appointment Deleted Succesfully!"; }
         }
-        public override void Perform(APPOINTMENT appointment)
+        public override void PerformTask(APPOINTMENT appointment)
         {
             var appointmentToDelete =_handler.GetAppointmentByName(AppointmentName);
             _handler.Delete(appointmentToDelete);
@@ -107,7 +107,7 @@ namespace CheckPointModel.Services
         {
             get { return "New Appointment Updated Succesfully!"; }
         }
-        public override void Perform(APPOINTMENT appointment)
+        public override void PerformTask(APPOINTMENT appointment)
         {
             var appointmentToUpdate = _handler.GetAppointmentByName(AppointmentName);
 
