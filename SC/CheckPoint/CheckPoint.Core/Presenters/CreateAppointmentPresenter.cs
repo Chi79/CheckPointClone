@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
+using CheckPointCommon.FactoryInterfaces;
+using CheckPointModel.Services;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
@@ -18,18 +20,22 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly ICreateAppointmentView _view;
         private readonly ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler; 
+        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
+        private readonly IFactory<JobServiceBase, DbAction> _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
 
         public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
                                           ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> createAppointmentModel,
-                                           IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler)
+                                          IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler,
+                                          IFactory<JobServiceBase,DbAction> factory
+                                          )
         {
 
             _view = createAppointmentView;
             _model = createAppointmentModel;
             _appointmentHandler = appointmentHandler;
+            _factory = factory;
 
             _view.CreateNewAppointment += OnCreateNewAppointmentButtonClicked;
             _view.Continue += OnContinueEvent;
@@ -39,17 +45,16 @@ namespace CheckPointPresenters.Presenters
 
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
         {
-            ConfirmAction(DbAction.Create);
+            var job = _factory.Create(DbAction.Create);
+            ConfirmAction(job);
         }
 
-        private void ConfirmAction(DbAction action)
+        private void ConfirmAction(JobServiceBase job)
         {
-            _view.JobState = (int)action;
 
-            if (action == DbAction.Create)
-            {
-                _view.Message = "You are about to add this appointment! Do you wish to continue?";
-            }
+            _view.JobState = (int)job.Actiontype;
+            job.AppointmentName = _view.AppointmentName;
+            _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();
         }
 
@@ -110,12 +115,14 @@ namespace CheckPointPresenters.Presenters
 
         private void PerformJob()
         {
-            if (_view.JobState == (int)DbAction.Create)
-            {
-                var appointment = ConvertDTOToAppointment();
-                _appointmentHandler.Create(appointment);
-            }
-            UpdateDatabaseWithChanges((DbAction)_view.JobState);
+
+            var job = _factory.Create((DbAction)_view.JobState);
+            var appointment = ConvertDTOToAppointment();
+
+            job.AppointmentName = _view.AppointmentName;
+            job.Perform(appointment);
+
+            UpdateDatabaseWithChanges(job);
         }
 
         private APPOINTMENT ConvertDTOToAppointment()
@@ -124,29 +131,28 @@ namespace CheckPointPresenters.Presenters
             return appointment;
         }
 
-        private void UpdateDatabaseWithChanges(DbAction action)
+        private void UpdateDatabaseWithChanges(JobServiceBase job)
         {
 
-            bool saveCompleted = AttemptSaveChangesToDb();
+            bool saveCompleted = AttemptSaveChangesToDb(job);
             if (saveCompleted)
             {
-                DisplayActionMessage(action);
+                DisplayActionMessage(job);
                 ContinueButtonsShow();
             }
         }
 
-        private void DisplayActionMessage(DbAction action)
+        private void DisplayActionMessage(JobServiceBase job)
         {
-            if (action == DbAction.Create)
-            {
-                _view.Message = "New Appointment Saved Succesfully!";
-            }
+
+            _view.Message = job.CompletedMessage;
             ContinueButtonsShow();
         }
 
-        private bool AttemptSaveChangesToDb()
+        private bool AttemptSaveChangesToDb(JobServiceBase job)
         {
-            SaveResult saveResult = _appointmentHandler.SaveChangesToAppointments();
+
+            SaveResult saveResult = job.SaveChanges();
 
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
