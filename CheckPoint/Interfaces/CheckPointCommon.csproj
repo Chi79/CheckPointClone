@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOInterfaces\IAppointmentDTO.cs" />
+    <Compile Include="DTOInterfaces\IAttendeeDTO.cs" />
+    <Compile Include="DTOInterfaces\IClientDTO.cs" />
+    <Compile Include="DTOInterfaces\ICourseDTO.cs" />
     <Compile Include="Enums\AttendeeStatus.cs" />
     <Compile Include="Enums\ClientType.cs" />
     <Compile Include="Enums\DbAction.cs" />

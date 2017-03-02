@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckPointCommon.ValidationInterfaces
+namespace CheckPointCommon.DTOInterfaces
 {
-    public interface IAppointmentValidator<T> 
+    public interface ICourseDTO
     {
-        List<string> FillPropertyList(T client);
         //TODO
     }
 }

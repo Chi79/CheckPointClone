@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ValidationInterfaces;
-using CheckPointModel.DTOs;
+using CheckPointCommon.DTOInterfaces;
 
 namespace CheckPointModel.Validation
 {
-    public class CourseValidator : Validator<CourseDTO> , ICourseValidator<CourseDTO>
+    public class CourseValidator : Validator<ICourseDTO> , ICourseValidator<ICourseDTO>
     {
         //TODO
     }

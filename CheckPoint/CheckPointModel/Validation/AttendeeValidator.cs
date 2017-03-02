@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CheckPointModel.DTOs;
 using CheckPointModel.Utilities;
 using CheckPointCommon.Enums;
 using CheckPointCommon.ValidationInterfaces;
+using CheckPointCommon.DTOInterfaces;
+
 namespace CheckPointModel.Validation
 {
-    public class AttendeeValidator:Validator<AttendeeDTO>,IAttendeeValidator<AttendeeDTO>
+    public class AttendeeValidator:Validator<IAttendeeDTO>,IAttendeeValidator<IAttendeeDTO>
     {
         //this class is not tested
 
@@ -17,7 +18,7 @@ namespace CheckPointModel.Validation
         /// Checks the AttendeeModel for Broken Business Rules
         /// </summary>
         /// <param name="attendee"></param>
-        public override void CheckForBrokenRules(AttendeeDTO attendee)
+        public override void CheckForBrokenRules(IAttendeeDTO attendee)
         {        
 
             if (!ValidateIntergerInput.IsIntergerValid(attendee.AppointmentId))
@@ -42,7 +43,7 @@ namespace CheckPointModel.Validation
             }
         }
 
-        public void ValidateTimeAttendedIsEmpty(AttendeeDTO attendee)
+        public void ValidateTimeAttendedIsEmpty(IAttendeeDTO attendee)
         {
             if (attendee.StatusId == (int)AttendeeStatus.ObligHasAttended)   //if attended is true, TimeAttended cannot be null
             {
@@ -54,7 +55,7 @@ namespace CheckPointModel.Validation
             }
         }
 
-        public void ValidateTimeAttendedIsFilled(AttendeeDTO attendee)
+        public void ValidateTimeAttendedIsFilled(IAttendeeDTO attendee)
         {
             if (attendee.StatusId != (int)AttendeeStatus.HasAttended || attendee.StatusId != (int)AttendeeStatus.ObligHasAttended)
             {

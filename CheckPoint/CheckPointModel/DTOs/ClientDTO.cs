@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
 using CheckPointModel.Validation;
 using CheckPointCommon.ValidationInterfaces;
+using CheckPointCommon.DTOInterfaces;
 
 
 namespace CheckPointModel.DTOs
 {
-    public class ClientDTO : RegisterClientValidator
+    public class ClientDTO : RegisterClientValidator , IClientDTO
     {          
         public int ClientType { get; set; }
         public string UserName { get; set; }
@@ -22,7 +23,7 @@ namespace CheckPointModel.DTOs
         public string PhoneNumber { get; set; }
         public string PostalCode { get; set; }
     
-        public override void CheckForBrokenRules(ClientDTO client)
+        public override void CheckForBrokenRules(IClientDTO client)
         {
             base.CheckForBrokenRules(this);
 

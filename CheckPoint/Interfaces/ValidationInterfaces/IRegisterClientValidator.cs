@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ValidationInterfaces
 {
-    public interface IRegisterClientValidator<T>: IValidator<T> where T:class 
+    public interface IRegisterClientValidator<T> 
     {
         List<string> FillPropertyList(T client);
     }
