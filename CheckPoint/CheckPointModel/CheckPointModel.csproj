@@ -50,7 +50,9 @@
     <Compile Include="DTOs\AttendeeDTO.cs" />
     <Compile Include="DTOs\ClientDTO.cs" />
     <Compile Include="DTOs\CourseDTO.cs" />
+    <Compile Include="Factories\JobFactory.cs" />
     <Compile Include="Services\AppointmentHandler.cs" />
+    <Compile Include="Services\JobService.cs" />
     <Compile Include="Utilities\AppointmentDTOMapper.cs" />
     <Compile Include="Utilities\AttendeeDTOMapper.cs" />
     <Compile Include="Utilities\CourseDTOMapper.cs" />
