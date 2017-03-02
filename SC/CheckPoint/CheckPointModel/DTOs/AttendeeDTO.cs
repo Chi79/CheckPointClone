@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointModel.Validation;
+using CheckPointCommon.DTOInterfaces;
 
 namespace CheckPointModel.DTOs
 {
-    public class AttendeeDTO: AttendeeValidator
+    public class AttendeeDTO: AttendeeValidator , IAttendeeDTO
     {       
         //Not tested
 
@@ -17,7 +18,7 @@ namespace CheckPointModel.DTOs
         public int StatusId { get; set; }
         public string TagId { get; set; }
 
-        public override void CheckForBrokenRules(AttendeeDTO entity)
+        public override void CheckForBrokenRules(IAttendeeDTO entity)
         {
             base.CheckForBrokenRules(this);
         }

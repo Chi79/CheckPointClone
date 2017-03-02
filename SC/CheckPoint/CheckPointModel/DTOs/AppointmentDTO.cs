@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointModel.Validation;
 using CheckPointDataTables.Tables;
+using CheckPointCommon.ValidationInterfaces;
+using CheckPointCommon.DTOInterfaces;
+
 
 namespace CheckPointModel.DTOs
 {
-    public class AppointmentDTO : AppointmentValidator
+    public class AppointmentDTO : AppointmentValidator, IAppointmentDTO
     {
         //TODO
        public string CourseId { get; set; }
@@ -23,7 +26,7 @@ namespace CheckPointModel.DTOs
        public bool IsCancelled { get; set; }
        public bool IsObligatory { get; set; }
 
-        public override void CheckForBrokenRules(AppointmentDTO appointment)
+        public override void CheckForBrokenRules(IAppointmentDTO appointment)
         {
             base.CheckForBrokenRules(this);
         }

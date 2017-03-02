@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ValidationInterfaces
 {
-   public interface IAttendeeValidator<T>:IValidator<T> where T:class
+   public interface IAttendeeValidator<T> 
     {
         //ToDO
         void ValidateTimeAttendedIsEmpty(T attendee);

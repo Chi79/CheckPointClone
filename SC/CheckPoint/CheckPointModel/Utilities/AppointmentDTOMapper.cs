@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
-using CheckPointModel.DTOs;
+using CheckPointCommon.DTOInterfaces;
 
 namespace CheckPointModel.Utilities
 {
     public class AppointmentDTOMapper
     {
-        public static APPOINTMENT ConvertAppointmentDTOToAppointment(AppointmentDTO appointmentDTO)
+        public static APPOINTMENT ConvertAppointmentDTOToAppointment(IAppointmentDTO appointmentDTO)
         {  
             DateTime parsedFromTime, parsedToTime, parsedDate;
             parsedFromTime = DateTimeParser.ParseAppointmentData(appointmentDTO.StartTime);

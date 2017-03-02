@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
-using CheckPointModel.DTOs;
+using CheckPointCommon.DTOInterfaces;
 
 namespace CheckPointModel.Utilities
 {
     public class ClientDTOMapper
     {
-        public static CLIENT convertClientDTOToClient(ClientDTO clientModel)
+        public static CLIENT convertClientDTOToClient(IClientDTO clientModel)
         {
             CLIENT client = new CLIENT()
             {
