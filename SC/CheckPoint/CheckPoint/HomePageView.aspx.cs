@@ -34,5 +34,15 @@ namespace CheckPoint.Views
                 RedirectToRegister(this, EventArgs.Empty);
             }
         }
+
+        public void RedirectToLoginView()
+        {
+            HttpContext.Current.Response.Redirect("LoginView.aspx");
+        }
+
+        public void RedirectToClientRegisterView()
+        {
+            HttpContext.Current.Response.Redirect("RegisterClientView.aspx");
+        }
     }
 }
