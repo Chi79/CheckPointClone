@@ -14,6 +14,7 @@ namespace CheckPoint.Views
     {
         public event EventHandler<EventArgs> RedirectToLogin;
         public event EventHandler<EventArgs> RedirectToRegister;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //TODO
@@ -37,12 +38,12 @@ namespace CheckPoint.Views
 
         public void RedirectToLoginView()
         {
-            HttpContext.Current.Response.Redirect("LoginView.aspx");
+            Response.Redirect("LoginView.aspx");
         }
 
         public void RedirectToClientRegisterView()
         {
-            HttpContext.Current.Response.Redirect("RegisterClientView.aspx");
+            Response.Redirect("RegisterClientView.aspx");
         }
     }
 }
