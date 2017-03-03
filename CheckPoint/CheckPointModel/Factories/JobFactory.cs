@@ -33,7 +33,7 @@ namespace CheckPointModel.Factories
             }
         }
        
-        public JobServiceBase Create(DbAction action)
+        public JobServiceBase CreateJobType(DbAction action)
         {
             LoadDictionary(_handler);
             return Jobs[action];
