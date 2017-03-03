@@ -109,6 +109,7 @@
     <Content Include="CreateAppointmentView.aspx" />
     <Content Include="CreateCourseView.aspx" />
     <Content Include="CreateReportView.aspx" />
+    <Content Include="CSS\homepage.css" />
     <Content Include="CSS\login.css" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />

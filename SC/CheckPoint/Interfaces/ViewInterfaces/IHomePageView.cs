@@ -8,6 +8,7 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IHomePageView
     {
-        //TODO
+        event EventHandler<EventArgs> RedirectToLogin;
+        event EventHandler<EventArgs> RedirectToRegister;
     }
 }

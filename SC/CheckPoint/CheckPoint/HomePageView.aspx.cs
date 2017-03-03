@@ -12,9 +12,27 @@ namespace CheckPoint.Views
 {
     public partial class HomePageView : ViewBase<HomePagePresenter> ,IHomePageView
     {
+        public event EventHandler<EventArgs> RedirectToLogin;
+        public event EventHandler<EventArgs> RedirectToRegister;
         protected void Page_Load(object sender, EventArgs e)
         {
             //TODO
+        }
+
+        protected void btnLogIn_Click(object sender, EventArgs e)
+        {
+            if(RedirectToLogin != null)
+            {
+                RedirectToLogin(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnGetStarted_Click(object sender, EventArgs e)
+        {
+            if (RedirectToRegister != null)
+            {
+                RedirectToRegister(this, EventArgs.Empty);
+            }
         }
     }
 }
