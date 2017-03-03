@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
+using CheckPointCommon.ServiceInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
@@ -16,37 +17,17 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IHostHomeView _view;
         private readonly IHostHomeModel _model;
-        private readonly IUnitOfWork _uOW;
+        private readonly IShowAppointments<APPOINTMENT,object> _displayService;
 
-        private List<APPOINTMENT> appointments;
-        private IEnumerable<object> apps;
         //TODO
-        public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel, IUnitOfWork unitOfWork)
+        public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
+                                 IShowAppointments<APPOINTMENT ,object> displayService)
         {
             _view = hostHomeView;
             _model = hostHomeModel;
-            _uOW = unitOfWork;
+            _displayService = displayService;
 
             _view.BindGrid += OnSortByDate;
-
-            FetchData();
-            var apps = from a in appointments
-                       select new
-                       {
-                           a.CourseId,
-                           a.AppointmentName,
-                           a.Description,
-                           a.Date,
-                           a.StartTime,
-                           a.EndTime,
-                           a.Address,
-                           a.PostalCode,
-                           a.IsObligatory,
-                           a.IsCancelled
-                       };
-            _view.SetDataSource = apps;
-            _view.DataBind();
-            _view.Message = "HostPage";
         }
         public override void Load()
         {
@@ -55,30 +36,20 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
             FetchData();
+            var apps = _displayService.GetAllAppointmentColumns();
+            _view.SetDataSource = apps;
+            _view.DataBind();
+            _view.Message = "HostPage";
         }
         private void FetchData()
         {
             string host = "Morten";
-            appointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(host).ToList();
+            var appointments = _displayService.GetAllAppointmentsFor(host).ToList();
         }
 
         private void OnSortByDate(object sender, EventArgs e)
         {
-            var app = appointments.OrderBy(a => a.Date).ToList();
-            apps = from a in app
-                       select new
-                       {
-                           a.CourseId,
-                           a.AppointmentName,
-                           a.Description,
-                           a.Date,
-                           a.StartTime,
-                           a.EndTime,
-                           a.Address,
-                           a.PostalCode,
-                           a.IsObligatory,
-                           a.IsCancelled
-                       };
+            var apps = _displayService.GetAppointmentsSortedByDate();
             _view.SetDataSource = apps;
             _view.DataBind();
         }

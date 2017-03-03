@@ -67,6 +67,7 @@
     <Compile Include="RepositoryInterfaces\IAttendeeRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
     <Compile Include="ServiceInterfaces\IHandleAppointments.cs" />
+    <Compile Include="ServiceInterfaces\IShowAppointments.cs" />
     <Compile Include="Structs\Structs.cs" />
     <Compile Include="ValidationInterfaces\IAppointmentValidator.cs" />
     <Compile Include="ValidationInterfaces\IAttendeeValidator.cs" />

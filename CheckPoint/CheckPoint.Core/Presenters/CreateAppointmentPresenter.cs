@@ -11,7 +11,6 @@ using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
-using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.Enums;
 
 namespace CheckPointPresenters.Presenters
@@ -20,21 +19,18 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly ICreateAppointmentView _view;
         private readonly ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
         private readonly IFactory<JobServiceBase, DbAction> _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
 
         public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
                                           ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> createAppointmentModel,
-                                          IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler,
                                           IFactory<JobServiceBase, DbAction> factory
                                           )
         {
 
             _view = createAppointmentView;
             _model = createAppointmentModel;
-            _appointmentHandler = appointmentHandler;
             _factory = factory;
 
             _view.CreateNewAppointment += OnCreateNewAppointmentButtonClicked;

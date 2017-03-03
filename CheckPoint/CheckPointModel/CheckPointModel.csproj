@@ -53,6 +53,7 @@
     <Compile Include="Factories\JobFactory.cs" />
     <Compile Include="Services\AppointmentHandler.cs" />
     <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\ShowAppointmentsInGrid.cs" />
     <Compile Include="Utilities\AppointmentDTOMapper.cs" />
     <Compile Include="Utilities\AttendeeDTOMapper.cs" />
     <Compile Include="Utilities\CourseDTOMapper.cs" />

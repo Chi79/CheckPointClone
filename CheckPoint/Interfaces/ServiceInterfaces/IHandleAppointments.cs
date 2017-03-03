@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ServiceInterfaces
 {
-    public interface IHandleAppointments<T, U> where T:class where U : struct
+    public interface IHandleAppointments<T, U> where T:class where U : struct 
     {
         IEnumerable<T> GetAllAppointmentsForClient(string client);
 
