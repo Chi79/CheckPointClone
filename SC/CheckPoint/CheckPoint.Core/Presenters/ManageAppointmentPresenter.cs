@@ -67,19 +67,19 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAddAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job =_factory.Create(DbAction.Create);
+            var job =_factory.CreateJobType(DbAction.Create);
             ConfirmAction(job);
         }
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.Create(DbAction.Update);
+            var job = _factory.CreateJobType(DbAction.Update);
             ConfirmAction(job);
         }
 
         private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.Create(DbAction.Delete);
+            var job = _factory.CreateJobType(DbAction.Delete);
             ConfirmAction(job);
         }
 
@@ -147,7 +147,7 @@ namespace CheckPointPresenters.Presenters
 
         private void PerformJob()
         {
-            var job = _factory.Create((DbAction)_view.JobState);
+            var job = _factory.CreateJobType((DbAction)_view.JobState);
             var appointment = ConvertDTOToAppointment();
 
             job.AppointmentName = _view.AppointmentNameList;

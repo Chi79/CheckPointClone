@@ -41,7 +41,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.Create(DbAction.Create);
+            var job = _factory.CreateJobType(DbAction.Create);
             ConfirmAction(job);
         }
 
@@ -113,7 +113,7 @@ namespace CheckPointPresenters.Presenters
         private void PerformJob()
         {
 
-            var job = _factory.Create((DbAction)_view.JobState);
+            var job = _factory.CreateJobType((DbAction)_view.JobState);
             var appointment = ConvertDTOToAppointment();
 
             job.AppointmentName = _view.AppointmentName;

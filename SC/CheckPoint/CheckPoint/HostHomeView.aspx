@@ -29,19 +29,19 @@
         </asp:Panel>
         <p>
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
-            <asp:GridView ID="gv2" runat="server" AutoGenerateColumns="False" Height="57px" Width="928px">
+            <asp:GridView ID="gv2" runat="server" AutoGenerateColumns="False" Height="57px" Width="979px">
                 <Columns>
-                    <asp:BoundField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" />
-                    <asp:BoundField AccessibleHeaderText="CourseId" HeaderText="CourseId" />
-                    <asp:BoundField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName" />
-                    <asp:BoundField AccessibleHeaderText="Description" HeaderText="Description" />
-                    <asp:BoundField AccessibleHeaderText="Date" HeaderText="Date" />
-                    <asp:BoundField AccessibleHeaderText="StartTime" HeaderText="StartTime" />
-                    <asp:BoundField AccessibleHeaderText="EndTime" HeaderText="EndTime" />
-                    <asp:BoundField AccessibleHeaderText="Address" HeaderText="Address" />
-                    <asp:BoundField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" />
-                    <asp:BoundField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" />
-                    <asp:BoundField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" />
+                    <asp:BoundField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" DataField="AppointmentId" />
+                    <asp:BoundField AccessibleHeaderText="CourseId" HeaderText="CourseId" DataField="CourseId" />
+                    <asp:BoundField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName" DataField="AppointmentName" />
+                    <asp:BoundField AccessibleHeaderText="Description" HeaderText="Description" DataField="Description" />
+                    <asp:BoundField AccessibleHeaderText="Date" HeaderText="Date" DataField="Date" />
+                    <asp:BoundField AccessibleHeaderText="StartTime" HeaderText="StartTime" DataField="StartTime" />
+                    <asp:BoundField AccessibleHeaderText="EndTime" HeaderText="EndTime" DataField="EndTime" />
+                    <asp:BoundField AccessibleHeaderText="Address" HeaderText="Address" DataField="Address" />
+                    <asp:BoundField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" DataField="PostalCode" />
+                    <asp:BoundField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" DataField="IsObligatory" />
+                    <asp:BoundField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" DataField="IsCancelled" />
                     <asp:BoundField />
                 </Columns>
             </asp:GridView>

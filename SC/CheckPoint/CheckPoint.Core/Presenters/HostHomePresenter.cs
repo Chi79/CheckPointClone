@@ -19,6 +19,7 @@ namespace CheckPointPresenters.Presenters
         private readonly IHostHomeModel _model;
         private readonly IShowAppointments<APPOINTMENT,object> _displayService;
 
+        string host = "Morten";
         //TODO
         public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
                                  IShowAppointments<APPOINTMENT ,object> displayService)
@@ -38,12 +39,12 @@ namespace CheckPointPresenters.Presenters
             FetchData();
             var apps = _displayService.GetAllAppointmentColumns();
             _view.SetDataSource = apps;
+            _view.SetDataSource2 = _displayService.GetAllAppointmentsFor(host);
             _view.DataBind();
             _view.Message = "HostPage";
         }
         private void FetchData()
         {
-            string host = "Morten";
             var appointments = _displayService.GetAllAppointmentsFor(host).ToList();
         }
 
@@ -51,6 +52,7 @@ namespace CheckPointPresenters.Presenters
         {
             var apps = _displayService.GetAppointmentsSortedByDate();
             _view.SetDataSource = apps;
+            _view.SetDataSource2 = apps;
             _view.DataBind();
         }
     }
