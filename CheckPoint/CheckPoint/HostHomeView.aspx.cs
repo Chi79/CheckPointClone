@@ -31,6 +31,7 @@ namespace CheckPoint.Views
         public void Databind()
         {
             gvAppointments.DataBind();
+            gv2.DataBind();
         }
         public string Message
         {
