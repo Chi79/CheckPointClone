@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using CheckPointPresenters.Bases;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using System.Web;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -23,12 +22,12 @@ namespace CheckPointPresenters.Presenters
 
         private void _homePageView_OnRegisterButtonClicked(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.Redirect("RegisterClientView.aspx");
+            _homePageView.RedirectToClientRegisterView();           
         }
 
         private void _homePageView_OnLoginButtonClicked(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.Redirect("LoginView.aspx");
+            _homePageView.RedirectToLoginView();           
         }
     }
 }

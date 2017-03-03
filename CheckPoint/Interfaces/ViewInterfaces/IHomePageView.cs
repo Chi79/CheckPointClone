@@ -10,5 +10,8 @@ namespace CheckPointCommon.ViewInterfaces
     {
         event EventHandler<EventArgs> RedirectToLogin;
         event EventHandler<EventArgs> RedirectToRegister;
+
+        void RedirectToLoginView();
+        void RedirectToClientRegisterView();
     }
 }
