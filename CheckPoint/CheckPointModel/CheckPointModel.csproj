@@ -93,10 +93,6 @@
       <Project>{afebd1a4-0e44-4bfe-a0b9-4cfe6622d6aa}</Project>
       <Name>CheckPointDataTables</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CheckPointPOCOs\CheckPointPOCOs.csproj">
-      <Project>{1ec6982e-76c4-4853-bf7c-39417152f7a2}</Project>
-      <Name>CheckPointPOCOs</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\CheckPointCommon.csproj">
       <Project>{da5c83db-1e7a-4c12-961e-6c73373506bc}</Project>
       <Name>CheckPointCommon</Name>

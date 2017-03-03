@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointModel", "CheckPoi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointCommon", "Interfaces\CheckPointCommon.csproj", "{DA5C83DB-1E7A-4C12-961E-6C73373506BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointPOCOs", "CheckPointPOCOs\CheckPointPOCOs.csproj", "{1EC6982E-76C4-4853-BF7C-39417152F7A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointDataTables", "CheckPointDataTables\CheckPointDataTables.csproj", "{AFEBD1A4-0E44-4BFE-A0B9-4CFE6622D6AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ", "LinQ\LinQ.csproj", "{E580D717-388B-424B-8DF8-EE2F67AB36FE}"
@@ -51,10 +49,6 @@ Global
 		{DA5C83DB-1E7A-4C12-961E-6C73373506BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA5C83DB-1E7A-4C12-961E-6C73373506BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA5C83DB-1E7A-4C12-961E-6C73373506BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1EC6982E-76C4-4853-BF7C-39417152F7A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1EC6982E-76C4-4853-BF7C-39417152F7A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1EC6982E-76C4-4853-BF7C-39417152F7A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1EC6982E-76C4-4853-BF7C-39417152F7A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFEBD1A4-0E44-4BFE-A0B9-4CFE6622D6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFEBD1A4-0E44-4BFE-A0B9-4CFE6622D6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFEBD1A4-0E44-4BFE-A0B9-4CFE6622D6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -68,7 +62,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 10
+		SccNumberOfProjects = 9
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://checkpointas.visualstudio.com/
 		SccLocalPath0 = .
@@ -87,17 +81,14 @@ Global
 		SccProjectUniqueName5 = CheckPointModel\\CheckPointModel.csproj
 		SccProjectName5 = CheckPointModel
 		SccLocalPath5 = CheckPointModel
-		SccProjectUniqueName6 = CheckPointPOCOs\\CheckPointPOCOs.csproj
-		SccProjectName6 = CheckPointPOCOs
-		SccLocalPath6 = CheckPointPOCOs
-		SccProjectUniqueName7 = DataAccess\\DataAccess.csproj
-		SccProjectName7 = DataAccess
-		SccLocalPath7 = DataAccess
-		SccProjectUniqueName8 = Interfaces\\CheckPointCommon.csproj
-		SccProjectName8 = Interfaces
-		SccLocalPath8 = Interfaces
-		SccProjectUniqueName9 = LinQ\\LinQ.csproj
-		SccProjectName9 = LinQ
-		SccLocalPath9 = LinQ
+		SccProjectUniqueName6 = DataAccess\\DataAccess.csproj
+		SccProjectName6 = DataAccess
+		SccLocalPath6 = DataAccess
+		SccProjectUniqueName7 = Interfaces\\CheckPointCommon.csproj
+		SccProjectName7 = Interfaces
+		SccLocalPath7 = Interfaces
+		SccProjectUniqueName8 = LinQ\\LinQ.csproj
+		SccProjectName8 = LinQ
+		SccLocalPath8 = LinQ
 	EndGlobalSection
 EndGlobal
