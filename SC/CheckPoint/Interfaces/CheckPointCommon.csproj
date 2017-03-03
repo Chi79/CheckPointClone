@@ -104,10 +104,6 @@
       <Project>{afebd1a4-0e44-4bfe-a0b9-4cfe6622d6aa}</Project>
       <Name>CheckPointDataTables</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CheckPointPOCOs\CheckPointPOCOs.csproj">
-      <Project>{1ec6982e-76c4-4853-bf7c-39417152f7a2}</Project>
-      <Name>CheckPointPOCOs</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
