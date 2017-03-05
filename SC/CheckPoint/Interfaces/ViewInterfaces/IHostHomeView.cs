@@ -9,11 +9,15 @@ namespace CheckPointCommon.ViewInterfaces
     public interface IHostHomeView
     {
         //TODO
-        IEnumerable<object> SetDataSource { set; }
-        void DataBind();
+        void BindData();
         string Message { set; }
-        IEnumerable<object> SetDataSource2 { set; }
+        string IndexMessage { set; }
+        int SelectedRowIndex { get; set; } 
+        int? SessionRowIndex { get; set; }
+        string SessionSortExpression { get; set; }
+        IEnumerable<object> SetDataSource { set; }
 
-        event EventHandler<EventArgs> BindGrid;
+        event EventHandler<EventArgs> SortColumn;
+        event EventHandler<EventArgs> RowSelected;
     }
 }

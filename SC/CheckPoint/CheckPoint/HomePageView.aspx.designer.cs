@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CheckPoint.Views {
+namespace CheckPoint.Views
+{
     
     
-    public partial class HomePageView {
+    public partial class HomePageView
+    {
         
         /// <summary>
         /// frmCheckPointUI control.

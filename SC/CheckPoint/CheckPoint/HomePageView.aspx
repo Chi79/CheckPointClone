@@ -47,7 +47,7 @@
     </div>
         <%-- Body --%>
     <div id="body">
-        <div id="body-main-headline">Attend Anything,<br />Anywhere,<br /> Anytime.</div>
+        <div id="body-main-headline">Attend Anything,<br />Anywhere,<br /> Anytime....Motherfucker</div>
         <div id="body-main-subtext">
             Register attendance for any type of appointment and some other stuff.<br/>
 			More text here just to fill the empty space, but this will of course contain <br/>

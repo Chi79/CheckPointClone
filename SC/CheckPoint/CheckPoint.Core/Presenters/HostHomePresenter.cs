@@ -7,7 +7,6 @@ using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointPresenters.Bases;
-using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
 
 
@@ -17,19 +16,21 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IHostHomeView _view;
         private readonly IHostHomeModel _model;
-        private readonly IShowAppointments<APPOINTMENT,object> _displayService;
+        private readonly IShowAppointments<APPOINTMENT, object> _displayService;
 
         string host = "Morten";
         //TODO
         public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
-                                 IShowAppointments<APPOINTMENT ,object> displayService)
+                                 IShowAppointments<APPOINTMENT, object> displayService)
         {
             _view = hostHomeView;
             _model = hostHomeModel;
             _displayService = displayService;
 
-            _view.BindGrid += OnSortByDate;
+            _view.SortColumn += OnSortColumnClicked;
+            _view.RowSelected += OnRowSelected;
         }
+
         public override void Load()
         {
             FetchData();
@@ -38,22 +39,27 @@ namespace CheckPointPresenters.Presenters
         {
             FetchData();
             var apps = _displayService.GetAllAppointmentColumns();
-            _view.SetDataSource = apps;
-            _view.SetDataSource2 = _displayService.GetAllAppointmentsFor(host);
-            _view.DataBind();
-            _view.Message = "HostPage";
+            _view.SetDataSource = _displayService.GetAllAppointmentsFor(host);
+            _view.SessionRowIndex = -1;
+            _view.BindData();
         }
         private void FetchData()
         {
             var appointments = _displayService.GetAllAppointmentsFor(host).ToList();
         }
-
-        private void OnSortByDate(object sender, EventArgs e)
+        private void OnRowSelected(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByDate();
+            _view.SessionRowIndex = _view.SelectedRowIndex;
+            _view.IndexMessage = _view.SessionRowIndex.ToString();
+            _view.Message = _view.SessionRowIndex.ToString();          
+        }
+
+        private void OnSortColumnClicked(object sender, EventArgs e)
+        {
+            _view.Message = _view.SessionSortExpression;
+            var apps = _displayService.GetSortMethod(_view.SessionSortExpression);
             _view.SetDataSource = apps;
-            _view.SetDataSource2 = apps;
-            _view.DataBind();
+            _view.BindData();
         }
     }
 }

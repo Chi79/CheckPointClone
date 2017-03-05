@@ -13,5 +13,7 @@ namespace CheckPointCommon.ServiceInterfaces
         IEnumerable<U> GetAllAppointmentColumns();
 
         IEnumerable<U> GetAppointmentsSortedByDate();
+
+        IEnumerable<U> GetSortMethod(string sortExpression);
     }
 }
