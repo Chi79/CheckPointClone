@@ -37,27 +37,24 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-            FetchData();
-            var apps = _displayService.GetAllAppointmentColumns();
             _view.SetDataSource = _displayService.GetAllAppointmentsFor(host);
             _view.SessionRowIndex = -1;
             _view.BindData();
         }
         private void FetchData()
         {
-            var appointments = _displayService.GetAllAppointmentsFor(host).ToList();
+            var appointments = _displayService.GetAllAppointmentsFor(host);
         }
         private void OnRowSelected(object sender, EventArgs e)
         {
             _view.SessionRowIndex = _view.SelectedRowIndex;
-            _view.IndexMessage = _view.SessionRowIndex.ToString();
             _view.Message = _view.SessionRowIndex.ToString();          
         }
 
         private void OnSortColumnClicked(object sender, EventArgs e)
         {
-            _view.Message = _view.SessionSortExpression;
-            var apps = _displayService.GetSortMethod(_view.SessionSortExpression);
+            _view.Message = _view.ColumnTitle;
+            var apps = _displayService.SortColumnBy(_view.ColumnTitle);
             _view.SetDataSource = apps;
             _view.BindData();
         }

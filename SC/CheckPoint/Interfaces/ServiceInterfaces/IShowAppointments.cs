@@ -10,10 +10,8 @@ namespace CheckPointCommon.ServiceInterfaces
     {
         IEnumerable<T> GetAllAppointmentsFor(string name);  //list of APPOINTMENTS
 
-        IEnumerable<U> GetAllAppointmentColumns();
+        IEnumerable<U> GetAppointmentsSortedByProperty(string property);
 
-        IEnumerable<U> GetAppointmentsSortedByDate();
-
-        IEnumerable<U> GetSortMethod(string sortExpression);
+        IEnumerable<U> SortColumnBy(string sortExpression);
     }
 }
