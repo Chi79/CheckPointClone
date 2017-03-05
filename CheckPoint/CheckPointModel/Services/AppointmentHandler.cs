@@ -7,7 +7,6 @@ using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.Structs;
-using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Services
 {

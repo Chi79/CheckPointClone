@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Bases;
+using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Presenters;
 
 
@@ -13,42 +13,62 @@ namespace CheckPoint.Views
 {
     public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
     {
+        public event EventHandler<EventArgs> SortColumn;
+        public event EventHandler<EventArgs> RowSelected;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            //TODO
-      
-        }
-        public IEnumerable<object> SetDataSource
-        {
-            set { gvAppointments.DataSource = value; }
-        }
-        public IEnumerable<object> SetDataSource2
-        {     
-            set { gv2.DataSource = value; } 
-        }
-
-        public void Databind()
-        {
-            gvAppointments.DataBind();
-            gv2.DataBind();
-        }
         public string Message
         {
             set { lblMessage.Text = value; }
         }
-        public event EventHandler<EventArgs> BindGrid;
-
-        protected void gvAppointments_SelectedIndexChanged(object sender, EventArgs e)
+        public string IndexMessage
         {
-            
+            set { lblIndex.Text = value; }
+        }
+        public IEnumerable<object> SetDataSource
+        {
+            set { gvHostTable.DataSource = value; }
+        }
+   
+        public int SelectedRowIndex
+        {
+            get  { return gvHostTable.SelectedIndex; }
+            set  { gvHostTable.SelectedIndex = value; }
+        }
+ 
+        public int? SessionRowIndex
+        {
+            get { return (int)Session["MyRowIndex"]; }
+            set { Session["MyRowIndex"] = value; }
         }
 
-        protected void gvAppointments_Sorting(object sender, GridViewSortEventArgs e)
+        public string SessionSortExpression
         {
-            if(BindGrid != null)
+            get { return Session["MySortExpression"].ToString(); }
+            set { Session["MySortExpression"] = value; }
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+           
+        }
+        public void BindData()
+        {
+            gvHostTable.DataBind();
+        }
+
+        protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
             {
-                BindGrid(this, EventArgs.Empty);
+                RowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        protected void gvHostTable_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            SessionSortExpression = e.SortExpression;
+            if (SortColumn != null)
+            {
+                SortColumn(this, EventArgs.Empty);
             }
         }
     }

@@ -28,7 +28,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> Login;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
