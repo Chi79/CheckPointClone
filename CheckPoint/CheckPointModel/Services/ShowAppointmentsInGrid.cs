@@ -55,11 +55,13 @@ namespace CheckPointModel.Services
             var app = _appointments.OrderBy(a => a.AppointmentId).ToList();
             return app;
         }
+
         public IEnumerable<object> GetAppointmentsSortedByCourseId()
         {
             var app = _appointments.OrderBy(a => a.CourseId).ToList();
             return app;
         }
+
         public IEnumerable<object> GetAppointmentsSortedByAppointmentName()
         {
             var app = _appointments.OrderBy(a => a.AppointmentName).ToList();
@@ -95,21 +97,25 @@ namespace CheckPointModel.Services
             var app = _appointments.OrderBy(a => a.Address).ToList();
             return app;
         }
+
         public IEnumerable<object> GetAppointmentsSortedByPostalCode()
         {
             var app = _appointments.OrderBy(a => a.PostalCode).ToList();
             return app;
         }
+
         public IEnumerable<object> GetAppointmentsSortedByIsObligatory()
         {
             var app = _appointments.OrderByDescending(a => a.IsObligatory).ToList();
             return app;
         }
+
         public IEnumerable<object> GetAppointmentsSortedByIsCancelled()
         {
             var app = _appointments.OrderByDescending(a => a.IsCancelled).ToList();
             return app;
         }
+
         public void LoadSortMethods()
         {
             if (_sorterDictionary == null)
