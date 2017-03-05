@@ -33,7 +33,7 @@ namespace CheckPointModel.Services
         {
             if(_appointments != null && _appointments.Count > 0)
             {
-                var app = _appointments.OrderBy(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a, null)).ToList();
+                var app = _appointments.OrderBy(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
                 return app;
             }
             return null;
