@@ -20,10 +20,7 @@ namespace CheckPoint.Views
         {
             set { lblMessage.Text = value; }
         }
-        public string IndexMessage
-        {
-            set { lblIndex.Text = value; }
-        }
+
         public IEnumerable<object> SetDataSource
         {
             set { gvHostTable.DataSource = value; }
@@ -41,7 +38,7 @@ namespace CheckPoint.Views
             set { Session["MyRowIndex"] = value; }
         }
 
-        public string SessionSortExpression
+        public string ColumnTitle
         {
             get { return Session["MySortExpression"].ToString(); }
             set { Session["MySortExpression"] = value; }
@@ -65,7 +62,7 @@ namespace CheckPoint.Views
 
         protected void gvHostTable_Sorting(object sender, GridViewSortEventArgs e)
         {
-            SessionSortExpression = e.SortExpression;
+            ColumnTitle = e.SortExpression;
             if (SortColumn != null)
             {
                 SortColumn(this, EventArgs.Empty);
