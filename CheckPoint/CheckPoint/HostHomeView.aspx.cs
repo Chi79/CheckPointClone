@@ -68,110 +68,15 @@ namespace CheckPoint.Views
                 SortColumn(this, EventArgs.Empty);
             }
         }
-        protected void AppIdAsc_Click(object sender, EventArgs e)
+
+        protected void Asc_Command(object sender, CommandEventArgs e)
         {
-            this.Message = "haha";
-        }
-        protected void AppIdDesc_Click(object sender, EventArgs e)
-        {
-            this.Message = "Hoorah";
-        }
-        protected void CourseIdAsc_Click(object sender, EventArgs e)
-        {
-            this.Message = "hoho";
-        }
-        protected void CourseIdDesc_Click(object sender, EventArgs e)
-        {
-            this.Message = "hehe";
+            this.Message = e.CommandName;
         }
 
-        protected void AppNameAsc_Click(object sender, EventArgs e)
+        protected void Desc_Command(object sender, CommandEventArgs e)
         {
-
-        }
-
-        protected void AppNameDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void DescriptionAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void DescriptionDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-        protected void DateAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void DateDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void StartTimeAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void StartTimeDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void EndTimeAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void EndTimeDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void AddressAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void AddressDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void PostalCodeAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void PostalCodeDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void IsObligAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void IsObligDesc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void IsPrivateAsc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void IsPrivateDesc_Click(object sender, EventArgs e)
-        {
-
+            this.Message = e.CommandName;
         }
     }
 }

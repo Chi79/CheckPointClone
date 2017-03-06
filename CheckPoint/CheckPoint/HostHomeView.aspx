@@ -32,12 +32,12 @@
         <asp:Panel 
             ID="Panel1"
             runat="server" 
-            Height="469px"
-            Width="1010px" 
+            Height="501px"
+            Width="1162px" 
             ScrollBars="Vertical" 
             BorderWidth="1" 
             BorderColor="#336699" 
-            style="margin-left: 203px">
+            style="margin-left: 127px; margin-right: 0px;">
             <asp:UpdatePanel 
                 ID="UpdatePanel1"  
                 runat="server">
@@ -63,14 +63,16 @@
                     Wrap="True" />
                 <Columns>
                     <asp:CommandField ButtonType="Image" SelectImageUrl="~/Images/small_logo.png" ShowSelectButton="True" />
+
+
                     <asp:TemplateField HeaderText="AppointmentId" AccessibleHeaderText="AppointmentId">
                         <EditItemTemplate>
                             <asp:TextBox ID="myText" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">AppointmentId</h3>
-                            <asp:Button runat="server"  Text="ASC" OnClick="AppIdAsc_Click"/>
-                            <asp:Button runat="server"  Text="DESC" OnClick="AppIdDesc_Click"/>
+                            <asp:Button runat="server"  Text="ASC" OnCommand="Asc_Command" CommandName="AppIdAsc"/>
+                            <asp:Button runat="server"  Text="DESC" OnCommand="Desc_Command" CommandName="AppIdDesc"/>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
@@ -84,8 +86,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">CourseId</h3>
-                            <asp:Button runat="server" Text="ASC" OnClick="CourseIdAsc_Click" />
-                            <asp:Button runat="server" Text="DESC" OnClick="CourseIdDesc_Click" />
+                            <asp:Button runat="server" Text="ASC" OnCommand="Asc_Command" CommandName="CourseIdAsc" />
+                            <asp:Button runat="server" Text="DESC" OnCommand="Desc_Command" CommandName="CourseIdDesc" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
@@ -101,8 +103,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">AppointmentName</h3>
-                            <asp:Button runat="server" OnClick="AppNameAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="AppNameDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="AppointmentNameAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="AppointmentNameDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
@@ -118,8 +120,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">Description</h3>
-                            <asp:Button runat="server" OnClick="DescriptionAsc_Click" Text="ASC"/>
-                            <asp:Button runat="server" OnClick="DescriptionDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="DescriptionAsc" Text="ASC"/>
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="DescriptionDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label4" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
@@ -135,8 +137,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">Date</h3>
-                            <asp:Button runat="server" OnClick="DateAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="DateDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="DateAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="DateDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label5" runat="server" Text='<%# Bind("Date") %>'></asp:Label>
@@ -152,8 +154,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">StartTime</h3>
-                            <asp:Button runat="server" OnClick="StartTimeAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="StartTimeDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="StartTimeAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="StartTimeDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("StartTime") %>'></asp:Label>
@@ -169,8 +171,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">EndTime</h3>
-                            <asp:Button runat="server" OnClick="EndTimeAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="EndTimeDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="EndTimeAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="EndTimeDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label7" runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
@@ -186,8 +188,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">Address</h3>
-                            <asp:Button runat="server" OnClick="AddressAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="AddressDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="AddressAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="AddressDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label8" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
@@ -204,8 +206,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">PostalCode</h3>
-                            <asp:Button runat="server" OnClick="PostalCodeAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="PostalCodeDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="PostalCodeAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="PostalCodeDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label9" runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
@@ -222,8 +224,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">IsObligatory</h3>
-                            <asp:Button runat="server" OnClick="IsObligAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="IsObligDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="IsObligatoryAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="IsObligatoryDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label10" runat="server" Text='<%# Bind("IsObligatory") %>'></asp:Label>
@@ -240,8 +242,8 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">IsCancelled</h3>
-                            <asp:Button runat="server" OnClick="IsPrivateAsc_Click" Text="ASC" />
-                            <asp:Button runat="server" OnClick="IsPrivateDesc_Click" Text="DESC" />
+                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="IsCancelledAsc" Text="ASC" />
+                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="IsCancelledDesc" Text="DESC" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label11" runat="server" Text='<%# Bind("IsCancelled") %>'></asp:Label>
@@ -252,40 +254,7 @@
                     </asp:TemplateField>
 
 
-                    <asp:BoundField AccessibleHeaderText="AppointmentId" DataField="AppointmentId" HeaderText="AppointmentId" SortExpression="SortByAppointmentId">
-                    <ControlStyle Font-Bold="True" />
-                    <HeaderStyle BackColor="#168927" ForeColor="White" Height="70px" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="CourseId" DataField="CourseId" HeaderText="CourseId" SortExpression="SortByCourseId">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="AppointmentName" DataField="AppointmentName" HeaderText="AppointmentName" SortExpression="SortByAppointmentName">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="Description" DataField="Description" HeaderText="Description" SortExpression="SortByDescription">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="Date" DataField="Date" HeaderText="Date" SortExpression="SortByDate">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="StartTime" DataField="StartTime" HeaderText="StartTime" SortExpression="SortByStartTime">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="EndTime" DataField="EndTime" HeaderText="EndTime" SortExpression="SortByEndTime">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="Address" DataField="Address" HeaderText="Address" SortExpression="SortByAddress">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="PostalCode" DataField="PostalCode" HeaderText="PostalCode" SortExpression="SortByPostalCode">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="IsObligatory" DataField="IsObligatory" HeaderText="IsObligatory" SortExpression="SortByIsObligatory">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
-                    <asp:BoundField AccessibleHeaderText="IsCancelled" DataField="IsCancelled" HeaderText="IsCancelled" SortExpression="SortByIsCancelled">
-                    <HeaderStyle BackColor="#168927" ForeColor="White" />
-                    </asp:BoundField>
+
                 </Columns>
                 <SelectedRowStyle 
                     BackColor="#32E236" />
