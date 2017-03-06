@@ -54,9 +54,7 @@
                   Width="662px"  
                   style="margin-left: 0px; margin-top: 0px" 
                   AllowSorting="True" 
-                  OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged" 
-                  OnSorting="gvHostTable_Sorting"
-                  SelectionMode ="FullRowSelect" >
+                  OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged" >
                 <AlternatingRowStyle 
                     BackColor="#C6F5B8" 
                     VerticalAlign="Middle" 
@@ -71,13 +69,13 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">AppointmentId</h3>
-                            <asp:Button runat="server"  Text="ASC" OnCommand="Asc_Command" CommandName="AppIdAsc"/>
-                            <asp:Button runat="server"  Text="DESC" OnCommand="Desc_Command" CommandName="AppIdDesc"/>
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png"   OnCommand="Asc_Command" CommandName="AppointmentId"/>
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png"  OnCommand="Desc_Command" CommandName="AppointmentId"/>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
                         </ItemTemplate>
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
            
                     <asp:TemplateField HeaderText="CourseId" AccessibleHeaderText="CourseId" ItemStyle-Width="100px" ControlStyle-Width="120px">
@@ -86,14 +84,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">CourseId</h3>
-                            <asp:Button runat="server" Text="ASC" OnCommand="Asc_Command" CommandName="CourseIdAsc" />
-                            <asp:Button runat="server" Text="DESC" OnCommand="Desc_Command" CommandName="CourseIdDesc" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="CourseId" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="CourseId" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor ="#168927" />
+                        <HeaderStyle BackColor ="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -103,14 +101,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">AppointmentName</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="AppointmentNameAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="AppointmentNameDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="AppointmentName" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="AppointmentName" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="100px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -120,14 +118,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">Description</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="DescriptionAsc" Text="ASC"/>
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="DescriptionDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="Description" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="Description" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label4" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
               
@@ -137,14 +135,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">Date</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="DateAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="DateDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="Date"  />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="Date"  />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label5" runat="server" Text='<%# Bind("Date") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -154,14 +152,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">StartTime</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="StartTimeAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="StartTimeDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="StartTime" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="StartTime" />
                         </HeaderTemplate>
                         <ItemTemplate>
                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("StartTime") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -171,14 +169,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">EndTime</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="EndTimeAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="EndTimeDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="EndTime" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="EndTime" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label7" runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor ="#168927" />
+                        <HeaderStyle BackColor ="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -188,14 +186,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">Address</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="AddressAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="AddressDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="Address" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="Address" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label8" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <HeaderStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -206,14 +204,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">PostalCode</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="PostalCodeAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="PostalCodeDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="PostalCode" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="PostalCode" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label9" runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <HeaderStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -224,14 +222,14 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">IsObligatory</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="IsObligatoryAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="IsObligatoryDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="IsObligatory" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="IsObligatory" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label10" runat="server" Text='<%# Bind("IsObligatory") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <HeaderStyle Width="100px" />
                     </asp:TemplateField>
 
@@ -242,20 +240,21 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">IsCancelled</h3>
-                            <asp:Button runat="server" OnCommand="Asc_Command" CommandName="IsCancelledAsc" Text="ASC" />
-                            <asp:Button runat="server" OnCommand="Desc_Command" CommandName="IsCancelledDesc" Text="DESC" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="IsCancelled" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="IsCancelled" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label11" runat="server" Text='<%# Bind("IsCancelled") %>'></asp:Label>
                         </ItemTemplate>
                         <ControlStyle Width="120px" />
-                        <HeaderStyle BackColor="#168927" />
+                        <HeaderStyle BackColor="#10591B" />
                         <HeaderStyle Width="100px" />
                     </asp:TemplateField>
 
 
 
                 </Columns>
+                  <HeaderStyle BackColor="#10591B" />
                 <SelectedRowStyle 
                     BackColor="#32E236" />
             </asp:GridView>

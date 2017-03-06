@@ -13,7 +13,8 @@ namespace CheckPoint.Views
 {
     public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
     {
-        public event EventHandler<EventArgs> SortColumn;
+        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
+        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;
 
         public string Message
@@ -38,7 +39,7 @@ namespace CheckPoint.Views
             set { Session["MyRowIndex"] = value; }
         }
 
-        public string ColumnTitle
+        public string ColumnName
         {
             get { return Session["MySortExpression"].ToString(); }
             set { Session["MySortExpression"] = value; }
@@ -60,23 +61,22 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void gvHostTable_Sorting(object sender, GridViewSortEventArgs e)
-        {
-            ColumnTitle = e.SortExpression;
-            if (SortColumn != null)
-            {
-                SortColumn(this, EventArgs.Empty);
-            }
-        }
-
         protected void Asc_Command(object sender, CommandEventArgs e)
         {
-            this.Message = e.CommandName;
+            ColumnName = e.CommandName;
+            if(SortColumnsByPropertyAscending != null)
+            {
+                SortColumnsByPropertyAscending(this, EventArgs.Empty);
+            }
         }
 
         protected void Desc_Command(object sender, CommandEventArgs e)
         {
-            this.Message = e.CommandName;
+            ColumnName = e.CommandName;
+            if(SortColumnsByPropertyDescending != null)
+            {
+                SortColumnsByPropertyDescending(this, EventArgs.Empty);
+            }
         }
     }
 }

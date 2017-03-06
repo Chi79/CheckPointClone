@@ -20,6 +20,7 @@ namespace CheckPointPresenters.Presenters
 
         string host = "Morten";
         //TODO
+
         public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
                                  IShowAppointments<APPOINTMENT, object> displayService)
         {
@@ -27,7 +28,8 @@ namespace CheckPointPresenters.Presenters
             _model = hostHomeModel;
             _displayService = displayService;
 
-            _view.SortColumn += OnSortColumnClicked;
+            _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
+            _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
             _view.RowSelected += OnRowSelected;
         }
 
@@ -51,10 +53,15 @@ namespace CheckPointPresenters.Presenters
             _view.Message = _view.SessionRowIndex.ToString();          
         }
 
-        private void OnSortColumnClicked(object sender, EventArgs e)
+        private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
-            _view.Message = _view.ColumnTitle;
-            var apps = _displayService.SortColumnBy(_view.ColumnTitle);
+            var apps = _displayService.GetAppointmentsSortedByPropertyAscending(_view.ColumnName);
+            _view.SetDataSource = apps;
+            _view.BindData();
+        }
+        private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
+        {
+            var apps = _displayService.GetAppointmentsSortedByPropertyDescending(_view.ColumnName);
             _view.SetDataSource = apps;
             _view.BindData();
         }
