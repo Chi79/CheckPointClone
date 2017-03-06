@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CheckPoint.Views {
+namespace CheckPoint.Views
+{
     
     
-    public partial class HostHomeView {
+    public partial class HostHomeView
+    {
         
         /// <summary>
         /// form1 control.
