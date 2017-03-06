@@ -68,5 +68,21 @@ namespace CheckPoint.Views
                 SortColumn(this, EventArgs.Empty);
             }
         }
+        protected void AppIdAsc_Click(object sender, EventArgs e)
+        {
+            this.Message = "haha";
+        }
+        protected void AppIdDesc_Click(object sender, EventArgs e)
+        {
+            this.Message = "Hoorah";
+        }
+        protected void CourseIdAsc_Click(object sender, EventArgs e)
+        {
+            this.Message = "hoho";
+        }
+        protected void CourseIdDesc_Click(object sender, EventArgs e)
+        {
+            this.Message = "hehe";
+        }
     }
 }
