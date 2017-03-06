@@ -13,10 +13,11 @@ namespace CheckPointCommon.ViewInterfaces
         string Message { set; }
         int SelectedRowIndex { get; set; } 
         int? SessionRowIndex { get; set; }
-        string ColumnTitle { get; set; }
+        string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }
 
-        event EventHandler<EventArgs> SortColumn;
+        event EventHandler<EventArgs> SortColumnsByPropertyAscending;
+        event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         event EventHandler<EventArgs> RowSelected;
     }
 }
