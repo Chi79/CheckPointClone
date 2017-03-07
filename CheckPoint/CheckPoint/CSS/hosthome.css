@@ -1,0 +1,24 @@
+﻿table.grhosttable
+{
+   
+    min-width:100%;
+    width:80%;
+}
+        
+
+table.grhosttable tr.header
+{
+    position:fixed;
+    overflow:hidden;
+    white-space:nowrap;
+    width:85%;
+    margin:0;
+    z-index:100;
+    top:3.9%;
+}
+
+
+table.grhosttable tr:nth-child(2) td
+{
+    padding-top:7.5%;
+}
