@@ -15,7 +15,7 @@
          <asp:ScriptManager
               ID="ScriptManager1"
               runat="server">
-        </asp:ScriptManager>
+        </asp:ScriptManager>        
 
              <asp:UpdatePanel 
                  ID="UpdatePanel2"  
@@ -28,7 +28,7 @@
                      </asp:Label>
                  </ContentTemplate>
                  </asp:UpdatePanel>
-
+        
         <asp:Panel 
             ID="Panel1"
             runat="server" 
@@ -38,6 +38,8 @@
             BorderWidth="1" 
             BorderColor="#336699" 
             style="margin-left: 127px; margin-right: 0px;">
+ 
+ 
             <asp:UpdatePanel 
                 ID="UpdatePanel1"  
                 runat="server">
@@ -46,6 +48,8 @@
                       ID="lblIndex" 
                       runat="server">
                   </asp:Label>
+
+
               <asp:GridView 
                   ID="gvHostTable" 
                   runat="server"
@@ -60,7 +64,7 @@
                     VerticalAlign="Middle" 
                     Wrap="True" />
                 <Columns>
-                    <asp:CommandField ButtonType="Image" SelectImageUrl="~/Images/small_logo.png" ShowSelectButton="True" />
+                    <asp:CommandField ButtonType="Image" SelectImageUrl="~/Images/small_logo.png" ShowSelectButton="True"/>
 
 
                     <asp:TemplateField HeaderText="AppointmentId" AccessibleHeaderText="AppointmentId">
@@ -78,6 +82,7 @@
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
            
+
                     <asp:TemplateField HeaderText="CourseId" AccessibleHeaderText="CourseId" ItemStyle-Width="100px" ControlStyle-Width="120px">
                         <EditItemTemplate>
                             <asp:TextBox ID="myText2" runat="server" Text='<%# Bind("CourseId") %>'></asp:TextBox>
@@ -94,6 +99,7 @@
                         <HeaderStyle BackColor ="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
+
 
                     <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
                         <EditItemTemplate>
@@ -112,6 +118,7 @@
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
+
                     <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" ControlStyle-Width="120px">
                         <EditItemTemplate>
                             <asp:TextBox ID="myText4" runat="server" Text='<%# Bind("Description") %>'></asp:TextBox>
@@ -128,6 +135,7 @@
                         <HeaderStyle BackColor="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
+
               
                     <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
                         <EditItemTemplate>
@@ -146,6 +154,7 @@
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
+
                     <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
                         <EditItemTemplate>
                             <asp:TextBox ID="myText6" runat="server" Text='<%# Bind("StartTime") %>'></asp:TextBox>
@@ -163,6 +172,7 @@
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
 
+
                     <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime">
                         <EditItemTemplate>
                             <asp:TextBox ID="myText7" runat="server" Text='<%# Bind("EndTime") %>'></asp:TextBox>
@@ -179,6 +189,7 @@
                         <HeaderStyle BackColor ="#10591B" />
                         <ItemStyle Width="100px" />
                     </asp:TemplateField>
+
 
                     <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address">
                         <EditItemTemplate>
@@ -240,7 +251,7 @@
                         </EditItemTemplate>
                         <HeaderTemplate>
                             <h3 style="color:white">IsCancelled</h3>
-                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="IsCancelled" />
+                            <asp:ImageButton runat="server" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" CommandName="IsCancelled"/>
                             <asp:ImageButton runat="server" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" CommandName="IsCancelled" />
                         </HeaderTemplate>
                         <ItemTemplate>
@@ -252,7 +263,6 @@
                     </asp:TemplateField>
 
 
-
                 </Columns>
                   <HeaderStyle BackColor="#10591B" />
                 <SelectedRowStyle 
@@ -260,9 +270,10 @@
             </asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
+
         </asp:Panel>
-    </div>
-        
+     </div>
+       
     </form>
 </body>
 </html>
