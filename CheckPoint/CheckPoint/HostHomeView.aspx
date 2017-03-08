@@ -114,7 +114,7 @@
                             <asp:ImageButton ID="SelectButton" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" Text="Select" />
                         </ItemTemplate>
                        <ControlStyle Width="25px" />
-                        <HeaderStyle BackColor ="#10591B"  Width="25px" Height="80px"/>
+                        <HeaderStyle BackColor ="#10591B"  Width="2.3%" Height="80px"/>
                         <ItemStyle Width="2.3%" />
                     </asp:TemplateField>  
                    
