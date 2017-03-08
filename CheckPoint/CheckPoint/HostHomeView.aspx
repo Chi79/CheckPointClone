@@ -67,7 +67,7 @@
                        
 
                       $(function() {
-                      $( "[id$=datepicker]" ).datepicker({
+                          $( "[id$=datepicker]" ).datepicker({
                                   showOn: "button",
                       buttonImage: "/images/calendar2.png",
                       buttonImageOnly: true,
@@ -102,8 +102,8 @@
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
                   ShowHeaderWhenEmpty="True" 
-                  CssClass="grhosttable" BackColor="White" ForeColor="Black">
-                  <HeaderStyle CssClass="header" />
+                  CssClass="grhosttable">
+                  <HeaderStyle CssClass="header" Height="13%"/>
                 <AlternatingRowStyle 
                     BackColor="#C6F5B8" 
                     VerticalAlign="Middle" 
@@ -198,7 +198,8 @@
                         <ItemTemplate>
 
                             <asp:Label ID="lblDate" runat="server" Text='<%# Bind("Date") %>' Height="15%"></asp:Label>
-                            <input type="hidden" id="datepicker"/> 
+                         <%--   <input type="hidden" id="datepicker"/>--%>
+                            <asp:HiddenField runat="server" ID="datepicker" Value='<%# Bind("Date") %>'></asp:HiddenField>
     
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="7.4%" />
