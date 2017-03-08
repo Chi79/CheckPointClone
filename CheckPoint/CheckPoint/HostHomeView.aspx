@@ -97,7 +97,7 @@
                   runat="server"
                   AutoGenerateColumns="False" 
                   Height="395px" 
-                  Width="662px"  
+                  Width="100%"  
                   style="margin-left: 0px; margin-top: 0px" 
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
