@@ -111,6 +111,8 @@
     <Content Include="CreateReportView.aspx" />
     <Content Include="CSS\homepage.css" />
     <Content Include="CSS\hosthome.css" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="CSS\jquery-ui.min.css" />
     <Content Include="CSS\login.css" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />
@@ -120,6 +122,7 @@
     <Content Include="Images\small_logo.png" />
     <Content Include="Images\uparrow.png" />
     <Content Include="InviteUserView.aspx" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\LoginView.js" />
     <Content Include="LoginView.aspx" />
     <Content Include="ManageAppointmentView.aspx" />
@@ -132,6 +135,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
