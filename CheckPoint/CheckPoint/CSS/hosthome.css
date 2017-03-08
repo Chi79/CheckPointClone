@@ -1,20 +1,28 @@
-﻿table.grhosttable
+﻿body 
+{
+     margin: 0%;
+     padding: 0.5%;
+     margin-right:0%;
+}
+
+table.grhosttable
 {
    
     min-width:100%;
-    width:80%;
+    width:100%;
 }
         
 
 table.grhosttable tr.header
 {
+    min-width:80%;
     position:fixed;
     overflow:hidden;
-    white-space:nowrap;
+    white-space:initial;
     width:85%;
     margin:0;
     z-index:100;
-    top:3.9%;
+    top:3.8%;
 }
 
 
