@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HostHomeView.aspx.cs"  Inherits="CheckPoint.Views.HostHomeView" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HostHomeView.aspx.cs"  Inherits="CheckPoint.Views.HostHomeView"  EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -50,7 +50,47 @@
                       ID="lblIndex" 
                       runat="server">
                   </asp:Label>
-             
+                        
+                      <link rel="stylesheet" href="CSS/hosthome.css" />
+                
+                      <link rel="stylesheet" href="CSS/jquery-ui.css" /> 
+                      <link rel="stylesheet" href="/resources/demos/style.css">
+                      <link rel="stylesheet" href="CSS/jquery-ui.min.css" />
+                      <link rel="stylesheet" href="CSS/jquery-ui.structure.css" />
+                      <link rel="stylesheet" href="CSS/jquery-ui.theme.css" />
+
+                      <script src="Scripts/jquery-ui.min.js"></script>
+                      <script src="Scripts/jquery.js"></script>
+                      <script src="Scripts/jquery-ui.js"></script>
+
+                      <script>
+                       
+
+                      $(function() {
+                      $( "[id$=datepicker]" ).datepicker({
+                                  showOn: "button",
+                      buttonImage: "/images/calendar2.png",
+                      buttonImageOnly: true,
+                      buttonText: "calender"
+                      });
+                      $("[id$=datepicker]").datepicker("setDate", Date.now())
+                      });
+
+                      var prm = Sys.WebForms.PageRequestManager.getInstance();
+                      if (prm != null) {
+                          prm.add_endRequest(function (sender, e) {
+                              if (sender._postBackSettings.panelsToUpdate != null) {
+                                  $("[id$=datepicker]").datepicker({
+                                      showOn: "button",
+                                      buttonImage: "/images/calendar2.png",
+                                      buttonImageOnly: true,
+                                      buttonText: "calender"
+                                  })
+                              }
+                          });
+                      };
+                      </script>
+
 
               <asp:GridView 
                   ID="gvHostTable" 
@@ -88,8 +128,9 @@
                             <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("AppointmentId") %>' Width="125px"></asp:Label>
+                            <asp:Label ID="lblAppId" runat="server" Text='<%# Bind("AppointmentId") %>' Width="125px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
 
 
@@ -104,13 +145,14 @@
                             <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("CourseId") %>' Width="82px"></asp:Label>
+                            <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>' Width="82px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName"><%-- <ControlStyle Width="100px" />--%><%--   <ItemStyle Width="100px" />--%>
+                    <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
                         <EditItemTemplate>
                             <asp:TextBox ID="myText3" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:TextBox>
                         </EditItemTemplate>
@@ -120,8 +162,9 @@
                             <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("AppointmentName") %>' Width="152px"></asp:Label>
+                            <asp:Label ID="lblAppName" runat="server" Text='<%# Bind("AppointmentName") %>' Width="152px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
@@ -136,8 +179,9 @@
                             <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("Description") %>' Width="93px"></asp:Label>
+                            <asp:Label ID="lblDescription" runat="server" Text='<%# Bind("Description") %>' Width="93px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
@@ -152,8 +196,12 @@
                             <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Date") %>' Width="83px"></asp:Label>
+
+                            <asp:Label ID="lblDate" runat="server" Text='<%# Bind("Date") %>' Width="83px"></asp:Label>
+                            <input type="hidden" id="datepicker"/> 
+    
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
@@ -168,8 +216,9 @@
                             <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("StartTime") %>' Width="81px"></asp:Label>
+                            <asp:Label ID="lblStartTime" runat="server" Text='<%# Bind("StartTime") %>' Width="81px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
@@ -184,8 +233,9 @@
                             <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("EndTIme") %>' Width="82px"></asp:Label>
+                            <asp:Label ID="lblEndTime" runat="server" Text='<%# Bind("EndTIme") %>' Width="82px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
@@ -200,8 +250,9 @@
                             <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label8" runat="server" Text='<%# Bind("Address") %>' Width="100px"></asp:Label>
+                            <asp:Label ID="lblAddress" runat="server" Text='<%# Bind("Address") %>' Width="100px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" Width="100px" />
                     </asp:TemplateField>
 
@@ -216,8 +267,9 @@
                             <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label9" runat="server" Text='<%# Bind("PostalCode") %>' Width="100px"></asp:Label>
+                            <asp:Label ID="lblPostalCode" runat="server" Text='<%# Bind("PostalCode") %>' Width="100px"></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                         <HeaderStyle BackColor="#10591B" Width="100px" />
                     </asp:TemplateField>
 
@@ -232,8 +284,11 @@
                             <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label10" runat="server" Text='<%# Bind("IsObligatory") %>' Width="102px"></asp:Label>
+<%--                            <asp:Label ID="lblIsObligatory" runat="server"  Text='<%# Bind("IsObligatory") %>' Width="102px"></asp:Label>--%>
+                            <asp:Image ID="IsObligTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+                            <asp:Image ID="IsObligFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" Width="102px" />
                         <HeaderStyle BackColor="#10591B" Width="100px" />
                     </asp:TemplateField>
 
@@ -249,11 +304,13 @@
                             <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label11" runat="server" Text='<%# Bind("IsCancelled") %>' Width="100px"></asp:Label>
+<%--                            <asp:Label ID="lblIsCancelled" runat="server" Text='<%# Bind("IsCancelled") %>'  Width="100px"></asp:Label>--%>
+                              <asp:Image ID="IsCancelledTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
+                            <asp:Image ID="IsCancelledFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" Width="100px" />
                         <HeaderStyle BackColor="#10591B"/>
                     </asp:TemplateField>
-
 
                 </Columns>
                   <HeaderStyle BackColor="#10591B" />
