@@ -102,7 +102,7 @@
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
                   ShowHeaderWhenEmpty="True" 
-                  CssClass="grhosttable" BackColor="White">
+                  CssClass="grhosttable" BackColor="White" ForeColor="Black">
                   <HeaderStyle CssClass="header" />
                 <AlternatingRowStyle 
                     BackColor="#C6F5B8" 
