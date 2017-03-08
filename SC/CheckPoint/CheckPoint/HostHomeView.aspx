@@ -50,8 +50,6 @@
                       ID="lblIndex" 
                       runat="server">
                   </asp:Label>
-
-                 <link href="CSS/hosthome.css" rel="stylesheet"  />
              
 
               <asp:GridView 
