@@ -11,7 +11,9 @@
     <form 
         id="form1" 
         runat="server">
+
     <div>
+
          <asp:ScriptManager
               ID="ScriptManager1"
               runat="server">
@@ -34,7 +36,7 @@
         <asp:Panel 
             ID="Panel1"
             runat="server" 
-            Height="484px" 
+            Height="484px"           
             Width="87.3%" 
             ScrollBars="Vertical" 
             BorderWidth="1" 
@@ -65,35 +67,36 @@
 
                       <script>
                        
-
-                      $(function() {
+     
+                          $(function () {
                           $( "[id$=datepicker]" ).datepicker({
                                   showOn: "button",
                       buttonImage: "/images/calendar2.png",
                       buttonImageOnly: true,
                       buttonText: "calender"
                       });
-                      $("[id$=datepicker]").datepicker("setDate", Date.now())
-                      });
+                          $("[id$=datepicker]").datepicker("setDate", $("#datepicker"))
+                              });
 
                       var prm = Sys.WebForms.PageRequestManager.getInstance();
                       if (prm != null) {
                           prm.add_endRequest(function (sender, e) {
-                              if (sender._postBackSettings.panelsToUpdate != null) {
-                                  $("[id$=datepicker]").datepicker({
-                                      showOn: "button",
-                                      buttonImage: "/images/calendar2.png",
-                                      buttonImageOnly: true,
-                                      buttonText: "calender"
-                                  })
+                                  if (sender._postBackSettings.panelsToUpdate != null) {
+                                      $("[id$=datepicker]").datepicker({
+                                          showOn: "button",
+                                          buttonImage: "/images/calendar2.png",
+                                          buttonImageOnly: true,
+                                          buttonText: "calender"
+                                      });
+                                      $("[id$=datepicker]").datepicker("setDate", $("#datepicker"))
                               }
-                          });
+                              });
                       };
                       </script>
 
 
-              <asp:GridView 
-                  ID="gvHostTable" 
+              <asp:GridView
+                  ID="gvHostTable"
                   runat="server"
                   AutoGenerateColumns="False" 
                   Height="395px" 
@@ -104,14 +107,14 @@
                   ShowHeaderWhenEmpty="True" 
                   CssClass="grhosttable">
                   <HeaderStyle CssClass="header" Height="13%"/>
-                <AlternatingRowStyle 
-                    BackColor="#C6F5B8" 
+                <AlternatingRowStyle
+                    BackColor="#C6F5B8"
                     VerticalAlign="Middle" 
                     Wrap="True" />
                 <Columns>
                     <asp:TemplateField ShowHeader="true">
                         <ItemTemplate>
-                            <asp:ImageButton ID="SelectButton" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" Text="Select" />
+                            <asp:ImageButton ID="SelectButton" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
                         </ItemTemplate>
                        <ControlStyle Width="25px" />
                         <HeaderStyle BackColor ="#10591B"  Width="2.3%" Height="80px"/>
@@ -196,11 +199,8 @@
                             <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-
-                            <asp:Label ID="lblDate" runat="server" Text='<%# Bind("Date") %>' Height="15%"></asp:Label>
-                            <input type="hidden" id="datepicker"/>
-                        <%--    <asp:HiddenField runat="server" ID="datepicker" Value='<%# Bind("Date") %>'></asp:HiddenField>--%>
-    
+                            <asp:Label ID="lblDate" runat="server" Text=' <%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
+                            <input type="hidden" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>    
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="7.4%" />
                         <HeaderStyle BackColor="#10591B" />
@@ -322,7 +322,8 @@
             </asp:UpdatePanel>
 
         </asp:Panel>
-     </div>
+    </div>
+   
        
     </form>
 </body>
