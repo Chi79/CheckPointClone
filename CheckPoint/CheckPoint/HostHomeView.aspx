@@ -88,7 +88,6 @@
                                           buttonImageOnly: true,
                                           buttonText: "calender"
                                       });
-                                      $("[id$=datepicker]").datepicker("setDate", $("#datepicker"))
                               }
                               });
                       };
@@ -285,7 +284,6 @@
                             <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-<%--                            <asp:Label ID="lblIsObligatory" runat="server"  Text='<%# Bind("IsObligatory") %>' Width="102px"></asp:Label>--%>
                             <asp:Image ID="IsObligTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
                             <asp:Image ID="IsObligFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
                         </ItemTemplate>
