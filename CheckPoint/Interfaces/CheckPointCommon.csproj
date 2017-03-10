@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheInterfaces\ICacheData.cs" />
     <Compile Include="DTOInterfaces\IAppointmentDTO.cs" />
     <Compile Include="DTOInterfaces\IAttendeeDTO.cs" />
     <Compile Include="DTOInterfaces\IClientDTO.cs" />

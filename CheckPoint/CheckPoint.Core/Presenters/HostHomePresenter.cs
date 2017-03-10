@@ -46,6 +46,8 @@ namespace CheckPointPresenters.Presenters
         private void FetchData()
         {
             var appointments = _displayService.GetAllAppointmentsFor(host);
+            //var appointments = _displayService.Cache;
+
         }
         private void OnRowSelected(object sender, EventArgs e)
         {
