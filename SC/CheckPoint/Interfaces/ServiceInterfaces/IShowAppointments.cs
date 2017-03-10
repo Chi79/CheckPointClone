@@ -14,5 +14,6 @@ namespace CheckPointCommon.ServiceInterfaces
 
         IEnumerable<U> GetAppointmentsSortedByPropertyDescending(string property);
 
+        List<T> Cache { get; set; }
     }
 }

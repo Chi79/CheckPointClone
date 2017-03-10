@@ -198,10 +198,10 @@
                             <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblDate" runat="server" Text=' <%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
-                            <input type="hidden" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>    
+                            <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
+                            <input type="hidden" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>   
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="7.4%" />
+                        <ItemStyle HorizontalAlign="Center" Width="7.4%"/>
                         <HeaderStyle BackColor="#10591B" />
                     </asp:TemplateField>
 
