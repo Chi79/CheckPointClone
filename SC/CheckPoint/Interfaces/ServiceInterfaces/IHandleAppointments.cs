@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ServiceInterfaces
 {
-    public interface IHandleAppointments<T, U> where T:class where U : struct 
+    public interface IHandleAppointments
     {
-        IEnumerable<T> GetAllAppointmentsForClient(string client);
+        IEnumerable<T> GetAllAppointmentsForClient<T>(string client);
 
         IEnumerable<string> GetAllAppointmentNamesForClient(string client);
 
-        T GetAppointmentToDisplay();
-        T GetAppointmentByName(string appointmentName);
-        void Delete(T appointment);
-        void Create(T appointment);
-        U SaveChangesToAppointments();
+        object GetAppointmentToDisplay();
+
+        object GetAppointmentByName(string appointmentName);
+
+        void Delete<T>(T appointment);
+
+        void Create<T>(T appointment);
+
+        object SaveChangesToAppointments();
     }
 }

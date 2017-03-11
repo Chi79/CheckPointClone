@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ModelInterfaces
 {
-    public interface IManageAppointmentModel<U,T> where U: class where T: class
+    public interface IManageAppointmentModel
     {
         //TODO
-        U ConvertToAppointment(T entityModel);
+        object ConvertToAppointment(object entityModel);
     }
 }

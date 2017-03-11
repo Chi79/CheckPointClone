@@ -28,8 +28,9 @@ namespace CheckPointModel.Services
     }
     public class CreateJob : JobServiceBase
     {
-        private IHandleAppointments<APPOINTMENT, SaveResult> _handler;
-        public CreateJob(IHandleAppointments<APPOINTMENT, SaveResult> handler)
+        private IHandleAppointments _handler;
+
+        public CreateJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
@@ -52,14 +53,16 @@ namespace CheckPointModel.Services
         }
         public override SaveResult SaveChanges()
         {
-            SaveResult result = _handler.SaveChangesToAppointments();
+
+            SaveResult result = (SaveResult)_handler.SaveChangesToAppointments();
             return result;
         }
     }
     public class DeleteJob : JobServiceBase
     {
-        private IHandleAppointments<APPOINTMENT, SaveResult> _handler;
-        public DeleteJob(IHandleAppointments<APPOINTMENT, SaveResult> handler)
+
+        private IHandleAppointments _handler;
+        public DeleteJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
@@ -83,14 +86,16 @@ namespace CheckPointModel.Services
         }
         public override SaveResult SaveChanges()
         {
-            SaveResult result = _handler.SaveChangesToAppointments();
+
+            SaveResult result = (SaveResult)_handler.SaveChangesToAppointments();
             return result;
         }
     }
     public class UpdateJob : JobServiceBase
     {
-        private IHandleAppointments<APPOINTMENT, SaveResult> _handler;
-        public UpdateJob(IHandleAppointments<APPOINTMENT, SaveResult> handler)
+
+        private IHandleAppointments _handler;
+        public UpdateJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
@@ -109,7 +114,7 @@ namespace CheckPointModel.Services
         }
         public override void PerformTask(APPOINTMENT appointment)
         {
-            var appointmentToUpdate = _handler.GetAppointmentByName(AppointmentName);
+            var appointmentToUpdate = _handler.GetAppointmentByName(AppointmentName) as APPOINTMENT;
 
             appointmentToUpdate.CourseId = appointment.CourseId;
             appointmentToUpdate.AppointmentName = appointment.AppointmentName;
@@ -125,7 +130,8 @@ namespace CheckPointModel.Services
         }
         public override SaveResult SaveChanges()
         {
-            SaveResult result = _handler.SaveChangesToAppointments();
+
+            SaveResult result = (SaveResult)_handler.SaveChangesToAppointments();
             return result;
         }
     }

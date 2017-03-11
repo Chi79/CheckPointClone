@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.FactoryInterfaces
 {
-    public interface IFactory<T, U> /*where T:class where U:struct*/
+    public interface IFactory
     {
-        T CreateJobType(U action);
+        object CreateJobType(object action);
     }
 }

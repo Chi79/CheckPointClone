@@ -7,17 +7,20 @@ using StructureMap;
 using CheckPointPresenters.Bases;
 using DataAccess.Concrete.Repositories;
 using CheckPointModel.Models;
+using CheckPointCache.Cache;
+
 
 
 namespace CheckPoint.Bootstrap.Registries
 {
-    public class CheckPointRegistry : Registry
+    public class CheckPointRegistry : Registry 
     {
         public CheckPointRegistry()
         {
             Scan(scanner =>
-            {
+            {    
                 scanner.RegisterConcreteTypesAgainstTheFirstInterface();
+                scanner.AssemblyContainingType<CacheData>();
                 scanner.AssemblyContainingType<LoginModel>();
                 scanner.AssemblyContainingType<UnitOfWork>();
                 scanner.AssemblyContainingType<PresenterBase>();
@@ -25,5 +28,6 @@ namespace CheckPoint.Bootstrap.Registries
                 scanner.SingleImplementationsOfInterface();
             });
         }
+        
     }
 }

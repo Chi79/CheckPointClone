@@ -19,9 +19,9 @@ namespace CheckPointPresenters.Presenters
     public class ManageAppointmentPresenter : PresenterBase
     {
         private readonly IManageAppointmentView _view;
-        private readonly IManageAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IHandleAppointments<APPOINTMENT, SaveResult> _appointmentHandler;
-        private readonly IFactory<JobServiceBase, DbAction> _factory;
+        private readonly IManageAppointmentModel _model;
+        private readonly IHandleAppointments _appointmentHandler;
+        private readonly IFactory _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
 
@@ -29,9 +29,9 @@ namespace CheckPointPresenters.Presenters
 
         public ManageAppointmentPresenter(
                                           IManageAppointmentView manageAppointmentView,
-                                          IManageAppointmentModel<APPOINTMENT, AppointmentDTO> manageAppointmentModel,
-                                          IHandleAppointments<APPOINTMENT, SaveResult> appointmentHandler,
-                                          IFactory<JobServiceBase,DbAction> factory
+                                          IManageAppointmentModel manageAppointmentModel,
+                                          IHandleAppointments appointmentHandler,
+                                          IFactory factory
                                           )
 
         {
@@ -68,19 +68,19 @@ namespace CheckPointPresenters.Presenters
         private void OnAddAppointmentButtonClicked(object sender, EventArgs e)
         {
             var job =_factory.CreateJobType(DbAction.Create);
-            ConfirmAction(job);
+            ConfirmAction(job as JobServiceBase);
         }
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
             var job = _factory.CreateJobType(DbAction.Update);
-            ConfirmAction(job);
+            ConfirmAction(job as JobServiceBase);
         }
 
         private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
         {
             var job = _factory.CreateJobType(DbAction.Delete);
-            ConfirmAction(job);
+            ConfirmAction(job as JobServiceBase);
         }
 
         private void ConfirmAction(JobServiceBase job)
@@ -147,18 +147,18 @@ namespace CheckPointPresenters.Presenters
 
         private void PerformJob()
         {
-            var job = _factory.CreateJobType((DbAction)_view.JobState);
+            var job = _factory.CreateJobType((DbAction)_view.JobState) as JobServiceBase;
             var appointment = ConvertDTOToAppointment();
 
             job.AppointmentName = _view.AppointmentNameList;
             job.PerformTask(appointment);
 
-            UpdateDatabaseWithChanges(job);
+            UpdateDatabaseWithChanges(job as JobServiceBase);
         }
 
         private APPOINTMENT ConvertDTOToAppointment()
         {
-            var appointment = _model.ConvertToAppointment(_dTO);
+            var appointment = _model.ConvertToAppointment(_dTO) as APPOINTMENT;
             return appointment;
         }
 
@@ -202,7 +202,7 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplaySelectedAppointmentData()
         {
-            var appointmentToDisplay = _appointmentHandler.GetAppointmentByName(_view.AppointmentName);
+            var appointmentToDisplay = _appointmentHandler.GetAppointmentByName(_view.AppointmentName) as APPOINTMENT;
 
             _view.CourseId = appointmentToDisplay.CourseId.ToString();
             _view.AppointmentName = appointmentToDisplay.AppointmentName;
@@ -228,7 +228,7 @@ namespace CheckPointPresenters.Presenters
 
         private void IsListFilled()
         {
-            bool listIsFull = (_appointmentHandler.GetAllAppointmentsForClient(client).ToList().Count > 0);
+            bool listIsFull = (_appointmentHandler.GetAllAppointmentsForClient<APPOINTMENT>(client).ToList().Count > 0);
             if (listIsFull)
             {
                 DisplaySelectedAppointmentData();
@@ -237,7 +237,7 @@ namespace CheckPointPresenters.Presenters
 
         private void IsListEmpty()
         {
-            bool ListIsEmpty = (_appointmentHandler.GetAllAppointmentsForClient(client).ToList().Count == 0);
+            bool ListIsEmpty = (_appointmentHandler.GetAllAppointmentsForClient<APPOINTMENT>(client).ToList().Count == 0);
             if (ListIsEmpty)
             {
                 AllButtonsHide();

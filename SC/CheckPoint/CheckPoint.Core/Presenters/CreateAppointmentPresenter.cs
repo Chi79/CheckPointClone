@@ -18,14 +18,14 @@ namespace CheckPointPresenters.Presenters
     public class CreateAppointmentPresenter : PresenterBase
     {
         private readonly ICreateAppointmentView _view;
-        private readonly ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> _model;
-        private readonly IFactory<JobServiceBase, DbAction> _factory;
+        private readonly ICreateAppointmentModel _model;
+        private readonly IFactory _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
 
-        public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView, 
-                                          ICreateAppointmentModel<APPOINTMENT, AppointmentDTO> createAppointmentModel,
-                                          IFactory<JobServiceBase, DbAction> factory
+        public CreateAppointmentPresenter(ICreateAppointmentView createAppointmentView,
+                                          ICreateAppointmentModel createAppointmentModel,
+                                          IFactory factory
                                           )
         {
 
@@ -42,7 +42,7 @@ namespace CheckPointPresenters.Presenters
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
         {
             var job = _factory.CreateJobType(DbAction.Create);
-            ConfirmAction(job);
+            ConfirmAction(job as JobServiceBase);
         }
 
         private void ConfirmAction(JobServiceBase job)
@@ -113,7 +113,7 @@ namespace CheckPointPresenters.Presenters
         private void PerformJob()
         {
 
-            var job = _factory.CreateJobType((DbAction)_view.JobState);
+            var job = _factory.CreateJobType((DbAction)_view.JobState) as JobServiceBase;
             var appointment = ConvertDTOToAppointment();
 
             job.AppointmentName = _view.AppointmentName;
@@ -124,7 +124,7 @@ namespace CheckPointPresenters.Presenters
 
         private APPOINTMENT ConvertDTOToAppointment()
         {
-            var appointment = _model.ConvertToAppointment(_dTO);
+            var appointment = _model.ConvertToAppointment(_dTO) as APPOINTMENT;
             return appointment;
         }
 
