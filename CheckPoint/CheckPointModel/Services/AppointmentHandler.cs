@@ -10,7 +10,7 @@ using CheckPointCommon.Structs;
 
 namespace CheckPointModel.Services
 {
-    public class AppointmentHandler : IHandleAppointments<APPOINTMENT, SaveResult> 
+    public class AppointmentHandler : IHandleAppointments
     {
         private readonly IUnitOfWork _uOW;
 
@@ -22,44 +22,47 @@ namespace CheckPointModel.Services
             _uOW = unitOfWork;
         }
 
-        public IEnumerable<APPOINTMENT> GetAllAppointmentsForClient(string client)
+        public IEnumerable<APPOINTMENT> GetAllAppointmentsForClient<APPOINTMENT>(string client)
         {
             _appointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(client);
-            return _appointments;
+            return _appointments as IEnumerable<APPOINTMENT>;
         }
 
         public IEnumerable<string> GetAllAppointmentNamesForClient(string client)
         {
-            GetAllAppointmentsForClient(client);
+            GetAllAppointmentsForClient<APPOINTMENT>(client);
             var allAppointmentNames = _appointments.Select(app => app.AppointmentName);
             return allAppointmentNames;
         }
 
-        public APPOINTMENT GetAppointmentToDisplay()
+        public object GetAppointmentToDisplay()
         {
             _appointment = _appointments.FirstOrDefault();
             return _appointment;
         }
 
-        public APPOINTMENT GetAppointmentByName(string appointmentName)
+        public object GetAppointmentByName(string appointmentName)
         {
             _appointment = _uOW.APPOINTMENTs.GetAppointmentByAppointmentName(appointmentName);
             return _appointment;
         }
 
-        public void Delete(APPOINTMENT appointment)
+
+        public void Delete<T>(T appointment)
         {
-            _uOW.APPOINTMENTs.Remove(appointment);
+            _uOW.APPOINTMENTs.Remove(appointment as APPOINTMENT);
         }
 
-        public void Create(APPOINTMENT appointment)
+
+        public void Create<T>(T appointment)
         {
-            _uOW.APPOINTMENTs.Add(appointment);
+            _uOW.APPOINTMENTs.Add(appointment as APPOINTMENT);
         }
 
-        public SaveResult SaveChangesToAppointments()
+
+        public object SaveChangesToAppointments()
         {
-           return _uOW.Complete();
+            return _uOW.Complete();
         }
     }
 }

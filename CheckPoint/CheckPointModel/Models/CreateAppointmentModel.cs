@@ -10,11 +10,11 @@ using CheckPointModel.Utilities;
 
 namespace CheckPointModel.Models
 {
-    public class CreateAppointmentModel : ICreateAppointmentModel<APPOINTMENT, AppointmentDTO>
+    public class CreateAppointmentModel : ICreateAppointmentModel
     {
-        public APPOINTMENT ConvertToAppointment(AppointmentDTO appointmentDTO)
+        public object ConvertToAppointment(object appointmentDTO)
         {
-            return AppointmentDTOMapper.ConvertAppointmentDTOToAppointment(appointmentDTO);
+            return AppointmentDTOMapper.ConvertAppointmentDTOToAppointment(appointmentDTO as AppointmentDTO);
         }
     }
 }

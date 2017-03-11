@@ -60,6 +60,7 @@
                       <link rel="stylesheet" href="CSS/jquery-ui.min.css" />
                       <link rel="stylesheet" href="CSS/jquery-ui.structure.css" />
                       <link rel="stylesheet" href="CSS/jquery-ui.theme.css" />
+               
 
                       <script src="Scripts/jquery-ui.min.js"></script>
                       <script src="Scripts/jquery.js"></script>
@@ -67,22 +68,21 @@
 
                       <script>
                        
-     
                           $(function () {
-                          $( "[id$=datepicker]" ).datepicker({
+                              $(".picker").datepicker({
                                   showOn: "button",
                       buttonImage: "/images/calendar2.png",
                       buttonImageOnly: true,
                       buttonText: "calender"
-                      });
-                          $("[id$=datepicker]").datepicker("setDate", $("#datepicker"))
-                              });
+                          });
+                              $(".picker").datepicker("setDate", $(".picker"))
+                          });
 
                       var prm = Sys.WebForms.PageRequestManager.getInstance();
                       if (prm != null) {
                           prm.add_endRequest(function (sender, e) {
                                   if (sender._postBackSettings.panelsToUpdate != null) {
-                                      $("[id$=datepicker]").datepicker({
+                                      $(".picker").datepicker({
                                           showOn: "button",
                                           buttonImage: "/images/calendar2.png",
                                           buttonImageOnly: true,
@@ -199,7 +199,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
-                            <input type="hidden" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>   
+                            <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>   
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="7.4%"/>
                         <HeaderStyle BackColor="#10591B" />

@@ -7,7 +7,7 @@ using CheckPointCommon.ModelInterfaces;
 
 namespace CheckPointModel.Models
 {
-    class HomePageModel : IHomePageModel
+    public class HomePageModel : IHomePageModel
     {
         //TODO
     }

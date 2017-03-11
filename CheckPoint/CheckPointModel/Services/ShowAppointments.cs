@@ -5,61 +5,56 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
+using CheckPointCommon.CacheInterfaces;
 using CheckPointDataTables.Tables;
 using System.Runtime.Caching;
 
 namespace CheckPointModel.Services
 {
-    public class ShowAppointments : IShowAppointments<APPOINTMENT, object>
+    public class ShowAppointments : IShowAppointments
     {
         private IUnitOfWork _uOW;
+        private ICacheData _cache;
 
-        private List<APPOINTMENT> _appointments;
+        public const string key = "appointmentKey";
 
-        public MemoryCache myCache = new MemoryCache("appCache");
-        private const string myCacheKey = "appCache";
-
-        public ShowAppointments(IUnitOfWork unitOfWork)
+        public ShowAppointments(IUnitOfWork unitOfWork, ICacheData cache)
         {
             _uOW = unitOfWork;
+            _cache = cache;
         }
-        public List<APPOINTMENT> Cache
+        public IEnumerable<T> GetAppointmentsCached<T>()
         {
-            get { return myCache[myCacheKey] as List<APPOINTMENT>; }
-            set { myCache[myCacheKey] = value; }
+            return AppointmentsCache as IEnumerable<T>;
         }
-
-        public IEnumerable<APPOINTMENT> GetAllAppointmentsFor(string client)
+        public List<APPOINTMENT> AppointmentsCache
         {
-            //CacheItemPolicy cachePolicy = new CacheItemPolicy();
-            //cachePolicy.AbsoluteExpiration = DateTime.Now.AddHours(2);
-            //myCache.Add( myCacheKey, _uOW.APPOINTMENTs.GetAllAppointmentsFor(client).ToList(), cachePolicy);
-
-            _appointments = _uOW.APPOINTMENTs.GetAllAppointmentsFor(client).ToList();
-            var ap = _appointments as List<APPOINTMENT>;
-            //var ap = Cache as List<APPOINTMENT>;
-            return ap;
+            get { return _cache.FetchCollection<APPOINTMENT>(key).ToList(); }
         }
 
-        public IEnumerable<object> GetAppointmentsSortedByPropertyAscending(string property)
+        public IEnumerable<T> GetAllAppointmentsFor<T>(string client)
         {
-            if (_appointments != null && _appointments.Count > 0)
-            //if (Cache != null && Cache.Count > 0)
+            _cache.Add(key, _uOW.APPOINTMENTs.GetAllAppointmentsFor(client));
+
+            var apps = AppointmentsCache;
+            return apps as IEnumerable<T>;
+        }
+
+        public IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property)
+        {
+            if (AppointmentsCache != null && AppointmentsCache.Count > 0)
             {
-                var app = _appointments.OrderBy(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
-                //var app = Cache.OrderBy(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
-                return app;
+                var appsSorted = AppointmentsCache.OrderBy(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
+                return appsSorted as IEnumerable<T>;
             }
             return null;
         }
-        public IEnumerable<object> GetAppointmentsSortedByPropertyDescending(string property)
+        public IEnumerable<T> GetAppointmentsSortedByPropertyDescending<T>(string property)
         {
-            if (_appointments != null && _appointments.Count > 0)
-            //if (Cache != null && Cache.Count > 0)
+            if (AppointmentsCache != null && AppointmentsCache.Count > 0)
             {
-                var app = _appointments.OrderByDescending(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
-                //var app = Cache.OrderByDescending(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
-                return app;
+                var appsSorted = AppointmentsCache.OrderByDescending(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
+                return appsSorted as IEnumerable<T>;
             }
             return null;
         }

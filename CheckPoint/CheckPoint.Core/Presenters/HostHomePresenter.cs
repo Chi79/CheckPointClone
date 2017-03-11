@@ -16,13 +16,13 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IHostHomeView _view;
         private readonly IHostHomeModel _model;
-        private readonly IShowAppointments<APPOINTMENT, object> _displayService;
+        private readonly IShowAppointments _displayService;
 
         string host = "Morten";
         //TODO
 
         public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
-                                 IShowAppointments<APPOINTMENT, object> displayService)
+                                 IShowAppointments displayService)
         {
             _view = hostHomeView;
             _model = hostHomeModel;
@@ -39,14 +39,14 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-            _view.SetDataSource = _displayService.GetAllAppointmentsFor(host);
+            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(host);
             _view.SessionRowIndex = -1;
             _view.BindData();
         }
         private void FetchData()
         {
-            var appointments = _displayService.GetAllAppointmentsFor(host);
-            //var appointments = _displayService.Cache;
+
+            var appointmetns = _displayService.GetAppointmentsCached<APPOINTMENT>();
 
         }
         private void OnRowSelected(object sender, EventArgs e)
@@ -57,13 +57,13 @@ namespace CheckPointPresenters.Presenters
 
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByPropertyAscending(_view.ColumnName);
+            var apps = _displayService.GetAppointmentsSortedByPropertyAscending<object>(_view.ColumnName);
             _view.SetDataSource = apps;
             _view.BindData();
         }
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByPropertyDescending(_view.ColumnName);
+            var apps = _displayService.GetAppointmentsSortedByPropertyDescending<object>(_view.ColumnName);
             _view.SetDataSource = apps;
             _view.BindData();
         }

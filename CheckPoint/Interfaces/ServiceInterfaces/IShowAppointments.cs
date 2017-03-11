@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ServiceInterfaces
 {
-    public interface IShowAppointments<T, U>
+    public interface IShowAppointments
     {
-        IEnumerable<T> GetAllAppointmentsFor(string client); 
+        IEnumerable<T> GetAllAppointmentsFor<T>(string client); 
 
-        IEnumerable<U> GetAppointmentsSortedByPropertyAscending(string property);
+        IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property);
 
-        IEnumerable<U> GetAppointmentsSortedByPropertyDescending(string property);
+        IEnumerable<T> GetAppointmentsSortedByPropertyDescending<T>(string property);
 
-        List<T> Cache { get; set; }
+        IEnumerable<T> GetAppointmentsCached<T>();
     }
 }
