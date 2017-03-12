@@ -1,0 +1,29 @@
+﻿body {
+    box-sizing: border-box;
+    position:relative;
+    left:0;
+    top:0;
+    margin:0;
+    padding:0;
+    border:none;
+}
+#form1 #Nav{
+    position:fixed;
+    left:0;
+    top:0;
+    width:20%;
+    padding:0;
+    margin:0;
+    border:none;
+
+}
+
+
+#form1 #Main{
+    
+    float:right;
+    width:75%;
+    padding:0;
+    margin:0;
+    border:none;
+}
