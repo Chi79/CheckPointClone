@@ -13,6 +13,14 @@ namespace CheckPointCache.Cache
             HttpContext.Current.Cache.Insert(key, data);
         }
 
+        public void AddWithExpiry(string key, object data)
+        {
+            DateTime expiry = new DateTime().AddHours(1);
+            TimeSpan? span = new TimeSpan();
+            span = null;
+            HttpContext.Current.Cache.Insert(key, data, null, expiry, (TimeSpan)span);
+        }
+
         public T Fetch<T>(string key)
         {
             T dataStored = (T)HttpContext.Current.Cache.Get(key);

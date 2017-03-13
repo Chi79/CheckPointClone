@@ -15,6 +15,7 @@ namespace CheckPointCommon.ViewInterfaces
         int? SessionRowIndex { get; set; }
         string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }
+        IEnumerable<object> SetDataSource2 { set; }
 
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;

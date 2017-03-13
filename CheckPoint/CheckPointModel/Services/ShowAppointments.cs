@@ -18,6 +18,8 @@ namespace CheckPointModel.Services
 
         public const string key = "appointmentKey";
 
+        private List<APPOINTMENT> emptyList = new List<APPOINTMENT>();
+
         public ShowAppointments(IUnitOfWork unitOfWork, ICacheData cache)
         {
             _uOW = unitOfWork;
@@ -40,11 +42,19 @@ namespace CheckPointModel.Services
             return apps as IEnumerable<T>;
         }
 
+        public IEnumerable<T> GetEmptyList<T>()
+        {
+            return emptyList as IEnumerable<T>;
+        }
+
         public IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property)
         {
             if (AppointmentsCache != null && AppointmentsCache.Count > 0)
             {
-                var appsSorted = AppointmentsCache.OrderBy(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
+                var appsSorted = AppointmentsCache.OrderBy(a => typeof(APPOINTMENT)
+                                                                .GetProperty(property)
+                                                                .GetValue(a))
+                                                                .ToList();
                 return appsSorted as IEnumerable<T>;
             }
             return null;
@@ -53,7 +63,10 @@ namespace CheckPointModel.Services
         {
             if (AppointmentsCache != null && AppointmentsCache.Count > 0)
             {
-                var appsSorted = AppointmentsCache.OrderByDescending(a => typeof(APPOINTMENT).GetProperty(property).GetValue(a)).ToList();
+                var appsSorted = AppointmentsCache.OrderByDescending(a => typeof(APPOINTMENT)
+                                                                         .GetProperty(property)
+                                                                         .GetValue(a))
+                                                                         .ToList();
                 return appsSorted as IEnumerable<T>;
             }
             return null;
