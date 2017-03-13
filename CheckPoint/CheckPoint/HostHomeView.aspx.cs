@@ -83,5 +83,14 @@ namespace CheckPoint.Views
                 SortColumnsByPropertyDescending(this, EventArgs.Empty);
             }
         }
+
+        protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
+                e.Row.ToolTip = "Click to select this row.";
+            }
+        }
     }
 }

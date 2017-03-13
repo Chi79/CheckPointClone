@@ -15,6 +15,7 @@
             background:#32E236 url(/Images/greenshade2.png) repeat-x;
             color:white;
             fill:#32E236;
+            
         }
         .gvRowAlt:hover{
             background: #32E236 url(/Images/greenshade2.png) repeat-x; 
@@ -52,9 +53,9 @@
             runat="server" 
             Height="15%"           
             Width="92%" 
-            ScrollBars="Vertical" 
+            ScrollBars="None"
             BorderWidth="1" 
-            BorderColor="#006600" 
+            BorderColor="White" 
             style="margin-left: 6.5%; margin-right: 0px;
             " CssClass="auto-style1">
        
@@ -77,7 +78,7 @@
                           PageSize="5" ShowHeader="true"
                           ShowHeaderWhenEmpty="True"
                           style="margin-left: 0px; margin-top: 0px; margin-right:10%; z-index:1;"
-                          Width="100%"
+                          Width="98.7%"
                           ShowFooter="false">
                          <AlternatingRowStyle BackColor="#C6F5B8" VerticalAlign="Middle" Wrap="True" />
                          <Columns>
@@ -282,7 +283,7 @@
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
                   ShowHeaderWhenEmpty="True" 
                   ShowHeader="true"
-                  RowStyle-CssClass="gvRow">
+                  RowStyle-CssClass="gvRow" OnRowDataBound="gvHostTable_RowDataBound">
                   
                   <%--    BackColor="#C6F5B8"--%>
 
@@ -464,7 +465,7 @@
                 <SelectedRowStyle 
                     BackColor="#32E236" CssClass="gvRow" />
             </asp:GridView>
-       
+                  <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
                 </ContentTemplate>
             </asp:UpdatePanel>
 
