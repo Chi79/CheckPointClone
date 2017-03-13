@@ -110,7 +110,6 @@
     <Content Include="CreateCourseView.aspx" />
     <Content Include="CreateReportView.aspx" />
     <Content Include="CSS\homepage.css" />
-    <Content Include="CSS\hosthome.css" />
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\jquery-ui.min.css" />
     <Content Include="CSS\jquery-ui.structure.css" />
