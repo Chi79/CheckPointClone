@@ -20,7 +20,7 @@
         id="form1" 
         runat="server">
 
-    <div>
+    <div id="container" style="width:1335px">
 
          <asp:ScriptManager
               ID="ScriptManager1"
@@ -191,7 +191,7 @@
             margin-right: 0px;
             overflow-y:scroll;
             z-index:1;
-            position:absolute">
+            position:relative;">
 
 
  
