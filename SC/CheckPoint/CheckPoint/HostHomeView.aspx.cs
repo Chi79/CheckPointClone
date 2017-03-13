@@ -24,9 +24,13 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSource
         {
-            set { gvHostTable.DataSource = value; }
+            set { gvHostTable.DataSource = value;  }
         }
-   
+        public IEnumerable<object> SetDataSource2
+        {
+            set { gvHostTable1.DataSource = value; }
+        }
+
         public int SelectedRowIndex
         {
             get  { return gvHostTable.SelectedIndex; }
@@ -51,6 +55,7 @@ namespace CheckPoint.Views
         public void BindData()
         {
             gvHostTable.DataBind();
+            gvHostTable1.DataBind();
         }
 
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)

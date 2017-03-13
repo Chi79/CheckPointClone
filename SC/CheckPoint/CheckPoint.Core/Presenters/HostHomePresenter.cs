@@ -40,13 +40,14 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
             _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(host);
+            _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.SessionRowIndex = -1;
             _view.BindData();
         }
         private void FetchData()
         {
 
-            var appointmetns = _displayService.GetAppointmentsCached<APPOINTMENT>();
+            var appointments = _displayService.GetAppointmentsCached<APPOINTMENT>();
 
         }
         private void OnRowSelected(object sender, EventArgs e)
@@ -59,12 +60,14 @@ namespace CheckPointPresenters.Presenters
         {
             var apps = _displayService.GetAppointmentsSortedByPropertyAscending<object>(_view.ColumnName);
             _view.SetDataSource = apps;
+            _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
         }
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
             var apps = _displayService.GetAppointmentsSortedByPropertyDescending<object>(_view.ColumnName);
             _view.SetDataSource = apps;
+            _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
         }
     }

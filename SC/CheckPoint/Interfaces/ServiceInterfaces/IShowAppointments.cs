@@ -8,7 +8,8 @@ namespace CheckPointCommon.ServiceInterfaces
 {
     public interface IShowAppointments
     {
-        IEnumerable<T> GetAllAppointmentsFor<T>(string client); 
+        IEnumerable<T> GetAllAppointmentsFor<T>(string client);
+        IEnumerable<T> GetEmptyList<T>();
 
         IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property);
 

@@ -16,5 +16,6 @@ namespace CheckPointCommon.CacheInterfaces
 
         void Add(string key, object data);
 
+        void AddWithExpiry(string key, object data);
     }
 }

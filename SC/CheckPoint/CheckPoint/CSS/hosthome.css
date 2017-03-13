@@ -1,32 +1,99 @@
 ﻿body 
 {
-     margin: 0%;
-     padding: 0.5%;
+     /*margin: 0%;
+     padding: 0.5%;*/
 }
 
-table.grhosttable
+table.gvHostTable
 {
    
-    min-width:100%;
-    width:85%;
+    /*min-width:10%;
+    width:85%;*/
 }
         
 
-table.grhosttable tr.header
+table.gvHostTable tr.header
 {
-    min-width:85%;
+    /*min-width:10%;
     position:fixed;
     overflow:hidden;
     white-space:nowrap;
     width:85%;
     margin:0;
     z-index:100;
-    top:4%;
+    top:4%;*/
 }
 
 
-table.grhosttable tr:nth-child(2) td
+table.gvHostTable tr:nth-child(2) td
 {
-    padding-top:7.5%;
+    /*padding-top:0.8%;*/
+}
+
+general formatting applied to all header columns
+table.gvHostTable tr.header th
+{
+    /*padding:5px 0px 5px 0px;
+    text-align:center;*/
+} 
+
+table.gvHostTable tr.header th:nth-child(11)
+{
+    /*width:40%;*/
+}
+
+table.gvHostTable tr.header th:nth-child(10)
+{
+    /*width:40%;*/
+}
+
+table.gvHostTable tr.header th:nth-child(9)
+{
+    /*width:40%;*/
+}
+
+table.gvHostTable tr.header th:nth-child(8)
+{
+    /*width:40%;*/
+}
+
+table.gvHostTable tr.header th:nth-child(7)
+{
+    /*width:40%;*/
+}
+
+table.gvHostTable tr.header th:nth-child(6)
+{
+    /*width:40%;*/
+}
+
+table.gvHostTable tr.header th:nth-child(5)
+{
+    /*width:40%;*/
+}      
+
+/*individual formatting of 4th header column*/
+table.gvHostTable tr.header th:nth-child(4)
+{
+    /*width:40%;*/
+}
+
+/*individual formatting of 3rd header column*/         
+table.gvHostTable tr.header th:nth-child(3)
+{
+    /*width:40%;*/
+}
+
+/*individual formatting of 2nd header column*/
+table.gvHostTable tr.header th:nth-child(2)
+{
+    /*width:120px;*/
+}
+
+/*individual formatting of 1st header column*/
+table.gvHostTable tr.header th:first-child
+{
+    /*width:12%;
+    text-align:center;*/
 }
 
