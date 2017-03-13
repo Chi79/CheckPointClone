@@ -11,6 +11,26 @@
         .auto-style1 {
             z-index: 50;
         }
+        .gvRow:hover{
+            background:#32E236 url(/Images/greenshade2.png) repeat-x;
+            color:white;
+            fill:#32E236;
+        }
+        .gvRowAlt:hover{
+            background: #32E236 url(/Images/greenshade2.png) repeat-x; 
+            /*background-color:#32E236;*/
+            color:white;
+            fill:#32E236;       
+       }
+        .gvRowAlt {
+            background-color: #C6F5B8;
+            color: black;
+            fill: #C6F5B8;
+        }
+        .gvHead{
+            background:url(/Images/headershade3.png) repeat-x; 
+        }       
+
     </style>
 
     </head>
@@ -34,7 +54,7 @@
             Width="92%" 
             ScrollBars="Vertical" 
             BorderWidth="1" 
-            BorderColor="#336699" 
+            BorderColor="#006600" 
             style="margin-left: 6.5%; margin-right: 0px;
             " CssClass="auto-style1">
        
@@ -62,7 +82,7 @@
                          <AlternatingRowStyle BackColor="#C6F5B8" VerticalAlign="Middle" Wrap="True" />
                          <Columns>
                              <asp:TemplateField ShowHeader="true">
-                                 <HeaderStyle BackColor="#10591B" />
+                                 <HeaderStyle BackColor="#10591B"  CssClass="gvHead" />
                                        <ItemTemplate>
                                        <asp:ImageButton ID="SelectButton" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
                                      </ItemTemplate>
@@ -72,102 +92,102 @@
                              <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">AppointmentId</h3>
-                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="2.3%" />
-                                 <HeaderStyle BackColor="#10591B" Width="2.3%" />
+                                 <HeaderStyle BackColor="#10591B" Width="2.3%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId">
                                  <HeaderTemplate>
-                                     <h3 style="color:white;%">CourseId</h3>
-                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <h3 style="color:white;">CourseId</h3>
+                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.1%" />
+                                 <HeaderStyle BackColor="#10591B" Width="7.1%" CssClass="gvHead" />
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">AppointmentName</h3>
-                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="8%" />
+                                 <HeaderStyle BackColor="#10591B" Width="8%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Description</h3>
-                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="9%" />
+                                 <HeaderStyle BackColor="#10591B" Width="9%" CssClass="gvHead" />
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Date</h3>
-                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.192%" />
+                                 <HeaderStyle BackColor="#10591B" Width="7.192%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
                                  <HeaderTemplate>
                                      <h3 style="color:white;" >StartTime</h3>
-                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.4%" />
+                                 <HeaderStyle BackColor="#10591B" Width="7.4%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">EndTime</h3>
-                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.25%"/>
+                                 <HeaderStyle BackColor="#10591B" Width="7.25%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Address</h3>
-                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <ItemStyle Width="2%" />
-                                 <HeaderStyle BackColor="#10591B" Width="9.4%" />
+                                 <HeaderStyle BackColor="#10591B" Width="9.4%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">PostalCode</h3>
-                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="8.8%" />
+                                 <HeaderStyle BackColor="#10591B" Width="8.8%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">IsObligatory</h3>
-                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="9.4%" />
+                                 <HeaderStyle BackColor="#10591B" Width="9.4%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">IsCancelled</h3>
-                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" />
+                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="9%" />
+                                 <HeaderStyle BackColor="#10591B" Width="9%" CssClass="gvHead" />
                              </asp:TemplateField>
                          </Columns>
                          <HeaderStyle BackColor="#10591B" />
@@ -186,7 +206,7 @@
             Width="92%" 
             ScrollBars="Vertical" 
             BorderWidth="1" 
-            BorderColor="#336699" 
+            BorderColor="#006600" 
             style="margin-left:6.5%;
             margin-right: 0px;
             overflow-y:scroll;
@@ -197,7 +217,7 @@
  
             <asp:UpdatePanel 
                 ID="UpdatePanel1"  
-                runat="server">
+                runat="server" >
                 <ContentTemplate>
                   <asp:Label 
                       ID="lblIndex" 
@@ -261,12 +281,15 @@
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
                   ShowHeaderWhenEmpty="True" 
-                  ShowHeader="true">
+                  ShowHeader="true"
+                  RowStyle-CssClass="gvRow">
                   
+                  <%--    BackColor="#C6F5B8"--%>
+
                 <AlternatingRowStyle
-                    BackColor="#C6F5B8"
+    
                     VerticalAlign="Middle" 
-                    Wrap="True" />
+                    Wrap="True" CssClass="gvRowAlt"/>
                 <Columns>
                     <asp:TemplateField ShowHeader="true"> 
                         <ItemTemplate>
@@ -288,6 +311,7 @@
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%" />
                         <HeaderStyle BackColor="#10591B"/>
+                    
 
 
                     </asp:TemplateField>
@@ -328,7 +352,7 @@
                         <ItemTemplate>
                             <asp:Label ID="lblDescription" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%"/>
+                        <ItemStyle HorizontalAlign="Center" Width="10.2%"/>
                         <HeaderStyle BackColor="#10591B"/>
                     </asp:TemplateField>
 
@@ -343,7 +367,7 @@
                             <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
                             <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>   
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="8%" />
+                        <ItemStyle HorizontalAlign="Center" Width="8.4%" />
                         <HeaderStyle BackColor="#10591B"  />
                     </asp:TemplateField>
 
@@ -438,7 +462,7 @@
                   <HeaderStyle BackColor="#10591B" />
                   <PagerSettings Position="Top" />
                 <SelectedRowStyle 
-                    BackColor="#32E236" />
+                    BackColor="#32E236" CssClass="gvRow" />
             </asp:GridView>
        
                 </ContentTemplate>
