@@ -46,7 +46,6 @@ namespace CheckPointPresenters.Presenters
         }
         private void FetchData()
         {
-
             var appointments = _displayService.GetAppointmentsCached<APPOINTMENT>();
 
         }
