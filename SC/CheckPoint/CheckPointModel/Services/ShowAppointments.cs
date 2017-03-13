@@ -17,6 +17,7 @@ namespace CheckPointModel.Services
         private ICacheData _cache;
 
         public const string key = "appointmentKey";
+        public string client;
 
         private List<APPOINTMENT> emptyList = new List<APPOINTMENT>();
 
@@ -27,11 +28,18 @@ namespace CheckPointModel.Services
         }
         public IEnumerable<T> GetAppointmentsCached<T>()
         {
-            return AppointmentsCache as IEnumerable<T>;
+            if(AppointmentsCache != null)
+            {
+                return AppointmentsCache as IEnumerable<T>;
+            }
+            else
+            {
+                return GetAllAppointmentsFor<T>(client);
+            }
         }
         public List<APPOINTMENT> AppointmentsCache
         {
-            get { return _cache.FetchCollection<APPOINTMENT>(key).ToList(); }
+            get{  return _cache.FetchCollection<APPOINTMENT>(key).ToList(); }
         }
 
         public IEnumerable<T> GetAllAppointmentsFor<T>(string client)
@@ -49,27 +57,26 @@ namespace CheckPointModel.Services
 
         public IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property)
         {
-            if (AppointmentsCache != null && AppointmentsCache.Count > 0)
-            {
-                var appsSorted = AppointmentsCache.OrderBy(a => typeof(APPOINTMENT)
-                                                                .GetProperty(property)
-                                                                .GetValue(a))
-                                                                .ToList();
+                var apps = GetAppointmentsCached<T>();
+
+                var appsSorted = apps.OrderBy(a => typeof(APPOINTMENT)
+                                                .GetProperty(property)
+                                                .GetValue(a))
+                                                .ToList();
+
                 return appsSorted as IEnumerable<T>;
-            }
-            return null;
+
         }
         public IEnumerable<T> GetAppointmentsSortedByPropertyDescending<T>(string property)
         {
-            if (AppointmentsCache != null && AppointmentsCache.Count > 0)
-            {
-                var appsSorted = AppointmentsCache.OrderByDescending(a => typeof(APPOINTMENT)
-                                                                         .GetProperty(property)
-                                                                         .GetValue(a))
-                                                                         .ToList();
+                var apps = GetAppointmentsCached<T>();
+
+                var appsSorted = apps.OrderByDescending(a => typeof(APPOINTMENT)
+                                                                  .GetProperty(property)
+                                                                  .GetValue(a))
+                                                                  .ToList();
+
                 return appsSorted as IEnumerable<T>;
-            }
-            return null;
         }
     }
 }

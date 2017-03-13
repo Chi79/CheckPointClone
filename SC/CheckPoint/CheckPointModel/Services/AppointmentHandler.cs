@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointDataTables.Tables;
-using CheckPointCommon.Structs;
 
 namespace CheckPointModel.Services
 {
