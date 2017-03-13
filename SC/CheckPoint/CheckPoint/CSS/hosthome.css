@@ -1,9 +1,19 @@
 ﻿/*#body{
-    min-width:200px;
-    padding:inherit;
+
     margin:0px;
 }
-#container{
-     /*width:1335px;
-     margin:0 auto;*/
-/*}*/
+.gvRow:hover{
+            background-color: #32E236;
+            color:white;
+            fill:#32E236;
+}
+.gvRowAlt:hover{
+            background-color: #32E236;
+            color:white;
+            fill:#32E236;       
+}
+.gvRowAlt{
+            background-color: #C6F5B8;
+            color:black;
+            fill:#C6F5B8; 
+}*/

@@ -116,17 +116,22 @@
     <Content Include="CSS\jquery-ui.structure.css" />
     <Content Include="CSS\jquery-ui.theme.css" />
     <Content Include="CSS\login.css" />
-    <Content Include="CSS\StyleMaster.css" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />
     <Content Include="HostHomeView.aspx" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\cross.png" />
-    <Content Include="Images\downarrow.png" />
+    <Content Include="Images\downarrow2.png" />
+    <Content Include="Images\downarrow3.png" />
+    <Content Include="Images\greenshade.png" />
+    <Content Include="Images\greenshade2.png" />
+    <Content Include="Images\headershade.png" />
+    <Content Include="Images\headershade3.png" />
     <Content Include="Images\logo_white2.png" />
     <Content Include="Images\small_logo.png" />
     <Content Include="Images\tick.png" />
-    <Content Include="Images\uparrow.png" />
+    <Content Include="Images\uparrow2.png" />
+    <Content Include="Images\uparrow3.png" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
@@ -144,7 +149,6 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="packages.config" />
     <Content Include="Scripts\package.json" />
-    <Content Include="Master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -235,13 +239,6 @@
     </Compile>
     <Compile Include="ManageCourseView.aspx.designer.cs">
       <DependentUpon>ManageCourseView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Master.Master.cs">
-      <DependentUpon>Master.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Master.Master.designer.cs">
-      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterClientView.aspx.cs">
