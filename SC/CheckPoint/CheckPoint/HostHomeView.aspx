@@ -187,7 +187,7 @@
             ScrollBars="Vertical" 
             BorderWidth="1" 
             BorderColor="#336699" 
-            style="margin-left: 6.5%;
+            style="margin-left:6.5%;
             margin-right: 0px;
             overflow-y:scroll;
             z-index:1;
