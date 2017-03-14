@@ -45,6 +45,7 @@ namespace CheckPoint.Views
         public void RedirectToHostHomePage()
         {
             //TODO Response.Redirect();
+            Response.Redirect("HostHomeView.aspx");
         }
     }
 }

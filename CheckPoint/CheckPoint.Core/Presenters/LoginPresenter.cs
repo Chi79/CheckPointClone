@@ -83,6 +83,7 @@ namespace CheckPointPresenters.Presenters
                     break;
                 case ClientType.Host:
                     _view.Message = "Logged in as Host.";
+                    _view.RedirectToHostHomePage();
                     break;
             }
         }   

@@ -69,18 +69,18 @@
         }
           @keyframes fabiotop {
           from { top: -150%; }
-          to { top: -30%; }
+            to { top: -30%; }
         }
          .goosebottom {
            position: absolute;
-           left: 95%;
+           left: 110%;
            top: 70%;
            margin: 7em -244px;
-           animation: goosebottom 6s ;
+           animation: goosebottom 6s;
         }   
-          @keyframes goosebottom {
+          @keyframes goosebottom {  
            from {top:150%;}
-             to {top:70%;}
+             to {top:70%;}   
         }
 
         .slideleft {
@@ -92,7 +92,7 @@
         }
           @keyframes slideleft {
           from { left: -150%; }
-          to { left: 100%; }
+            to { left: 100%; }
         }
         .slideright {
            position: absolute;
@@ -103,7 +103,7 @@
         }
           @keyframes slideright {
           from { right: -150%; }
-          to { right: 18%; }
+            to { right: 18%; }
         }
 
 
@@ -117,7 +117,7 @@
         id="form1" 
         runat="server">
 
-    <div id="container" style="width:1335px" class="slideright">
+    <div id="container" style="width:1335px;" class="slideright" >
 
          <asp:ScriptManager
               ID="ScriptManager1"
