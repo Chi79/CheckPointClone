@@ -63,13 +63,13 @@
          .fabiotop {
            position: absolute;
            left: 25%;
-           top: -30%;
+           top: 70%;
            margin: 7em -244px;
            animation: fabiotop 3s ;
         }
           @keyframes fabiotop {
-          from { top: -150%; }
-            to { top: -30%; }
+          from { top: 150%; }
+            to { top: 70%; }
         }
          .goosebottom {
            position: absolute;
@@ -125,7 +125,7 @@
               runat="server">
         </asp:ScriptManager> 
 
-        <div id="fabio" class="fabiotop"><img src="Images/fabio.png"/></div>
+        <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png"/></div>
         <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
 
             <asp:Panel
