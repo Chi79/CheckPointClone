@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport"   content="width=device-width, initial-scale=1.0,minimum-scale=0.5, User-scalable=no,maximum-scale=1.5"/>
     <link href="CSS/StyleMaster.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -12,11 +12,24 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="Nav">
+    <div id="main-sidebar">
 
-        <asp:ContentPlaceHolder ID="NavContentPlaceHolder" runat="server">
-        
-        </asp:ContentPlaceHolder>
+        <ul class="main-sidebar-menu-list">
+
+            <li class="main-sidebar-menu-list-item">
+
+                <img class="main-sidebar-menu-list-item-icon" src="Images/Drawing1.png" alt="[]"></img>
+                    <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="1" >My activeties</a>
+            </li>
+              <li class="main-sidebar-menu-list-item">
+                   <img class="main-sidebar-menu-list-item-icon"  src="Images/alterprofilelogo.png" alt="[]"></img>
+                  <a class="main-sidebar-menu-list-item-link" href="UpdateProfileView.aspx">Alter profile</a>
+              </li>            
+            <li class="main-sidebar-menu-list-item">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/logout.png" alt="[]"></img>
+                <a class="main-sidebar-menu-list-item-link" href="HomePageView.aspx">Logout</a>
+            </li>
+        </ul>
 
     </div>
         <div id="Main">
