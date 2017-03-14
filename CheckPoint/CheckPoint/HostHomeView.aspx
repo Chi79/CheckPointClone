@@ -61,6 +61,20 @@
             border-radius:10px 10px;
         }
 
+
+        .slide {
+           position: absolute;
+           left: -11%;
+           top: 8%;
+           margin: 7em -244px;
+           animation: slide 4s 1;
+        }
+          @keyframes slide {
+          from { left: -150%; }
+          to { left: -11%; }
+        }
+
+
     </style>
 
     </head>
@@ -86,6 +100,8 @@
             BorderWidth="1" 
             BorderColor="White" 
             style="margin-left: 6.6%; margin-right: 0px;">
+
+           <div id="slide" class="slide" style="z-index:1"><img src="Images/Screen-Shot-2015-10-19-at-9.54.30-PM-compressed.png" width="2000" height="352"/></div> 
        
              <asp:UpdatePanel 
                  ID="UpdatePanel2"  
@@ -290,7 +306,6 @@
                               }
                               });
                       };
-
             </script>
 
 
