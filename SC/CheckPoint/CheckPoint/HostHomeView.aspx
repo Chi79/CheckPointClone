@@ -60,19 +60,52 @@
         .roundedbutton{
             border-radius:10px 10px;
         }
-
-
-        .slide {
+         .fabiotop {
            position: absolute;
-           left: -11%;
-           top: 8%;
+           left: 25%;
+           top: -30%;
            margin: 7em -244px;
-           animation: slide 4s 1;
+           animation: fabiotop 3s ;
         }
-          @keyframes slide {
+          @keyframes fabiotop {
+          from { top: -150%; }
+          to { top: -30%; }
+        }
+         .goosebottom {
+           position: absolute;
+           left: 95%;
+           top: 70%;
+           margin: 7em -244px;
+           animation: goosebottom 6s ;
+        }   
+          @keyframes goosebottom {
+           from {top:150%;}
+             to {top:70%;}
+        }
+
+        .slideleft {
+           position: absolute;
+           left: 100%;
+           top: -28%;
+           margin: 7em -244px;
+           animation: slideleft 2s ;
+        }
+          @keyframes slideleft {
           from { left: -150%; }
-          to { left: -11%; }
+          to { left: 100%; }
         }
+        .slideright {
+           position: absolute;
+           right: 18%;
+           top: -13%;
+           margin: 7em -244px;
+           animation: slideright 2s;
+        }
+          @keyframes slideright {
+          from { right: -150%; }
+          to { right: 18%; }
+        }
+
 
 
     </style>
@@ -84,12 +117,16 @@
         id="form1" 
         runat="server">
 
-    <div id="container" style="width:1335px">
+    <div id="container" style="width:1335px" class="slideright">
 
          <asp:ScriptManager
               ID="ScriptManager1"
               runat="server">
         </asp:ScriptManager> 
+
+        <div id="logo" class="slideleft"><img src="Images/logo1.png"/></div>
+        <div id="fabio" class="fabiotop"><img src="Images/fabio.png"/></div>
+        <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
 
             <asp:Panel
             ID="Panel2"
@@ -101,7 +138,6 @@
             BorderColor="White" 
             style="margin-left: 6.6%; margin-right: 0px;">
 
-           <div id="slide" class="slide" style="z-index:1"><img src="Images/Screen-Shot-2015-10-19-at-9.54.30-PM-compressed.png" width="2000" height="352"/></div> 
        
              <asp:UpdatePanel 
                  ID="UpdatePanel2"  
@@ -125,6 +161,7 @@
                           z-index:1;"
                           Width="98.7%"
                           ShowFooter="false">
+                          
                          <Columns>
                              <asp:TemplateField ShowHeader="true">
                                  <HeaderStyle BackColor="#10591B"  CssClass="gvHeadleft" />
@@ -246,7 +283,7 @@
            <asp:Panel 
             ID="Panel1"
             runat="server" 
-            Height="485px"           
+            Height="435px"           
             Width="92%" 
             ScrollBars="Vertical" 
             BorderStyle="None"
