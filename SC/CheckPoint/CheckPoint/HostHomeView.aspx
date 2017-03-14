@@ -117,7 +117,7 @@
         id="form1" 
         runat="server">
 
-    <div id ="outercontainer" style="z-index:0; width:4000px; height:1500px; background-color:#282828">
+    <div id ="outercontainer" style="z-index:0; width:4000px; height:1500px; background-color:#333333">
     <div id="container" style="width:1335px;" class="slideright" >
 
          <asp:ScriptManager
@@ -135,8 +135,8 @@
             Width="92%" 
             ScrollBars="None"
             BorderWidth="1" 
-            BorderColor="#282828" 
-            style="margin-left: 6.6%; margin-right: 0px;" BackColor="#282828" BorderStyle="None">
+            BorderColor="#333333" 
+            style="margin-left: 6.6%; margin-right: 0px;" BackColor="#333333" BorderStyle="None">
 
        
              <asp:UpdatePanel 
