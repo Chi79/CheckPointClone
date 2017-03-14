@@ -89,7 +89,6 @@ namespace CheckPoint.Views
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Click to select this row.";
             }
         }
     }
