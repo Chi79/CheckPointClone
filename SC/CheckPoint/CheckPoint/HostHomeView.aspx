@@ -362,7 +362,6 @@
                   ShowHeaderWhenEmpty="True" 
                   ShowHeader="true" >
                   
-                  <%--    BackColor="#C6F5B8"--%>
                 <RowStyle CssClass="gvRow" BackColor="White" />
                 <AlternatingRowStyle
                     VerticalAlign="Middle" 
