@@ -57,26 +57,27 @@ namespace CheckPointModel.Services
 
         public IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property)
         {
-                var apps = GetAppointmentsCached<T>();
+            var apps = GetAppointmentsCached<T>();
 
-                var appsSorted = apps.OrderBy(a => typeof(APPOINTMENT)
+
+            var appsSorted = apps.OrderBy(a => typeof(APPOINTMENT)
                                                 .GetProperty(property)
                                                 .GetValue(a))
                                                 .ToList();
 
-                return appsSorted as IEnumerable<T>;
+            return appsSorted as IEnumerable<T>;
 
         }
         public IEnumerable<T> GetAppointmentsSortedByPropertyDescending<T>(string property)
         {
-                var apps = GetAppointmentsCached<T>();
+            var apps = GetAppointmentsCached<T>();
 
-                var appsSorted = apps.OrderByDescending(a => typeof(APPOINTMENT)
-                                                                  .GetProperty(property)
-                                                                  .GetValue(a))
-                                                                  .ToList();
+            var appsSorted = apps.OrderByDescending(a => typeof(APPOINTMENT)
+                                                              .GetProperty(property)
+                                                              .GetValue(a))
+                                                              .ToList();
 
-                return appsSorted as IEnumerable<T>;
+            return appsSorted as IEnumerable<T>;
         }
     }
 }

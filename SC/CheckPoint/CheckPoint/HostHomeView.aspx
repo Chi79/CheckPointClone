@@ -7,10 +7,10 @@
 
     <title></title>
 
-    <style type="text/css">
-        .auto-style1 {
+   <style type="text/css">
+        /*.auto-style1 {
             z-index: 50;
-        }
+        }*/
         .gvRow:hover{
             background:#32E236 url(/Images/greenshade2.png) repeat-x;
             color:white;
@@ -19,7 +19,7 @@
         }
         .gvRowAlt:hover{
             background: #32E236 url(/Images/greenshade2.png) repeat-x; 
-            /*background-color:#32E236;*/
+            background-color:#32E236;
             color:white;
             fill:#32E236;       
        }
@@ -28,9 +28,10 @@
             color: black;
             fill: #C6F5B8;
         }
-        .gvHead{
-            background:url(/Images/headershade3.png) repeat-x; 
-        }       
+        .gvHead {
+            background: url(/Images/headershade3.png) repeat-x;
+        }
+            
 
     </style>
 
@@ -56,8 +57,7 @@
             ScrollBars="None"
             BorderWidth="1" 
             BorderColor="White" 
-            style="margin-left: 6.5%; margin-right: 0px;
-            " CssClass="auto-style1">
+            style="margin-left: 6.5%; margin-right: 0px;">
        
              <asp:UpdatePanel 
                  ID="UpdatePanel2"  
@@ -74,13 +74,13 @@
                           AllowSorting="True"
                           AutoGenerateColumns="False"
                           Height="70%" 
-                          OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
-                          PageSize="5" ShowHeader="true"
+                          OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged" 
+                          ShowHeader="true"
                           ShowHeaderWhenEmpty="True"
-                          style="margin-left: 0px; margin-top: 0px; margin-right:10%; z-index:1;"
+                          style="margin-left: 0px; margin-top: 0px; margin-right:10%;
+                          z-index:1;"
                           Width="98.7%"
                           ShowFooter="false">
-                         <AlternatingRowStyle BackColor="#C6F5B8" VerticalAlign="Middle" Wrap="True" />
                          <Columns>
                              <asp:TemplateField ShowHeader="true">
                                  <HeaderStyle BackColor="#10591B"  CssClass="gvHead" />
@@ -88,7 +88,7 @@
                                        <asp:ImageButton ID="SelectButton" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
                                      </ItemTemplate>
                                  <ItemStyle Width="1%" />
-                                 <HeaderStyle Width="2.7%" />
+                                 <HeaderStyle Width="2.5%" />
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId">
                                  <HeaderTemplate>
@@ -97,7 +97,7 @@
                                      <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="2.3%" />
-                                 <HeaderStyle BackColor="#10591B" Width="2.3%" CssClass="gvHead"/>
+                                 <HeaderStyle BackColor="#10591B" Width="2.3%" CssClass="gvHead" />
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId">
                                  <HeaderTemplate>
@@ -106,7 +106,7 @@
                                      <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.1%" CssClass="gvHead" />
+                                 <HeaderStyle BackColor="#10591B" Width="7.1%" CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
                                  <HeaderTemplate>
@@ -115,7 +115,7 @@
                                      <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="8%" CssClass="gvHead"/>
+                                 <HeaderStyle BackColor="#10591B" Width="8%"  CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description">
                                  <HeaderTemplate>
@@ -124,7 +124,7 @@
                                      <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="9%" CssClass="gvHead" />
+                                 <HeaderStyle BackColor="#10591B" Width="9%"  CssClass="gvHead" />
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
                                  <HeaderTemplate>
@@ -133,7 +133,7 @@
                                      <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.192%" CssClass="gvHead"/>
+                                 <HeaderStyle BackColor="#10591B" Width="7.192%"  CssClass="gvHead"/>
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
                                  <HeaderTemplate>
@@ -142,7 +142,7 @@
                                      <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
-                                 <HeaderStyle BackColor="#10591B" Width="7.4%" CssClass="gvHead"/>
+                                 <HeaderStyle BackColor="#10591B" Width="7.4%" CssClass="gvHead" />
                              </asp:TemplateField>
                              <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime">
                                  <HeaderTemplate>
@@ -188,11 +188,10 @@
                                      <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
-                                 <HeaderStyle BackColor="#10591B" Width="9%" CssClass="gvHead" />
+                                 <HeaderStyle BackColor="#10591B" Width="9%" CssClass="gvHead"/>
                              </asp:TemplateField>
                          </Columns>
                          <HeaderStyle BackColor="#10591B" />
-                         <PagerSettings Position="Top" />
                          <SelectedRowStyle BackColor="#32E236" />
                      </asp:GridView>
                  </ContentTemplate>
@@ -206,9 +205,8 @@
             Height="485px"           
             Width="92%" 
             ScrollBars="Vertical" 
-            BorderWidth="1" 
-            BorderColor="#006600" 
-            style="margin-left:6.5%;
+            BorderStyle="None"
+            style="margin-left:6.59%;
             margin-right: 0px;
             overflow-y:scroll;
             z-index:1;
@@ -274,23 +272,22 @@
                   AutoGenerateColumns="False" 
                   Height="70%" 
                   Width="100%"  
-
                   style="margin-left:0px;
-                  margin-top:-7.2%; 
+                  margin-top:-5.2%; 
                   margin-right:10%;
                   z-index:0" 
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
+                  OnRowDataBound="gvHostTable_RowDataBound"
                   ShowHeaderWhenEmpty="True" 
-                  ShowHeader="true"
-                  RowStyle-CssClass="gvRow" OnRowDataBound="gvHostTable_RowDataBound">
+                  ShowHeader="true" >
                   
                   <%--    BackColor="#C6F5B8"--%>
-
+                <RowStyle CssClass="gvRow"/>
                 <AlternatingRowStyle
-    
                     VerticalAlign="Middle" 
-                    Wrap="True" CssClass="gvRowAlt"/>
+                    Wrap="True"
+                    CssClass="gvRowAlt"/>
                 <Columns>
                     <asp:TemplateField ShowHeader="true"> 
                         <ItemTemplate>
@@ -304,8 +301,6 @@
                     <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId">
                         <HeaderTemplate>
                             <h3 style="color:white" >AppointmentId</h3>
-                            <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblAppId" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
@@ -319,8 +314,6 @@
                     <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId">
                         <HeaderTemplate>
                             <h3 style="color:white">CourseId</h3>
-                            <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
@@ -333,8 +326,6 @@
                     <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
                         <HeaderTemplate>
                             <h3 style="color:white">AppointmentName</h3>
-                            <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblAppName" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
@@ -347,8 +338,6 @@
                     <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description">
                         <HeaderTemplate>
                             <h3 style="color:white">Description</h3>
-                            <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblDescription" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
@@ -361,8 +350,6 @@
                     <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
                         <HeaderTemplate>
                             <h3 style="color:white">Date</h3>
-                            <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
@@ -376,8 +363,6 @@
                     <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
                         <HeaderTemplate>
                             <h3 style="color:white">StartTime</h3>
-                            <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblStartTime" runat="server" Text='<%# Bind("StartTime") %>' ></asp:Label>
@@ -390,8 +375,6 @@
                     <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" >
                         <HeaderTemplate>
                             <h3 style="color:white">EndTime</h3>
-                            <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblEndTime" runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
@@ -404,8 +387,6 @@
                     <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address">
                         <HeaderTemplate>
                             <h3 style="color:white">Address</h3>
-                            <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblAddress" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
@@ -419,8 +400,6 @@
                     <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode">
                         <HeaderTemplate>
                             <h3 style="color:white">PostalCode</h3>
-                            <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lblPostalCode" runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
@@ -433,8 +412,6 @@
                     <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory">
                         <HeaderTemplate>
                             <h3 style="color:white">IsObligatory</h3>
-                            <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:Image ID="IsObligTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
@@ -448,8 +425,6 @@
                     <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled">
                         <HeaderTemplate>
                             <h3 style="color:white">IsCancelled</h3>
-                            <asp:ImageButton runat="server"  CommandName="IsCancelled" ImageUrl="~/Images/uparrow.png" OnCommand="Asc_Command" />
-                            <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow.png" OnCommand="Desc_Command" />
                         </HeaderTemplate>
                         <ItemTemplate>
                               <asp:Image ID="IsCancelledTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
@@ -461,11 +436,9 @@
 
                 </Columns>
                   <HeaderStyle BackColor="#10591B" />
-                  <PagerSettings Position="Top" />
                 <SelectedRowStyle 
-                    BackColor="#32E236" CssClass="gvRow" />
+                    BackColor="#32E236" ForeColor="White" />
             </asp:GridView>
-                  <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>
                 </ContentTemplate>
             </asp:UpdatePanel>
 
