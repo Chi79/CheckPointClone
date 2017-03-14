@@ -414,10 +414,12 @@ button.ui-button::-moz-focus-inner {
 	top: 2px;
 	width: 1.8em;
 	height: 1.8em;
+    background-image:url(/Images/small_logo.png);
 }
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
 	top: 1px;
+    background-image:url(/Images/small_logo.png);
 }
 .ui-datepicker .ui-datepicker-prev {
 	left: 2px;
