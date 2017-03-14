@@ -117,6 +117,7 @@
         id="form1" 
         runat="server">
 
+    <div id ="outercontainer" style="z-index:0; width:4000px; height:1500px; background-color:#282828">
     <div id="container" style="width:1335px;" class="slideright" >
 
          <asp:ScriptManager
@@ -124,7 +125,6 @@
               runat="server">
         </asp:ScriptManager> 
 
-        <div id="logo" class="slideleft"><img src="Images/logo1.png"/></div>
         <div id="fabio" class="fabiotop"><img src="Images/fabio.png"/></div>
         <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
 
@@ -135,8 +135,8 @@
             Width="92%" 
             ScrollBars="None"
             BorderWidth="1" 
-            BorderColor="White" 
-            style="margin-left: 6.6%; margin-right: 0px;">
+            BorderColor="#282828" 
+            style="margin-left: 6.6%; margin-right: 0px;" BackColor="#282828" BorderStyle="None">
 
        
              <asp:UpdatePanel 
@@ -158,7 +158,7 @@
                           ShowHeader="true"
                           ShowHeaderWhenEmpty="True"
                           style="margin-left: 0px; margin-top: 0px; margin-right:10%;
-                          z-index:1;"
+                          z-index:2;"
                           Width="98.7%"
                           ShowFooter="false">
                           
@@ -283,7 +283,7 @@
            <asp:Panel 
             ID="Panel1"
             runat="server" 
-            Height="435px"           
+            Height="430px"           
             Width="92%" 
             ScrollBars="Vertical" 
             BorderStyle="None"
@@ -355,7 +355,7 @@
                   style="margin-left:0px;
                   margin-top:-5.2%; 
                   margin-right:10%;
-                  z-index:0" 
+                  z-index:1" 
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
                   OnRowDataBound="gvHostTable_RowDataBound"
@@ -363,11 +363,11 @@
                   ShowHeader="true" >
                   
                   <%--    BackColor="#C6F5B8"--%>
-                <RowStyle CssClass="gvRow" />
+                <RowStyle CssClass="gvRow" BackColor="White" />
                 <AlternatingRowStyle
                     VerticalAlign="Middle" 
                     Wrap="True"
-                    CssClass="gvRowAlt"/>
+                    CssClass="gvRowAlt" BackColor="#99FF99"/>
                 <Columns>
                     <asp:TemplateField ShowHeader="true"> 
                         <ItemTemplate>
@@ -524,7 +524,7 @@
 
         </asp:Panel>
        </div>
-       
+       </div>
     </form>
 </body>
 </html>
