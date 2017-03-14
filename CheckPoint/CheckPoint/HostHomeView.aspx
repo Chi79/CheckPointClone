@@ -57,7 +57,7 @@
             ScrollBars="None"
             BorderWidth="1" 
             BorderColor="White" 
-            style="margin-left: 6.5%; margin-right: 0px;">
+            style="margin-left: 6.6%; margin-right: 0px;">
        
              <asp:UpdatePanel 
                  ID="UpdatePanel2"  
