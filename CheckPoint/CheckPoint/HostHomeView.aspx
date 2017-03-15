@@ -86,7 +86,7 @@
         .slideleft {
            position: absolute;
            left: 100%;
-           top: -25%;
+           top: -27%;
            margin: 7em -244px;
            animation: slideleft 2s ;
         }
@@ -97,7 +97,7 @@
         .slideright {
            position: absolute;
            right: 18%;
-           top: -13%;
+           top: -10%;
            margin: 7em -244px;
            animation: slideright 2s;
         }
