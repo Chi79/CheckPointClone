@@ -96,7 +96,6 @@ namespace CheckPoint.Views
 
         protected void update_Click(object sender, ImageClickEventArgs e)
         {
-            this.Message = "update clicked!";
             if(UpdateButtonClicked != null)
             {
                 UpdateButtonClicked(this, EventArgs.Empty);
@@ -105,7 +104,6 @@ namespace CheckPoint.Views
 
         protected void managecourses_Click(object sender, ImageClickEventArgs e)
         {
-            this.Message = "manage courses clicked!";
             if(ManageCoursesButtonClicked != null)
             {
                 ManageCoursesButtonClicked(this, EventArgs.Empty);
@@ -114,7 +112,6 @@ namespace CheckPoint.Views
 
         protected void manageappointments_Click(object sender, ImageClickEventArgs e)
         {
-            this.Message = "manage appointments clicked!";
             if(ManageAppointmentsButtonClicked != null)
             {
                 ManageAppointmentsButtonClicked(this, EventArgs.Empty);
@@ -123,7 +120,6 @@ namespace CheckPoint.Views
 
         protected void manageattendance_Click(object sender, ImageClickEventArgs e)
         {
-            this.Message = "manage attendance clicked!";
             if(ManageAttendanceButtonClicked != null)
             {
                 ManageAttendanceButtonClicked(this, EventArgs.Empty);
@@ -132,7 +128,6 @@ namespace CheckPoint.Views
 
         protected void createreport_Click(object sender, ImageClickEventArgs e)
         {
-            this.Message = "create report clicked!";
             if(CreateReportButtonClicked != null)
             {
                 CreateReportButtonClicked(this, EventArgs.Empty);
