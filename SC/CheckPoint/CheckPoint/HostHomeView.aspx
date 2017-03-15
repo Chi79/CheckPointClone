@@ -14,8 +14,7 @@
         .gvRow:hover{
             background:#32E236 url(/Images/greenshade2.png) repeat-x;
             color:white;
-            fill:#32E236;
-            
+            fill:#32E236;  
         }
         .gvRowAlt:hover{
             background: #32E236 url(/Images/greenshade2.png) repeat-x; 
@@ -60,12 +59,60 @@
         .roundedbutton{
             border-radius:10px 10px;
         }
+        .buttons1{
+           z-index:5;
+           position: absolute;
+           left: 40%;
+           top: 81%;
+           margin: 7em -244px;
+           animation: buttonsup 2s ;
+        }
+        .buttons2{
+           z-index:5;
+           position: absolute;
+           left: 53%;
+           top: 81%;
+           margin: 7em -244px;
+           animation: buttonsup 3s ;
+        }
+       .buttons3{
+           z-index:5;
+           position: absolute;
+           left: 66%;
+           top: 81%;
+           margin: 7em -244px;
+           animation: buttonsup 4s ;
+        }
+       .buttons4{
+           z-index:5;
+           position: absolute;
+           left: 79%;
+           top: 81%;
+           margin: 7em -244px;
+           animation: buttonsup 5s ;
+        }
+       @keyframes buttonsup {
+           from { top: 150%; }
+             to { top: 81%;}
+       }
+       .buttons5{
+           z-index:5;
+           position: absolute;
+           left: 92%;
+           top: 81%;
+           margin: 7em -244px;
+           animation: buttonsup5 6s ;
+        }
+       @keyframes buttonsup5 {
+           from { top: 150%; }
+             to { top: 81%;}
+       }
          .fabiotop {
            position: absolute;
            left: 25%;
            top: 70%;
            margin: 7em -244px;
-           animation: fabiotop 3s ;
+           animation: fabiotop 7s ;
         }
           @keyframes fabiotop {
           from { top: 150%; }
@@ -76,7 +123,7 @@
            left: 110%;
            top: 70%;
            margin: 7em -244px;
-           animation: goosebottom 6s;
+           animation: goosebottom 9s;
         }   
           @keyframes goosebottom {  
            from {top:150%;}
@@ -108,6 +155,12 @@
 
 
 
+       .auto-style1 {
+           height: 248px;
+       }
+
+
+
     </style>
 
     </head>
@@ -128,6 +181,48 @@
         <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png"/></div>
         <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
         <div id="logo" class="slideleft" style="z-index:5"><img src="Images/logo4.png" /></div>
+
+        <div id="buttons" runat="server" style="z-index:5;" class="buttons1">
+        <asp:UpdatePanel ID="buttonspanel" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  runat="server" CssClass="roundedbutton" id="update" ImageUrl="~/Images/updatebutton.png" OnClick="update_Click" />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttons2" runat="server" style="z-index:5;" class="buttons2">
+        <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  runat="server" CssClass="roundedbutton" id="managecourses" ImageUrl="~/Images/managecoursesbutton.png" OnClick="managecourses_Click"  />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttons3" runat="server" style="z-index:5;" class="buttons3">
+        <asp:UpdatePanel ID="buttonspanel3" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  runat="server" CssClass="roundedbutton" id="manageappointments" ImageUrl="~/Images/manageappointmentsbutton.png" OnClick="manageappointments_Click"  />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttons4" runat="server" style="z-index:5;" class="buttons4">
+        <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  runat="server" CssClass="roundedbutton" id="manageattendance" ImageUrl="~/Images/manageattendancebutton.png" OnClick="manageattendance_Click"  />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttons5" runat="server" style="z-index:5;" class="buttons5">
+        <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  runat="server" CssClass="roundedbutton" id="createreport" ImageUrl="~/Images/createreportbutton.png" OnClick="createreport_Click"  />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+
 
             <asp:Panel
             ID="Panel2"
@@ -175,8 +270,8 @@
                              <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">AppointmentId</h3>
-                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command"  CssClass="roundedbutton"/>
+                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command"  CssClass="roundedbutton" ToolTip="sort by descending"/>
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="2.3%" />
                                  <HeaderStyle BackColor="#10591B" Width="2.3%" CssClass="gvHeadcenter" />
@@ -184,8 +279,8 @@
                              <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">CourseId</h3>
-                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="CourseId" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending"/>
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
                                  <HeaderStyle BackColor="#10591B" Width="7.1%" CssClass="gvHeadcenter"/>
@@ -193,8 +288,8 @@
                              <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">AppointmentName</h3>
-                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="AppointmentName" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending"/>
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <HeaderStyle BackColor="#10591B" Width="8%"  CssClass="gvHeadcenter"/>
@@ -202,8 +297,8 @@
                              <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Description</h3>
-                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="Description" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending"/>
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <HeaderStyle BackColor="#10591B" Width="9%"  CssClass="gvHeadcenter"/>
@@ -211,8 +306,8 @@
                              <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Date</h3>
-                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="Date" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
                                  <HeaderStyle BackColor="#10591B" Width="7.192%"  CssClass="gvHeadcenter"/>
@@ -220,8 +315,8 @@
                              <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
                                  <HeaderTemplate>
                                      <h3 style="color:white;" >StartTime</h3>
-                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command"  CssClass="roundedbutton"/>
-                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command"  CssClass="roundedbutton" ToolTip="sort by ascending"/>
+                                     <asp:ImageButton runat="server" CommandName="StartTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
                                  <HeaderStyle BackColor="#10591B" Width="7.4%" CssClass="gvHeadcenter" />
@@ -229,8 +324,8 @@
                              <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">EndTime</h3>
-                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="EndTime" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="8%" />
                                  <HeaderStyle BackColor="#10591B" Width="7.25%" CssClass="gvHeadcenter"/>
@@ -238,8 +333,8 @@
                              <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Address</h3>
-                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton"/>
+                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="Address" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending"/>
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <ItemStyle Width="2%" />
@@ -248,8 +343,8 @@
                              <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">PostalCode</h3>
-                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending"/>
+                                     <asp:ImageButton runat="server" CommandName="PostalCode" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <HeaderStyle BackColor="#10591B" Width="8.8%" CssClass="gvHeadcenter"/>
@@ -257,8 +352,8 @@
                              <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">IsObligatory</h3>
-                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command"  CssClass="roundedbutton"/>
-                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command"  CssClass="roundedbutton" ToolTip="sort by ascending"/>
+                                     <asp:ImageButton runat="server" CommandName="IsObligatory" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command" CssClass="roundedbutton" ToolTip="sort by descending" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <HeaderStyle BackColor="#10591B" Width="9.4%" CssClass="gvHeadcenter"/>
@@ -266,8 +361,8 @@
                              <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">IsCancelled</h3>
-                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" />
-                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command"  CssClass="roundedbutton" />
+                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/uparrow3.png" OnCommand="Asc_Command" CssClass="roundedbutton" ToolTip="sort by ascending" />
+                                     <asp:ImageButton runat="server" CommandName="IsCancelled" ImageUrl="~/Images/downarrow3.png" OnCommand="Desc_Command"  CssClass="roundedbutton" ToolTip="sort by descending" />
                                  </HeaderTemplate>
                                  <ItemStyle HorizontalAlign="Center" Width="10%" />
                                  <HeaderStyle BackColor="#10591B" Width="9%" CssClass="gvHeadright"/>
@@ -367,7 +462,7 @@
                 <AlternatingRowStyle
                     VerticalAlign="Middle" 
                     Wrap="True"
-                    CssClass="gvRowAlt" BackColor="#99FF99"/>
+                    CssClass="gvRowAlt" BackColor="#99FF99" />
                 <Columns>
                     <asp:TemplateField ShowHeader="true"> 
                         <ItemTemplate>

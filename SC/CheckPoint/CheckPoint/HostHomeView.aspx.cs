@@ -91,5 +91,30 @@ namespace CheckPoint.Views
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
             }
         }
+
+        protected void update_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "update clicked!";
+        }
+
+        protected void managecourses_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "manage courses clicked!";
+        }
+
+        protected void manageappointments_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "manage appointments clicked!";
+        }
+
+        protected void manageattendance_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "manage attendance clicked!";
+        }
+
+        protected void createreport_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "create report clicked!";
+        }
     }
 }
