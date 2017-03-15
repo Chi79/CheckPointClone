@@ -107,8 +107,11 @@ namespace CheckPointPresenters.Presenters
         }
         private void GetSelectedAppointmentIdFromGrid()
         {
-            var datakey = _view.SelectedRowValueDataKey;
-            _view.Message = datakey.ToString();
+            if(_view.SessionRowIndex != null)
+            {
+                var datakey = _view.SelectedRowValueDataKey;
+                _view.Message = datakey.ToString();
+            }
         }
     }
 }
