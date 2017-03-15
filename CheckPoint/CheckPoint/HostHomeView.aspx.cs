@@ -17,6 +17,12 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;
 
+        public event EventHandler<EventArgs> UpdateButtonClicked;
+        public event EventHandler<EventArgs> ManageCoursesButtonClicked;
+        public event EventHandler<EventArgs> ManageAppointmentsButtonClicked;
+        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
+        public event EventHandler<EventArgs> CreateReportButtonClicked;
+
         public string Message
         {
             set { lblMessage.Text = value; }
@@ -57,6 +63,10 @@ namespace CheckPoint.Views
             gvHostTable.DataBind();
             gvHostTable1.DataBind();
         }
+        public object SelectedRowValueDataKey
+        {
+            get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+        }
 
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -84,37 +94,57 @@ namespace CheckPoint.Views
             }
         }
 
+        protected void update_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "update clicked!";
+            if(UpdateButtonClicked != null)
+            {
+                UpdateButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void managecourses_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "manage courses clicked!";
+            if(ManageCoursesButtonClicked != null)
+            {
+                ManageCoursesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void manageappointments_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "manage appointments clicked!";
+            if(ManageAppointmentsButtonClicked != null)
+            {
+                ManageAppointmentsButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void manageattendance_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "manage attendance clicked!";
+            if(ManageAttendanceButtonClicked != null)
+            {
+                ManageAttendanceButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void createreport_Click(object sender, ImageClickEventArgs e)
+        {
+            this.Message = "create report clicked!";
+            if(CreateReportButtonClicked != null)
+            {
+                CreateReportButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
         protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
             }
-        }
-
-        protected void update_Click(object sender, ImageClickEventArgs e)
-        {
-            this.Message = "update clicked!";
-        }
-
-        protected void managecourses_Click(object sender, ImageClickEventArgs e)
-        {
-            this.Message = "manage courses clicked!";
-        }
-
-        protected void manageappointments_Click(object sender, ImageClickEventArgs e)
-        {
-            this.Message = "manage appointments clicked!";
-        }
-
-        protected void manageattendance_Click(object sender, ImageClickEventArgs e)
-        {
-            this.Message = "manage attendance clicked!";
-        }
-
-        protected void createreport_Click(object sender, ImageClickEventArgs e)
-        {
-            this.Message = "create report clicked!";
         }
     }
 }
