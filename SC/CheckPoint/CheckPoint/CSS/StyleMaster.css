@@ -14,7 +14,7 @@ body {
 
 
 #form1 #main-sidebar{   
-    background-color:rgb(0,90,0);
+    background:rgb(0,90,0) url(/Images/greenmetallic.jpg) repeat-y; 
    position:fixed;   
     padding:0%;
     margin:0;
@@ -22,16 +22,15 @@ body {
     height:100%;
     z-index:0;
     width:10%;
+    border-bottom-right-radius:10%;
+    border-top-right-radius:10%;
+}
+.main-sidebar-top-logo{
+    
+    max-width: 100%;
+    height: auto;
 }
 
-#form1 #Main{
-    float:right;
-    width:88%;
-    padding:0;
-    margin:0;
-    border:none;
-    
-}
 
 
 .main-sidebar-menu-list{
@@ -43,19 +42,41 @@ padding:0%;
 margin:0;
 }
 .main-sidebar-menu-list-item{
- 
+ width:100%;
 border-bottom:solid white  1px;
-padding-top:10%;
-padding-bottom:10%;
-margin:0;
+
 
 }
+/*.main-sidebar-menu-list-item .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 0px 0;
+    font-size:5%;
+    border-radius: 6px;     
+    position: absolute;
+    z-index: 110;
+}
+.main-sidebar-menu-list-item:hover{
+    background-color:rgb(0,150,0)
+}*/
+
 .main-sidebar-menu-list-item-link{
-     display:block;     
-     font-size:medium;
+    display:block;     
+    font-size:medium;
     text-decoration:none;
     color:white;
+    padding-top:10%;
+    padding-bottom:10%;
+    margin:0;
  
+
+}
+.main-sidebar-menu-list-item-link:hover{
+   
+    background-color:rgb(0,150,0)
 
 }
 
@@ -67,11 +88,6 @@ margin:0;
     max-width: 100%;
     height: auto;
  }
-
-.main-sidebar-menu-list-item:hover{
-    background-color:rgb(0,150,0)
-}
-
 
 @media only screen and (max-width: 1400px) {
 #form1 #main-sidebar {      
@@ -85,20 +101,20 @@ margin:0;
         width: 3%;
     }
 .main-sidebar-menu-list-item {
-border-bottom:solid white  1px;
+border:none;
 padding:0%;
 margin:0;
 
 }
 .main-sidebar-menu-list-item-link{
      
-    line-height: 0; 
+    line-height: 3; 
     font-size: 0;
     color: transparent;
 
 }
-.main-sidebar-menu-list-item-icon:hover{
-
+.main-sidebar-menu-list-item:hover .tooltiptext{
+    visibility:visible;
 }
 #form1 #Main {
         width: 95%;
@@ -140,28 +156,14 @@ margin:0;
     }
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+#form1 #Main{
+    float:right;
+    width:88%;
+    padding:0;
+    margin:0;
+    border:none;
+    
 }
 
-/* Tooltip text */
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
- 
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-}
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
