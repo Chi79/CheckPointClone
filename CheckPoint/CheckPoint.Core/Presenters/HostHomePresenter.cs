@@ -83,10 +83,7 @@ namespace CheckPointPresenters.Presenters
         private void OnRowSelected(object sender, EventArgs e)
         {
             _view.SessionRowIndex = _view.SelectedRowIndex;
-            GetSelectedAppointmentIdFromGrid();
-            //_view.Message = _view.SessionRowIndex.ToString();
-            //var datakey = _view.SelectedRowValueDataKey;
-            //_view.Message = datakey.ToString();       
+            GetSelectedAppointmentIdFromGrid();    
         }
 
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
@@ -95,6 +92,7 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSource = apps;
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
+
             GetSelectedAppointmentIdFromGrid();
         }
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
@@ -103,6 +101,7 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSource = apps;
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
+
             GetSelectedAppointmentIdFromGrid();
         }
         private void GetSelectedAppointmentIdFromGrid()
