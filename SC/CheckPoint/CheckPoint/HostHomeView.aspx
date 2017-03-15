@@ -456,20 +456,21 @@
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
                   OnRowDataBound="gvHostTable_RowDataBound"
                   ShowHeaderWhenEmpty="True" 
-                  ShowHeader="true" >
+                  ShowHeader="true" 
+                  DataKeyNames="AppointmentId">
                   
-                <RowStyle CssClass="gvRow" BackColor="White" />
+                <RowStyle CssClass="gvRow" BackColor="White"  />
                 <AlternatingRowStyle
                     VerticalAlign="Middle" 
                     Wrap="True"
                     CssClass="gvRowAlt" BackColor="#99FF99" />
                 <Columns>
-                    <asp:TemplateField ShowHeader="true"> 
+                    <asp:TemplateField ShowHeader="true" > 
                         <ItemTemplate>
-                            <asp:ImageButton ID="SelectButton" runat="server" CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
+                            <asp:ImageButton ID="SelectButton" runat="server"  CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
                         </ItemTemplate>
                         <HeaderStyle BackColor ="#10591B" />
-                        <ItemStyle Width="1%" CssClass="roundedleft"/>
+                        <ItemStyle Width="1%" CssClass="roundedleft" />
                         <HeaderStyle  />
                     </asp:TemplateField>  
                    
