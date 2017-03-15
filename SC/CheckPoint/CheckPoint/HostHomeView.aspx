@@ -86,7 +86,7 @@
         .slideleft {
            position: absolute;
            left: 100%;
-           top: -28%;
+           top: -25%;
            margin: 7em -244px;
            animation: slideleft 2s ;
         }
@@ -127,6 +127,7 @@
 
         <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png"/></div>
         <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
+        <div id="logo" class="slideleft" style="z-index:5"><img src="Images/logo4.png" /></div>
 
             <asp:Panel
             ID="Panel2"
