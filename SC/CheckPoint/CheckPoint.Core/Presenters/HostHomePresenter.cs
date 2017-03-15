@@ -107,7 +107,8 @@ namespace CheckPointPresenters.Presenters
         }
         private void GetSelectedAppointmentIdFromGrid()
         {
-            if(_view.SessionRowIndex != null)
+            int indexNotSelected = -1;
+            if(_view.SessionRowIndex != indexNotSelected)
             {
                 var datakey = _view.SelectedRowValueDataKey;
                 _view.Message = datakey.ToString();

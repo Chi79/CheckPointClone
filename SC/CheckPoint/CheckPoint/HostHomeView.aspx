@@ -173,8 +173,8 @@
         id="form1" 
         runat="server">
 
-    <div id ="outercontainer" style="z-index:0; width:4000px; height:1500px; background-color:#333333">
-    <div id="container" style="width:1335px;" class="slideright" >
+    <div id ="outercontainer" style="z-index:0; width:4000px; height:1500px; background-color:#333333" >
+    <div id="container" style="width:1335px; zoom:1" class="slideright" >
 
          <asp:ScriptManager
               ID="ScriptManager1"
