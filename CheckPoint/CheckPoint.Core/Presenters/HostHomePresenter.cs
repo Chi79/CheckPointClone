@@ -31,7 +31,6 @@ namespace CheckPointPresenters.Presenters
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
             _view.RowSelected += OnRowSelected;
-
             _view.UpdateButtonClicked += OnUpdateButtonClicked;
             _view.ManageCoursesButtonClicked += OnManageCoursesButtonClicked;
             _view.ManageAppointmentsButtonClicked += OnManageAppointmentsButtonClicked;
