@@ -118,6 +118,7 @@
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />
     <Content Include="HostHomeView.aspx" />
+    <Content Include="Images\angrygoose.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\createreportbutton.png" />
     <Content Include="Images\cross.png" />
