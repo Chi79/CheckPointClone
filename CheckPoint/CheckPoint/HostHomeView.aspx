@@ -3,9 +3,6 @@
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
 
-
-
-
     <title></title>
 
    <style type="text/css">
@@ -448,10 +445,10 @@
                       <link rel="stylesheet" href="CSS/jquery-ui.structure.css" />
                       <link rel="stylesheet" href="CSS/jquery-ui.theme.css" />
                
-
                       <script src="Scripts/jquery-ui.min.js"></script>
                       <script src="Scripts/jquery.js"></script>
                       <script src="Scripts/jquery-ui.js"></script>
+          
                       
                       <script type="text/javascript">
  
