@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HostHomeView.aspx.cs"  Inherits="CheckPoint.Views.HostHomeView"  EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HostHomeView.aspx.cs"  Inherits="CheckPoint.Views.HostHomeView"  EnableEventValidation="false"  MasterPageFile="~/Master.Master" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="head" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server"> 
+
+
+
 
     <title></title>
 
@@ -145,7 +146,7 @@
            position: absolute;
            right: 18%;
            top: -10%;
-           margin: 7em -244px;
+           margin: 2.5em -244px;
            animation: slideright 2s;
         }
           @keyframes slideright {
@@ -166,15 +167,14 @@
 
     </style>
 
-    </head>
-<body>
+   </asp:Content>
 
-    <form 
-        id="form1" 
-        runat="server">
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+
 
     <div id ="outercontainer" style="z-index:0; width:4000px; height:1500px; background-color:#333333" >
-    <div id="container" style="width:1335px; zoom:1" class="slideright" >
+    <div id="container" style="width:1335px; zoom:1.2" class="slideright" >
 
          <asp:ScriptManager
               ID="ScriptManager1"
@@ -660,9 +660,7 @@
         </asp:Panel>
        </div>
        </div>
-    </form>
-</body>
-</html>
 
+    </asp:Content>
 
 
