@@ -16,7 +16,7 @@
 
     <div id="main-sidebar">
 
-     <asp:button runat="server" class="main-sidebar-showhidebutton" type="button" onclick="Unnamed_Click"></asp:button>
+     <button runat="server" class="main-sidebar-showhidebutton" type="button" onclick="Unnamed_Click"></button>
         <div>
             <img class="main-sidebar-top-logo" src="Images/logo_white2.png" alt="Checkpoint"/>
         </div>

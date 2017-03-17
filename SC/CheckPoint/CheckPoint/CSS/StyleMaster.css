@@ -4,6 +4,7 @@
 
 body {
  background-color:rgb(51,51,51);
+
     position:relative;
     left:0;
     top:0;
@@ -15,7 +16,7 @@ body {
 
 #form1 #main-sidebar{   
    
-        background: rgb(102,204,102); /* For browsers that do not support gradients */
+    background: rgb(102,204,102); /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(rgb(51,51,51), rgb(102,204,102)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(rgb(51,51,51), rgb(102,204,102)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(rgb(51,51,51), rgb(102,204,102)); /* For Firefox 3.6 to 15 */
@@ -35,15 +36,16 @@ body {
 
     float:right;
     width:100%;    
-    border:outset gray;
-    background-color:rgb(51,51,51);
+    height:5%;
+    border:none;
+    background-color:transparent;
     color:white;
     padding:0;
     margin-bottom:5%;
 
 }
 .main-sidebar-showhidebutton:hover{
-       background-color:rgb(100,100,100);
+       background-color:rgb(70,70,70);
 }
 .main-sidebar-top-logo{
     
