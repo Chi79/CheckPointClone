@@ -57,9 +57,8 @@ body {
     height: auto;
 }
 .main-sidebar-top-logo-small{
-    visibility:hidden;
-    border-radius: 20%;
-    border:solid black;
+    visibility:hidden;    
+    border:none;
     margin:0;
     padding:0%;
     max-width: 100%;
