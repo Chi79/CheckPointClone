@@ -52,6 +52,19 @@ body {
     max-width: 100%;
     height: auto;
 }
+.main-sidebar-top-logo-big{
+    max-width: 100%;
+    height: auto;
+}
+.main-sidebar-top-logo-small{
+    visibility:hidden;
+    border-radius: 20%;
+    border:solid black;
+    margin:0;
+    padding:0%;
+    max-width: 100%;
+    height: auto;
+}
 
 
 
@@ -124,9 +137,19 @@ border-bottom:solid white  1px;
         z-index: 100;
         width: 3%;
     }
-    .main-sidebar-top-logo {
-      crop:auto;
-    }
+
+
+.main-sidebar-top-logo-big{
+    visibility:hidden;
+    max-width: 100%;
+    height: auto;
+}
+.main-sidebar-top-logo-small{
+    visibility:visible;
+    max-width: 100%;
+    height: auto;
+}
+
 .main-sidebar-menu-list-item {
 border:none;
 padding:0%;
