@@ -24,7 +24,7 @@
           <%--       <span class="tooltiptext">Show my activeties</span>--%>
                  <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="1" >                                             
                   
-                <img class="main-sidebar-menu-list-item-icon" src="Images/Drawing1.png" alt="[]"></img>
+                <img class="main-sidebar-menu-list-item-icon"  src="Images/activitiesicon1.png" alt="[]"></img>
                    My activeties
 
                  </a>
@@ -35,7 +35,7 @@
              <%--    <span class="tooltiptext">Alter Profile</span>--%>
                                    
                     <a class="main-sidebar-menu-list-item-link" href="UpdateProfileView.aspx" tabindex="2">                         
-                       <img class="main-sidebar-menu-list-item-icon" alt="[]" src="Images/alterprofilelogo.png"></img>
+                       <img class="main-sidebar-menu-list-item-icon" alt="[]" src="Images/alterprofile2.png" ></img>
                         Alter profile
                   </a>   
                   
@@ -44,7 +44,7 @@
             <li class="main-sidebar-menu-list-item">
             <%--     <span class="tooltiptext">Logout</span>--%>
                   <a class="main-sidebar-menu-list-item-link" href="HomePageView.aspx" tabindex="3">
-                           <img class="main-sidebar-menu-list-item-icon" src="Images/logout.png" alt="[]"></img>
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/logouticon13.png" alt="[]"></img>
                    Logout
 
                   </a>

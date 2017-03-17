@@ -119,8 +119,11 @@
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />
     <Content Include="HostHomeView.aspx" />
+    <Content Include="Images\activitiesicon1.png" />
+    <Content Include="Images\alterprofile2.png" />
     <Content Include="Images\angrygoose.png" />
     <Content Include="Images\calendar2.png" />
+    <Content Include="Images\checkpointlogo1.png" />
     <Content Include="Images\createreportbutton.png" />
     <Content Include="Images\cross.png" />
     <Content Include="Images\downarrow2.png" />
@@ -133,6 +136,7 @@
     <Content Include="Images\headershade3.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo4.png" />
+    <Content Include="Images\logouticon13.png" />
     <Content Include="Images\logo_white2.png" />
     <Content Include="Images\manageappointmentsbutton.png" />
     <Content Include="Images\manageattendancebutton.png" />

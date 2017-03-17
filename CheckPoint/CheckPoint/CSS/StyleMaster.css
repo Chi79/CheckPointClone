@@ -81,12 +81,13 @@ border-bottom:solid white  1px;
 }
 
 .main-sidebar-menu-list-item-icon{
-    border-radius: 50%;
+    border-radius: 20%;
     border:solid black;
     margin:0;
     padding:0%;
     max-width: 100%;
     height: auto;
+    vertical-align:middle;
  }
 
 @media only screen and (max-width: 1400px) {
@@ -99,6 +100,9 @@ border-bottom:solid white  1px;
         height: 100%;
         z-index: 100;
         width: 3%;
+    }
+    .main-sidebar-top-logo {
+       background-image: url('../Images/checkpointlogo1.png');
     }
 .main-sidebar-menu-list-item {
 border:none;
