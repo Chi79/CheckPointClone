@@ -19,7 +19,7 @@
      <button runat="server" class="main-sidebar-showhidebutton" type="button" onclick="Unnamed_Click"><</button>
         <div class="main-sidebar-top-logo">
             <img class="main-sidebar-top-logo-big" src="Images/logo_white2.png" alt="Checkpoint"/>
-            <img class="main-sidebar-top-logo-small" src="Images/small_logo.png" alt="Checkpoint"/>
+            <img class="main-sidebar-top-logo-small" src="Images/small_logo2.png" alt="Checkpoint"/>
         </div>
         <ul class="main-sidebar-menu-list">
 
