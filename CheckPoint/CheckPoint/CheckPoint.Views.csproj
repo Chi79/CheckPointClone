@@ -129,6 +129,11 @@
     <Content Include="Images\downarrow2.png" />
     <Content Include="Images\downarrow3.png" />
     <Content Include="Images\fabio.png" />
+    <Content Include="Images\fabioeyes.png" />
+    <Content Include="Images\fabioeyes1.png" />
+    <Content Include="Images\fabiolazereyes.png" />
+    <Content Include="Images\fabiolazereyes2.png" />
+    <Content Include="Images\fabiolazereyes3.png" />
     <Content Include="Images\goose.png" />
     <Content Include="Images\greenshade.png" />
     <Content Include="Images\greenshade1.png" />
