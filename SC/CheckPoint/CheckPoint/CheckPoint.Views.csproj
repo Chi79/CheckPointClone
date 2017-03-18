@@ -124,7 +124,8 @@
     <Content Include="Images\angrygoose.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\checkpointlogo1.png" />
-    <Content Include="Images\createreportbutton.png" />
+    <Content Include="Images\createappointmentbutton.png" />
+    <Content Include="Images\createreportbutton1.png" />
     <Content Include="Images\cross.png" />
     <Content Include="Images\downarrow2.png" />
     <Content Include="Images\downarrow3.png" />
@@ -135,7 +136,6 @@
     <Content Include="Images\fabiolazereyes2.png" />
     <Content Include="Images\fabiolazereyes3.png" />
     <Content Include="Images\goose.png" />
-    <Content Include="Images\greenshade.png" />
     <Content Include="Images\greenshade1.png" />
     <Content Include="Images\greenshade2.png" />
     <Content Include="Images\headershade.png" />
@@ -144,15 +144,13 @@
     <Content Include="Images\logo4.png" />
     <Content Include="Images\logouticon13.png" />
     <Content Include="Images\logo_white2.png" />
-    <Content Include="Images\manageappointmentsbutton.png" />
-    <Content Include="Images\manageattendancebutton.png" />
-    <Content Include="Images\managecoursesbutton.png" />
-    <Content Include="Images\Screen-Shot-2015-10-19-at-9.54.30-PM-compressed.png" />
+    <Content Include="Images\manageappointmentbutton.png" />
+    <Content Include="Images\manageattendancebutton1.png" />
+    <Content Include="Images\managecoursesbutton1.png" />
     <Content Include="Images\small_logo.png" />
     <Content Include="Images\tick.png" />
     <Content Include="Images\uparrow2.png" />
     <Content Include="Images\uparrow3.png" />
-    <Content Include="Images\updatebutton.png" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
