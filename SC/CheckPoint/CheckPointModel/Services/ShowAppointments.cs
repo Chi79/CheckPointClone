@@ -39,7 +39,7 @@ namespace CheckPointModel.Services
         }
         public List<APPOINTMENT> AppointmentsCache
         {
-            get{  return _cache.FetchCollection<APPOINTMENT>(key).ToList(); }
+            get { return _cache.FetchCollection<APPOINTMENT>(key).ToList(); }
         }
 
         public IEnumerable<T> GetAllAppointmentsFor<T>(string client)
