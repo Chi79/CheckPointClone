@@ -535,12 +535,18 @@ font-weight:bold;
       background:#32E236 url(/Images/greenshade1.png) repeat-x;
       color:white;
       fill:#32E236;  
+      -webkit-animation:glowingrow;
+      -webkit-animation-duration:2s;
+      -webkit-animation-iteration-count:infinite;
 }
 .gvRowAlt:hover{
       background: #32E236 url(/Images/greenshade1.png) repeat-x; 
       background-color:#32E236;
       color:white;
-      fill:#32E236;       
+      fill:#32E236;  
+      -webkit-animation:glowingrow;
+      -webkit-animation-duration:2s;
+      -webkit-animation-iteration-count:infinite;     
 }
 .gvRowAlt {
       background-color: #C6F5B8;
@@ -690,9 +696,14 @@ font-weight:bold;
       margin-top:-5.0%;
 }
 @-webkit-keyframes glowingbutton{
-    from{ background-color:#749a02; border-radius:10px; -webkit-box-shadow: 0 0 9px #333;}
-     50%{ background-color:#91bd09; border-radius:10px; -webkit-box-shadow: 0 0 18px #91bd09; }
-      to{ background-color:#749a02; border-radius:10px; -webkit-box-shadow: 0 0 9px #333; }
+    from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333; }
+}
+@-webkit-keyframes glowingrow{
+    from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 12px #333;}
+     50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 24px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 12px #333; }
 }
 @-webkit-keyframes lazereyes{
     from{ background-image:url(Images/fabio.png); opacity:0.2; }
