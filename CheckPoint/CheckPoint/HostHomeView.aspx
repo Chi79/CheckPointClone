@@ -364,7 +364,7 @@ table {
     -webkit-animation-iteration-count:infinite;
 }
 .gvHeadAddressDes:hover{
-    padding-top:2%;
+    padding-top:0%;
     border-radius:10px;
     -webkit-animation:glowingbutton;
     -webkit-animation-duration:2s;
@@ -742,9 +742,9 @@ font-weight:bold;
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedbutton" 
-            id="update" ImageUrl="~/Images/updatebutton.png" 
+            id="update" ImageUrl="~/Images/createappointmentbutton.png" 
             OnClick="update_Click" 
-            ToolTip="update the selected appointment" />
+            ToolTip="create a new appointment" />
         </ContentTemplate>
         </asp:UpdatePanel>
         </div>
@@ -756,9 +756,9 @@ font-weight:bold;
             runat="server" 
             CssClass="roundedbutton" 
             id="managecourses"
-             ImageUrl="~/Images/managecoursesbutton.png" 
-            OnClick="managecourses_Click" 
-            ToolTip="manage your courses"  />
+             ImageUrl="~/Images/manageappointmentbutton.png" 
+            OnClick="manageappointments_Click"
+            ToolTip="manage the selected appointment"  />
         </ContentTemplate>
         </asp:UpdatePanel>
         </div>
@@ -770,9 +770,9 @@ font-weight:bold;
             runat="server" 
             CssClass="roundedbutton" 
             id="manageappointments" 
-            ImageUrl="~/Images/manageappointmentsbutton.png" 
-            OnClick="manageappointments_Click" 
-            ToolTip="manage your appointments" />
+            ImageUrl="~/Images/managecoursesbutton1.png" 
+            OnClick="managecourses_Click" 
+            ToolTip="manage your courses" />
         </ContentTemplate>
         </asp:UpdatePanel>
         </div>
@@ -784,7 +784,7 @@ font-weight:bold;
             runat="server"
              CssClass="roundedbutton" 
             id="manageattendance" 
-            ImageUrl="~/Images/manageattendancebutton.png"
+            ImageUrl="~/Images/manageattendancebutton1.png"
             OnClick="manageattendance_Click" 
             ToolTip="manage attendance"  />
         </ContentTemplate>
@@ -798,7 +798,7 @@ font-weight:bold;
             runat="server" 
             CssClass="roundedbutton" 
             id="createreport" 
-            ImageUrl="~/Images/createreportbutton.png" 
+            ImageUrl="~/Images/createreportbutton1.png" 
             OnClick="createreport_Click"  
             ToolTip="create a report" />
         </ContentTemplate>
