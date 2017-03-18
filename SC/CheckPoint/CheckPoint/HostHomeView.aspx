@@ -90,6 +90,19 @@ table {
 .gvHeadAppointmentIdDes{
     border-radius:10px;
 }
+.gvHeadAppointmentIdAsc:hover{
+    margin-top:13%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadAppointmentIdDes:hover{
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
 .gvHeadAppointmentIdTitle{
     padding-top:11%;
     font-size:22px;
@@ -113,6 +126,20 @@ table {
 .gvHeadCourseIdDes{
     padding-top:5%;
     border-radius:10px;
+}
+.gvHeadCourseIdAsc:hover{
+    margin-top:18%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadCourseIdDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
 }
 .gvHeadCourseIdTitle{
     padding-top:15%;
@@ -138,6 +165,20 @@ table {
     padding-top:1%;
     border-radius:10px;
 }
+.gvHeadAppointmentNameAsc:hover{
+    margin-top:12%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadAppointmentNameDes:hover{
+    padding-top:1%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
 .gvHeadAppointmentNameTitle{
     padding-top:11%;
     font-size:22px;
@@ -161,6 +202,20 @@ table {
 .gvHeadDescriptionDes{
     padding-top:0%;
     border-radius:10px;
+}
+.gvHeadDescriptionAsc:hover{
+    margin-top:20%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadDescriptionDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
 }
 .gvHeadDescriptionTitle{
     padding-top:17%;
@@ -187,6 +242,20 @@ table {
     padding-top:0%;
     border-radius:10px;
 }
+.gvHeadDateAsc:hover{
+    margin-top:16%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadDateDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
 .gvHeadDateTitle{
     padding-top:9%;
     font-size:22px;
@@ -210,6 +279,20 @@ table {
 .gvHeadStartTimeDes{
     padding-top:5%;
     border-radius:10px;
+}
+.gvHeadStartTimeAsc:hover{
+    margin-top:19%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadStartTimeDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
 }
 .gvHeadStartTimeTitle{
     padding-top:14%;
@@ -235,6 +318,20 @@ table {
     margin-top:10%;
     border-radius:10px;
 }
+.gvHeadEndTimeeAsc:hover{
+    margin-top:19%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadEndTimeDes:hover{
+    margin-top:10%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
 .gvHeadEndTimeTitle{
     padding-top:15%;
     font-size:22px;
@@ -258,6 +355,20 @@ table {
 .gvHeadAddressDes{
     padding-top:2%;
     border-radius:10px;
+}
+.gvHeadAddresseAsc:hover{
+    margin-top:18%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadAddressDes:hover{
+    padding-top:2%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
 }
 .gvHeadAddressTitle{
     padding-top:14%;
@@ -284,6 +395,20 @@ table {
     padding-top:0%;
     border-radius:10px;
 }
+.gvHeadPostalCodeAsc:hover{
+    margin-top:24%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadPostalCodeDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
 .gvHeadPostalCodeTitle{
     padding-top:18%;
     font-size:22px;
@@ -308,6 +433,20 @@ table {
 .gvHeadIsObligatoryDes{
     padding-top:0%;
     border-radius:10px;
+}
+.gvHeadIsObligatoryAsc:hover{
+    margin-top:20%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadIsObligatoryDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
 }
 .gvHeadIsObligatoryTitle{
     padding-top:15%;
@@ -335,6 +474,20 @@ table {
 .gvHeadIsCancelledDes{
     padding-top:0%;
     border-radius:10px;
+}
+.gvHeadIsCancelledAsc:hover{
+    margin-top:17.7%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.gvHeadIsCancelledDes:hover{
+    padding-top:0%;
+    border-radius:10px;
+    -webkit-animation:glowingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
 }
 .gvHeadIsCancelledTitle{
     padding-top:13%;
@@ -456,11 +609,7 @@ font-weight:bold;
       left: 60%;
       top: 81%;
       margin: 39.5em -244px;
-      animation: buttonsup 5s ;
-}
-@keyframes buttonsup {
-      from { top: 300%; }
-      to { top: 81%;}
+      animation: buttonsup 5s;
 }
 .buttons5{
       z-index:3;
@@ -470,12 +619,19 @@ font-weight:bold;
       margin: 39.5em -244px;
       animation: buttonsup 6s ;
 }
+@keyframes buttonsup {
+      from { top: 300%; }
+      to { top: 81%;}
+}
 .fabiotop {
       position: absolute;
       left: 15%;
       top: 73%;
       margin: 37em -244px;
-      animation: fabiotop 7s ;
+      animation: fabiotop 7s;
+      -webkit-animation:lazereyes;
+      -webkit-animation-duration:3s;
+      -webkit-animation-iteration-count:infinite;
 }
 @keyframes fabiotop {
       from { top: 300%; }
@@ -533,6 +689,20 @@ font-weight:bold;
 .griddata{
       margin-top:-5.0%;
 }
+@-webkit-keyframes glowingbutton{
+    from{ background-color:#749a02; border-radius:10px; -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#91bd09; border-radius:10px; -webkit-box-shadow: 0 0 18px #91bd09; }
+      to{ background-color:#749a02; border-radius:10px; -webkit-box-shadow: 0 0 9px #333; }
+}
+@-webkit-keyframes lazereyes{
+    from{ background-image:url(Images/fabio.png); opacity:0.2; }
+    20%{ background-image:url(Images/fabioeyes1.png); opacity:0.4;}
+    40%{ background-image:url(Images/fabioeyes.png); opacity:0.6;}
+    60%{ background-image:url(Images/fabioeyes1.png); opacity:0.7;}
+    70%{ background-image:url(Images/fabiolazereyes.png); opacity:0.8}
+    80%{ background-image:url(Images/fabiolazereyes2.png); opacity:0.9;}
+    to{ background-image:url(Images/fabiolazereyes3.png); opacity:1;}
+}
     </style>
 
    </asp:Content>
@@ -550,7 +720,7 @@ font-weight:bold;
         </asp:ScriptManager> 
 
 
-        <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png"/><span style="position:absolute; z-index:5; top:-80%;"><img src="Images/angrygoose.png"/></span></div>
+        <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png" style="opacity:0.2;"/><span style="position:absolute; z-index:5; top:-80%;"><img src="Images/angrygoose.png"/></span></div>
         <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
         <div id="logo" class="slideleft" style="z-index:5"><img src="Images/logo4.png" /></div>
 
