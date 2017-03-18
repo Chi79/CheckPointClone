@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA5C83DB-1E7A-4C12-961E-6C73373506BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CheckPointCommon</RootNamespace>
+    <AssemblyName>CheckPointCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheInterfaces\ICacheData.cs" />
+    <Compile Include="DTOInterfaces\IAppointmentDTO.cs" />
+    <Compile Include="DTOInterfaces\IAttendeeDTO.cs" />
+    <Compile Include="DTOInterfaces\IClientDTO.cs" />
+    <Compile Include="DTOInterfaces\ICourseDTO.cs" />
+    <Compile Include="Enums\AttendeeStatus.cs" />
+    <Compile Include="Enums\ClientType.cs" />
+    <Compile Include="Enums\DbAction.cs" />
+    <Compile Include="FactoryInterfaces\IFactory.cs" />
+    <Compile Include="ModelInterfaces\ICreateAppointmentModel.cs" />
+    <Compile Include="ModelInterfaces\ICreateCourseModel.cs" />
+    <Compile Include="ModelInterfaces\ICreateReportModel.cs" />
+    <Compile Include="ModelInterfaces\IFindAppointmentsModel.cs" />
+    <Compile Include="ModelInterfaces\IHomePageModel.cs" />
+    <Compile Include="ModelInterfaces\IHostHomeModel.cs" />
+    <Compile Include="ModelInterfaces\IInviteUserModel.cs" />
+    <Compile Include="ModelInterfaces\IManageAppointmentModel.cs" />
+    <Compile Include="ModelInterfaces\IManageAttendanceModel.cs" />
+    <Compile Include="ModelInterfaces\IManageCourseModel.cs" />
+    <Compile Include="ModelInterfaces\IUpdateProfileModel.cs" />
+    <Compile Include="RepositoryInterfaces\IAttendeeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
+    <Compile Include="ServiceInterfaces\IHandleAppointments.cs" />
+    <Compile Include="ServiceInterfaces\IShowAppointments.cs" />
+    <Compile Include="Structs\Structs.cs" />
+    <Compile Include="ValidationInterfaces\IAppointmentValidator.cs" />
+    <Compile Include="ValidationInterfaces\IAttendeeValidator.cs" />
+    <Compile Include="ValidationInterfaces\ICourseValidator.cs" />
+    <Compile Include="ViewInterfaces\ICreateAppointmentView.cs" />
+    <Compile Include="ViewInterfaces\ICreateCourseView.cs" />
+    <Compile Include="ViewInterfaces\ICreateReportView.cs" />
+    <Compile Include="ViewInterfaces\IFindAppointmentsView.cs" />
+    <Compile Include="ViewInterfaces\IHomePageView.cs" />
+    <Compile Include="ModelInterfaces\ILoginModel.cs" />
+    <Compile Include="ModelInterfaces\IRegisterClientModel.cs" />
+    <Compile Include="ModelInterfaces\IUserHomeModel.cs" />
+    <Compile Include="ModelInterfaces\IUserNameList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryInterfaces\IAppointmentRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IUnitOfWork.cs" />
+    <Compile Include="RepositoryInterfaces\IClientRepository.cs" />
+    <Compile Include="ValidationInterfaces\IRegisterClientValidator.cs" />
+    <Compile Include="ValidationInterfaces\IValidator.cs" />
+    <Compile Include="ViewInterfaces\IHostHomeView.cs" />
+    <Compile Include="ViewInterfaces\IInviteUserView.cs" />
+    <Compile Include="ViewInterfaces\ILoginView.cs" />
+    <Compile Include="ViewInterfaces\IManageAppointmentView.cs" />
+    <Compile Include="ViewInterfaces\IManageAttendanceView.cs" />
+    <Compile Include="ViewInterfaces\IManageCourseView.cs" />
+    <Compile Include="ViewInterfaces\IRegisterClientView.cs" />
+    <Compile Include="ViewInterfaces\IUpdateProfileView.cs" />
+    <Compile Include="ViewInterfaces\IUserHomeView.cs" />
+    <Compile Include="ViewInterfaces\IView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckPointDataTables\CheckPointDataTables.csproj">
+      <Project>{afebd1a4-0e44-4bfe-a0b9-4cfe6622d6aa}</Project>
+      <Name>CheckPointDataTables</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
