@@ -143,6 +143,7 @@
     position: absolute;
     top:24em;
     left:11em;
+    width:137px;
 }
 #btnYes{
     position: absolute;
