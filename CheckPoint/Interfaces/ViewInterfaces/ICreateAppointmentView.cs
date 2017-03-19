@@ -25,6 +25,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         void RedirectAfterClickEvent();
+        void RedirectToHomePage();
         int JobState { get; set; }
         string Message { get;  set; }
 
@@ -32,5 +33,6 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> Continue;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
+        event EventHandler<EventArgs> BackToHomePageClicked;
     }
 }

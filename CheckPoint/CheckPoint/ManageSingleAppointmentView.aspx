@@ -126,7 +126,7 @@
 }
 #lblMessage{
     position: absolute;
-    top:20em;
+    top:24em;
     left:0em;
 }
 #btnBackToHomePage{
@@ -136,8 +136,8 @@
 }
 #btnUpdateAppointment{
     position: absolute;
-    top:24em;
-    left:0em;
+    top:26em;
+    left:11em;
 }
 #btnDeleteAppointment{
     position: absolute;
@@ -146,12 +146,12 @@
 }
 #btnYes{
     position: absolute;
-    top:26em;
+    top:25em;
     left:11em;
 }
 #btnNo{
     position: absolute;
-    top:26em;
+    top:25em;
     left:18em;
 }
 #btnContinue{
@@ -169,8 +169,9 @@
 </head>
 <body>
 <form id="form1" runat="server">
+
 <div id="container" class="container">
-     <div id="panel" class="panel">
+<div id="panel" class="panel">
     
         
         <asp:Label ID="lblAppointmentName" runat="server" Text="Appointment Name"></asp:Label>
@@ -227,6 +228,6 @@
         <asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
        </div>
  </div>
-    </form>
+</form>
 </body>
 </html>

@@ -37,6 +37,12 @@ namespace CheckPointPresenters.Presenters
             _view.Continue += OnContinueEvent;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
+            _view.BackToHomePageClicked += OnBackToHomePageClicked;
+        }
+
+        private void OnBackToHomePageClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToHomePage();
         }
 
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
