@@ -707,12 +707,12 @@ font-weight:bold;
 }
 @-webkit-keyframes lazereyes{
     from{ background-image:url(Images/fabio.png); opacity:0.2; }
-    20%{ background-image:url(Images/fabioeyes1.png); opacity:0.4;}
-    40%{ background-image:url(Images/fabioeyes.png); opacity:0.6;}
-    60%{ background-image:url(Images/fabioeyes1.png); opacity:0.7;}
-    70%{ background-image:url(Images/fabiolazereyes.png); opacity:0.8}
-    80%{ background-image:url(Images/fabiolazereyes2.png); opacity:0.9;}
-    to{ background-image:url(Images/fabiolazereyes3.png); opacity:1;}
+    20%{ background-image:url(Images/fabioeyes1.png); opacity:0.4; }
+    40%{ background-image:url(Images/fabioeyes.png); opacity:0.6; }
+    60%{ background-image:url(Images/fabioeyes1.png); opacity:0.7; }
+    70%{ background-image:url(Images/fabiolazereyes.png); opacity:0.8; }
+    80%{ background-image:url(Images/fabiolazereyes2.png); opacity:0.9; }
+    to{ background-image:url(Images/fabiolazereyes3.png); opacity:1; }
 }
     </style>
 
@@ -731,7 +731,7 @@ font-weight:bold;
         </asp:ScriptManager> 
 
 
-        <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png" style="opacity:0.2;"/><span style="position:absolute; z-index:5; top:-80%;"><img src="Images/angrygoose.png"/></span></div>
+        <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png" style="opacity:0.2;" /><span style="position:absolute; z-index:5; top:-80%;"><img src="Images/angrygoose.png"/></span></div>
         <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
         <div id="logo" class="slideleft" style="z-index:5"><img src="Images/logo4.png" /></div>
 
