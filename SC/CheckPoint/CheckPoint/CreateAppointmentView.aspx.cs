@@ -102,10 +102,16 @@ namespace CheckPoint.Views
             Response.Redirect("CreateAppointmentView.aspx");
         }
 
+        public void RedirectToHomePage()
+        {
+            Response.Redirect("HostHomeView.aspx");
+        }
+
         public event EventHandler<EventArgs> CreateNewAppointment;
         public event EventHandler<EventArgs> Continue;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
+        public event EventHandler<EventArgs> BackToHomePageClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -141,6 +147,14 @@ namespace CheckPoint.Views
             if(NoButtonClicked != null)
             {
                 NoButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnBackToHomePage_Click(object sender, EventArgs e)
+        {
+            if(BackToHomePageClicked != null)
+            {
+                BackToHomePageClicked(this, EventArgs.Empty);
             }
         }
     }
