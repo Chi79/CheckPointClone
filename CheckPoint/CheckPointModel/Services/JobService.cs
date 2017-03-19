@@ -16,6 +16,8 @@ namespace CheckPointModel.Services
         public virtual string AppointmentName { get; set; }
         public virtual string ConfirmationMessage { get; }
         public virtual string CompletedMessage { get; }
+        public virtual int AppointmentId { get; set; }
+
         public virtual void PerformTask(APPOINTMENT appointment)
         {
             //not implemented
@@ -73,7 +75,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the appointment: " + AppointmentName +"!  Do you wish to continue?"; }
+            get { return "You are about to delete the appointment with Id number: " + AppointmentId +"!  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -114,7 +116,8 @@ namespace CheckPointModel.Services
         }
         public override void PerformTask(APPOINTMENT appointment)
         {
-            var appointmentToUpdate = _handler.GetAppointmentByName(AppointmentName) as APPOINTMENT;
+            //var appointmentToUpdate = _handler.GetAppointmentByName(AppointmentName) as APPOINTMENT;
+            var appointmentToUpdate = _handler.GetAppointmentById(AppointmentId) as APPOINTMENT;
 
             appointmentToUpdate.CourseId = appointment.CourseId;
             appointmentToUpdate.AppointmentName = appointment.AppointmentName;

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ViewInterfaces
 {
-    public interface IManageAppointmentView
+    public interface IManageSingleAppointmentView
     {
         //TODO
+        string SelectedAppointmentName { get; set; }
+        int AppointmentId { get; set; }
         string CourseId { get; set; }
         string StartTime { get; set; }
         string EndTime { get; set; }
@@ -21,17 +23,14 @@ namespace CheckPointCommon.ViewInterfaces
         string IsCancelled { get; set; }
         string IsObligatory { get; set; }
 
-        string AppointmentNameList { get; set; }
-        List<string> SetDataSource { set; }
-
-        void BindAppointmentList();
         void RedirectAfterClickEvent();
+
+        void RedirectToHostHomeView();
 
         string Message { get; set; }
 
         bool ContinueButtonVisible { set; }
         bool UpdateButtonVisible { set; }
-        bool AddButtonVisible { set; }
         bool DeleteButtonVisible { set; }
 
         bool YesButtonVisible { set; }
@@ -43,10 +42,9 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> NoButtonClicked;
 
         event EventHandler<EventArgs> UpdateAppointment;
-        event EventHandler<EventArgs> AddAppointment;
         event EventHandler<EventArgs> DeleteAppointment;
-        event EventHandler<EventArgs> FetchData;
-
         event EventHandler<EventArgs> ReloadPage;
+        event EventHandler<EventArgs> BackToHomePage;
+
     }
 }
