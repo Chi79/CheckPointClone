@@ -8,158 +8,178 @@
 <style type="text/css">
 
 .container{
-    width: 30%;
-    margin-left: 30%;
-    margin-top: 10%;
+    width: 54%;
+    height: 563px;
+    margin-left: 23%;
+    margin-top: 6%;
+    background-color: #333333;
+    border-radius: 36px;
 }
 .panel{
     position:relative;
 }
 #lblAppointmentName{
     position: absolute;
-    top:0em;
-    left:0em;
+    top:5.2em;
+    left:14em;
+    color:white;
 }
 #txtAppointmentName{
     position: absolute;
-    top:0em;
-    left:10em;
+    top:6em;
+    left:28em;
 }
 #lblDate{
     position: absolute;
-    top:5.2em;
-    left:0em;
+    top:10.2em;
+    left:14em;
+    color:white;
 }
 #txtDate{
     position: absolute;
-    top:6em;
-    left:10em;
+    top:12em;
+    left:28em;
 }
 #lblDescription{
     position: absolute;
-    top:3.5em;
-    left:0em;
+    top:8.5em;
+    left:14em;
+    color:white;
 }
 #txtAppointmentDescription{
     position: absolute;
-    top:4em;
-    left:10em;
+    top:9.8em;
+    left:28em;
 }
 #lblCourseId{
     position: absolute;
-    top:1.8em;
-    left:0em;
+    top:6.8em;
+    left:14em;
+    color:white;
 }
 #txtCourseId{
     position: absolute;
-    top:2em;
-    left:10em;
+    top:7.9em;
+    left:28em;
 }
 #lblStartTime{
     position: absolute;
-    top:6.8em;
-    left:0em;
+    top:11.9em;
+    left:14em;
+    color:white;
 }
 #txtStartTime{
     position: absolute;
-    top:8em;
-    left:10em;
+    top:14em;
+    left:28em;
 }
 #lblEndTime{
     position: absolute;
-    top:8.5em;
-    left:0em;
+    top:13.6em;
+    left:14em;
+    color:white;
 }
 #txtEndTime{
     position: absolute;
-    top:10em;
-    left:10em;
+    top:16em;
+    left:28em;
 }
 #lblPostalCode{
     position: absolute;
-    top:11.8em;
-    left:0em;
+    top:16.8em;
+    left:14em;
+    color:white;
 }
 #txtPostalCode{
     position: absolute;
-    top:14em;
-    left:10em;
+    top:20em;
+    left:28em;
 }
 #lblAddress{
     position: absolute;
-    top:10.2em;
-    left:0em;
+    top:15.2em;
+    left:14em;
+    color:white;
 }
 #txtAddress{
     position: absolute;
-    top:12em;
-    left:10em;
+    top:18em;
+    left:28em;
 }
 #lblUserName{
     position: absolute;
-    top:13.5em;
-    left:0em;
+    top:18.5em;
+    left:14em;
+    color:white;
 }
 #txtUserName{
     position: absolute;
-    top:16em;
-    left:10em;
+    top:22em;
+    left:28em;
 }
 #lblObligatory{
     position: absolute;
-    top:14.9em;
-    left:0em;
+    top:20em;
+    left:14em;
+    color:white;
 }
 #ddlIsObligatory{
     position: absolute;
-    top:18em;
-    left:10em;
+    top:24em;
+    left:28em;
 }
 #lblCancelled{
     position: absolute;
-    top:16.6em;
-    left:0em;
+    top:21.8em;
+    left:14em;
+    color:white;
 }
 #ddlIsCancelled{
     position: absolute;
-    top:20em;
-    left:10em;
+    top:26em;
+    left:28em;
 }
 #lblMessage{
     position: absolute;
-    top:24em;
-    left:0em;
+    top:30em;
+    left:14em;
+    color:white;
 }
 #btnBackToHomePage{
     position: absolute;
-    top:22em;
-    left:11em;
+    top:30em;
+    left:29em;
 }
 #btnCreateAppointment{
     position: absolute;
-    top:25em;
-    left:11em;
+    top:34em;
+    left:29em;
 }
 
 #btnYes{
     position: absolute;
-    top:25em;
-    left:11em;
-    width:62px;
+    top:33em;
+    left:36em;
 }
 #btnNo{
     position: absolute;
-    top:25em;
-    left:17em;
-    width:62px;
+    top:33em;
+    left:29em;
 }
 #btnContinue{
     position: absolute;
-    width:114px;
+    width:136px;
     top:28em;
-    left:11.5em;
+    left:29em;
 }
-
+.auto-style1 {
+    width: 59%;
+    height: 533px;
+    margin-left: 21%;
+    margin-top: 6%;
+    background-color: #333333;
+    border-radius: 36px;
+}
 
 
 </style>
