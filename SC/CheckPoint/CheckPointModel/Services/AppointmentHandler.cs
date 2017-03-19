@@ -46,6 +46,12 @@ namespace CheckPointModel.Services
             return _appointment;
         }
 
+        public object GetAppointmentById(int appointmentId)
+        {
+            _appointment = _uOW.APPOINTMENTs.GetAppointmentByAppointmentId(appointmentId);
+            return _appointment;
+        }
+
 
         public void Delete<T>(T appointment)
         {

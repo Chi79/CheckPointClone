@@ -10,18 +10,23 @@ using CheckPointPresenters.Presenters;
 
 namespace CheckPoint.Views
 {
-    public partial class ManageAppointmentView : ViewBase<ManageAppointmentPresenter> , IManageAppointmentView
+    public partial class ManageSingleAppointmentView : ViewBase<ManageSingleAppointmentPresenter>, IManageSingleAppointmentView
     {
         public string CourseId
         {
             get { return txtCourseId.Text; }
             set { txtCourseId.Text = value; }
         }
-        public string AppointmentNameList
-        {
-            get { return ddlSelectAppointment.Text; }
 
-            set { ddlSelectAppointment.Text = value; }
+        public string SelectedAppointmentName
+        {
+            get { return (string)Session["SelectedAppointmentName"]; }
+            set { Session["SelectedAppointmentName"] = value; }
+        }
+        public int AppointmentId
+        {
+            get { return (int)Session["AppointmentId"]; }
+            set { Session["AppointmentId"] = value; }
         }
 
         public string AppointmentName
@@ -62,7 +67,7 @@ namespace CheckPoint.Views
 
         public string Message
         {
-            get{ return lblMessage.Text; }
+            get { return lblMessage.Text; }
             set { lblMessage.Text = value; }
         }
 
@@ -99,10 +104,7 @@ namespace CheckPoint.Views
         {
             set { btnUpdateAppointment.Visible = value; }
         }
-        public bool AddButtonVisible
-        {
-            set { btnAddAppointment.Visible = value; }
-        }
+
         public bool DeleteButtonVisible
         {
             set { btnDeleteAppointment.Visible = value; }
@@ -121,63 +123,43 @@ namespace CheckPoint.Views
             set { Session["job"] = value; }
         }
 
-        public void BindAppointmentList()
-        {
-            ddlSelectAppointment.DataBind();
-        }
-
-        public List<string> SetDataSource
-        {
-            set { ddlSelectAppointment.DataSource = value; }
-        }
-
         public void RedirectAfterClickEvent()
         {
-            Response.Redirect("ManageAppointmentView.aspx");
+            Response.Redirect("ManageSingleAppointmentView.aspx");
         }
+
+        public void RedirectToHostHomeView()
+        {
+            Response.Redirect("HostHomeView.aspx");
+        }
+
+
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
 
         public event EventHandler<EventArgs> UpdateAppointment;
-        public event EventHandler<EventArgs> AddAppointment;
         public event EventHandler<EventArgs> DeleteAppointment;
-        public event EventHandler<EventArgs> FetchData;
         public event EventHandler<EventArgs> ReloadPage;
+        public event EventHandler<EventArgs> BackToHomePage;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AppointmentId = (int)Session["AppointmentId"];
         }
 
         protected void btnCreateAppointment_Click(object sender, EventArgs e)
         {
-            if(UpdateAppointment != null)
+            if (UpdateAppointment != null)
             {
                 UpdateAppointment(this, EventArgs.Empty);
             }
         }
 
-        protected void ddlSelectAppointment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(FetchData != null)
-            {
-                FetchData(this, EventArgs.Empty);
-            }
-        }
-
         protected void btnContinue_Click(object sender, EventArgs e)
         {
-            if (ReloadPage!= null)
+            if (ReloadPage != null)
             {
                 ReloadPage(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnAddAppointment_Click(object sender, EventArgs e)
-        {
-            if (AddAppointment != null)
-            {
-                AddAppointment(this, EventArgs.Empty);
             }
         }
 
@@ -207,7 +189,10 @@ namespace CheckPoint.Views
 
         protected void btnBackToHomePage_Click(object sender, EventArgs e)
         {
-
+            if(BackToHomePage != null)
+            {
+                BackToHomePage(this, EventArgs.Empty);
+            }
         }
     }
 }

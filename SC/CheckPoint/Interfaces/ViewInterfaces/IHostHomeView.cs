@@ -17,8 +17,10 @@ namespace CheckPointCommon.ViewInterfaces
         string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }
-
         object SelectedRowValueDataKey { get; }
+
+        void RedirectToCreateAppointment();
+        void RedirectToManageAppointment();
 
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;

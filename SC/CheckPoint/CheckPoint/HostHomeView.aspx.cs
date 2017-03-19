@@ -147,6 +147,13 @@ namespace CheckPoint.Views
             }
         }
 
-
+        public void RedirectToCreateAppointment()
+        {
+            Response.Redirect("CreateAppointmentView.aspx");
+        }
+        public void RedirectToManageAppointment()
+        {
+            Response.Redirect("ManageSingleAppointmentView.aspx");
+        }
     }
 }

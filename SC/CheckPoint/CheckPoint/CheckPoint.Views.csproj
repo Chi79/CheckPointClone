@@ -152,6 +152,7 @@
     <Content Include="Images\uparrow2.png" />
     <Content Include="Images\uparrow3.png" />
     <Content Include="InviteUserView.aspx" />
+    <Content Include="ManageSingleAppointmentView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.js" />
@@ -259,6 +260,13 @@
     </Compile>
     <Compile Include="ManageCourseView.aspx.designer.cs">
       <DependentUpon>ManageCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSingleAppointmentView.aspx.cs">
+      <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageSingleAppointmentView.aspx.designer.cs">
+      <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>

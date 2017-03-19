@@ -27,5 +27,9 @@ namespace DataAccess.Concrete.Repositories
         {
             return CheckPointContext.APPOINTMENTs.FirstOrDefault(app => app.AppointmentName == appointmentName);
         }
+        public APPOINTMENT GetAppointmentByAppointmentId(int appointmentId)
+        {
+            return CheckPointContext.APPOINTMENTs.FirstOrDefault(app => app.AppointmentId == appointmentId);
+        }
     }
 }

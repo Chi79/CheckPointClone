@@ -10,7 +10,7 @@ using CheckPointModel.Utilities;
 
 namespace CheckPointModel.Models
 {
-    public class ManageAppointmentModel : IManageSingleAppointmentModel
+    public class ManageSingleAppointmentModel : IManageAppointmentModel
     {
         public object ConvertToAppointment(object appointmentModel)
         {

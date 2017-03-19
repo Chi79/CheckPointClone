@@ -50,7 +50,17 @@ namespace CheckPointPresenters.Presenters
 
         private void OnManageAppointmentButtonClicked(object sender, EventArgs e)
         {
-            _view.Message = "Fabio Goose";
+
+            int noAppointmentSelected = -1;
+            if (_view.SessionAppointmentId == noAppointmentSelected)
+            {
+                _view.Message = "No appointment was selected!";
+            }
+            else
+            {
+                _view.RedirectToManageAppointment();
+            }
+
         }
 
         private void OnManageCoursesButtonClicked(object sender, EventArgs e)
@@ -60,7 +70,8 @@ namespace CheckPointPresenters.Presenters
 
         private void OnCreateAppointmentButtonClicked(object sender, EventArgs e)
         {
-            _view.Message = "Fabio Goose";
+
+           _view.RedirectToCreateAppointment();
         }
 
         public override void Load()
@@ -72,6 +83,7 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(host);
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.SessionRowIndex = -1;
+            _view.SessionAppointmentId = -1;
             _view.BindData();
         }
         private void FetchData()

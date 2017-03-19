@@ -16,5 +16,7 @@ namespace CheckPointCommon.ServiceInterfaces
         IEnumerable<T> GetAppointmentsSortedByPropertyDescending<T>(string property);
 
         IEnumerable<T> GetAppointmentsCached<T>();
+
+        object GetSelectedAppointmentByAppointmentId(int AppointmentID);
     }
 }

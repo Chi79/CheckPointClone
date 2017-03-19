@@ -16,6 +16,8 @@ namespace CheckPointCommon.ServiceInterfaces
 
         object GetAppointmentByName(string appointmentName);
 
+        object GetAppointmentById(int appointmentId);
+
         void Delete<T>(T appointment);
 
         void Create<T>(T appointment);

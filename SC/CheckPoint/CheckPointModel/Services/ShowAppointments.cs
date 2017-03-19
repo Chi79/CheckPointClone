@@ -79,5 +79,12 @@ namespace CheckPointModel.Services
 
             return appsSorted as IEnumerable<T>;
         }
+
+        public object GetSelectedAppointmentByAppointmentId(int AppointmentID)
+        {
+            var apps = GetAppointmentsCached<APPOINTMENT>() as List<APPOINTMENT>;
+
+            return apps.FirstOrDefault(a => a.AppointmentId.Equals(AppointmentID));
+        }
     }
 }
