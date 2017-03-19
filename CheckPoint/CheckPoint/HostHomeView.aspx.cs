@@ -17,9 +17,9 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;
 
-        public event EventHandler<EventArgs> UpdateButtonClicked;
+        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
         public event EventHandler<EventArgs> ManageCoursesButtonClicked;
-        public event EventHandler<EventArgs> ManageAppointmentsButtonClicked;
+        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         public event EventHandler<EventArgs> CreateReportButtonClicked;
 
@@ -41,6 +41,11 @@ namespace CheckPoint.Views
         {
             get  { return gvHostTable.SelectedIndex; }
             set  { gvHostTable.SelectedIndex = value; }
+        }
+        public int? SessionAppointmentId
+        {
+            get { return (int)Session["AppointmentId"]; }
+            set { Session["AppointmentId"] = value; }
         }
  
         public int? SessionRowIndex
@@ -93,14 +98,14 @@ namespace CheckPoint.Views
                 SortColumnsByPropertyDescending(this, EventArgs.Empty);
             }
         }
-
-        protected void update_Click(object sender, ImageClickEventArgs e)
+        protected void createAppointment_Click(object sender, ImageClickEventArgs e)
         {
-            if(UpdateButtonClicked != null)
+            if (CreateAppointmentButtonClicked != null)
             {
-                UpdateButtonClicked(this, EventArgs.Empty);
+                CreateAppointmentButtonClicked(this, EventArgs.Empty);
             }
         }
+
 
         protected void managecourses_Click(object sender, ImageClickEventArgs e)
         {
@@ -110,11 +115,11 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void manageappointments_Click(object sender, ImageClickEventArgs e)
+        protected void manageAppointment_Click(object sender, ImageClickEventArgs e)
         {
-            if(ManageAppointmentsButtonClicked != null)
+            if (ManageAppointmentButtonClicked != null)
             {
-                ManageAppointmentsButtonClicked(this, EventArgs.Empty);
+                ManageAppointmentButtonClicked(this, EventArgs.Empty);
             }
         }
 
@@ -141,5 +146,7 @@ namespace CheckPoint.Views
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
             }
         }
+
+
     }
 }

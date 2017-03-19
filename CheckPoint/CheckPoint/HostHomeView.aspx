@@ -743,7 +743,7 @@ font-weight:bold;
             runat="server" 
             CssClass="roundedbutton" 
             id="update" ImageUrl="~/Images/createappointmentbutton.png" 
-            OnClick="update_Click" 
+            OnClick="createAppointment_Click"
             ToolTip="create a new appointment" />
         </ContentTemplate>
         </asp:UpdatePanel>
@@ -757,7 +757,7 @@ font-weight:bold;
             CssClass="roundedbutton" 
             id="managecourses"
              ImageUrl="~/Images/manageappointmentbutton.png" 
-            OnClick="manageappointments_Click"
+            OnClick="manageAppointment_Click"
             ToolTip="manage the selected appointment"  />
         </ContentTemplate>
         </asp:UpdatePanel>
