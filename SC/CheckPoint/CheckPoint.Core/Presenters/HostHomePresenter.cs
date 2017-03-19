@@ -31,9 +31,9 @@ namespace CheckPointPresenters.Presenters
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
             _view.RowSelected += OnRowSelected;
-            _view.UpdateButtonClicked += OnUpdateButtonClicked;
+            _view.CreateAppointmentButtonClicked += OnCreateAppointmentButtonClicked;
             _view.ManageCoursesButtonClicked += OnManageCoursesButtonClicked;
-            _view.ManageAppointmentsButtonClicked += OnManageAppointmentsButtonClicked;
+            _view.ManageAppointmentButtonClicked += OnManageAppointmentButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
         }
@@ -48,7 +48,7 @@ namespace CheckPointPresenters.Presenters
             _view.Message = "Fabio Goose";
         }
 
-        private void OnManageAppointmentsButtonClicked(object sender, EventArgs e)
+        private void OnManageAppointmentButtonClicked(object sender, EventArgs e)
         {
             _view.Message = "Fabio Goose";
         }
@@ -58,7 +58,7 @@ namespace CheckPointPresenters.Presenters
             _view.Message = "Fabio Goose";
         }
 
-        private void OnUpdateButtonClicked(object sender, EventArgs e)
+        private void OnCreateAppointmentButtonClicked(object sender, EventArgs e)
         {
             _view.Message = "Fabio Goose";
         }
@@ -105,11 +105,12 @@ namespace CheckPointPresenters.Presenters
         }
         private void GetSelectedAppointmentIdFromGrid()
         {
-            int indexNotSelected = -1;
-            if(_view.SessionRowIndex != indexNotSelected)
+            int noIndexSelected = -1;
+            if(_view.SessionRowIndex != noIndexSelected)
             {
-                var datakey = _view.SelectedRowValueDataKey;
-                _view.Message = datakey.ToString();
+                var selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
+                _view.SessionAppointmentId = selectedAppointmentId;
+                _view.Message = selectedAppointmentId.ToString();
             }
         }
     }

@@ -13,6 +13,7 @@ namespace CheckPointCommon.ViewInterfaces
         string Message { set; }
         int SelectedRowIndex { get; set; } 
         int? SessionRowIndex { get; set; }
+        int? SessionAppointmentId { get; set; }
         string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }
@@ -23,9 +24,9 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         event EventHandler<EventArgs> RowSelected;
 
-        event EventHandler<EventArgs> UpdateButtonClicked;
+        event EventHandler<EventArgs> CreateAppointmentButtonClicked;
         event EventHandler<EventArgs> ManageCoursesButtonClicked;
-        event EventHandler<EventArgs> ManageAppointmentsButtonClicked;
+        event EventHandler<EventArgs> ManageAppointmentButtonClicked;
         event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         event EventHandler<EventArgs> CreateReportButtonClicked;
     }
