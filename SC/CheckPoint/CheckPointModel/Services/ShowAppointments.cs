@@ -47,6 +47,7 @@ namespace CheckPointModel.Services
             _cache.Add(key, _uOW.APPOINTMENTs.GetAllAppointmentsFor(client));
 
             var apps = AppointmentsCache;
+
             return apps as IEnumerable<T>;
         }
 

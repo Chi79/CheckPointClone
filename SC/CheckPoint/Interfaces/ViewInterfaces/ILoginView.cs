@@ -11,6 +11,9 @@ namespace CheckPointCommon.ViewInterfaces
         string Username { get; }
         string Password { get; }
         string Message { set; }
+
+        string LoggedInClient { get; set; }
+
         void RedirectToUserHomePage();
         void RedirectToHostHomePage();
         event EventHandler<EventArgs> Login;

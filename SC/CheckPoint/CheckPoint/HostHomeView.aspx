@@ -692,6 +692,7 @@ font-weight:bold;
       margin: 2.5em -244px;
       animation: slideright 2s;
 }
+
 .griddata{
       margin-top:-5.0%;
 }
@@ -1114,7 +1115,7 @@ font-weight:bold;
                    position:absolute; 
                    height:32.5em; 
                    width:84.5%;
-                   overflow-y:auto">
+                   overflow-y:scroll">
 
 
  

@@ -25,6 +25,13 @@ namespace CheckPoint.Views
         {
             get { return txtUserName.Text; }
         }
+
+        public string LoggedInClient
+        {
+            get { return Session["LoggedInClient"].ToString(); }
+            set { Session["LoggedInClient"] = value; }
+        }
+
         public event EventHandler<EventArgs> Login;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +51,6 @@ namespace CheckPoint.Views
         }
         public void RedirectToHostHomePage()
         {
-            //TODO Response.Redirect();
             Response.Redirect("HostHomeView.aspx");
         }
     }

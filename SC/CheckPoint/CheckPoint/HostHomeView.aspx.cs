@@ -59,6 +59,11 @@ namespace CheckPoint.Views
             get { return Session["MySortExpression"].ToString(); }
             set { Session["MySortExpression"] = value; }
         }
+
+        public string LoggedInClient
+        {
+            get { return Session["LoggedInClient"].ToString(); }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
            
