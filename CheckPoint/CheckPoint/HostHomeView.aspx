@@ -636,7 +636,7 @@ font-weight:bold;
       margin: 37em -244px;
       animation: fabiotop 7s;
       -webkit-animation:lazereyes;
-      -webkit-animation-duration:3s;
+      -webkit-animation-duration:6s;
       -webkit-animation-iteration-count:infinite;
 }
 @keyframes fabiotop {
@@ -708,10 +708,13 @@ font-weight:bold;
 @-webkit-keyframes lazereyes{
     from{ background-image:url(Images/fabio.png); opacity:0.2; }
     20%{ background-image:url(Images/fabioeyes1.png); opacity:0.4; }
-    40%{ background-image:url(Images/fabioeyes.png); opacity:0.6; }
-    60%{ background-image:url(Images/fabioeyes1.png); opacity:0.7; }
-    70%{ background-image:url(Images/fabiolazereyes.png); opacity:0.8; }
-    80%{ background-image:url(Images/fabiolazereyes2.png); opacity:0.9; }
+    30%{ background-image:url(Images/fabioeyes.png); opacity:0.6; }
+    40%{ background-image:url(Images/fabioeyes1.png); opacity:0.7; }
+    50%{ background-image:url(Images/fabiolazereyes.png); opacity:0.8; }
+    60%{ background-image:url(Images/fabiolazereyes2.png); opacity:0.9; }
+    70%{ background-image:url(Images/fabiolazereyes4.png); opacity:0.9; }
+    80%{ background-image:url(Images/fabiolazereyes5.png); opacity:0.9; }
+    90%{ background-image:url(Images/fabiolazereyes6.png); opacity:0.9; }
     to{ background-image:url(Images/fabiolazereyes3.png); opacity:1; }
 }
     </style>

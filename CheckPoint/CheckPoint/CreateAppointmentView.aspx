@@ -16,6 +16,7 @@
     border: #66cc66;
     border-width: 20px;
     border-style: solid;
+    border-radius:36px;
 }
 .panel{
     position:relative;
