@@ -668,7 +668,7 @@ font-weight:bold;
 }
 @keyframes slideright {
       from { right: -100%; }
-      to { right: 0%; }
+      to { right: 3%; }
 }
 .auto-style1 {
       height: 248px;
@@ -688,7 +688,7 @@ font-weight:bold;
 .container{
       width:95%;
       position: absolute;
-      right: 0%;
+      right: 3%;
       margin: 2.5em -244px;
       animation: slideright 2s;
 }
