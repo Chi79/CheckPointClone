@@ -15,6 +15,7 @@ namespace CheckPointPresenters.Presenters
 {
     public class RegisterClientPresenter : PresenterBase
     {
+
         private readonly IRegisterClientModel _model;
         private readonly IRegisterClientView _view;
         private readonly IUnitOfWork _uOW;
@@ -22,29 +23,30 @@ namespace CheckPointPresenters.Presenters
         private ClientDTO _clientDTO = new ClientDTO(); 
 
         public RegisterClientPresenter(IRegisterClientModel registerClientModel,
-                                       IRegisterClientView registerClientView, IUnitOfWork unitOfWork)
+                                       IRegisterClientView registerClientView, 
+                                       IUnitOfWork unitOfWork)
 
         {
+
             _model = registerClientModel;
             _view = registerClientView;
             _uOW = unitOfWork;
   
-            _view.RegisterNewClient += RegisterNewClientButtonCLicked;
+            _view.RegisterNewClient += RegisterNewClientButtonClicked;
       
         }
+        public override void FirstTimeInit()
+        {
+            
+        }
 
-        private void RegisterNewClientButtonCLicked(object sender, EventArgs e)
+        private void RegisterNewClientButtonClicked(object sender, EventArgs e)
         {
             CreateClientDTOFromInput();
-            _clientDTO.FillPropertyList(_clientDTO);
 
-            bool ClientDataIsValid = ClientToRegisterIsValid();
-            if (ClientDataIsValid)
-            {
-                var _newClient = _model.ConvertClientDTOToClient(_clientDTO) as CLIENT;
-                SaveClientToDatabase(_newClient);
-            }    
+            CheckClientIsValid();
         }
+
         private void CreateClientDTOFromInput()
         {
             _clientDTO.UserName = _view.UserName;
@@ -62,27 +64,24 @@ namespace CheckPointPresenters.Presenters
         {
             _uOW.CLIENTs.Add(newClient);
 
-            bool saveCompleted = AttemptSaveToDb();
-            if (saveCompleted)
-            {
-                _view.Message = "New Registration Succesfull!";
-            }
+            AttemptSaveToDb(); 
         }
 
-        private bool ClientToRegisterIsValid()
+
+        private void CheckClientIsValid()
         {
             bool clientFieldsAreValid = _clientDTO.IsValid(_clientDTO);
-            if (clientFieldsAreValid)
+            if (!clientFieldsAreValid)
             {
-                 var _newClient = _model.ConvertClientDTOToClient(_clientDTO) as CLIENT;
-                return true;
+                DisplayValidationMessage();
             }
             else
             {
-                DisplayValidationMessage();
-                return false;
+                var _newClient = _model.ConvertClientDTOToClient(_clientDTO) as CLIENT;
+                SaveClientToDatabase(_newClient);
             }
         }
+
         private void DisplayValidationMessage()
         {
             _view.Message = string.Empty;
@@ -95,16 +94,19 @@ namespace CheckPointPresenters.Presenters
             }
         }
  
-        private bool AttemptSaveToDb()
+
+        private void AttemptSaveToDb()
         {
             SaveResult saveResult = _uOW.Complete();
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
                 _view.Message = "Registraion Failed: " + saveResult.ErrorMessage;
-                return false;
             }
-            return true;
+            else
+            {
+                _view.Message = "New Registration Succesfull!";
+            }
         }
     }
 }

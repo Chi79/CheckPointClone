@@ -54,13 +54,13 @@ namespace DataAccess.Concrete.Repositories
             if (!result.Any())
             {
                 myLoginResult.ClientType = 0;
-                myLoginResult.Result = false;
+                myLoginResult.Success = false;
             }
             else
             {
                 var myresult = result.FirstOrDefault();
                 myLoginResult.ClientType = myresult.ClientType;
-                myLoginResult.Result = true;
+                myLoginResult.Success = true;
             }
             return myLoginResult;
         }
