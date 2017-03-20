@@ -40,9 +40,9 @@ namespace CheckPointModel.Validation
             {
                 base.AddBrokenRule("PhoneNumber must be 8 digits or more. ");
             }
-            if (client.PostalCode.Length < 4)
+            if (client.PostalCode.Length > 4)
             {
-                base.AddBrokenRule("PostalCode must be 4 digits. ");
+                base.AddBrokenRule("PostalCode must be 4 digits or less. ");
             }
         }
     }

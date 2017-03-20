@@ -15,17 +15,13 @@ namespace CheckPointPresenters.Presenters
 {
     public class RegisterClientPresenter : PresenterBase
     {
-        private readonly IRegisterClientModel<CLIENT, ClientDTO> _model;
+        private readonly IRegisterClientModel _model;
         private readonly IRegisterClientView _view;
         private readonly IUnitOfWork _uOW;
 
-        private ClientDTO _clientModel = new ClientDTO(); 
-        private CLIENT _newClient;
-        private string _errorMessage = null;
+        private ClientDTO _clientDTO = new ClientDTO(); 
 
-        private List<string> validationErrorMessage;
-
-        public RegisterClientPresenter(IRegisterClientModel<CLIENT, ClientDTO> registerClientModel, 
+        public RegisterClientPresenter(IRegisterClientModel registerClientModel,
                                        IRegisterClientView registerClientView, IUnitOfWork unitOfWork)
 
         {
@@ -39,53 +35,50 @@ namespace CheckPointPresenters.Presenters
 
         private void RegisterNewClientButtonCLicked(object sender, EventArgs e)
         {
-            CreateClientModelFromInput();
-            _clientModel.FillPropertyList(_clientModel);
+            CreateClientDTOFromInput();
+            _clientDTO.FillPropertyList(_clientDTO);
 
             bool ClientDataIsValid = ClientToRegisterIsValid();
             if (ClientDataIsValid)
             {
-                _newClient = _model.ConvertClientModelToClient(_clientModel);
+                var _newClient = _model.ConvertClientDTOToClient(_clientDTO) as CLIENT;
                 SaveClientToDatabase(_newClient);
             }    
         }
-        private void CreateClientModelFromInput()
+        private void CreateClientDTOFromInput()
         {
-            _clientModel.UserName = _view.UserName;
-            _clientModel.FirstName = _view.Firstname;
-            _clientModel.LastName = _view.LastName;
-            _clientModel.Email = _view.Email;
-            _clientModel.Address = _view.StreetAddress;
-            _clientModel.PostalCode = _view.PostalCode;
-            _clientModel.PhoneNumber = _view.PhoneNumber;
-            _clientModel.Password = _view.Password;
-            _clientModel.ClientType = _view.ClientType;
+            _clientDTO.UserName = _view.UserName;
+            _clientDTO.FirstName = _view.Firstname;
+            _clientDTO.LastName = _view.LastName;
+            _clientDTO.Email = _view.Email;
+            _clientDTO.Address = _view.StreetAddress;
+            _clientDTO.PostalCode = _view.PostalCode;
+            _clientDTO.PhoneNumber = _view.PhoneNumber;
+            _clientDTO.Password = _view.Password;
+            _clientDTO.ClientType = _view.ClientType;
         }
+
         private void SaveClientToDatabase(CLIENT newClient)
         {
             _uOW.CLIENTs.Add(newClient);
+
             bool saveCompleted = AttemptSaveToDb();
             if (saveCompleted)
             {
                 _view.Message = "New Registration Succesfull!";
             }
-            else
-            {
-                _view.Message = "Registraion Failed: " + _errorMessage;
-            }
-        
         }
+
         private bool ClientToRegisterIsValid()
         {
-            bool clientFieldsAreValid = _clientModel.IsValid(_clientModel);
+            bool clientFieldsAreValid = _clientDTO.IsValid(_clientDTO);
             if (clientFieldsAreValid)
             {
-                _newClient = _model.ConvertClientModelToClient(_clientModel);
+                 var _newClient = _model.ConvertClientDTOToClient(_clientDTO) as CLIENT;
                 return true;
             }
             else
             {
-                validationErrorMessage = _clientModel.GetBrokenBusinessRules().ToList();
                 DisplayValidationMessage();
                 return false;
             }
@@ -93,6 +86,8 @@ namespace CheckPointPresenters.Presenters
         private void DisplayValidationMessage()
         {
             _view.Message = string.Empty;
+
+            var validationErrorMessage = _clientDTO.GetBrokenBusinessRules().ToList();
 
             foreach (string message in validationErrorMessage)
             {
@@ -106,7 +101,7 @@ namespace CheckPointPresenters.Presenters
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
-                _errorMessage = saveResult.ErrorMessage;
+                _view.Message = "Registraion Failed: " + saveResult.ErrorMessage;
                 return false;
             }
             return true;
