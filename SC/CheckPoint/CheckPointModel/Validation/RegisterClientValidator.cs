@@ -12,14 +12,14 @@ namespace CheckPointModel.Validation
 {
     public class RegisterClientValidator : Validator<IClientDTO>, IRegisterClientValidator<IClientDTO>
     {
-        private List<string> propertyList;
         public List<string> FillPropertyList(IClientDTO client)
         {
-           propertyList = ProperiesToStringListConverter<IClientDTO>.ConvertPropertiesToStringList(client);
-           return propertyList;
+           return ProperiesToStringListConverter<IClientDTO>.ConvertPropertiesToStringList(client);
         }
         public override void CheckForBrokenRules(IClientDTO client)
         {
+            var propertyList = FillPropertyList(client);
+
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {
                 base.AddBrokenRule("One or more field is empty! Please fill in all fields. ");

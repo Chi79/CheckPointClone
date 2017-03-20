@@ -9,7 +9,7 @@ namespace CheckPointCommon.Structs
     public struct LoginResult
     {
          public int ClientType;
-         public bool Result;
+         public bool Success;
     }
     public struct SaveResult
     {
