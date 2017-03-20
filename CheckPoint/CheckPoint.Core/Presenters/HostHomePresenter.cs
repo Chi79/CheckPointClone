@@ -18,8 +18,9 @@ namespace CheckPointPresenters.Presenters
         private readonly IHostHomeModel _model;
         private readonly IShowAppointments _displayService;
 
-        string host = "Morten";
-        //TODO
+        //string host = "Morten";
+
+        private string _client;
 
         public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
                                  IShowAppointments displayService)
@@ -36,6 +37,8 @@ namespace CheckPointPresenters.Presenters
             _view.ManageAppointmentButtonClicked += OnManageAppointmentButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
+
+            _client = _view.LoggedInClient;
         }
 
         private void OnCreateReportButtonClicked(object sender, EventArgs e)
@@ -54,7 +57,7 @@ namespace CheckPointPresenters.Presenters
             int noAppointmentSelected = -1;
             if (_view.SessionAppointmentId == noAppointmentSelected)
             {
-                _view.Message = "No appointment was selected!";
+                _view.Message = "No appointment has been selected!";
             }
             else
             {
@@ -80,7 +83,7 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(host);
+            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.SessionRowIndex = -1;
             _view.SessionAppointmentId = -1;

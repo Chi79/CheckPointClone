@@ -49,6 +49,8 @@ namespace CheckPointPresenters.Presenters
             bool loginAttemptSuccessful = loginResult.Success;
             if(loginAttemptSuccessful)
             {
+                _view.LoggedInClient = username;
+
                 _clientType = (ClientType)loginResult.ClientType;
                 CheckClientType();
             }
@@ -60,7 +62,7 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckClientType()
         {
-            switch(_clientType)
+            switch (_clientType)
             {
                 case ClientType.User:
                     _view.RedirectToUserHomePage();
