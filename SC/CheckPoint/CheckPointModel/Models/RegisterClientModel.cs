@@ -7,14 +7,15 @@ using CheckPointDataTables.Tables;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointModel.Utilities;
 using CheckPointModel.DTOs;
+using CheckPointCommon.DTOInterfaces;
 
 namespace CheckPointModel.Models
 {
-    public class RegisterClientModel : IRegisterClientModel<CLIENT, ClientDTO> 
+    public class RegisterClientModel : IRegisterClientModel
     {
-        public CLIENT ConvertClientModelToClient(ClientDTO client)
+        public object ConvertClientDTOToClient(object client)
         {
-            return ClientDTOMapper.convertClientDTOToClient(client);
+            return ClientDTOMapper.convertClientDTOToClient((IClientDTO)client);
         }
     }
 }
