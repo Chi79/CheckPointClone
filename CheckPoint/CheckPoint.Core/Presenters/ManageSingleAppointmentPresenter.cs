@@ -199,7 +199,6 @@ namespace CheckPointPresenters.Presenters
             _view.EndTime = selectedAppointment.EndTime.ToString();
             _view.Address = selectedAppointment.Address;
             _view.PostalCode = selectedAppointment.PostalCode.ToString();
-            _view.UserName = selectedAppointment.UserName;
             _view.IsObligatory = selectedAppointment.IsObligatory.ToString();
             _view.IsCancelled = selectedAppointment.IsCancelled.ToString();
 

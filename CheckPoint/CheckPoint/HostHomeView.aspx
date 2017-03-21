@@ -528,6 +528,67 @@ font-weight:bold;
 }
 
 
+.SelectImage{
+    width:24px;
+    margin-right:auto;
+}
+.AppointmentIdLabel{
+    width:49px;
+    margin-right:9px;
+}
+.CourseIdLabel{
+    width:49px;
+    margin-right:26px;
+}
+.AppointmentNameLabel{
+    width:49px;
+    margin-right:auto;
+}
+.DescriptionLabel{
+    width:49px;
+    margin-right:auto;
+}
+.DateLabel{
+   /* width:49px;*/
+    margin-right:auto;
+   /* vertical-align:text-bottom;*/
+}
+.StartTimeLabel{
+    width:49px;
+    margin-right:auto;
+}
+.EndTimeLabel{
+    width:49px;
+    margin-right:auto;
+}
+.AddressLabel{
+    width:49px;
+    margin-right:auto;
+}
+.PostCodeLabel{
+    width:49px;
+    margin-right:auto;
+}
+.IsObligatoryImageTrue{
+    width:49px;
+    margin-right:auto;
+}
+.IsObligatoryImageFalse{
+    width:49px;
+    margin-right:auto;
+}
+
+.IsCancelledImageTrue{
+    width:49px;
+    margin-right:auto;
+}
+.IsCancelledImageFalse{
+    width:49px;
+    margin-right:auto;
+}
+
+
+
 
 
 
@@ -1183,7 +1244,7 @@ font-weight:bold;
                 <Columns>
                     <asp:TemplateField ShowHeader="true" > 
                         <ItemTemplate>
-                            <asp:ImageButton ID="SelectButton" runat="server"  CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
+                            <asp:ImageButton ID="SelectButton" CssClass="SelectImage" runat="server"  CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
                         </ItemTemplate>
                         <HeaderStyle BackColor ="#10591B" />
                         <ItemStyle Width="1%" CssClass="roundedleft" />
@@ -1194,7 +1255,7 @@ font-weight:bold;
                             <h3 style="color:white" >AppointmentId</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAppId" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
+                            <asp:Label ID="lblAppId" CssClass="AppointmentIdLabel" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%"  CssClass="centerborders" />
  
@@ -1205,7 +1266,7 @@ font-weight:bold;
                             <h3 style="color:white">CourseId</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
+                            <asp:Label ID="lblCourseId"  CssClass="CourseIdLabel" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="centerborders" />
                     </asp:TemplateField>
@@ -1216,7 +1277,7 @@ font-weight:bold;
                             <h3 style="color:white">AppointmentName</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAppName" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
+                            <asp:Label ID="lblAppName"  CssClass="AppointmentNameLabel" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="centerborders" />
                     </asp:TemplateField>
@@ -1227,7 +1288,7 @@ font-weight:bold;
                             <h3 style="color:white">Description</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblDescription" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
+                            <asp:Label ID="lblDescription" CssClass="DescriptionLabel" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10.2%"  CssClass="centerborders"/>
                     </asp:TemplateField>
@@ -1238,10 +1299,10 @@ font-weight:bold;
                             <h3 style="color:white">Date</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
+                            <asp:Label ID="lblDate" CssClass="DateLabel"  runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
                             <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>   
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="8.4%"  CssClass="centerborders" />
+                        <ItemStyle HorizontalAlign="Center"  Width="8.4%"  CssClass="centerborders" />
                     </asp:TemplateField>
 
 
@@ -1250,7 +1311,7 @@ font-weight:bold;
                             <h3 style="color:white">StartTime</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblStartTime" runat="server" Text='<%# Bind("StartTime") %>' ></asp:Label>
+                            <asp:Label ID="lblStartTime" CssClass="StartTimeLabel" runat="server" Text='<%# Bind("StartTime") %>' ></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="8%"  CssClass="centerborders" />
                     </asp:TemplateField>
@@ -1261,7 +1322,7 @@ font-weight:bold;
                             <h3 style="color:white">EndTime</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblEndTime" runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
+                            <asp:Label ID="lblEndTime"  CssClass="EndTimeLabel"  runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="centerborders" />
                     </asp:TemplateField>
@@ -1272,7 +1333,7 @@ font-weight:bold;
                             <h3 style="color:white">Address</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAddress" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
+                            <asp:Label ID="lblAddress"  CssClass="AddressLabel" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="centerborders" />
                         <ItemStyle Width="2%" />
@@ -1284,7 +1345,7 @@ font-weight:bold;
                             <h3 style="color:white">PostalCode</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblPostalCode" runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
+                            <asp:Label ID="lblPostalCode" CssClass="PostCodeLabel"  runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%"  CssClass="centerborders"/>
                     </asp:TemplateField>
@@ -1295,8 +1356,8 @@ font-weight:bold;
                             <h3 style="color:white">IsObligatory</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Image ID="IsObligTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
-                            <asp:Image ID="IsObligFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
+                            <asp:Image ID="IsObligTrue" CssClass="IsObligatoryImageTrue"  runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+                            <asp:Image ID="IsObligFalse" CssClass="IsObligatoryImageFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="centerborders" />
                     </asp:TemplateField>
@@ -1307,8 +1368,8 @@ font-weight:bold;
                             <h3 style="color:white">IsCancelled</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                              <asp:Image ID="IsCancelledTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
-                            <asp:Image ID="IsCancelledFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
+                              <asp:Image ID="IsCancelledTrue" CssClass="IsCancelledImageTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
+                            <asp:Image ID="IsCancelledFalse" CssClass="is" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="roundedright"/>
                     </asp:TemplateField>
