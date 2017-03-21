@@ -8,6 +8,9 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IManageAttendanceView
     {
-        //TODO
+        event EventHandler<EventArgs> AcceptAttendeeForAppointment;
+
+        IEnumerable<object> ApplicantsGridviewSource { set; }
+        IEnumerable<object> AppointmentsGridviewSource { set; }
     }
 }

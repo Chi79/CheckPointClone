@@ -21,6 +21,12 @@ namespace CheckPointPresenters.Presenters
             _view = view;
             _model = model;
             _unitOfWork = unitOfWork;
+            _view.AcceptAttendeeForAppointment += OnAcceptAttendeeRequestButtonClicked;
+        }
+
+        private void OnAcceptAttendeeRequestButtonClicked(object sender, EventArgs e)
+        {
+            //TODO
         }
     }
 }
