@@ -12,7 +12,9 @@ CREATE TABLE [COURSE]
 	[Name]               varchar(20)  NOT NULL ,
 	[Description]        varchar(200)  NULL ,
 	[IsPrivate]          bit  NULL ,
-	CONSTRAINT [XPKCOURSE] PRIMARY KEY  CLUSTERED ([CourseId] ASC)
+	[UserName]           varchar(20) NOT NULL,
+	CONSTRAINT [XPKCOURSE] PRIMARY KEY  CLUSTERED ([CourseId] ASC),
+	CONSTRAINT [R_40] FOREIGN KEY ([UserName]) REFERENCES [CLIENT]([UserName])
 )
 go
 
