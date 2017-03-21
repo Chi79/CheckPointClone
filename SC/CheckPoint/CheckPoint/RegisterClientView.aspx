@@ -122,7 +122,7 @@
 }
 #lblMessage{
     position: absolute;
-    top:24em;
+    top:27em;
     left:4em;
     color:white;
 }
@@ -130,7 +130,23 @@
     position: absolute;
     top:25em;
     left:16em;
+    width:145px;
 }
+#btnBackToHomePage{
+    position: absolute;
+    top:27em;
+    left:16em;
+    width:145px;
+}
+#btnGoToLogin{
+    position: absolute;
+    top:29em;
+    left:16em;
+    width:145px;
+}
+
+
+
 </style>
 
 <title></title>
@@ -177,6 +193,8 @@
 <asp:Label ID="lblMessage" runat="server"></asp:Label>
 
 <asp:Button ID="btnRegisterClient" runat="server" OnClick="btnRegisterClient_Click" Text="Register" />
+<asp:Button ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back Home" />
+<asp:Button ID="btnGoToLogin" runat="server" OnClick="btnGoToLogin_Click" Text="Login" Visible="False" />
 
 
 </div>    

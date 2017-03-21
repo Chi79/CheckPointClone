@@ -31,9 +31,25 @@ namespace CheckPoint.Views
         public string StreetAddress { get { return txtStreetAddress.Text; } }
       
         public string UserName { get { return txtUserName.Text; } }
+
+        public bool LoginButtonVisible
+        {
+            set { btnGoToLogin.Visible = value; }
+        }
         
         public event EventHandler<EventArgs> RegisterNewClient;
+        public event EventHandler<EventArgs> BackToHomePageClicked;
+        public event EventHandler<EventArgs> GoToLoginClicked;
 
+        public void RedirectBackToHomePage()
+        {
+            Response.Redirect("HomePageView.aspx");
+        }
+
+        public void RedirectToLogin()
+        {
+            Response.Redirect("LoginView.aspx");
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
          
@@ -44,6 +60,22 @@ namespace CheckPoint.Views
             if(RegisterNewClient != null)
             {
                 RegisterNewClient(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnBackToHomePage_Click(object sender, EventArgs e)
+        {
+            if(BackToHomePageClicked != null)
+            {
+                BackToHomePageClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnGoToLogin_Click(object sender, EventArgs e)
+        {
+            if(GoToLoginClicked != null)
+            {
+                GoToLoginClicked(this, EventArgs.Empty);
             }
         }
     }

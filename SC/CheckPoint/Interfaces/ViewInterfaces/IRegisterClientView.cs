@@ -20,6 +20,13 @@ namespace CheckPointCommon.ViewInterfaces
 
         string Message { get; set; }
 
+        bool LoginButtonVisible {set; }
+
+        void RedirectBackToHomePage();
+        void RedirectToLogin();
+
         event EventHandler<EventArgs> RegisterNewClient;
+        event EventHandler<EventArgs> BackToHomePageClicked;
+        event EventHandler<EventArgs> GoToLoginClicked;
     }
 }
