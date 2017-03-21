@@ -90,7 +90,6 @@ namespace CheckPointPresenters.Presenters
         private void CreateAppointmentDTOFromInput()
         {
 
-            _dTO.CourseId = _view.CourseId;
             _dTO.AppointmentName = _view.AppointmentName;
             _dTO.Description = _view.Description;
             _dTO.Date = _view.Date;

@@ -13,8 +13,7 @@ namespace CheckPointModel.DTOs
 {
     public class AppointmentDTO : AppointmentValidator, IAppointmentDTO
     {
-        //TODO
-       public string CourseId { get; set; }
+       
        public string StartTime { get; set; }
        public string EndTime { get; set; }
        public string PostalCode { get; set; }

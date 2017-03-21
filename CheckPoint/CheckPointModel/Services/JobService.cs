@@ -116,7 +116,6 @@ namespace CheckPointModel.Services
         }
         public override void PerformTask(APPOINTMENT appointment)
         {
-            //var appointmentToUpdate = _handler.GetAppointmentByName(AppointmentName) as APPOINTMENT;
             var appointmentToUpdate = _handler.GetAppointmentById(AppointmentId) as APPOINTMENT;
 
             appointmentToUpdate.CourseId = appointment.CourseId;

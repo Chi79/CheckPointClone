@@ -120,7 +120,7 @@ namespace CheckPointPresenters.Presenters
 
         private void CreateAppointmentDTOFromInput()
         {
-            _dTO.CourseId = _view.CourseId;
+
             _dTO.AppointmentName = _view.AppointmentName;
             _dTO.Description = _view.Description;
             _dTO.Date = _view.Date;
@@ -161,6 +161,7 @@ namespace CheckPointPresenters.Presenters
             var appointment = _model.ConvertToAppointment(_dTO) as APPOINTMENT;
             return appointment;
         }
+    
 
         private void UpdateDatabaseWithChanges(JobServiceBase job)
         {

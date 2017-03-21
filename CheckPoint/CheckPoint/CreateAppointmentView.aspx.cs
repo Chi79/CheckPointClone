@@ -71,6 +71,7 @@ namespace CheckPoint.Views
         {
             get { return Session["LoggedInClient"].ToString(); }
         }
+
         public bool ContinueButtonVisible
         {
             set { btnContinue.Visible = value; }

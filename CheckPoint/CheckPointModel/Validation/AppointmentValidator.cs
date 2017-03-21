@@ -13,7 +13,7 @@ namespace CheckPointModel.Validation
 {
     public class AppointmentValidator : Validator<IAppointmentDTO>, IAppointmentValidator<IAppointmentDTO>
     {
-        //TODO
+
         public List<string> FillPropertyList(IAppointmentDTO appointment)
         {
             return ProperiesToStringListConverter<IAppointmentDTO>.ConvertPropertiesToStringList(appointment);
@@ -41,14 +41,6 @@ namespace CheckPointModel.Validation
             if (appointment.PostalCode.Length > 4)
             {
                 base.AddBrokenRule("PostCode cannot exceed 4 characters!");
-            }
-            try
-            {
-                int courseIdInteger = Convert.ToInt32(appointment.CourseId);
-            }
-            catch
-            {
-                base.AddBrokenRule("Course Id must be an valid integer value!");
             }
             try
             {
