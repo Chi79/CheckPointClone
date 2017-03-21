@@ -31,10 +31,24 @@ namespace CheckPointPresenters.Presenters
             _model = registerClientModel;
             _view = registerClientView;
             _uOW = unitOfWork;
+
   
             _view.RegisterNewClient += RegisterNewClientButtonClicked;
+            _view.BackToHomePageClicked += OnBackToHomePageClicked;
+            _view.GoToLoginClicked += OnGoToLoginClicked;
       
         }
+
+        private void OnGoToLoginClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToLogin();
+        }
+
+        private void OnBackToHomePageClicked(object sender, EventArgs e)
+        {
+            _view.RedirectBackToHomePage();
+        }
+
         public override void FirstTimeInit()
         {
             
@@ -106,6 +120,7 @@ namespace CheckPointPresenters.Presenters
             else
             {
                 _view.Message = "New Registration Succesfull!";
+                _view.LoginButtonVisible = true;
             }
         }
     }
