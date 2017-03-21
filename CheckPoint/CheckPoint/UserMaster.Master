@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="CheckPoint.Views.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <link href="CSS/StyleMaster.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+      <div id="main-sidebar">
+
+    
+        <div class="main-sidebar-top-logo">
+   <%--         <img class="main-sidebar-top-logo-big" src="Images/logo_white2.png" alt="Checkpoint"/>--%>
+            <img class="main-sidebar-top-logo-small" src="Images/small_logo2.png" alt="Checkpoint"/>
+        </div>
+        <ul class="main-sidebar-menu-list">
+
+            <li class="tooltip">
+                <span class="tooltiptext"> My appointments</span>
+                <div class="main-sidebar-menu-list-item">
+
+
+                
+          <%--       <span class="tooltiptext">Show my activeties</span>--%>
+                 <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="1" >                                             
+                  
+                <img class="main-sidebar-menu-list-item-icon"  src="Images/activitiesicon1.png" alt="[]"></img>
+                   
+
+                 </a>
+                </div>
+            </li>
+           
+              <li class="tooltip">
+                    <span class="tooltiptext">Alter profile</span>
+
+                <div class="main-sidebar-menu-list-item">
+             <%--    <span class="tooltiptext">Alter Profile</span>--%>
+                                   
+                    <a class="main-sidebar-menu-list-item-link" href="UpdateProfileView.aspx" tabindex="2">                         
+                       <img class="main-sidebar-menu-list-item-icon" alt="[]" src="Images/alterprofile2.png" ></img>
+                       
+                  </a>   
+                  </div>
+              </li>
+                     
+            <li class="tooltip">
+                  <span class="tooltiptext">Logout</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link" href="HomePageView.aspx" tabindex="3">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/logouticon13.png" alt="[]"></img>
+                
+
+                  </a>
+                    </div>
+            </li>
+        </ul>
+
+    </div>
+        <div id="Main">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
