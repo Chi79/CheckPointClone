@@ -11,5 +11,32 @@ namespace CheckPoint.Views {
     
     
     public partial class ManageAttendanceView {
+        
+        /// <summary>
+        /// dgvApplicants control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvApplicants;
+        
+        /// <summary>
+        /// btnAcceptAttendeeRequest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAcceptAttendeeRequest;
+        
+        /// <summary>
+        /// dgvAppointments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvAppointments;
     }
 }
