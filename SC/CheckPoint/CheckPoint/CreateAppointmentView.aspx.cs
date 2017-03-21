@@ -69,7 +69,7 @@ namespace CheckPoint.Views
 
         public string UserName
         {
-            get { return txtUserName.Text; }
+            get { return Session["LoggedInClient"].ToString(); }
         }
         public bool ContinueButtonVisible
         {

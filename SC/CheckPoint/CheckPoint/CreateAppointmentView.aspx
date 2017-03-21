@@ -229,9 +229,6 @@
         <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
         <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
 
-        <asp:Label ID="lblUserName" runat="server" Text="Username"></asp:Label>
-        <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-
         <asp:Label ID="lblObligatory" runat="server" Text="Obligatory"></asp:Label>
 
         <asp:DropDownList ID="ddlIsObligatory" runat="server">

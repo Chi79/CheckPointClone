@@ -19,7 +19,7 @@ namespace CheckPointCommon.ViewInterfaces
         string Description { get; set; }
         string Address { get; set; }
         string Date { get; set; }
-        string UserName { get; set; }
+        string UserName { get; }
         string IsCancelled { get; set; }
         string IsObligatory { get; set; }
 
