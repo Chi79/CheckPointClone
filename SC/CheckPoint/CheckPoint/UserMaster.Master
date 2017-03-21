@@ -42,7 +42,7 @@
 
                 
           <%--       <span class="tooltiptext">Show my activeties</span>--%>
-                 <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="1" >                                             
+                 <a class="main-sidebar-menu-list-item-link" href="FindAppointmentsView.aspx" tabindex="1" >                                             
                   
                 <img class="main-sidebar-menu-list-item-icon"  src="Images/findappointmentsicon.png" alt="[]"></img>
                    
