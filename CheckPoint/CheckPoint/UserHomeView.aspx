@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="UserHomeView.aspx.cs"  Inherits="CheckPoint.Views.UserHomeView"  EnableEventValidation="false"  MasterPageFile="~/Master.Master" %>
 
-<!DOCTYPE html>
-
+<asp:Content ContentPlaceHolderID="head" runat="server">
 
 <title></title>
 
