@@ -1,16 +1,26 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAttendanceView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAttendanceView" EnableEventValidation="false"  MasterPageFile="~/Master.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ContentPlaceHolderID="head" runat="server">
     <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+
+    <style>
+        #wrapper{
+            width: 100%;
+            height: 100%;
+            background: #333333;
+
+        }
+
+    </style>
+
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+    <div id="wrapper">
+
     </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
+
+
