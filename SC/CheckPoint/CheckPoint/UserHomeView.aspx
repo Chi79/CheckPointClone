@@ -1,18 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserHomeView.aspx.cs" Inherits="CheckPoint.Views.UserHomeView" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="UserHomeView.aspx.cs" Inherits="CheckPoint.Views.UserHomeView" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ContentPlaceHolderID="head" runat="server">
     <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+
+
     <div>
     
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
     
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>    
