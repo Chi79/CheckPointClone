@@ -35,7 +35,21 @@
                  </a>
                 </div>
             </li>
-           
+            <li class="tooltip">
+                <span class="tooltiptext"> Find appointments</span>
+                <div class="main-sidebar-menu-list-item">
+
+
+                
+          <%--       <span class="tooltiptext">Show my activeties</span>--%>
+                 <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="1" >                                             
+                  
+                <img class="main-sidebar-menu-list-item-icon"  src="Images/findappointmentsicon.png" alt="[]"></img>
+                   
+
+                 </a>
+                </div>
+            </li>
               <li class="tooltip">
                     <span class="tooltiptext">Alter profile</span>
 
