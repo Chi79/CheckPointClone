@@ -61,6 +61,10 @@ namespace CheckPointModel.Services
 
         public void Create<T>(T appointment)
         {
+            //APPOINTMENT app = appointment as APPOINTMENT;
+            //COURSE course = new COURSE() { Name = app.AppointmentName, Description = app.Description };
+            //_uOW.COURSEs.Add(course);
+
             _uOW.APPOINTMENTs.Add(appointment as APPOINTMENT);
         }
 

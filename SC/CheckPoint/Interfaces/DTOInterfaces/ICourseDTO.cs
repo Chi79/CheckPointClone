@@ -9,5 +9,7 @@ namespace CheckPointCommon.DTOInterfaces
     public interface ICourseDTO
     {
         //TODO
+        string Name { get; set; }
+        string Description { get; set; }
     }
 }

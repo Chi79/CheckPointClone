@@ -8,7 +8,6 @@ namespace CheckPointCommon.DTOInterfaces
 {
     public interface IAppointmentDTO
     {
-         string CourseId { get; set; }
          string StartTime { get; set; }
          string EndTime { get; set; }
          string PostalCode { get; set; }

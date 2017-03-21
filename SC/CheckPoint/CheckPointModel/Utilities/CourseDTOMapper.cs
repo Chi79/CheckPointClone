@@ -11,5 +11,15 @@ namespace CheckPointModel.Utilities
     public class CourseDTOMapper
     {
         //TODO
+        public static COURSE ConvertCourseDTOToCourse(ICourseDTO courseDTO)
+        {
+            COURSE course = new COURSE()
+            {
+                Name = courseDTO.Name,
+                Description = courseDTO.Description
+            };
+
+            return course;
+        }
     }
 }
