@@ -59,14 +59,14 @@ go
 CREATE TABLE [APPOINTMENT]
 ( 
 	[AppointmentId]      int  NOT NULL  IDENTITY ( 1,1 ) ,
-	[CourseId]           int  NOT NULL ,
+	[CourseId]           int  NULL ,
 	[StartTime]           Time NOT NULL ,
 	[EndTime]             Time  NOT NULL ,
 	[PostalCode]         int  NOT NULL ,
 	[AppointmentName]    varchar(40)  NOT NULL ,
 	[Description]        varchar(200)  NULL ,
 	[Address]      varchar(50)  NULL ,
-	[Date]               date  NOT NULL ,
+	[Date]               date  NOT NULL,
 	[IsCancelled]        bit  NULL ,
 	[UserName]           varchar(20)  NOT NULL ,
 	[IsObligatory]       bit  NULL ,
