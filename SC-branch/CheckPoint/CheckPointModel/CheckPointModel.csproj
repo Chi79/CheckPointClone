@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C66B5234-75AE-4F85-9CC5-F9960D5114F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CheckPointModel</RootNamespace>
+    <AssemblyName>CheckPointModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLists\UserNameList.cs" />
+    <Compile Include="DTOs\AppointmentDTO.cs" />
+    <Compile Include="DTOs\AttendeeDTO.cs" />
+    <Compile Include="DTOs\ClientDTO.cs" />
+    <Compile Include="DTOs\CourseDTO.cs" />
+    <Compile Include="Factories\JobFactory.cs" />
+    <Compile Include="Models\ManageSingleAppointmentModel.cs" />
+    <Compile Include="Services\AppointmentHandler.cs" />
+    <Compile Include="Services\JobService.cs" />
+    <Compile Include="Services\ShowAppointments.cs" />
+    <Compile Include="Utilities\AppointmentDTOMapper.cs" />
+    <Compile Include="Utilities\AttendeeDTOMapper.cs" />
+    <Compile Include="Utilities\CourseDTOMapper.cs" />
+    <Compile Include="Utilities\DateTimeParser.cs" />
+    <Compile Include="Utilities\ValidateDateInput.cs" />
+    <Compile Include="Utilities\DateTimeToTimeConverter.cs" />
+    <Compile Include="Utilities\ValidateIntergerInput.cs" />
+    <Compile Include="Validation\AttendeeValidator.cs" />
+    <Compile Include="Validation\CourseValidator.cs" />
+    <Compile Include="Models\CreateAppointmentModel.cs" />
+    <Compile Include="Models\CreateCourseModel.cs" />
+    <Compile Include="Models\CreateReportModel.cs" />
+    <Compile Include="Models\FindAppointmentsModel.cs" />
+    <Compile Include="Models\HomePageModel.cs" />
+    <Compile Include="Models\HostHomeModel.cs" />
+    <Compile Include="Models\InviteUserModel.cs" />
+    <Compile Include="Models\ManageAppointmentModel.cs" />
+    <Compile Include="Models\ManageAttendanceModel.cs" />
+    <Compile Include="Models\ManageCourseModel.cs" />
+    <Compile Include="Models\UpdateProfileModel.cs" />
+    <Compile Include="Utilities\ClientDTOMapper.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Utilities\ProperiesToStringListConverter.cs" />
+    <Compile Include="Models\RegisterClientModel.cs" />
+    <Compile Include="Validation\AppointmentValidator.cs" />
+    <Compile Include="Validation\RegisterClientValidator.cs" />
+    <Compile Include="Models\UserHomeModel.cs" />
+    <Compile Include="Utilities\ValidateStringInput.cs" />
+    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckPointDataTables\CheckPointDataTables.csproj">
+      <Project>{afebd1a4-0e44-4bfe-a0b9-4cfe6622d6aa}</Project>
+      <Name>CheckPointDataTables</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\CheckPointCommon.csproj">
+      <Project>{da5c83db-1e7a-4c12-961e-6c73373506bc}</Project>
+      <Name>CheckPointCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
