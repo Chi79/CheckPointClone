@@ -177,6 +177,8 @@
     </Content>
     <Content Include="Scripts\package.json" />
     <Content Include="Master.Master" />
+    <Content Include="HostMaster.Master" />
+    <Content Include="UserMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -312,6 +314,7 @@
     </Compile>
     <Compile Include="UserMaster.Master.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
