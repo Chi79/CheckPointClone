@@ -79,12 +79,12 @@ table {
 }
 .courseIdColumnItem{
     width: 9.09%;
-    padding-left: 4%;
+    padding-left: 4.5%;
     margin: auto;
 }
 .appointmentNameColumnItem{
     width: 9.09%;
-    padding-left: 3%;
+    padding-left: 4%;
     margin: auto;
 }
 .descriptionColumnItem{
@@ -93,18 +93,18 @@ table {
     margin: auto;
 }
 .dateColumnItem{
-    width: 9.09%;
-    padding-left: 4%;
+    width: 11.09%;
+    padding-left: 6%;
     margin: auto;
 }
 .startTimeColumnItem{
     width: 9.09%;
-    padding-left: 5.5%;
+    padding-left: 5%;
     margin: auto;
 }
 .endTimeColumnItem{
     width: 9.09%;
-    padding-left: 5%;
+    padding-left: 4%;
     margin: auto;
 }
 .addressColumnItem{
@@ -137,22 +137,23 @@ table {
     margin: auto;
 }
 .courseIdHeader{
-    width: 7%;
+    width: 7.5%;
     margin: auto;
 }
 .appointmentNameHeader{
     width: 11%;
     margin: auto;
+    padding-right:1%;
 }
 .descriptionHeader{
     width: 9%;
     margin: auto;
-    padding-right: 2%;
+    padding-right: 3%;
 }
 .dateHeader{
     width: 9.5%;
     margin: auto;
-    padding-right: 3%;
+    padding-right: 2%;
 }
 .startTimeHeader{
     width: 9%;
@@ -306,7 +307,7 @@ h3{
         top: 10px;
         height: auto;
         width: auto;
-        overflow: auto;
+        overflow:hidden;
 
 }
 .buttonslider{
