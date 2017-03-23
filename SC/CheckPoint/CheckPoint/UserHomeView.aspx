@@ -2,6 +2,7 @@
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
+
 <title></title>
 
 <style type="text/css">
@@ -257,45 +258,56 @@ h3{
       to { left: 85%; }
 }
 .buttons1{
+      float:left;
+      margin-left: 15%;
       z-index:3;
-      position: absolute;
-      left: 14%;
-      top: 102%;
+      margin-top:0.5%;
       animation: buttonsup 2s ;
 }
 .buttons2{
+      float:left;
+      margin-left: 1%;
       z-index:3;
-      position: absolute;
-      left: 28%;
-      top: 102%;
+      margin-top:0.5%;
       animation: buttonsup 3s ;
 }
 .buttons3{
+      float:left;
+      margin-left: 1%;
       z-index:3;
-      position: absolute;
-      left: 42%;
-      top: 102%;
+      margin-top:0.5%;
       animation: buttonsup 4s ;
 }
 .buttons4{
+      float:left;
+      margin-left: 1%;
       z-index:3;
-      position: absolute;
-      left: 56%;
-      top: 102%;
+      margin-top:0.5%;
       animation: buttonsup 5s;
 }
 .buttons5{
+      float:left;
+      margin-left: 1%;
       z-index:3;
-      position: absolute;
-      left: 70%;
-      top: 102%;
+      margin-top:0.5%;
       animation: buttonsup 6s ;
 }
 @keyframes buttonsup {
       from { top: 300%; }
-      to { top: 102%;}
+      to { top: 0%;}
 }
-
+.buttonscontainer{
+    position:static;
+    top:10px;
+    height:auto;
+    width:auto;
+    overflow:auto;
+    
+}
+.buttonslider{
+    position:relative;
+    animation:buttonsup;
+}
 
 
 
@@ -319,79 +331,6 @@ h3{
         </asp:ScriptManager> 
 
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-
-
-        <div id="buttons" runat="server" style="z-index:5;" class="buttons1">
-        <asp:UpdatePanel ID="buttonspanel" runat="server" > 
-        <ContentTemplate>
-        <asp:ImageButton  
-            runat="server" 
-            CssClass="roundedButtons" 
-            id="update" ImageUrl="~/Images/createappointmentbutton.png" 
-            OnClick="createAppointment_Click"
-            ToolTip="create a new appointment" />
-        </ContentTemplate>
-        </asp:UpdatePanel>
-        </div>
-
-        <div id="buttons2" runat="server" style="z-index:5;" class="buttons2">
-        <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
-        <ContentTemplate>
-        <asp:ImageButton  
-            runat="server" 
-            CssClass="roundedButtons"
-            id="managecourses"
-             ImageUrl="~/Images/manageappointmentbutton.png" 
-            OnClick="manageAppointment_Click"
-            ToolTip="manage the selected appointment"  />
-        </ContentTemplate>
-        </asp:UpdatePanel>
-        </div>
-
-        <div id="buttons3" runat="server" style="z-index:5;" class="buttons3">
-        <asp:UpdatePanel ID="buttonspanel3" runat="server" > 
-        <ContentTemplate>
-        <asp:ImageButton  
-            runat="server" 
-            CssClass="roundedButtons" 
-            id="manageappointments" 
-            ImageUrl="~/Images/managecoursesbutton1.png" 
-            OnClick="managecourses_Click" 
-            ToolTip="manage your courses" />
-        </ContentTemplate>
-        </asp:UpdatePanel>
-        </div>
-
-        <div id="buttons4" runat="server" style="z-index:5;" class="buttons4">
-        <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
-        <ContentTemplate>
-        <asp:ImageButton  
-            runat="server"
-             CssClass="roundedButtons"
-            id="manageattendance" 
-            ImageUrl="~/Images/manageattendancebutton1.png"
-            OnClick="manageattendance_Click" 
-            ToolTip="manage attendance"  />
-        </ContentTemplate>
-        </asp:UpdatePanel>
-        </div>
-
-        <div id="buttons5" runat="server" style="z-index:5;" class="buttons5">
-        <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
-        <ContentTemplate>
-        <asp:ImageButton  
-            runat="server" 
-            CssClass="roundedButtons" 
-            id="createreport" 
-            ImageUrl="~/Images/createreportbutton1.png" 
-            OnClick="createreport_Click"  
-            ToolTip="create a report" />
-        </ContentTemplate>
-        </asp:UpdatePanel>
-        </div>
-
-
-
 
 
             <asp:Panel
@@ -872,6 +811,86 @@ h3{
             </asp:UpdatePanel>
 
         </asp:Panel>
+
+
+
+        <div id="buttonscontainer" style="margin:auto; width:auto;" class="buttonscontainer" >
+
+        <div id="slidebuttons" class="buttonslider">
+        <div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
+        <asp:UpdatePanel ID="buttonspanel" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  
+            runat="server" 
+            CssClass="roundedButtons" 
+            id="update" ImageUrl="~/Images/createappointmentbutton.png" 
+            OnClick="createAppointment_Click"
+            ToolTip="create a new appointment" />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttons1" runat="server" style="z-index:5;" class="buttons2">
+        <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  
+            runat="server" 
+            CssClass="roundedButtons"
+            id="managecourses"
+             ImageUrl="~/Images/manageappointmentbutton.png" 
+            OnClick="manageAppointment_Click"
+            ToolTip="manage the selected appointment"  />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttonsdiv2" runat="server" style="z-index:5;" class="buttons3">
+        <asp:UpdatePanel ID="buttonspanel3" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  
+            runat="server" 
+            CssClass="roundedButtons" 
+            id="manageappointments" 
+            ImageUrl="~/Images/managecoursesbutton1.png" 
+            OnClick="managecourses_Click" 
+            ToolTip="manage your courses" />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttonsdiv3" runat="server" style="z-index:5;" class="buttons4">
+        <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  
+            runat="server"
+             CssClass="roundedButtons"
+            id="manageattendance" 
+            ImageUrl="~/Images/manageattendancebutton1.png"
+            OnClick="manageattendance_Click" 
+            ToolTip="manage attendance"  />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+        </div>
+
+        <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons5">
+        <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  
+            runat="server" 
+            CssClass="roundedButtons" 
+            id="createreport" 
+            ImageUrl="~/Images/createreportbutton1.png" 
+            OnClick="createreport_Click"  
+            ToolTip="create a report" />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+
+        </div>
+        </div>
+        </div>
+
+
+
        </div>
        </div>
 
