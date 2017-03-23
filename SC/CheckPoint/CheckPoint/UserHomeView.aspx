@@ -135,7 +135,7 @@ table {
     margin: auto;
 }
 .courseIdHeader{
-    width: 6.5%;
+    width: 7%;
     margin: auto;
 }
 .appointmentNameHeader{
