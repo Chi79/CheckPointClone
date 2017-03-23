@@ -11,7 +11,7 @@ namespace CheckPointCommon.ViewInterfaces
         //TODO
         string SelectedAppointmentName { get; set; }
         int AppointmentId { get; set; }
-        string CourseId { get; set; }
+        //string CourseId { get; set; }
         string StartTime { get; set; }
         string EndTime { get; set; }
         string PostalCode { get; set; }

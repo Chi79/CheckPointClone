@@ -118,7 +118,7 @@ namespace CheckPointModel.Services
         {
             var appointmentToUpdate = _handler.GetAppointmentById(AppointmentId) as APPOINTMENT;
 
-            appointmentToUpdate.CourseId = appointment.CourseId;
+            //appointmentToUpdate.CourseId = appointment.CourseId;
             appointmentToUpdate.AppointmentName = appointment.AppointmentName;
             appointmentToUpdate.UserName = appointment.UserName;
             appointmentToUpdate.Description = appointment.Description;
