@@ -176,8 +176,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\package.json" />
-    <Content Include="HostMaster.Master" />
-    <Content Include="UserMaster.Master" />
+    <Content Include="Master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -234,6 +233,13 @@
     <Compile Include="HostHomeView.aspx.designer.cs">
       <DependentUpon>HostHomeView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HostMaster.Master.cs">
+      <DependentUpon>HostMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostMaster.Master.designer.cs">
+      <DependentUpon>HostMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="InviteUserView.aspx.cs">
       <DependentUpon>InviteUserView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,12 +282,11 @@
     <Compile Include="ManageSingleAppointmentView.aspx.designer.cs">
       <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HostMaster.Master.cs">
-      <DependentUpon>HostMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="HostMaster.Master.designer.cs">
-      <DependentUpon>HostMaster.Master</DependentUpon>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterClientView.aspx.cs">
@@ -307,7 +312,6 @@
     </Compile>
     <Compile Include="UserMaster.Master.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>

@@ -12,10 +12,10 @@ namespace CheckPoint.Views
 {
     public partial class CreateAppointmentView : ViewBase<CreateAppointmentPresenter> , ICreateAppointmentView
     {
-        public string CourseId
-        {
-            get { return txtCourseId.Text; }
-        }
+        //public string CourseId
+        //{
+        //    get { return txtCourseId.Text; }
+        //}
         public string AppointmentName
         {
             get { return txtAppointmentName.Text; }

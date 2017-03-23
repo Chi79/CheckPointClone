@@ -11,7 +11,7 @@
     width: 42%;
     height: 570px;
     margin-left: 27%;
-    margin-top: 4%;
+    margin-top: 2%;
     background-color: #333333;
     border: #66cc66;
     border-width: 20px;

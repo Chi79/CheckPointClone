@@ -6,9 +6,9 @@
 <title></title>
 
 <style type="text/css">
-        /*.auto-style1 {
-            z-index: 50;
-        }*/
+  
+
+
 html, body, div, applet,span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -28,7 +28,6 @@ padding: 0;
 border: 0;
 font-size: 100%;
 font: inherit;
-vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -54,545 +53,164 @@ table {
 	border-spacing: 0;
 }
 
-
-
-.gvHeadSelect{
-    z-index:12;
-    position:fixed;
-    width:0%;
-    padding-left:0%;
-    visibility:hidden;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-bottom-left-radius:10px 10px;
-    border-top-left-radius:10px;
+.roundedButtons {
+    border-radius: 10px;
 }
-.gvHeadSelectItem{
-
-}
-.gvHeaderSelectTitle{
-    padding-top:0%;
-}
-.gvHeadAppointmentId{
-    z-index:11;
-    position:fixed;
-    width:11%;
-    padding-left:0%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px;
-    clip: rect(10px,153px,83px,15px);
-}
-.gvHeadAppointmentIdAsc{
-    margin-top:13%;
-    border-radius:10px;
-}
-.gvHeadAppointmentIdDes{
-    border-radius:10px;
-}
-.gvHeadAppointmentIdAsc:hover{
-    margin-top:13%;
+.roundedButtons:hover{
     border-radius:10px;
     -webkit-animation:glowingbutton;
     -webkit-animation-duration:2s;
     -webkit-animation-iteration-count:infinite;
 }
-.gvHeadAppointmentIdDes:hover{
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadAppointmentIdTitle{
-    padding-top:11%;
-    font-size:22px;
-}
-.gvHeadAppointmentIdItem{
-       
-}
-.gvHeadCourseId{
-    z-index:10;
-    position:fixed;
-    width:17%;
-    padding-left:8.9%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadCourseIdAsc{
-    margin-top:18%;
-    border-radius:10px;
-}
-.gvHeadCourseIdDes{
-    padding-top:5%;
-    border-radius:10px;
-}
-.gvHeadCourseIdAsc:hover{
-    margin-top:18%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadCourseIdDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadCourseIdTitle{
-    padding-top:15%;
-    font-size:22px;
-}
-.gvHeadCourseIdItem{
-
-}
-.gvHeadAppointmentName{
-    z-index:9;
-    position:fixed;
-    width:27%;
-    padding-left:15.7%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadAppointmentNameAsc{
-    margin-top:12%;
-    border-radius:10px;
-}
-.gvHeadAppointmentNameDes{
-    padding-top:1%;
-    border-radius:10px;
-}
-.gvHeadAppointmentNameAsc:hover{
-    margin-top:12%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadAppointmentNameDes:hover{
-    padding-top:1%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadAppointmentNameTitle{
-    padding-top:11%;
-    font-size:22px;
-}
-.gvHeadAppointmentNameItem{
-
-}
-.gvHeadDescription{
-    z-index:8;
-    position:fixed;
-    width:34%;
-    padding-left:26.7%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadDescriptionAsc{
-    margin-top:20%;
-    border-radius:10px;
-}
-.gvHeadDescriptionDes{
-    padding-top:0%;
-    border-radius:10px;
-}
-.gvHeadDescriptionAsc:hover{
-    margin-top:20%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadDescriptionDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadDescriptionTitle{
-    padding-top:17%;
-    font-size:22px;
-}
-.gvHeadDescriptionItem{
-
-}
-.gvHeadDate{
-    z-index:7;
-    position:fixed;
-    width:43%;
-    padding-left:34%;
-    padding-top:7px;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadDateAsc{
-    margin-top:16%;
-    border-radius:10px;
-}
-.gvHeadDateDes{
-    padding-top:0%;
-    border-radius:10px;
-}
-.gvHeadDateAsc:hover{
-    margin-top:16%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadDateDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadDateTitle{
-    padding-top:9%;
-    font-size:22px;
-}
-.gvHeadDateItem{
-
-}
-.gvHeadStartTime{
-    z-index:6;
-    position:fixed;
-    width:50%;
-    padding-left:41.7%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadStartTimeAsc{
-    margin-top:19%;
-    border-radius:10px;
-}
-.gvHeadStartTimeDes{
-    padding-top:5%;
-    border-radius:10px;
-}
-.gvHeadStartTimeAsc:hover{
-    margin-top:19%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadStartTimeDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadStartTimeTitle{
-    padding-top:14%;
-    font-size:22px;
-}
-.gvHeadStartTimeItem{
-
-}
-.gvHeadEndTime{
-    z-index:5;
-    position:fixed;
-    width:57%;
-    padding-left:49%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadEndTimeeAsc{
-    margin-top:19%;
-    border-radius:10px;
-}
-.gvHeadEndTimeDes{
-    margin-top:10%;
-    border-radius:10px;
-}
-.gvHeadEndTimeeAsc:hover{
-    margin-top:19%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadEndTimeDes:hover{
-    margin-top:10%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadEndTimeTitle{
-    padding-top:15%;
-    font-size:22px;
-}
-.gvHeadEndTimeItem{
-
-}
-.gvHeadAddress{
-    z-index:4;
-    position:fixed;
-    width:64%;
-    padding-left:55.5%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadAddresseAsc{
-    margin-top:18%;
-    border-radius:10px;
-}
-.gvHeadAddressDes{
-    padding-top:2%;
-    border-radius:10px;
-}
-.gvHeadAddresseAsc:hover{
-    margin-top:18%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadAddressDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadAddressTitle{
-    padding-top:14%;
-    font-size:22px;
-}
-.gvHeadAddressItem{
-
-}
-.gvHeadPostalCode{
-    z-index:3;
-    position:fixed;
-    width:71%;
-    height: 95px;
-    padding-left:64.6%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadPostalCodeAsc{
-    margin-top:24%;
-    border-radius:10px;
-}
-.gvHeadPostalCodeDes{
-    padding-top:0%;
-    border-radius:10px;
-}
-.gvHeadPostalCodeAsc:hover{
-    margin-top:24%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadPostalCodeDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadPostalCodeTitle{
-    padding-top:18%;
-    font-size:22px;
-}
-.gvHeadPostalCodeItem{
-
-}
-.gvHeadIsObligatory{
-    z-index:2;
-    position:fixed;
-    width:80%;
-    height: 94px;
-    padding-left:72.3%;
-    background: url(/Images/headershade3.png) repeat-x;
-    border-style:hidden;
-    border-radius:10px
-}
-.gvHeadIsObligatoryAsc{
-    margin-top:20%;
-    border-radius:10px;
-}
-.gvHeadIsObligatoryDes{
-    padding-top:0%;
-    border-radius:10px;
-}
-.gvHeadIsObligatoryAsc:hover{
-    margin-top:20%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadIsObligatoryDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadIsObligatoryTitle{
-    padding-top:15%;
-    font-size:22px;
-}
-.gvHeadIsObligatoryItem{
-
-}
-.gvHeadIsCancelled{
-    z-index:1;
-    position:fixed;
-    width:88.6%;
-    padding-left:80.1%;
-    height: 96px;
-  
-    background: url(/Images/headershade3.png) repeat-x;
-    border-bottom-right-radius:10px;
-    border-top-right-radius:10px;
-    border-radius:10px
-}
-.gvHeadIsCancelledAsc{
-    margin-top:17.7%;
-    border-radius:10px;
-}
-.gvHeadIsCancelledDes{
-    padding-top:0%;
-    border-radius:10px;
-}
-.gvHeadIsCancelledAsc:hover{
-    margin-top:17.7%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadIsCancelledDes:hover{
-    padding-top:0%;
-    border-radius:10px;
-    -webkit-animation:glowingbutton;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:infinite;
-}
-.gvHeadIsCancelledTitle{
-    padding-top:13%;
-    font-size:22px;
-}
-.gvHeadIsCancelledItem{
-
-}
-.gvRow td{
-    vertical-align:middle;
-    padding-top:10px;
-    padding-bottom:10px;
-}
-.gvRowAlt td{
-    vertical-align:middle;
-    padding-top:10px;
-    padding-bottom:10px;
-}
-.gvHostTable1 tbody{
-    background-color:transparent;
-}
-.gvHostTable1  tr{
-    background-color:transparent;
-    border-radius:10px
-}
-tbody{
-    background-color:transparent;
-}
-tr{
-    background-color:transparent;
-}
-th{
-    background-color:transparent;
-}
-td{
-font-family:'Yu Gothic';
-font-weight:bold;
+@-webkit-keyframes glowingbutton{
+    from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333; }
 }
 
 
-.SelectImage{
-    width:24px;
-    margin-right:auto;
+.selectColumnItem{
+    width: 9.09%;
 }
-.AppointmentIdLabel{
-    width:49px;
-    margin-right:9px;
+.appointmentIdColumnItem{
+    width: 9.09%;
+    padding-left: 3%;
+    margin: auto;
 }
-.CourseIdLabel{
-    width:49px;
-    margin-right:26px;
+.courseIdColumnItem{
+    width: 9.09%;
+    padding-left: 4%;
+    margin: auto;
 }
-.AppointmentNameLabel{
-    width:49px;
-    margin-right:auto;
+.appointmentNameColumnItem{
+    width: 9.09%;
+    padding-left: 3%;
+    margin: auto;
 }
-.DescriptionLabel{
-    width:49px;
-    margin-right:auto;
+.descriptionColumnItem{
+    width: 9.09%;
+    padding-left: 3%;
+    margin: auto;
 }
-.DateLabel{
-   /* width:49px;*/
-    margin-right:auto;
-   /* vertical-align:text-bottom;*/
+.dateColumnItem{
+    width: 9.09%;
+    padding-left: 2.5%;
+    margin: auto;
 }
-.StartTimeLabel{
-    width:49px;
-    margin-right:auto;
+.startTimeColumnItem{
+    width: 9.09%;
+    padding-left: 2.5%;
+    margin: auto;
 }
-.EndTimeLabel{
-    width:49px;
-    margin-right:auto;
+.endTimeColumnItem{
+    width: 9.09%;
+    padding-left: 3%;
+    margin: auto;
 }
-.AddressLabel{
-    width:49px;
-    margin-right:auto;
+.addressColumnItem{
+    width: 9.09%;
+    margin: auto;
+    padding-left:1%;
 }
-.PostCodeLabel{
-    width:49px;
-    margin-right:auto;
+.postalCodeColumnItem{
+    width: 9.09%;
+    margin: auto;
 }
-.IsObligatoryImageTrue{
-    width:49px;
-    margin-right:auto;
+.isObligatoryColumnItem{
+    width: 9.09%;
+    padding-left: 1%;
+    margin: auto;
 }
-.IsObligatoryImageFalse{
-    width:49px;
-    margin-right:auto;
+.isCancelledColumnItem{
+    width: 9.09%;
+    padding-left: 3%;
+    margin: auto;
 }
 
-.IsCancelledImageTrue{
-    width:49px;
-    margin-right:auto;
+
+.selectHeader{
+
 }
-.IsCancelledImageFalse{
-    width:49px;
-    margin-right:auto;
+.appointmentIdHeader{
+    width: 12%;
+    margin: auto;
+}
+.courseIdHeader{
+    width: 6.4%;
+    margin: auto;
+}
+.appointmentNameHeader{
+    width: 11%;
+    margin: auto;
+}
+.descriptionHeader{
+    width: 9%;
+    margin: auto;
+}
+.dateHeader{
+    width: 9.5%;
+    margin: auto;
+}
+.startTimeHeader{
+    width: 9%;
+    margin: auto;
+}
+.endTimeHeader{
+    width: 8%;
+    margin: auto;
+}
+.addressHeader{
+    width: 8%;
+    margin: auto;
+}
+.postalCodeHeader{
+    width: 9%;
+    margin: auto;
+}
+.isObligatoryHeader{
+    width: 9%;
+    margin: auto;
+}
+.isCancelledHeader{
+    width: 9%;
+    margin: auto;
 }
 
+.Panel1{
+    position:relative; 
+    height:470px; 
+    width:100%;
+    overflow-y:scroll;
+    right:1%;
+    border-bottom-left-radius: 10px;
+}
+.Panel2{
+    height:100%;
+    width:100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 12px;
+    position:relative;
+    right:1%;
+}
 
-
-
-
-
-.gvRow:hover{
+.Row td{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    vertical-align: middle;
+    text-align:center;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.AltRow td{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    vertical-align: middle;
+    text-align:center;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.Row:hover{
       background:#32E236 url(/Images/greenshade1.png) repeat-x;
       color:white;
       fill:#32E236;  
@@ -600,7 +218,7 @@ font-weight:bold;
       -webkit-animation-duration:2s;
       -webkit-animation-iteration-count:infinite;
 }
-.gvRowAlt:hover{
+.AltRow:hover{
       background: #32E236 url(/Images/greenshade1.png) repeat-x; 
       background-color:#32E236;
       color:white;
@@ -609,196 +227,99 @@ font-weight:bold;
       -webkit-animation-duration:2s;
       -webkit-animation-iteration-count:infinite;     
 }
-.gvRowAlt {
-      background-color: #C6F5B8;
-      color: black;
-      fill: #C6F5B8;
-}
-.gvHeadcenter {
-      background: url(/Images/headershade3.png) repeat-x;
-      border-style:hidden;
-}
-.gvHeadleft {
-      background: url(/Images/headershade3.png) repeat-x;
-      border-style:hidden;
-      border-bottom-left-radius:10px 10px;
-      border-top-left-radius:10px;
-}
-.gvHeadright {
-      background: url(/Images/headershade3.png) repeat-x;
-      border-style:hidden;
-      border-bottom-right-radius:10px 10px;
-      border-top-right-radius:10px;
-}
-.roundedleft{
-      border-bottom-left-radius:10px;
-      border-top-left-radius:10px;
-      border:hidden;
-}
-.roundedright{
-      border-bottom-right-radius:10px;
-      border-top-right-radius:10px;
-      border:hidden;
-}
-.centerborders{
-      border:hidden;
-}
-.roundedbutton{
-      border-radius:10px 10px;
-}
-.buttons1{
-      z-index:3;
-      position: absolute;
-      left: 27%;
-      top: 81%;
-      margin: 39.5em -244px;
-      animation: buttonsup 2s ;
-}
-.buttons2{
-      z-index:3;
-      position: absolute;
-      left: 38%;
-      top: 81%;
-      margin: 39.5em -244px;
-      animation: buttonsup 3s ;
-}
-.buttons3{
-      z-index:3;
-      position: absolute;
-      left: 49%;
-      top: 81%;
-      margin: 39.5em -244px;
-      animation: buttonsup 4s ;
-}
-.buttons4{
-      z-index:3;
-      position: absolute;
-      left: 60%;
-      top: 81%;
-      margin: 39.5em -244px;
-      animation: buttonsup 5s;
-}
-.buttons5{
-      z-index:3;
-      position: absolute;
-      left: 71%;
-      top: 81%;
-      margin: 39.5em -244px;
-      animation: buttonsup 6s ;
-}
-@keyframes buttonsup {
-      from { top: 300%; }
-      to { top: 81%;}
-}
-.fabiotop {
-      position: absolute;
-      left: 15%;
-      top: 73%;
-      margin: 37em -244px;
-      animation: fabiotop 7s;
-      -webkit-animation:lazereyes;
-      -webkit-animation-duration:6s;
-      -webkit-animation-iteration-count:infinite;
-}
-@keyframes fabiotop {
-      from { top: 300%; }
-      to { top: 73%; }
-}
-.goosebottom {
-      position: absolute;
-      left: 92%;
-      top: 70%;
-      margin: 35.5em -244px;
-      animation: goosebottom 9s;
-}   
-@keyframes goosebottom {  
-      from {top:300%;}
-      to {top:70%;}   
+@-webkit-keyframes glowingrow{
+    from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 12px #333;}
+     50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 24px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 12px #333; }
 }
 
-.slideleft {
-      position: absolute;
+h3{
+    padding-bottom: 9%;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.container{
+      position:relative;
+      right:0%;
+      animation: slideright 2s;
+}
+@keyframes slideright {
+      from { right: -100%; }
+      to { right: 0%;}
+}
+.logoslide{
+      position:absolute;
       left: 85%;
-      top: -27%;
-      margin: 0em -244px;
+      top:  -8%;
       animation: slideleft 2s ;
 }
 @keyframes slideleft {
       from { left: -100%; }
       to { left: 85%; }
 }
-@keyframes slideright {
-      from { right: -100%; }
-      to { right: 3%; }
-}
-.auto-style1 {
-      height: 248px;
-}
-.fabiotop span {
-      visibility: hidden;
-}
-.fabiotop:hover span{
-      visibility: visible;
-}
-.outercontainer{
-      z-index:0;
-      width:100%;
-      height:0%;
-      background-color:#333333;
-}
-.container{
-      width:95%;
+.buttons1{
+      z-index:3;
       position: absolute;
-      right: 3%;
-      margin: 2.5em -244px;
-      animation: slideright 2s;
+      left: 14%;
+      top: 102%;
+      animation: buttonsup 2s ;
+}
+.buttons2{
+      z-index:3;
+      position: absolute;
+      left: 28%;
+      top: 102%;
+      animation: buttonsup 3s ;
+}
+.buttons3{
+      z-index:3;
+      position: absolute;
+      left: 42%;
+      top: 102%;
+      animation: buttonsup 4s ;
+}
+.buttons4{
+      z-index:3;
+      position: absolute;
+      left: 56%;
+      top: 102%;
+      animation: buttonsup 5s;
+}
+.buttons5{
+      z-index:3;
+      position: absolute;
+      left: 70%;
+      top: 102%;
+      animation: buttonsup 6s ;
+}
+@keyframes buttonsup {
+      from { top: 300%; }
+      to { top: 102%;}
 }
 
-.griddata{
-      margin-top:-5.0%;
-}
-@-webkit-keyframes glowingbutton{
-    from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333;}
-     50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 18px #00ff00; }
-      to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333; }
-}
-@-webkit-keyframes glowingrow{
-    from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 12px #333;}
-     50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 24px #00ff00; }
-      to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 12px #333; }
-}
-@-webkit-keyframes lazereyes{
-    from{ background-image:url(Images/fabio.png); opacity:0.2; }
-    20%{ background-image:url(Images/fabioeyes1.png); opacity:0.4; }
-    30%{ background-image:url(Images/fabioeyes.png); opacity:0.6; }
-    40%{ background-image:url(Images/fabioeyes1.png); opacity:0.7; }
-    50%{ background-image:url(Images/fabiolazereyes.png); opacity:0.8; }
-    60%{ background-image:url(Images/fabiolazereyes2.png); opacity:0.9; }
-    70%{ background-image:url(Images/fabiolazereyes4.png); opacity:0.9; }
-    80%{ background-image:url(Images/fabiolazereyes5.png); opacity:0.9; }
-    90%{ background-image:url(Images/fabiolazereyes6.png); opacity:0.9; }
-    to{ background-image:url(Images/fabiolazereyes3.png); opacity:1; }
-}
-    </style>
 
-   </asp:Content>
+
+
+
+
+
+</style>
+
+</asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
 
 
     <div id ="outercontainer" class="outercontainer" >
-    <div id="container" class="container" style="width: 106.2%; top: -34px;" >
+    <div id="container" class="container" style="width:auto; margin-top:3.5%; " >
 
          <asp:ScriptManager
               ID="ScriptManager1"
               runat="server">
         </asp:ScriptManager> 
 
-
-        <div id="fabio" class="fabiotop" style="z-index:4"><img src="Images/fabio.png" style="opacity:0.2;" /><span style="position:absolute; z-index:5; top:-80%;"><img src="Images/angrygoose.png"/></span></div>
-        <div id="goose" class="goosebottom" style="z-index:3"><img src="Images/goose.png"/></div>
-        <div id="logo" class="slideleft" style="z-index:5"><img src="Images/logo4.png" /></div>
+        <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
 
         <div id="buttons" runat="server" style="z-index:5;" class="buttons1">
@@ -806,7 +327,7 @@ font-weight:bold;
         <ContentTemplate>
         <asp:ImageButton  
             runat="server" 
-            CssClass="roundedbutton" 
+            CssClass="roundedButtons" 
             id="update" ImageUrl="~/Images/createappointmentbutton.png" 
             OnClick="createAppointment_Click"
             ToolTip="create a new appointment" />
@@ -819,7 +340,7 @@ font-weight:bold;
         <ContentTemplate>
         <asp:ImageButton  
             runat="server" 
-            CssClass="roundedbutton" 
+            CssClass="roundedButtons"
             id="managecourses"
              ImageUrl="~/Images/manageappointmentbutton.png" 
             OnClick="manageAppointment_Click"
@@ -833,7 +354,7 @@ font-weight:bold;
         <ContentTemplate>
         <asp:ImageButton  
             runat="server" 
-            CssClass="roundedbutton" 
+            CssClass="roundedButtons" 
             id="manageappointments" 
             ImageUrl="~/Images/managecoursesbutton1.png" 
             OnClick="managecourses_Click" 
@@ -847,7 +368,7 @@ font-weight:bold;
         <ContentTemplate>
         <asp:ImageButton  
             runat="server"
-             CssClass="roundedbutton" 
+             CssClass="roundedButtons"
             id="manageattendance" 
             ImageUrl="~/Images/manageattendancebutton1.png"
             OnClick="manageattendance_Click" 
@@ -861,7 +382,7 @@ font-weight:bold;
         <ContentTemplate>
         <asp:ImageButton  
             runat="server" 
-            CssClass="roundedbutton" 
+            CssClass="roundedButtons" 
             id="createreport" 
             ImageUrl="~/Images/createreportbutton1.png" 
             OnClick="createreport_Click"  
@@ -872,291 +393,273 @@ font-weight:bold;
 
 
 
+
+
             <asp:Panel
             ID="Panel2"
             runat="server" 
-            Height="15%"           
-            Width="85%" 
             ScrollBars="None"
-            BorderWidth="1" 
-            BorderColor="#333333" 
-            style="margin-left: 0%; 
-            margin-right: 0px;"
-            BackColor="#333333" 
-            BorderStyle="None">
+            BackImageUrl="~/Images/headershade3.png"
+            CssClass="Panel2">
 
        
              <asp:UpdatePanel 
                  ID="UpdatePanel2"  
                  runat="server" >
                  <ContentTemplate>
+
                      <asp:Label 
                          ID="lblMessage" 
                          runat="server" 
-                         Text="HostHomePage">
+                         Text="HostPage">
                      </asp:Label>
+
                      <asp:GridView 
                           ID="gvHostTable1" 
                           runat="server" 
                           AllowSorting="True"
                           AutoGenerateColumns="False"
-                          Height="70%" 
+                          Height="100%" 
                           OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged" 
                           ShowHeader="true"
                           ShowHeaderWhenEmpty="True"
-                          style="margin-left: 0px; 
-                          margin-top: 25px; 
-                          margin-right:10%;
+                          style="
+                          width:100%;
                           z-index:2;"
-                          Width="98.7%"
                           ShowFooter="false">
                           
                          <Columns>
-                             <asp:TemplateField ShowHeader="true">
-                                 <HeaderStyle CssClass="gvHeadSelect" />
-                                       <ItemTemplate>
-                                       <asp:ImageButton 
-                                           ID="SelectButton" 
-                                           runat="server" 
-                                           CausesValidation="False" 
-                                           CommandName="Select" 
-                                           ImageUrl="~/Images/small_logo.png" />
-                                     </ItemTemplate>
-                                 <ItemStyle 
-                                     CssClass="gvHeadSelectItem" />
-                                 <HeaderStyle Width="2.5%" />
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" >
+                             <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="appointmentIdHeader" >
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadAppointmentIdTitle" style="color:white;">AppointmentId</h3>
+                                     <h3 style="color:white;">AppointmentId</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="AppointmentId" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command" 
-                                         CssClass="gvHeadAppointmentIdAsc" 
-                                         ToolTip="sort by ascending" />
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="AppointmentId" 
                                          ImageUrl="~/Images/downarrow3.png" 
                                          OnCommand="Desc_Command"  
-                                         CssClass="gvHeadAppointmentIdDes" 
-                                         ToolTip="sort by descending"/>
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons"/>
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="2.3%" CssClass="gvHeadAppointmentIdItem" />
-                                 <HeaderStyle  CssClass="gvHeadAppointmentId" />
+                                 <ItemStyle HorizontalAlign="Center"/>
+                                 <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId">
+                             <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadCourseIdTitle" style="color:white;">CourseId</h3>
+                                     <h3 style="color:white;">CourseId</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="CourseId" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command" 
-                                         CssClass="gvHeadCourseIdAsc" 
-                                         ToolTip="sort by ascending" />
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="CourseId" 
                                          ImageUrl="~/Images/downarrow3.png" 
                                          OnCommand="Desc_Command" 
-                                         CssClass="gvHeadCourseIdDes" 
-                                         ToolTip="sort by descending"/>
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons"/>
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="gvHeadCourseIdItem" />
-                                 <HeaderStyle  CssClass="gvHeadCourseId"/>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName">
+                             <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName" HeaderStyle-CssClass="appointmentNameHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadAppointmentNameTitle" style="color:white;">Name</h3>
+                                     <h3 style="color:white;">Name</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="AppointmentName" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command" 
-                                         CssClass="gvHeadAppointmentNameAsc" 
-                                         ToolTip="sort by ascending" />
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="AppointmentName" 
                                          ImageUrl="~/Images/downarrow3.png" 
                                          OnCommand="Desc_Command" 
-                                         CssClass="gvHeadAppointmentNameDes" 
-                                         ToolTip="sort by descending"/>
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons"/>
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="10%"  CssClass="gvHeadAppointmentNameItem"/>
-                                 <HeaderStyle  CssClass="gvHeadAppointmentName"/>
+                                 <ItemStyle HorizontalAlign="Center"/>
+                                 <HeaderStyle/>
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description">
+                             <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" HeaderStyle-CssClass="descriptionHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadDescriptionTitle" style="color:white;">Description</h3>
+                                     <h3 style="color:white;">Description</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="Description" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         CssClass="gvHeadDescriptionAsc" 
-                                         ToolTip="sort by ascending" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Description" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadDescriptionDes" 
-                                         ToolTip="sort by descending"/>
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="gvHeadDescriptionItem" />
-                                 <HeaderStyle  CssClass="gvHeadDescription"/>
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
-                                 <HeaderTemplate>
-                                     <h3 class="gvHeadDateTitle" style="color:white;">Date</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Date" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         CssClass="gvHeadDateAsc" 
-                                         ToolTip="sort by ascending" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Date" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadDateDes" 
-                                         ToolTip="sort by descending" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="gvHeadDateItem" />
-                                 <HeaderStyle CssClass="gvHeadDate"/>
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
-                                 <HeaderTemplate>
-                                     <h3 class="gvHeadStartTimeTitle" style="color:white;" >StartTime</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="StartTime" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command"  
-                                         CssClass="gvHeadStartTimeAsc" 
-                                         ToolTip="sort by ascending"/>
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
+                                     <asp:ImageButton 
+                                         runat="server" 
+                                         CommandName="Description" 
+                                         ImageUrl="~/Images/downarrow3.png" 
+                                         OnCommand="Desc_Command" 
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons"/>
+                                 </HeaderTemplate>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <HeaderStyle />
+                             </asp:TemplateField>
+                             <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date" HeaderStyle-CssClass="dateHeader">
+                                 <HeaderTemplate>
+                                     <h3 style="color:white;">Date</h3>
+                                     <asp:ImageButton 
+                                         runat="server" 
+                                         CommandName="Date" 
+                                         ImageUrl="~/Images/uparrow3.png" 
+                                         OnCommand="Asc_Command" 
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
+                                     <asp:ImageButton 
+                                         runat="server" 
+                                         CommandName="Date" 
+                                         ImageUrl="~/Images/downarrow3.png" 
+                                         OnCommand="Desc_Command"  
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons" />
+                                 </HeaderTemplate>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <HeaderStyle />
+                             </asp:TemplateField>
+                             <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime" HeaderStyle-CssClass="startTimeHeader">
+                                 <HeaderTemplate>
+                                     <h3 style="color:white;" >StartTime</h3>
+                                     <asp:ImageButton 
+                                         runat="server" 
+                                         CommandName="StartTime" 
+                                         ImageUrl="~/Images/uparrow3.png" 
+                                         OnCommand="Asc_Command"   
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons"/>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="StartTime" 
                                          ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadStartTimeDes" 
-                                         ToolTip="sort by descending" />
+                                         OnCommand="Desc_Command"  
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons" />
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="8%"  CssClass="gvHeadStartTimeItem"/>
-                                 <HeaderStyle  CssClass="gvHeadStartTime" />
+                                 <ItemStyle HorizontalAlign="Center"/>
+                                 <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime">
+                             <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" HeaderStyle-CssClass="endTimeHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadEndTimeTitle" style="color:white;">EndTime</h3>
+                                     <h3  style="color:white;">EndTime</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="EndTime" 
                                          ImageUrl="~/Images/uparrow3.png"
-                                         OnCommand="Asc_Command" 
-                                         CssClass="gvHeadEndTimeeAsc" 
-                                         ToolTip="sort by ascending" />
+                                         OnCommand="Asc_Command"  
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="EndTime" 
                                          ImageUrl="~/Images/downarrow3.png" 
                                          OnCommand="Desc_Command" 
-                                         CssClass="gvHeadEndTimeDes" 
-                                         ToolTip="sort by descending" />
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons" />
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="gvHeadEndTimeItem" />
-                                 <HeaderStyle CssClass="gvHeadEndTime"/>
+                                 <ItemStyle HorizontalAlign="Center"/>
+                                 <HeaderStyle/>
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address">
+                             <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" HeaderStyle-CssClass="addressHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadAddressTitle" style="color:white;">Address</h3>
+                                     <h3  style="color:white;">Address</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="Address" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command" 
-                                         CssClass="gvHeadAddresseAsc" 
-                                         ToolTip="sort by ascending" />
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="Address" 
                                          ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadAddressDes" 
-                                         ToolTip="sort by descending"/>
+                                         OnCommand="Desc_Command"  
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons"/>
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="gvHeadAddressItem" />
-                                 <ItemStyle Width="2%" />
-                                 <HeaderStyle  CssClass="gvHeadAddress"/>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <ItemStyle />
+                                 <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode">
+                             <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" HeaderStyle-CssClass="postalCodeHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadPostalCodeTitle" style="color:white;">PostalCode</h3>
+                                     <h3 style="color:white;">PostalCode</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="PostalCode" 
                                          ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         CssClass="gvHeadPostalCodeAsc" 
-                                         ToolTip="sort by ascending"/>
+                                         OnCommand="Asc_Command"  
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons"/>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="PostalCode" 
                                          ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadPostalCodeDes" 
-                                         ToolTip="sort by descending" />
+                                         OnCommand="Desc_Command"  
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons" />
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="gvHeadPostalCodeItem" />
-                                 <HeaderStyle  CssClass="gvHeadPostalCode"/>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory">
+                             <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" HeaderStyle-CssClass="isObligatoryHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadIsObligatoryTitle" style="color:white;">Obligatory</h3>
+                                     <h3 style="color:white;">Obligatory</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="IsObligatory" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command"  
-                                         CssClass="gvHeadIsObligatoryAsc" 
-                                         ToolTip="sort by ascending"/>
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons"/>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="IsObligatory" 
                                          ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadIsObligatoryDes" 
-                                         ToolTip="sort by descending" />
+                                         OnCommand="Desc_Command"  
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons" />
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="gvHeadIsObligatoryItem" />
-                                 <HeaderStyle CssClass="gvHeadIsObligatory"/>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled">
+                             <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" HeaderStyle-CssClass="isCancelledHeader">
                                  <HeaderTemplate>
-                                     <h3 class="gvHeadIsCancelledTitle" style="color:white;">Cancelled</h3>
+                                     <h3  style="color:white;">Cancelled</h3>
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="IsCancelled" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command" 
-                                         CssClass="gvHeadIsCancelledAsc" 
-                                         ToolTip="sort by ascending" />
+                                         ToolTip="sort by ascending"
+                                         CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
                                          CommandName="IsCancelled" 
                                          ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         CssClass="gvHeadIsCancelledDes" 
-                                         ToolTip="sort by descending" />
+                                         OnCommand="Desc_Command"  
+                                         ToolTip="sort by descending"
+                                         CssClass="roundedButtons" />
                                  </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="gvHeadIsCancelledItem" />
-                                 <HeaderStyle CssClass="gvHeadIsCancelled"/>
+                                 <ItemStyle HorizontalAlign="Center" />
+                                 <HeaderStyle/>
                              </asp:TemplateField>
                          </Columns>
                          <HeaderStyle />
@@ -1171,12 +674,7 @@ font-weight:bold;
            <asp:Panel 
             ID="Panel1"
             runat="server" 
-            style="margin-left: 0.0%;
-                   margin-top:6%;
-                   position:absolute; 
-                   height:32.5em; 
-                   width:84.5%;
-                   overflow-y:scroll">
+            CssClass="Panel1">
 
 
  
@@ -1222,11 +720,9 @@ font-weight:bold;
                   ID="gvHostTable"
                   runat="server"
                   AutoGenerateColumns="False" 
-                  Height="70%" 
+                  Height="100%" 
                   Width="100%"  
-                  style="margin-left:0px; 
-                  margin-top:0%; 
-                  margin-right:10%;
+                  style="
                   z-index:1" 
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
@@ -1234,144 +730,139 @@ font-weight:bold;
                   ShowHeaderWhenEmpty="True" 
                   ShowHeader="false" 
                   DataKeyNames="AppointmentId"
-                  CssClass="griddata">
+                  >
                   
-                <RowStyle CssClass="gvRow" BackColor="White"  />
+                <RowStyle BackColor="White" CssClass="Row"/>
                 <AlternatingRowStyle
+                    CssClass="AltRow"
                     VerticalAlign="Middle" 
                     Wrap="True"
-                    CssClass="gvRowAlt" BackColor="#99FF99" />
+                    BackColor="#99FF99" />
                 <Columns>
-                    <asp:TemplateField ShowHeader="true" > 
-                        <ItemTemplate>
-                            <asp:ImageButton ID="SelectButton" CssClass="SelectImage" runat="server"  CausesValidation="False" CommandName="Select" ImageUrl="~/Images/small_logo.png" />
-                        </ItemTemplate>
-                        <HeaderStyle BackColor ="#10591B" />
-                        <ItemStyle Width="1%" CssClass="roundedleft" />
-                    </asp:TemplateField>  
+
                    
-                    <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId">
+                    <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId"  ItemStyle-CssClass="appointmentIdColumnItem" >
                         <HeaderTemplate>
                             <h3 style="color:white" >AppointmentId</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAppId" CssClass="AppointmentIdLabel" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
+                            <asp:Label ID="lblAppId" runat="server" Text='<%# Bind("AppointmentId") %>' ></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%"  CssClass="centerborders" />
+                        <ItemStyle />
  
 
                     </asp:TemplateField>
-                    <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId">
+                    <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">CourseId</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblCourseId"  CssClass="CourseIdLabel" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
+                            <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="centerborders" />
+                        <ItemStyle  />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderStyle-BackColor="#168927" HeaderText="AppointmentName">
+                    <asp:TemplateField AccessibleHeaderText="AppointmentName"  HeaderText="AppointmentName" ItemStyle-CssClass="appointmentNameColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">AppointmentName</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAppName"  CssClass="AppointmentNameLabel" runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
+                            <asp:Label ID="lblAppName"  runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="centerborders" />
+                        <ItemStyle />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description">
+                    <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" ItemStyle-CssClass="descriptionColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">Description</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblDescription" CssClass="DescriptionLabel" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
+                            <asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10.2%"  CssClass="centerborders"/>
+                        <ItemStyle />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date">
+                    <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date" ItemStyle-CssClass="dateColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">Date</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblDate" CssClass="DateLabel"  runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
-                            <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>   
+                            <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
+                            <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>  
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center"  Width="8.4%"  CssClass="centerborders" />
+                        <ItemStyle />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime">
+                    <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime" ItemStyle-CssClass="startTimeColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">StartTime</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblStartTime" CssClass="StartTimeLabel" runat="server" Text='<%# Bind("StartTime") %>' ></asp:Label>
+                            <asp:Label ID="lblStartTime" runat="server" Text='<%# Bind("StartTime") %>' ></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="8%"  CssClass="centerborders" />
+                        <ItemStyle  />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" >
+                    <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" ItemStyle-CssClass="endTimeColumnItem" >
                         <HeaderTemplate>
                             <h3 style="color:white">EndTime</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblEndTime"  CssClass="EndTimeLabel"  runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
+                            <asp:Label ID="lblEndTime"  runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="8%" CssClass="centerborders" />
+                        <ItemStyle  />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address">
+                    <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" ItemStyle-CssClass="addressColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">Address</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAddress"  CssClass="AddressLabel" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
+                            <asp:Label ID="lblAddress"  runat="server" Text='<%# Bind("Address") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="centerborders" />
-                        <ItemStyle Width="2%" />
+                        <ItemStyle  />
+                        <ItemStyle />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode">
+                    <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" ItemStyle-CssClass="postalCodeColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">PostalCode</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblPostalCode" CssClass="PostCodeLabel"  runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
+                            <asp:Label ID="lblPostalCode"  runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%"  CssClass="centerborders"/>
+                        <ItemStyle />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory">
+                    <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" ItemStyle-CssClass="isObligatoryColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">IsObligatory</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Image ID="IsObligTrue" CssClass="IsObligatoryImageTrue"  runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
-                            <asp:Image ID="IsObligFalse" CssClass="IsObligatoryImageFalse" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
+                            <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+                            <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="centerborders" />
+                        <ItemStyle />
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled">
+                    <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" ItemStyle-CssClass="isCancelledColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">IsCancelled</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                              <asp:Image ID="IsCancelledTrue" CssClass="IsCancelledImageTrue" runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
-                            <asp:Image ID="IsCancelledFalse" CssClass="is" runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
+                              <asp:Image ID="IsCancelledTrue"  runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
+                            <asp:Image ID="IsCancelledFalse"   runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
                         </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="10%" CssClass="roundedright"/>
+                        <ItemStyle />
                     </asp:TemplateField>
 
                 </Columns>

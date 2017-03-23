@@ -12,11 +12,11 @@ namespace CheckPoint.Views
 {
     public partial class ManageSingleAppointmentView : ViewBase<ManageSingleAppointmentPresenter>, IManageSingleAppointmentView
     {
-        public string CourseId
-        {
-            get { return txtCourseId.Text; }
-            set { txtCourseId.Text = value; }
-        }
+        //public string CourseId
+        //{
+        //    get { return txtCourseId.Text; }
+        //    set { txtCourseId.Text = value; }
+        //}
 
         public string SelectedAppointmentName
         {

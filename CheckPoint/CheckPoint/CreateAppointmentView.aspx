@@ -11,7 +11,7 @@
     width: 42%;
     height: 570px;
     margin-left: 27%;
-    margin-top: 4%;
+    margin-top: 2%;
     background-color: #333333;
     border: #66cc66;
     border-width: 20px;
@@ -184,7 +184,7 @@
     width: 59%;
     height: 533px;
     margin-left: 21%;
-    margin-top: 6%;
+    margin-top: 2%;
     background-color: #333333;
     border-radius: 36px;
 }
@@ -207,14 +207,14 @@
       
 
         <asp:Label ID="lblDescription" runat="server" Text="Description"></asp:Label>
-        <asp:TextBox ID="txtAppointmentDescription" runat="server" Height="19px" Width="350px"></asp:TextBox>
+        <asp:TextBox ID="txtAppointmentDescription" runat="server" Height="19px" Width="275px"></asp:TextBox>
 
 
         <asp:Label ID="lblDate" runat="server" Text="Date"></asp:Label>
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
 
-         <asp:Label ID="lblCourseId" runat="server" Text="CoursedId"></asp:Label>
-        <asp:TextBox ID="txtCourseId" runat="server"></asp:TextBox>
+<%--         <asp:Label ID="lblCourseId" runat="server" Text="CoursedId"></asp:Label>
+        <asp:TextBox ID="txtCourseId" runat="server"></asp:TextBox>--%>
 
 
         <asp:Label ID="lblStartTime" runat="server" Text="Start Time"></asp:Label>

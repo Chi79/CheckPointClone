@@ -76,24 +76,6 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.TextBox txtDate;
         
         /// <summary>
-        /// lblCourseId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseId;
-        
-        /// <summary>
-        /// txtCourseId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseId;
-        
-        /// <summary>
         /// lblStartTime control.
         /// </summary>
         /// <remarks>

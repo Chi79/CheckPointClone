@@ -191,7 +191,7 @@ namespace CheckPointPresenters.Presenters
         {
              var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId(_view.AppointmentId) as APPOINTMENT;
 
-            _view.CourseId = selectedAppointment.CourseId.ToString();
+            //_view.CourseId = selectedAppointment.CourseId.ToString();
             _view.AppointmentName = selectedAppointment.AppointmentName;
             _view.Description = selectedAppointment.Description;
             _view.Date = selectedAppointment.Date.ToString("MM/dd/yyyy");
