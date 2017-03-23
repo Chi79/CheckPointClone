@@ -89,36 +89,37 @@ table {
 }
 .descriptionColumnItem{
     width: 9.09%;
-    padding-left: 3%;
+    padding-left: 4%;
     margin: auto;
 }
 .dateColumnItem{
     width: 9.09%;
-    padding-left: 2.5%;
+    padding-left: 4%;
     margin: auto;
 }
 .startTimeColumnItem{
     width: 9.09%;
-    padding-left: 2.5%;
+    padding-left: 5.5%;
     margin: auto;
 }
 .endTimeColumnItem{
     width: 9.09%;
-    padding-left: 3%;
+    padding-left: 5%;
     margin: auto;
 }
 .addressColumnItem{
     width: 9.09%;
     margin: auto;
-    padding-left:1%;
+    padding-left:4%;
 }
 .postalCodeColumnItem{
     width: 9.09%;
     margin: auto;
+    padding-left:3%;
 }
 .isObligatoryColumnItem{
     width: 9.09%;
-    padding-left: 1%;
+    padding-left: 4%;
     margin: auto;
 }
 .isCancelledColumnItem{
@@ -146,18 +147,22 @@ table {
 .descriptionHeader{
     width: 9%;
     margin: auto;
+    padding-right: 2%;
 }
 .dateHeader{
     width: 9.5%;
     margin: auto;
+    padding-right: 3%;
 }
 .startTimeHeader{
     width: 9%;
     margin: auto;
+    padding-right: 1%;
 }
 .endTimeHeader{
     width: 8%;
     margin: auto;
+    padding-right: 1%;
 }
 .addressHeader{
     width: 8%;
@@ -660,7 +665,7 @@ h3{
                   AutoGenerateColumns="False" 
                   Height="100%" 
                   Width="100%"  
-                  style="
+                  style=" table-layout:fixed;
                   z-index:1" 
                   AllowSorting="True" 
                   OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
