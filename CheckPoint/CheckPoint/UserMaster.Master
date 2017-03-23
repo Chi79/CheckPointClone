@@ -5,6 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
      <link href="CSS/StyleMaster.css" rel="stylesheet" />
+     <meta name="viewport"   content="width=device-width, initial-scale=2"/>
+  
+    <link rel="stylesheet" href="CSS/hosthome.css" />
+    <link rel="stylesheet" href="CSS/jquery-ui.css"  /> 
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <link rel="stylesheet" href="CSS/jquery-ui.min.css"  />
+    <link rel="stylesheet" href="CSS/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="CSS/jquery-ui.theme.css"  />
+
+    <script src="Scripts/jquery.js" ></script>
+    <script src="Scripts/jquery-ui.js" ></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

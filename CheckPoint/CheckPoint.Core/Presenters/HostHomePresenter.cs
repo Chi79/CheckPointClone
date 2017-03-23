@@ -18,7 +18,7 @@ namespace CheckPointPresenters.Presenters
         private readonly IHostHomeModel _model;
         private readonly IShowAppointments _displayService;
 
-        //string host = "Morten";
+        string host = "Morten";
 
         private string _client;
 
