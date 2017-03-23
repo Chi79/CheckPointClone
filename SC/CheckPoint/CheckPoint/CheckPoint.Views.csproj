@@ -176,7 +176,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\package.json" />
-    <Content Include="Master.Master" />
     <Content Include="HostMaster.Master" />
     <Content Include="UserMaster.Master" />
     <None Include="Web.Debug.config">
@@ -240,7 +239,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HostMaster.Master.designer.cs">
-      <DependentUpon>HostMaster.Master</DependentUpon>
+      <DependentUpon>HostMaster.Master.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteUserView.aspx.cs">
       <DependentUpon>InviteUserView.aspx</DependentUpon>
@@ -283,12 +282,6 @@
     </Compile>
     <Compile Include="ManageSingleAppointmentView.aspx.designer.cs">
       <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Master.Master.cs">
-      <DependentUpon>Master.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Master.Master.designer.cs">
-      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterClientView.aspx.cs">
