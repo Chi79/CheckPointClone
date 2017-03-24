@@ -59,6 +59,7 @@
     <Compile Include="ModelInterfaces\ICreateReportModel.cs" />
     <Compile Include="ModelInterfaces\IFindAppointmentsModel.cs" />
     <Compile Include="ModelInterfaces\IHomePageModel.cs" />
+    <Compile Include="ModelInterfaces\IHostCoursesModel.cs" />
     <Compile Include="ModelInterfaces\IHostHomeModel.cs" />
     <Compile Include="ModelInterfaces\IInviteUserModel.cs" />
     <Compile Include="ModelInterfaces\IManageAppointmentModel.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="RepositoryInterfaces\IClientRepository.cs" />
     <Compile Include="ValidationInterfaces\IRegisterClientValidator.cs" />
     <Compile Include="ValidationInterfaces\IValidator.cs" />
+    <Compile Include="ViewInterfaces\IHostCoursesView.cs" />
     <Compile Include="ViewInterfaces\IHostHomeView.cs" />
     <Compile Include="ViewInterfaces\IInviteUserView.cs" />
     <Compile Include="ViewInterfaces\ILoginView.cs" />

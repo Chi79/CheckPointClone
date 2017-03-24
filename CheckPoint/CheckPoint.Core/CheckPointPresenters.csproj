@@ -70,6 +70,7 @@
     <Compile Include="Presenters\CreateReportPresenter.cs" />
     <Compile Include="Presenters\FindAppointmentsPresenter.cs" />
     <Compile Include="Presenters\HomePagePresenter.cs" />
+    <Compile Include="Presenters\HostCoursesPresenter.cs" />
     <Compile Include="Presenters\HostHomePresenter.cs" />
     <Compile Include="Presenters\InviteUserPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />

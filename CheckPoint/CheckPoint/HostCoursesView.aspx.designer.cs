@@ -10,7 +10,7 @@
 namespace CheckPoint.Views {
     
     
-    public partial class HostHomeView {
+    public partial class HostCoursesView {
         
         /// <summary>
         /// ScriptManager1 control.
@@ -112,13 +112,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// ViewCourses control.
+        /// ViewAppointments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ViewCourses;
+        protected global::System.Web.UI.WebControls.ImageButton ViewAppointments;
         
         /// <summary>
         /// buttonsdiv0 control.
@@ -139,13 +139,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel buttonspanel;
         
         /// <summary>
-        /// update control.
+        /// createcourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton update;
+        protected global::System.Web.UI.WebControls.ImageButton createcourse;
         
         /// <summary>
         /// buttons2 control.
@@ -166,13 +166,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel buttonspanel2;
         
         /// <summary>
-        /// manageappointment control.
+        /// managecourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton manageappointment;
+        protected global::System.Web.UI.WebControls.ImageButton managecourse;
         
         /// <summary>
         /// buttonsdiv4 control.

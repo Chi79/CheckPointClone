@@ -5,43 +5,43 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.ServiceInterfaces;
 using CheckPointPresenters.Bases;
+using CheckPointCommon.ServiceInterfaces;
 using CheckPointDataTables.Tables;
-
 
 namespace CheckPointPresenters.Presenters
 {
-    public class HostHomePresenter : PresenterBase
+    public class HostCoursesPresenter : PresenterBase
     {
-        private readonly IHostHomeView _view;
-        private readonly IHostHomeModel _model;
+        private readonly IHostCoursesView _view;
+        private readonly IHostCoursesModel _model;
         private readonly IShowAppointments _displayService;
 
         private string _client;
 
-        public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
-                                 IShowAppointments displayService)
+        public HostCoursesPresenter(IHostCoursesView coursesView, IHostCoursesModel coursesModel, 
+                                    IShowAppointments displayService)
         {
-            _view = hostHomeView;
-            _model = hostHomeModel;
+            _view = coursesView;
+            _model = coursesModel;
             _displayService = displayService;
-            _client = _view.LoggedInClient;
 
             _view.RowSelected += OnRowSelected;
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
-            _view.CreateAppointmentButtonClicked += OnCreateAppointmentButtonClicked;
-            _view.ManageAppointmentButtonClicked += OnManageAppointmentButtonClicked;
-            _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
+            _view.ViewAppointmentsButtonClicked += OnViewAppointmentsButtonClicked;
+            _view.ManageCourseButtonClicked += OnManageCourseButtonClicked;
+            _view.CreateCourseButtonClicked += OnCreateCourseButtonClicked;
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
-            _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
+            _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
 
+            _client = _view.LoggedInClient;
         }
 
-        private void OnViewCoursesButtonClicked(object sender, EventArgs e)
+
+        private void OnViewAppointmentsButtonClicked(object sender, EventArgs e)
         {
-            _view.RedirectToCoursesView();
+            _view.RedirectToAppointmentsView();
         }
 
         private void OnCreateReportButtonClicked(object sender, EventArgs e)
@@ -54,25 +54,25 @@ namespace CheckPointPresenters.Presenters
             _view.Message = "Fabio Goose";
         }
 
-        private void OnManageAppointmentButtonClicked(object sender, EventArgs e)
+        private void OnManageCourseButtonClicked(object sender, EventArgs e)
         {
 
             int noAppointmentSelected = -1;
-            if (_view.SessionAppointmentId == noAppointmentSelected)
+            if (_view.SessionCourseId == noAppointmentSelected)
             {
-                _view.Message = "No appointment has been selected!";
+                _view.Message = "No course has been selected!";
             }
             else
             {
-                _view.RedirectToManageAppointment();
+                _view.RedirectToManageCourse();
             }
 
         }
 
-        private void OnCreateAppointmentButtonClicked(object sender, EventArgs e)
+        private void OnCreateCourseButtonClicked(object sender, EventArgs e)
         {
 
-           _view.RedirectToCreateAppointment();
+            _view.RedirectToCreateCourse();
         }
 
         public override void Load()
@@ -84,7 +84,7 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.SessionRowIndex = -1;
-            _view.SessionAppointmentId = -1;
+            _view.SessionCourseId = -1;
             _view.BindData();
         }
         private void FetchData()
@@ -95,7 +95,7 @@ namespace CheckPointPresenters.Presenters
         private void OnRowSelected(object sender, EventArgs e)
         {
             _view.SessionRowIndex = _view.SelectedRowIndex;
-            GetSelectedAppointmentIdFromGrid();    
+            GetSelectedCourseIdFromGrid();
         }
 
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
 
-            GetSelectedAppointmentIdFromGrid();
+            GetSelectedCourseIdFromGrid();
         }
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
@@ -114,16 +114,25 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
 
-            GetSelectedAppointmentIdFromGrid();
+            GetSelectedCourseIdFromGrid();
         }
-        private void GetSelectedAppointmentIdFromGrid()
+        private void GetSelectedCourseIdFromGrid()
         {
-            int noIndexSelected = -1;
-            if(_view.SessionRowIndex != noIndexSelected)
+
+            int noIndexIsSelected = -1;
+            if (_view.SessionRowIndex != noIndexIsSelected)
             {
-                var selectedAppointmentId = _view.SelectedRowValueDataKey;
-                _view.SessionAppointmentId = (int)selectedAppointmentId;
-                _view.Message = selectedAppointmentId.ToString();
+                CheckCourseIdIsNotNull();
+            }
+        }
+        private void CheckCourseIdIsNotNull()
+        {
+            var courseId = _view.SelectedRowValueDataKey;
+            if (courseId != null)
+            {
+                var selectedCourseId = _view.SelectedRowValueDataKey;
+                _view.SessionCourseId = (int)selectedCourseId;
+                _view.Message = selectedCourseId.ToString();
             }
         }
     }

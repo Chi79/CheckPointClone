@@ -120,8 +120,8 @@ namespace CheckPointPresenters.Presenters
             int noIndexSelected = -1;
             if (_view.SessionRowIndex != noIndexSelected)
             {
-                var selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
-                _view.SessionAppointmentId = selectedAppointmentId;
+                var selectedAppointmentId = _view.SelectedRowValueDataKey;
+                _view.SessionAppointmentId = (int)selectedAppointmentId;
                 _view.Message = selectedAppointmentId.ToString();
             }
         }
