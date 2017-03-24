@@ -104,7 +104,7 @@ table {
 }
 .endTimeColumnItem{
     width: 9.09%;
-    padding-left: 4%;
+    padding-left: 5%;
     margin: auto;
 }
 .addressColumnItem{
@@ -161,7 +161,7 @@ table {
     padding-right: 1%;
 }
 .endTimeHeader{
-    width: 8%;
+    width: 8.1%;
     margin: auto;
     padding-right: 1%;
 }
