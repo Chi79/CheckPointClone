@@ -73,58 +73,58 @@ table {
     width: 9.09%;
 }
 .appointmentIdColumnItem{
-    width: 9.09%;
-    padding-left: 3%;
+    width: 13.09%;
+    padding-left: 1%;
     margin: auto;
 }
 .courseIdColumnItem{
     width: 9.09%;
-    padding-left: 4.5%;
+    padding-left: 1.5%;
     margin: auto;
 }
 .appointmentNameColumnItem{
-    width: 9.09%;
-    padding-left: 4%;
+    width: 12.09%;
+    padding-left: 0%;
     margin: auto;
 }
 .descriptionColumnItem{
-    width: 9.09%;
-    padding-left: 4%;
+    width: 11.09%;
+    padding-left: 0%;
     margin: auto;
 }
 .dateColumnItem{
-    width: 11.09%;
-    padding-left: 6%;
+    width: 10.09%;
+    padding-left: 0%;
     margin: auto;
 }
 .startTimeColumnItem{
-    width: 9.09%;
-    padding-left: 5%;
+    width: 10.09%;
+    padding-left: 0%;
     margin: auto;
 }
 .endTimeColumnItem{
     width: 9.09%;
-    padding-left: 5%;
+    padding-left: 0%;
     margin: auto;
 }
 .addressColumnItem{
     width: 9.09%;
     margin: auto;
-    padding-left:4%;
+    padding-left:1%;
 }
 .postalCodeColumnItem{
-    width: 9.09%;
+    width: 10.09%;
     margin: auto;
-    padding-left:3%;
+    padding-left:1%;
 }
 .isObligatoryColumnItem{
-    width: 9.09%;
-    padding-left: 4%;
+    width: 10.09%;
+    padding-left: 1%;
     margin: auto;
 }
 .isCancelledColumnItem{
-    width: 9.09%;
-    padding-left: 3%;
+    width: 8.09%;
+    padding-left: 2%;
     margin: auto;
 }
 
@@ -143,30 +143,30 @@ table {
 .appointmentNameHeader{
     width: 11%;
     margin: auto;
-    padding-right:1%;
+    padding-right:0%;
 }
 .descriptionHeader{
     width: 9%;
     margin: auto;
-    padding-right: 3%;
+    padding-right: 0%;
 }
 .dateHeader{
     width: 9.5%;
     margin: auto;
-    padding-right: 2%;
+    padding-right: 0%;
 }
 .startTimeHeader{
     width: 9%;
     margin: auto;
-    padding-right: 1%;
+    padding-right: 0%;
 }
 .endTimeHeader{
     width: 8.1%;
     margin: auto;
-    padding-right: 1%;
+    padding-right: 0%;
 }
 .addressHeader{
-    width: 8%;
+    width: 8.1%;
     margin: auto;
 }
 .postalCodeHeader{
@@ -180,6 +180,13 @@ table {
 .isCancelledHeader{
     width: 9%;
     margin: auto;
+}
+
+
+.datediv{
+    width: 117px;
+    margin: auto;
+    padding-right: 8px;
 }
 
 .Panel1{
@@ -268,35 +275,30 @@ h3{
       margin-left: 15%;
       z-index:3;
       margin-top:0.5%;
-      animation: buttonsup 2s ;
 }
 .buttons2{
       float:left;
       margin-left: 1%;
       z-index:3;
       margin-top:0.5%;
-      animation: buttonsup 3s ;
 }
 .buttons3{
       float:left;
       margin-left: 1%;
       z-index:3;
       margin-top:0.5%;
-      animation: buttonsup 4s ;
 }
 .buttons4{
       float:left;
       margin-left: 1%;
       z-index:3;
       margin-top:0.5%;
-      animation: buttonsup 5s;
 }
 .buttons5{
       float:left;
       margin-left: 1%;
       z-index:3;
       margin-top:0.5%;
-      animation: buttonsup 6s ;
 }
 @keyframes buttonsup {
       from { top: 300%; }
@@ -735,8 +737,10 @@ h3{
                             <h3 style="color:white">Date</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
+                            <div id="datediv" class="datediv">
                             <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
                             <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>  
+                             </div> 
                         </ItemTemplate>
                         <ItemStyle />
                     </asp:TemplateField>

@@ -118,28 +118,19 @@
     <Content Include="CSS\StyleMaster.css" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />
+    <Content Include="HostCoursesView.aspx" />
     <Content Include="HostHomeView.aspx" />
     <Content Include="Images\activitiesicon1.png" />
     <Content Include="Images\alterprofile2.png" />
-    <Content Include="Images\angrygoose.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\checkpointlogo1.png" />
     <Content Include="Images\createappointmentbutton.png" />
+    <Content Include="Images\createcoursebutton.png" />
     <Content Include="Images\createreportbutton1.png" />
     <Content Include="Images\cross.png" />
     <Content Include="Images\downarrow2.png" />
     <Content Include="Images\downarrow3.png" />
-    <Content Include="Images\fabio.png" />
-    <Content Include="Images\fabioeyes.png" />
-    <Content Include="Images\fabioeyes1.png" />
-    <Content Include="Images\fabiolazereyes.png" />
-    <Content Include="Images\fabiolazereyes2.png" />
-    <Content Include="Images\fabiolazereyes3.png" />
-    <Content Include="Images\fabiolazereyes4.png" />
-    <Content Include="Images\fabiolazereyes5.png" />
-    <Content Include="Images\fabiolazereyes6.png" />
     <Content Include="Images\findappointmentsicon.png" />
-    <Content Include="Images\goose.png" />
     <Content Include="Images\greenshade1.png" />
     <Content Include="Images\greenshade2.png" />
     <Content Include="Images\headershade.png" />
@@ -150,12 +141,15 @@
     <Content Include="Images\logo_white2.png" />
     <Content Include="Images\manageappointmentbutton.png" />
     <Content Include="Images\manageattendancebutton1.png" />
+    <Content Include="Images\managecoursebutton.png" />
     <Content Include="Images\managecoursesbutton1.png" />
     <Content Include="Images\small_logo.png" />
     <Content Include="Images\small_logo2.png" />
     <Content Include="Images\tick.png" />
     <Content Include="Images\uparrow2.png" />
     <Content Include="Images\uparrow3.png" />
+    <Content Include="Images\viewappointmentsbutton.png" />
+    <Content Include="Images\viewcoursesbutton.png" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
@@ -226,6 +220,13 @@
     </Compile>
     <Compile Include="HomePageView.aspx.designer.cs">
       <DependentUpon>HomePageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostCoursesView.aspx.cs">
+      <DependentUpon>HostCoursesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostCoursesView.aspx.designer.cs">
+      <DependentUpon>HostCoursesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="HostHomeView.aspx.cs">
       <DependentUpon>HostHomeView.aspx</DependentUpon>

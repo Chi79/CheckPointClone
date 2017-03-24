@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HostHomeView.aspx.cs"  Inherits="CheckPoint.Views.HostHomeView"  EnableEventValidation="false"  MasterPageFile="~/HostMaster.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HostCoursesView.aspx.cs" Inherits="CheckPoint.Views.HostCoursesView" EnableEventValidation="false"  MasterPageFile="~/HostMaster.Master" %>
+
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
@@ -182,6 +183,7 @@ table {
     width: 9%;
     margin: auto;
 }
+
 
 .datediv{
     width: 117px;
@@ -675,7 +677,7 @@ h3{
                   OnRowDataBound="gvHostTable_RowDataBound"
                   ShowHeaderWhenEmpty="True" 
                   ShowHeader="false" 
-                  DataKeyNames="AppointmentId"
+                  DataKeyNames="CourseId"
                   >
                   
                 <RowStyle BackColor="White" CssClass="Row"/>
@@ -834,8 +836,8 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons" 
-            id="ViewCourses" ImageUrl="~/Images/viewcoursesbutton.png" 
-            OnClick="ViewCourses_Click"
+            id="ViewAppointments" ImageUrl="~/Images/viewappointmentsbutton.png" 
+            OnClick="ViewAppointments_Click"
             ToolTip="view all courses" />
         </ContentTemplate>
         </asp:UpdatePanel>
@@ -848,8 +850,8 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons" 
-            id="update" ImageUrl="~/Images/createappointmentbutton.png" 
-            OnClick="createAppointment_Click"
+            id="createcourse" ImageUrl="~/Images/createcoursebutton.png" 
+            OnClick="createcourse_Click"
             ToolTip="create a new appointment" />
         </ContentTemplate>
         </asp:UpdatePanel>
@@ -861,10 +863,10 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons"
-            id="manageappointment"
-             ImageUrl="~/Images/manageappointmentbutton.png" 
-            OnClick="manageAppointment_Click"
-            ToolTip="manage the selected appointment"  />
+            id="managecourse"
+             ImageUrl="~/Images/managecoursebutton.png" 
+            OnClick="managecourse_Click"
+            ToolTip="manage the selected course"  />
         </ContentTemplate>
         </asp:UpdatePanel>
         </div>
@@ -906,5 +908,3 @@ h3{
        </div>
 
     </asp:Content>
-
-

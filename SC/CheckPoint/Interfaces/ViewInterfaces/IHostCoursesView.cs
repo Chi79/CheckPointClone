@@ -6,34 +6,32 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ViewInterfaces
 {
-    public interface IHostHomeView
+    public interface IHostCoursesView
     {
-        //TODO
         void BindData();
         string Message { set; }
-        int SelectedRowIndex { get; set; } 
+        int SelectedRowIndex { get; set; }
         int? SessionRowIndex { get; set; }
-        int? SessionAppointmentId { get; set; }
+        int? SessionCourseId { get; set; }
         string LoggedInClient { get; }
         string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }
         object SelectedRowValueDataKey { get; }
 
-        void RedirectToCreateAppointment();
-        void RedirectToManageAppointment();
-        void RedirectToCoursesView();
-
+        void RedirectToCreateCourse();
+        void RedirectToManageCourse();
+        void RedirectToAppointmentsView();
 
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         event EventHandler<EventArgs> RowSelected;
 
-        event EventHandler<EventArgs> CreateAppointmentButtonClicked;
-        event EventHandler<EventArgs> ManageAppointmentButtonClicked;
+        event EventHandler<EventArgs> CreateCourseButtonClicked;
+        event EventHandler<EventArgs> ManageCourseButtonClicked;
         event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         event EventHandler<EventArgs> CreateReportButtonClicked;
 
-        event EventHandler<EventArgs> ViewCoursesButtonClicked;
+        event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
     }
 }

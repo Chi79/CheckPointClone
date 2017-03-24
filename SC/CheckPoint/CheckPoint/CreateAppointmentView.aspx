@@ -213,9 +213,6 @@
         <asp:Label ID="lblDate" runat="server" Text="Date"></asp:Label>
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
 
-<%--         <asp:Label ID="lblCourseId" runat="server" Text="CoursedId"></asp:Label>
-        <asp:TextBox ID="txtCourseId" runat="server"></asp:TextBox>--%>
-
 
         <asp:Label ID="lblStartTime" runat="server" Text="Start Time"></asp:Label>
         <asp:TextBox ID="txtStartTime" runat="server"></asp:TextBox>

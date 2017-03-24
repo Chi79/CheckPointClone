@@ -8,19 +8,20 @@ using CheckPointPresenters.Bases;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Presenters;
 
-
 namespace CheckPoint.Views
 {
-    public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
+    public partial class HostCoursesView : ViewBase<HostCoursesPresenter> , IHostCoursesView
     {
-        public event EventHandler<EventArgs> RowSelected;
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
-        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
+        public event EventHandler<EventArgs> RowSelected;
+
+        public event EventHandler<EventArgs> CreateCourseButtonClicked;
+        public event EventHandler<EventArgs> ManageCourseButtonClicked;
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         public event EventHandler<EventArgs> CreateReportButtonClicked;
-        public event EventHandler<EventArgs> ViewCoursesButtonClicked;
+
+        public event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
 
         public string Message
         {
@@ -29,7 +30,7 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSource
         {
-            set { gvHostTable.DataSource = value;  }
+            set { gvHostTable.DataSource = value; }
         }
         public IEnumerable<object> SetDataSource2
         {
@@ -38,15 +39,15 @@ namespace CheckPoint.Views
 
         public int SelectedRowIndex
         {
-            get  { return gvHostTable.SelectedIndex; }
-            set  { gvHostTable.SelectedIndex = value; }
+            get { return gvHostTable.SelectedIndex; }
+            set { gvHostTable.SelectedIndex = value; }
         }
-        public int? SessionAppointmentId
+        public int? SessionCourseId
         {
-            get { return (int)Session["AppointmentId"]; }
-            set { Session["AppointmentId"] = value; }
+            get { return (int)Session["CourseId"]; }
+            set { Session["CourseId"] = value; }
         }
- 
+
         public int? SessionRowIndex
         {
             get { return (int)Session["MyRowIndex"]; }
@@ -65,7 +66,7 @@ namespace CheckPoint.Views
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
         public void BindData()
         {
@@ -88,7 +89,7 @@ namespace CheckPoint.Views
         protected void Asc_Command(object sender, CommandEventArgs e)
         {
             ColumnName = e.CommandName;
-            if(SortColumnsByPropertyAscending != null)
+            if (SortColumnsByPropertyAscending != null)
             {
                 SortColumnsByPropertyAscending(this, EventArgs.Empty);
             }
@@ -97,30 +98,16 @@ namespace CheckPoint.Views
         protected void Desc_Command(object sender, CommandEventArgs e)
         {
             ColumnName = e.CommandName;
-            if(SortColumnsByPropertyDescending != null)
+            if (SortColumnsByPropertyDescending != null)
             {
                 SortColumnsByPropertyDescending(this, EventArgs.Empty);
             }
         }
-        protected void createAppointment_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CreateAppointmentButtonClicked != null)
-            {
-                CreateAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
 
-        protected void manageAppointment_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ManageAppointmentButtonClicked != null)
-            {
-                ManageAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
 
         protected void manageattendance_Click(object sender, ImageClickEventArgs e)
         {
-            if(ManageAttendanceButtonClicked != null)
+            if (ManageAttendanceButtonClicked != null)
             {
                 ManageAttendanceButtonClicked(this, EventArgs.Empty);
             }
@@ -128,7 +115,7 @@ namespace CheckPoint.Views
 
         protected void createreport_Click(object sender, ImageClickEventArgs e)
         {
-            if(CreateReportButtonClicked != null)
+            if (CreateReportButtonClicked != null)
             {
                 CreateReportButtonClicked(this, EventArgs.Empty);
             }
@@ -142,24 +129,42 @@ namespace CheckPoint.Views
             }
         }
 
-        public void RedirectToCreateAppointment()
+        public void RedirectToCreateCourse()
         {
-            Response.Redirect("CreateAppointmentView.aspx");
+            // TODO  Response.Redirect("CreateCourseView.aspx");
+            this.Message = "poopoo!";
         }
-        public void RedirectToManageAppointment()
+        public void RedirectToManageCourse()
         {
-            Response.Redirect("ManageSingleAppointmentView.aspx");
+            //TODO  Response.Redirect("ManageCourseView.aspx");
+            this.Message = "bumbum!";
         }
-        public void RedirectToCoursesView()
+        public void RedirectToAppointmentsView()
         {
-            Response.Redirect("HostCoursesView.aspx");
+            Response.Redirect("HostHomeView.aspx");
         }
 
-        protected void ViewCourses_Click(object sender, ImageClickEventArgs e)
+        protected void managecourse_Click(object sender, ImageClickEventArgs e)
         {
-            if(ViewCoursesButtonClicked != null)
+            if (ManageCourseButtonClicked != null)
             {
-                ViewCoursesButtonClicked(this, EventArgs.Empty);
+                ManageCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void createcourse_Click(object sender, ImageClickEventArgs e)
+        {
+            if (CreateCourseButtonClicked != null)
+            {
+                CreateCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void ViewAppointments_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ViewAppointmentsButtonClicked != null)
+            {
+                ViewAppointmentsButtonClicked(this, EventArgs.Empty);
             }
         }
     }
