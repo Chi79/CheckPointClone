@@ -119,6 +119,11 @@ namespace DataAccess.Concrete.Repositories
                 .HasForeignKey(e => e.UserName)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<CLIENT>()
+                .HasMany(e => e.COURSEs)
+                .WithRequired(e => e.CLIENT)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<CLIENT_TAG>()
                 .Property(e => e.TagId)
                 .IsUnicode(false);
@@ -150,9 +155,8 @@ namespace DataAccess.Concrete.Repositories
                 .IsUnicode(false);
 
             modelBuilder.Entity<COURSE>()
-                .HasMany(e => e.APPOINTMENTs)
-                .WithRequired(e => e.COURSE)
-                .WillCascadeOnDelete(false);
+                .Property(e => e.UserName)
+                .IsUnicode(false);
 
             modelBuilder.Entity<READER>()
                 .HasMany(e => e.APPOINTMENTs)
