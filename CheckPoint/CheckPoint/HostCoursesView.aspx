@@ -71,20 +71,12 @@ table {
 }
 
 
-.selectColumnItem{
-    width: 9.09%;
-}
-.appointmentIdColumnItem{
-    width: 13.09%;
-    padding-left: 1%;
-    margin: auto;
-}
 .courseIdColumnItem{
     width: 9.09%;
     padding-left: 1.5%;
     margin: auto;
 }
-.appointmentNameColumnItem{
+.courseNameColumnItem{
     width: 12.09%;
     padding-left: 0%;
     margin: auto;
@@ -94,55 +86,18 @@ table {
     padding-left: 0%;
     margin: auto;
 }
-.dateColumnItem{
-    width: 10.09%;
-    padding-left: 0%;
-    margin: auto;
-}
-.startTimeColumnItem{
-    width: 10.09%;
-    padding-left: 0%;
-    margin: auto;
-}
-.endTimeColumnItem{
-    width: 9.09%;
-    padding-left: 0%;
-    margin: auto;
-}
-.addressColumnItem{
-    width: 9.09%;
-    margin: auto;
-    padding-left:1%;
-}
-.postalCodeColumnItem{
-    width: 10.09%;
-    margin: auto;
-    padding-left:1%;
-}
-.isObligatoryColumnItem{
+.isPrivateColumnItem{
     width: 10.09%;
     padding-left: 1%;
     margin: auto;
 }
-.isCancelledColumnItem{
-    width: 8.09%;
-    padding-left: 2%;
-    margin: auto;
-}
 
 
-.selectHeader{
-
-}
-.appointmentIdHeader{
-    width: 12%;
-    margin: auto;
-}
 .courseIdHeader{
     width: 7.5%;
     margin: auto;
 }
-.appointmentNameHeader{
+.courseNameHeader{
     width: 11%;
     margin: auto;
     padding-right:0%;
@@ -152,37 +107,11 @@ table {
     margin: auto;
     padding-right: 0%;
 }
-.dateHeader{
-    width: 9.5%;
-    margin: auto;
-    padding-right: 0%;
-}
-.startTimeHeader{
-    width: 9%;
-    margin: auto;
-    padding-right: 0%;
-}
-.endTimeHeader{
-    width: 8.1%;
-    margin: auto;
-    padding-right: 0%;
-}
-.addressHeader{
-    width: 8.1%;
-    margin: auto;
-}
-.postalCodeHeader{
+.isPrivateHeader{
     width: 9%;
     margin: auto;
 }
-.isObligatoryHeader{
-    width: 9%;
-    margin: auto;
-}
-.isCancelledHeader{
-    width: 9%;
-    margin: auto;
-}
+
 
 
 .datediv{
@@ -321,9 +250,6 @@ h3{
 
 
 
-
-
-
 </style>
 
 </asp:Content>
@@ -377,27 +303,7 @@ h3{
                           ShowFooter="false">
                           
                          <Columns>
-                             <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="appointmentIdHeader" >
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">AppointmentId</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="AppointmentId" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="AppointmentId" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons"/>
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center"/>
-                                 <HeaderStyle />
-                             </asp:TemplateField>
+
                              <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
                                  <HeaderTemplate>
                                      <h3 style="color:white;">CourseId</h3>
@@ -419,19 +325,21 @@ h3{
                                  <ItemStyle HorizontalAlign="Center" />
                                  <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName" HeaderStyle-CssClass="appointmentNameHeader">
+
+
+                             <asp:TemplateField AccessibleHeaderText="CourseName" HeaderText="CourseName" HeaderStyle-CssClass="courseNameHeader">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Name</h3>
                                      <asp:ImageButton 
                                          runat="server" 
-                                         CommandName="AppointmentName" 
+                                         CommandName="Name" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command" 
                                          ToolTip="sort by ascending"
                                          CssClass="roundedButtons" />
                                      <asp:ImageButton 
                                          runat="server" 
-                                         CommandName="AppointmentName" 
+                                         CommandName="Name" 
                                          ImageUrl="~/Images/downarrow3.png" 
                                          OnCommand="Desc_Command" 
                                          ToolTip="sort by descending"
@@ -440,6 +348,8 @@ h3{
                                  <ItemStyle HorizontalAlign="Center"/>
                                  <HeaderStyle/>
                              </asp:TemplateField>
+
+
                              <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" HeaderStyle-CssClass="descriptionHeader">
                                  <HeaderTemplate>
                                      <h3 style="color:white;">Description</h3>
@@ -461,104 +371,21 @@ h3{
                                  <ItemStyle HorizontalAlign="Center" />
                                  <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date" HeaderStyle-CssClass="dateHeader">
+
+
+                             <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" HeaderStyle-CssClass="isPrivateHeader">
                                  <HeaderTemplate>
-                                     <h3 style="color:white;">Date</h3>
+                                     <h3 style="color:white;">Private</h3>
                                      <asp:ImageButton 
                                          runat="server" 
-                                         CommandName="Date" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Date" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime" HeaderStyle-CssClass="startTimeHeader">
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;" >StartTime</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="StartTime" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command"   
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons"/>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="StartTime" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center"/>
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" HeaderStyle-CssClass="endTimeHeader">
-                                 <HeaderTemplate>
-                                     <h3  style="color:white;">EndTime</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="EndTime" 
-                                         ImageUrl="~/Images/uparrow3.png"
-                                         OnCommand="Asc_Command"  
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="EndTime" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center"/>
-                                 <HeaderStyle/>
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" HeaderStyle-CssClass="addressHeader">
-                                 <HeaderTemplate>
-                                     <h3  style="color:white;">Address</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Address" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Address" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons"/>
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <ItemStyle />
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" HeaderStyle-CssClass="postalCodeHeader">
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">PostalCode</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="PostalCode" 
+                                         CommandName="IsPrivate" 
                                          ImageUrl="~/Images/uparrow3.png" 
                                          OnCommand="Asc_Command"  
                                          ToolTip="sort by ascending"
                                          CssClass="roundedButtons"/>
                                      <asp:ImageButton 
                                          runat="server" 
-                                         CommandName="PostalCode" 
+                                         CommandName="IsPrivate" 
                                          ImageUrl="~/Images/downarrow3.png" 
                                          OnCommand="Desc_Command"  
                                          ToolTip="sort by descending"
@@ -567,48 +394,7 @@ h3{
                                  <ItemStyle HorizontalAlign="Center" />
                                  <HeaderStyle />
                              </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" HeaderStyle-CssClass="isObligatoryHeader">
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">Obligatory</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="IsObligatory" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command"  
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons"/>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="IsObligatory" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-                             <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" HeaderStyle-CssClass="isCancelledHeader">
-                                 <HeaderTemplate>
-                                     <h3  style="color:white;">Cancelled</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="IsCancelled" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="IsCancelled" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <HeaderStyle/>
-                             </asp:TemplateField>
+
                          </Columns>
                          <HeaderStyle />
                          <SelectedRowStyle BackColor="#32E236" />
@@ -689,17 +475,7 @@ h3{
                 <Columns>
 
                    
-                    <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId"  ItemStyle-CssClass="appointmentIdColumnItem" >
-                        <HeaderTemplate>
-                            <h3 style="color:white" >AppointmentId</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblAppId" runat="server" Text='<%# Bind("AppointmentId") %>' ></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle />
- 
 
-                    </asp:TemplateField>
                     <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
                         <HeaderTemplate>
                             <h3 style="color:white">CourseId</h3>
@@ -711,12 +487,12 @@ h3{
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="AppointmentName"  HeaderText="AppointmentName" ItemStyle-CssClass="appointmentNameColumnItem">
+                    <asp:TemplateField AccessibleHeaderText="Name"  HeaderText="Name" ItemStyle-CssClass="courseNameColumnItem">
                         <HeaderTemplate>
-                            <h3 style="color:white">AppointmentName</h3>
+                            <h3 style="color:white">CourseName</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblAppName"  runat="server" Text='<%# Bind("AppointmentName") %>'></asp:Label>
+                            <asp:Label ID="lblCourseName"  runat="server" Text='<%# Bind("Name") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle />
                     </asp:TemplateField>
@@ -733,87 +509,17 @@ h3{
                     </asp:TemplateField>
 
 
-                    <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date" ItemStyle-CssClass="dateColumnItem">
+                    <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" ItemStyle-CssClass="isPrivateColumnItem">
                         <HeaderTemplate>
-                            <h3 style="color:white">Date</h3>
+                            <h3 style="color:white">IsPrivate</h3>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <div id="datediv" class="datediv">
-                            <asp:Label ID="lblDate" runat="server" Text='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>' Height="15%"></asp:Label>
-                            <input type="hidden" class="picker" id="datepicker" value='<%# Convert.ToDateTime(Eval("Date")).ToString("MM/dd/yyyy") %>'/>  
-                             </div>
+                            <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
+                            <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
                         </ItemTemplate>
                         <ItemStyle />
                     </asp:TemplateField>
 
-
-                    <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime" ItemStyle-CssClass="startTimeColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">StartTime</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblStartTime" runat="server" Text='<%# Bind("StartTime") %>' ></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle  />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" ItemStyle-CssClass="endTimeColumnItem" >
-                        <HeaderTemplate>
-                            <h3 style="color:white">EndTime</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblEndTime"  runat="server" Text='<%# Bind("EndTIme") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle  />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" ItemStyle-CssClass="addressColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">Address</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblAddress"  runat="server" Text='<%# Bind("Address") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle  />
-                        <ItemStyle />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" ItemStyle-CssClass="postalCodeColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">PostalCode</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblPostalCode"  runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" ItemStyle-CssClass="isObligatoryColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">IsObligatory</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
-                            <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
-                        </ItemTemplate>
-                        <ItemStyle />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" ItemStyle-CssClass="isCancelledColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">IsCancelled</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                              <asp:Image ID="IsCancelledTrue"  runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
-                            <asp:Image ID="IsCancelledFalse"   runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
-                        </ItemTemplate>
-                        <ItemStyle />
-                    </asp:TemplateField>
 
                 </Columns>
                 <SelectedRowStyle 

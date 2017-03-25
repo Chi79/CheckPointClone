@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
-using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointModel.Utilities;
 

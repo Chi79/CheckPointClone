@@ -12,13 +12,13 @@ namespace CheckPointModel.Validation
     public class CourseValidator : Validator<ICourseDTO>, ICourseValidator<ICourseDTO>
     {
         //TODO
-        public List<string> FillPropertyList(ICourseDTO appointment)
+        public List<string> FillPropertyList(ICourseDTO course)
         {
-            return ProperiesToStringListConverter<ICourseDTO>.ConvertPropertiesToStringList(appointment);
+            return ProperiesToStringListConverter<ICourseDTO>.ConvertPropertiesToStringList(course);
         }
-        public override void CheckForBrokenRules(ICourseDTO appointment)
+        public override void CheckForBrokenRules(ICourseDTO course)
         {
-            var propertyList = FillPropertyList(appointment);
+            var propertyList = FillPropertyList(course);
 
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {
