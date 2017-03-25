@@ -35,7 +35,7 @@ namespace CheckPointPresenters.Presenters
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
 
-            ♠_client = _view.LoggedInClient;
+            _client = _view.LoggedInClient;
         }
 
 
