@@ -62,6 +62,41 @@ namespace CheckPointModel.Services
             return result;
         }
     }
+
+    public class AddAppointmentToCourseJob : JobServiceBase
+    {
+        private IHandleAppointments _handler;
+
+        public AddAppointmentToCourseJob(IHandleAppointments handler)
+        {
+            _handler = handler;
+        }
+        public override DbAction Actiontype
+        {
+            get { return DbAction.AddNewAppointmentToCourse; }
+            set { Actiontype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to add this appointment to the course! Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "New Appointment Added To Course Succesfully!"; }
+        }
+
+        public override void PerformTask(object appointment)
+        {
+            _handler.Create(appointment);
+        }
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+    }
+
     public class DeleteAppointmentJob : JobServiceBase
     {
 

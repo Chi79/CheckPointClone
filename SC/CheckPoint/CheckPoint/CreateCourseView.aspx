@@ -100,6 +100,21 @@
     top:20em;
     left:16em;
 }
+#btnAddNewAppointmentToCourseButton{
+    position: absolute;
+    width:235px;
+    top:12em;
+    left:13em;
+}
+#btnAddExistingAppointmentToCourseButton{
+    position: absolute;
+    width:235px;
+    top:15em;
+    left:13em;
+}
+
+
+
 .auto-style1 {
     width: 59%;
     height: 533px;
@@ -142,6 +157,9 @@
 <asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
 <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
 <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
+
+<asp:Button ID="btnAddNewAppointmentToCourseButton" runat="server" OnClick="AddNewAppointmentToCourseButton_Click" Text="Add New Appointment To Course"  Visible="False" />
+<asp:Button ID="btnAddExistingAppointmentToCourseButton" runat="server" OnClick="AddExistingAppointmentToCourseButton_Click" Text="Add Existing Appointment To Course"  Visible="False" />
     
 </div>
 </div>

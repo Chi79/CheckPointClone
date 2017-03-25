@@ -38,11 +38,13 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePageClicked += OnBackToHomePageClicked;
+            _view.BackToViewCoursesButtonClicked += OnBackToViewCoursesButtonClicked;
+            _view.AddAnotherAppointmentButtonClicked += OnAddAnotherAppointmentButtonClicked;
         }
 
-        private void OnBackToHomePageClicked(object sender, EventArgs e)
+        private void OnAddAnotherAppointmentButtonClicked(object sender, EventArgs e)
         {
-            _view.RedirectToHomePage();
+            _view.RedirectAfterClickEvent();
         }
 
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
@@ -117,13 +119,21 @@ namespace CheckPointPresenters.Presenters
 
         private void PerformJob()
         {
-
-            var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
             var appointment = ConvertDTOToAppointment();
+            JobServiceBase job;
 
+            bool AppointmentIsBeingAddedToCourse = _view.IsAppointmentBeingAddedToCourse;
+            if(AppointmentIsBeingAddedToCourse == true)
+            {
+                job = _factory.CreateAppointmentJobType(DbAction.AddNewAppointmentToCourse) as JobServiceBase;
+                appointment.CourseId = _view.SessionCourseId;
+            }
+            else
+            {
+                job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;  
+            }
             job.ItemName = _view.AppointmentName;
             job.PerformTask(appointment);
-
             UpdateDatabaseWithChanges(job);
         }
 
@@ -141,11 +151,24 @@ namespace CheckPointPresenters.Presenters
             if (IsSavedToDb)
             {
                 DisplayActionMessage(job);
-                ContinueButtonsShow();
+                CheckIfAppointmentWasAddedToCourse();
             }
             else
             {
                 _view.Message = "Failed to Save Appointment " + saveResult.ErrorMessage;
+            }
+        }
+
+        private void CheckIfAppointmentWasAddedToCourse()
+        {
+            bool AppointmentWasAdded = _view.IsAppointmentBeingAddedToCourse;
+            if(AppointmentWasAdded == true)
+            {
+                ContinueWithCourseCreationButtonShow();
+            }
+            else
+            {
+                ContinueButtonsShow();
             }
         }
 
@@ -159,6 +182,16 @@ namespace CheckPointPresenters.Presenters
         private void OnContinueEvent(object sender, EventArgs e)
         {
             _view.RedirectAfterClickEvent();
+        }
+
+        private void OnBackToViewCoursesButtonClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToViewCourses();
+        }
+
+        private void OnBackToHomePageClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToHomePage();
         }
 
         private void ContinueButtonsShow()
@@ -181,6 +214,14 @@ namespace CheckPointPresenters.Presenters
             _view.CreateButtonVisible = true;
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
+        }
+
+        private void ContinueWithCourseCreationButtonShow()
+        {
+            _view.BackToViewCoursesButtonVisible = true;
+            _view.AddAnotherAppointmentButtonVisible = true;
+            _view.BackToHomePageButtonVisible = false;
+            _view.ContinueButtonVisible = false;
         }
     }
 }
