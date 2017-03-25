@@ -11,6 +11,6 @@ namespace CheckPointCommon.ModelInterfaces
         //TODO
         object ConvertToAppointment(object entityModel);
 
-        object ConvertToCourse(object entityModel);
+        //object ConvertToCourse(object entityModel);
     }
 }
