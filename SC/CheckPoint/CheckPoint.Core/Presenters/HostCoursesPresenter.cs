@@ -15,12 +15,12 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IHostCoursesView _view;
         private readonly IHostCoursesModel _model;
-        private readonly IShowAppointments _displayService;
+        private readonly IShowCourses _displayService;
 
         private string _client;
 
         public HostCoursesPresenter(IHostCoursesView coursesView, IHostCoursesModel coursesModel, 
-                                    IShowAppointments displayService)
+                                    IShowCourses displayService)
         {
             _view = coursesView;
             _model = coursesModel;
@@ -81,15 +81,15 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);
-            _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
+            _view.SetDataSource = _displayService.GetAllCoursesFor<COURSE>(_client);
+            _view.SetDataSource2 = _displayService.GetEmptyList<COURSE>();
             _view.SessionRowIndex = -1;
             _view.SessionCourseId = -1;
             _view.BindData();
         }
         private void FetchData()
         {
-            var appointments = _displayService.GetAppointmentsCached<APPOINTMENT>();
+            var courses = _displayService.GetCoursesCached<COURSE>();
 
         }
         private void OnRowSelected(object sender, EventArgs e)
@@ -100,18 +100,18 @@ namespace CheckPointPresenters.Presenters
 
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByPropertyAscending<object>(_view.ColumnName);
-            _view.SetDataSource = apps;
-            _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
+            var courses = _displayService.GetCoursesSortedByPropertyAscending<object>(_view.ColumnName);
+            _view.SetDataSource = courses;
+            _view.SetDataSource2 = _displayService.GetEmptyList<COURSE>();
             _view.BindData();
 
             GetSelectedCourseIdFromGrid();
         }
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByPropertyDescending<object>(_view.ColumnName);
-            _view.SetDataSource = apps;
-            _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
+            var courses = _displayService.GetCoursesSortedByPropertyDescending<object>(_view.ColumnName);
+            _view.SetDataSource = courses;
+            _view.SetDataSource2 = _displayService.GetEmptyList<COURSE>();
             _view.BindData();
 
             GetSelectedCourseIdFromGrid();
