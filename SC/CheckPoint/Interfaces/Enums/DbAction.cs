@@ -8,6 +8,13 @@ namespace CheckPointCommon.Enums
 {
     public enum DbAction
     {
-        Create, Read, Update, Delete
+        CreateAppointment,
+        ReadAppointment,
+        UpdateAppointment,
+        DeleteAppointment,
+        CreateCourse,
+        ReadCourse,
+        UpdateCourse,
+        DeleteCourse
     }
 }

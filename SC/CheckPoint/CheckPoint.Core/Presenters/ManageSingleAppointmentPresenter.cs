@@ -67,20 +67,20 @@ namespace CheckPointPresenters.Presenters
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateJobType(DbAction.Update);
+            var job = _factory.CreateAppointmentJobType(DbAction.UpdateAppointment);
             ConfirmAction(job as JobServiceBase);
         }
 
         private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateJobType(DbAction.Delete);
+            var job = _factory.CreateAppointmentJobType(DbAction.DeleteAppointment);
             ConfirmAction(job as JobServiceBase);
         }
 
         private void ConfirmAction(JobServiceBase job)
         {
             _view.JobState = (int)job.Actiontype;
-            job.AppointmentId = _view.AppointmentId;
+            job.ItemId = _view.AppointmentId;
             _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();
         }
@@ -141,8 +141,8 @@ namespace CheckPointPresenters.Presenters
 
         private void PerformJob()
         {
-            var job = _factory.CreateJobType((DbAction)_view.JobState) as JobServiceBase;
-            job.AppointmentId = _view.AppointmentId;
+            var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
+            job.ItemId = _view.AppointmentId;
             var appointment = ConvertDTOToAppointment();
 
             job.PerformTask(appointment);

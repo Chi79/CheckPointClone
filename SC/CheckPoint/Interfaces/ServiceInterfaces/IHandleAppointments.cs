@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CheckPointCommon.ServiceInterfaces;
 
 namespace CheckPointCommon.ServiceInterfaces
 {
-    public interface IHandleAppointments
+    public interface IHandleAppointments : IHandler
     {
         IEnumerable<T> GetAllAppointmentsForClient<T>(string client);
 
@@ -18,10 +19,5 @@ namespace CheckPointCommon.ServiceInterfaces
 
         object GetAppointmentById(int appointmentId);
 
-        void Delete<T>(T appointment);
-
-        void Create<T>(T appointment);
-
-        object SaveChangesToAppointments();
     }
 }

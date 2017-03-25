@@ -13,12 +13,13 @@ namespace CheckPointModel.Services
     public class JobServiceBase 
     {
         public virtual DbAction Actiontype { get; set; }
-        public virtual string AppointmentName { get; set; }
+        public virtual string ItemName { get; set; }
         public virtual string ConfirmationMessage { get; }
         public virtual string CompletedMessage { get; }
-        public virtual int AppointmentId { get; set; }
+        public virtual int ItemId { get; set; }
 
-        public virtual void PerformTask(APPOINTMENT appointment)
+
+        public virtual void PerformTask(object appointment)
         {
             //not implemented
         }
@@ -28,17 +29,17 @@ namespace CheckPointModel.Services
             return result;
         }
     }
-    public class CreateJob : JobServiceBase
+    public class CreateAppointmentJob : JobServiceBase
     {
         private IHandleAppointments _handler;
 
-        public CreateJob(IHandleAppointments handler)
+        public CreateAppointmentJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
         public override DbAction Actiontype
         {
-            get { return DbAction.Create; }
+            get { return DbAction.CreateAppointment; }
             set { Actiontype = value; }
         }
         public override string ConfirmationMessage
@@ -49,61 +50,63 @@ namespace CheckPointModel.Services
         {
             get  { return "New Appointment Added Succesfully!"; }
         }
-        public override void PerformTask(APPOINTMENT appointment)
+
+        public override void PerformTask(object appointment)
         {
             _handler.Create(appointment);
         }
         public override SaveResult SaveChanges()
         {
 
-            SaveResult result = (SaveResult)_handler.SaveChangesToAppointments();
+            SaveResult result = (SaveResult)_handler.SaveChanges();
             return result;
         }
     }
-    public class DeleteJob : JobServiceBase
+    public class DeleteAppointmentJob : JobServiceBase
     {
 
         private IHandleAppointments _handler;
-        public DeleteJob(IHandleAppointments handler)
+        public DeleteAppointmentJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
         public override DbAction Actiontype
         {
-            get { return DbAction.Delete; }
+            get { return DbAction.DeleteAppointment; }
             set { Actiontype = value; }
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the appointment with Id number: " + AppointmentId +"!  Do you wish to continue?"; }
+            get { return "You are about to delete the appointment with Id number: " + ItemId +"!  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
-            get { return "New Appointment Deleted Succesfully!"; }
+            get { return "Appointment Deleted Succesfully!"; }
         }
-        public override void PerformTask(APPOINTMENT appointment)
+
+        public override void PerformTask(object appointment)
         {
-            var appointmentToDelete =_handler.GetAppointmentByName(AppointmentName);
+            var appointmentToDelete = _handler.GetAppointmentByName(ItemName);
             _handler.Delete(appointmentToDelete);
         }
         public override SaveResult SaveChanges()
         {
 
-            SaveResult result = (SaveResult)_handler.SaveChangesToAppointments();
+            SaveResult result = (SaveResult)_handler.SaveChanges();
             return result;
         }
     }
-    public class UpdateJob : JobServiceBase
+    public class UpdateAppointmentJob : JobServiceBase
     {
 
         private IHandleAppointments _handler;
-        public UpdateJob(IHandleAppointments handler)
+        public UpdateAppointmentJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
         public override DbAction Actiontype
         {
-            get { return DbAction.Update; }
+            get { return DbAction.UpdateAppointment; }
             set { Actiontype = value; }
         }
         public override string ConfirmationMessage
@@ -112,29 +115,142 @@ namespace CheckPointModel.Services
         }
         public override string CompletedMessage
         {
-            get { return "New Appointment Updated Succesfully!"; }
+            get { return "Appointment Updated Succesfully!"; }
         }
-        public override void PerformTask(APPOINTMENT appointment)
-        {
-            var appointmentToUpdate = _handler.GetAppointmentById(AppointmentId) as APPOINTMENT;
 
-            //appointmentToUpdate.CourseId = appointment.CourseId;
-            appointmentToUpdate.AppointmentName = appointment.AppointmentName;
-            appointmentToUpdate.UserName = appointment.UserName;
-            appointmentToUpdate.Description = appointment.Description;
-            appointmentToUpdate.Date = appointment.Date;
-            appointmentToUpdate.StartTime = appointment.StartTime;
-            appointmentToUpdate.EndTime = appointment.EndTime;
-            appointmentToUpdate.Address = appointment.Address;
-            appointmentToUpdate.PostalCode = appointment.PostalCode;
-            appointmentToUpdate.IsObligatory = appointment.IsObligatory;
-            appointmentToUpdate.IsCancelled = appointment.IsCancelled;
+        public override void PerformTask(object appointment)
+        {
+            var appointmentToUpdate = _handler.GetAppointmentById(ItemId) as APPOINTMENT;
+            var newAppointment = appointment as APPOINTMENT;
+
+            appointmentToUpdate.AppointmentName = newAppointment.AppointmentName;
+            appointmentToUpdate.UserName = newAppointment.UserName;
+            appointmentToUpdate.Description = newAppointment.Description;
+            appointmentToUpdate.Date = newAppointment.Date;
+            appointmentToUpdate.StartTime = newAppointment.StartTime;
+            appointmentToUpdate.EndTime = newAppointment.EndTime;
+            appointmentToUpdate.Address = newAppointment.Address;
+            appointmentToUpdate.PostalCode = newAppointment.PostalCode;
+            appointmentToUpdate.IsObligatory = newAppointment.IsObligatory;
+            appointmentToUpdate.IsCancelled = newAppointment.IsCancelled;
+
+        }
+
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+    }
+    public class CreateCourseJob : JobServiceBase
+    {
+        private IHandleCourses _handler;
+
+        public CreateCourseJob(IHandleCourses handler)
+        {
+            _handler = handler;
+        }
+        public override DbAction Actiontype
+        {
+            get { return DbAction.CreateCourse; }
+            set { Actiontype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to add this course! Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "New Course Added Succesfully!"; }
+        }
+
+        public override void PerformTask(object course)
+        {
+            _handler.Create(course);
         }
         public override SaveResult SaveChanges()
         {
 
-            SaveResult result = (SaveResult)_handler.SaveChangesToAppointments();
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+    }
+
+    public class DeleteCourseJob : JobServiceBase
+    {
+
+        private IHandleCourses _handler;
+        public DeleteCourseJob(IHandleCourses handler)
+        {
+            _handler = handler;
+        }
+        public override DbAction Actiontype
+        {
+            get { return DbAction.DeleteCourse; }
+            set { Actiontype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to delete the course with Id number: " + ItemId + "!  Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "Course Deleted Succesfully!"; }
+        }
+
+        public override void PerformTask(object course)
+        {
+            var courseToDelete = _handler.GetCourseByName(ItemName);
+            _handler.Delete(courseToDelete);
+        }
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+
+    }
+    public class UpdateCourseJob : JobServiceBase
+    {
+
+        private IHandleCourses _handler;
+        public UpdateCourseJob(IHandleCourses handler)
+        {
+            _handler = handler;
+        }
+        public override DbAction Actiontype
+        {
+            get { return DbAction.UpdateCourse; }
+            set { Actiontype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to update this course! Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "Course Updated Succesfully!"; }
+        }
+
+        public override void PerformTask(object course)
+        {
+            var courseToUpdate = _handler.GetCourseById(ItemId) as COURSE;
+            var newCourse = course as COURSE;
+
+            courseToUpdate.Name = newCourse.Name;
+            courseToUpdate.UserName = newCourse.UserName;
+            courseToUpdate.Description = newCourse.Description;
+            courseToUpdate.IsPrivate = newCourse.IsPrivate;
+        }
+
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
             return result;
         }
     }
 }
+
