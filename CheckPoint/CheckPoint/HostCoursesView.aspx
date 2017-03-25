@@ -73,7 +73,8 @@ table {
 
 .courseIdColumnItem{
     width: 9.09%;
-    padding-left: 1.5%;
+    padding-left: 0%;
+    padding-right:1%;
     margin: auto;
 }
 .courseNameColumnItem{
@@ -83,7 +84,7 @@ table {
 }
 .descriptionColumnItem{
     width: 11.09%;
-    padding-left: 0%;
+    padding-left: 2%;
     margin: auto;
 }
 .isPrivateColumnItem{
