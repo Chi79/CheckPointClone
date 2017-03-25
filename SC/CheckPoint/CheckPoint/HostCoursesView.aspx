@@ -133,7 +133,7 @@ table {
     width:100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    padding-bottom: 12px;
+    padding-bottom: 5px;
     position:relative;
     right:1%;
 }
@@ -178,7 +178,7 @@ table {
 }
 
 h3{
-    padding-bottom: 9%;
+    padding-bottom: 3%;
     font-family: sans-serif;
     font-weight: bold;
 }
