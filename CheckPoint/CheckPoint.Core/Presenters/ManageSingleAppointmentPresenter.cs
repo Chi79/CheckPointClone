@@ -176,7 +176,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-
         private void DisplayActionMessage(JobServiceBase job)
         {
             _view.Message = job.CompletedMessage;
