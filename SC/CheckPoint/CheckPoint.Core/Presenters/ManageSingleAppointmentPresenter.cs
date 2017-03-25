@@ -24,7 +24,7 @@ namespace CheckPointPresenters.Presenters
         private readonly IFactory _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
-        private string host = "Morten";
+        private string _client; 
 
         public ManageSingleAppointmentPresenter(
                                           IManageSingleAppointmentView manageAppointmentView,
@@ -46,6 +46,8 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonClicked += _OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePage += OnBackToHomePageClicked;
+
+            _client = _view.UserName;
         }
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
-            _displayService.GetAllAppointmentsFor<APPOINTMENT>(host);  //refresh cache
+            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);  //refresh cache
             _view.RedirectAfterClickEvent();
             DisplaySelectedAppointmentData();
         }
@@ -158,27 +160,42 @@ namespace CheckPointPresenters.Presenters
 
         private void UpdateDatabaseWithChanges(JobServiceBase job)
         {
-            bool saveCompleted = AttemptSaveChangesToAppointments(job);
-            if (saveCompleted)
-            {
-                DisplayActionMessage(job);
-            }
-        }
-
-        private bool AttemptSaveChangesToAppointments(JobServiceBase job)
-        {
-
             SaveResult saveResult = job.SaveChanges();
 
             bool IsSavedToDb = saveResult.Result > 0;
-            if (!IsSavedToDb)
+            if (IsSavedToDb)
+            {
+
+                DisplayActionMessage(job);
+            }
+            else
             {
                 _view.Message = "Failed to save changes!" + saveResult.ErrorMessage;
                 ContinueButtonsShow();
-                return false;
             }
-            return true;
+
+
+            //bool saveCompleted = AttemptSaveChangesToAppointments(job);
+            //if (saveCompleted)
+            //{
+            //    DisplayActionMessage(job);
+            //}
         }
+
+        //private bool AttemptSaveChangesToAppointments(JobServiceBase job)
+        //{
+
+        //    SaveResult saveResult = job.SaveChanges();
+
+        //    bool IsSavedToDb = saveResult.Result > 0;
+        //    if (!IsSavedToDb)
+        //    {
+        //        _view.Message = "Failed to save changes!" + saveResult.ErrorMessage;
+        //        ContinueButtonsShow();
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         private void DisplayActionMessage(JobServiceBase job)
         {

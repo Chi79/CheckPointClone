@@ -135,12 +135,17 @@ namespace CheckPointPresenters.Presenters
 
         private void UpdateDatabaseWithChanges(JobServiceBase job)
         {
+            SaveResult saveResult = job.SaveChanges();
 
-            bool saveCompleted = AttemptSaveChangesToDb(job);
-            if (saveCompleted)
+            bool IsSavedToDb = saveResult.Result > 0;
+            if (IsSavedToDb)
             {
                 DisplayActionMessage(job);
                 ContinueButtonsShow();
+            }
+            else
+            {
+                _view.Message = "Failed to Save Appointment " + saveResult.ErrorMessage;
             }
         }
 
@@ -149,20 +154,6 @@ namespace CheckPointPresenters.Presenters
 
             _view.Message = job.CompletedMessage;
             ContinueButtonsShow();
-        }
-
-        private bool AttemptSaveChangesToDb(JobServiceBase job)
-        {
-
-            SaveResult saveResult = job.SaveChanges();
-
-            bool IsSavedToDb = saveResult.Result > 0;
-            if (!IsSavedToDb)
-            {
-                _view.Message = "Failed to Save Appointment " + saveResult.ErrorMessage;
-                return false;
-            }
-            return true;
         }
 
         private void OnContinueEvent(object sender, EventArgs e)
