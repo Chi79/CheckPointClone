@@ -16,9 +16,5 @@ namespace CheckPointModel.Models
         {
             return AppointmentDTOMapper.ConvertAppointmentDTOToAppointment(appointmentModel as AppointmentDTO);
         }
-        //public object ConvertToCourse(object courseDTO)
-        //{
-        //    return CourseDTOMapper.ConvertCourseDTOToCourse(courseDTO as CourseDTO);
-        //}
     }
 }
