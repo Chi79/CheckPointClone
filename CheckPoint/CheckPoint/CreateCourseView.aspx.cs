@@ -17,6 +17,13 @@ namespace CheckPoint.Views
             get { return (int)Session["CourseId"]; }
             set { Session["CourseId"] = value; }
         }
+
+        public bool AddingAppointmentToCourse
+        {
+            get { return (bool)Session["AddingAppointmentToCourse"]; }
+            set { Session["AddingAppointmentToCourse"] = value; }
+        }
+            
         public string CourseName
         {
             get { return txtCourseName.Text; }
@@ -25,43 +32,83 @@ namespace CheckPoint.Views
         {
             get { return txtDescription.Text; }
         }
+
         public string UserName
         {
             get { return Session["LoggedInClient"].ToString(); }
         }
+
         public string IsPrivate
         {
             get { return ddlIsPrivate.SelectedValue; }
         }
+
         public bool ContinueButtonVisible
         {
             set { btnContinue.Visible = value; }
         }
+
         public bool CreateButtonVisible
         {
             set { btnCreateCourse.Visible = value; }
         }
+
         public bool YesButtonVisible
         {
             set { btnYes.Visible = value; }
         }
+
         public bool NoButtonVisible
         {
             set { btnNo.Visible = value; }
         }
+
+        public bool AddNewAppointmentToCourseButtonVisible
+        {
+            set { btnAddNewAppointmentToCourseButton.Visible = value; } 
+        }
+
+        public bool CreateCourseButtonVisible
+        {
+            set { btnCreateCourse.Visible = value; } 
+        }
+
+        public bool BackToHomePageButtonVisible
+        {
+            set { btnBackToHomePage.Visible = value; }
+        }
+
+        public bool AddExistingAppointmentToCourseButtonVisible
+        {
+            set { btnAddExistingAppointmentToCourseButton.Visible = value; } 
+        }
+
         public void RedirectAfterClickEvent()
         {
             Response.Redirect("CreateCourseView.aspx");
         }
+
         public void RedirectToHomePage()
         {
             Response.Redirect("HostCoursesView.aspx");
         }
+
+        public void RedirectToAddNewAppointmentToCourse()
+        {
+            Response.Redirect("CreateAppointmentView.aspx");
+        }
+
+        public void RedirectToAddExistingAppointmentToCourse()
+        {
+            this.Message = "to add existing app";
+        }
+
         public int JobState
         {
             get { return (int)Session["job"]; }
             set { Session["job"] = value; }
         }
+
         public string Message
         {
             get { return lblMessage.Text; }
@@ -75,9 +122,12 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> BackToHomePageClicked;
 
+        public event EventHandler<EventArgs> AddNewAppontmentToCourseClicked;
+        public event EventHandler<EventArgs> AddExistingAppontmentToCourseClicked;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TODO
+
         }
 
         protected void btnCreateCourse_Click(object sender, EventArgs e)
@@ -117,6 +167,22 @@ namespace CheckPoint.Views
             if(BackToHomePageClicked != null)
             {
                 BackToHomePageClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void AddNewAppointmentToCourseButton_Click(object sender, EventArgs e)
+        {
+            if(AddNewAppontmentToCourseClicked != null)
+            {
+                AddNewAppontmentToCourseClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void AddExistingAppointmentToCourseButton_Click(object sender, EventArgs e)
+        {
+            if(AddExistingAppontmentToCourseClicked != null)
+            {
+                AddExistingAppontmentToCourseClicked(this, EventArgs.Empty);
             }
         }
     }

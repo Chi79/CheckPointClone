@@ -14,12 +14,26 @@ namespace CheckPointCommon.ViewInterfaces
         string Description { get; }
         string UserName { get; }
         string IsPrivate { get; }
+
+        bool AddingAppointmentToCourse { get; set; }
+
         bool ContinueButtonVisible { set; }
         bool CreateButtonVisible { set; }
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
+        bool CreateCourseButtonVisible { set; }
+        bool BackToHomePageButtonVisible { set; }
+
+        bool AddNewAppointmentToCourseButtonVisible { set; }
+        bool AddExistingAppointmentToCourseButtonVisible { set; }
+
+
         void RedirectAfterClickEvent();
         void RedirectToHomePage();
+
+        void RedirectToAddNewAppointmentToCourse();
+        void RedirectToAddExistingAppointmentToCourse();
+
         int JobState { get; set; }
         string Message { get; set; }
 
@@ -28,5 +42,8 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
         event EventHandler<EventArgs> BackToHomePageClicked;
+
+        event EventHandler<EventArgs> AddNewAppontmentToCourseClicked;
+        event EventHandler<EventArgs> AddExistingAppontmentToCourseClicked;
     }
 }

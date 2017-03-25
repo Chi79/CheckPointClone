@@ -14,6 +14,9 @@ namespace CheckPointCommon.ViewInterfaces
         int SelectedRowIndex { get; set; } 
         int? SessionRowIndex { get; set; }
         int? SessionAppointmentId { get; set; }
+
+        bool IsAppointmentBeingAddedToCourse { get; set; }
+
         string LoggedInClient { get; }
         string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }

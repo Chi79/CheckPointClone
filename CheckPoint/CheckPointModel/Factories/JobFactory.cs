@@ -36,6 +36,7 @@ namespace CheckPointModel.Factories
                 Jobs.Add(DbAction.CreateAppointment, new CreateAppointmentJob(handler));
                 Jobs.Add(DbAction.DeleteAppointment, new DeleteAppointmentJob(handler));
                 Jobs.Add(DbAction.UpdateAppointment, new UpdateAppointmentJob(handler));
+                Jobs.Add(DbAction.AddNewAppointmentToCourse, new AddAppointmentToCourseJob(handler));
             }
         }
 

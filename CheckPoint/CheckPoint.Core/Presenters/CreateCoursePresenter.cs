@@ -12,6 +12,7 @@ using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
 using CheckPointCommon.Structs;
 using CheckPointCommon.Enums;
+using CheckPointCommon.ServiceInterfaces;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -20,31 +21,33 @@ namespace CheckPointPresenters.Presenters
         //TODO
         private readonly ICreateCourseView _view;
         private readonly ICreateCourseModel _model;
+        private readonly IHandleCourses _courseService;
         private readonly IFactory _factory;
 
         private CourseDTO _dTO = new CourseDTO();
 
 
         public CreateCoursePresenter(ICreateCourseView createCourseView,
-                                          ICreateCourseModel createCourseModel,
-                                          IFactory factory
-                                          )
+                                     ICreateCourseModel createCourseModel,
+                                     IHandleCourses courseService,
+                                     IFactory factory )
         {
+
             _view = createCourseView;
             _model = createCourseModel;
             _factory = factory;
+            _courseService = courseService;
 
             _view.CreateNewCourse += OnCreateNewCourseButtonClicked;
             _view.Continue += OnContinueEvent;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePageClicked += OnBackToHomePageClicked;
+
+            _view.AddNewAppontmentToCourseClicked += OnAddNewAppontmentToCourseClicked;
+            _view.AddExistingAppontmentToCourseClicked += OnAddExistingAppontmentToCourseClicked;
         }
 
-        private void OnBackToHomePageClicked(object sender, EventArgs e)
-        {
-            _view.RedirectToHomePage();
-        }
 
         private void OnCreateNewCourseButtonClicked(object sender, EventArgs e)
         {
@@ -135,14 +138,32 @@ namespace CheckPointPresenters.Presenters
             bool IsSavedToDb = saveResult.Result > 0;
             if (IsSavedToDb)
             {
-
-                DisplayActionMessage(job);
-                ContinueButtonsShow();
+                SetCourseIdToSession(job);
+                DisplayAddAppointmentToCourseButtons();
+                _view.Message = "Add an appointment to the course";
             }
             else
             {
                 _view.Message = "Failed to Save Course " + saveResult.ErrorMessage;
             }
+        }
+        public void SetCourseIdToSession(JobServiceBase job)
+        {
+            var newCourse = _courseService.GetCourseByName(job.ItemName) as COURSE;
+            _view.CourseId = newCourse.CourseId;
+ 
+        }
+        public void SetAddingAppointmentToCourseStatus()
+        {
+            _view.AddingAppointmentToCourse = true;
+        }
+
+        public void DisplayAddAppointmentToCourseButtons()
+        {
+            _view.AddExistingAppointmentToCourseButtonVisible = true;
+            _view.AddNewAppointmentToCourseButtonVisible = true;
+            _view.CreateCourseButtonVisible = false;
+            _view.BackToHomePageButtonVisible = false;
         }
 
         private void DisplayActionMessage(JobServiceBase job)
@@ -155,6 +176,23 @@ namespace CheckPointPresenters.Presenters
         private void OnContinueEvent(object sender, EventArgs e)
         {
             _view.RedirectAfterClickEvent();
+        }
+
+        private void OnAddExistingAppontmentToCourseClicked(object sender, EventArgs e)
+        {
+            SetAddingAppointmentToCourseStatus();
+            _view.RedirectToAddExistingAppointmentToCourse();
+        }
+
+        private void OnAddNewAppontmentToCourseClicked(object sender, EventArgs e)
+        {
+            SetAddingAppointmentToCourseStatus();
+            _view.RedirectToAddNewAppointmentToCourse();
+        }
+
+        private void OnBackToHomePageClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToHomePage();
         }
 
         private void ContinueButtonsShow()

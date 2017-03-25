@@ -69,6 +69,27 @@ namespace CheckPoint.Views
             get { return Session["LoggedInClient"].ToString(); }
         }
 
+        public bool IsAppointmentBeingAddedToCourse
+        {
+            get { return (bool)Session["AddingAppointmentToCourse"]; }
+            set { Session["AddingAppointmentToCourse"] = value; }
+        }
+
+        public int SessionCourseId
+        {
+            get { return (int)Session["CourseId"]; }
+        }
+
+        public bool BackToViewCoursesButtonVisible
+        {
+            set {btnBackToViewCourses.Visible = value; }
+        }
+
+        public bool AddAnotherAppointmentButtonVisible
+        {
+            set { btnAddAnotherAppointment.Visible = true; }
+        }
+
         public bool ContinueButtonVisible
         {
             set { btnContinue.Visible = value; }
@@ -89,6 +110,11 @@ namespace CheckPoint.Views
             set { btnNo.Visible = value; }
         }
 
+        public bool BackToHomePageButtonVisible
+        {
+            set { btnBackToHomePage.Visible = value; }
+        }
+
         public int JobState
         {
             get { return (int)Session["job"]; }
@@ -105,15 +131,22 @@ namespace CheckPoint.Views
             Response.Redirect("HostHomeView.aspx");
         }
 
+        public void RedirectToViewCourses()
+        {
+            Response.Redirect("HostCoursesView.aspx");
+        }
+
         public event EventHandler<EventArgs> CreateNewAppointment;
         public event EventHandler<EventArgs> Continue;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> BackToHomePageClicked;
+        public event EventHandler<EventArgs> BackToViewCoursesButtonClicked;
+        public event EventHandler<EventArgs> AddAnotherAppointmentButtonClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          //TODO
+  
         }
 
         protected void btnCreateAppointment_Click(object sender, EventArgs e)
@@ -153,6 +186,23 @@ namespace CheckPoint.Views
             if(BackToHomePageClicked != null)
             {
                 BackToHomePageClicked(this, EventArgs.Empty);
+            }
+        }
+
+
+        protected void btnAddAnotherAppointment_Click(object sender, EventArgs e)
+        {
+            if(AddAnotherAppointmentButtonClicked != null)
+            {
+                AddAnotherAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnBackToViewCourses_Click(object sender, EventArgs e)
+        {
+            if(BackToViewCoursesButtonClicked != null)
+            {
+                BackToViewCoursesButtonClicked(this, EventArgs.Empty);
             }
         }
     }
