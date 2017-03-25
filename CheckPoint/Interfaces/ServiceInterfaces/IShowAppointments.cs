@@ -17,6 +17,6 @@ namespace CheckPointCommon.ServiceInterfaces
 
         IEnumerable<T> GetAppointmentsCached<T>();
 
-        object GetSelectedAppointmentByAppointmentId(int AppointmentID);
+        object GetSelectedAppointmentByAppointmentId(int AppointmentId);
     }
 }

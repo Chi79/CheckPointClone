@@ -57,6 +57,7 @@
     <Compile Include="Services\AppointmentHandler.cs" />
     <Compile Include="Services\JobService.cs" />
     <Compile Include="Services\ShowAppointments.cs" />
+    <Compile Include="Services\ShowCourses.cs" />
     <Compile Include="Utilities\AppointmentDTOMapper.cs" />
     <Compile Include="Utilities\AttendeeDTOMapper.cs" />
     <Compile Include="Utilities\CourseDTOMapper.cs" />

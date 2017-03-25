@@ -9,6 +9,10 @@ namespace CheckPointCommon.RepositoryInterfaces
 {
     public interface ICourseRepository : IRepository<COURSE>
     {
-        //TODO
+        IEnumerable<COURSE> GetAllCoursesFor(string userName);
+
+        COURSE GetCourseByCourseName(string courseName);
+
+        COURSE GetCourseByCourseId(int coursetId);
     }
 }
