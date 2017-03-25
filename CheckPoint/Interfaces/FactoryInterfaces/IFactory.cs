@@ -8,6 +8,9 @@ namespace CheckPointCommon.FactoryInterfaces
 {
     public interface IFactory
     {
-        object CreateJobType(object action);
+
+        object CreateAppointmentJobType(object action);
+
+        object CreateCourseJobType(object action);
     }
 }
