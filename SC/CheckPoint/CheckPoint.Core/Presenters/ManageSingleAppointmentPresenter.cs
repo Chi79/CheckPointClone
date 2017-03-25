@@ -174,28 +174,8 @@ namespace CheckPointPresenters.Presenters
                 ContinueButtonsShow();
             }
 
-
-            //bool saveCompleted = AttemptSaveChangesToAppointments(job);
-            //if (saveCompleted)
-            //{
-            //    DisplayActionMessage(job);
-            //}
         }
 
-        //private bool AttemptSaveChangesToAppointments(JobServiceBase job)
-        //{
-
-        //    SaveResult saveResult = job.SaveChanges();
-
-        //    bool IsSavedToDb = saveResult.Result > 0;
-        //    if (!IsSavedToDb)
-        //    {
-        //        _view.Message = "Failed to save changes!" + saveResult.ErrorMessage;
-        //        ContinueButtonsShow();
-        //        return false;
-        //    }
-        //    return true;
-        //}
 
         private void DisplayActionMessage(JobServiceBase job)
         {
