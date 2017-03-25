@@ -15,8 +15,10 @@ namespace CheckPointModel.Utilities
         {
             COURSE course = new COURSE()
             {
+                UserName = courseDTO.UserName,
                 Name = courseDTO.Name,
-                Description = courseDTO.Description
+                Description = courseDTO.Description,
+                IsPrivate = courseDTO.IsPrivate,
             };
 
             return course;

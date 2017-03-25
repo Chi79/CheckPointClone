@@ -9,7 +9,6 @@ namespace CheckPointCommon.ViewInterfaces
     public interface ICreateAppointmentView
     {
         //TODO
-        //string CourseId { get; }
         string StartTime { get; }
         string EndTime { get; }
         string PostalCode { get; }

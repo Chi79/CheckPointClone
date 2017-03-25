@@ -13,6 +13,8 @@ namespace CheckPointModel.DTOs
         //TODO
         public string Name { get; set; }
         public string Description { get; set; }
+        public string UserName { get; set; }
+        public bool IsPrivate { get; set; }
 
         public override void CheckForBrokenRules(ICourseDTO client)
         {

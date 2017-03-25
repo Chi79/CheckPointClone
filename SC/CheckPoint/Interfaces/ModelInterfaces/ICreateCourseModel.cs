@@ -9,5 +9,6 @@ namespace CheckPointCommon.ModelInterfaces
     public interface ICreateCourseModel
     {
         //TODO
+        object ConvertToCourse(object entityModel);
     }
 }

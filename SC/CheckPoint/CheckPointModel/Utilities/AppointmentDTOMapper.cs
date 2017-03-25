@@ -19,7 +19,6 @@ namespace CheckPointModel.Utilities
 
             APPOINTMENT appointment = new APPOINTMENT()
             {
-                //CourseId = Convert.ToInt32(appointmentDTO.CourseId),
                 AppointmentName = appointmentDTO.AppointmentName,
                 Description = appointmentDTO.Description,
                 Date = parsedDate,
