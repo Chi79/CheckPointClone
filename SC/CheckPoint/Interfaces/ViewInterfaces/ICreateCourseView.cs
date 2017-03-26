@@ -9,13 +9,15 @@ namespace CheckPointCommon.ViewInterfaces
     public interface ICreateCourseView
     {
         //TODO
+        int JobState { get; set; }
+        string Message { get; set; }
         int SessionCourseId { get; set; }
         string CourseName { get; }
         string Description { get; }
         string UserName { get; }
         string IsPrivate { get; }
 
-        bool AddingNewAppointmentToCourse { get; set; }
+        bool AddAppointmentToCourseStatus { get; set; }
 
         bool ContinueButtonVisible { set; }
         bool CreateButtonVisible { set; }
@@ -34,15 +36,12 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectToAddNewAppointmentToCourse();
         void RedirectToAddExistingAppointmentToCourse();
 
-        int JobState { get; set; }
-        string Message { get; set; }
 
         event EventHandler<EventArgs> CreateNewCourse;
         event EventHandler<EventArgs> Continue;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
         event EventHandler<EventArgs> BackToHomePageClicked;
-
         event EventHandler<EventArgs> AddNewAppontmentToCourseClicked;
         event EventHandler<EventArgs> AddExistingAppontmentToCourseClicked;
     }

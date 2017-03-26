@@ -69,10 +69,15 @@ namespace CheckPoint.Views
             get { return Session["LoggedInClient"].ToString(); }
         }
 
-        public bool IsThisNewAppointmentBeingAddedToACourse
+        public bool AddAppointmentToCourseStatus
         {
             get { return (bool)Session["AddingAppointmentToCourse"]; }
             set { Session["AddingAppointmentToCourse"] = value; }
+        }
+        public int JobState
+        {
+            get { return (int)Session["job"]; }
+            set { Session["job"] = value; }
         }
 
         public int SessionCourseId
@@ -113,12 +118,6 @@ namespace CheckPoint.Views
         public bool BackToHomePageButtonVisible
         {
             set { btnBackToHomePage.Visible = value; }
-        }
-
-        public int JobState
-        {
-            get { return (int)Session["job"]; }
-            set { Session["job"] = value; }
         }
 
         public void RedirectAfterClickEvent()
@@ -188,7 +187,6 @@ namespace CheckPoint.Views
                 BackToHomePageClicked(this, EventArgs.Empty);
             }
         }
-
 
         protected void btnAddAnotherAppointment_Click(object sender, EventArgs e)
         {

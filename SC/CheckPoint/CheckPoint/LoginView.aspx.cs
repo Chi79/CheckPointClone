@@ -32,6 +32,11 @@ namespace CheckPoint.Views
             set { Session["LoggedInClient"] = value; }
         }
 
+        public bool AddAppointmentToCourseStatus
+        {
+            set { Session["AddingAppointmentToCourse"] = value; }
+        }
+
         public event EventHandler<EventArgs> Login;
         protected void Page_Load(object sender, EventArgs e)
         {

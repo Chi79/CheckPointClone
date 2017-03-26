@@ -33,7 +33,7 @@ namespace CheckPointCommon.ViewInterfaces
         int JobState { get; set; }
         string Message { get;  set; }
 
-        bool IsThisNewAppointmentBeingAddedToACourse { get; set; }
+        bool AddAppointmentToCourseStatus { get; set; }
         int SessionCourseId { get; }
         bool BackToViewCoursesButtonVisible { set; }
 
@@ -42,7 +42,6 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
         event EventHandler<EventArgs> BackToHomePageClicked;
-
         event EventHandler<EventArgs> BackToViewCoursesButtonClicked;
         event EventHandler<EventArgs> AddAnotherAppointmentButtonClicked;
     }

@@ -12,30 +12,37 @@ namespace CheckPoint.Views
 {
     public partial class CreateCourseView : ViewBase<CreateCoursePresenter> , ICreateCourseView
     {
+        public int JobState
+        {
+            get { return (int)Session["job"]; }
+            set { Session["job"] = value; }
+        }
+
         public int SessionCourseId
         {
             get { return (int)Session["CourseId"]; }
             set { Session["CourseId"] = value; }
         }
 
-        public bool AddingNewAppointmentToCourse
+        public string UserName
+        {
+            get { return Session["LoggedInClient"].ToString(); }
+        }
+
+        public bool AddAppointmentToCourseStatus
         {
             get { return (bool)Session["AddingAppointmentToCourse"]; }
             set { Session["AddingAppointmentToCourse"] = value; }
         }
-            
+
         public string CourseName
         {
             get { return txtCourseName.Text; }
         }
+
         public string Description
         {
             get { return txtDescription.Text; }
-        }
-
-        public string UserName
-        {
-            get { return Session["LoggedInClient"].ToString(); }
         }
 
         public string IsPrivate
@@ -62,10 +69,11 @@ namespace CheckPoint.Views
         {
             set { btnNo.Visible = value; }
         }
-
-        public bool AddNewAppointmentToCourseButtonVisible
+        public string Message
         {
-            set { btnAddNewAppointmentToCourseButton.Visible = value; } 
+            get { return lblMessage.Text; }
+
+            set { lblMessage.Text = value; }
         }
 
         public bool CreateCourseButtonVisible
@@ -76,6 +84,11 @@ namespace CheckPoint.Views
         public bool BackToHomePageButtonVisible
         {
             set { btnBackToHomePage.Visible = value; }
+        }
+
+        public bool AddNewAppointmentToCourseButtonVisible
+        {
+            set { btnAddNewAppointmentToCourseButton.Visible = value; }
         }
 
         public bool AddExistingAppointmentToCourseButtonVisible
@@ -103,18 +116,6 @@ namespace CheckPoint.Views
             this.Message = "to add existing app";
         }
 
-        public int JobState
-        {
-            get { return (int)Session["job"]; }
-            set { Session["job"] = value; }
-        }
-
-        public string Message
-        {
-            get { return lblMessage.Text; }
-
-            set { lblMessage.Text = value; }
-        }
 
         public event EventHandler<EventArgs> CreateNewCourse;
         public event EventHandler<EventArgs> Continue;

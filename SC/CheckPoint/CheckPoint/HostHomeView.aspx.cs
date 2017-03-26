@@ -47,7 +47,7 @@ namespace CheckPoint.Views
             set { Session["AppointmentId"] = value; }
         }
 
-        public bool IsAppointmentBeingAddedToCourse
+        public bool AddAppointmentToCourseStatus
         {
             get { return (bool)Session["AddingAppointmentToCourse"]; }
             set { Session["AddingAppointmentToCourse"] = value; }
