@@ -12,13 +12,13 @@ namespace CheckPoint.Views
 {
     public partial class CreateCourseView : ViewBase<CreateCoursePresenter> , ICreateCourseView
     {
-        public int CourseId
+        public int SessionCourseId
         {
             get { return (int)Session["CourseId"]; }
             set { Session["CourseId"] = value; }
         }
 
-        public bool AddingAppointmentToCourse
+        public bool AddingNewAppointmentToCourse
         {
             get { return (bool)Session["AddingAppointmentToCourse"]; }
             set { Session["AddingAppointmentToCourse"] = value; }

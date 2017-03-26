@@ -69,7 +69,7 @@ namespace CheckPoint.Views
             get { return Session["LoggedInClient"].ToString(); }
         }
 
-        public bool IsAppointmentBeingAddedToCourse
+        public bool IsThisNewAppointmentBeingAddedToACourse
         {
             get { return (bool)Session["AddingAppointmentToCourse"]; }
             set { Session["AddingAppointmentToCourse"] = value; }

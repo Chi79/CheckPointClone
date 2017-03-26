@@ -33,7 +33,7 @@ namespace CheckPointCommon.ViewInterfaces
         int JobState { get; set; }
         string Message { get;  set; }
 
-        bool IsAppointmentBeingAddedToCourse { get; set; }
+        bool IsThisNewAppointmentBeingAddedToACourse { get; set; }
         int SessionCourseId { get; }
         bool BackToViewCoursesButtonVisible { set; }
 

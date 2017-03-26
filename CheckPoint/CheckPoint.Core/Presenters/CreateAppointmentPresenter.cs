@@ -49,8 +49,23 @@ namespace CheckPointPresenters.Presenters
 
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateAppointmentJobType(DbAction.CreateAppointment);
-            ConfirmAction(job as JobServiceBase);
+            CheckJobStatus();
+        }
+
+        private void CheckJobStatus()
+        {
+            JobServiceBase job;
+
+            bool AppointmentIsBeingAddedToACourse = _view.IsThisNewAppointmentBeingAddedToACourse;
+            if (AppointmentIsBeingAddedToACourse == true)
+            {
+                job = _factory.CreateAppointmentJobType(DbAction.AddNewAppointmentToCourse) as JobServiceBase;
+            }
+            else
+            {
+                job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
+            }
+            ConfirmAction(job);
         }
 
         private void ConfirmAction(JobServiceBase job)
@@ -120,21 +135,16 @@ namespace CheckPointPresenters.Presenters
         private void PerformJob()
         {
             var appointment = ConvertDTOToAppointment();
-            JobServiceBase job;
+            var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
 
-            bool AppointmentIsBeingAddedToCourse = _view.IsAppointmentBeingAddedToCourse;
-            if(AppointmentIsBeingAddedToCourse == true)
+            if (_view.JobState == (int)DbAction.AddNewAppointmentToCourse)
             {
-                job = _factory.CreateAppointmentJobType(DbAction.AddNewAppointmentToCourse) as JobServiceBase;
                 appointment.CourseId = _view.SessionCourseId;
-            }
-            else
-            {
-                job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;  
             }
             job.ItemName = _view.AppointmentName;
             job.PerformTask(appointment);
             UpdateDatabaseWithChanges(job);
+
         }
 
         private APPOINTMENT ConvertDTOToAppointment()
@@ -161,7 +171,7 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckIfAppointmentWasAddedToCourse()
         {
-            bool AppointmentWasAdded = _view.IsAppointmentBeingAddedToCourse;
+            bool AppointmentWasAdded = _view.IsThisNewAppointmentBeingAddedToACourse;
             if(AppointmentWasAdded == true)
             {
                 ContinueWithCourseCreationButtonShow();
