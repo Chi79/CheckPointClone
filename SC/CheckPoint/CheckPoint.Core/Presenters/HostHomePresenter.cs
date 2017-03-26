@@ -37,7 +37,6 @@ namespace CheckPointPresenters.Presenters
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
 
-            //_view.AddAppointmentToCourseStatus = false;
         }
 
         private void OnViewCoursesButtonClicked(object sender, EventArgs e)
