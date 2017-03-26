@@ -113,7 +113,6 @@ namespace CheckPoint.Views
 
         public void RedirectToAddExistingAppointmentToCourse()
         {
-            //this.Message = "to add existing app";
             Response.Redirect("HostHomeView.aspx");
         }
 
