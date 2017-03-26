@@ -71,7 +71,7 @@ namespace CheckPoint.Views
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+          
         }
         public void BindData()
         {
@@ -81,6 +81,31 @@ namespace CheckPoint.Views
         public object SelectedRowValueDataKey
         {
             get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+        }
+
+        public bool ViewCoursesButtonVisible
+        {
+            set { btnViewCourses.Visible = value; }
+        }
+
+        public bool CreateAppointmentButtonVisible
+        {
+            set { btnCreateAppointment.Visible = value; }
+        }
+
+        public bool ManageAppointmentButtonVisible
+        {
+            set { btnManageAppointment.Visible = value; }
+        }
+
+        public bool CreateReportButtonVisible
+        {
+            set { btnCreateReport.Visible = value; }
+        }
+
+        public bool ManageAttendanceButtonVisible
+        {
+            set { btnManageAttendance.Visible = value; }
         }
 
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)

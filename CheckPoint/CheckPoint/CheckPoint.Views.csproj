@@ -121,6 +121,7 @@
     <Content Include="HostCoursesView.aspx" />
     <Content Include="HostHomeView.aspx" />
     <Content Include="Images\activitiesicon1.png" />
+    <Content Include="Images\addselectedappointmentbutton.png" />
     <Content Include="Images\alterprofile2.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\checkpointlogo1.png" />
