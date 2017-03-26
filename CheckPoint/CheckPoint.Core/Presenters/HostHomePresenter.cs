@@ -36,7 +36,12 @@ namespace CheckPointPresenters.Presenters
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
+            _view.AddSelectedAppointmentToCourseButtonClicked += OnAddSelectedAppointmentToCourseButtonClicked;
+        }
 
+        private void OnAddSelectedAppointmentToCourseButtonClicked(object sender, EventArgs e)
+        {
+            _view.Message = "adding appointment...";
         }
 
         private void OnViewCoursesButtonClicked(object sender, EventArgs e)
@@ -106,6 +111,7 @@ namespace CheckPointPresenters.Presenters
             _view.ManageAttendanceButtonVisible = false;
             _view.CreateReportButtonVisible = false;
             _view.ViewCoursesButtonVisible = false;
+            _view.AddSelectedAppointmenButtonVisible = true;
         }
 
         private void FetchData()

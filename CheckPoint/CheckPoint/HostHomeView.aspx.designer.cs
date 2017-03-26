@@ -229,13 +229,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.ImageButton btnCreateReport;
         
         /// <summary>
-        /// buttinsdiv6 control.
+        /// buttonsdiv6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttinsdiv6;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonsdiv6;
         
         /// <summary>
         /// buttonspanel6 control.
@@ -245,5 +245,14 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel buttonspanel6;
+        
+        /// <summary>
+        /// btnAddSelectedAppointmentToCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnAddSelectedAppointmentToCourse;
     }
 }

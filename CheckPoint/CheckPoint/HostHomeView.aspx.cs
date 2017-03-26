@@ -21,6 +21,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         public event EventHandler<EventArgs> CreateReportButtonClicked;
         public event EventHandler<EventArgs> ViewCoursesButtonClicked;
+        public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
 
         public string Message
         {
@@ -170,6 +171,22 @@ namespace CheckPoint.Views
             }
         }
 
+        protected void ViewCourses_Click(object sender, ImageClickEventArgs e)
+        {
+            if (ViewCoursesButtonClicked != null)
+            {
+                ViewCoursesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
+        {
+            if (AddSelectedAppointmentToCourseButtonClicked != null)
+            {
+                AddSelectedAppointmentToCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
         protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -189,19 +206,6 @@ namespace CheckPoint.Views
         public void RedirectToCoursesView()
         {
             Response.Redirect("HostCoursesView.aspx");
-        }
-
-        protected void ViewCourses_Click(object sender, ImageClickEventArgs e)
-        {
-            if(ViewCoursesButtonClicked != null)
-            {
-                ViewCoursesButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
-        {
-
         }
     }
 }
