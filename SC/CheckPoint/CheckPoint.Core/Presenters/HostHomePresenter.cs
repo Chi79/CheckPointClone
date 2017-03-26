@@ -81,12 +81,33 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
+            CheckAddAppointmentStatus();
+
             _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.SessionRowIndex = -1;
             _view.SessionAppointmentId = -1;
             _view.BindData();
         }
+
+        private void CheckAddAppointmentStatus()
+        {
+            bool AddingAppointmentToCourse = _view.AddAppointmentToCourseStatus;
+            if(AddingAppointmentToCourse == true)
+            {
+                DisplayAddToCourseButtons();
+            }
+        }
+
+        private void DisplayAddToCourseButtons()
+        {
+            _view.ManageAppointmentButtonVisible = false;
+            _view.CreateAppointmentButtonVisible = false;
+            _view.ManageAttendanceButtonVisible = false;
+            _view.CreateReportButtonVisible = false;
+            _view.ViewCoursesButtonVisible = false;
+        }
+
         private void FetchData()
         {
             var appointments = _displayService.GetAppointmentsCached<APPOINTMENT>();

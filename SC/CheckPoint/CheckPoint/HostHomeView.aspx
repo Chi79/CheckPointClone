@@ -301,6 +301,12 @@ h3{
       z-index:3;
       margin-top:0.5%;
 }
+.buttons6{
+      float:left;
+      margin-left: 11%;
+      z-index:3;
+      margin-top:0.5%;
+}
 @keyframes buttonsup {
       from { top: 300%; }
       to { top: 0%;}
@@ -835,7 +841,7 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons" 
-            id="ViewCourses" ImageUrl="~/Images/viewcoursesbutton.png" 
+            id="btnViewCourses" ImageUrl="~/Images/viewcoursesbutton.png" 
             OnClick="ViewCourses_Click"
             ToolTip="view all courses" />
         </ContentTemplate>
@@ -849,7 +855,7 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons" 
-            id="update" ImageUrl="~/Images/createappointmentbutton.png" 
+            id="btnCreateAppointment" ImageUrl="~/Images/createappointmentbutton.png" 
             OnClick="createAppointment_Click"
             ToolTip="create a new appointment" />
         </ContentTemplate>
@@ -862,7 +868,7 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons"
-            id="manageappointment"
+            id="btnManageAppointment"
              ImageUrl="~/Images/manageappointmentbutton.png" 
             OnClick="manageAppointment_Click"
             ToolTip="manage the selected appointment"  />
@@ -876,7 +882,7 @@ h3{
         <asp:ImageButton  
             runat="server"
              CssClass="roundedButtons"
-            id="manageattendance" 
+            id="btnManageAttendance" 
             ImageUrl="~/Images/manageattendancebutton1.png"
             OnClick="manageattendance_Click" 
             ToolTip="manage attendance"  />
@@ -890,13 +896,27 @@ h3{
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons" 
-            id="createreport" 
+            id="btnCreateReport" 
             ImageUrl="~/Images/createreportbutton1.png" 
             OnClick="createreport_Click"  
             ToolTip="create a report" />
         </ContentTemplate>
         </asp:UpdatePanel>
 
+        <div id="buttinsdiv6" runat="server" style="z-index:5;" class="buttons6">
+        <asp:UpdatePanel ID="UpdatePanel4" runat="server" > 
+        <ContentTemplate>
+        <asp:ImageButton  
+            runat="server" 
+            CssClass="roundedButtons" 
+            id="btnAddSelectedAppointmentToCourse" 
+            ImageUrl="~/Images/addselectedappointmentbutton.png" 
+            OnClick="createreport_Click"   Visible="false";
+            ToolTip="create a report" />
+        </ContentTemplate>
+        </asp:UpdatePanel>
+
+        </div>
         </div>
         </div>
 

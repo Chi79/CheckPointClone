@@ -17,6 +17,12 @@ namespace CheckPointCommon.ViewInterfaces
 
         bool AddAppointmentToCourseStatus { get; set; }
 
+        bool ViewCoursesButtonVisible { set; }
+        bool CreateAppointmentButtonVisible { set; }
+        bool ManageAppointmentButtonVisible { set; }
+        bool CreateReportButtonVisible { set; }
+        bool ManageAttendanceButtonVisible { set; }
+
         string LoggedInClient { get; }
         string ColumnName { get; set; }
         IEnumerable<object> SetDataSource { set; }
