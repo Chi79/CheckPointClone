@@ -9,13 +9,13 @@ namespace CheckPointCommon.ViewInterfaces
     public interface ICreateCourseView
     {
         //TODO
-        int CourseId { get; set; }
+        int SessionCourseId { get; set; }
         string CourseName { get; }
         string Description { get; }
         string UserName { get; }
         string IsPrivate { get; }
 
-        bool AddingAppointmentToCourse { get; set; }
+        bool AddingNewAppointmentToCourse { get; set; }
 
         bool ContinueButtonVisible { set; }
         bool CreateButtonVisible { set; }

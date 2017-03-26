@@ -138,7 +138,7 @@ namespace CheckPointPresenters.Presenters
             bool IsSavedToDb = saveResult.Result > 0;
             if (IsSavedToDb)
             {
-                SetCourseIdToSession(job);
+                StoreNewCourseIdInSession(job);
                 DisplayAddAppointmentToCourseButtons();
                 _view.Message = "Add an appointment to the course";
             }
@@ -147,24 +147,16 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = "Failed to Save Course " + saveResult.ErrorMessage;
             }
         }
-        public void SetCourseIdToSession(JobServiceBase job)
+        public void StoreNewCourseIdInSession(JobServiceBase job)
         {
-            var newCourse = _courseService.GetCourseByName(job.ItemName) as COURSE;
-            _view.CourseId = newCourse.CourseId;
+            var newlyCreatedCourse = _courseService.GetCourseByName(job.ItemName) as COURSE;
+            _view.SessionCourseId = newlyCreatedCourse.CourseId;
  
         }
-        public void SetAddingAppointmentToCourseStatus()
+        public void UpdateAddingAppointmentToCourseStatus()
         {
-            _view.AddingAppointmentToCourse = true;
-        }
-
-        public void DisplayAddAppointmentToCourseButtons()
-        {
-            _view.AddExistingAppointmentToCourseButtonVisible = true;
-            _view.AddNewAppointmentToCourseButtonVisible = true;
-            _view.CreateCourseButtonVisible = false;
-            _view.BackToHomePageButtonVisible = false;
-        }
+            _view.AddingNewAppointmentToCourse = true;
+        } 
 
         private void DisplayActionMessage(JobServiceBase job)
         {
@@ -180,13 +172,13 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAddExistingAppontmentToCourseClicked(object sender, EventArgs e)
         {
-            SetAddingAppointmentToCourseStatus();
+            UpdateAddingAppointmentToCourseStatus();
             _view.RedirectToAddExistingAppointmentToCourse();
         }
 
         private void OnAddNewAppontmentToCourseClicked(object sender, EventArgs e)
         {
-            SetAddingAppointmentToCourseStatus();
+            UpdateAddingAppointmentToCourseStatus();
             _view.RedirectToAddNewAppointmentToCourse();
         }
 
@@ -215,6 +207,14 @@ namespace CheckPointPresenters.Presenters
             _view.CreateButtonVisible = true;
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
+        }
+
+        public void DisplayAddAppointmentToCourseButtons()
+        {
+            _view.AddExistingAppointmentToCourseButtonVisible = true;
+            _view.AddNewAppointmentToCourseButtonVisible = true;
+            _view.CreateCourseButtonVisible = false;
+            _view.BackToHomePageButtonVisible = false;
         }
     }
 }
