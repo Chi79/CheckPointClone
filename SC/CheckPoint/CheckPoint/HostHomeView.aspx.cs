@@ -108,6 +108,11 @@ namespace CheckPoint.Views
             set { btnManageAttendance.Visible = value; }
         }
 
+        public bool AddSelectedAppointmenButtonVisible
+        {
+            set { btnAddSelectedAppointmentToCourse.Visible = value; }
+        }
+
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RowSelected != null)
@@ -192,6 +197,11 @@ namespace CheckPoint.Views
             {
                 ViewCoursesButtonClicked(this, EventArgs.Empty);
             }
+        }
+
+        protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
     }
 }

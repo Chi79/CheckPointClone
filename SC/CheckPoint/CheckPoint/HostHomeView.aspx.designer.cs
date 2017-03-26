@@ -238,12 +238,12 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttinsdiv6;
         
         /// <summary>
-        /// UpdatePanel4 control.
+        /// buttonspanel6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
+        protected global::System.Web.UI.UpdatePanel buttonspanel6;
     }
 }
