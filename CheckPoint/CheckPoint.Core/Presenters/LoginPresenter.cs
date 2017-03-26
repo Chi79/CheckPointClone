@@ -50,6 +50,7 @@ namespace CheckPointPresenters.Presenters
             if(loginAttemptSuccessful)
             {
                 _view.LoggedInClient = username;
+                _view.AddAppointmentToCourseStatus = false;
 
                 _clientType = (ClientType)loginResult.ClientType;
                 CheckClientType();

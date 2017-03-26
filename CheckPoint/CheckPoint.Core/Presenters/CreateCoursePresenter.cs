@@ -153,9 +153,9 @@ namespace CheckPointPresenters.Presenters
             _view.SessionCourseId = newlyCreatedCourse.CourseId;
  
         }
-        public void UpdateAddingAppointmentToCourseStatus()
+        public void UpdateAddAppointmentToCourseStatus()
         {
-            _view.AddingNewAppointmentToCourse = true;
+            _view.AddAppointmentToCourseStatus = true;
         } 
 
         private void DisplayActionMessage(JobServiceBase job)
@@ -172,13 +172,13 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAddExistingAppontmentToCourseClicked(object sender, EventArgs e)
         {
-            UpdateAddingAppointmentToCourseStatus();
+            UpdateAddAppointmentToCourseStatus();
             _view.RedirectToAddExistingAppointmentToCourse();
         }
 
         private void OnAddNewAppontmentToCourseClicked(object sender, EventArgs e)
         {
-            UpdateAddingAppointmentToCourseStatus();
+            UpdateAddAppointmentToCourseStatus();
             _view.RedirectToAddNewAppointmentToCourse();
         }
 

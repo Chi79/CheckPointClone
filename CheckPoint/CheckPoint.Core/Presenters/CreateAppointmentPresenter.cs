@@ -56,14 +56,14 @@ namespace CheckPointPresenters.Presenters
         {
             JobServiceBase job;
 
-            bool AppointmentIsBeingAddedToACourse = _view.IsThisNewAppointmentBeingAddedToACourse;
+            bool AppointmentIsBeingAddedToACourse = _view.AddAppointmentToCourseStatus;
             if (AppointmentIsBeingAddedToACourse == true)
             {
                 job = _factory.CreateAppointmentJobType(DbAction.AddNewAppointmentToCourse) as JobServiceBase;
             }
             else
             {
-                job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
+                job = _factory.CreateAppointmentJobType(DbAction.CreateAppointment) as JobServiceBase;
             }
             ConfirmAction(job);
         }
@@ -171,7 +171,7 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckIfAppointmentWasAddedToCourse()
         {
-            bool AppointmentWasAdded = _view.IsThisNewAppointmentBeingAddedToACourse;
+            bool AppointmentWasAdded = _view.AddAppointmentToCourseStatus;
             if(AppointmentWasAdded == true)
             {
                 ContinueWithCourseCreationButtonShow();
@@ -196,7 +196,13 @@ namespace CheckPointPresenters.Presenters
 
         private void OnBackToViewCoursesButtonClicked(object sender, EventArgs e)
         {
+            ResetAddAppointmentStatus();
             _view.RedirectToViewCourses();
+   
+        }
+        private void ResetAddAppointmentStatus()
+        {
+            _view.AddAppointmentToCourseStatus = false;
         }
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)

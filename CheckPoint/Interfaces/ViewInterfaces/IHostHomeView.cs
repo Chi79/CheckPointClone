@@ -15,7 +15,7 @@ namespace CheckPointCommon.ViewInterfaces
         int? SessionRowIndex { get; set; }
         int? SessionAppointmentId { get; set; }
 
-        bool IsAppointmentBeingAddedToCourse { get; set; }
+        bool AddAppointmentToCourseStatus { get; set; }
 
         string LoggedInClient { get; }
         string ColumnName { get; set; }

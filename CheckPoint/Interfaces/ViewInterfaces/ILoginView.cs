@@ -13,6 +13,7 @@ namespace CheckPointCommon.ViewInterfaces
         string Message { set; }
 
         string LoggedInClient { get; set; }
+        bool AddAppointmentToCourseStatus { set; }
 
         void RedirectToUserHomePage();
         void RedirectToHostHomePage();
