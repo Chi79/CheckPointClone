@@ -31,7 +31,7 @@ namespace CheckPointPresenters.Presenters
 
         public override void FirstTimeInit()
         {
-
+            ResetAddAppointmentStatus();
         }
 
         private void _loginView_OnLoginButtonClicked(object sender, EventArgs e)
@@ -50,8 +50,7 @@ namespace CheckPointPresenters.Presenters
             if(loginAttemptSuccessful)
             {
                 _view.LoggedInClient = username;
-                _view.AddAppointmentToCourseStatus = false;
-
+    
                 _clientType = (ClientType)loginResult.ClientType;
                 CheckClientType();
             }
@@ -72,6 +71,10 @@ namespace CheckPointPresenters.Presenters
                     _view.RedirectToHostHomePage();
                     break;
             }
-        }   
+        } 
+        private void ResetAddAppointmentStatus()
+        {
+            _view.AddAppointmentToCourseStatus = false;
+        }  
     } 
 }
