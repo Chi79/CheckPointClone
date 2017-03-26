@@ -303,7 +303,7 @@ h3{
 }
 .buttons6{
       float:left;
-      margin-left: 11%;
+      margin-left: 55%;
       z-index:3;
       margin-top:0.5%;
 }
@@ -903,16 +903,17 @@ h3{
         </ContentTemplate>
         </asp:UpdatePanel>
 
-        <div id="buttinsdiv6" runat="server" style="z-index:5;" class="buttons6">
+        <div id="buttonsdiv6" runat="server" style="z-index:5;" class="buttons6">
         <asp:UpdatePanel ID="buttonspanel6" runat="server" > 
         <ContentTemplate>
-        <asp:ImageButton  
-            runat="server" 
-            CssClass="roundedButtons" 
-            id="btnAddSelectedAppointmentToCourse" 
-            ImageUrl="~/Images/addselectedappointmentbutton.png" 
-            OnClick="btnAddSelectedAppointmentToCourse_Click"   Visible="false";
-            ToolTip="create a report" />
+        <asp:ImageButton
+             runat="server" 
+             CssClass="roundedButtons"
+             id="btnAddSelectedAppointmentToCourse" 
+             ImageUrl="~/Images/addselectedappointmentbutton.png" 
+             OnClick="btnAddSelectedAppointmentToCourse_Click"
+             ToolTip="add the selected appointment to the course"
+             Visible="false" />
         </ContentTemplate>
         </asp:UpdatePanel>
 

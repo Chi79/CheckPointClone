@@ -45,5 +45,7 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> CreateReportButtonClicked;
 
         event EventHandler<EventArgs> ViewCoursesButtonClicked;
+        event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
+
     }
 }
