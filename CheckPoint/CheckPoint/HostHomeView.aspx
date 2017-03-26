@@ -904,14 +904,14 @@ h3{
         </asp:UpdatePanel>
 
         <div id="buttinsdiv6" runat="server" style="z-index:5;" class="buttons6">
-        <asp:UpdatePanel ID="UpdatePanel4" runat="server" > 
+        <asp:UpdatePanel ID="buttonspanel6" runat="server" > 
         <ContentTemplate>
         <asp:ImageButton  
             runat="server" 
             CssClass="roundedButtons" 
             id="btnAddSelectedAppointmentToCourse" 
             ImageUrl="~/Images/addselectedappointmentbutton.png" 
-            OnClick="createreport_Click"   Visible="false";
+            OnClick="btnAddSelectedAppointmentToCourse_Click"   Visible="false";
             ToolTip="create a report" />
         </ContentTemplate>
         </asp:UpdatePanel>

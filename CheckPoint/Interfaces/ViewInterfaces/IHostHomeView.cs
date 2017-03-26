@@ -22,6 +22,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool ManageAppointmentButtonVisible { set; }
         bool CreateReportButtonVisible { set; }
         bool ManageAttendanceButtonVisible { set; }
+        bool AddSelectedAppointmenButtonVisible { set; }
 
         string LoggedInClient { get; }
         string ColumnName { get; set; }
