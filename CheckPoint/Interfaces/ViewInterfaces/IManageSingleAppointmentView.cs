@@ -39,10 +39,14 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
 
+        bool AddAppointmentToCourseButtonVisible { set; }
+
         int JobState { get; set; }
 
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
+
+        event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
 
         event EventHandler<EventArgs> UpdateAppointment;
         event EventHandler<EventArgs> DeleteAppointment;

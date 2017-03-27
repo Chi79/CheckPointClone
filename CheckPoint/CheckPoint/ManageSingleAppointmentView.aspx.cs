@@ -122,6 +122,12 @@ namespace CheckPoint.Views
         {
             set { btnNo.Visible = value; }
         }
+
+        public bool AddAppointmentToCourseButtonVisible
+        {
+            set { btnAddThisAppointmentToTheCourse.Visible = value; }
+        }
+
         public int JobState
         {
             get { return (int)Session["job"]; }
@@ -141,6 +147,7 @@ namespace CheckPoint.Views
 
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
+        public event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
 
         public event EventHandler<EventArgs> UpdateAppointment;
         public event EventHandler<EventArgs> DeleteAppointment;
@@ -197,6 +204,14 @@ namespace CheckPoint.Views
             if(BackToHomePage != null)
             {
                 BackToHomePage(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnAddThisAppointmentToTheCourse_Click(object sender, EventArgs e)
+        {
+            if(AddAppointmentToCourseButtonClicked != null)
+            {
+                AddAppointmentToCourseButtonClicked(this, EventArgs.Empty);
             }
         }
     }
