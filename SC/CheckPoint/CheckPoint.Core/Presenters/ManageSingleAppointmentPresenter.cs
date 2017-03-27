@@ -214,7 +214,6 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = "Failed to save changes!" + saveResult.ErrorMessage;
                 ContinueButtonsShow();
             }
-
         }
 
         private void CheckIfAppointmentWasAddedToCourse()
