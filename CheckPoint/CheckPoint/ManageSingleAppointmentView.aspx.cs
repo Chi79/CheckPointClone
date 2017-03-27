@@ -115,11 +115,11 @@ namespace CheckPoint.Views
         {
             set { txtEndTime.ReadOnly = value; }
         }
-        public bool IsCancelledReadOnly
+        public bool IsCancelledEnabled
         {
             set { ddlIsCancelled.Enabled = value; }
         }
-        public bool IsObligatoryReadOnly
+        public bool IsObligatoryEnabled
         {
             set { ddlIsObligatory.Enabled = value; }
         }
@@ -174,6 +174,15 @@ namespace CheckPoint.Views
             set { btnAddThisAppointmentToTheCourse.Visible = value; }
         }
 
+        public bool BackToCoursesButtonVisible
+        {
+            set { btnBackToCourses.Visible = value; }
+        }
+        public bool SelectAnotherAppointmentButtonVisible
+        {
+            set { btnSelectDifferentAppointment.Visible = value; }
+        }
+
         public int JobState
         {
             get { return (int)Session["job"]; }
@@ -189,11 +198,18 @@ namespace CheckPoint.Views
         {
             Response.Redirect("HostHomeView.aspx");
         }
+        public void RedirectToViewCourses()
+        {
+            Response.Redirect("HostCoursesView.aspx");
+        }
 
 
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
+
+        public event EventHandler<EventArgs> BackToCoursesButtonClicked;
+        public event EventHandler<EventArgs> SelectAnotherAppointmentButtonClicked;
 
         public event EventHandler<EventArgs> UpdateAppointment;
         public event EventHandler<EventArgs> DeleteAppointment;
@@ -258,6 +274,23 @@ namespace CheckPoint.Views
             if(AddAppointmentToCourseButtonClicked != null)
             {
                 AddAppointmentToCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+
+        protected void btnSelectDifferentAppointment_Click(object sender, EventArgs e)
+        {
+            if(SelectAnotherAppointmentButtonClicked != null)
+            {
+                SelectAnotherAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnBackToCourses_Click(object sender, EventArgs e)
+        {
+            if (BackToCoursesButtonClicked != null)
+            {
+                BackToCoursesButtonClicked(this, EventArgs.Empty);
             }
         }
     }

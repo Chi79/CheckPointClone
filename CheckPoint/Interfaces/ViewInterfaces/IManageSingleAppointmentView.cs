@@ -30,6 +30,8 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectToHostHomeView();
 
+        void RedirectToViewCourses();
+
         string Message { get; set; }
 
         bool ContinueButtonVisible { set; }
@@ -41,14 +43,16 @@ namespace CheckPointCommon.ViewInterfaces
         bool BackToHomePageButtonVisible { set; }
 
         bool AddAppointmentToCourseButtonVisible { set; }
+        bool BackToCoursesButtonVisible { set; }
+        bool SelectAnotherAppointmentButtonVisible { set; }
 
         bool AppointmentNameReadOnly { set; }
         bool DateReadOnly   { set; } 
         bool AppointmentDescriptionReadOnly { set; }
         bool StartTimeReadOnly { set; }
         bool EndDateReadOnly { set; }
-        bool IsCancelledReadOnly { set; }
-        bool IsObligatoryReadOnly { set; }
+        bool IsCancelledEnabled { set; }
+        bool IsObligatoryEnabled { set; }
         bool PostalCodeReadOnly { set; }
         bool AddressReadOnly { set; }
         bool EndTimeReadOnly { set; }
@@ -59,6 +63,8 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> NoButtonClicked;
 
         event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
+        event EventHandler<EventArgs> BackToCoursesButtonClicked;
+        event EventHandler<EventArgs> SelectAnotherAppointmentButtonClicked;
 
         event EventHandler<EventArgs> UpdateAppointment;
         event EventHandler<EventArgs> DeleteAppointment;

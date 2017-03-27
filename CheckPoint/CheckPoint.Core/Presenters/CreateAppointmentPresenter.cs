@@ -207,6 +207,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)
         {
+            ResetAddAppointmentStatus();
             _view.RedirectToHomePage();
         }
 

@@ -175,7 +175,7 @@
 }
 #btnAddThisAppointmentToTheCourse{
     position: absolute;
-    top:34em;
+    top:29em;
     left:9em;
     width:350px;
 }
@@ -186,6 +186,19 @@
     top:28em;
     left:16em;
 }
+#btnBackToCourses{
+    position: absolute;
+    width:250px;
+    top:29em;
+    left:12em;
+}
+#btnSelectDifferentAppointment{
+    position: absolute;
+    width:250px;
+    top:31em;
+    left:12em;
+}
+
 
 .auto-style1 {
     width: 42%;
@@ -223,9 +236,6 @@
         <asp:Label ID="lblDate" runat="server" Text="Date"></asp:Label>
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
 
-<%--         <asp:Label ID="lblCourseId" runat="server" Text="CoursedId"></asp:Label>
-        <asp:TextBox ID="txtCourseId" runat="server"></asp:TextBox>--%>
-
 
         <asp:Label ID="lblStartTime" runat="server" Text="Start Time"></asp:Label>
         <asp:TextBox ID="txtStartTime" runat="server"></asp:TextBox>
@@ -261,7 +271,10 @@
         <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="47px" />
         <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="45px" />
         <asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
-        <asp:Button ID="btnAddThisAppointmentToTheCourse" runat="server" OnClick="btnAddThisAppointmentToTheCourse_Click" Text="Add this appointment to the course" Visible="False" />
+        <asp:Button ID="btnAddThisAppointmentToTheCourse" runat="server" OnClick="btnAddThisAppointmentToTheCourse_Click" Text="Add This Appointment To The Course" Visible="False" />
+        <asp:Button ID="btnBackToCourses" runat="server" OnClick="btnBackToCourses_Click" Text="Back To View Courses" Visible="False" />
+        <asp:Button ID="btnSelectDifferentAppointment" runat="server" OnClick="btnSelectDifferentAppointment_Click" Text="Select A Different Appointment" Visible="False" />
+
        </div>
  </div>
 </form>
