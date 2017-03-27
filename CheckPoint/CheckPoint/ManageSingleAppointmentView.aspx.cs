@@ -12,16 +12,16 @@ namespace CheckPoint.Views
 {
     public partial class ManageSingleAppointmentView : ViewBase<ManageSingleAppointmentPresenter>, IManageSingleAppointmentView
     {
-   
-        public string SelectedAppointmentName
+
+        public string UserName
         {
-            get { return (string)Session["SelectedAppointmentName"]; }
-            set { Session["SelectedAppointmentName"] = value; }
+            get { return Session["LoggedInClient"].ToString(); }
         }
-        public bool AddAppointmentToCourseStatus
+
+        public int JobState
         {
-            get { return (bool)Session["AddingAppointmentToCourse"]; }
-            set { Session["AddingAppointmentToCourse"] = value; }
+            get { return (int)Session["job"]; }
+            set { Session["job"] = value; }
         }
 
         public int SessionCourseId
@@ -35,16 +35,22 @@ namespace CheckPoint.Views
             set { Session["AppointmentId"] = value; }
         }
 
+        public string SelectedAppointmentName
+        {
+            get { return (string)Session["SelectedAppointmentName"]; }
+            set { Session["SelectedAppointmentName"] = value; }
+        }
+
+        public bool AddAppointmentToCourseStatus
+        {
+            get { return (bool)Session["AddingAppointmentToCourse"]; }
+            set { Session["AddingAppointmentToCourse"] = value; }
+        }
+
         public string AppointmentName
         {
             get { return txtAppointmentName.Text; }
             set { txtAppointmentName.Text = value; }
-        }
-
-        public string Date
-        {
-            get { return txtDate.Text; }
-            set { txtDate.Text = value; }
         }
 
         public string Description
@@ -53,10 +59,34 @@ namespace CheckPoint.Views
             set { txtAppointmentDescription.Text = value; }
         }
 
+        public string Date
+        {
+            get { return txtDate.Text; }
+            set { txtDate.Text = value; }
+        }
+
         public string StartTime
         {
             get { return txtStartTime.Text; }
             set { txtStartTime.Text = value; }
+        }
+
+        public string EndTime
+        {
+            get { return txtEndTime.Text; }
+            set { txtEndTime.Text = value; }
+        }
+
+        public string PostalCode
+        {
+            get { return txtPostalCode.Text; }
+            set { txtPostalCode.Text = value; }
+        }
+
+        public string Address
+        {
+            get { return txtAddress.Text; }
+            set { txtAddress.Text = value; }
         }
 
         public string IsCancelled
@@ -77,23 +107,6 @@ namespace CheckPoint.Views
             set { lblMessage.Text = value; }
         }
 
-        public string PostalCode
-        {
-            get { return txtPostalCode.Text; }
-            set { txtPostalCode.Text = value; }
-        }
-
-        public string Address
-        {
-            get { return txtAddress.Text; }
-            set { txtAddress.Text = value; }
-        }
-
-        public string EndTime
-        {
-            get { return txtEndTime.Text; }
-            set { txtEndTime.Text = value; }
-        }
 
         public bool AppointmentNameReadOnly
         {
@@ -136,10 +149,7 @@ namespace CheckPoint.Views
             set { txtEndTime.ReadOnly = value; }
         }
 
-        public string UserName
-        {
-            get { return Session["LoggedInClient"].ToString(); }
-        }
+
 
         public bool ContinueButtonVisible
         {
@@ -183,11 +193,7 @@ namespace CheckPoint.Views
             set { btnSelectDifferentAppointment.Visible = value; }
         }
 
-        public int JobState
-        {
-            get { return (int)Session["job"]; }
-            set { Session["job"] = value; }
-        }
+
 
         public void RedirectAfterClickEvent()
         {
