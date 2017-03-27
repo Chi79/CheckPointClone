@@ -57,7 +57,26 @@ namespace CheckPointPresenters.Presenters
 
         public override void FirstTimeInit()
         {
+            CheckAddAppointentToCourseStatus();
+
             DisplaySelectedAppointmentData();
+        }
+
+        private void CheckAddAppointentToCourseStatus()
+        {
+            bool AddingAppointmentToCourse = _view.AddAppointmentToCourseStatus;
+            if(AddingAppointmentToCourse == true)
+            {
+                DisplayAddToCourseButtons();
+            }
+        }
+
+        private void DisplayAddToCourseButtons()
+        {
+            _view.UpdateButtonVisible = false;
+            _view.DeleteButtonVisible = false;
+            _view.ContinueButtonVisible = false;
+            // showAddThisAppointmentToCourseButton
         }
 
         private void OnReloadPageEvent(object sender, EventArgs e)

@@ -41,7 +41,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAddSelectedAppointmentToCourseButtonClicked(object sender, EventArgs e)
         {
-            _view.Message = "adding appointment...";
+            _view.RedirectToManageAppointment();
         }
 
         private void OnViewCoursesButtonClicked(object sender, EventArgs e)

@@ -10,8 +10,11 @@ namespace CheckPointCommon.ViewInterfaces
     {
         //TODO
         string SelectedAppointmentName { get; set; }
+
+        bool AddAppointmentToCourseStatus { get; set; }
+        int SessionCourseId { get; }
+
         int AppointmentId { get; set; }
-        //string CourseId { get; set; }
         string StartTime { get; set; }
         string EndTime { get; set; }
         string PostalCode { get; set; }
