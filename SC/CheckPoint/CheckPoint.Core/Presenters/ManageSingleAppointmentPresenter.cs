@@ -47,9 +47,13 @@ namespace CheckPointPresenters.Presenters
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePage += OnBackToHomePageClicked;
             _view.AddAppointmentToCourseButtonClicked += OnAddAppointmentToCourseButtonClicked;
+            _view.BackToCoursesButtonClicked += OnBackToCoursesButtonClicked;
+            _view.SelectAnotherAppointmentButtonClicked += OnSelectAnotherAppointmentButtonClicked;
+
 
             _client = _view.UserName;
         }
+
 
         private void OnAddAppointmentToCourseButtonClicked(object sender, EventArgs e)
         {
@@ -60,6 +64,30 @@ namespace CheckPointPresenters.Presenters
         private void OnBackToHomePageClicked(object sender, EventArgs e)
         {
             _view.RedirectToHostHomeView();
+        }
+
+        private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            var job = _factory.CreateAppointmentJobType(DbAction.UpdateAppointment);
+            ConfirmAction(job as JobServiceBase);
+        }
+
+        private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            var job = _factory.CreateAppointmentJobType(DbAction.DeleteAppointment);
+            ConfirmAction(job as JobServiceBase);
+        }
+
+        private void OnSelectAnotherAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            ResetAddAppointmentStatus();
+            _view.RedirectToHostHomeView();
+        }
+
+        private void OnBackToCoursesButtonClicked(object sender, EventArgs e)
+        {
+            ResetAddAppointmentStatus();
+            _view.RedirectToViewCourses();
         }
 
         public override void FirstTimeInit()
@@ -86,17 +114,6 @@ namespace CheckPointPresenters.Presenters
             DisplaySelectedAppointmentData();
         }
 
-        private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
-        {
-            var job = _factory.CreateAppointmentJobType(DbAction.UpdateAppointment);
-            ConfirmAction(job as JobServiceBase);
-        }
-
-        private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
-        {
-            var job = _factory.CreateAppointmentJobType(DbAction.DeleteAppointment);
-            ConfirmAction(job as JobServiceBase);
-        }
 
         private void ConfirmAction(JobServiceBase job)
         {
@@ -108,8 +125,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
-            DecisionButtonsHide();
-            _view.Message = "Ready.";
+            CheckIfAddingAppointmentIsRejected();
         }
 
         private void _OnYesButtonClicked(object sender, EventArgs e)
@@ -214,6 +230,25 @@ namespace CheckPointPresenters.Presenters
             }
         }
 
+        private void CheckIfAddingAppointmentIsRejected()
+        {
+            bool AppointmentAddedIsRejected = _view.AddAppointmentToCourseStatus;
+            if (AppointmentAddedIsRejected == true)
+            {
+                BackToCourseCreationOrSelectDifferentAppointmentButtonsShow();
+            }
+            else
+            {
+                DecisionButtonsHide();
+                _view.Message = "Ready.";
+            }
+        }
+
+        private void ResetAddAppointmentStatus()
+        {
+            _view.AddAppointmentToCourseStatus = false;
+        }
+
         private void DisplayActionMessage(JobServiceBase job)
         {
             _view.Message = job.CompletedMessage;
@@ -234,7 +269,6 @@ namespace CheckPointPresenters.Presenters
             _view.PostalCode = selectedAppointment.PostalCode.ToString();
             _view.IsObligatory = selectedAppointment.IsObligatory.ToString();
             _view.IsCancelled = selectedAppointment.IsCancelled.ToString();
-
         }
 
         private void ContinueButtonsShow()
@@ -282,6 +316,15 @@ namespace CheckPointPresenters.Presenters
             _view.BackToHomePageButtonVisible = false;
             _view.ContinueButtonVisible = false;
             _view.AddAppointmentToCourseButtonVisible = false;
+            _view.BackToCoursesButtonVisible = true;
+            //TODO show continue managing course button instead - finish manage course view first.
+        }
+
+        private void BackToCourseCreationOrSelectDifferentAppointmentButtonsShow()
+        {
+            _view.BackToCoursesButtonVisible = true;
+            _view.SelectAnotherAppointmentButtonVisible = true;
+            _view.AddAppointmentToCourseButtonVisible = false;
         }
 
         private void SetFieldsToReadOnly()
@@ -291,8 +334,8 @@ namespace CheckPointPresenters.Presenters
             _view.DateReadOnly = true;
             _view.StartTimeReadOnly = true;
             _view.EndTimeReadOnly = true;
-            _view.IsCancelledReadOnly = false;
-            _view.IsObligatoryReadOnly = false;
+            _view.IsCancelledEnabled = false;
+            _view.IsObligatoryEnabled = false;
             _view.PostalCodeReadOnly = true;
             _view.AddressReadOnly = true;
         }
