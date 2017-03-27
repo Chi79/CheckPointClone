@@ -30,7 +30,7 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSource
         {
-            set { gvHostTable.DataSource = value;  }
+            set { gvHostTable.DataSource = value; }
         }
         public IEnumerable<object> SetDataSource2
         {
