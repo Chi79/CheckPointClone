@@ -12,20 +12,19 @@ namespace CheckPoint.Views
 {
     public partial class CreateAppointmentView : ViewBase<CreateAppointmentPresenter> , ICreateAppointmentView
     {
-
         public string AppointmentName
         {
             get { return txtAppointmentName.Text; }
         }
 
-        public string Date
-        {
-            get { return txtDate.Text; }
-        }
-
         public string Description
         {
             get { return txtAppointmentDescription.Text; }
+        }
+
+        public string Date
+        {
+            get { return txtDate.Text; }
         }
 
         public string StartTime
@@ -35,6 +34,16 @@ namespace CheckPoint.Views
         public string EndTime
         {
             get { return txtEndTime.Text; }
+        }
+
+        public string PostalCode
+        {
+            get { return txtPostalCode.Text; }
+        }
+
+        public string Address
+        {
+            get { return txtAddress.Text; }
         }
 
         public string IsCancelled
@@ -54,15 +63,6 @@ namespace CheckPoint.Views
             set { lblMessage.Text = value; }
         }
 
-        public string PostalCode
-        {
-            get { return txtPostalCode.Text; }
-        }
-
-        public string Address
-        {
-            get { return txtAddress.Text; }
-        }
 
         public string UserName
         {

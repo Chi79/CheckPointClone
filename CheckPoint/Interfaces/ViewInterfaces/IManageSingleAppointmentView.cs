@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CheckPointCommon.ViewInterfaces;
 
 namespace CheckPointCommon.ViewInterfaces
 {
-    public interface IManageSingleAppointmentView
+    public interface IManageSingleAppointmentView 
     {
         //TODO
         string SelectedAppointmentName { get; set; }

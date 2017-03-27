@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CheckPointCommon.ViewInterfaces;
 
 namespace CheckPointCommon.ViewInterfaces
 {
-    public interface ICreateAppointmentView
+    public interface ICreateAppointmentView 
     {
-  
+
         string StartTime { get; }
         string EndTime { get; }
         string PostalCode { get; }
-        string AppointmentName {get;}
+        string AppointmentName { get; }
         string Description { get; }
         string Address { get; }
         string Date { get; }
         string UserName { get; }
         string IsCancelled { get; }
         string IsObligatory { get; }
+
+
         bool ContinueButtonVisible { set; }
         bool CreateButtonVisible { set; }
         bool YesButtonVisible { set; }
