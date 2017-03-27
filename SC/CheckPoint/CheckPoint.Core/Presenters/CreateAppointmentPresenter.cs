@@ -137,12 +137,10 @@ namespace CheckPointPresenters.Presenters
             var appointment = ConvertDTOToAppointment();
             var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
 
-            if (_view.JobState == (int)DbAction.AddNewAppointmentToCourse)
-            {
-                appointment.CourseId = _view.SessionCourseId;
-            }
+            job.CourseId = _view.SessionCourseId;
             job.ItemName = _view.AppointmentName;
             job.PerformTask(appointment);
+
             UpdateDatabaseWithChanges(job);
 
         }

@@ -24,7 +24,7 @@ namespace CheckPointPresenters.Presenters
         private readonly IFactory _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
-        private string _client; 
+
 
         public ManageSingleAppointmentPresenter(
                                           IManageSingleAppointmentView manageAppointmentView,
@@ -37,7 +37,6 @@ namespace CheckPointPresenters.Presenters
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
             _factory = factory;
-
             _displayService = displayService;
 
             _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
@@ -50,8 +49,6 @@ namespace CheckPointPresenters.Presenters
             _view.BackToCoursesButtonClicked += OnBackToCoursesButtonClicked;
             _view.SelectAnotherAppointmentButtonClicked += OnSelectAnotherAppointmentButtonClicked;
 
-
-            _client = _view.UserName;
         }
 
 
@@ -59,11 +56,6 @@ namespace CheckPointPresenters.Presenters
         {
             var job = _factory.CreateAppointmentJobType(DbAction.AddExistingAppointmentToCourse);
             ConfirmAction(job as JobServiceBase);
-        }
-
-        private void OnBackToHomePageClicked(object sender, EventArgs e)
-        {
-            _view.RedirectToHostHomeView();
         }
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
@@ -78,9 +70,13 @@ namespace CheckPointPresenters.Presenters
             ConfirmAction(job as JobServiceBase);
         }
 
+        private void OnBackToHomePageClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToHostHomeView();
+        }
+
         private void OnSelectAnotherAppointmentButtonClicked(object sender, EventArgs e)
         {
-            ResetAddAppointmentStatus();
             _view.RedirectToHostHomeView();
         }
 
@@ -109,7 +105,8 @@ namespace CheckPointPresenters.Presenters
 
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
-            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);  //refresh cache
+
+            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_view.UserName);  //refresh cache
             _view.RedirectAfterClickEvent();
             DisplaySelectedAppointmentData();
         }
@@ -178,15 +175,12 @@ namespace CheckPointPresenters.Presenters
 
         private void PerformJob()
         {
-            var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
-            job.ItemId = _view.AppointmentId;
             var appointment = ConvertDTOToAppointment();
 
-            if (_view.JobState == (int)DbAction.AddExistingAppointmentToCourse)
-            {
-                appointment.CourseId = _view.SessionCourseId;
-            }
+            var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
 
+            job.ItemId = _view.AppointmentId;
+            job.CourseId = _view.SessionCourseId;
             job.PerformTask(appointment);
 
             UpdateDatabaseWithChanges(job as JobServiceBase);

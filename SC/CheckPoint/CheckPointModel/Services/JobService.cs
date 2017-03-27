@@ -17,6 +17,8 @@ namespace CheckPointModel.Services
         public virtual string ConfirmationMessage { get; }
         public virtual string CompletedMessage { get; }
         public virtual int ItemId { get; set; }
+        public virtual int CourseId { get; set; }
+
 
 
         public virtual void PerformTask(object appointment)
@@ -88,9 +90,7 @@ namespace CheckPointModel.Services
         public override void PerformTask(object appointment)
         {
             var appointmentToUpdate = _handler.GetAppointmentById(ItemId) as APPOINTMENT;
-            var newAppointment = appointment as APPOINTMENT;
-
-            appointmentToUpdate.CourseId = newAppointment.CourseId;
+            appointmentToUpdate.CourseId = this.CourseId;
         }
 
         public override SaveResult SaveChanges()
@@ -126,7 +126,12 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object appointment)
         {
+
+            var appointmentToCreate = appointment as APPOINTMENT;
+            appointmentToCreate.CourseId = this.CourseId;
+
             _handler.Create(appointment);
+
         }
         public override SaveResult SaveChanges()
         {
