@@ -46,8 +46,15 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonClicked += _OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePage += OnBackToHomePageClicked;
+            _view.AddAppointmentToCourseButtonClicked += OnAddAppointmentToCourseButtonClicked;
 
             _client = _view.UserName;
+        }
+
+        private void OnAddAppointmentToCourseButtonClicked(object sender, EventArgs e)
+        {
+            var job = _factory.CreateAppointmentJobType(DbAction.AddExistingAppointmentToCourse);
+            ConfirmAction(job as JobServiceBase);
         }
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)
@@ -76,7 +83,7 @@ namespace CheckPointPresenters.Presenters
             _view.UpdateButtonVisible = false;
             _view.DeleteButtonVisible = false;
             _view.ContinueButtonVisible = false;
-            // showAddThisAppointmentToCourseButton
+            _view.AddAppointmentToCourseButtonVisible = true;
         }
 
         private void OnReloadPageEvent(object sender, EventArgs e)
@@ -165,6 +172,11 @@ namespace CheckPointPresenters.Presenters
             var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
             job.ItemId = _view.AppointmentId;
             var appointment = ConvertDTOToAppointment();
+
+            if (_view.JobState == (int)DbAction.AddExistingAppointmentToCourse)
+            {
+                appointment.CourseId = _view.SessionCourseId;
+            }
 
             job.PerformTask(appointment);
 

@@ -63,6 +63,45 @@ namespace CheckPointModel.Services
         }
     }
 
+    public class AddExistingAppointmentToCourseJob : JobServiceBase
+    {
+
+        private IHandleAppointments _handler;
+        public AddExistingAppointmentToCourseJob(IHandleAppointments handler)
+        {
+            _handler = handler;
+        }
+        public override DbAction Actiontype
+        {
+            get { return DbAction.AddExistingAppointmentToCourse; }
+            set { Actiontype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to add this appointment to the course! Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "Appointment Added Succesfully!"; }
+        }
+
+        public override void PerformTask(object appointment)
+        {
+            var appointmentToUpdate = _handler.GetAppointmentById(ItemId) as APPOINTMENT;
+            var newAppointment = appointment as APPOINTMENT;
+
+            appointmentToUpdate.CourseId = newAppointment.CourseId;
+        }
+
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+    }
+
+
     public class AddAppointmentToCourseJob : JobServiceBase
     {
         private IHandleAppointments _handler;
@@ -121,7 +160,7 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object appointment)
         {
-            var appointmentToDelete = _handler.GetAppointmentByName(ItemName);
+            var appointmentToDelete = _handler.GetAppointmentById(ItemId);
             _handler.Delete(appointmentToDelete);
         }
         public override SaveResult SaveChanges()
