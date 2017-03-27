@@ -75,15 +75,8 @@ namespace CheckPointPresenters.Presenters
             if(AddingAppointmentToCourse == true)
             {
                 DisplayAddToCourseButtons();
+                SetFieldsToReadOnly();
             }
-        }
-
-        private void DisplayAddToCourseButtons()
-        {
-            _view.UpdateButtonVisible = false;
-            _view.DeleteButtonVisible = false;
-            _view.ContinueButtonVisible = false;
-            _view.AddAppointmentToCourseButtonVisible = true;
         }
 
         private void OnReloadPageEvent(object sender, EventArgs e)
@@ -198,6 +191,7 @@ namespace CheckPointPresenters.Presenters
             {
 
                 DisplayActionMessage(job);
+                CheckIfAppointmentWasAddedToCourse();
             }
             else
             {
@@ -205,6 +199,19 @@ namespace CheckPointPresenters.Presenters
                 ContinueButtonsShow();
             }
 
+        }
+
+        private void CheckIfAppointmentWasAddedToCourse()
+        {
+            bool AppointmentWasAdded = _view.AddAppointmentToCourseStatus;
+            if (AppointmentWasAdded == true)
+            {
+                ContinueWithCourseCreationButtonShow();
+            }
+            else
+            {
+                ContinueButtonsShow();
+            }
         }
 
         private void DisplayActionMessage(JobServiceBase job)
@@ -261,5 +268,34 @@ namespace CheckPointPresenters.Presenters
             _view.DeleteButtonVisible = false;
             _view.ContinueButtonVisible = false;
         }
+        private void DisplayAddToCourseButtons()
+        {
+            _view.UpdateButtonVisible = false;
+            _view.DeleteButtonVisible = false;
+            _view.ContinueButtonVisible = false;
+            _view.BackToHomePageButtonVisible = false;
+            _view.AddAppointmentToCourseButtonVisible = true;
+        }
+
+        private void ContinueWithCourseCreationButtonShow()
+        {
+            _view.BackToHomePageButtonVisible = false;
+            _view.ContinueButtonVisible = false;
+            _view.AddAppointmentToCourseButtonVisible = false;
+        }
+
+        private void SetFieldsToReadOnly()
+        {
+            _view.AppointmentNameReadOnly = true;
+            _view.AppointmentDescriptionReadOnly = true;
+            _view.DateReadOnly = true;
+            _view.StartTimeReadOnly = true;
+            _view.EndTimeReadOnly = true;
+            _view.IsCancelledReadOnly = false;
+            _view.IsObligatoryReadOnly = false;
+            _view.PostalCodeReadOnly = true;
+            _view.AddressReadOnly = true;
+        }
+
     }
 }
