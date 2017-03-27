@@ -38,8 +38,20 @@ namespace CheckPointCommon.ViewInterfaces
 
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
+        bool BackToHomePageButtonVisible { set; }
 
         bool AddAppointmentToCourseButtonVisible { set; }
+
+        bool AppointmentNameReadOnly { set; }
+        bool DateReadOnly   { set; } 
+        bool AppointmentDescriptionReadOnly { set; }
+        bool StartTimeReadOnly { set; }
+        bool EndDateReadOnly { set; }
+        bool IsCancelledReadOnly { set; }
+        bool IsObligatoryReadOnly { set; }
+        bool PostalCodeReadOnly { set; }
+        bool AddressReadOnly { set; }
+        bool EndTimeReadOnly { set; }
 
         int JobState { get; set; }
 

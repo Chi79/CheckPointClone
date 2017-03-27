@@ -95,6 +95,47 @@ namespace CheckPoint.Views
             set { txtEndTime.Text = value; }
         }
 
+        public bool AppointmentNameReadOnly
+        {
+            set { txtAppointmentName.ReadOnly = value; }
+        }
+        public bool DateReadOnly
+        {
+            set { txtDate.ReadOnly = value; }
+        }
+        public bool AppointmentDescriptionReadOnly
+        {
+            set { txtAppointmentDescription.ReadOnly = value; }
+        }
+        public bool StartTimeReadOnly
+        {
+            set { txtStartTime.ReadOnly = value; }
+        }
+        public bool EndDateReadOnly
+        {
+            set { txtEndTime.ReadOnly = value; }
+        }
+        public bool IsCancelledReadOnly
+        {
+            set { ddlIsCancelled.Enabled = value; }
+        }
+        public bool IsObligatoryReadOnly
+        {
+            set { ddlIsObligatory.Enabled = value; }
+        }
+        public bool PostalCodeReadOnly
+        {
+            set { txtPostalCode.ReadOnly = value; }
+        }
+        public bool AddressReadOnly
+        {
+            set { txtAddress.ReadOnly = value; }
+        }
+        public bool EndTimeReadOnly
+        {
+            set { txtEndTime.ReadOnly = value; }
+        }
+
         public string UserName
         {
             get { return Session["LoggedInClient"].ToString(); }
@@ -121,6 +162,11 @@ namespace CheckPoint.Views
         public bool NoButtonVisible
         {
             set { btnNo.Visible = value; }
+        }
+
+        public bool BackToHomePageButtonVisible
+        {
+            set { btnBackToHomePage.Visible = value; }
         }
 
         public bool AddAppointmentToCourseButtonVisible
