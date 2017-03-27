@@ -18,6 +18,17 @@ namespace CheckPoint.Views
             get { return (string)Session["SelectedAppointmentName"]; }
             set { Session["SelectedAppointmentName"] = value; }
         }
+        public bool AddAppointmentToCourseStatus
+        {
+            get { return (bool)Session["AddingAppointmentToCourse"]; }
+            set { Session["AddingAppointmentToCourse"] = value; }
+        }
+
+        public int SessionCourseId
+        {
+            get { return (int)Session["CourseId"]; }
+        }
+
         public int AppointmentId
         {
             get { return (int)Session["AppointmentId"]; }
