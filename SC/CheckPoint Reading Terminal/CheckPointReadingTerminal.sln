@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderPresenters", "ReaderP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionManager", "InjectionManager\InjectionManager.csproj", "{F47EC934-C60B-403B-A03D-29EA3A924122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDataAccess", "..\CheckPointRESTv2\Reader.DataAccessREST\ReaderDataAccess.csproj", "{468E2094-0FD7-4E6B-90D6-6D935616D896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDataAccess", "ReaderDataAccess\ReaderDataAccess.csproj", "{468E2094-0FD7-4E6B-90D6-6D935616D896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDTO", "..\CheckPointRESTv2\CheckPoint.DTO\ReaderDTO.csproj", "{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDTO", "ReaderDTO\ReaderDTO.csproj", "{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

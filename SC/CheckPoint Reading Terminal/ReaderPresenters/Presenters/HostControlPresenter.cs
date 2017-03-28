@@ -1,5 +1,4 @@
-﻿using CheckPoint.DTO;
-using ReaderCommon.DataAccessInterfaces;
+﻿using ReaderCommon.DataAccessInterfaces;
 using ReaderCommon.ModelInterfaces;
 using ReaderCommon.SerialProtocolInterfaces;
 using ReaderCommon.ViewInterfaces;

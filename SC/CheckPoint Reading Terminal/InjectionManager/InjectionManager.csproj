@@ -93,13 +93,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CheckPointRESTv2\Reader.DataAccessREST\ReaderDataAccess.csproj">
-      <Project>{468E2094-0FD7-4E6B-90D6-6D935616D896}</Project>
-      <Name>ReaderDataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ReaderCommon\ReaderCommon.csproj">
       <Project>{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}</Project>
       <Name>ReaderCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReaderDataAccess\ReaderDataAccess.csproj">
+      <Project>{468E2094-0FD7-4E6B-90D6-6D935616D896}</Project>
+      <Name>ReaderDataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\ReaderModel\ReaderModel.csproj">
       <Project>{DDE54F7B-9472-41CB-8948-D2EF524282CD}</Project>
