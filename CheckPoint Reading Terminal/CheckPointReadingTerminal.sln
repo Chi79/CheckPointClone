@@ -61,4 +61,34 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://checkpointas.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ReaderCommon\\ReaderCommon.csproj
+		SccProjectName1 = ReaderCommon
+		SccLocalPath1 = ReaderCommon
+		SccProjectUniqueName2 = ReaderSerialProtocols\\ReaderSerialProtocols.csproj
+		SccProjectName2 = ReaderSerialProtocols
+		SccLocalPath2 = ReaderSerialProtocols
+		SccProjectUniqueName3 = ReaderModel\\ReaderModel.csproj
+		SccProjectName3 = ReaderModel
+		SccLocalPath3 = ReaderModel
+		SccProjectUniqueName4 = ReaderView\\ReaderViews.csproj
+		SccProjectName4 = ReaderView
+		SccLocalPath4 = ReaderView
+		SccProjectUniqueName5 = ReaderPresenters\\ReaderPresenters.csproj
+		SccProjectName5 = ReaderPresenters
+		SccLocalPath5 = ReaderPresenters
+		SccProjectUniqueName6 = InjectionManager\\InjectionManager.csproj
+		SccProjectName6 = InjectionManager
+		SccLocalPath6 = InjectionManager
+		SccProjectUniqueName7 = ReaderDataAccess\\ReaderDataAccess.csproj
+		SccProjectName7 = ReaderDataAccess
+		SccLocalPath7 = ReaderDataAccess
+		SccProjectUniqueName8 = ReaderDTO\\ReaderDTO.csproj
+		SccProjectName8 = ReaderDTO
+		SccLocalPath8 = ReaderDTO
+	EndGlobalSection
 EndGlobal

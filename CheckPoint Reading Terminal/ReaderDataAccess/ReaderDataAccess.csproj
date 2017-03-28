@@ -13,6 +13,10 @@
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,7 +74,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CheckPointReadingTerminal\ReaderCommon\ReaderCommon.csproj">
+    <ProjectReference Include="..\ReaderCommon\ReaderCommon.csproj">
       <Project>{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}</Project>
       <Name>ReaderCommon</Name>
     </ProjectReference>
