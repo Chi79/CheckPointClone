@@ -49,29 +49,6 @@ namespace CheckPoint.Views
 
         }
 
-        public int? SessionCourseId
-        {
-            get { return (int)Session["CourseId"]; }
-            set { Session["CourseId"] = value; }
-        }
-
-        public int? SessionRowIndex
-        {
-            get { return (int)Session["MyRowIndex"]; }
-            set { Session["MyRowIndex"] = value; }
-        }
-
-        public string ColumnName
-        {
-            get { return Session["MySortExpression"].ToString(); }
-            set { Session["MySortExpression"] = value; }
-        }
-
-        public string LoggedInClient
-        {
-            get { return Session["LoggedInClient"].ToString(); }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

@@ -9,6 +9,7 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface ICreateAppointmentView 
     {
+        string Message { get; set; }
 
         string StartTime { get; }
         string EndTime { get; }
@@ -17,7 +18,6 @@ namespace CheckPointCommon.ViewInterfaces
         string Description { get; }
         string Address { get; }
         string Date { get; }
-        string UserName { get; }
         string IsCancelled { get; }
         string IsObligatory { get; }
 
@@ -28,17 +28,13 @@ namespace CheckPointCommon.ViewInterfaces
         bool NoButtonVisible { set; }
         bool BackToHomePageButtonVisible { set; }
         bool AddAnotherAppointmentButtonVisible { set; }
+        bool BackToViewCoursesButtonVisible { set; }
+
 
         void RedirectAfterClickEvent();
         void RedirectToHomePage();
         void RedirectToViewCourses();
 
-        int JobState { get; set; }
-        string Message { get;  set; }
-
-        bool AddAppointmentToCourseStatus { get; set; }
-        int SessionCourseId { get; }
-        bool BackToViewCoursesButtonVisible { set; }
 
         event EventHandler<EventArgs> CreateNewAppointment;
         event EventHandler<EventArgs> Continue;

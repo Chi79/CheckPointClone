@@ -9,6 +9,7 @@ using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.Enums;
 using CheckPointCommon.Structs;
+using CheckPointCommon.ServiceInterfaces;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -17,14 +18,16 @@ namespace CheckPointPresenters.Presenters
         private readonly ILoginView _view;
         private readonly ILoginModel _model;
         private readonly IUnitOfWork _uOW;
+        private readonly ISessionService _sessionService;
 
         private ClientType _clientType;
 
-        public LoginPresenter(ILoginView loginView, ILoginModel loginModel, IUnitOfWork unitOfWork)
+        public LoginPresenter(ILoginView loginView, ILoginModel loginModel, IUnitOfWork unitOfWork, ISessionService sessionService)
         {
             this._view = loginView;
             this._model = loginModel;
             this._uOW = unitOfWork;
+            this._sessionService = sessionService;
 
             _view.Login += _loginView_OnLoginButtonClicked;
         }
@@ -49,7 +52,7 @@ namespace CheckPointPresenters.Presenters
             bool loginAttemptSuccessful = loginResult.Success;
             if(loginAttemptSuccessful)
             {
-                _view.LoggedInClient = username;
+                _sessionService.LoggedInClient = username;
     
                 _clientType = (ClientType)loginResult.ClientType;
                 CheckClientType();
@@ -74,7 +77,8 @@ namespace CheckPointPresenters.Presenters
         } 
         private void ResetAddAppointmentStatus()
         {
-            _view.AddAppointmentToCourseStatus = false;
+
+            _sessionService.AddingAppointmentToCourseStatus = false;
         }  
     } 
 }

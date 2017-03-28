@@ -12,14 +12,6 @@ namespace CheckPoint.Views
 {
     public partial class UserHomeView : ViewBase<UserHomePresenter>, IUserHomeView
     {
-        public event EventHandler<EventArgs> RowSelected;
-        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
-        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
-        public event EventHandler<EventArgs> ManageCoursesButtonClicked;
-        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
-        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        public event EventHandler<EventArgs> CreateReportButtonClicked;
 
         public string Message
         {
@@ -42,33 +34,16 @@ namespace CheckPoint.Views
             set { AppointmentGridView.SelectedRowIndex = value; }
         }
 
-        public int? SessionAppointmentId
+        public object SelectedRowValueDataKey
         {
-            get { return (int)Session["AppointmentId"]; }
-            set { Session["AppointmentId"] = value; }
-        }
-
-        public int? SessionRowIndex
-        {
-            get { return (int)Session["MyRowIndex"]; }
-            set { Session["MyRowIndex"] = value; }
-        }
-
-        public string ColumnName
-        {
-            get { return Session["MySortExpression"].ToString(); }
-            set { Session["MySortExpression"] = value; }
-        }
-
-        public string LoggedInClient
-        {
-            get { return Session["LoggedInClient"].ToString(); }
+            get { return AppointmentGridView.SelectedRowValueDataKey; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
         public override void HookUpEvents()
         {
             AppointmentGridView.RowSelected += OnRowSelected;
@@ -76,6 +51,29 @@ namespace CheckPoint.Views
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_Selected;
         }
+
+        public void BindData()
+        {
+            AppointmentGridViewHeader.DataBind();
+            AppointmentGridView.DataBind();
+        }
+        public void RedirectToCreateAppointment()
+        {
+            Response.Redirect("CreateAppointmentView.aspx");
+        }
+        public void RedirectToManageAppointment()
+        {
+            Response.Redirect("ManageSingleAppointmentView.aspx");
+        }
+
+        public event EventHandler<EventArgs> RowSelected;
+        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
+        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
+        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
+        public event EventHandler<EventArgs> ManageCoursesButtonClicked;
+        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
+        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
+        public event EventHandler<EventArgs> CreateReportButtonClicked;
 
         private void OnAppointmentGridViewHeader_Selected(object sender, EventArgs e)
         {
@@ -107,17 +105,6 @@ namespace CheckPoint.Views
             {
                 RowSelected(this, EventArgs.Empty);
             }
-        }
-
-        public void BindData()
-        {
-            AppointmentGridViewHeader.DataBind();
-            AppointmentGridView.DataBind();
-        }
-
-        public object SelectedRowValueDataKey
-        {
-            get { return AppointmentGridView.SelectedRowValueDataKey; }
         }
 
         protected void createAppointment_Click(object sender, ImageClickEventArgs e)
@@ -158,15 +145,6 @@ namespace CheckPoint.Views
             {
                 CreateReportButtonClicked(this, EventArgs.Empty);
             }
-        }
-
-        public void RedirectToCreateAppointment()
-        {
-            Response.Redirect("CreateAppointmentView.aspx");
-        }
-        public void RedirectToManageAppointment()
-        {
-            Response.Redirect("ManageSingleAppointmentView.aspx");
         }
     }
 }

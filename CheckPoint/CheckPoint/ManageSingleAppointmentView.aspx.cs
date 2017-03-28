@@ -13,40 +13,6 @@ namespace CheckPoint.Views
     public partial class ManageSingleAppointmentView : ViewBase<ManageSingleAppointmentPresenter>, IManageSingleAppointmentView
     {
 
-        public string UserName
-        {
-            get { return Session["LoggedInClient"].ToString(); }
-        }
-
-        public int JobState
-        {
-            get { return (int)Session["job"]; }
-            set { Session["job"] = value; }
-        }
-
-        public int SessionCourseId
-        {
-            get { return (int)Session["CourseId"]; }
-        }
-
-        public int AppointmentId
-        {
-            get { return (int)Session["AppointmentId"]; }
-            set { Session["AppointmentId"] = value; }
-        }
-
-        public string SelectedAppointmentName
-        {
-            get { return (string)Session["SelectedAppointmentName"]; }
-            set { Session["SelectedAppointmentName"] = value; }
-        }
-
-        public bool AddAppointmentToCourseStatus
-        {
-            get { return (bool)Session["AddingAppointmentToCourse"]; }
-            set { Session["AddingAppointmentToCourse"] = value; }
-        }
-
         public string AppointmentName
         {
             get { return txtAppointmentName.Text; }
@@ -108,6 +74,7 @@ namespace CheckPoint.Views
         }
 
 
+
         public bool AppointmentNameReadOnly
         {
             set { txtAppointmentName.ReadOnly = value; }
@@ -150,7 +117,6 @@ namespace CheckPoint.Views
         }
 
 
-
         public bool ContinueButtonVisible
         {
             set { btnContinue.Visible = value; }
@@ -188,11 +154,11 @@ namespace CheckPoint.Views
         {
             set { btnBackToCourses.Visible = value; }
         }
+
         public bool SelectAnotherAppointmentButtonVisible
         {
             set { btnSelectDifferentAppointment.Visible = value; }
         }
-
 
 
         public void RedirectAfterClickEvent()
@@ -213,10 +179,8 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
-
-        public event EventHandler<EventArgs> BackToCoursesButtonClicked;
         public event EventHandler<EventArgs> SelectAnotherAppointmentButtonClicked;
-
+        public event EventHandler<EventArgs> BackToCoursesButtonClicked;
         public event EventHandler<EventArgs> UpdateAppointment;
         public event EventHandler<EventArgs> DeleteAppointment;
         public event EventHandler<EventArgs> ReloadPage;
@@ -224,7 +188,7 @@ namespace CheckPoint.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AppointmentId = (int)Session["AppointmentId"];
+           
         }
 
         protected void btnCreateAppointment_Click(object sender, EventArgs e)
@@ -282,7 +246,6 @@ namespace CheckPoint.Views
                 AddAppointmentToCourseButtonClicked(this, EventArgs.Empty);
             }
         }
-
 
         protected void btnSelectDifferentAppointment_Click(object sender, EventArgs e)
         {

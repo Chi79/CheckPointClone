@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using CheckPointCommon.CacheInterfaces;
 
-namespace CheckPointCache.Cache
+namespace CheckPointHTTPServices.Cache
 {
     public class CacheData : ICacheData
     {

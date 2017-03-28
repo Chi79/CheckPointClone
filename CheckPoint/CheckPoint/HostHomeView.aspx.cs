@@ -14,16 +14,6 @@ namespace CheckPoint.Views
    
     public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
     {
-        public event EventHandler<EventArgs> RowSelected;
-        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
-        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
-        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
-        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        public event EventHandler<EventArgs> CreateReportButtonClicked;
-        public event EventHandler<EventArgs> ViewCoursesButtonClicked;
-        public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
-
 
         public string Message
         {
@@ -46,34 +36,7 @@ namespace CheckPoint.Views
             get { return AppointmentGridView.SelectedRowIndex; }
             set { AppointmentGridView.SelectedRowIndex = value; }
         }
-        public int? SessionAppointmentId
-        {
-            get { return (int)Session["AppointmentId"]; }
-            set { Session["AppointmentId"] = value; }
-        }
-
-        public bool AddAppointmentToCourseStatus
-        {
-            get { return (bool)Session["AddingAppointmentToCourse"]; }
-            set { Session["AddingAppointmentToCourse"] = value; }
-        }
-
-        public int? SessionRowIndex
-        {
-            get { return (int)Session["MyRowIndex"]; }
-            set { Session["MyRowIndex"] = value; }
-        }
-
-        public string ColumnName
-        {
-            get { return Session["MySortExpression"].ToString(); }
-            set { Session["MySortExpression"] = value; }
-        }
-
-        public string LoggedInClient
-        {
-            get { return Session["LoggedInClient"].ToString(); }
-        }
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -84,46 +47,6 @@ namespace CheckPoint.Views
             AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
-        }
-
-        private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
-        {
-            if (RowSelected != null)
-            {
-                RowSelected(this, EventArgs.Empty);
-            }
-        }
-
-        private void OnSortColumnsByPropertyDescending(object sender, EventArgs e)
-        {
-            if(SortColumnsByPropertyDescending != null)
-            {
-                SortColumnsByPropertyDescending(this, EventArgs.Empty);
-            }
-        }
-
-        private void OnSortColumnsByPropertyAscending(object sender, EventArgs e)
-        {
-            if(SortColumnsByPropertyAscending != null)
-            {
-                SortColumnsByPropertyAscending(this, EventArgs.Empty);
-            }
-        }
-
-        private void GridView_RowSelected(object sender, EventArgs e)
-        {
-            if (RowSelected != null)
-            {
-                RowSelected(this, EventArgs.Empty);
-            }
-        }
-
-        private void OnRowSelected(object sender, EventArgs e)
-        {
-            if (RowSelected != null)
-            {
-                RowSelected(this, EventArgs.Empty);
-            }
         }
 
         public void BindData()
@@ -166,6 +89,73 @@ namespace CheckPoint.Views
         public bool AddSelectedAppointmenButtonVisible
         {
             set { btnAddSelectedAppointmentToCourse.Visible = value; }
+        }
+
+        public void RedirectToCreateAppointment()
+        {
+            Response.Redirect("CreateAppointmentView.aspx");
+        }
+
+        public void RedirectToManageAppointment()
+        {
+            Response.Redirect("ManageSingleAppointmentView.aspx");
+        }
+
+        public void RedirectToCoursesView()
+        {
+            Response.Redirect("HostCoursesView.aspx");
+        }
+
+
+        public event EventHandler<EventArgs> RowSelected;
+        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
+        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
+        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
+        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
+        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
+        public event EventHandler<EventArgs> CreateReportButtonClicked;
+        public event EventHandler<EventArgs> ViewCoursesButtonClicked;
+        public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
+
+
+        private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
+            {
+                RowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnSortColumnsByPropertyDescending(object sender, EventArgs e)
+        {
+            if (SortColumnsByPropertyDescending != null)
+            {
+                SortColumnsByPropertyDescending(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnSortColumnsByPropertyAscending(object sender, EventArgs e)
+        {
+            if (SortColumnsByPropertyAscending != null)
+            {
+                SortColumnsByPropertyAscending(this, EventArgs.Empty);
+            }
+        }
+
+        private void GridView_RowSelected(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
+            {
+                RowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnRowSelected(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
+            {
+                RowSelected(this, EventArgs.Empty);
+            }
         }
 
         protected void createAppointment_Click(object sender, ImageClickEventArgs e)
@@ -214,19 +204,6 @@ namespace CheckPoint.Views
             {
                 AddSelectedAppointmentToCourseButtonClicked(this, EventArgs.Empty);
             }
-        }
-
-        public void RedirectToCreateAppointment()
-        {
-            Response.Redirect("CreateAppointmentView.aspx");
-        }
-        public void RedirectToManageAppointment()
-        {
-            Response.Redirect("ManageSingleAppointmentView.aspx");
-        }
-        public void RedirectToCoursesView()
-        {
-            Response.Redirect("HostCoursesView.aspx");
         }
     }
 }

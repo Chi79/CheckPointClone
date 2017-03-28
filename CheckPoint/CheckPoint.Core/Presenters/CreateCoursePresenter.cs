@@ -18,10 +18,11 @@ namespace CheckPointPresenters.Presenters
 {
     public class CreateCoursePresenter : PresenterBase
     {
-        //TODO
+
         private readonly ICreateCourseView _view;
         private readonly ICreateCourseModel _model;
         private readonly IHandleCourses _courseService;
+        private readonly ISessionService _sessionService;
         private readonly IFactory _factory;
 
         private CourseDTO _dTO = new CourseDTO();
@@ -30,6 +31,7 @@ namespace CheckPointPresenters.Presenters
         public CreateCoursePresenter(ICreateCourseView createCourseView,
                                      ICreateCourseModel createCourseModel,
                                      IHandleCourses courseService,
+                                     ISessionService sessionService,
                                      IFactory factory )
         {
 
@@ -37,6 +39,7 @@ namespace CheckPointPresenters.Presenters
             _model = createCourseModel;
             _factory = factory;
             _courseService = courseService;
+            _sessionService = sessionService;
 
             _view.CreateNewCourse += OnCreateNewCourseButtonClicked;
             _view.Continue += OnContinueEvent;
@@ -57,8 +60,7 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction(JobServiceBase job)
         {
-
-            _view.JobState = (int)job.Actiontype;
+            _sessionService.JobState = (int)job.Actiontype;
             job.ItemName = _view.CourseName;
             _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();
@@ -93,7 +95,7 @@ namespace CheckPointPresenters.Presenters
 
         private void CreateCourseDTOFromInput()
         {
-            _dTO.UserName = _view.UserName;
+            _dTO.UserName = _sessionService.LoggedInClient;
             _dTO.Name = _view.CourseName;
             _dTO.Description = _view.Description;
             _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
@@ -115,7 +117,7 @@ namespace CheckPointPresenters.Presenters
         private void PerformJob()
         {
 
-            var job = _factory.CreateCourseJobType((DbAction)_view.JobState) as JobServiceBase;
+            var job = _factory.CreateCourseJobType((DbAction)_sessionService.JobState) as JobServiceBase;
             var course = ConvertDTOToCourse();
 
             job.ItemName = _view.CourseName;
@@ -150,12 +152,12 @@ namespace CheckPointPresenters.Presenters
         public void StoreNewCourseIdInSession(JobServiceBase job)
         {
             var newlyCreatedCourse = _courseService.GetCourseByName(job.ItemName) as COURSE;
-            _view.SessionCourseId = newlyCreatedCourse.CourseId;
- 
+            _sessionService.SessionCourseId = newlyCreatedCourse.CourseId;
+
         }
         public void UpdateAddAppointmentToCourseStatus()
         {
-            _view.AddAppointmentToCourseStatus = true;
+            _sessionService.AddingAppointmentToCourseStatus = true;
         } 
 
         private void DisplayActionMessage(JobServiceBase job)

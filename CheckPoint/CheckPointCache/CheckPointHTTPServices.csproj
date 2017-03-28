@@ -7,8 +7,8 @@
     <ProjectGuid>{B7BCBEE1-5997-49F5-83DD-0E99FE3ED948}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CheckPointCache</RootNamespace>
-    <AssemblyName>CheckPointCache</AssemblyName>
+    <RootNamespace>CheckPointHTTPServices</RootNamespace>
+    <AssemblyName>CheckPointHTTPServices</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\CacheData.cs" />
+    <Compile Include="Cache\SessionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

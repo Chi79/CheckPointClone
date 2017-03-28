@@ -26,18 +26,17 @@ namespace CheckPoint.Views
             get { return txtUserName.Text; }
         }
 
-        public string LoggedInClient
+        public void RedirectToUserHomePage()
         {
-            get { return Session["LoggedInClient"].ToString(); }
-            set { Session["LoggedInClient"] = value; }
+            Response.Redirect("UserHomeView.aspx");
         }
-
-        public bool AddAppointmentToCourseStatus
+        public void RedirectToHostHomePage()
         {
-            set { Session["AddingAppointmentToCourse"] = value; }
+            Response.Redirect("HostHomeView.aspx");
         }
 
         public event EventHandler<EventArgs> Login;
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -50,13 +49,6 @@ namespace CheckPoint.Views
                 Login(this, EventArgs.Empty);
             }
         }
-        public void RedirectToUserHomePage()
-        {
-            Response.Redirect("UserHomeView.aspx");
-        }
-        public void RedirectToHostHomePage()
-        {
-            Response.Redirect("HostHomeView.aspx");
-        }
+
     }
 }

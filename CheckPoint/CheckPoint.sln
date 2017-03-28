@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointDataTables", "Che
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinQ", "LinQ\LinQ.csproj", "{E580D717-388B-424B-8DF8-EE2F67AB36FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointCache", "CheckPointCache\CheckPointCache.csproj", "{B7BCBEE1-5997-49F5-83DD-0E99FE3ED948}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckPointHTTPServices", "CheckPointCache\CheckPointHTTPServices.csproj", "{B7BCBEE1-5997-49F5-83DD-0E99FE3ED948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,7 +96,7 @@ Global
 		SccProjectUniqueName8 = LinQ\\LinQ.csproj
 		SccProjectName8 = LinQ
 		SccLocalPath8 = LinQ
-		SccProjectUniqueName9 = CheckPointCache\\CheckPointCache.csproj
+		SccProjectUniqueName9 = CheckPointCache\\CheckPointHTTPServices.csproj
 		SccProjectName9 = CheckPointCache
 		SccLocalPath9 = CheckPointCache
 	EndGlobalSection
