@@ -32,12 +32,8 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSource
         {
-            set { /*gvHostTable.DataSource = value;*/  AppointmentGridView.SetDataSource = value; }
+            set {  AppointmentGridView.SetDataSource = value; }
         }
-        //public IEnumerable<object> SetDataSource2
-        //{
-        //    set { gvHostTable1.DataSource = value; }
-        //}
 
         public IEnumerable<object> SetDataSource2
         {
@@ -46,8 +42,7 @@ namespace CheckPoint.Views
 
         public int SelectedRowIndex
         {
-            //get  { return gvHostTable.SelectedIndex; }
-            //set  { gvHostTable.SelectedIndex = value; }
+
             get { return AppointmentGridView.SelectedRowIndex; }
             set { AppointmentGridView.SelectedRowIndex = value; }
         }
@@ -133,16 +128,14 @@ namespace CheckPoint.Views
 
         public void BindData()
         {
-            //gvHostTable.DataBind();
-            //gvHostTable1.DataBind();
             AppointmentGridView.DataBind();
-            //gvHostTable1.DataBind();
             AppointmentGridViewHeader.DataBind();
         }
         public object SelectedRowValueDataKey
         {
-            //get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+
             get { return AppointmentGridView.SelectedRowValueDataKey; }
+
         }
 
         public bool ViewCoursesButtonVisible
@@ -183,23 +176,7 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void Asc_Command(object sender, CommandEventArgs e)
-        {
-            ColumnName = e.CommandName;
-            if(SortColumnsByPropertyAscending != null)
-            {
-                SortColumnsByPropertyAscending(this, EventArgs.Empty);
-            }
-        }
 
-        protected void Desc_Command(object sender, CommandEventArgs e)
-        {
-            ColumnName = e.CommandName;
-            if(SortColumnsByPropertyDescending != null)
-            {
-                SortColumnsByPropertyDescending(this, EventArgs.Empty);
-            }
-        }
         protected void createAppointment_Click(object sender, ImageClickEventArgs e)
         {
             if (CreateAppointmentButtonClicked != null)
@@ -247,19 +224,6 @@ namespace CheckPoint.Views
                 AddSelectedAppointmentToCourseButtonClicked(this, EventArgs.Empty);
             }
         }
-
-        //protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
-        //{
-        //    //if (e.Row.RowType == DataControlRowType.DataRow)
-        //    //{
-        //    //    e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
-        //    //}
-        //    //if (e.Row.RowType == DataControlRowType.DataRow)
-        //    //{
-        //    //    e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView, "Select$" + e.Row.RowIndex);
-        //    //}
-
-        //}
 
         public void RedirectToCreateAppointment()
         {

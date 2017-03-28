@@ -9,14 +9,6 @@ namespace CheckPoint.Views.UserControls
 {
     public partial class AppointmentGridViewHeader : System.Web.UI.UserControl
     {
-        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
-        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> RowSelected;
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public string ColumnName
         {
@@ -29,10 +21,20 @@ namespace CheckPoint.Views.UserControls
             set { gvHostTable1.DataSource = value; }
         }
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void BindData()
         {
             gvHostTable1.DataBind();
         }
+
+        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
+        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
+        public event EventHandler<EventArgs> RowSelected;
+
 
         protected void Asc_Command(object sender, CommandEventArgs e)
         {
@@ -51,6 +53,7 @@ namespace CheckPoint.Views.UserControls
                 SortColumnsByPropertyDescending(this, EventArgs.Empty);
             }
         }
+
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RowSelected != null)
