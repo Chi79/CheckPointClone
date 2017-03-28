@@ -62,9 +62,9 @@
       <Project>{ed11a003-9452-432c-99b2-cd10056eace1}</Project>
       <Name>CheckPointPresenters</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CheckPointCache\CheckPointCache.csproj">
+    <ProjectReference Include="..\CheckPointCache\CheckPointHTTPServices.csproj">
       <Project>{b7bcbee1-5997-49f5-83dd-0e99fe3ed948}</Project>
-      <Name>CheckPointCache</Name>
+      <Name>CheckPointHTTPServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\CheckPointModel\CheckPointModel.csproj">
       <Project>{c66b5234-75ae-4f85-9cc5-f9960d5114f3}</Project>

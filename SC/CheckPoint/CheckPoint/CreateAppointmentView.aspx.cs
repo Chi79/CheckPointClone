@@ -63,28 +63,6 @@ namespace CheckPoint.Views
             set { lblMessage.Text = value; }
         }
 
-
-        public string UserName
-        {
-            get { return Session["LoggedInClient"].ToString(); }
-        }
-
-        public bool AddAppointmentToCourseStatus
-        {
-            get { return (bool)Session["AddingAppointmentToCourse"]; }
-            set { Session["AddingAppointmentToCourse"] = value; }
-        }
-        public int JobState
-        {
-            get { return (int)Session["job"]; }
-            set { Session["job"] = value; }
-        }
-
-        public int SessionCourseId
-        {
-            get { return (int)Session["CourseId"]; }
-        }
-
         public bool BackToViewCoursesButtonVisible
         {
             set {btnBackToViewCourses.Visible = value; }

@@ -9,13 +9,8 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IManageSingleAppointmentView 
     {
-        //TODO
-        string SelectedAppointmentName { get; set; }
+        string Message { get; set; }
 
-        bool AddAppointmentToCourseStatus { get; set; }
-        int SessionCourseId { get; }
-
-        int AppointmentId { get; set; }
         string StartTime { get; set; }
         string EndTime { get; set; }
         string PostalCode { get; set; }
@@ -23,9 +18,9 @@ namespace CheckPointCommon.ViewInterfaces
         string Description { get; set; }
         string Address { get; set; }
         string Date { get; set; }
-        string UserName { get; }
         string IsCancelled { get; set; }
         string IsObligatory { get; set; }
+
 
         void RedirectAfterClickEvent();
 
@@ -33,16 +28,13 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectToViewCourses();
 
-        string Message { get; set; }
 
         bool ContinueButtonVisible { set; }
         bool UpdateButtonVisible { set; }
         bool DeleteButtonVisible { set; }
-
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool BackToHomePageButtonVisible { set; }
-
         bool AddAppointmentToCourseButtonVisible { set; }
         bool BackToCoursesButtonVisible { set; }
         bool SelectAnotherAppointmentButtonVisible { set; }
@@ -58,15 +50,12 @@ namespace CheckPointCommon.ViewInterfaces
         bool AddressReadOnly { set; }
         bool EndTimeReadOnly { set; }
 
-        int JobState { get; set; }
 
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-
         event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
         event EventHandler<EventArgs> BackToCoursesButtonClicked;
         event EventHandler<EventArgs> SelectAnotherAppointmentButtonClicked;
-
         event EventHandler<EventArgs> UpdateAppointment;
         event EventHandler<EventArgs> DeleteAppointment;
         event EventHandler<EventArgs> ReloadPage;

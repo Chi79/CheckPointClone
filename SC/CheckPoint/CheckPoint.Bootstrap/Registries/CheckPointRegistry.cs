@@ -7,7 +7,7 @@ using StructureMap;
 using CheckPointPresenters.Bases;
 using DataAccess.Concrete.Repositories;
 using CheckPointModel.Models;
-using CheckPointCache.Cache;
+using CheckPointHTTPServices.Cache;
 
 
 

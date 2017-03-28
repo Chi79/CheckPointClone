@@ -21,6 +21,7 @@ namespace CheckPointPresenters.Presenters
         private readonly IManageSingleAppointmentView _view;
         private readonly IManageSingleAppointmentModel _model;
         private readonly IShowAppointments _displayService;
+        private readonly ISessionService _sessionService;
         private readonly IFactory _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
@@ -30,6 +31,7 @@ namespace CheckPointPresenters.Presenters
                                           IManageSingleAppointmentView manageAppointmentView,
                                           IManageSingleAppointmentModel manageAppointmentModel,
                                           IShowAppointments displayService,
+                                          ISessionService sessionService,
                                           IFactory factory
                                           )
 
@@ -38,6 +40,7 @@ namespace CheckPointPresenters.Presenters
             _model = manageAppointmentModel;
             _factory = factory;
             _displayService = displayService;
+            _sessionService = sessionService;
 
             _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
             _view.ReloadPage += OnReloadPageEvent;
@@ -48,9 +51,7 @@ namespace CheckPointPresenters.Presenters
             _view.AddAppointmentToCourseButtonClicked += OnAddAppointmentToCourseButtonClicked;
             _view.BackToCoursesButtonClicked += OnBackToCoursesButtonClicked;
             _view.SelectAnotherAppointmentButtonClicked += OnSelectAnotherAppointmentButtonClicked;
-
         }
-
 
         private void OnAddAppointmentToCourseButtonClicked(object sender, EventArgs e)
         {
@@ -88,6 +89,7 @@ namespace CheckPointPresenters.Presenters
 
         public override void FirstTimeInit()
         {
+
             CheckAddAppointentToCourseStatus();
 
             DisplaySelectedAppointmentData();
@@ -95,8 +97,9 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckAddAppointentToCourseStatus()
         {
-            bool AddingAppointmentToCourse = _view.AddAppointmentToCourseStatus;
-            if(AddingAppointmentToCourse == true)
+ 
+            bool? AddingAppointmentToCourse = _sessionService.AddingAppointmentToCourseStatus;
+            if (AddingAppointmentToCourse == true)
             {
                 DisplayAddToCourseButtons();
                 SetFieldsToReadOnly();
@@ -106,7 +109,7 @@ namespace CheckPointPresenters.Presenters
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
 
-            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_view.UserName);  //refresh cache
+            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_sessionService.LoggedInClient);  //refresh cache
             _view.RedirectAfterClickEvent();
             DisplaySelectedAppointmentData();
         }
@@ -114,8 +117,9 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction(JobServiceBase job)
         {
-            _view.JobState = (int)job.Actiontype;
-            job.ItemId = _view.AppointmentId;
+
+            _sessionService.JobState = (int)job.Actiontype;
+            job.ItemId = (int)_sessionService.SessionAppointmentId;
             _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();
         }
@@ -154,7 +158,7 @@ namespace CheckPointPresenters.Presenters
             _dTO.Date = _view.Date;
             _dTO.StartTime = _view.StartTime;
             _dTO.EndTime = _view.EndTime;
-            _dTO.UserName = _view.UserName;
+            _dTO.UserName = _sessionService.LoggedInClient;
             _dTO.Address = _view.Address;
             _dTO.PostalCode = _view.PostalCode;
             _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
@@ -177,10 +181,10 @@ namespace CheckPointPresenters.Presenters
         {
             var appointment = ConvertDTOToAppointment();
 
-            var job = _factory.CreateAppointmentJobType((DbAction)_view.JobState) as JobServiceBase;
+            var job = _factory.CreateAppointmentJobType((DbAction)_sessionService.JobState) as JobServiceBase;
 
-            job.ItemId = _view.AppointmentId;
-            job.CourseId = _view.SessionCourseId;
+            job.ItemId = (int)_sessionService.SessionAppointmentId;
+            job.CourseId = _sessionService.SessionCourseId;
             job.PerformTask(appointment);
 
             UpdateDatabaseWithChanges(job as JobServiceBase);
@@ -212,7 +216,8 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckIfAppointmentWasAddedToCourse()
         {
-            bool AppointmentWasAdded = _view.AddAppointmentToCourseStatus;
+
+            bool? AppointmentWasAdded = _sessionService.AddingAppointmentToCourseStatus;
             if (AppointmentWasAdded == true)
             {
                 ContinueWithCourseCreationButtonShow();
@@ -225,7 +230,8 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckIfAddingAppointmentIsRejected()
         {
-            bool AppointmentAddedIsRejected = _view.AddAppointmentToCourseStatus;
+
+            bool? AppointmentAddedIsRejected = _sessionService.AddingAppointmentToCourseStatus;
             if (AppointmentAddedIsRejected == true)
             {
                 BackToCourseCreationOrSelectDifferentAppointmentButtonsShow();
@@ -239,7 +245,8 @@ namespace CheckPointPresenters.Presenters
 
         private void ResetAddAppointmentStatus()
         {
-            _view.AddAppointmentToCourseStatus = false;
+
+            _sessionService.AddingAppointmentToCourseStatus = false;
         }
 
         private void DisplayActionMessage(JobServiceBase job)
@@ -251,7 +258,8 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplaySelectedAppointmentData()
         {
-             var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId(_view.AppointmentId) as APPOINTMENT;
+
+            var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId((int)_sessionService.SessionAppointmentId) as APPOINTMENT;
 
             _view.AppointmentName = selectedAppointment.AppointmentName;
             _view.Description = selectedAppointment.Description;

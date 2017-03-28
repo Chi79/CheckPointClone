@@ -8,15 +8,9 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IHostHomeView
     {
-        //TODO
-        void BindData();
         string Message { set; }
-        int SelectedRowIndex { get; set; } 
-        int? SessionRowIndex { get; set; }
-        int? SessionAppointmentId { get; set; }
 
-        bool AddAppointmentToCourseStatus { get; set; }
-
+        int SelectedRowIndex { get; set; }
         bool ViewCoursesButtonVisible { set; }
         bool CreateAppointmentButtonVisible { set; }
         bool ManageAppointmentButtonVisible { set; }
@@ -24,12 +18,13 @@ namespace CheckPointCommon.ViewInterfaces
         bool ManageAttendanceButtonVisible { set; }
         bool AddSelectedAppointmenButtonVisible { set; }
 
-        string LoggedInClient { get; }
-        string ColumnName { get; set; }
+
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }
         object SelectedRowValueDataKey { get; }
 
+
+        void BindData();
         void RedirectToCreateAppointment();
         void RedirectToManageAppointment();
         void RedirectToCoursesView();

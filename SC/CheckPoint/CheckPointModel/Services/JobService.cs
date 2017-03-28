@@ -17,7 +17,7 @@ namespace CheckPointModel.Services
         public virtual string ConfirmationMessage { get; }
         public virtual string CompletedMessage { get; }
         public virtual int ItemId { get; set; }
-        public virtual int CourseId { get; set; }
+        public virtual int? CourseId { get; set; }
 
 
 

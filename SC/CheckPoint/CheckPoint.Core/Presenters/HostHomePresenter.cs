@@ -17,16 +17,16 @@ namespace CheckPointPresenters.Presenters
         private readonly IHostHomeView _view;
         private readonly IHostHomeModel _model;
         private readonly IShowAppointments _displayService;
+        private readonly ISessionService _sessionService;
 
-        private string _client;
 
         public HostHomePresenter(IHostHomeView hostHomeView, IHostHomeModel hostHomeModel,
-                                 IShowAppointments displayService)
+                                 IShowAppointments displayService, ISessionService sessionService)
         {
             _view = hostHomeView;
             _model = hostHomeModel;
             _displayService = displayService;
-            _client = _view.LoggedInClient;
+            _sessionService = sessionService;
 
             _view.RowSelected += OnRowSelected;
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
@@ -37,7 +37,6 @@ namespace CheckPointPresenters.Presenters
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
             _view.AddSelectedAppointmentToCourseButtonClicked += OnAddSelectedAppointmentToCourseButtonClicked;
-
         }
 
         private void OnAddSelectedAppointmentToCourseButtonClicked(object sender, EventArgs e)
@@ -64,7 +63,7 @@ namespace CheckPointPresenters.Presenters
         {
 
             int noAppointmentSelected = -1;
-            if (_view.SessionAppointmentId == noAppointmentSelected)
+            if (_sessionService.SessionAppointmentId == noAppointmentSelected)
             {
                 _view.Message = "No appointment has been selected!";
             }
@@ -72,7 +71,6 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.RedirectToManageAppointment();
             }
-
         }
 
         private void OnCreateAppointmentButtonClicked(object sender, EventArgs e)
@@ -85,21 +83,23 @@ namespace CheckPointPresenters.Presenters
         {
             FetchData();
         }
+
         public override void FirstTimeInit()
         {
             CheckAddAppointmentStatus();
 
-            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);
+            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_sessionService.LoggedInClient);
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
-            _view.SessionRowIndex = -1;
-            _view.SessionAppointmentId = -1;
+            _sessionService.SessionRowIndex = -1;
+            _sessionService.SessionAppointmentId = -1;
             _view.BindData();
         }
 
         private void CheckAddAppointmentStatus()
         {
-            bool AddingAppointmentToCourse = _view.AddAppointmentToCourseStatus;
-            if(AddingAppointmentToCourse == true)
+
+            bool? AddingAppointmentToCourse = _sessionService.AddingAppointmentToCourseStatus;
+            if (AddingAppointmentToCourse == true)
             {
                 DisplayAddToCourseButtons();
             }
@@ -122,13 +122,15 @@ namespace CheckPointPresenters.Presenters
         }
         private void OnRowSelected(object sender, EventArgs e)
         {
-            _view.SessionRowIndex = _view.SelectedRowIndex;
+
+            _sessionService.SessionRowIndex = _view.SelectedRowIndex;
             GetSelectedAppointmentIdFromGrid();    
         }
 
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByPropertyAscending<object>(_view.ColumnName);
+
+            var apps = _displayService.GetAppointmentsSortedByPropertyAscending<object>(_sessionService.ColumnName);
             _view.SetDataSource = apps;
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
@@ -137,7 +139,8 @@ namespace CheckPointPresenters.Presenters
         }
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
-            var apps = _displayService.GetAppointmentsSortedByPropertyDescending<object>(_view.ColumnName);
+
+            var apps = _displayService.GetAppointmentsSortedByPropertyDescending<object>(_sessionService.ColumnName);
             _view.SetDataSource = apps;
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.BindData();
@@ -146,11 +149,12 @@ namespace CheckPointPresenters.Presenters
         }
         private void GetSelectedAppointmentIdFromGrid()
         {
+
             int noIndexSelected = -1;
-            if(_view.SessionRowIndex != noIndexSelected)
+            if (_sessionService.SessionRowIndex != noIndexSelected)
             {
                 var selectedAppointmentId = _view.SelectedRowValueDataKey;
-                _view.SessionAppointmentId = (int)selectedAppointmentId;
+                _sessionService.SessionAppointmentId = (int)selectedAppointmentId;
                 _view.Message = selectedAppointmentId.ToString();
             }
         }
