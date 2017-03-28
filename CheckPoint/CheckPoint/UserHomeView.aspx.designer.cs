@@ -49,13 +49,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// gvHostTable1 control.
+        /// AppointmentGridViewHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvHostTable1;
+        protected global::CheckPoint.Views.UserControls.AppointmentGridViewHeader AppointmentGridViewHeader;
         
         /// <summary>
         /// Panel1 control.
@@ -85,13 +85,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label lblIndex;
         
         /// <summary>
-        /// gvHostTable control.
+        /// AppointmentGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvHostTable;
+        protected global::CheckPoint.Views.UserControls.GridView AppointmentGridView;
         
         /// <summary>
         /// buttonsdiv0 control.

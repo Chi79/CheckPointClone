@@ -168,15 +168,6 @@ namespace CheckPoint.Views
             set { btnAddSelectedAppointmentToCourse.Visible = value; }
         }
 
-        protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (RowSelected != null)
-            {
-                RowSelected(this, EventArgs.Empty);
-            }
-        }
-
-
         protected void createAppointment_Click(object sender, ImageClickEventArgs e)
         {
             if (CreateAppointmentButtonClicked != null)
