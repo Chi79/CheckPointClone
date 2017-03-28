@@ -52,6 +52,7 @@ table {
 
 .roundedButtons {
     border-radius: 10px;
+    padding-bottom:1%
 }
 .roundedButtons:hover{
     border-radius:10px;
@@ -118,11 +119,12 @@ table {
     margin: auto;
 }
 
-h3{
+.headertext {
     padding-bottom: 9%;
     font-family: sans-serif;
     font-weight: bold;
 }
+
 
 </style>
 
@@ -146,7 +148,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="appointmentIdHeader" >
  <HeaderTemplate>
- <h3 style="color:white;">AppointmentId</h3>
+ <h3  class="headertext" style="color:white;">AppointmentId</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="AppointmentId" 
@@ -169,7 +171,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
  <HeaderTemplate>
- <h3 style="color:white;">CourseId</h3>
+ <h3 class="headertext" style="color:white;">CourseId</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="CourseId" 
@@ -192,7 +194,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName" HeaderStyle-CssClass="appointmentNameHeader">
  <HeaderTemplate>
- <h3 style="color:white;">Name</h3>
+ <h3 class="headertext" style="color:white;">Name</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="AppointmentName" 
@@ -215,7 +217,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" HeaderStyle-CssClass="descriptionHeader">
  <HeaderTemplate>
- <h3 style="color:white;">Description</h3>
+ <h3 class="headertext" style="color:white;">Description</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="Description" 
@@ -238,7 +240,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="Date" HeaderText="Date" HeaderStyle-CssClass="dateHeader">
  <HeaderTemplate>
- <h3 style="color:white;">Date</h3>
+ <h3 class="headertext" style="color:white;">Date</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="Date" 
@@ -261,7 +263,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="StartTime" HeaderText="StartTime" HeaderStyle-CssClass="startTimeHeader">
  <HeaderTemplate>
- <h3 style="color:white;" >StartTime</h3>
+ <h3 class="headertext" style="color:white;" >StartTime</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="StartTime" 
@@ -284,7 +286,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="EndTime" HeaderText="EndTime" HeaderStyle-CssClass="endTimeHeader">
  <HeaderTemplate>
- <h3  style="color:white;">EndTime</h3>
+ <h3 class="headertext" style="color:white;">EndTime</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="EndTime" 
@@ -307,7 +309,7 @@ h3{
 
  <asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" HeaderStyle-CssClass="addressHeader">
  <HeaderTemplate>
- <h3  style="color:white;">Address</h3>
+ <h3 class="headertext" style="color:white;">Address</h3>
  <asp:ImageButton 
  runat="server" 
  CommandName="Address" 
@@ -331,7 +333,7 @@ h3{
 
   <asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" HeaderStyle-CssClass="postalCodeHeader">
   <HeaderTemplate>
-  <h3 style="color:white;">PostalCode</h3>
+  <h3 class="headertext" style="color:white;">PostalCode</h3>
   <asp:ImageButton 
   runat="server" 
   CommandName="PostalCode" 
@@ -354,7 +356,7 @@ h3{
 
   <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" HeaderStyle-CssClass="isObligatoryHeader">
   <HeaderTemplate>
-  <h3 style="color:white;">Obligatory</h3>
+  <h3 class="headertext" style="color:white;">Obligatory</h3>
   <asp:ImageButton 
   runat="server" 
   CommandName="IsObligatory" 
@@ -377,7 +379,7 @@ h3{
 
   <asp:TemplateField AccessibleHeaderText="IsCancelled" HeaderText="IsCancelled" HeaderStyle-CssClass="isCancelledHeader">
   <HeaderTemplate>
-  <h3  style="color:white;">Cancelled</h3>
+  <h3 class="headertext" style="color:white;">Cancelled</h3>
   <asp:ImageButton 
   runat="server" 
   CommandName="IsCancelled" 

@@ -15,12 +15,10 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;
-
         public event EventHandler<EventArgs> CreateCourseButtonClicked;
         public event EventHandler<EventArgs> ManageCourseButtonClicked;
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         public event EventHandler<EventArgs> CreateReportButtonClicked;
-
         public event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
 
         public string Message
@@ -30,18 +28,27 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSource
         {
-            set { gvHostTable.DataSource = value; }
+            set { CourseGridView.SetDataSource = value; }
         }
+
         public IEnumerable<object> SetDataSource2
         {
-            set { gvHostTable1.DataSource = value; }
+            set { CourseGridViewHeader.SetDataSource2 = value; }
         }
 
         public int SelectedRowIndex
         {
-            get { return gvHostTable.SelectedIndex; }
-            set { gvHostTable.SelectedIndex = value; }
+            get { return CourseGridView.SelectedRowIndex; }
+            set { CourseGridView.SelectedRowIndex = value; }
         }
+
+        public object SelectedRowValueDataKey
+        {
+
+            get { return CourseGridView.SelectedRowValueDataKey; }
+
+        }
+
         public int? SessionCourseId
         {
             get { return (int)Session["CourseId"]; }
@@ -64,21 +71,37 @@ namespace CheckPoint.Views
         {
             get { return Session["LoggedInClient"].ToString(); }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        public void BindData()
+
+        public override void HookUpEvents()
         {
-            gvHostTable.DataBind();
-            gvHostTable1.DataBind();
-        }
-        public object SelectedRowValueDataKey
-        {
-            get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+            CourseGridView.RowSelected += OnRowSelected;
+            CourseGridViewHeader.RowSelected += OnCourseGridViewHeader_RowSelected;
+            CourseGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
+            CourseGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
         }
 
-        protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
+        private void OnSortColumnsByPropertyAscending(object sender, EventArgs e)
+        {
+            if (SortColumnsByPropertyAscending != null)
+            {
+                SortColumnsByPropertyAscending(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnSortColumnsByPropertyDescending(object sender, EventArgs e)
+        {
+            if (SortColumnsByPropertyDescending != null)
+            {
+                SortColumnsByPropertyDescending(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnCourseGridViewHeader_RowSelected(object sender, EventArgs e)
         {
             if (RowSelected != null)
             {
@@ -86,24 +109,35 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void Asc_Command(object sender, CommandEventArgs e)
+        private void OnRowSelected(object sender, EventArgs e)
         {
-            ColumnName = e.CommandName;
-            if (SortColumnsByPropertyAscending != null)
+            if (RowSelected != null)
             {
-                SortColumnsByPropertyAscending(this, EventArgs.Empty);
+                RowSelected(this, EventArgs.Empty);
             }
         }
 
-        protected void Desc_Command(object sender, CommandEventArgs e)
+        public void BindData()
         {
-            ColumnName = e.CommandName;
-            if (SortColumnsByPropertyDescending != null)
-            {
-                SortColumnsByPropertyDescending(this, EventArgs.Empty);
-            }
+            CourseGridView.DataBind();
+            CourseGridViewHeader.DataBind();
         }
 
+        public void RedirectToCreateCourse()
+        {
+            Response.Redirect("CreateCourseView.aspx");
+        }
+
+        public void RedirectToManageCourse()
+        {
+            //TODO  Response.Redirect("ManageCourseView.aspx");
+            this.Message = "bumbum!";
+        }
+
+        public void RedirectToAppointmentsView()
+        {
+            Response.Redirect("HostHomeView.aspx");
+        }
 
         protected void manageattendance_Click(object sender, ImageClickEventArgs e)
         {
@@ -119,28 +153,6 @@ namespace CheckPoint.Views
             {
                 CreateReportButtonClicked(this, EventArgs.Empty);
             }
-        }
-
-        protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
-            }
-        }
-
-        public void RedirectToCreateCourse()
-        {
-            Response.Redirect("CreateCourseView.aspx");
-        }
-        public void RedirectToManageCourse()
-        {
-            //TODO  Response.Redirect("ManageCourseView.aspx");
-            this.Message = "bumbum!";
-        }
-        public void RedirectToAppointmentsView()
-        {
-            Response.Redirect("HostHomeView.aspx");
         }
 
         protected void managecourse_Click(object sender, ImageClickEventArgs e)

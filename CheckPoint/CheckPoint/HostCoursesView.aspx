@@ -1,5 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HostCoursesView.aspx.cs" Inherits="CheckPoint.Views.HostCoursesView" EnableEventValidation="false"  MasterPageFile="~/HostMaster.Master" %>
 
+<%@ Register Src="~/UserControls/CourseGridView.ascx" TagPrefix="uc1" TagName="CourseGridView" %>
+<%@ Register Src="~/UserControls/CourseGridViewHeader.ascx" TagPrefix="uc1" TagName="CourseGridViewHeader" %>
+
+
+
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
@@ -10,7 +15,7 @@
   
 
 
-html, body, div, applet,span, object, iframe,
+/*html, body, div, applet,span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -31,7 +36,7 @@ font-size: 100%;
 font: inherit;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/*article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -52,10 +57,10 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+}*/
 
 
-.roundedButtons {
+/*.roundedButtons {
     border-radius: 10px;
 }
 .roundedButtons:hover{
@@ -68,10 +73,10 @@ table {
     from{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333;}
      50%{ background-color:#00ff00; border-radius:10px; -webkit-box-shadow: 0 0 18px #00ff00; }
       to{ background-color:#4dff4d; border-radius:10px; -webkit-box-shadow: 0 0 9px #333; }
-}
+}*/
 
 
-.courseIdColumnItem{
+/*.courseIdColumnItem{
     width: 9.09%;
     padding-left: 0%;
     padding-right:1%;
@@ -91,10 +96,10 @@ table {
     width: 10.09%;
     padding-left: 1%;
     margin: auto;
-}
+}*/
 
 
-.courseIdHeader{
+/*.courseIdHeader{
     width: 7.5%;
     margin: auto;
 }
@@ -111,15 +116,15 @@ table {
 .isPrivateHeader{
     width: 9%;
     margin: auto;
-}
+}*/
 
 
 
-.datediv{
+/*.datediv{
     width: 117px;
     margin: auto;
     padding-right: 8px;
-}
+}*/
 
 .Panel1{
     position:relative; 
@@ -139,7 +144,7 @@ table {
     right:1%;
 }
 
-.Row td{
+/*.Row td{
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     vertical-align: middle;
@@ -182,7 +187,7 @@ h3{
     padding-bottom: 3%;
     font-family: sans-serif;
     font-weight: bold;
-}
+}*/
 .container{
       position:relative;
       right:0%;
@@ -289,117 +294,8 @@ h3{
                          Text="HostPage">
                      </asp:Label>
 
-                     <asp:GridView 
-                          ID="gvHostTable1" 
-                          runat="server" 
-                          AllowSorting="True"
-                          AutoGenerateColumns="False"
-                          Height="100%" 
-                          OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged" 
-                          ShowHeader="true"
-                          ShowHeaderWhenEmpty="True"
-                          style="
-                          width:100%;
-                          z-index:2;"
-                          ShowFooter="false">
-                          
-                         <Columns>
+                     <uc1:CourseGridViewHeader runat="server" id="CourseGridViewHeader" />
 
-                             <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">CourseId</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="CourseId" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="CourseId" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons"/>
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-
-
-                             <asp:TemplateField AccessibleHeaderText="CourseName" HeaderText="CourseName" HeaderStyle-CssClass="courseNameHeader">
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">Name</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Name" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command" 
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Name" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons"/>
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center"/>
-                                 <HeaderStyle/>
-                             </asp:TemplateField>
-
-
-                             <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" HeaderStyle-CssClass="descriptionHeader">
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">Description</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Description" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command"  
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons" />
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="Description" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command" 
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons"/>
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-
-
-                             <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" HeaderStyle-CssClass="isPrivateHeader">
-                                 <HeaderTemplate>
-                                     <h3 style="color:white;">Private</h3>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="IsPrivate" 
-                                         ImageUrl="~/Images/uparrow3.png" 
-                                         OnCommand="Asc_Command"  
-                                         ToolTip="sort by ascending"
-                                         CssClass="roundedButtons"/>
-                                     <asp:ImageButton 
-                                         runat="server" 
-                                         CommandName="IsPrivate" 
-                                         ImageUrl="~/Images/downarrow3.png" 
-                                         OnCommand="Desc_Command"  
-                                         ToolTip="sort by descending"
-                                         CssClass="roundedButtons" />
-                                 </HeaderTemplate>
-                                 <ItemStyle HorizontalAlign="Center" />
-                                 <HeaderStyle />
-                             </asp:TemplateField>
-
-                         </Columns>
-                         <HeaderStyle />
-                         <SelectedRowStyle BackColor="#32E236" />
-                     </asp:GridView>
                  </ContentTemplate>
                  </asp:UpdatePanel>
 
@@ -451,81 +347,8 @@ h3{
             </script>
 
 
-              <asp:GridView
-                  ID="gvHostTable"
-                  runat="server"
-                  AutoGenerateColumns="False" 
-                  Height="100%" 
-                  Width="100%"  
-                  style=" table-layout:fixed;
-                  z-index:1" 
-                  AllowSorting="True" 
-                  OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
-                  OnRowDataBound="gvHostTable_RowDataBound"
-                  ShowHeaderWhenEmpty="True" 
-                  ShowHeader="false" 
-                  DataKeyNames="CourseId"
-                  >
-                  
-                <RowStyle BackColor="White" CssClass="Row"/>
-                <AlternatingRowStyle
-                    CssClass="AltRow"
-                    VerticalAlign="Middle" 
-                    Wrap="True"
-                    BackColor="#99FF99" />
-                <Columns>
+                    <uc1:CourseGridView runat="server" id="CourseGridView" />
 
-                   
-
-                    <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">CourseId</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle  />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="Name"  HeaderText="Name" ItemStyle-CssClass="courseNameColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">CourseName</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblCourseName"  runat="server" Text='<%# Bind("Name") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" ItemStyle-CssClass="descriptionColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">Description</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Description") %>'></asp:Label>
-                        </ItemTemplate>
-                        <ItemStyle />
-                    </asp:TemplateField>
-
-
-                    <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" ItemStyle-CssClass="isPrivateColumnItem">
-                        <HeaderTemplate>
-                            <h3 style="color:white">IsPrivate</h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
-                            <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
-                        </ItemTemplate>
-                        <ItemStyle />
-                    </asp:TemplateField>
-
-
-                </Columns>
-                <SelectedRowStyle 
-                    BackColor="#32E236" ForeColor="White" />
-            </asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
 

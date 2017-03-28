@@ -80,7 +80,7 @@ namespace CheckPoint.Views
         }
         public override void HookUpEvents()
         {
-            AppointmentGridView.RowSelected += GridView_RowSelected1;
+            AppointmentGridView.RowSelected += GridView_RowSelected;
             AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
@@ -110,7 +110,7 @@ namespace CheckPoint.Views
             }
         }
 
-        private void GridView_RowSelected1(object sender, EventArgs e)
+        private void GridView_RowSelected(object sender, EventArgs e)
         {
             if (RowSelected != null)
             {
