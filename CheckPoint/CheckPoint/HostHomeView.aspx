@@ -1,5 +1,10 @@
 ﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HostHomeView.aspx.cs"  Inherits="CheckPoint.Views.HostHomeView"  EnableEventValidation="false"  MasterPageFile="~/HostMaster.Master" %>
 
+<%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
+<%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
+
+
+
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
 
@@ -367,7 +372,12 @@ h3{
                          Text="HostPage">
                      </asp:Label>
 
-                     <asp:GridView 
+
+                     <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />
+
+
+
+<%--                     <asp:GridView 
                           ID="gvHostTable1" 
                           runat="server" 
                           AllowSorting="True"
@@ -617,7 +627,7 @@ h3{
                          </Columns>
                          <HeaderStyle />
                          <SelectedRowStyle BackColor="#32E236" />
-                     </asp:GridView>
+                     </asp:GridView>--%>
                  </ContentTemplate>
                  </asp:UpdatePanel>
 
@@ -667,9 +677,9 @@ h3{
                               });
                       };
             </script>
+                   <uc1:AppointmentGridView runat="server" id="AppointmentGridView" />
 
-
-              <asp:GridView
+<%--              <asp:GridView
                   ID="gvHostTable"
                   runat="server"
                   AutoGenerateColumns="False" 
@@ -823,7 +833,7 @@ h3{
                 </Columns>
                 <SelectedRowStyle 
                     BackColor="#32E236" ForeColor="White" />
-            </asp:GridView>
+            </asp:GridView>--%>
                 </ContentTemplate>
             </asp:UpdatePanel>
 

@@ -11,6 +11,7 @@ using CheckPointPresenters.Presenters;
 
 namespace CheckPoint.Views
 {
+   
     public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
     {
         public event EventHandler<EventArgs> RowSelected;
@@ -23,6 +24,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> ViewCoursesButtonClicked;
         public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
 
+
         public string Message
         {
             set { lblMessage.Text = value; }
@@ -30,17 +32,24 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSource
         {
-            set { gvHostTable.DataSource = value; }
+            set { /*gvHostTable.DataSource = value;*/  AppointmentGridView.SetDataSource = value; }
         }
+        //public IEnumerable<object> SetDataSource2
+        //{
+        //    set { gvHostTable1.DataSource = value; }
+        //}
+
         public IEnumerable<object> SetDataSource2
         {
-            set { gvHostTable1.DataSource = value; }
+            set { AppointmentGridViewHeader.SetDataSource2 = value; }
         }
 
         public int SelectedRowIndex
         {
-            get  { return gvHostTable.SelectedIndex; }
-            set  { gvHostTable.SelectedIndex = value; }
+            //get  { return gvHostTable.SelectedIndex; }
+            //set  { gvHostTable.SelectedIndex = value; }
+            get { return AppointmentGridView.SelectedRowIndex; }
+            set { AppointmentGridView.SelectedRowIndex = value; }
         }
         public int? SessionAppointmentId
         {
@@ -72,16 +81,68 @@ namespace CheckPoint.Views
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
         }
+        public override void HookUpEvents()
+        {
+            AppointmentGridView.RowSelected += GridView_RowSelected1;
+            AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
+            AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
+            AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
+        }
+
+        private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
+            {
+                RowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnSortColumnsByPropertyDescending(object sender, EventArgs e)
+        {
+            if(SortColumnsByPropertyDescending != null)
+            {
+                SortColumnsByPropertyDescending(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnSortColumnsByPropertyAscending(object sender, EventArgs e)
+        {
+            if(SortColumnsByPropertyAscending != null)
+            {
+                SortColumnsByPropertyAscending(this, EventArgs.Empty);
+            }
+        }
+
+        private void GridView_RowSelected1(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
+            {
+                RowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnRowSelected(object sender, EventArgs e)
+        {
+            if (RowSelected != null)
+            {
+                RowSelected(this, EventArgs.Empty);
+            }
+        }
+
         public void BindData()
         {
-            gvHostTable.DataBind();
-            gvHostTable1.DataBind();
+            //gvHostTable.DataBind();
+            //gvHostTable1.DataBind();
+            AppointmentGridView.DataBind();
+            //gvHostTable1.DataBind();
+            AppointmentGridViewHeader.DataBind();
         }
         public object SelectedRowValueDataKey
         {
-            get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+            //get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+            get { return AppointmentGridView.SelectedRowValueDataKey; }
         }
 
         public bool ViewCoursesButtonVisible
@@ -187,13 +248,18 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
-            }
-        }
+        //protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    //if (e.Row.RowType == DataControlRowType.DataRow)
+        //    //{
+        //    //    e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
+        //    //}
+        //    //if (e.Row.RowType == DataControlRowType.DataRow)
+        //    //{
+        //    //    e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView, "Select$" + e.Row.RowIndex);
+        //    //}
+
+        //}
 
         public void RedirectToCreateAppointment()
         {

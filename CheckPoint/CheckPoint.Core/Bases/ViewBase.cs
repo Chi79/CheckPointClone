@@ -19,6 +19,8 @@ namespace CheckPointPresenters.Bases
             base.OnLoadComplete(e);
             _presenter = CreatePresenter();
 
+            HookUpEvents();
+
             if (!IsPostBack)
             {
                 _presenter.FirstTimeInit();
@@ -44,6 +46,10 @@ namespace CheckPointPresenters.Bases
         public virtual Uri Uri
         {
             get { return HttpContext.Current.Request.Url; }
+        }
+        public virtual void HookUpEvents()
+        {
+
         }
     }
 }

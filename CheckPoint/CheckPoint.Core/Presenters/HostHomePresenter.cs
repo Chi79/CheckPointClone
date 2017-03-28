@@ -37,6 +37,7 @@ namespace CheckPointPresenters.Presenters
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
             _view.AddSelectedAppointmentToCourseButtonClicked += OnAddSelectedAppointmentToCourseButtonClicked;
+
         }
 
         private void OnAddSelectedAppointmentToCourseButtonClicked(object sender, EventArgs e)
