@@ -17,8 +17,6 @@ namespace CheckPointPresenters.Presenters
         private readonly IUserHomeView _view;
         private readonly IShowAppointments _displayService;
 
-        private string _client;
-
         public UserHomePresenter(IUserHomeModel userHomeModel, IUserHomeView userHomeView, 
                                  IShowAppointments displayService)
         {
@@ -35,7 +33,6 @@ namespace CheckPointPresenters.Presenters
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
 
-            _client = _view.LoggedInClient;
         }
 
         private void OnCreateReportButtonClicked(object sender, EventArgs e)
@@ -80,7 +77,7 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_client);
+            _view.SetDataSource = _displayService.GetAllAppointmentsFor<APPOINTMENT>(_view.LoggedInClient);
             _view.SetDataSource2 = _displayService.GetEmptyList<APPOINTMENT>();
             _view.SessionRowIndex = -1;
             _view.SessionAppointmentId = -1;
