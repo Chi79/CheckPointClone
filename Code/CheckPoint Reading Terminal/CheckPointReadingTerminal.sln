@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderCommon", "ReaderCommon\ReaderCommon.csproj", "{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderSerialProtocols", "ReaderSerialProtocols\ReaderSerialProtocols.csproj", "{16830007-B5D9-4C1B-9829-835CBCC6ACEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderModel", "ReaderModel\ReaderModel.csproj", "{DDE54F7B-9472-41CB-8948-D2EF524282CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderViews", "ReaderView\ReaderViews.csproj", "{D5EF7A24-3E49-4121-B87B-8F1E90D414DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderPresenters", "ReaderPresenters\ReaderPresenters.csproj", "{BC5034A8-8DF4-4157-955C-D8CC484EECC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionManager", "InjectionManager\InjectionManager.csproj", "{F47EC934-C60B-403B-A03D-29EA3A924122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDataAccess", "ReaderDataAccess\ReaderDataAccess.csproj", "{468E2094-0FD7-4E6B-90D6-6D935616D896}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDTO", "ReaderDTO\ReaderDTO.csproj", "{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9E2A5F-CC18-421D-A1EB-0CCD020495FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16830007-B5D9-4C1B-9829-835CBCC6ACEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16830007-B5D9-4C1B-9829-835CBCC6ACEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16830007-B5D9-4C1B-9829-835CBCC6ACEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16830007-B5D9-4C1B-9829-835CBCC6ACEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE54F7B-9472-41CB-8948-D2EF524282CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE54F7B-9472-41CB-8948-D2EF524282CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE54F7B-9472-41CB-8948-D2EF524282CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE54F7B-9472-41CB-8948-D2EF524282CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5EF7A24-3E49-4121-B87B-8F1E90D414DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5EF7A24-3E49-4121-B87B-8F1E90D414DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5EF7A24-3E49-4121-B87B-8F1E90D414DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5EF7A24-3E49-4121-B87B-8F1E90D414DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5034A8-8DF4-4157-955C-D8CC484EECC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5034A8-8DF4-4157-955C-D8CC484EECC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5034A8-8DF4-4157-955C-D8CC484EECC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5034A8-8DF4-4157-955C-D8CC484EECC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F47EC934-C60B-403B-A03D-29EA3A924122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47EC934-C60B-403B-A03D-29EA3A924122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47EC934-C60B-403B-A03D-29EA3A924122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47EC934-C60B-403B-A03D-29EA3A924122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468E2094-0FD7-4E6B-90D6-6D935616D896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468E2094-0FD7-4E6B-90D6-6D935616D896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468E2094-0FD7-4E6B-90D6-6D935616D896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468E2094-0FD7-4E6B-90D6-6D935616D896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

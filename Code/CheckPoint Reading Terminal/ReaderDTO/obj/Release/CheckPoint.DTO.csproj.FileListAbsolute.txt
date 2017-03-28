@@ -1,0 +1,15 @@
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\CheckPoint.DTO.dll.config
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\CheckPoint.DTO.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\CheckPoint.DTO.pdb
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\CacheCow.Common.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\Newtonsoft.Json.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\System.Web.Http.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\CacheCow.Common.xml
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\Newtonsoft.Json.xml
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\bin\Release\System.Web.Http.xml
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\obj\Release\CheckPoint.DTO.csprojResolveAssemblyReference.cache
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\obj\Release\CheckPoint.DTO.dll
+C:\Users\Carecopter\Desktop\CheckPointREST\CheckPoint.DTO\obj\Release\CheckPoint.DTO.pdb

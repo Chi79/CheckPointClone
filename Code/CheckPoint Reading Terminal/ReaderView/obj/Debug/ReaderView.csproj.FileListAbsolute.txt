@@ -1,0 +1,9 @@
+Z:\CheckPointReadingTerminal\ReaderView\bin\Debug\ReaderView.exe.config
+Z:\CheckPointReadingTerminal\ReaderView\bin\Debug\ReaderView.exe
+Z:\CheckPointReadingTerminal\ReaderView\bin\Debug\ReaderView.pdb
+Z:\CheckPointReadingTerminal\ReaderView\obj\Debug\ReaderView.csprojResolveAssemblyReference.cache
+Z:\CheckPointReadingTerminal\ReaderView\obj\Debug\ReaderView.MainForm.resources
+Z:\CheckPointReadingTerminal\ReaderView\obj\Debug\ReaderView.Properties.Resources.resources
+Z:\CheckPointReadingTerminal\ReaderView\obj\Debug\ReaderView.csproj.GenerateResource.Cache
+Z:\CheckPointReadingTerminal\ReaderView\obj\Debug\ReaderView.exe
+Z:\CheckPointReadingTerminal\ReaderView\obj\Debug\ReaderView.pdb
