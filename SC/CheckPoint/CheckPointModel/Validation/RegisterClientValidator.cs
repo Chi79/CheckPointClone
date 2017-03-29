@@ -44,6 +44,14 @@ namespace CheckPointModel.Validation
             {
                 base.AddBrokenRule("PostalCode must be 4 digits or less. ");
             }
+            try
+            {
+                int postcodeInteger = Convert.ToInt32(client.PostalCode);
+            }
+            catch
+            {
+                base.AddBrokenRule("Postal Code must be an valid integer value!");
+            }
         }
     }
 }
