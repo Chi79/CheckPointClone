@@ -1,136 +1,184 @@
+USE [CheckPoint]
+GO
 
-CREATE TABLE [READER]
-( 
-	[ReaderId]           int  NOT NULL ,
-	CONSTRAINT [XPKREADER] PRIMARY KEY  CLUSTERED ([ReaderId] ASC)
-)
-go
 
-CREATE TABLE [COURSE]
-( 
-	[CourseId]           int  NOT NULL  IDENTITY ( 1,1 ) ,
-	[Name]               varchar(20)  NOT NULL ,
-	[Description]        varchar(200)  NULL ,
-	[IsPrivate]          bit  NULL ,
-	[UserName]           varchar(20) NOT NULL,
-	CONSTRAINT [XPKCOURSE] PRIMARY KEY  CLUSTERED ([CourseId] ASC),
-	CONSTRAINT [R_40] FOREIGN KEY ([UserName]) REFERENCES [CLIENT]([UserName])
-)
-go
-
-CREATE TABLE [ADDRESS]
-( 
-	[PostalCode]         int  NOT NULL ,
-	[City]               varchar(25)  NOT NULL ,
-	CONSTRAINT [XPKADDRESS] PRIMARY KEY  CLUSTERED ([PostalCode] ASC)
-)
-go
-
-CREATE TABLE [CLIENT_TYPE]
-( 
-	[ClientType]         int  NOT NULL ,
-	[Description]        varchar(30)  NOT NULL ,
-	CONSTRAINT [XPKCLIENT_TYPE] PRIMARY KEY  CLUSTERED ([ClientType] ASC)
-)
-go
-
-CREATE TABLE [CLIENT]
-( 
-	[Email]              varchar(30)  NOT NULL ,
-	[PhoneNumber]        int  NULL ,
-	[FirstName]          varchar(20)  NOT NULL ,
-	[LastName]           varchar(20)  NOT NULL ,
-	[Password]           char(20)  NOT NULL ,
-	[UserName]           varchar(20)  NOT NULL ,
-	[Address]      varchar(50)  NULL ,
-	[PostalCode]         int  NOT NULL ,
-	[ClientType]         int  NOT NULL ,
-	CONSTRAINT [XPKCLIENT] PRIMARY KEY  CLUSTERED ([UserName] ASC),
-	CONSTRAINT [XAK1CLIENT] UNIQUE ([Email]  ASC),
-	CONSTRAINT [R_19] FOREIGN KEY ([PostalCode]) REFERENCES [ADDRESS]([PostalCode]),
-CONSTRAINT [R_31] FOREIGN KEY ([ClientType]) REFERENCES [CLIENT_TYPE]([ClientType]),
-	CONSTRAINT chk_Email CHECK (Email like '%@%.%'),
-	CONSTRAINT chk_Password CHECK (LEN([Password])>5),
-    CONSTRAINT chk_PhoneNumber CHECK (LEN([PhoneNumber])>7)
-
-)
-go
-
-CREATE TABLE [APPOINTMENT]
-( 
-	[AppointmentId]      int  NOT NULL  IDENTITY ( 1,1 ) ,
-	[CourseId]           int  NULL ,
-	[StartTime]           Time NOT NULL ,
-	[EndTime]             Time  NOT NULL ,
-	[PostalCode]         int  NOT NULL ,
-	[AppointmentName]    varchar(40)  NOT NULL ,
-	[Description]        varchar(200)  NULL ,
-	[Address]      varchar(50)  NULL ,
-	[Date]               date  NOT NULL,
-	[IsCancelled]        bit  NULL ,
-	[UserName]           varchar(20)  NOT NULL ,
-	[IsObligatory]       bit  NULL ,
-	CONSTRAINT [XPKAPPOINTMENT] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC),
-	CONSTRAINT [R_1] FOREIGN KEY ([CourseId]) REFERENCES [COURSE]([CourseId]),
-CONSTRAINT [R_3] FOREIGN KEY ([PostalCode]) REFERENCES [ADDRESS]([PostalCode]),
-CONSTRAINT [R_32] FOREIGN KEY ([UserName]) REFERENCES [CLIENT]([UserName])
-
-)
-go
-
-CREATE TABLE [READER_APPOINTMENT]
-( 
-	[ReaderId]           int  NOT NULL ,
-	[AppointmentId]      int  NOT NULL ,
-	CONSTRAINT [XPKREADER_APPOINTMENT] PRIMARY KEY  CLUSTERED ([ReaderId] ASC,[AppointmentId] ASC),
-	CONSTRAINT [R_21] FOREIGN KEY ([ReaderId]) REFERENCES [READER]([ReaderId]),
-CONSTRAINT [R_22] FOREIGN KEY ([AppointmentId]) REFERENCES [APPOINTMENT]([AppointmentId])
-
-)
-go
-
-CREATE TABLE [ATTENDEE_STATUS]
-( 
-	[Description]        varchar(30)  NULL ,
-	[StatusId]           int  NOT NULL ,
-	CONSTRAINT [XPKAPPLICANT] PRIMARY KEY  CLUSTERED ([StatusId] ASC)
-)
-go
-
-CREATE TABLE [CLIENT_TAG]
-( 
-	[TagId]              varchar(30)  NOT NULL ,
-	[UserName]           varchar(20)  NOT NULL ,
-	CONSTRAINT [XPKCLIENT_TAG] PRIMARY KEY  CLUSTERED ([TagId] ASC),
-	CONSTRAINT [R_36] FOREIGN KEY ([UserName]) REFERENCES [CLIENT]([UserName]),
-CONSTRAINT [R_38] FOREIGN KEY ([UserName]) REFERENCES [CLIENT]([UserName])
-
-)
-go
-
-CREATE TABLE [ATTENDEE]
-( 
-	[AppointmentId]      int  NOT NULL ,
-	[PersonalNote]       varchar(200)  NULL ,
-	[TimeAttended]       datetime  NULL ,
-	[StatusId]           int  NOT NULL ,
-	[TagId]              varchar(30)  NOT NULL ,
-	CONSTRAINT [XPKATTENDEE] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC,[TagId] ASC),
-	CONSTRAINT [R_15] FOREIGN KEY ([AppointmentId]) REFERENCES [APPOINTMENT]([AppointmentId]),
-CONSTRAINT [R_29] FOREIGN KEY ([StatusId]) REFERENCES [ATTENDEE_STATUS]([StatusId]),
-CONSTRAINT [R_34] FOREIGN KEY ([TagId]) REFERENCES [CLIENT_TAG]([TagId])
-
-)
-go
-INSERT INTO CLIENT_TYPE
-VALUES(0,'User'),(1,'Host')
-
-INSERT INTO ATTENDEE_STATUS
+INSERT INTO [dbo].[READER]
+           ([ReaderId])
      VALUES
-	       ('Has requested to attend',0),
-		   ('Is an attende not obligatory',1),
-		   ('Is an attende obligatory',2),           
-		   ('Has attended not obligatory',3),
-		   ('Has attended Obligatory',4),
-		   ('Is invited to appointment',5)
-		  
+           (1),(2)
+GO
+
+
+INSERT INTO [dbo].[CLIENT]
+           ([Email]
+           ,[PhoneNumber]
+           ,[FirstName]
+           ,[LastName]
+           ,[Password]
+           ,[UserName]
+           ,[Address]
+           ,[PostalCode]
+           ,[ClientType])
+     VALUES
+           ('mliknes@hotmail.com'
+           ,47882901
+           ,'Morten'
+           ,'Liknes'
+           ,66666666
+           ,'Morten'
+           ,'GamleSyrevegen 44'
+           ,4280
+           ,1),
+		   ('Tonje_@hotmail.co.uk'
+           ,99297412
+           ,'Chi'
+           ,'Lam'
+           ,66666666
+           ,'Chi'
+           ,'Oldacidroad 66'
+           ,3917
+           ,1),
+		   ('Kevin.brueland@gmail.com'
+           ,41283763
+           ,'Kevin'
+           ,'Brueland'
+           ,66666666
+           ,'Kevin'
+           ,'TrippingRoad 99'
+           ,3917
+           ,1),
+		   ('hans.p.halvorsen@usn.no'
+           ,35575158
+           ,'Hans Petter'
+           ,'Halvorsen'
+           ,66666666
+           ,'HansPetter'
+           ,'ScrummingRoad'
+           ,3917
+           ,0),
+		   ('Olav.Dehli@usn.no'
+           ,35575182
+           ,'Olav'
+           ,'Dælhli'
+           ,66666666
+           ,'Olav'
+           ,'SQLroad'
+           ,3917
+           ,0)
+GO
+
+
+
+INSERT INTO [dbo].[CLIENT_TAG]
+           ([TagId]
+           ,[UserName])
+     VALUES
+           ('HexValue1'
+           ,'Olav'),
+		   ('HexValue2'
+		   ,'HansPetter')
+GO
+
+INSERT INTO [dbo].[COURSE]
+           ([Name]
+           ,[Description]
+           ,[IsPrivate])
+     VALUES
+           ('C#'
+           ,'DesignPatterns'
+           ,0)
+		   ,('Software development'
+		   ,'Agile development'
+		   ,1)
+GO
+INSERT INTO [dbo].[APPOINTMENT]
+           ([CourseId]
+           ,[StartTime]
+           ,[EndTime]
+           ,[PostalCode]
+           ,[AppointmentName]
+           ,[Description]
+           ,[Address]
+           ,[Date]
+           ,[IsCancelled]
+           ,[UserName]
+           ,[IsObligatory])
+     VALUES
+         (  (Select CourseId
+		    From [COURSE]
+			where (Name = 'C#'))
+           ,'08:00'
+           ,'12:00'
+           ,3917
+           ,'Repository'
+           ,'Data access'
+           ,'Porsgrunn'
+           ,'2017-03-01'
+           ,0
+           ,'Chi'
+           ,1),
+		   ((Select CourseId
+		    From [COURSE]
+			where (Name = 'Software development'))
+           ,'12:00'
+           ,'17:00'
+           ,3917
+           ,'How to be a Scrum Master'
+           ,'Scrum4life'
+           ,'Porsgrunn'
+           ,'2017-03-05'
+           ,0
+           ,'Kevin'
+           ,0)
+GO
+INSERT INTO [dbo].[READER_APPOINTMENT]
+           ([ReaderId]
+           ,[AppointmentId])
+     VALUES
+           (1
+           ,
+		   (Select AppointmentId
+		      From [APPOINTMENT]
+			  where(AppointmentName='Repository')))
+		,(1,
+		 (Select AppointmentId
+		      From [APPOINTMENT]
+			  where(AppointmentName='How to be a Scrum Master')))
+		,
+		(2,
+		(Select AppointmentId
+		 From [APPOINTMENT]
+	     where(AppointmentName='Repository')))
+GO
+INSERT INTO [dbo].[ATTENDEE]
+           ([AppointmentId]
+           ,[PersonalNote]
+           ,[TimeAttended]
+           ,[StatusId]
+           ,[TagId])
+     VALUES
+           (
+		   (Select AppointmentId
+		 From [APPOINTMENT]
+	     where(AppointmentName='Repository'))
+           ,'Install visual studio'
+           ,Null
+           ,0
+           ,'HexValue1'),
+		   (
+		    (Select AppointmentId
+		      From [APPOINTMENT]
+			  where(AppointmentName='How to be a Scrum Master'))
+           ,'Read about scrum'
+           ,Null
+           ,0
+           ,'HexValue2'),
+		   (
+		    (Select AppointmentId
+		      From [APPOINTMENT]
+			  where(AppointmentName='How to be a Scrum Master'))
+           ,'Chill'
+           ,Null
+           ,0
+           ,'HexValue1')
+GO
