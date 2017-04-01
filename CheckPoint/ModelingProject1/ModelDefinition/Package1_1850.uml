@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="15bc7b23-1763-4045-951c-5ccb2a0b29f2"
+  name="POCOs"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="363eb4de-381d-43f6-9178-75ad6d6e9bef"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCheckPointPOCOs.POCOs"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f07e5df2-e1e0-47f4-93ad-52054b8be569"
+        name="Appointment"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="1186f6fb-2c70-45da-bf71-a837dde22fb5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e153ab05-03ef-4fd6-bc0c-61e6ae70e07d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="20ee77a7-8b99-49fe-b3fd-4dc36caaad71">
+                <propertyInstance
+                  Id="a3c017ec-bbb6-4872-aa85-a3ce6612197d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="051c1668-1997-4bf2-bea6-3ed4d0400e4f">
+                <propertyInstance
+                  Id="28c469c0-ad45-4483-bf48-44209b9a5e59"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="92385ea4-3108-4224-a0b7-9979ba2873f0">
+                <propertyInstance
+                  Id="3249037d-9e72-47b0-be41-e2147a3d78d1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5622996f-e811-49b9-8e37-96d203e3c356">
+                <propertyInstance
+                  Id="1697aa57-7614-45f9-b111-f01bfa94bcc2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7f84da56-df67-434b-99ab-ab3d71c7da7f">
+                <propertyInstance
+                  Id="1874f96f-e63f-4d6c-998d-62eae087e031"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="b90f905a-dd43-4ac0-bbcc-fc03f8f5c596"
+            name="AppointmentName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f71792a3-03eb-4ee3-b150-ac6675056485"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3DAppointmentName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="04fa348c-aa8c-458c-a8f5-a88204d532dd"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="caf14711-788d-4f7d-aa1d-babba41f6057">
+                    <propertyInstance
+                      Id="27b9060d-ff0d-4e75-8115-ca9f0b91b6be"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d1799fc-c0f3-4f66-8725-7d1db210da09">
+                    <propertyInstance
+                      Id="d03015db-f7d1-4ab7-9170-8ba6318ec42a"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6689f242-702e-471b-b2f1-cbba2bf803fb">
+                    <propertyInstance
+                      Id="2b506c03-47a3-42cf-a9d5-af481bfe544f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7cbf2c5-c8b4-4596-8b3d-dabff231e089">
+                    <propertyInstance
+                      Id="8ed5146f-eaa5-4e93-a3ce-f6fad61fe7c0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5aaa8f54-d934-4e8b-99b8-6a76f6ddbb8e">
+                    <propertyInstance
+                      Id="06691ad7-4202-418d-b704-94563fc3fed9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="196a05a1-f77d-45fa-8278-331eb51907ac">
+                    <propertyInstance
+                      Id="e9827b0b-8c27-40d6-8a22-c9202ad8ba6f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bf428d4-e3ca-413c-85c3-6c9205dd8907">
+                    <propertyInstance
+                      Id="024c7c16-f4d9-4279-8a43-d9ab9fb4d464"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="555231df-2934-4e7b-b5a2-5a650941021c"
+            name="Priority"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="eccc42c3-6f56-4678-92f6-39033ba4df7e"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3DPriority"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9bde9cde-e7bc-4f35-bff2-c16407acb050"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab71db5e-b64b-4f72-9017-a3c493d33bd7">
+                    <propertyInstance
+                      Id="259f31b7-f1cd-47a8-a1af-38b080c195f5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27fef091-82ed-4597-9d61-f569f1fa7982">
+                    <propertyInstance
+                      Id="b3a4b55a-9804-4b4a-b2fd-e1a1a1a2f252"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5146119-ea2e-4bff-8247-523bfad9eb95">
+                    <propertyInstance
+                      Id="325f72ed-d80a-4296-9b6a-e078b540989d"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="536a4f0a-a0d8-4140-8488-e32c2e70bcf4">
+                    <propertyInstance
+                      Id="d5290841-69fd-4946-8b55-7a940ac6fa18"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca1e13a5-ba36-414e-8703-d6c87598102f">
+                    <propertyInstance
+                      Id="2fe9c6fb-02f5-4da1-bae1-c8329559ad9f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="042fd1b6-8e8b-445d-9704-67091c00c127">
+                    <propertyInstance
+                      Id="0f422c0b-6314-43f3-8147-d2fd6b2275cb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1413a8a1-8a33-453c-ac85-681c8c613e7b">
+                    <propertyInstance
+                      Id="ad9ae74d-3a7d-4c98-b182-e544bc730d82"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="087a7d4a-10c4-421d-a93c-7dd35c64a079"
+            name="StartDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="aef792f7-b5f2-4266-9a24-5f1a75cdfb8b"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3DStartDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="defbb0a3-16c0-45cb-8e5a-25b4e67c7cbf"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98f27526-23f2-45fd-89e8-cab43fed6530">
+                    <propertyInstance
+                      Id="308c1375-b0b4-45d0-9e83-fe0a7bde0368"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="123a3cbd-08d3-4655-ad4d-9a2573ce2700">
+                    <propertyInstance
+                      Id="0de1d213-d3d1-472e-bc70-119486fc047e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e9985a2-aa4e-4d15-9203-e2c7683b6f5f">
+                    <propertyInstance
+                      Id="2cac2dcf-5ad1-4bd2-98d8-3d1de8d410a5"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3949444-689b-4a32-a28e-e592d4d2baac">
+                    <propertyInstance
+                      Id="16d98ad4-79f3-4a12-896d-30a940ffca37"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d2ea67f-444f-41b0-8f70-e73f4efad91b">
+                    <propertyInstance
+                      Id="c83a48f2-233a-49a6-a9f1-ee8bba756394"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db4a013a-0ce9-4f26-bfc9-c3a4330b6f57">
+                    <propertyInstance
+                      Id="e5afb908-d09a-4b2a-bd68-c9de859a0db4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2039796e-48da-4666-9db2-7c4bd779cc44">
+                    <propertyInstance
+                      Id="22c27635-3e62-4024-8ba0-0f86c630d2ce"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d32053ed-acdc-4c34-b8cc-3c7f6119e49b"
+            name="DueDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ae668408-1ee2-4909-93a7-5eb2aa985bfd"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3DDueDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3663f85f-73c7-45f0-9f6b-1de7bc285dbf"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2105e87-b3ec-4132-8677-cf7ba6db0bfd">
+                    <propertyInstance
+                      Id="8ee2a25d-38de-469e-b4c6-c2fd34dfb5dd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="de8d50bd-3531-4ef4-a56f-d62522399b8b">
+                    <propertyInstance
+                      Id="dabaa4ef-f4bf-4afa-98b7-3072c6f0daa2"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="79621e1a-8213-4f16-a3f3-db3472a9329e">
+                    <propertyInstance
+                      Id="e229287c-6331-410b-854d-50c744b66685"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f07bed18-013d-406b-8b94-66d6c5e4d9d4">
+                    <propertyInstance
+                      Id="48b771af-079c-4ed6-8f3f-5668ab375497"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e09c1c25-24e0-400e-9e69-d80f197402a9">
+                    <propertyInstance
+                      Id="7077b32e-aa3f-4972-bab4-fb86348a65f5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0dac546-0184-43c9-90b7-ce9d0706a13b">
+                    <propertyInstance
+                      Id="da979f4f-5015-420d-9e07-b478904ad8a0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1839de35-442d-4928-a392-0f3df4d969fe">
+                    <propertyInstance
+                      Id="36f59477-8306-4613-a7c8-73ef83717b34"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2ac0228c-4aee-4969-a21c-d14319dcb19f"
+            name="CompletionDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="93c697fb-54e6-4f98-a9c9-d76b9d5f2418"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3DCompletionDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b0efe2cb-c8bf-4b45-805d-e02ebc76ef99"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4695765-1628-4439-a100-315572c98570">
+                    <propertyInstance
+                      Id="a68c54c2-5896-4eee-aab6-85dbfc492403"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99f67bfe-fc68-4a5b-bc9b-9ac665fd8503">
+                    <propertyInstance
+                      Id="7f3b133c-67bb-4560-a422-fe2d7c1d2f5f"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1952a54f-8486-4bc6-b2e5-e067e8951e96">
+                    <propertyInstance
+                      Id="ea7c673f-04a2-465c-b225-525642411826"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c066051b-1bf5-4d0e-be8b-4f8d24822b78">
+                    <propertyInstance
+                      Id="10967dd1-36a6-46d5-bced-c77a3d45a4a0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49b677cd-0f14-41bd-bd03-a60c10cef760">
+                    <propertyInstance
+                      Id="591041a6-a88e-487f-bb7a-1cd2d85627f7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="243330dd-e5c2-4556-a4ef-f346a9b06b0a">
+                    <propertyInstance
+                      Id="af443ec2-6619-4078-9b68-01d1b4470672"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="301dc1ac-abfa-487a-a5b1-3c6e559c2fa8">
+                    <propertyInstance
+                      Id="4535b87e-a203-432f-9cda-757d5bcdea83"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3d166981-a8b1-4431-94c8-024134ade5a9"
+            name="Completed"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c17e8888-5c1c-4796-9cb3-9bd2d35a6775"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3DCompleted"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0a46af4b-db75-4093-927f-234a18dc33fe"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36b82bc8-c06f-4773-b07b-6a8251163055">
+                    <propertyInstance
+                      Id="601db850-639c-443c-b7a2-b604c16354a6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50dd5933-31d5-4b69-9d34-e43bf66b705b">
+                    <propertyInstance
+                      Id="91267b7d-b5c7-47d4-b5d0-bcddb03cae5e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2202ba2-ef12-44a2-881d-c80785997a53">
+                    <propertyInstance
+                      Id="71bb1727-bfd1-41fd-a4a1-547b6523f053"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6967145-cf0f-43ea-8a53-bb2655031af7">
+                    <propertyInstance
+                      Id="e65be5a6-328a-4bb6-ad6b-5db0967e02fe"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83535d8e-09a3-4a78-9c98-42a5978c4561">
+                    <propertyInstance
+                      Id="f2cebe19-106b-4040-8cd9-449713d07df3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8375ead8-1a24-4966-bd20-2e0c54c34f1b">
+                    <propertyInstance
+                      Id="c287ae9d-7b5b-4b3e-8b9c-f0666add65ee"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fbe6dda-52f9-4898-968c-87fad7bd8595">
+                    <propertyInstance
+                      Id="dbc33a3d-a28b-4722-be5a-e8d8e4962348"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a550a419-5318-488b-9e1e-3cb69a217d8e"
+            name="Appointment"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a4b3d5a2-7a11-4474-947f-0d185c5c23d4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="aa380ad4-cadb-42a3-a5e6-810e4f3515a7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55f1b8e3-02bf-4cc3-a61b-c11cf3e5e22e">
+                    <propertyInstance
+                      Id="50164d55-af66-4f5b-9a4d-e46733fd8162"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="201c39f2-8855-40ea-8e9a-e5908d30eeba">
+                    <propertyInstance
+                      Id="c8ab1dfb-a2ad-43f6-8633-0bcfabc530d5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c594f006-d59c-4e48-80cc-87be54e7d63e">
+                    <propertyInstance
+                      Id="2c7997a2-5f75-49a2-b9ec-a2a91682e6fa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78501ab5-aeae-48e3-8d1b-6ff2a69871ca">
+                    <propertyInstance
+                      Id="f632a47d-3c1f-4efd-9eb7-ad817195a57a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12dd2781-cce7-4898-9346-6a7248ba08bd">
+                    <propertyInstance
+                      Id="b4de9763-bc67-4c66-9156-c22dea979b11"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2beb7c55-5ce8-46aa-9859-4b16398e1fc9">
+                    <propertyInstance
+                      Id="70c3e99b-fd8e-48e0-9286-ae55cdadf56d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

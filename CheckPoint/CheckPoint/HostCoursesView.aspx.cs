@@ -12,14 +12,6 @@ namespace CheckPoint.Views
 {
     public partial class HostCoursesView : ViewBase<HostCoursesPresenter> , IHostCoursesView
     {
-        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
-        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> RowSelected;
-        public event EventHandler<EventArgs> CreateCourseButtonClicked;
-        public event EventHandler<EventArgs> ManageCourseButtonClicked;
-        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        public event EventHandler<EventArgs> CreateReportButtonClicked;
-        public event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
 
         public string Message
         {
@@ -62,6 +54,38 @@ namespace CheckPoint.Views
             CourseGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
         }
 
+        public void BindData()
+        {
+            CourseGridView.DataBind();
+            CourseGridViewHeader.DataBind();
+        }
+
+        public void RedirectToCreateCourse()
+        {
+            Response.Redirect("CreateCourseView.aspx");
+        }
+
+        public void RedirectToManageCourse()
+        {
+            //TODO  Response.Redirect("ManageCourseView.aspx");
+            this.Message = "bumbum!";
+        }
+
+        public void RedirectToAppointmentsView()
+        {
+            Response.Redirect("HostHomeView.aspx");
+        }
+
+        public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
+        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
+        public event EventHandler<EventArgs> RowSelected;
+        public event EventHandler<EventArgs> CreateCourseButtonClicked;
+        public event EventHandler<EventArgs> ManageCourseButtonClicked;
+        public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
+        public event EventHandler<EventArgs> CreateReportButtonClicked;
+        public event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
+
+
         private void OnSortColumnsByPropertyAscending(object sender, EventArgs e)
         {
             if (SortColumnsByPropertyAscending != null)
@@ -92,28 +116,6 @@ namespace CheckPoint.Views
             {
                 RowSelected(this, EventArgs.Empty);
             }
-        }
-
-        public void BindData()
-        {
-            CourseGridView.DataBind();
-            CourseGridViewHeader.DataBind();
-        }
-
-        public void RedirectToCreateCourse()
-        {
-            Response.Redirect("CreateCourseView.aspx");
-        }
-
-        public void RedirectToManageCourse()
-        {
-            //TODO  Response.Redirect("ManageCourseView.aspx");
-            this.Message = "bumbum!";
-        }
-
-        public void RedirectToAppointmentsView()
-        {
-            Response.Redirect("HostHomeView.aspx");
         }
 
         protected void manageattendance_Click(object sender, ImageClickEventArgs e)
