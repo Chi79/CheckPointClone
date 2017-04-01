@@ -30,3 +30,20 @@ C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderModel\obj\Debug\Read
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderModel\obj\Debug\ReaderModel.csproj.GenerateResource.Cache
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderModel\bin\Debug\ReaderDTO.dll
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderModel\bin\Debug\ReaderDTO.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderModel.dll.config
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderModel.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderModel.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\EntityFramework.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\MySql.Data.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderCommon.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderDTO.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderCommon.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\EntityFramework.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\bin\Debug\ReaderDTO.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\obj\Debug\ReaderModel.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\obj\Debug\ReaderModel.Properties.Resources.resources
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\obj\Debug\ReaderModel.csproj.GenerateResource.Cache
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\obj\Debug\ReaderModel.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderModel\obj\Debug\ReaderModel.pdb

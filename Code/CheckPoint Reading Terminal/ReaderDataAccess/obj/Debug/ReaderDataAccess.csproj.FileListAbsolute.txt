@@ -34,3 +34,21 @@ C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDataAccess\bin\Debug
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDataAccess\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDataAccess\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDataAccess\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\Reader.DataAccessREST.dll.config
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\Reader.DataAccessREST.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\Reader.DataAccessREST.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\Marvin.JsonPatch.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\ReaderCommon.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\ReaderDTO.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\ReaderCommon.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\ReaderDTO.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\obj\Debug\ReaderDataAccess.csproj.App.config
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\obj\Debug\ReaderDataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\obj\Debug\Reader.DataAccessREST.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDataAccess\obj\Debug\Reader.DataAccessREST.pdb

@@ -28,3 +28,18 @@ C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDTO\bin\Debug\System
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDTO\obj\Debug\ReaderDTO.csprojResolveAssemblyReference.cache
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDTO\obj\Debug\ReaderDTO.dll
 C:\Users\Carecopter\Desktop\CheckPointReadingTerminal\ReaderDTO\obj\Debug\ReaderDTO.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\ReaderDTO.dll.config
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\ReaderDTO.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\ReaderDTO.pdb
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\CacheCow.Common.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Web.Http.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\CacheCow.Common.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Web.Http.xml
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.dll
+C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.pdb

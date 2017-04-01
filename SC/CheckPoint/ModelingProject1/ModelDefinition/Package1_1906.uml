@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f6026c39-692c-4436-a5ec-b74fcd65ffb0"
+  name="Registries"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="8fa6b2ff-eedf-4c9c-8424-b95c07a8f3cc"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCheckPoint.Bootstrap.Registries"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="29f45866-8cc0-48d2-83a2-14f30f02d71d"
+        name="CheckPointRegistry"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c5c1ab42-9e9b-42f2-8fff-bcee1f98a2db"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPoint.Bootstrap%2Fbin%2FDebug%2FCheckPoint.Bootstrap.dll Namespace%3DCheckPoint.Bootstrap.Registries Type%3DCheckPointRegistry"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e15cc68c-1973-4e94-90d8-f92cdd8d7e7c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31f25e3c-3352-4efe-bebd-cd82f559e6ec">
+                <propertyInstance
+                  Id="e1960cc8-f234-47a3-bfca-cbb58c0b19db"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="73bc8114-b797-4303-814f-81c3a625677c">
+                <propertyInstance
+                  Id="19bfb350-96b1-4f23-8c2e-ade768ae40d6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8988eb9a-54a2-4a6b-ad23-4cbbc49375bd">
+                <propertyInstance
+                  Id="91dc93f6-28f1-4a66-8602-83614aba0ba4"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a54d44b4-f54a-4b1f-a390-5a660c0cf719">
+                <propertyInstance
+                  Id="05d5e3aa-080d-4891-ae80-a46876c2b082"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f39c71f-0789-49c5-85b1-55aaba76bab3">
+                <propertyInstance
+                  Id="14f293da-b6c3-4912-a90d-3dd929f718c0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="90b68403-d768-401d-9668-0b9d41fbfe8f"
+            name="CheckPointRegistry"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5e4ecde3-ea51-41e2-89f6-78c86e58af3e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPoint.Bootstrap%2Fbin%2FDebug%2FCheckPoint.Bootstrap.dll Namespace%3DCheckPoint.Bootstrap.Registries Type%3DCheckPointRegistry Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="097028e2-878d-4968-8389-13f3929fa528"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="793cb101-e3a4-40f4-8133-4f2cd9a955b4">
+                    <propertyInstance
+                      Id="338b2bca-2084-4abc-a67c-42ae0f0463b9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33db8fed-8108-4e05-a150-f7d88484a69d">
+                    <propertyInstance
+                      Id="fc241910-2019-4281-ae79-11c16d868190"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0113ffa-53e3-4e91-ad72-ff9f0cc9c1e4">
+                    <propertyInstance
+                      Id="b0939cb7-2f3c-4b02-a443-c68781ab3557"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2515e8ee-51ab-481e-9e2f-3cbfdcee27f7">
+                    <propertyInstance
+                      Id="deea220d-7784-4689-8b32-1b97c3e6bf7a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc9eeb40-bb2c-4587-b2c7-77dc919943be">
+                    <propertyInstance
+                      Id="157f786d-2f69-4781-b02a-c1163dc75eaa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1dfe5216-805d-4c73-9f3a-e54839e17c26">
+                    <propertyInstance
+                      Id="e69e918b-5d43-44bd-b1eb-cae76c482003"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

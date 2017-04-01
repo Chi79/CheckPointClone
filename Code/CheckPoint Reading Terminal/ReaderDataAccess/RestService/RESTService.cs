@@ -119,8 +119,8 @@ namespace Reader.DataAccessREST
         
         public async Task<RegistrationFeedbackStatus> UpdateAttendeeWithStampAndStatus(string tagId, string appointmentId, bool isAppointmentObligatory)
         {
-            try
-            {
+            //try
+            //{
                 var hasAlreadyStamped = await CheckIfHasAlreadyStamped(appointmentId, tagId);
 
                 if (hasAlreadyStamped)
@@ -160,11 +160,11 @@ namespace Reader.DataAccessREST
                     return RegistrationFeedbackStatus.Failed;
                 }
                
-            }           
-            catch
-            {
-                return RegistrationFeedbackStatus.NoDatabaseConnection;
-            }
+            //}           
+            //catch
+            //{
+            //    return RegistrationFeedbackStatus.NoDatabaseConnection;
+            //}
         }
     }
 }

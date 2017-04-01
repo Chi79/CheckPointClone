@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ad285f05-7b75-46c7-9561-6f32098e3246"
+  name="CheckPointInterfaces"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="989c64cd-ca7b-4e4f-ae17-e6fd6d93a948"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCheckPointInterfaces"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="36d7b1da-1cac-49fe-83b5-1546e1058546"
+        LastKnownName="ViewInterfaces"
+        LastKnownLocation="Package3_1850.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e3f3c7f8-2f96-4087-8a7f-f78884fe3fb6"
+        LastKnownName="ModelInterfaces"
+        LastKnownLocation="Package_1904.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="808bb51e-e85d-4cf8-be85-f4b157311c6a"
+        LastKnownName="RepositoryInterfaces"
+        LastKnownLocation="Package_1957.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="15bc7b23-1763-4045-951c-5ccb2a0b29f2"
+        LastKnownName="POCOs"
+        LastKnownLocation="Package1_1850.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
