@@ -55,16 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tables\ADDRESS.cs" />
-    <Compile Include="Tables\APPOINTMENT.cs" />
-    <Compile Include="Tables\ATTENDEE.cs" />
-    <Compile Include="Tables\ATTENDEE_STATUS.cs" />
-    <Compile Include="Tables\CLIENT.cs" />
-    <Compile Include="Tables\CLIENT_TAG.cs" />
-    <Compile Include="Tables\CLIENT_TYPE.cs" />
-    <Compile Include="Tables\COURSE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tables\READER.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
