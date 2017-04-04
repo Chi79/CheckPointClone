@@ -151,6 +151,7 @@
     <Content Include="Images\uparrow3.png" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
+    <Content Include="index.aspx" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
@@ -177,6 +178,7 @@
     <Content Include="UserControls\CourseGridView.ascx" />
     <Content Include="UserControls\CourseGridViewHeader.ascx" />
     <Content Include="UserMaster.Master" />
+    <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -246,6 +248,13 @@
     </Compile>
     <Compile Include="HostMaster.Master.designer.cs">
       <DependentUpon>HostMaster.Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="InviteUserView.aspx.cs">
       <DependentUpon>InviteUserView.aspx</DependentUpon>
