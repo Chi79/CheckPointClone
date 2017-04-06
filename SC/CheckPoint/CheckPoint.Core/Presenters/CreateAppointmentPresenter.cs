@@ -121,7 +121,8 @@ namespace CheckPointPresenters.Presenters
             _dTO.PostalCode = _view.PostalCode;
             _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _dTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
-         
+
+            _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
         }
 
         private void DisplayValidationMessage()

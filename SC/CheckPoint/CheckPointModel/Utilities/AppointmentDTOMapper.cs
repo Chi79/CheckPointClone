@@ -29,6 +29,7 @@ namespace CheckPointModel.Utilities
                 UserName = appointmentDTO.UserName,
                 IsCancelled = appointmentDTO.IsCancelled,
                 IsObligatory = appointmentDTO.IsObligatory,
+                IsPrivate = appointmentDTO.IsPrivate
             }; 
             return appointment;
         }    //TODO

@@ -114,6 +114,10 @@ table {
     width: 9%;
     margin: auto;
 }
+.isPrivateHeader{
+    width: 9%;
+    margin: auto;
+}
 .isCancelledHeader{
     width: 9%;
     margin: auto;
@@ -146,7 +150,7 @@ table {
                           
  <Columns>
 
- <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="appointmentIdHeader" >
+ <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="appointmentIdHeader" Visible="false" >
  <HeaderTemplate>
  <h3  class="headertext" style="color:white;">AppointmentId</h3>
  <asp:ImageButton 
@@ -367,6 +371,29 @@ table {
   <asp:ImageButton 
   runat="server" 
   CommandName="IsObligatory" 
+  ImageUrl="~/Images/downarrow3.png" 
+  OnCommand="Desc_Command"  
+  ToolTip="sort by descending"
+  CssClass="roundedButtons" />
+  </HeaderTemplate>
+  <ItemStyle HorizontalAlign="Center" />
+  <HeaderStyle />
+  </asp:TemplateField>
+
+
+  <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" HeaderStyle-CssClass="isPrivateHeader">
+  <HeaderTemplate>
+  <h3 class="headertext" style="color:white;">Private</h3>
+  <asp:ImageButton 
+  runat="server" 
+  CommandName="IsPrivate" 
+  ImageUrl="~/Images/uparrow3.png" 
+  OnCommand="Asc_Command"  
+  ToolTip="sort by ascending"
+  CssClass="roundedButtons"/>
+  <asp:ImageButton 
+  runat="server" 
+  CommandName="IsPrivate" 
   ImageUrl="~/Images/downarrow3.png" 
   OnCommand="Desc_Command"  
   ToolTip="sort by descending"

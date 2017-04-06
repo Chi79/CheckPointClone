@@ -24,6 +24,7 @@ namespace CheckPointModel.DTOs
        public string UserName { get; set; }
        public bool IsCancelled { get; set; }
        public bool IsObligatory { get; set; }
+       public bool IsPrivate { get; set; }
 
         public override void CheckForBrokenRules(IAppointmentDTO appointment)
         {

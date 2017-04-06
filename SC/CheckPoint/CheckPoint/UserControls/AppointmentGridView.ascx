@@ -59,9 +59,9 @@ table {
     margin: auto;
 }
 .courseIdColumnItem{
-    width: 9.09%;
+    width: 8.09%;
     padding-left: 0%;
-    padding-right:1%;
+    padding-right:0%;
     margin: auto;
 }
 .appointmentNameColumnItem{
@@ -70,13 +70,13 @@ table {
     margin: auto;
 }
 .descriptionColumnItem{
-    width: 11.09%;
+    width: 9.09%;
     padding-left: 0%;
     margin: auto;
 }
 .dateColumnItem{
     width: 10.09%;
-    padding-left: 0%;
+    padding-left: 0.9%;
     margin: auto;
 }
 .startTimeColumnItem{
@@ -90,7 +90,7 @@ table {
     margin: auto;
 }
 .addressColumnItem{
-    width: 9.09%;
+    width: 8.09%;
     margin: auto;
     padding-left:1%;
 }
@@ -101,12 +101,17 @@ table {
 }
 .isObligatoryColumnItem{
     width: 10.09%;
-    padding-left: 1%;
+    padding-left: 0%;
+    margin: auto;
+}
+.isPrivateColumnItem{
+    width: 10.09%;
+    padding-left: 0%;
     margin: auto;
 }
 .isCancelledColumnItem{
     width: 8.09%;
-    padding-left: 2%;
+    padding-left: 1%;
     margin: auto;
 }
 
@@ -190,7 +195,7 @@ table {
  <Columns>
 
                    
- <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId"  ItemStyle-CssClass="appointmentIdColumnItem" >
+ <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId"  ItemStyle-CssClass="appointmentIdColumnItem" Visible="false" >
  <HeaderTemplate>
  <h3 style="color:white" >AppointmentId</h3>
  </HeaderTemplate>
@@ -300,6 +305,18 @@ table {
  <ItemTemplate>
  <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
  <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
+ </ItemTemplate>
+ <ItemStyle />
+ </asp:TemplateField>
+
+
+ <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" ItemStyle-CssClass="isPrivateColumnItem">
+ <HeaderTemplate>
+ <h3 style="color:white">IsPrivate</h3>
+ </HeaderTemplate>
+ <ItemTemplate>
+ <asp:Image ID="IsPrivateTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
+ <asp:Image ID="IsPrivateFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
  </ItemTemplate>
  <ItemStyle />
  </asp:TemplateField>

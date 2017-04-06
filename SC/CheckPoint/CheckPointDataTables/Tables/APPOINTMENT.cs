@@ -47,7 +47,7 @@ namespace CheckPointDataTables.Tables
         [StringLength(20)]
         public string UserName { get; set; }
 
-        public bool? IsObligatory { get; set; }
+        public bool IsObligatory { get; set; }
 
         public virtual ADDRESS ADDRESS1 { get; set; }
 

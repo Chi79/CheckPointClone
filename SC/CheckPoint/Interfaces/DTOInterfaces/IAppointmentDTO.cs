@@ -18,5 +18,6 @@ namespace CheckPointCommon.DTOInterfaces
          string UserName { get; set; }
          bool IsCancelled { get; set; }
          bool IsObligatory { get; set; }
+         bool IsPrivate { get; set; }
     }
 }
