@@ -56,6 +56,11 @@ namespace CheckPoint.Views
             get { return ddlIsObligatory.SelectedValue; }
         }
 
+        public string IsPrivate
+        {
+            get { return ddlIsPrivate.SelectedValue; }
+        }
+
         public string Message
         {
             get { return lblMessage.Text; }

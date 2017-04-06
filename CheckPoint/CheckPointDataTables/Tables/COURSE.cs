@@ -26,7 +26,7 @@ namespace CheckPointDataTables.Tables
 
         public bool? IsPrivate { get; set; }
 
-        public bool? IsObligatory { get; set; }
+        public bool IsObligatory { get; set; }
 
         [Required]
         [StringLength(20)]

@@ -20,6 +20,7 @@ namespace CheckPointCommon.ViewInterfaces
         string Date { get; }
         string IsCancelled { get; }
         string IsObligatory { get; }
+        string IsPrivate { get; }
 
 
         bool ContinueButtonVisible { set; }
