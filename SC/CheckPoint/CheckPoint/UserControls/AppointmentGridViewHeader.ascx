@@ -173,29 +173,6 @@ table {
  </asp:TemplateField>
 
 
- <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
- <HeaderTemplate>
- <h3 class="headertext" style="color:white;">CourseId</h3>
- <asp:ImageButton 
- runat="server" 
- CommandName="CourseId" 
- ImageUrl="~/Images/uparrow3.png" 
- OnCommand="Asc_Command" 
- ToolTip="sort by ascending"
- CssClass="roundedButtons" />
- <asp:ImageButton 
- runat="server" 
- CommandName="CourseId" 
- ImageUrl="~/Images/downarrow3.png" 
- OnCommand="Desc_Command" 
- ToolTip="sort by descending"
- CssClass="roundedButtons"/>
- </HeaderTemplate>
- <ItemStyle HorizontalAlign="Center" />
- <HeaderStyle />
- </asp:TemplateField>
-
-
  <asp:TemplateField AccessibleHeaderText="AppointmentName" HeaderText="AppointmentName" HeaderStyle-CssClass="appointmentNameHeader">
  <HeaderTemplate>
  <h3 class="headertext" style="color:white;">Name</h3>
@@ -232,6 +209,28 @@ table {
  <asp:ImageButton 
  runat="server" 
  CommandName="Description" 
+ ImageUrl="~/Images/downarrow3.png" 
+ OnCommand="Desc_Command" 
+ ToolTip="sort by descending"
+ CssClass="roundedButtons"/>
+ </HeaderTemplate>
+ <ItemStyle HorizontalAlign="Center" />
+ <HeaderStyle />
+ </asp:TemplateField>
+
+ <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
+ <HeaderTemplate>
+ <h3 class="headertext" style="color:white;">CourseId</h3>
+ <asp:ImageButton 
+ runat="server" 
+ CommandName="CourseId" 
+ ImageUrl="~/Images/uparrow3.png" 
+ OnCommand="Asc_Command" 
+ ToolTip="sort by ascending"
+ CssClass="roundedButtons" />
+ <asp:ImageButton 
+ runat="server" 
+ CommandName="CourseId" 
  ImageUrl="~/Images/downarrow3.png" 
  OnCommand="Desc_Command" 
  ToolTip="sort by descending"

@@ -206,16 +206,6 @@ table {
  </asp:TemplateField>
 
 
- <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
- <HeaderTemplate>
- <h3 style="color:white">CourseId</h3>
- </HeaderTemplate>
- <ItemTemplate>
- <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
- </ItemTemplate>
- <ItemStyle  />
- </asp:TemplateField>
-
 
  <asp:TemplateField AccessibleHeaderText="AppointmentName"  HeaderText="AppointmentName" ItemStyle-CssClass="appointmentNameColumnItem">
  <HeaderTemplate>
@@ -236,6 +226,17 @@ table {
  <asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Description") %>'></asp:Label>
  </ItemTemplate>
  <ItemStyle />
+ </asp:TemplateField>
+
+
+ <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
+ <HeaderTemplate>
+ <h3 style="color:white">CourseId</h3>
+ </HeaderTemplate>
+ <ItemTemplate>
+ <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
+ </ItemTemplate>
+ <ItemStyle  />
  </asp:TemplateField>
 
 
