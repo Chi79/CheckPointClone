@@ -20,6 +20,7 @@ namespace CheckPointCommon.ViewInterfaces
         string Date { get; set; }
         string IsCancelled { get; set; }
         string IsObligatory { get; set; }
+        string IsPrivate { get; set; }
 
 
         void RedirectAfterClickEvent();

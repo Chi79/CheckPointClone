@@ -140,6 +140,18 @@
     top:26em;
     left:16em;
 }
+#lblPrivate{
+    position: absolute;
+    top:18.4em;
+    left:4em;
+    color:white;
+}
+
+#ddlIsPrivate{
+    position: absolute;
+    top:22.2em;
+    left:16em;
+}
 #lblMessage{
     position: absolute;
     top:30em;
@@ -252,6 +264,13 @@
         <asp:Label ID="lblObligatory" runat="server" Text="Obligatory"></asp:Label>
 
         <asp:DropDownList ID="ddlIsObligatory" runat="server">
+            <asp:ListItem Value="False">No</asp:ListItem>
+            <asp:ListItem Value="True">Yes</asp:ListItem>
+        </asp:DropDownList>
+
+        <asp:Label ID="lblPrivate" runat="server" Text="Private"></asp:Label>
+
+        <asp:DropDownList ID="ddlIsPrivate" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
         </asp:DropDownList>
