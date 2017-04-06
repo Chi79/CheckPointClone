@@ -19,6 +19,7 @@ namespace CheckPointModel.Utilities
                 Name = courseDTO.Name,
                 Description = courseDTO.Description,
                 IsPrivate = courseDTO.IsPrivate,
+                IsObligatory = courseDTO.IsObligatory
             };
 
             return course;

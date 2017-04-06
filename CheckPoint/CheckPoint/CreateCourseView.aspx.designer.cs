@@ -76,6 +76,24 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.DropDownList ddlIsPrivate;
         
         /// <summary>
+        /// lblObligatory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblObligatory;
+        
+        /// <summary>
+        /// ddlIsObligatory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlIsObligatory;
+        
+        /// <summary>
         /// lblMessage control.
         /// </summary>
         /// <remarks>

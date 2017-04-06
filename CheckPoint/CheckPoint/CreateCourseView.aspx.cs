@@ -28,6 +28,11 @@ namespace CheckPoint.Views
             get { return ddlIsPrivate.SelectedValue; }
         }
 
+        public string IsObligatory
+        {
+            get { return ddlIsObligatory.SelectedValue; }
+        }
+
         public bool ContinueButtonVisible
         {
             set { btnContinue.Visible = value; }

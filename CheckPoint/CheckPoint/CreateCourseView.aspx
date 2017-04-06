@@ -64,6 +64,17 @@
     top:9em;
     left:16em;
 }
+#lblObligatory{
+    position: absolute;
+    top:9.3em;
+    left:4em;
+    color:white;
+}
+#ddlIsObligatory{
+    position: absolute;
+    top:11em;
+    left:16em;
+}
 
 #lblMessage{
     position: absolute;
@@ -74,12 +85,12 @@
 
 #btnBackToHomePage{
     position: absolute;
-    top:12em;
+    top:14em;
     left:16em;
 }
 #btnCreateCourse{
     position: absolute;
-    top:15em;
+    top:16em;
     left:16em;
     width:138px;
 }
@@ -103,13 +114,13 @@
 #btnAddNewAppointmentToCourseButton{
     position: absolute;
     width:235px;
-    top:12em;
+    top:14em;
     left:13em;
 }
 #btnAddExistingAppointmentToCourseButton{
     position: absolute;
     width:235px;
-    top:15em;
+    top:16em;
     left:13em;
 }
 
@@ -146,6 +157,13 @@
         <asp:Label ID="lblPrivate" runat="server" Text="Private"></asp:Label>
 
         <asp:DropDownList ID="ddlIsPrivate" runat="server">
+            <asp:ListItem Value="False">No</asp:ListItem>
+            <asp:ListItem Value="True">Yes</asp:ListItem>
+        </asp:DropDownList>
+
+        <asp:Label ID="lblObligatory" runat="server" Text="Obligatory"></asp:Label>
+
+        <asp:DropDownList ID="ddlIsObligatory" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
         </asp:DropDownList>

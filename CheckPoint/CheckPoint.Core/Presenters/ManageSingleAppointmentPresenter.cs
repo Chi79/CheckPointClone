@@ -341,6 +341,7 @@ namespace CheckPointPresenters.Presenters
             _view.IsObligatoryEnabled = false;
             _view.PostalCodeReadOnly = true;
             _view.AddressReadOnly = true;
+            _view.IsPrivateEnabled = false;
         }
 
     }

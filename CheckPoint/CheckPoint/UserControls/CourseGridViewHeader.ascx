@@ -85,6 +85,10 @@ table {
     width: 9%;
     margin: auto;
 }
+.isObligatoryHeader{
+    width: 9%;
+    margin: auto;
+}
 
 .headertext {
     padding-bottom: 4%;
@@ -175,6 +179,29 @@ ImageUrl="~/Images/downarrow3.png"
 OnCommand="Desc_Command" 
 ToolTip="sort by descending"
 CssClass="roundedButtons"/>
+</HeaderTemplate>
+<ItemStyle HorizontalAlign="Center" />
+<HeaderStyle />
+</asp:TemplateField>
+
+
+<asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" HeaderStyle-CssClass="isObligatoryHeader">
+<HeaderTemplate>
+<h3 class="headertext" style="color:white;">Obligatory</h3>
+<asp:ImageButton 
+runat="server" 
+CommandName="IsObligatory" 
+ImageUrl="~/Images/uparrow3.png" 
+OnCommand="Asc_Command"  
+ToolTip="sort by ascending"
+CssClass="roundedButtons"/>
+<asp:ImageButton 
+runat="server" 
+CommandName="IsObligatory" 
+ImageUrl="~/Images/downarrow3.png" 
+OnCommand="Desc_Command"  
+ToolTip="sort by descending"
+CssClass="roundedButtons" />
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
