@@ -47,6 +47,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool EndDateReadOnly { set; }
         bool IsCancelledEnabled { set; }
         bool IsObligatoryEnabled { set; }
+        bool IsPrivateEnabled { set; }
         bool PostalCodeReadOnly { set; }
         bool AddressReadOnly { set; }
         bool EndTimeReadOnly { set; }

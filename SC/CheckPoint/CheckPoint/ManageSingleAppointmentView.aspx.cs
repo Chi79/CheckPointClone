@@ -109,6 +109,10 @@ namespace CheckPoint.Views
         {
             set { ddlIsObligatory.Enabled = value; }
         }
+        public bool IsPrivateEnabled
+        {
+            set { ddlIsPrivate.Enabled = value; }
+        }
         public bool PostalCodeReadOnly
         {
             set { txtPostalCode.ReadOnly = value; }

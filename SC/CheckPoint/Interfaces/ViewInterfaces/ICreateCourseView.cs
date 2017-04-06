@@ -13,6 +13,7 @@ namespace CheckPointCommon.ViewInterfaces
         string CourseName { get; }
         string Description { get; }
         string IsPrivate { get; }
+        string IsObligatory { get; }
 
 
         bool ContinueButtonVisible { set; }

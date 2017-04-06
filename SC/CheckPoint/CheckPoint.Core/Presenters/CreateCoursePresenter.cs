@@ -99,6 +99,7 @@ namespace CheckPointPresenters.Presenters
             _dTO.Name = _view.CourseName;
             _dTO.Description = _view.Description;
             _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
+            _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
 
         }
 

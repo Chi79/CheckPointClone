@@ -67,9 +67,15 @@ table {
 }
 .isPrivateColumnItem{
     width: 10.09%;
-    padding-left: 1%;
+    padding-left: 2%;
     margin: auto;
 }
+.isObligatoryColumnItem{
+    width: 10.09%;
+    padding-left: 0%;
+    margin: auto;
+}
+
 
 
 .datediv{
@@ -174,6 +180,17 @@ BackColor="#99FF99" />
 </HeaderTemplate>
 <ItemTemplate>
 <asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Description") %>'></asp:Label>
+</ItemTemplate>
+<ItemStyle />
+</asp:TemplateField>
+
+<asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" ItemStyle-CssClass="isObligatoryColumnItem">
+<HeaderTemplate>
+<h3 style="color:white">IsObligatory</h3>
+</HeaderTemplate>
+<ItemTemplate>
+<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
 </ItemTemplate>
 <ItemStyle />
 </asp:TemplateField>
