@@ -163,6 +163,7 @@ namespace CheckPointPresenters.Presenters
             _dTO.PostalCode = _view.PostalCode;
             _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _dTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
+            _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
         }
 
         private void DisplayValidationMessage()
@@ -270,6 +271,7 @@ namespace CheckPointPresenters.Presenters
             _view.PostalCode = selectedAppointment.PostalCode.ToString();
             _view.IsObligatory = selectedAppointment.IsObligatory.ToString();
             _view.IsCancelled = selectedAppointment.IsCancelled.ToString();
+            _view.IsPrivate = selectedAppointment.IsPrivate.ToString();
         }
 
         private void ContinueButtonsShow()
