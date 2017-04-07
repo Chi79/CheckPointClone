@@ -164,8 +164,10 @@ namespace CheckPointPresenters.Presenters
             bool appointmentDataIsValid = _dTO.IsValid(_dTO);
             if (appointmentDataIsValid)
             {
+
                 var appointment = ConvertDTOToAppointment();
                 PerformJob(appointment);
+
             }
             else
             {
