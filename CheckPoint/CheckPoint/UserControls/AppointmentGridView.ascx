@@ -164,10 +164,9 @@ table {
 }
 
 
-
-
-
 </style>
+
+
 
  <asp:GridView
  ID="gvHostTable"
