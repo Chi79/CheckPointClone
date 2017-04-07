@@ -96,6 +96,11 @@
     position:relative;
     animation:buttonsup;
 }
+.ui-datepicker .ui-datepicker-prev, 
+.ui-datepicker .ui-datepicker-next
+{
+    display:none;
+}
 
 
 

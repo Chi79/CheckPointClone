@@ -101,7 +101,11 @@
     position:relative;
     animation:buttonsup;
 }
-
+.ui-datepicker .ui-datepicker-prev, 
+.ui-datepicker .ui-datepicker-next
+{
+    display:none;
+}
 
 
 
@@ -175,7 +179,7 @@
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker")) 
+    onSelect: $(".picker").datepicker("setDate", $(".picker"))
     });
     $(".picker").datepicker("setDate", $(".picker"))
     });
@@ -190,10 +194,12 @@
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker"))
+    onSelect: $(".picker").datepicker("setDate", $(".picker")),
     });
     }
     });
+    $('.picker').find('.ui-datepicker-next').remove();
+    $('.picker').find('.ui-datepicker-prev').remove();
     };
     </script>
 
