@@ -21,26 +21,21 @@ namespace CheckPointPresenters.Presenters
         private readonly IManageSingleAppointmentView _view;
         private readonly IManageSingleAppointmentModel _model;
         private readonly IShowAppointments _displayService;
-        private readonly ISessionService _sessionService;
-        private readonly IFactory _factory;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
+        private JobServiceBase _job;
 
 
         public ManageSingleAppointmentPresenter(
                                           IManageSingleAppointmentView manageAppointmentView,
                                           IManageSingleAppointmentModel manageAppointmentModel,
-                                          IShowAppointments displayService,
-                                          ISessionService sessionService,
-                                          IFactory factory
+                                          IShowAppointments displayService
                                           )
 
         {
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
-            _factory = factory;
             _displayService = displayService;
-            _sessionService = sessionService;
 
             _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
             _view.ReloadPage += OnReloadPageEvent;
@@ -55,20 +50,27 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAddAppointmentToCourseButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateAppointmentJobType(DbAction.AddExistingAppointmentToCourse);
-            ConfirmAction(job as JobServiceBase);
+
+            _model.PrepareAddExistingAppointmentToCourseJob();
+
+            ConfirmAction();
+
         }
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateAppointmentJobType(DbAction.UpdateAppointment);
-            ConfirmAction(job as JobServiceBase);
+ 
+           _model.PrepareUpdateAppointmentJob();
+
+            ConfirmAction();
         }
 
         private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateAppointmentJobType(DbAction.DeleteAppointment);
-            ConfirmAction(job as JobServiceBase);
+
+            _model.PrepareDeleteAppointmentJob();
+
+            ConfirmAction();
         }
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)
@@ -83,7 +85,8 @@ namespace CheckPointPresenters.Presenters
 
         private void OnBackToCoursesButtonClicked(object sender, EventArgs e)
         {
-            ResetAddAppointmentStatus();
+            _model.ResetAddingAppointmentToCourseStatus();
+
             _view.RedirectToViewCourses();
         }
 
@@ -97,8 +100,8 @@ namespace CheckPointPresenters.Presenters
 
         private void CheckAddAppointentToCourseStatus()
         {
- 
-            bool? AddingAppointmentToCourse = _sessionService.AddingAppointmentToCourseStatus;
+
+            bool? AddingAppointmentToCourse = _model.GetAddingAppointmentToCourseStatus();
             if (AddingAppointmentToCourse == true)
             {
                 DisplayAddToCourseButtons();
@@ -109,18 +112,16 @@ namespace CheckPointPresenters.Presenters
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
 
-            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_sessionService.LoggedInClient);  //refresh cache
+            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_model.GetLoggedInClient());  //refresh cache
             _view.RedirectAfterClickEvent();
             DisplaySelectedAppointmentData();
         }
 
 
-        private void ConfirmAction(JobServiceBase job)
+        private void ConfirmAction()
         {
+            _view.Message = _model.GetJobConfirmationMessage();
 
-            _sessionService.JobState = (int)job.Actiontype;
-            job.ItemId = (int)_sessionService.SessionAppointmentId;
-            _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();
         }
 
@@ -158,7 +159,7 @@ namespace CheckPointPresenters.Presenters
             _dTO.Date = _view.Date;
             _dTO.StartTime = _view.StartTime;
             _dTO.EndTime = _view.EndTime;
-            _dTO.UserName = _sessionService.LoggedInClient;
+            _dTO.UserName = _model.GetLoggedInClient();
             _dTO.Address = _view.Address;
             _dTO.PostalCode = _view.PostalCode;
             _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
@@ -182,13 +183,9 @@ namespace CheckPointPresenters.Presenters
         {
             var appointment = ConvertDTOToAppointment();
 
-            var job = _factory.CreateAppointmentJobType((DbAction)_sessionService.JobState) as JobServiceBase;
+            _model.PerformJob(appointment);
 
-            job.ItemId = (int)_sessionService.SessionAppointmentId;
-            job.CourseId = _sessionService.SessionCourseId;
-            job.PerformTask(appointment);
-
-            UpdateDatabaseWithChanges(job as JobServiceBase);
+            CheckChangesSaved();
         }
 
         private APPOINTMENT ConvertDTOToAppointment()
@@ -197,28 +194,25 @@ namespace CheckPointPresenters.Presenters
             return appointment;
         }
 
-        private void UpdateDatabaseWithChanges(JobServiceBase job)
+
+        private void CheckChangesSaved()
         {
-            SaveResult saveResult = job.SaveChanges();
-
-            bool IsSavedToDb = saveResult.Result > 0;
-            if (IsSavedToDb)
+            bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
+            if(UpdateSuccessful)
             {
-
-                DisplayActionMessage(job);
+                _view.Message = _model.GetJobCompletedMessage();
                 CheckIfAppointmentWasAddedToCourse();
             }
             else
             {
-                _view.Message = "Failed to save changes!" + saveResult.ErrorMessage;
-                ContinueButtonsShow();
+                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
             }
         }
 
         private void CheckIfAppointmentWasAddedToCourse()
         {
 
-            bool? AppointmentWasAdded = _sessionService.AddingAppointmentToCourseStatus;
+            bool? AppointmentWasAdded = _model.GetAddingAppointmentToCourseStatus();
             if (AppointmentWasAdded == true)
             {
                 ContinueWithCourseCreationButtonShow();
@@ -232,7 +226,7 @@ namespace CheckPointPresenters.Presenters
         private void CheckIfAddingAppointmentIsRejected()
         {
 
-            bool? AppointmentAddedIsRejected = _sessionService.AddingAppointmentToCourseStatus;
+            bool? AppointmentAddedIsRejected = _model.GetAddingAppointmentToCourseStatus();
             if (AppointmentAddedIsRejected == true)
             {
                 BackToCourseCreationOrSelectDifferentAppointmentButtonsShow();
@@ -244,23 +238,11 @@ namespace CheckPointPresenters.Presenters
             }
         }
 
-        private void ResetAddAppointmentStatus()
-        {
-
-            _sessionService.AddingAppointmentToCourseStatus = false;
-        }
-
-        private void DisplayActionMessage(JobServiceBase job)
-        {
-            _view.Message = job.CompletedMessage;
-
-            ContinueButtonsShow();
-        }
 
         private void DisplaySelectedAppointmentData()
         {
 
-            var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId((int)_sessionService.SessionAppointmentId) as APPOINTMENT;
+            var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId(_model.GetSessionAppointmentId()) as APPOINTMENT;
 
             _view.AppointmentName = selectedAppointment.AppointmentName;
             _view.Description = selectedAppointment.Description;
@@ -320,6 +302,8 @@ namespace CheckPointPresenters.Presenters
             _view.ContinueButtonVisible = false;
             _view.AddAppointmentToCourseButtonVisible = false;
             _view.BackToCoursesButtonVisible = true;
+            _view.DeleteButtonVisible = false;
+            _view.UpdateButtonVisible = false;
             //TODO show continue managing course button instead - finish manage course view first.
         }
 

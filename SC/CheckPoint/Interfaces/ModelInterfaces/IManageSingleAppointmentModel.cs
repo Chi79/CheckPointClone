@@ -8,8 +8,35 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface IManageSingleAppointmentModel
     {
-        //TODO
+
         object ConvertToAppointment(object entityModel);
 
+        void PrepareUpdateAppointmentJob();
+
+        void PrepareDeleteAppointmentJob();
+
+        void PrepareAddExistingAppointmentToCourseJob();
+
+        string GetJobConfirmationMessage();
+
+        object GetJobTypeFromSession();
+
+        void SetInitialSessionJobState();
+
+        void PerformJob(object appointment);
+
+        bool UpdateDatabaseWithChanges();
+
+        string GetUpdateErrorMessage();
+
+        string GetJobCompletedMessage();
+
+        int GetSessionAppointmentId();
+
+        bool? GetAddingAppointmentToCourseStatus();
+
+        void ResetAddingAppointmentToCourseStatus();
+
+        string GetLoggedInClient();
     }
 }
