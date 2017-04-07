@@ -170,10 +170,12 @@
     showOn: "button",
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
-    buttonText: "calender"
+    buttonText: "calender",
+    onSelect: $(".picker").datepicker("setDate", $(".picker"))
     });
     $(".picker").datepicker("setDate", $(".picker"))
     });
+
 
     var prm = Sys.WebForms.PageRequestManager.getInstance();
     if (prm != null) {
@@ -183,7 +185,8 @@
     showOn: "button",
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
-    buttonText: "calender"
+    buttonText: "calender",
+    onSelect: $(".picker").datepicker("setDate", $(".picker"))
     });
     }
     });
