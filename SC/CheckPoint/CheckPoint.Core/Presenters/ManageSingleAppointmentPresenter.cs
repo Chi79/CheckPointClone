@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.ServiceInterfaces;
-using CheckPointCommon.FactoryInterfaces;
-using CheckPointModel.Services;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
-using CheckPointCommon.Structs;
-using CheckPointCommon.Enums;
+
 
 namespace CheckPointPresenters.Presenters
 {
@@ -23,29 +20,16 @@ namespace CheckPointPresenters.Presenters
         private readonly IShowAppointments _displayService;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
-        private JobServiceBase _job;
 
-
-        public ManageSingleAppointmentPresenter(
-                                          IManageSingleAppointmentView manageAppointmentView,
-                                          IManageSingleAppointmentModel manageAppointmentModel,
-                                          IShowAppointments displayService
-                                          )
+        public ManageSingleAppointmentPresenter(IManageSingleAppointmentView manageAppointmentView,
+                                                IManageSingleAppointmentModel manageAppointmentModel,
+                                                IShowAppointments displayService)
 
         {
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
             _displayService = displayService;
 
-            _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
-            _view.ReloadPage += OnReloadPageEvent;
-            _view.DeleteAppointment += OnDeleteAppointmentButtonClicked;
-            _view.YesButtonClicked += _OnYesButtonClicked;
-            _view.NoButtonClicked += OnNoButtonClicked;
-            _view.BackToHomePage += OnBackToHomePageClicked;
-            _view.AddAppointmentToCourseButtonClicked += OnAddAppointmentToCourseButtonClicked;
-            _view.BackToCoursesButtonClicked += OnBackToCoursesButtonClicked;
-            _view.SelectAnotherAppointmentButtonClicked += OnSelectAnotherAppointmentButtonClicked;
         }
 
         private void OnAddAppointmentToCourseButtonClicked(object sender, EventArgs e)
@@ -75,27 +59,56 @@ namespace CheckPointPresenters.Presenters
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)
         {
+
             _view.RedirectToHostHomeView();
+
         }
 
         private void OnSelectAnotherAppointmentButtonClicked(object sender, EventArgs e)
         {
+
             _view.RedirectToHostHomeView();
+
         }
 
         private void OnBackToCoursesButtonClicked(object sender, EventArgs e)
         {
+
             _model.ResetAddingAppointmentToCourseStatus();
 
             _view.RedirectToViewCourses();
+
         }
 
         public override void FirstTimeInit()
         {
-
+            
             CheckAddAppointentToCourseStatus();
 
             DisplaySelectedAppointmentData();
+
+        }
+
+        public override void Load()
+        {
+
+            WireUpEvents();
+
+        }
+
+        public void WireUpEvents()
+        {
+
+            _view.UpdateAppointment += OnUpdateAppointmentButtonClicked;
+            _view.ReloadPage += OnReloadPageEvent;
+            _view.DeleteAppointment += OnDeleteAppointmentButtonClicked;
+            _view.YesButtonClicked += _OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
+            _view.BackToHomePage += OnBackToHomePageClicked;
+            _view.AddAppointmentToCourseButtonClicked += OnAddAppointmentToCourseButtonClicked;
+            _view.BackToCoursesButtonClicked += OnBackToCoursesButtonClicked;
+            _view.SelectAnotherAppointmentButtonClicked += OnSelectAnotherAppointmentButtonClicked;
+
         }
 
         private void CheckAddAppointentToCourseStatus()
@@ -107,6 +120,7 @@ namespace CheckPointPresenters.Presenters
                 DisplayAddToCourseButtons();
                 SetFieldsToReadOnly();
             }
+
         }
 
         private void OnReloadPageEvent(object sender, EventArgs e)
@@ -120,24 +134,31 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction()
         {
+
             _view.Message = _model.GetJobConfirmationMessage();
 
             DecisionButtonsShow();
+
         }
 
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
+
             CheckIfAddingAppointmentIsRejected();
+
         }
 
         private void _OnYesButtonClicked(object sender, EventArgs e)
         {
+
             DecisionButtonsHide();
             ValidateDTO();
+
         }
 
         private void ValidateDTO()
         {
+
             CreateAppointmentDTOFromInput();
 
             bool appointmentDataIsValid = _dTO.IsValid(_dTO);
@@ -149,6 +170,7 @@ namespace CheckPointPresenters.Presenters
             {
                 DisplayValidationMessage();
             }
+
         }
 
         private void CreateAppointmentDTOFromInput()
@@ -165,10 +187,12 @@ namespace CheckPointPresenters.Presenters
             _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
             _dTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
             _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
+
         }
 
         private void DisplayValidationMessage()
         {
+
             _view.Message = string.Empty;
 
             var validationMessages = _dTO.GetBrokenBusinessRules().ToList();
@@ -177,26 +201,32 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message += message;
             }
+
         }
 
         private void PerformJob()
         {
+
             var appointment = ConvertDTOToAppointment();
 
             _model.PerformJob(appointment);
 
             CheckChangesSaved();
+
         }
 
         private APPOINTMENT ConvertDTOToAppointment()
         {
+
             var appointment = _model.ConvertToAppointment(_dTO) as APPOINTMENT;
             return appointment;
+
         }
 
 
         private void CheckChangesSaved()
         {
+
             bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
             if(UpdateSuccessful)
             {
@@ -207,6 +237,7 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
             }
+
         }
 
         private void CheckIfAppointmentWasAddedToCourse()
@@ -221,6 +252,7 @@ namespace CheckPointPresenters.Presenters
             {
                 ContinueButtonsShow();
             }
+
         }
 
         private void CheckIfAddingAppointmentIsRejected()
@@ -236,6 +268,7 @@ namespace CheckPointPresenters.Presenters
                 DecisionButtonsHide();
                 _view.Message = "Ready.";
             }
+
         }
 
 
@@ -254,6 +287,7 @@ namespace CheckPointPresenters.Presenters
             _view.IsObligatory = selectedAppointment.IsObligatory.ToString();
             _view.IsCancelled = selectedAppointment.IsCancelled.ToString();
             _view.IsPrivate = selectedAppointment.IsPrivate.ToString();
+
         }
 
         private void ContinueButtonsShow()
@@ -287,6 +321,7 @@ namespace CheckPointPresenters.Presenters
             _view.DeleteButtonVisible = false;
             _view.ContinueButtonVisible = false;
         }
+
         private void DisplayAddToCourseButtons()
         {
             _view.UpdateButtonVisible = false;
