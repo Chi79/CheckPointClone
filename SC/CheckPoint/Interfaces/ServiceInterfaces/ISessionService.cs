@@ -14,6 +14,6 @@ namespace CheckPointCommon.ServiceInterfaces
         int? SessionRowIndex { get; set; }
         string ColumnName { get; set; }
         int? SessionCourseId { get; set; }
-        int? JobState { get; set; }
+        int? JobType { get; set; }
     }
 }

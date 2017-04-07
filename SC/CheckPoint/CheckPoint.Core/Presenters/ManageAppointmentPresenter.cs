@@ -85,7 +85,7 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction(JobServiceBase job)
         {
-            _view.JobState = (int)job.Actiontype;
+            _view.JobState = (int)job.Jobtype;
             job.ItemName = _view.AppointmentNameList;
             _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();

@@ -12,11 +12,11 @@ namespace CheckPointModel.Services
 {
     public class JobServiceBase 
     {
-        public virtual DbAction Actiontype { get; set; }
+        public virtual DbAction Jobtype { get; set; }
         public virtual string ItemName { get; set; }
         public virtual string ConfirmationMessage { get; }
         public virtual string CompletedMessage { get; }
-        public virtual int ItemId { get; set; }
+        public virtual int AppointmentId { get; set; }
         public virtual int? CourseId { get; set; }
 
 
@@ -39,10 +39,10 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.CreateAppointment; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
@@ -73,10 +73,10 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.AddExistingAppointmentToCourse; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
@@ -89,7 +89,7 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object appointment)
         {
-            var appointmentToUpdate = _handler.GetAppointmentById(ItemId) as APPOINTMENT;
+            var appointmentToUpdate = _handler.GetAppointmentById(AppointmentId) as APPOINTMENT;
             appointmentToUpdate.CourseId = this.CourseId;
         }
 
@@ -110,10 +110,10 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.AddNewAppointmentToCourse; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
@@ -149,14 +149,14 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.DeleteAppointment; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the appointment with Id number: " + ItemId +"!  Do you wish to continue?"; }
+            get { return "You are about to delete the appointment with Id number: " + AppointmentId +"!  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -165,7 +165,7 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object appointment)
         {
-            var appointmentToDelete = _handler.GetAppointmentById(ItemId);
+            var appointmentToDelete = _handler.GetAppointmentById(AppointmentId);
             _handler.Delete(appointmentToDelete);
         }
         public override SaveResult SaveChanges()
@@ -183,10 +183,10 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.UpdateAppointment; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
@@ -199,7 +199,7 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object appointment)
         {
-            var appointmentToUpdate = _handler.GetAppointmentById(ItemId) as APPOINTMENT;
+            var appointmentToUpdate = _handler.GetAppointmentById(AppointmentId) as APPOINTMENT;
             var newAppointment = appointment as APPOINTMENT;
 
             appointmentToUpdate.AppointmentName = newAppointment.AppointmentName;
@@ -230,10 +230,10 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.CreateCourse; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
@@ -264,14 +264,14 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.DeleteCourse; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the course with Id number: " + ItemId + "!  Do you wish to continue?"; }
+            get { return "You are about to delete the course with Id number: " + AppointmentId + "!  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -299,10 +299,10 @@ namespace CheckPointModel.Services
         {
             _handler = handler;
         }
-        public override DbAction Actiontype
+        public override DbAction Jobtype
         {
             get { return DbAction.UpdateCourse; }
-            set { Actiontype = value; }
+            set { Jobtype = value; }
         }
         public override string ConfirmationMessage
         {
@@ -315,7 +315,7 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object course)
         {
-            var courseToUpdate = _handler.GetCourseById(ItemId) as COURSE;
+            var courseToUpdate = _handler.GetCourseById(AppointmentId) as COURSE;
             var newCourse = course as COURSE;
 
             courseToUpdate.Name = newCourse.Name;
