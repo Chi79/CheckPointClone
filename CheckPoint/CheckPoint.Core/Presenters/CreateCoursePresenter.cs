@@ -60,7 +60,7 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction(JobServiceBase job)
         {
-            _sessionService.JobState = (int)job.Actiontype;
+            _sessionService.JobType = (int)job.Jobtype;
             job.ItemName = _view.CourseName;
             _view.Message = job.ConfirmationMessage;
             DecisionButtonsShow();
@@ -118,7 +118,7 @@ namespace CheckPointPresenters.Presenters
         private void PerformJob()
         {
 
-            var job = _factory.CreateCourseJobType((DbAction)_sessionService.JobState) as JobServiceBase;
+            var job = _factory.CreateCourseJobType((DbAction)_sessionService.JobType) as JobServiceBase;
             var course = ConvertDTOToCourse();
 
             job.ItemName = _view.CourseName;

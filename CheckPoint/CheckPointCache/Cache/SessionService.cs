@@ -107,7 +107,7 @@ namespace CheckPointHTTPServices.Cache
             }
             set { HttpContext.Current.Session["CourseId"] = value; }
         }
-        public int? JobState
+        public int? JobType
         {
             get
             {
