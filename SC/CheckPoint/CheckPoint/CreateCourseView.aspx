@@ -83,7 +83,7 @@
     color:white;
 }
 
-#btnBackToHomePage{
+#btnBackToCoursesPage{
     position: absolute;
     top:14em;
     left:16em;
@@ -104,24 +104,6 @@
     position: absolute;
     top:18em;
     left:23em;
-}
-#btnContinue{
-    position: absolute;
-    width:136px;
-    top:20em;
-    left:16em;
-}
-#btnAddNewAppointmentToCourseButton{
-    position: absolute;
-    width:235px;
-    top:14em;
-    left:13em;
-}
-#btnAddExistingAppointmentToCourseButton{
-    position: absolute;
-    width:235px;
-    top:16em;
-    left:13em;
 }
 
 
@@ -170,14 +152,11 @@
         
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
 
-<asp:Button ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back To Home Page" />
-<asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Visible="False" />
+<asp:Button ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
 <asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
 <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
 <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
 
-<asp:Button ID="btnAddNewAppointmentToCourseButton" runat="server" OnClick="AddNewAppointmentToCourseButton_Click" Text="Add New Appointment To Course"  Visible="False" />
-<asp:Button ID="btnAddExistingAppointmentToCourseButton" runat="server" OnClick="AddExistingAppointmentToCourseButton_Click" Text="Add Existing Appointment To Course"  Visible="False" />
     
 </div>
 </div>

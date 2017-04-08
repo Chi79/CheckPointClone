@@ -103,22 +103,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// btnBackToHomePage control.
+        /// btnBackToCoursesPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBackToHomePage;
-        
-        /// <summary>
-        /// btnContinue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContinue;
+        protected global::System.Web.UI.WebControls.Button btnBackToCoursesPage;
         
         /// <summary>
         /// btnCreateCourse control.
@@ -146,23 +137,5 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNo;
-        
-        /// <summary>
-        /// btnAddNewAppointmentToCourseButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNewAppointmentToCourseButton;
-        
-        /// <summary>
-        /// btnAddExistingAppointmentToCourseButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddExistingAppointmentToCourseButton;
     }
 }
