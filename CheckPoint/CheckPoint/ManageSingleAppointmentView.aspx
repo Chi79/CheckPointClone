@@ -152,6 +152,9 @@
     top:22.2em;
     left:16em;
 }
+
+
+
 #lblMessage{
     position: absolute;
     top:30em;
