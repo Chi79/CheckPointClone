@@ -10,8 +10,10 @@ using CheckPointPresenters.Presenters;
 
 namespace CheckPoint.Views
 {
+
     public partial class CreateAppointmentView : ViewBase<CreateAppointmentPresenter> , ICreateAppointmentView
     {
+
         public string AppointmentName
         {
             get { return txtAppointmentName.Text; }
@@ -68,16 +70,6 @@ namespace CheckPoint.Views
             set { lblMessage.Text = value; }
         }
 
-        public bool BackToViewCoursesButtonVisible
-        {
-            set {btnBackToViewCourses.Visible = value; }
-        }
-
-        public bool AddAnotherAppointmentButtonVisible
-        {
-            set { btnAddAnotherAppointment.Visible = true; }
-        }
-
         public bool ContinueButtonVisible
         {
             set { btnContinue.Visible = value; }
@@ -113,18 +105,13 @@ namespace CheckPoint.Views
             Response.Redirect("HostHomeView.aspx");
         }
 
-        public void RedirectToViewCourses()
-        {
-            Response.Redirect("HostCoursesView.aspx");
-        }
 
         public event EventHandler<EventArgs> CreateNewAppointment;
         public event EventHandler<EventArgs> Continue;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> BackToHomePageClicked;
-        public event EventHandler<EventArgs> BackToViewCoursesButtonClicked;
-        public event EventHandler<EventArgs> AddAnotherAppointmentButtonClicked;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -165,26 +152,11 @@ namespace CheckPoint.Views
 
         protected void btnBackToHomePage_Click(object sender, EventArgs e)
         {
-            if(BackToHomePageClicked != null)
+            if (BackToHomePageClicked != null)
             {
                 BackToHomePageClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnAddAnotherAppointment_Click(object sender, EventArgs e)
-        {
-            if(AddAnotherAppointmentButtonClicked != null)
-            {
-                AddAnotherAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnBackToViewCourses_Click(object sender, EventArgs e)
-        {
-            if(BackToViewCoursesButtonClicked != null)
-            {
-                BackToViewCoursesButtonClicked(this, EventArgs.Empty);
-            }
-        }
     }
 }
