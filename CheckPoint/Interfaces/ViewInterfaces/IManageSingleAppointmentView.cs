@@ -27,8 +27,6 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectToHostHomeView();
 
-        void RedirectToViewCourses();
-
 
         bool ContinueButtonVisible { set; }
         bool UpdateButtonVisible { set; }
@@ -36,9 +34,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool BackToHomePageButtonVisible { set; }
-        bool AddAppointmentToCourseButtonVisible { set; }
-        bool BackToCoursesButtonVisible { set; }
-        bool SelectAnotherAppointmentButtonVisible { set; }
+
 
         bool AppointmentNameReadOnly { set; }
         bool DateReadOnly   { set; } 
@@ -55,9 +51,6 @@ namespace CheckPointCommon.ViewInterfaces
 
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-        event EventHandler<EventArgs> AddAppointmentToCourseButtonClicked;
-        event EventHandler<EventArgs> BackToCoursesButtonClicked;
-        event EventHandler<EventArgs> SelectAnotherAppointmentButtonClicked;
         event EventHandler<EventArgs> UpdateAppointment;
         event EventHandler<EventArgs> DeleteAppointment;
         event EventHandler<EventArgs> ReloadPage;

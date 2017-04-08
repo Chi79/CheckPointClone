@@ -33,14 +33,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnAddAppointmentToCourseButtonClicked(object sender, EventArgs e)
-        {
-
-            _model.PrepareAddExistingAppointmentToCourseJob();
-
-            ConfirmAction();
-
-        }
 
         private void OnUpdateAppointmentButtonClicked(object sender, EventArgs e)
         {
@@ -65,26 +57,9 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnSelectAnotherAppointmentButtonClicked(object sender, EventArgs e)
-        {
-
-            _view.RedirectToHostHomeView();
-
-        }
-
-        private void OnBackToCoursesButtonClicked(object sender, EventArgs e)
-        {
-
-            _model.ResetAddingAppointmentToCourseStatus();
-
-            _view.RedirectToViewCourses();
-
-        }
 
         public override void FirstTimeInit()
         {
-            
-            CheckAddAppointentToCourseStatus();
 
             DisplaySelectedAppointmentData();
 
@@ -106,21 +81,6 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonClicked += _OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePage += OnBackToHomePageClicked;
-            _view.AddAppointmentToCourseButtonClicked += OnAddAppointmentToCourseButtonClicked;
-            _view.BackToCoursesButtonClicked += OnBackToCoursesButtonClicked;
-            _view.SelectAnotherAppointmentButtonClicked += OnSelectAnotherAppointmentButtonClicked;
-
-        }
-
-        private void CheckAddAppointentToCourseStatus()
-        {
-
-            bool? AddingAppointmentToCourse = _model.GetAddingAppointmentToCourseStatus();
-            if (AddingAppointmentToCourse == true)
-            {
-                DisplayAddToCourseButtons();
-                SetFieldsToReadOnly();
-            }
 
         }
 
@@ -145,7 +105,9 @@ namespace CheckPointPresenters.Presenters
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
 
-            CheckIfAddingAppointmentIsRejected();
+            DecisionButtonsHide();
+
+            _view.Message = "Ready.";
 
         }
 
@@ -247,42 +209,13 @@ namespace CheckPointPresenters.Presenters
             if(UpdateSuccessful)
             {
                 _view.Message = _model.GetJobCompletedMessage();
-                CheckIfAppointmentWasAddedToCourse();
+
+                ContinueButtonsShow();
+
             }
             else
             {
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
-            }
-
-        }
-
-        private void CheckIfAppointmentWasAddedToCourse()
-        {
-
-            bool? AppointmentWasAdded = _model.GetAddingAppointmentToCourseStatus();
-            if (AppointmentWasAdded == true)
-            {
-                ContinueWithCourseCreationButtonShow();
-            }
-            else
-            {
-                ContinueButtonsShow();
-            }
-
-        }
-
-        private void CheckIfAddingAppointmentIsRejected()
-        {
-
-            bool? AppointmentAddedIsRejected = _model.GetAddingAppointmentToCourseStatus();
-            if (AppointmentAddedIsRejected == true)
-            {
-                BackToCourseCreationOrSelectDifferentAppointmentButtonsShow();
-            }
-            else
-            {
-                DecisionButtonsHide();
-                _view.Message = "Ready.";
             }
 
         }
@@ -338,46 +271,20 @@ namespace CheckPointPresenters.Presenters
             _view.ContinueButtonVisible = false;
         }
 
-        private void DisplayAddToCourseButtons()
-        {
-            _view.UpdateButtonVisible = false;
-            _view.DeleteButtonVisible = false;
-            _view.ContinueButtonVisible = false;
-            _view.BackToHomePageButtonVisible = false;
-            _view.AddAppointmentToCourseButtonVisible = true;
-        }
 
-        private void ContinueWithCourseCreationButtonShow()
-        {
-            _view.BackToHomePageButtonVisible = false;
-            _view.ContinueButtonVisible = false;
-            _view.AddAppointmentToCourseButtonVisible = false;
-            _view.BackToCoursesButtonVisible = true;
-            _view.DeleteButtonVisible = false;
-            _view.UpdateButtonVisible = false;
-            //TODO show continue managing course button instead - finish manage course view first.
-        }
-
-        private void BackToCourseCreationOrSelectDifferentAppointmentButtonsShow()
-        {
-            _view.BackToCoursesButtonVisible = true;
-            _view.SelectAnotherAppointmentButtonVisible = true;
-            _view.AddAppointmentToCourseButtonVisible = false;
-        }
-
-        private void SetFieldsToReadOnly()
-        {
-            _view.AppointmentNameReadOnly = true;
-            _view.AppointmentDescriptionReadOnly = true;
-            _view.DateReadOnly = true;
-            _view.StartTimeReadOnly = true;
-            _view.EndTimeReadOnly = true;
-            _view.IsCancelledEnabled = false;
-            _view.IsObligatoryEnabled = false;
-            _view.PostalCodeReadOnly = true;
-            _view.AddressReadOnly = true;
-            _view.IsPrivateEnabled = false;
-        }
+        //private void SetFieldsToReadOnly()
+        //{
+        //    _view.AppointmentNameReadOnly = true;
+        //    _view.AppointmentDescriptionReadOnly = true;
+        //    _view.DateReadOnly = true;
+        //    _view.StartTimeReadOnly = true;
+        //    _view.EndTimeReadOnly = true;
+        //    _view.IsCancelledEnabled = false;
+        //    _view.IsObligatoryEnabled = false;
+        //    _view.PostalCodeReadOnly = true;
+        //    _view.AddressReadOnly = true;
+        //    _view.IsPrivateEnabled = false;
+        //}
 
     }
 }
