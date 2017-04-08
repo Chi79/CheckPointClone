@@ -16,59 +16,115 @@ namespace CheckPoint.Views
 
         public string AppointmentName
         {
-            get { return txtAppointmentName.Text; }
+            get { return AppointmentCreator.AppointmentName; }
         }
 
         public string Description
         {
-            get { return txtAppointmentDescription.Text; }
+            get { return AppointmentCreator.Description; }
         }
 
         public string Date
         {
-            get { return txtDate.Text; }
+            get { return AppointmentCreator.Date; }
         }
 
         public string StartTime
         {
-            get { return txtStartTime.Text; }
+            get { return AppointmentCreator.StartTime; }
         }
         public string EndTime
         {
-            get { return txtEndTime.Text; }
+            get { return AppointmentCreator.EndTime; }
         }
 
         public string PostalCode
         {
-            get { return txtPostalCode.Text; }
+            get { return AppointmentCreator.PostalCode; }
         }
 
         public string Address
         {
-            get { return txtAddress.Text; }
+            get { return AppointmentCreator.Address; }
         }
 
         public string IsCancelled
         {
-            get { return ddlIsCancelled.SelectedValue; }
+            get { return AppointmentCreator.IsCancelled; }
         }
 
         public string IsObligatory
         {
-            get { return ddlIsObligatory.SelectedValue; }
+            get { return AppointmentCreator.IsObligatory; }
         }
 
         public string IsPrivate
         {
-            get { return ddlIsPrivate.SelectedValue; }
+            get { return AppointmentCreator.IsPrivate; }
         }
 
         public string Message
         {
-            get { return lblMessage.Text; }
+            get { return AppointmentCreator.Message; }
 
-            set { lblMessage.Text = value; }
+            set { AppointmentCreator.Message = value; }
         }
+
+        //public string AppointmentName
+        //{
+        //    get { return txtAppointmentName.Text;  } 
+        //}
+
+        //public string Description
+        //{
+        //    get { return txtAppointmentDescription.Text; }
+        //}
+
+        //public string Date
+        //{
+        //    get { return txtDate.Text; }
+        //}
+
+        //public string StartTime
+        //{
+        //    get { return txtStartTime.Text; }
+        //}
+        //public string EndTime
+        //{
+        //    get { return txtEndTime.Text; }
+        //}
+
+        //public string PostalCode
+        //{
+        //    get { return txtPostalCode.Text; }
+        //}
+
+        //public string Address
+        //{
+        //    get { return txtAddress.Text; }
+        //}
+
+        //public string IsCancelled
+        //{
+        //    get { return ddlIsCancelled.SelectedValue; }
+        //}
+
+        //public string IsObligatory
+        //{
+        //    get { return ddlIsObligatory.SelectedValue; }
+        //}
+
+        //public string IsPrivate
+        //{
+        //    get { return ddlIsPrivate.SelectedValue; }
+        //}
+
+        //public string Message
+        //{
+        //    get { return lblMessage.Text; }
+
+        //    set { lblMessage.Text = value; }
+        //}
 
         public bool ContinueButtonVisible
         {

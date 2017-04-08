@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateAppointmentView.aspx.cs" Inherits="CheckPoint.Views.CreateAppointmentView" %>
-
-<%@ Register Src="~/UserControls/AppointmentCreator.ascx" TagPrefix="uc1" TagName="AppointmentCreator" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AppointmentCreator.ascx.cs" Inherits="CheckPoint.Views.UserControls.AppointmentCreator" %>
 
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
 
 <style type="text/css">
+  
 
-/*.container{
+.container{
     width: 42%;
     height: 570px;
     margin-left: 27%;
@@ -24,176 +19,145 @@
 .panel{
     position:relative;
 }
-#lblAppointmentName{
+#AppointmentCreator_lblAppointmentName{
     position: absolute;
     top:5.2em;
     left:4em;
     color:white;
 }
-#txtAppointmentName{
+#AppointmentCreator_txtAppointmentName{
     position: absolute;
     top:6em;
     left:16em;
 }
-#lblDate{
+#AppointmentCreator_lblDate{
     position: absolute;
     top:10.2em;
     left:4em;
     color:white;
 }
-#txtDate{
+#AppointmentCreator_txtDate{
     position: absolute;
     top:12em;
     left:16em;
 }
-#lblDescription{
+#AppointmentCreator_lblDescription{
     position: absolute;
     top:8.5em;
     left:4em;
     color:white;
 }
-#txtAppointmentDescription{
+#AppointmentCreator_txtAppointmentDescription{
     position: absolute;
     top:9.8em;
     left:16em;
 }
-#lblCourseId{
+#AppointmentCreator_lblCourseId{
     position: absolute;
     top:6.8em;
     left:4em;
     color:white;
 }
-#txtCourseId{
+#AppointmentCreator_txtCourseId{
     position: absolute;
     top:7.9em;
     left:16em;
 }
-#lblStartTime{
+#AppointmentCreator_lblStartTime{
     position: absolute;
     top:11.9em;
     left:4em;
     color:white;
 }
-#txtStartTime{
+#AppointmentCreator_txtStartTime{
     position: absolute;
     top:14em;
     left:16em;
 }
-#lblEndTime{
+#AppointmentCreator_lblEndTime{
     position: absolute;
     top:13.6em;
     left:4em;
     color:white;
 }
-#txtEndTime{
+#AppointmentCreator_txtEndTime{
     position: absolute;
     top:16em;
     left:16em;
 }
-#lblPostalCode{
+#AppointmentCreator_lblPostalCode{
     position: absolute;
     top:16.8em;
     left:4em;
     color:white;
 }
-#txtPostalCode{
+#AppointmentCreator_txtPostalCode{
     position: absolute;
     top:20em;
     left:16em;
 }
-#lblAddress{
+#AppointmentCreator_lblAddress{
     position: absolute;
     top:15.2em;
     left:4em;
     color:white;
 }
-#txtAddress{
+#AppointmentCreator_txtAddress{
     position: absolute;
     top:18em;
     left:16em;
 }
-#lblUserName{
+#AppointmentCreator_lblUserName{
     position: absolute;
     top:18.5em;
     left:4em;
     color:white;
 }
-#txtUserName{
+#AppointmentCreator_txtUserName{
     position: absolute;
     top:22em;
     left:16em;
 }
-#lblObligatory{
+#AppointmentCreator_lblObligatory{
     position: absolute;
     top:20em;
     left:4em;
     color:white;
 }
-#ddlIsObligatory{
+#AppointmentCreator_ddlIsObligatory{
     position: absolute;
     top:24.1em;
     left:16em;
 }
-#lblCancelled{
+#AppointmentCreator_lblCancelled{
     position: absolute;
     top:21.8em;
     left:4em;
     color:white;
 }
 
-#ddlIsCancelled{
+#AppointmentCreator_ddlIsCancelled{
     position: absolute;
     top:26em;
     left:16em;
 }
-#lblPrivate{
+#AppointmentCreator_lblPrivate{
     position: absolute;
     top:18.4em;
     left:4em;
     color:white;
 }
 
-#ddlIsPrivate{
+#AppointmentCreator_ddlIsPrivate{
     position: absolute;
     top:22.2em;
     left:16em;
 }
-
-
-
-#lblMessage{
+#AppointmentCreator_lblMessage{
     position: absolute;
     top:30em;
     left:4em;
     color:white;
-}*/
-#btnBackToHomePage{
-    position: absolute;
-    top:33em;
-    left:45em;
-}
-#btnCreateAppointment{
-    position: absolute;
-    top: 36em;
-    left: 45em;
-    width: 137px;
-}
-
-#btnYes{
-    position: absolute;
-    top: 36em;
-    left: 45em;
-}
-#btnNo{
-    position: absolute;
-    top: 36em;
-    left: 53em;
-}
-#btnContinue{
-    position: absolute;
-    width:136px;
-    top: 35em;
-    left: 45em;
 }
 
 
@@ -206,18 +170,9 @@
     border-radius: 36px;
 }
 
-
 </style>
 
-<title></title>
-</head>
-
-
-<body>
-<form id="form1" runat="server">
-
-<uc1:AppointmentCreator runat="server" id="AppointmentCreator" />
-<%--<div id="container" class="container">
+<div id="container" class="container">
 <div id="panel" class="panel">
     
         <asp:Label ID="lblAppointmentName" runat="server" Text="Appointment Name"></asp:Label>
@@ -266,23 +221,6 @@
         </asp:DropDownList>
 
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
-
-<asp:Button ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back To Home Page" />
-<asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Visible="False" />
-<asp:Button ID="btnCreateAppointment" runat="server" Text="Create Appointment" OnClick="btnCreateAppointment_Click" />
-<asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
-<asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
-
     
 </div>
-</div>--%>
-
-<asp:Button ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back To Home Page" />
-<asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Visible="False" />
-<asp:Button ID="btnCreateAppointment" runat="server" Text="Create Appointment" OnClick="btnCreateAppointment_Click" />
-<asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
-<asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
-
-</form>
-</body>
-</html>
+</div>

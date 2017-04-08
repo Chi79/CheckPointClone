@@ -173,6 +173,7 @@
     </Content>
     <Content Include="Scripts\package.json" />
     <Content Include="HostMaster.Master" />
+    <Content Include="UserControls\AppointmentCreator.ascx" />
     <Content Include="UserControls\AppointmentGridView.ascx" />
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\CourseGridView.ascx" />
@@ -312,6 +313,13 @@
     </Compile>
     <Compile Include="UpdateProfileView.aspx.designer.cs">
       <DependentUpon>UpdateProfileView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppointmentCreator.ascx.cs">
+      <DependentUpon>AppointmentCreator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppointmentCreator.ascx.designer.cs">
+      <DependentUpon>AppointmentCreator.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AppointmentGridView.ascx.cs">
       <DependentUpon>AppointmentGridView.ascx</DependentUpon>
