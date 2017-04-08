@@ -8,7 +8,36 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface ICreateAppointmentModel
     {
+
+        void PrepareAddNewAppointmentToCourseJob();
+
+        void PrepareCreateNewAppointmentJob();
+
+        void SaveJobTypeToSession();
+
+        void SaveAppointmentNameToSession(string appointmentName);
+
+        bool? GetAddingAppointmentToCourseStatus();
+
         object ConvertToAppointment(object entityModel);
-        //TODO
+
+        void GetJobItemNameFromSession();
+
+        string GetJobConfirmationMessage();
+
+        string GetLoggedInClient();
+
+        object GetJobTypeFromSession();
+
+        void PerformJob(object appointment);
+
+        bool UpdateDatabaseWithChanges();
+
+        string GetUpdateErrorMessage();
+
+        string GetJobCompletedMessage();
+
+        void ResetAddingAppointmentToCourseStatus();
+
     }
 }

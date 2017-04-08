@@ -15,10 +15,12 @@ namespace CheckPointModel.Models
 {
     public class ManageSingleAppointmentModel : IManageSingleAppointmentModel
     {
+
         private IFactory _factory;
         private ISessionService _sessionService;
 
         private JobServiceBase _job;
+
 
         public ManageSingleAppointmentModel(IFactory factory, ISessionService sessionService)
         {
