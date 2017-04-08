@@ -17,21 +17,23 @@ namespace CheckPointModel.Models
     {
         private IFactory _factory;
         private ISessionService _sessionService;
-        //private IHandleCourses _courseHandler;
 
         private JobServiceBase _job;
 
-        public CreateCourseModel(IFactory factory, ISessionService sessionService/*, IHandleCourses courseHandler*/)
+        public CreateCourseModel(IFactory factory, ISessionService sessionService)
         {
+
             _factory = factory;
             _sessionService = sessionService;
-            //_courseHandler = courseHandler;
+
         }
 
         public void PrepareCreateCourseJob()
         {
+
             _job = _factory.CreateCourseJobType(DbAction.CreateCourse) as JobServiceBase;
             SetInitialSessionJobState();
+
         }
 
         public void SetInitialSessionJobState()
@@ -39,6 +41,7 @@ namespace CheckPointModel.Models
 
             SaveJobTypeToSession();
             GetJobItemNameFromSession();
+
         }
 
         public void SaveJobTypeToSession()
@@ -64,12 +67,16 @@ namespace CheckPointModel.Models
 
         public string GetJobConfirmationMessage()
         {
+
             return _job.ConfirmationMessage;
+
         }
 
         public string GetLoggedInClient()
         {
+
             return _sessionService.LoggedInClient;
+
         }
 
         public object GetJobTypeFromSession()
@@ -93,7 +100,6 @@ namespace CheckPointModel.Models
 
         }
 
-
         public bool UpdateDatabaseWithChanges()
         {
 
@@ -114,18 +120,24 @@ namespace CheckPointModel.Models
 
         public string GetJobCompletedMessage()
         {
+
             return _job.CompletedMessage;
+
         }
 
         public string GetUpdateErrorMessage()
         {
+
             var saveResult = _job.SaveChanges();
             return saveResult.ErrorMessage;
+
         }
 
         public object ConvertToCourse(object courseDTO)
         {
+
             return CourseDTOMapper.ConvertCourseDTOToCourse(courseDTO as CourseDTO);
+
         }
     }
 }
