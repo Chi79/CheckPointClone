@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointModel.Services;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
@@ -46,17 +45,9 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             _view.BackToHomePageClicked += OnBackToHomePageClicked;
-            _view.BackToViewCoursesButtonClicked += OnBackToViewCoursesButtonClicked;
-            _view.AddAnotherAppointmentButtonClicked += OnAddAnotherAppointmentButtonClicked;
 
         }
 
-        private void OnAddAnotherAppointmentButtonClicked(object sender, EventArgs e)
-        {
-
-            _view.RedirectAfterClickEvent();
-
-        }
 
         private void OnCreateNewAppointmentButtonClicked(object sender, EventArgs e)
         {
@@ -69,22 +60,11 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+
         private void PrepareJobType()
         {
 
-            bool? AppointmentIsBeingAddedToACourse = _model.GetAddingAppointmentToCourseStatus();
-            if (AppointmentIsBeingAddedToACourse == true)
-            {
-
-                 _model.PrepareAddNewAppointmentToCourseJob();
-
-            }
-            else
-            {
-
-                _model.PrepareCreateNewAppointmentJob();
-
-            }
+          _model.PrepareCreateNewAppointmentJob();
 
         }
 
@@ -212,8 +192,11 @@ namespace CheckPointPresenters.Presenters
             bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
             if (UpdateSuccessful)
             {
+
                 _view.Message = _model.GetJobCompletedMessage();
-                CheckIfAppointmentWasAddedToCourse();
+
+                ContinueButtonsShow();
+
             }
             else
             {
@@ -223,30 +206,6 @@ namespace CheckPointPresenters.Presenters
         }
 
 
-        private void CheckIfAppointmentWasAddedToCourse()
-        {
-
-            bool? AppointmentWasAdded = _model.GetAddingAppointmentToCourseStatus();
-
-            if (AppointmentWasAdded == true)
-            {
-                ContinueWithCourseCreationButtonShow();
-            }
-            else
-            {
-                ContinueButtonsShow();
-            }
-
-        }
-
-        private void DisplayActionMessage(JobServiceBase job)
-        {
-
-            _view.Message = job.CompletedMessage;
-            ContinueButtonsShow();
-
-        }
-
         private void OnContinueEvent(object sender, EventArgs e)
         {
 
@@ -254,24 +213,9 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnBackToViewCoursesButtonClicked(object sender, EventArgs e)
-        {
-
-            ResetAddAppointmentStatus();
-            _view.RedirectToViewCourses();
-   
-        }
-        private void ResetAddAppointmentStatus()
-        {
-
-            _model.ResetAddingAppointmentToCourseStatus();
-
-        }
-
         private void OnBackToHomePageClicked(object sender, EventArgs e)
         {
 
-            ResetAddAppointmentStatus();
             _view.RedirectToHomePage();
 
         }
@@ -296,15 +240,6 @@ namespace CheckPointPresenters.Presenters
             _view.CreateButtonVisible = true;
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
-        }
-
-        private void ContinueWithCourseCreationButtonShow()
-        {
-            _view.BackToViewCoursesButtonVisible = true;
-            _view.AddAnotherAppointmentButtonVisible = true;
-            _view.BackToHomePageButtonVisible = false;
-            _view.ContinueButtonVisible = false;
-            _view.CreateButtonVisible = false;
         }
     }
 }
