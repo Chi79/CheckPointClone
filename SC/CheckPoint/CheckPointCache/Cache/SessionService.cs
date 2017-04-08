@@ -15,7 +15,7 @@ namespace CheckPointHTTPServices.Cache
             get
             {
                 var client = HttpContext.Current.Session["LoggedInClient"].ToString();
-                if(client != null)
+                if (client != null)
                 {
                     return client.ToString();
                 }
@@ -32,7 +32,7 @@ namespace CheckPointHTTPServices.Cache
             get
             {
                 var addAppointmentStatus = HttpContext.Current.Session["AddingAppointmentToCourseStatus"];
-                if(addAppointmentStatus != null)
+                if (addAppointmentStatus != null)
                 {
                     return (bool)addAppointmentStatus;
                 }
@@ -48,7 +48,7 @@ namespace CheckPointHTTPServices.Cache
             get
             {
                 var appointmentId = HttpContext.Current.Session["AppointmentId"];
-                if(appointmentId != null)
+                if (appointmentId != null)
                 {
                     return (int)appointmentId;
                 }
@@ -64,7 +64,7 @@ namespace CheckPointHTTPServices.Cache
             get
             {
                 var rowIndex = HttpContext.Current.Session["MyRowIndex"];
-                if(rowIndex != null)
+                if (rowIndex != null)
                 {
                     return (int)rowIndex;
                 }
@@ -80,7 +80,7 @@ namespace CheckPointHTTPServices.Cache
             get
             {
                 var columnName = HttpContext.Current.Session["MySortExpression"];
-                if(columnName != null)
+                if (columnName != null)
                 {
                     return columnName.ToString();
                 }
@@ -96,7 +96,7 @@ namespace CheckPointHTTPServices.Cache
             get
             {
                 var sessionCourseId = HttpContext.Current.Session["CourseId"];
-                if(sessionCourseId != null)
+                if (sessionCourseId != null)
                 {
                     return (int)sessionCourseId;
                 }
@@ -111,10 +111,10 @@ namespace CheckPointHTTPServices.Cache
         {
             get
             {
-                var jobState = HttpContext.Current.Session["job"];
-                if(jobState != null)
+                var jobType = HttpContext.Current.Session["job"];
+                if (jobType != null)
                 {
-                    return (int)jobState;
+                    return (int)jobType;
                 }
                 else
                 {
@@ -123,6 +123,23 @@ namespace CheckPointHTTPServices.Cache
 
             }
             set { HttpContext.Current.Session["job"] = value; }
+        }
+        public string SessionAppointmentName
+        {
+            get
+            {
+                var sessionAppointmentName = HttpContext.Current.Session["appointmentName"];
+                if (sessionAppointmentName != null)
+                {
+                    return (string)sessionAppointmentName;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            set { HttpContext.Current.Session["appointmentName"] = value; }
         }
     }
 

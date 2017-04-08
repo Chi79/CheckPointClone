@@ -26,6 +26,7 @@ namespace CheckPointPresenters.Presenters
                                                 IShowAppointments displayService)
 
         {
+
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
             _displayService = displayService;
@@ -152,17 +153,9 @@ namespace CheckPointPresenters.Presenters
         {
 
             DecisionButtonsHide();
-            ValidateDTO();
 
-        }
-
-        private void ValidateDTO()
-        {
-
-            CreateAppointmentDTOFromInput();
-
-            bool appointmentDataIsValid = _dTO.IsValid(_dTO);
-            if (appointmentDataIsValid)
+            bool DTOIsValid = ValidateDTO();
+            if (DTOIsValid)
             {
 
                 var appointment = ConvertDTOToAppointment();
@@ -171,7 +164,30 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+
                 DisplayValidationMessage();
+
+            }
+
+        }
+
+        private bool ValidateDTO()
+        {
+
+            CreateAppointmentDTOFromInput();
+
+            bool appointmentDataIsValid = _dTO.IsValid(_dTO);
+            if (appointmentDataIsValid)
+            {
+
+                return true;
+
+            }
+            else
+            {
+
+                return false;
+
             }
 
         }
@@ -219,8 +235,7 @@ namespace CheckPointPresenters.Presenters
         private APPOINTMENT ConvertDTOToAppointment()
         {
 
-            var appointment = _model.ConvertToAppointment(_dTO) as APPOINTMENT;
-            return appointment;
+            return  _model.ConvertToAppointment(_dTO) as APPOINTMENT;
 
         }
 
