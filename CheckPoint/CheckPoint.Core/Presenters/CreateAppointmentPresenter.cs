@@ -65,7 +65,7 @@ namespace CheckPointPresenters.Presenters
 
             SaveAppointmentNameToSession();
 
-            ConfirmAction();
+            ConfirmJob();
 
         }
 
@@ -97,7 +97,7 @@ namespace CheckPointPresenters.Presenters
         }
 
 
-        private void ConfirmAction()
+        private void ConfirmJob()
         {
 
             _view.Message = _model.GetJobConfirmationMessage();

@@ -16,28 +16,18 @@ namespace CheckPointCommon.ViewInterfaces
         string IsObligatory { get; }
 
 
-        bool ContinueButtonVisible { set; }
-        bool CreateButtonVisible { set; }
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool CreateCourseButtonVisible { set; }
-        bool BackToHomePageButtonVisible { set; }
-        bool AddNewAppointmentToCourseButtonVisible { set; }
-        bool AddExistingAppointmentToCourseButtonVisible { set; }
+        bool BackToCoursesPageButtonVisible { set; }
 
 
-        void RedirectAfterClickEvent();
-        void RedirectToHomePage();
-        void RedirectToAddNewAppointmentToCourse();
-        void RedirectToAddExistingAppointmentToCourse();
-
+        void RedirectToCoursesPage();
 
         event EventHandler<EventArgs> CreateNewCourse;
-        event EventHandler<EventArgs> Continue;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-        event EventHandler<EventArgs> BackToHomePageClicked;
-        event EventHandler<EventArgs> AddNewAppontmentToCourseClicked;
-        event EventHandler<EventArgs> AddExistingAppontmentToCourseClicked;
+        event EventHandler<EventArgs> BackToCoursesPageClicked;
+
     }
 }

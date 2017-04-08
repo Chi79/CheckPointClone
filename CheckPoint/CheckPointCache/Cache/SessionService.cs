@@ -141,6 +141,23 @@ namespace CheckPointHTTPServices.Cache
             }
             set { HttpContext.Current.Session["appointmentName"] = value; }
         }
+        public string SessionCourseName
+        {
+            get
+            {
+                var sessionCourseName = HttpContext.Current.Session["courseName"];
+                if (sessionCourseName != null)
+                {
+                    return (string)sessionCourseName;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            set { HttpContext.Current.Session["courseName"] = value; }
+        }
     }
 
 }

@@ -33,11 +33,6 @@ namespace CheckPoint.Views
             get { return ddlIsObligatory.SelectedValue; }
         }
 
-        public bool ContinueButtonVisible
-        {
-            set { btnContinue.Visible = value; }
-        }
-
         public bool CreateButtonVisible
         {
             set { btnCreateCourse.Visible = value; }
@@ -64,50 +59,23 @@ namespace CheckPoint.Views
             set { btnCreateCourse.Visible = value; } 
         }
 
-        public bool BackToHomePageButtonVisible
+        public bool BackToCoursesPageButtonVisible
         {
-            set { btnBackToHomePage.Visible = value; }
+            set { btnBackToCoursesPage.Visible = value; }
         }
 
-        public bool AddNewAppointmentToCourseButtonVisible
-        {
-            set { btnAddNewAppointmentToCourseButton.Visible = value; }
-        }
 
-        public bool AddExistingAppointmentToCourseButtonVisible
-        {
-            set { btnAddExistingAppointmentToCourseButton.Visible = value; } 
-        }
-
-        public void RedirectAfterClickEvent()
-        {
-            Response.Redirect("CreateCourseView.aspx");
-        }
-
-        public void RedirectToHomePage()
+        public void RedirectToCoursesPage()
         {
             Response.Redirect("HostCoursesView.aspx");
         }
 
-        public void RedirectToAddNewAppointmentToCourse()
-        {
-            Response.Redirect("CreateAppointmentView.aspx");
-        }
-
-        public void RedirectToAddExistingAppointmentToCourse()
-        {
-            Response.Redirect("HostHomeView.aspx");
-        }
-
 
         public event EventHandler<EventArgs> CreateNewCourse;
-        public event EventHandler<EventArgs> Continue;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-        public event EventHandler<EventArgs> BackToHomePageClicked;
+        public event EventHandler<EventArgs> BackToCoursesPageClicked;
 
-        public event EventHandler<EventArgs> AddNewAppontmentToCourseClicked;
-        public event EventHandler<EventArgs> AddExistingAppontmentToCourseClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -138,35 +106,11 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnContinue_Click(object sender, EventArgs e)
+        protected void btnBackToCoursesPage_Click(object sender, EventArgs e)
         {
-            if(Continue != null)
+            if (BackToCoursesPageClicked != null)
             {
-                Continue(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnBackToHomePage_Click(object sender, EventArgs e)
-        {
-            if(BackToHomePageClicked != null)
-            {
-                BackToHomePageClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void AddNewAppointmentToCourseButton_Click(object sender, EventArgs e)
-        {
-            if(AddNewAppontmentToCourseClicked != null)
-            {
-                AddNewAppontmentToCourseClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void AddExistingAppointmentToCourseButton_Click(object sender, EventArgs e)
-        {
-            if(AddExistingAppontmentToCourseClicked != null)
-            {
-                AddExistingAppontmentToCourseClicked(this, EventArgs.Empty);
+                BackToCoursesPageClicked(this, EventArgs.Empty);
             }
         }
     }

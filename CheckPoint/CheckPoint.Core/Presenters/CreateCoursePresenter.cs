@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Bases;
-using CheckPointCommon.FactoryInterfaces;
 using CheckPointModel.Services;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
-using CheckPointCommon.Structs;
-using CheckPointCommon.Enums;
-using CheckPointCommon.ServiceInterfaces;
+
 
 namespace CheckPointPresenters.Presenters
 {
@@ -21,81 +18,118 @@ namespace CheckPointPresenters.Presenters
 
         private readonly ICreateCourseView _view;
         private readonly ICreateCourseModel _model;
-        private readonly IHandleCourses _courseService;
-        private readonly ISessionService _sessionService;
-        private readonly IFactory _factory;
 
         private CourseDTO _dTO = new CourseDTO();
 
 
         public CreateCoursePresenter(ICreateCourseView createCourseView,
-                                     ICreateCourseModel createCourseModel,
-                                     IHandleCourses courseService,
-                                     ISessionService sessionService,
-                                     IFactory factory )
+                                     ICreateCourseModel createCourseModel)
+                             
         {
 
             _view = createCourseView;
             _model = createCourseModel;
-            _factory = factory;
-            _courseService = courseService;
-            _sessionService = sessionService;
 
-            _view.CreateNewCourse += OnCreateNewCourseButtonClicked;
-            _view.Continue += OnContinueEvent;
-            _view.YesButtonClicked += OnYesButtonClicked;
-            _view.NoButtonClicked += OnNoButtonClicked;
-            _view.BackToHomePageClicked += OnBackToHomePageClicked;
-
-            _view.AddNewAppontmentToCourseClicked += OnAddNewAppontmentToCourseClicked;
-            _view.AddExistingAppontmentToCourseClicked += OnAddExistingAppontmentToCourseClicked;
         }
 
+        public override void Load()
+        {
+
+            WireUpEvents();
+
+        }
+
+        private void WireUpEvents()
+        {
+
+            _view.CreateNewCourse += OnCreateNewCourseButtonClicked;
+            _view.YesButtonClicked += OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
+            _view.BackToCoursesPageClicked += OnBackToCoursesPageClicked;
+
+        }
 
         private void OnCreateNewCourseButtonClicked(object sender, EventArgs e)
         {
-            var job = _factory.CreateCourseJobType(DbAction.CreateCourse);
-            ConfirmAction(job as JobServiceBase);
+
+            _model.PrepareCreateCourseJob();
+
+            SaveCourseNameToSession();
+
+            ConfirmJob();
+
         }
 
-        private void ConfirmAction(JobServiceBase job)
+        private void SaveCourseNameToSession()
         {
-            _sessionService.JobType = (int)job.Jobtype;
-            job.ItemName = _view.CourseName;
-            _view.Message = job.ConfirmationMessage;
+
+            string courseName = _view.CourseName;
+            _model.SaveCourseNameToSession(courseName);
+
+        }
+
+        private void ConfirmJob()
+        {
+            _view.Message = _model.GetJobConfirmationMessage();
+
             DecisionButtonsShow();
         }
 
+
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
+
             DecisionButtonsHide();
             _view.Message = "Ready.";
+
         }
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
+
             DecisionButtonsHide();
-            ValidateDTO();
+
+            bool DTOIsValid = ValidateDTO();
+            if (DTOIsValid)
+            {
+
+                var course = ConvertDTOToCourse();
+                PerformJob(course);
+
+            }
+            else
+            {
+
+                DisplayValidationMessage();
+
+            }
         }
 
-        private void ValidateDTO()
+        private bool ValidateDTO()
         {
+
             CreateCourseDTOFromInput();
 
             bool courseDataIsValid = _dTO.IsValid(_dTO);
             if (courseDataIsValid)
             {
-                PerformJob();
+
+                return true;
+
             }
             else
             {
-                DisplayValidationMessage();
+
+                return false;
+
             }
         }
 
+
         private void CreateCourseDTOFromInput()
         {
-            _dTO.UserName = _sessionService.LoggedInClient;
+
+            _dTO.UserName = _model.GetLoggedInClient();
             _dTO.Name = _view.CourseName;
             _dTO.Description = _view.Description;
             _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
@@ -105,6 +139,7 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplayValidationMessage()
         {
+
             _view.Message = string.Empty;
 
             var validationMessages = _dTO.GetBrokenBusinessRules().ToList();
@@ -113,111 +148,80 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message += message;
             }
+
         }
 
-        private void PerformJob()
+
+        private void PerformJob(COURSE course)
         {
 
-            var job = _factory.CreateCourseJobType((DbAction)_sessionService.JobType) as JobServiceBase;
-            var course = ConvertDTOToCourse();
+            _model.PerformJob(course);
+ 
+            CheckChangesSaved();
 
-            job.ItemName = _view.CourseName;
-            job.PerformTask(course);
-
-            UpdateDatabaseWithChanges(job);
         }
 
         private COURSE ConvertDTOToCourse()
         {
-            var course = _model.ConvertToCourse(_dTO) as COURSE;
-            return course;
+
+            return  _model.ConvertToCourse(_dTO) as COURSE;
+  
         }
 
-        private void UpdateDatabaseWithChanges(JobServiceBase job)
+
+        private void CheckChangesSaved()
         {
 
-            SaveResult saveResult = job.SaveChanges();
-
-            bool IsSavedToDb = saveResult.Result > 0;
-            if (IsSavedToDb)
+            bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
+            if (UpdateSuccessful)
             {
-                StoreNewCourseIdInSession(job);
-                DisplayAddAppointmentToCourseButtons();
-                _view.Message = "Add an appointment to the course";
+
+                _view.Message = _model.GetJobCompletedMessage();
+                DisplayCourseSavedButtons();
+
             }
             else
             {
-                _view.Message = "Failed to Save Course " + saveResult.ErrorMessage;
+
+                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+
             }
-        }
-        public void StoreNewCourseIdInSession(JobServiceBase job)
-        {
-            var newlyCreatedCourse = _courseService.GetCourseByName(job.ItemName) as COURSE;
-            _sessionService.SessionCourseId = newlyCreatedCourse.CourseId;
 
         }
-        public void UpdateAddAppointmentToCourseStatus()
-        {
-            _sessionService.AddingAppointmentToCourseStatus = true;
-        } 
 
-        private void DisplayActionMessage(JobServiceBase job)
+
+        private void DisplayJobCompletedMessage(JobServiceBase job)
         {
 
             _view.Message = job.CompletedMessage;
-            ContinueButtonsShow();
+
         }
 
-        private void OnContinueEvent(object sender, EventArgs e)
+        private void OnBackToCoursesPageClicked(object sender, EventArgs e)
         {
-            _view.RedirectAfterClickEvent();
-        }
 
-        private void OnAddExistingAppontmentToCourseClicked(object sender, EventArgs e)
-        {
-            UpdateAddAppointmentToCourseStatus();
-            _view.RedirectToAddExistingAppointmentToCourse();
-        }
+            _view.RedirectToCoursesPage();
 
-        private void OnAddNewAppontmentToCourseClicked(object sender, EventArgs e)
-        {
-            UpdateAddAppointmentToCourseStatus();
-            _view.RedirectToAddNewAppointmentToCourse();
-        }
-
-        private void OnBackToHomePageClicked(object sender, EventArgs e)
-        {
-            _view.RedirectToHomePage();
-        }
-
-        private void ContinueButtonsShow()
-        {
-            _view.CreateButtonVisible = false;
-            _view.ContinueButtonVisible = true;
         }
 
         private void DecisionButtonsShow()
         {
-            _view.ContinueButtonVisible = false;
-            _view.CreateButtonVisible = false;
+            _view.CreateCourseButtonVisible = false;
             _view.NoButtonVisible = true;
             _view.YesButtonVisible = true;
         }
 
         private void DecisionButtonsHide()
         {
-            _view.ContinueButtonVisible = false;
-            _view.CreateButtonVisible = true;
+            _view.CreateCourseButtonVisible = true;
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
         }
 
-        public void DisplayAddAppointmentToCourseButtons()
+        public void DisplayCourseSavedButtons()
         {
-            _view.AddExistingAppointmentToCourseButtonVisible = true;
-            _view.AddNewAppointmentToCourseButtonVisible = true;
             _view.CreateCourseButtonVisible = false;
-            _view.BackToHomePageButtonVisible = false;
+            _view.BackToCoursesPageButtonVisible = true;
         }
     }
 }
