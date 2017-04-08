@@ -15,115 +15,115 @@ namespace CheckPoint.Views
 
         public string AppointmentName
         {
-            get { return txtAppointmentName.Text; }
-            set { txtAppointmentName.Text = value; }
+            get { return AppointmentCreator.AppointmentName; }
+            set { AppointmentCreator.AppointmentName = value; }
         }
 
         public string Description
         {
-            get { return txtAppointmentDescription.Text; }
-            set { txtAppointmentDescription.Text = value; }
+            get { return AppointmentCreator.Description; }
+            set { AppointmentCreator.Description = value; }
         }
 
         public string Date
         {
-            get { return txtDate.Text; }
-            set { txtDate.Text = value; }
+            get { return AppointmentCreator.Date; }
+            set { AppointmentCreator.Date = value; }
         }
 
         public string StartTime
         {
-            get { return txtStartTime.Text; }
-            set { txtStartTime.Text = value; }
+            get { return AppointmentCreator.StartTime; }
+            set { AppointmentCreator.StartTime = value; }
         }
 
         public string EndTime
         {
-            get { return txtEndTime.Text; }
-            set { txtEndTime.Text = value; }
+            get { return AppointmentCreator.EndTime; }
+            set { AppointmentCreator.EndTime = value; }
         }
 
         public string PostalCode
         {
-            get { return txtPostalCode.Text; }
-            set { txtPostalCode.Text = value; }
+            get { return AppointmentCreator.PostalCode; }
+            set { AppointmentCreator.PostalCode = value; }
         }
 
         public string Address
         {
-            get { return txtAddress.Text; }
-            set { txtAddress.Text = value; }
+            get { return AppointmentCreator.Address; }
+            set { AppointmentCreator.Address = value; }
         }
 
         public string IsCancelled
         {
-            get { return ddlIsCancelled.SelectedValue; }
-            set { ddlIsCancelled.Text = value; }
+            get { return AppointmentCreator.IsCancelled; }
+            set { AppointmentCreator.IsCancelled = value; }
         }
 
         public string IsObligatory
         {
-            get { return ddlIsObligatory.SelectedValue; }
-            set { ddlIsObligatory.Text = value; }
+            get { return AppointmentCreator.IsObligatory; }
+            set { AppointmentCreator.IsObligatory = value; }
         }
 
         public string IsPrivate
         {
-            get { return ddlIsPrivate.SelectedValue; }
-            set { ddlIsPrivate.Text = value; }
+            get { return AppointmentCreator.IsPrivate; }
+            set { AppointmentCreator.IsPrivate = value; }
         }
 
         public string Message
         {
-            get { return lblMessage.Text; }
-            set { lblMessage.Text = value; }
+            get { return AppointmentCreator.Message; }
+            set { AppointmentCreator.Message = value; }
         }
 
 
 
         public bool AppointmentNameReadOnly
         {
-            set { txtAppointmentName.ReadOnly = value; }
+            set { AppointmentCreator.AppointmentNameReadOnly = value; }
         }
         public bool DateReadOnly
         {
-            set { txtDate.ReadOnly = value; }
+            set { AppointmentCreator.DateReadOnly = value; }
         }
         public bool AppointmentDescriptionReadOnly
         {
-            set { txtAppointmentDescription.ReadOnly = value; }
+            set { AppointmentCreator.AppointmentDescriptionReadOnly = value; }
         }
         public bool StartTimeReadOnly
         {
-            set { txtStartTime.ReadOnly = value; }
+            set { AppointmentCreator.StartTimeReadOnly = value; }
         }
         public bool EndDateReadOnly
         {
-            set { txtEndTime.ReadOnly = value; }
+            set { AppointmentCreator.EndDateReadOnly = value; }
         }
         public bool IsCancelledEnabled
         {
-            set { ddlIsCancelled.Enabled = value; }
+            set { AppointmentCreator.IsCancelledEnabled = value; }
         }
         public bool IsObligatoryEnabled
         {
-            set { ddlIsObligatory.Enabled = value; }
+            set { AppointmentCreator.IsObligatoryEnabled = value; }
         }
         public bool IsPrivateEnabled
         {
-            set { ddlIsPrivate.Enabled = value; }
+            set { AppointmentCreator.IsPrivateEnabled = value; }
         }
         public bool PostalCodeReadOnly
         {
-            set { txtPostalCode.ReadOnly = value; }
+            set { AppointmentCreator.PostalCodeReadOnly = value; }
         }
         public bool AddressReadOnly
         {
-            set { txtAddress.ReadOnly = value; }
+            set { AppointmentCreator.AddressReadOnly = value; }
         }
         public bool EndTimeReadOnly
         {
-            set { txtEndTime.ReadOnly = value; }
+            set { AppointmentCreator.EndTimeReadOnly = value; }
         }
 
 
