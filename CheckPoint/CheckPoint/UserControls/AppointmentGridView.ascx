@@ -120,7 +120,12 @@ table {
     margin: auto;
     padding-right: 8px;
 }
-
+.headertext {
+    padding-bottom: 9%;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
 
 .Row td{
     padding-top: 0.5%;
@@ -128,7 +133,8 @@ table {
     vertical-align: middle;
     text-align:center;
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 16px;
+
 }
 .AltRow td{
     padding-top: 0.5%;
@@ -136,7 +142,8 @@ table {
     vertical-align: middle;
     text-align:center;
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 16px;
+
 }
 .Row:hover{
       /*background:#32E236 url(/Images/greenshade1.png) repeat-x;*/
