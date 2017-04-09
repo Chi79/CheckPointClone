@@ -185,45 +185,45 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void createAppointment_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CreateAppointmentButtonClicked != null)
-            {
-                CreateAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
+        //protected void createAppointment_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (CreateAppointmentButtonClicked != null)
+        //    {
+        //        CreateAppointmentButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
 
-        protected void manageAppointment_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ManageAppointmentButtonClicked != null)
-            {
-                ManageAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
+        //protected void manageAppointment_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (ManageAppointmentButtonClicked != null)
+        //    {
+        //        ManageAppointmentButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
 
-        protected void manageattendance_Click(object sender, ImageClickEventArgs e)
-        {
-            if(ManageAttendanceButtonClicked != null)
-            {
-                ManageAttendanceButtonClicked(this, EventArgs.Empty);
-            }
-        }
+        //protected void manageattendance_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if(ManageAttendanceButtonClicked != null)
+        //    {
+        //        ManageAttendanceButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
 
-        protected void createreport_Click(object sender, ImageClickEventArgs e)
-        {
-            if(CreateReportButtonClicked != null)
-            {
-                CreateReportButtonClicked(this, EventArgs.Empty);
-            }
-        }
+        //protected void createreport_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if(CreateReportButtonClicked != null)
+        //    {
+        //        CreateReportButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
 
-        protected void ViewCourses_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ViewCoursesButtonClicked != null)
-            {
-                ViewCoursesButtonClicked(this, EventArgs.Empty);
-            }
-        }
+        //protected void ViewCourses_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (ViewCoursesButtonClicked != null)
+        //    {
+        //        ViewCoursesButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
 
         //protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
         //{
@@ -238,6 +238,46 @@ namespace CheckPoint.Views
             if (AddSelectedAppointmentToCourseButtonClicked != null)
             {
                 AddSelectedAppointmentToCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnCreateReport_Click(object sender, EventArgs e)
+        {
+            if (CreateReportButtonClicked != null)
+            {
+                CreateReportButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnManageAttendance_Click(object sender, EventArgs e)
+        {
+            if (ManageAttendanceButtonClicked != null)
+            {
+                ManageAttendanceButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnManageAppointment_Click(object sender, EventArgs e)
+        {
+            if (ManageAppointmentButtonClicked != null)
+            {
+                ManageAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnCreateAppointment_Click(object sender, EventArgs e)
+        {
+            if (CreateAppointmentButtonClicked != null)
+            {
+                CreateAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnViewCourses_Click(object sender, EventArgs e)
+        {
+            if (ViewCoursesButtonClicked != null)
+            {
+                ViewCoursesButtonClicked(this, EventArgs.Empty);
             }
         }
     }

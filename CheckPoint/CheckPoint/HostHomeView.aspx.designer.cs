@@ -118,7 +118,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnViewCourses;
+        protected global::System.Web.UI.WebControls.Button btnViewCourses;
         
         /// <summary>
         /// buttonsdiv0 control.
@@ -145,7 +145,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCreateAppointment;
+        protected global::System.Web.UI.WebControls.Button btnCreateAppointment;
         
         /// <summary>
         /// buttons2 control.
@@ -172,7 +172,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnManageAppointment;
+        protected global::System.Web.UI.WebControls.Button btnManageAppointment;
         
         /// <summary>
         /// buttonsdiv4 control.
@@ -199,7 +199,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnManageAttendance;
+        protected global::System.Web.UI.WebControls.Button btnManageAttendance;
         
         /// <summary>
         /// buttonsdiv5 control.
@@ -226,7 +226,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCreateReport;
+        protected global::System.Web.UI.WebControls.Button btnCreateReport;
         
         /// <summary>
         /// buttonsdiv6 control.

@@ -218,12 +218,13 @@
     <div id="Div1" runat="server" style="z-index:5;" class="buttons0">
     <asp:UpdatePanel ID="UpdatePanel3" runat="server" > 
     <ContentTemplate>
-    <asp:ImageButton  
+    <asp:Button ID="btnViewCourses" CssClass="navButtons" runat="server" OnClick="btnViewCourses_Click" Text="View Courses"  Visible="True" />
+<%--    <asp:ImageButton  
     runat="server" 
     CssClass="roundedButtons" 
     id="btnViewCourses" ImageUrl="~/Images/viewcoursesbutton.png" 
     OnClick="ViewCourses_Click"
-    ToolTip="view all courses" />
+    ToolTip="view all courses" />--%>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -232,12 +233,13 @@
     <div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
     <asp:UpdatePanel ID="buttonspanel" runat="server" > 
     <ContentTemplate>
-    <asp:ImageButton  
+    <asp:Button ID="btnCreateAppointment" CssClass="navButtons" runat="server" OnClick="btnCreateAppointment_Click" Text="Create Appointment"  Visible="True" />
+<%--    <asp:ImageButton  
     runat="server" 
     CssClass="roundedButtons" 
     id="btnCreateAppointment" ImageUrl="~/Images/createappointmentbutton.png" 
     OnClick="createAppointment_Click"
-    ToolTip="create a new appointment" />
+    ToolTip="create a new appointment" />--%>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -246,13 +248,14 @@
     <div id="buttons2" runat="server" style="z-index:5;" class="buttons2">
     <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
     <ContentTemplate>
-    <asp:ImageButton  
+    <asp:Button ID="btnManageAppointment" CssClass="navButtons" runat="server" OnClick="btnManageAppointment_Click" Text="Manage Appointment"  Visible="True" />
+<%--    <asp:ImageButton  
     runat="server" 
     CssClass="roundedButtons"
     id="btnManageAppointment"
     ImageUrl="~/Images/manageappointmentbutton.png" 
     OnClick="manageAppointment_Click"
-    ToolTip="manage the selected appointment"  />
+    ToolTip="manage the selected appointment"  />--%>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -261,13 +264,14 @@
     <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
     <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
     <ContentTemplate>
-    <asp:ImageButton  
+    <asp:Button ID="btnManageAttendance" CssClass="navButtons" runat="server" OnClick="btnManageAttendance_Click" Text="Manage Attendance"  Visible="True" />
+<%--    <asp:ImageButton  
     runat="server"
     CssClass="roundedButtons"
     id="btnManageAttendance" 
     ImageUrl="~/Images/manageattendancebutton1.png"
     OnClick="manageattendance_Click" 
-    ToolTip="manage attendance"  />
+    ToolTip="manage attendance"  />--%>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -276,13 +280,14 @@
     <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
     <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
     <ContentTemplate>
-    <asp:ImageButton  
+    <asp:Button ID="btnCreateReport" CssClass="navButtons" runat="server" OnClick="btnCreateReport_Click" Text="Create Report"  Visible="True" />
+    <%--<asp:ImageButton  
     runat="server" 
     CssClass="roundedButtons" 
     id="btnCreateReport" 
     ImageUrl="~/Images/createreportbutton1.png" 
     OnClick="createreport_Click"  
-    ToolTip="create a report" />
+    ToolTip="create a report" />--%>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -291,7 +296,7 @@
     <div id="buttonsdiv6" runat="server" style="z-index:5;" class="buttons6">
     <asp:UpdatePanel ID="buttonspanel6" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnAddSelectedAppointmentToCourse" CssClass="roundedButtons" runat="server" OnClick="btnAddSelectedAppointmentToCourse_Click1" Text="AddSelectedAppointmentToCourse"  Visible="True" />
+    <asp:Button ID="btnAddSelectedAppointmentToCourse" CssClass="navButtons" runat="server" OnClick="btnAddSelectedAppointmentToCourse_Click1" Text="Add Selected Appointment To Course"  Visible="True" />
   <%--  <asp:ImageButton
     runat="server" 
     CssClass="roundedButtons"
