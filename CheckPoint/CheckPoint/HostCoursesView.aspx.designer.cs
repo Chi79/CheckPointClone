@@ -118,7 +118,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ViewAppointments;
+        protected global::System.Web.UI.WebControls.Button ViewAppointments;
         
         /// <summary>
         /// buttonsdiv0 control.
@@ -145,7 +145,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton createcourse;
+        protected global::System.Web.UI.WebControls.Button createcourse;
         
         /// <summary>
         /// buttons2 control.
@@ -172,7 +172,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton managecourse;
+        protected global::System.Web.UI.WebControls.Button managecourse;
         
         /// <summary>
         /// buttonsdiv4 control.
@@ -199,7 +199,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton manageattendance;
+        protected global::System.Web.UI.WebControls.Button manageattendance;
         
         /// <summary>
         /// buttonsdiv5 control.
@@ -226,6 +226,6 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton createreport;
+        protected global::System.Web.UI.WebControls.Button createreport;
     }
 }
