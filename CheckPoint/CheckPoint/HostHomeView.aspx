@@ -52,7 +52,7 @@
 }
 .buttons0{
       float:left;
-      margin-left: 11%;
+      margin-left: 0%;
       z-index:3;
       margin-top:0.5%;
 }
@@ -298,7 +298,7 @@
     ImageUrl="~/Images/addselectedappointmentbutton.png" 
     OnClick="btnAddSelectedAppointmentToCourse_Click"
     ToolTip="add the selected appointment to the course"
-    Visible="false" />
+    Visible="true" />
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>

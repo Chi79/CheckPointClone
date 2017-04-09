@@ -106,6 +106,11 @@ namespace CheckPoint.Views
             Response.Redirect("HostCoursesView.aspx");
         }
 
+        public void RedirectToAddSelectedAppointmenToCourseView()
+        {
+            Response.Redirect("AddSelectedAppointmentToCourseView.aspx");
+        }
+
 
         public event EventHandler<EventArgs> RowSelected;
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;

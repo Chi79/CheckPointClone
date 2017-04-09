@@ -28,6 +28,7 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectToCreateAppointment();
         void RedirectToManageAppointment();
         void RedirectToCoursesView();
+        void RedirectToAddSelectedAppointmenToCourseView();
 
 
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
