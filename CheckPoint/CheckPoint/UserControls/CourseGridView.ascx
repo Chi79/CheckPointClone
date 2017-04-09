@@ -76,13 +76,6 @@ table {
     margin: auto;
 }
 
-.headertext {
-    padding-bottom: 9%;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: large;
-}
-
 .datediv{
     width: 117px;
     margin: auto;

@@ -124,6 +124,7 @@
     <Content Include="Images\activitiesicon1.png" />
     <Content Include="Images\addselectedappointmentbutton.png" />
     <Content Include="Images\alterprofile2.png" />
+    <Content Include="Images\buttonshade1.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\checkpointlogo1.png" />
     <Content Include="Images\createappointmentbutton.png" />

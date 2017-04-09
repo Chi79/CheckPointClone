@@ -185,53 +185,6 @@ namespace CheckPoint.Views
             }
         }
 
-        //protected void createAppointment_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if (CreateAppointmentButtonClicked != null)
-        //    {
-        //        CreateAppointmentButtonClicked(this, EventArgs.Empty);
-        //    }
-        //}
-
-        //protected void manageAppointment_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if (ManageAppointmentButtonClicked != null)
-        //    {
-        //        ManageAppointmentButtonClicked(this, EventArgs.Empty);
-        //    }
-        //}
-
-        //protected void manageattendance_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if(ManageAttendanceButtonClicked != null)
-        //    {
-        //        ManageAttendanceButtonClicked(this, EventArgs.Empty);
-        //    }
-        //}
-
-        //protected void createreport_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if(CreateReportButtonClicked != null)
-        //    {
-        //        CreateReportButtonClicked(this, EventArgs.Empty);
-        //    }
-        //}
-
-        //protected void ViewCourses_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if (ViewCoursesButtonClicked != null)
-        //    {
-        //        ViewCoursesButtonClicked(this, EventArgs.Empty);
-        //    }
-        //}
-
-        //protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    if (AddSelectedAppointmentToCourseButtonClicked != null)
-        //    {
-        //        AddSelectedAppointmentToCourseButtonClicked(this, EventArgs.Empty);
-        //    }
-        //}
 
         protected void btnAddSelectedAppointmentToCourse_Click1(object sender, EventArgs e)
         {

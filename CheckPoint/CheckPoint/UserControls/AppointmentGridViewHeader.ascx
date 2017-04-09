@@ -48,22 +48,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
 .roundedButtons {
     border-radius: 10px;
     padding-bottom:1%
 }
-.navButtons{
-    border-radius: 5px;
-    padding-bottom: 1%;
-    height: 40px;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-}
 .roundedButtons:hover{
-    border-radius:10px;
     -webkit-animation:glowingbutton;
     -webkit-animation-duration:2s;
     -webkit-animation-iteration-count:infinite;
