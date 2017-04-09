@@ -32,6 +32,17 @@ namespace CheckPointPresenters.Presenters
 
             DisplaySelectedAppointmentData();
 
+            SetFieldsToReadOnly();
+
+            ConfirmAction();
+   
+        }
+
+        private void ConfirmAction()
+        {
+
+            _view.Message = "Do you wish to add this appointment to a course?";
+
         }
 
         private void DisplaySelectedAppointmentData()

@@ -303,7 +303,7 @@ table {
  <h3 style="color:white">IsObligatory</h3>
  </HeaderTemplate>
  <ItemTemplate>
- <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+ <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick_icon.svg" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
  <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
  </ItemTemplate>
  <ItemStyle />

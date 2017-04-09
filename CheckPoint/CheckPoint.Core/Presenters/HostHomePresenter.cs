@@ -34,7 +34,7 @@ namespace CheckPointPresenters.Presenters
             if(RowSelected)
             {
 
-                _view.RedirectToManageAppointment();
+                _view.RedirectToAddSelectedAppointmenToCourseView();
 
             }
             else

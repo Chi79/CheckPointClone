@@ -253,6 +253,6 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnAddSelectedAppointmentToCourse;
+        protected global::System.Web.UI.WebControls.Button btnAddSelectedAppointmentToCourse;
     }
 }

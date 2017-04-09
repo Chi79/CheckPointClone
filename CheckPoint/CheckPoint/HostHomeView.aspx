@@ -291,14 +291,15 @@
     <div id="buttonsdiv6" runat="server" style="z-index:5;" class="buttons6">
     <asp:UpdatePanel ID="buttonspanel6" runat="server" > 
     <ContentTemplate>
-    <asp:ImageButton
+    <asp:Button ID="btnAddSelectedAppointmentToCourse" CssClass="roundedButtons" runat="server" OnClick="btnAddSelectedAppointmentToCourse_Click1" Text="AddSelectedAppointmentToCourse"  Visible="True" />
+  <%--  <asp:ImageButton
     runat="server" 
     CssClass="roundedButtons"
     id="btnAddSelectedAppointmentToCourse" 
     ImageUrl="~/Images/addselectedappointmentbutton.png" 
     OnClick="btnAddSelectedAppointmentToCourse_Click"
     ToolTip="add the selected appointment to the course"
-    Visible="true" />
+    Visible="true" />--%>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>

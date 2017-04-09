@@ -148,8 +148,11 @@
     <Content Include="Images\small_logo.png" />
     <Content Include="Images\small_logo2.png" />
     <Content Include="Images\tick.png" />
+    <Content Include="Images\tick_icon.png" />
+    <Content Include="Images\tick_icon.svg" />
     <Content Include="Images\uparrow2.png" />
     <Content Include="Images\uparrow3.png" />
+    <Content Include="Images\vector_tick.svg" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
     <Content Include="index.aspx" />
