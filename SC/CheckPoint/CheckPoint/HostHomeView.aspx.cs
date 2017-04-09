@@ -51,8 +51,10 @@ namespace CheckPoint.Views
 
         public void BindData()
         {
+
             AppointmentGridView.DataBind();
             AppointmentGridViewHeader.DataBind();
+
         }
         public object SelectedRowValueDataKey
         {
@@ -63,52 +65,72 @@ namespace CheckPoint.Views
 
         public bool ViewCoursesButtonVisible
         {
+
             set { btnViewCourses.Visible = value; }
+
         }
 
         public bool CreateAppointmentButtonVisible
         {
+
             set { btnCreateAppointment.Visible = value; }
+
         }
 
         public bool ManageAppointmentButtonVisible
         {
+
             set { btnManageAppointment.Visible = value; }
+
         }
 
         public bool CreateReportButtonVisible
         {
+
             set { btnCreateReport.Visible = value; }
+
         }
 
         public bool ManageAttendanceButtonVisible
         {
+
             set { btnManageAttendance.Visible = value; }
+
         }
 
         public bool AddSelectedAppointmenButtonVisible
         {
+
             set { btnAddSelectedAppointmentToCourse.Visible = value; }
+
         }
 
         public void RedirectToCreateAppointment()
         {
+
             Response.Redirect("CreateAppointmentView.aspx");
+
         }
 
         public void RedirectToManageAppointment()
         {
+
             Response.Redirect("ManageSingleAppointmentView.aspx");
+
         }
 
         public void RedirectToCoursesView()
         {
+
             Response.Redirect("HostCoursesView.aspx");
+
         }
 
         public void RedirectToAddSelectedAppointmenToCourseView()
         {
+
             Response.Redirect("AddSelectedAppointmentToCourseView.aspx");
+
         }
 
 
@@ -203,7 +225,15 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
+        //protected void btnAddSelectedAppointmentToCourse_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (AddSelectedAppointmentToCourseButtonClicked != null)
+        //    {
+        //        AddSelectedAppointmentToCourseButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
+
+        protected void btnAddSelectedAppointmentToCourse_Click1(object sender, EventArgs e)
         {
             if (AddSelectedAppointmentToCourseButtonClicked != null)
             {
