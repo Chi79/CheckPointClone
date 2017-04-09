@@ -189,8 +189,8 @@ BackColor="#99FF99" />
 <h3 style="color:white">IsObligatory</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
-<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
+<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
 </ItemTemplate>
 <ItemStyle />
 </asp:TemplateField>
@@ -201,8 +201,8 @@ BackColor="#99FF99" />
 <h3 style="color:white">IsPrivate</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
-<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
+<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
+<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
 </ItemTemplate>
 <ItemStyle />
 </asp:TemplateField>
