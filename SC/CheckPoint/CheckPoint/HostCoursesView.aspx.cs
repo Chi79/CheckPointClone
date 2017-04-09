@@ -118,31 +118,55 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void manageattendance_Click(object sender, ImageClickEventArgs e)
+        //protected void manageattendance_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (ManageAttendanceButtonClicked != null)
+        //    {
+        //        ManageAttendanceButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
+
+        //protected void createreport_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (CreateReportButtonClicked != null)
+        //    {
+        //        CreateReportButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
+
+        //protected void managecourse_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (ManageCourseButtonClicked != null)
+        //    {
+        //        ManageCourseButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
+
+        //protected void createcourse_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (CreateCourseButtonClicked != null)
+        //    {
+        //        CreateCourseButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
+
+        //protected void ViewAppointments_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    if (ViewAppointmentsButtonClicked != null)
+        //    {
+        //        ViewAppointmentsButtonClicked(this, EventArgs.Empty);
+        //    }
+        //}
+
+        protected void btnViewAppointments_Click(object sender, EventArgs e)
         {
-            if (ManageAttendanceButtonClicked != null)
+            if (ViewAppointmentsButtonClicked != null)
             {
-                ManageAttendanceButtonClicked(this, EventArgs.Empty);
+                ViewAppointmentsButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void createreport_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CreateReportButtonClicked != null)
-            {
-                CreateReportButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void managecourse_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ManageCourseButtonClicked != null)
-            {
-                ManageCourseButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void createcourse_Click(object sender, ImageClickEventArgs e)
+        protected void createcourse_Click1(object sender, EventArgs e)
         {
             if (CreateCourseButtonClicked != null)
             {
@@ -150,11 +174,27 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void ViewAppointments_Click(object sender, ImageClickEventArgs e)
+        protected void managecourse_Click1(object sender, EventArgs e)
         {
-            if (ViewAppointmentsButtonClicked != null)
+            if (ManageCourseButtonClicked != null)
             {
-                ViewAppointmentsButtonClicked(this, EventArgs.Empty);
+                ManageCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void manageattendance_Click1(object sender, EventArgs e)
+        {
+            if (ManageAttendanceButtonClicked != null)
+            {
+                ManageAttendanceButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void createreport_Click1(object sender, EventArgs e)
+        {
+            if (CreateReportButtonClicked != null)
+            {
+                CreateReportButtonClicked(this, EventArgs.Empty);
             }
         }
     }

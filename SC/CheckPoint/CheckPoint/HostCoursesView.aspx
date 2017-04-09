@@ -208,12 +208,13 @@ buttonText: "calender"
 <div id="Div1" runat="server" style="z-index:5;" class="buttons0">
 <asp:UpdatePanel ID="UpdatePanel3" runat="server" > 
 <ContentTemplate>
-<asp:ImageButton  
+<asp:Button ID="ViewAppointments" CssClass="navButtons" runat="server" OnClick="btnViewAppointments_Click" Text="View Appointments"  Visible="True" ToolTip="View All Appointments" />
+<%--<asp:ImageButton  
 runat="server" 
 CssClass="roundedButtons" 
 id="ViewAppointments" ImageUrl="~/Images/viewappointmentsbutton.png" 
 OnClick="ViewAppointments_Click"
-ToolTip="view all courses" />
+ToolTip="view all courses" />--%>
 </ContentTemplate>
 </asp:UpdatePanel>
 </div>
@@ -222,12 +223,13 @@ ToolTip="view all courses" />
 <div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
 <asp:UpdatePanel ID="buttonspanel" runat="server" > 
 <ContentTemplate>
-<asp:ImageButton  
+<asp:Button ID="createcourse" CssClass="navButtons" runat="server" OnClick="createcourse_Click1" Text="Create Course"  Visible="True" ToolTip="Create a New Course" />
+<%--<asp:ImageButton  
 runat="server" 
 CssClass="roundedButtons" 
 id="createcourse" ImageUrl="~/Images/createcoursebutton.png" 
 OnClick="createcourse_Click"
-ToolTip="create a new appointment" />
+ToolTip="create a new appointment" />--%>
 </ContentTemplate>
 </asp:UpdatePanel>
 </div>
@@ -236,13 +238,14 @@ ToolTip="create a new appointment" />
 <div id="buttons2" runat="server" style="z-index:5;" class="buttons2">
 <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
 <ContentTemplate>
-<asp:ImageButton  
+<asp:Button ID="managecourse" CssClass="navButtons" runat="server" OnClick="managecourse_Click1" Text="Manage Course"  Visible="True" ToolTip="Manage Course Details" />
+<%--<asp:ImageButton  
 runat="server" 
 CssClass="roundedButtons"
 id="managecourse"
 ImageUrl="~/Images/managecoursebutton.png" 
 OnClick="managecourse_Click"
-ToolTip="manage the selected course"  />
+ToolTip="manage the selected course"  />--%>
 </ContentTemplate>
 </asp:UpdatePanel>
 </div>
@@ -251,13 +254,14 @@ ToolTip="manage the selected course"  />
 <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
 <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
 <ContentTemplate>
-<asp:ImageButton  
+<asp:Button ID="manageattendance" CssClass="navButtons" runat="server" OnClick="manageattendance_Click1" Text="Manage Attendance"  Visible="True" ToolTip="Manage Attendance" />
+<%--<asp:ImageButton  
 runat="server"
 CssClass="roundedButtons"
 id="manageattendance" 
 ImageUrl="~/Images/manageattendancebutton1.png"
 OnClick="manageattendance_Click" 
-ToolTip="manage attendance"  />
+ToolTip="manage attendance"  />--%>
 </ContentTemplate>
 </asp:UpdatePanel>
 </div>
@@ -266,13 +270,14 @@ ToolTip="manage attendance"  />
 <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
 <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
 <ContentTemplate>
-<asp:ImageButton  
+<asp:Button ID="createreport" CssClass="navButtons" runat="server" OnClick="createreport_Click1" Text="Create a Report"  Visible="True" ToolTip="Create a Report" />
+<%--<asp:ImageButton  
 runat="server" 
 CssClass="roundedButtons" 
 id="createreport" 
 ImageUrl="~/Images/createreportbutton1.png" 
 OnClick="createreport_Click"  
-ToolTip="create a report" />
+ToolTip="create a report" />--%>
 </ContentTemplate>
 </asp:UpdatePanel>
 
