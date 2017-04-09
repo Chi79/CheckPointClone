@@ -107,31 +107,8 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void createAppointment_Click(object sender, ImageClickEventArgs e)
-        {
-            if (CreateAppointmentButtonClicked != null)
-            {
-                CreateAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
 
-        protected void managecourses_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ManageCoursesButtonClicked != null)
-            {
-                ManageCoursesButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void manageAppointment_Click(object sender, ImageClickEventArgs e)
-        {
-            if (ManageAppointmentButtonClicked != null)
-            {
-                ManageAppointmentButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void manageattendance_Click(object sender, ImageClickEventArgs e)
+        protected void btnManageAttendance_Click(object sender, EventArgs e)
         {
             if (ManageAttendanceButtonClicked != null)
             {
@@ -139,7 +116,31 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void createreport_Click(object sender, ImageClickEventArgs e)
+        protected void btnManageAppointment_Click(object sender, EventArgs e)
+        {
+            if (ManageAppointmentButtonClicked != null)
+            {
+                ManageAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnCreateAppointment_Click(object sender, EventArgs e)
+        {
+            if (CreateAppointmentButtonClicked != null)
+            {
+                CreateAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnViewCourses_Click(object sender, EventArgs e)
+        {
+            if (ManageCoursesButtonClicked != null)
+            {
+                ManageCoursesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnCreateReport_Click(object sender, EventArgs e)
         {
             if (CreateReportButtonClicked != null)
             {

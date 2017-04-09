@@ -107,6 +107,30 @@
     display:none;
 }
 
+.navButtons{
+    border-radius: 5px;
+    border-width:0px;
+    border-color:darkgreen;
+    padding-bottom: 1%;
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-image:url(/Images/buttonshade1.png);
+   
+}
+.navButtons:hover{
+    border-radius:0px;
+    -webkit-animation:flashingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+@-webkit-keyframes flashingbutton{
+    from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
+}
+
 
 
 </style>
@@ -218,13 +242,13 @@
     <div id="Div1" runat="server" style="z-index:5;" class="buttons0">
     <asp:UpdatePanel ID="UpdatePanel3" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnViewCourses" CssClass="navButtons" runat="server" OnClick="btnViewCourses_Click" Text="View Courses"  Visible="True" ToolTip="View All Courses" />
-<%--    <asp:ImageButton  
-    runat="server" 
-    CssClass="roundedButtons" 
-    id="btnViewCourses" ImageUrl="~/Images/viewcoursesbutton.png" 
-    OnClick="ViewCourses_Click"
-    ToolTip="view all courses" />--%>
+    <asp:Button ID="btnViewCourses" 
+        CssClass="navButtons" 
+        runat="server" 
+        OnClick="btnViewCourses_Click" 
+        Text="View Courses"  
+        Visible="True" 
+        ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -233,13 +257,13 @@
     <div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
     <asp:UpdatePanel ID="buttonspanel" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnCreateAppointment" CssClass="navButtons" runat="server" OnClick="btnCreateAppointment_Click" Text="Create Appointment"  Visible="True" ToolTip="Create a New Appointment" />
-<%--    <asp:ImageButton  
-    runat="server" 
-    CssClass="roundedButtons" 
-    id="btnCreateAppointment" ImageUrl="~/Images/createappointmentbutton.png" 
-    OnClick="createAppointment_Click"
-    ToolTip="create a new appointment" />--%>
+    <asp:Button ID="btnCreateAppointment" 
+        CssClass="navButtons" 
+        runat="server" 
+        OnClick="btnCreateAppointment_Click" 
+        Text="Create Appointment"  
+        Visible="True" 
+        ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -248,14 +272,13 @@
     <div id="buttons2" runat="server" style="z-index:5;" class="buttons2">
     <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnManageAppointment" CssClass="navButtons" runat="server" OnClick="btnManageAppointment_Click" Text="Manage Appointment"  Visible="True" ToolTip="Manage Appointment Details" />
-<%--    <asp:ImageButton  
-    runat="server" 
-    CssClass="roundedButtons"
-    id="btnManageAppointment"
-    ImageUrl="~/Images/manageappointmentbutton.png" 
-    OnClick="manageAppointment_Click"
-    ToolTip="manage the selected appointment"  />--%>
+    <asp:Button ID="btnManageAppointment" 
+        CssClass="navButtons" 
+        runat="server" 
+        OnClick="btnManageAppointment_Click" 
+        Text="Manage Appointment"  
+        Visible="True" 
+        ForeColor="White" />
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -264,14 +287,13 @@
     <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
     <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnManageAttendance" CssClass="navButtons" runat="server" OnClick="btnManageAttendance_Click" Text="Manage Attendance"  Visible="True" ToolTip="Manage Attendance" />
-<%--    <asp:ImageButton  
-    runat="server"
-    CssClass="roundedButtons"
-    id="btnManageAttendance" 
-    ImageUrl="~/Images/manageattendancebutton1.png"
-    OnClick="manageattendance_Click" 
-    ToolTip="manage attendance"  />--%>
+    <asp:Button ID="btnManageAttendance"
+        CssClass="navButtons" 
+        runat="server" 
+        OnClick="btnManageAttendance_Click" 
+        Text="Manage Attendance"  
+        Visible="True" 
+        ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -280,14 +302,13 @@
     <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
     <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnCreateReport" CssClass="navButtons" runat="server" OnClick="btnCreateReport_Click" Text="Create Report"  Visible="True"  ToolTip="Create a Report"/>
-    <%--<asp:ImageButton  
-    runat="server" 
-    CssClass="roundedButtons" 
-    id="btnCreateReport" 
-    ImageUrl="~/Images/createreportbutton1.png" 
-    OnClick="createreport_Click"  
-    ToolTip="create a report" />--%>
+    <asp:Button ID="btnCreateReport" 
+        CssClass="navButtons" 
+        runat="server" 
+        OnClick="btnCreateReport_Click" 
+        Text="Create Report"  
+        Visible="True"   
+        ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
@@ -296,15 +317,13 @@
     <div id="buttonsdiv6" runat="server" style="z-index:5;" class="buttons6">
     <asp:UpdatePanel ID="buttonspanel6" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnAddSelectedAppointmentToCourse" CssClass="navButtons" runat="server" OnClick="btnAddSelectedAppointmentToCourse_Click1" Text="Add Selected Appointment To Course"  Visible="True"  ToolTip="Add the Selected Appointment To A Course" ForeColor="White"/>
-  <%--  <asp:ImageButton
-    runat="server" 
-    CssClass="roundedButtons"
-    id="btnAddSelectedAppointmentToCourse" 
-    ImageUrl="~/Images/addselectedappointmentbutton.png" 
-    OnClick="btnAddSelectedAppointmentToCourse_Click"
-    ToolTip="add the selected appointment to the course"
-    Visible="true" />--%>
+    <asp:Button ID="btnAddSelectedAppointmentToCourse" 
+        CssClass="navButtons" 
+        runat="server" 
+        OnClick="btnAddSelectedAppointmentToCourse_Click1" 
+        Text="Add Selected Appointment To Course"  
+        Visible="True"  
+        ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
