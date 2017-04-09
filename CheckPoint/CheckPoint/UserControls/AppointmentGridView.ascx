@@ -303,8 +303,8 @@ table {
  <h3 style="color:white">IsObligatory</h3>
  </HeaderTemplate>
  <ItemTemplate>
- <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick_icon.svg" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
- <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
+ <asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
+ <asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
  </ItemTemplate>
  <ItemStyle />
  </asp:TemplateField>
@@ -315,8 +315,8 @@ table {
  <h3 style="color:white">IsPrivate</h3>
  </HeaderTemplate>
  <ItemTemplate>
- <asp:Image ID="IsPrivateTrue"   runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
- <asp:Image ID="IsPrivateFalse"  runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
+ <asp:Image ID="IsPrivateTrue"   runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
+ <asp:Image ID="IsPrivateFalse"  runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
  </ItemTemplate>
  <ItemStyle />
  </asp:TemplateField>
@@ -327,8 +327,8 @@ table {
  <h3 style="color:white">IsCancelled</h3>
  </HeaderTemplate>
  <ItemTemplate>
- <asp:Image ID="IsCancelledTrue"  runat="server" ImageUrl="~/images/tick.png" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
- <asp:Image ID="IsCancelledFalse"   runat="server"  ImageUrl="~/images/cross.png" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
+ <asp:Image ID="IsCancelledTrue"  runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsCancelled").Equals(true) %>' />
+ <asp:Image ID="IsCancelledFalse"   runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsCancelled").Equals(false) %>' /> 
  </ItemTemplate>
  <ItemStyle />
  </asp:TemplateField>
