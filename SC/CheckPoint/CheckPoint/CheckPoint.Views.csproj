@@ -182,6 +182,8 @@
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\CourseGridView.ascx" />
     <Content Include="UserControls\CourseGridViewHeader.ascx" />
+    <Content Include="UserControls\ManageCourseGrid.ascx" />
+    <Content Include="UserControls\ManageCourseHeader.ascx" />
     <Content Include="UserMaster.Master" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
     <None Include="Web.Debug.config">
@@ -366,6 +368,20 @@
     </Compile>
     <Compile Include="UserControls\CourseGridViewHeader.ascx.designer.cs">
       <DependentUpon>CourseGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseGrid.ascx.cs">
+      <DependentUpon>ManageCourseGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseGrid.ascx.designer.cs">
+      <DependentUpon>ManageCourseGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseHeader.ascx.cs">
+      <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseHeader.ascx.designer.cs">
+      <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserHomeView.aspx.cs">
       <DependentUpon>UserHomeView.aspx</DependentUpon>

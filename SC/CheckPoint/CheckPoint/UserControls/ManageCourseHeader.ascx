@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CourseGridViewHeader.ascx.cs" Inherits="CheckPoint.Views.UserControls.CourseGridViewHeader" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ManageCourseHeader.ascx.cs" Inherits="CheckPoint.Views.UserControls.ManageCourseHeader" %>
 
 <style type="text/css">
 
