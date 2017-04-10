@@ -80,7 +80,7 @@ namespace CheckPointModel.Services
             return coursesSorted as IEnumerable<T>;
         }
 
-        public object GetSelectedCourseByCourseId(int courseId)
+        public object GetSelectedCourseByCourseId(int? courseId)
         {
             var courses = GetCoursesCached<COURSE>() as List<COURSE>;
 

@@ -17,6 +17,6 @@ namespace CheckPointCommon.ServiceInterfaces
 
         IEnumerable<T> GetCoursesCached<T>();
 
-        object GetSelectedCourseByCourseId(int CourseId);
+        object GetSelectedCourseByCourseId(int? CourseId);
     }
 }
