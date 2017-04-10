@@ -8,6 +8,29 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface IHostCoursesModel
     {
-        //TODO
+        string GetLoggedInClient();
+
+        string GetColumnName();
+
+        int? GetSessionRowIndex();
+
+        void SetSessionRowIndex(int index);
+
+        void SetSessionCourseId(int id);
+
+        int? GetSessionCourseId();
+
+        void ResetSessionState();
+
+
+        IEnumerable<object> GetAllCoursesForClient();
+
+        IEnumerable<object> GetEmptyList();
+
+        IEnumerable<object> GetCachedCourses();
+
+        IEnumerable<object> GetCoursesSortedByPropertyAsc();
+
+        IEnumerable<object> GetCoursesSortedByPropertyDesc();
     }
 }

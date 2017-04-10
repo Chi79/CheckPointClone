@@ -10,5 +10,13 @@ namespace CheckPointCommon.ModelInterfaces
     public interface ILoginModel 
     {
         bool LoginDataIsValid(List<string> loginData);
+
+        void AttemptLogin(string username, string password);
+
+        bool GetLoginAttemptStatus();
+
+        int GetClientType();
+
+        void StoreLoggedInClientToSession(string username);
     }
 }
