@@ -163,7 +163,6 @@
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\LoginView.js" />
     <Content Include="LoginView.aspx" />
-    <Content Include="ManageAppointmentView.aspx" />
     <Content Include="ManageAttendanceView.aspx" />
     <Content Include="ManageCourseView.aspx" />
     <Content Include="Config\packages.config" />
@@ -290,13 +289,6 @@
     </Compile>
     <Compile Include="LoginView.aspx.designer.cs">
       <DependentUpon>LoginView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageAppointmentView.aspx.cs">
-      <DependentUpon>ManageAppointmentView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageAppointmentView.aspx.designer.cs">
-      <DependentUpon>ManageAppointmentView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageAttendanceView.aspx.cs">
       <DependentUpon>ManageAttendanceView.aspx</DependentUpon>

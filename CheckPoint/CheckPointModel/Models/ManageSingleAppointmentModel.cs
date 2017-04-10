@@ -10,6 +10,7 @@ using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.FactoryInterfaces;
 using CheckPointCommon.Enums;
 using CheckPointModel.Services;
+using CheckPointDataTables.Tables;
 
 namespace CheckPointModel.Models
 {
@@ -18,15 +19,17 @@ namespace CheckPointModel.Models
 
         private IFactory _factory;
         private ISessionService _sessionService;
+        private IShowAppointments _displayService;
 
         private JobServiceBase _job;
 
 
-        public ManageSingleAppointmentModel(IFactory factory, ISessionService sessionService)
+        public ManageSingleAppointmentModel(IFactory factory, ISessionService sessionService, IShowAppointments displayService)
         {
 
             _factory = factory;
             _sessionService = sessionService;
+            _displayService = displayService;
 
         }
 
@@ -169,6 +172,20 @@ namespace CheckPointModel.Models
         {
 
             return AppointmentDTOMapper.ConvertAppointmentDTOToAppointment(appointmentModel as AppointmentDTO);
+
+        }
+
+        public void RefreshAllAppointmentsForClient()
+        {
+
+            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_sessionService.LoggedInClient);
+
+        }
+
+        public object GetAppointmentForClientByAppointmentId()
+        {
+
+            return _displayService.GetSelectedAppointmentByAppointmentId(GetSessionAppointmentId());
 
         }
 

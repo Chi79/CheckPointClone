@@ -11,6 +11,7 @@ using CheckPointCommon.Enums;
 
 namespace CheckPointPresenters.Presenters
 {
+
     public class LoginPresenter : PresenterBase
     {
 

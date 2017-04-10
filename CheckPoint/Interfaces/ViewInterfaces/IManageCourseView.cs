@@ -14,7 +14,7 @@ namespace CheckPointCommon.ViewInterfaces
 
 
         void BindData();
-
+        void RedirectToCourseSelectorView();
 
         IEnumerable<object> SetDataSourceAppointmentHeader { set; }
         IEnumerable<object> SetDataSourceAppointmentData { set; }

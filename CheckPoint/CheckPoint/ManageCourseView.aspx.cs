@@ -75,6 +75,11 @@ namespace CheckPoint.Views
             AppointmentGridViewHeader.DataBind();
         }
 
+        public void RedirectToCourseSelectorView()
+        {
+            Response.Redirect("CourseSelectorView.aspx");
+        }
+
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;

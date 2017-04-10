@@ -50,7 +50,8 @@ namespace CheckPointPresenters.Presenters
             bool noCourseSelected = _sessionService.SessionCourseId == -1;
             if (noCourseSelected)
             {
-                _view.Message = "No course selected!";
+
+                _view.RedirectToCourseSelectorView();
 
             }
             else
@@ -60,7 +61,7 @@ namespace CheckPointPresenters.Presenters
                 SetAppointmentDataSources();
 
                 _sessionService.SessionRowIndex = -1;
-                //_sessionService.SessionCourseId = -1;
+
                 _view.BindData();
             }
 

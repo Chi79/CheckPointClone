@@ -76,7 +76,6 @@
     <Compile Include="Presenters\HostHomePresenter.cs" />
     <Compile Include="Presenters\InviteUserPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
-    <Compile Include="Presenters\ManageAppointmentPresenter.cs" />
     <Compile Include="Presenters\ManageAttendancePresenter.cs" />
     <Compile Include="Presenters\ManageCoursePresenter.cs" />
     <Compile Include="Presenters\ManageSingleAppointmentPresenter.cs" />
