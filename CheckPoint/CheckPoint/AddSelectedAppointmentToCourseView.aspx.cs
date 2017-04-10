@@ -124,9 +124,53 @@ namespace CheckPoint.Views
             set { AppointmentCreator.EndTimeReadOnly = value; }
         }
 
+        public bool YesButtonVisible
+        {
+            set { btnYes.Visible = value; }
+        }
+
+        public bool NoButtonVisible
+        {
+            set { btnNo.Visible = value; }
+        }
+
+        public void RedirectBackToHostHomeView()
+        {
+
+            Response.Redirect("HostHomeView.aspx");
+
+        }
+
+        public void RedirectToCourseSelectorView()
+        {
+
+            Response.Redirect("CourseSelectorView.aspx");
+
+        }
+
+        public event EventHandler<EventArgs> YesButtonClicked;
+        public event EventHandler<EventArgs> NoButtonClicked;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            if(YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            if(NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
+            }
         }
     }
 }

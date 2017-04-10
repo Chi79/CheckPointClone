@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ModelInterfaces
 {
-    public interface IAddSelectedAppointmentToCourseModel
+    public interface ICourseSelectorModel
     {
-        int GetSessionAppointmentId();
-
+        
     }
 }

@@ -34,6 +34,7 @@ namespace CheckPoint.Views.UserControls
         {
 
         }
+
         public event EventHandler<EventArgs> RowSelected;
 
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)

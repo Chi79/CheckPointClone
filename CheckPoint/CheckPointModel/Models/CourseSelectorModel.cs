@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CheckPointCommon.ModelInterfaces;
 
-namespace CheckPointCommon.ModelInterfaces
+namespace CheckPointModel.Models
 {
-    public interface IAddSelectedAppointmentToCourseModel
+    public class CourseSelectorModel : ICourseSelectorModel
     {
-        int GetSessionAppointmentId();
-
     }
 }
