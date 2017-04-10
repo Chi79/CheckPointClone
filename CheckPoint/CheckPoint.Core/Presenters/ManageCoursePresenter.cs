@@ -47,18 +47,31 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
+
+            SetCourseDataSources();
+
+            SetAppointmentDataSources();
+
+            _sessionService.SessionRowIndex = -1;
+            //_sessionService.SessionCourseId = -1;
+            _view.BindData();
+        }
+
+        private void SetCourseDataSources()
+        {
             List<COURSE> Course = _courseDisplayService.GetEmptyList<COURSE>().ToList();
-            Course.Add(_courseDisplayService.GetSelectedCourseByCourseId(_sessionService.SessionCourseId) as COURSE);      
+            Course.Add(_courseDisplayService.GetSelectedCourseByCourseId(_sessionService.SessionCourseId) as COURSE);
             _view.SetDataSource = Course;
             _view.SetDataSource2 = _courseDisplayService.GetEmptyList<COURSE>();
+        } 
+
+        private void SetAppointmentDataSources()
+        {
 
             _view.SetDataSourceAppointmentData = _model.GetAllAppointmentsForClientByCourseId(_sessionService.SessionCourseId);
 
             _view.SetDataSourceAppointmentHeader = _model.GetEmptyList();
 
-            //_sessionService.SessionRowIndex = -1;
-            //_sessionService.SessionCourseId = -1;
-            _view.BindData();
         }
 
 
@@ -81,6 +94,8 @@ namespace CheckPointPresenters.Presenters
 
             _view.SetDataSourceAppointmentHeader = _model.GetEmptyList();
 
+            SetCourseDataSources();
+
             _view.BindData();
 
             GetSelectedAppointmentIdFromGrid();
@@ -94,6 +109,8 @@ namespace CheckPointPresenters.Presenters
             _view.SetDataSourceAppointmentData = apps;
 
             _view.SetDataSourceAppointmentHeader = _model.GetEmptyList();
+
+            SetCourseDataSources();
 
             _view.BindData();
 

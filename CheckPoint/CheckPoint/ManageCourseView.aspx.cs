@@ -15,7 +15,7 @@ namespace CheckPoint.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TODO
+         
         }
 
         public override void HookUpEvents()
@@ -39,7 +39,6 @@ namespace CheckPoint.Views
         {
             set { ManageCourseHeader.SetDataSource2 = value; }
         }
-
 
         public IEnumerable<object> SetDataSourceAppointmentHeader
         {
