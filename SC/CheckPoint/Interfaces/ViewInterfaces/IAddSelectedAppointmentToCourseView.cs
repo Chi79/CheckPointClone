@@ -34,5 +34,15 @@ namespace CheckPointCommon.ViewInterfaces
         bool AddressReadOnly { set; }
         bool EndTimeReadOnly { set; }
 
+        bool YesButtonVisible { set;}
+        bool NoButtonVisible { set; }
+
+        void RedirectBackToHostHomeView();
+        void RedirectToCourseSelectorView();
+
+        event EventHandler<EventArgs> YesButtonClicked;
+        event EventHandler<EventArgs> NoButtonClicked;
+
+
     }
 }

@@ -35,7 +35,30 @@ namespace CheckPointPresenters.Presenters
             SetFieldsToReadOnly();
 
             ConfirmAction();
+
+            DisplayDesicionButtons();
    
+        }
+
+        public override void Load()
+        {
+            WireUpEvents();
+        }
+
+        public void WireUpEvents()
+        {
+            _view.YesButtonClicked += OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
+        }
+
+        private void OnNoButtonClicked(object sender, EventArgs e)
+        {
+            _view.RedirectBackToHostHomeView();
+        }
+
+        private void OnYesButtonClicked(object sender, EventArgs e)
+        {
+            _view.RedirectToCourseSelectorView();
         }
 
         private void ConfirmAction()
@@ -75,6 +98,12 @@ namespace CheckPointPresenters.Presenters
             _view.PostalCodeReadOnly = true;
             _view.AddressReadOnly = true;
             _view.IsPrivateEnabled = false;
+        }
+
+        private void DisplayDesicionButtons()
+        {
+            _view.YesButtonVisible = true;
+            _view.NoButtonVisible = true;
         }
     }
 }

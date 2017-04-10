@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddSelectedAppointmentToCourseView.aspx" />
+    <Content Include="CourseSelectorView.aspx" />
     <Content Include="CreateAppointmentView.aspx" />
     <Content Include="CreateCourseView.aspx" />
     <Content Include="CreateReportView.aspx" />
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="AddSelectedAppointmentToCourseView.aspx.designer.cs">
       <DependentUpon>AddSelectedAppointmentToCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseSelectorView.aspx.cs">
+      <DependentUpon>CourseSelectorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseSelectorView.aspx.designer.cs">
+      <DependentUpon>CourseSelectorView.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateAppointmentView.aspx.cs">
       <DependentUpon>CreateAppointmentView.aspx</DependentUpon>
