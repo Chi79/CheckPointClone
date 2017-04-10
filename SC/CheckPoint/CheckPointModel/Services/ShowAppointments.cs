@@ -133,7 +133,7 @@ namespace CheckPointModel.Services
             return appsSorted as IEnumerable<T>;
         }
 
-        public object GetSelectedAppointmentByAppointmentId(int AppointmentId)
+        public object GetSelectedAppointmentByAppointmentId(int? AppointmentId)
         {
             var apps = GetAppointmentsCached<APPOINTMENT>() as List<APPOINTMENT>;
 

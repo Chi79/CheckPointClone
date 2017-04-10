@@ -58,6 +58,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
+
             _view.RedirectToCourseSelectorView();
         }
 

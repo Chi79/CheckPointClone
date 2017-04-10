@@ -47,14 +47,23 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
+            bool noCourseSelected = _sessionService.SessionCourseId == -1;
+            if (noCourseSelected)
+            {
+                _view.Message = "No course selected!";
 
-            SetCourseDataSources();
+            }
+            else
+            {
+                SetCourseDataSources();
 
-            SetAppointmentDataSources();
+                SetAppointmentDataSources();
 
-            _sessionService.SessionRowIndex = -1;
-            //_sessionService.SessionCourseId = -1;
-            _view.BindData();
+                _sessionService.SessionRowIndex = -1;
+                //_sessionService.SessionCourseId = -1;
+                _view.BindData();
+            }
+
         }
 
         private void SetCourseDataSources()

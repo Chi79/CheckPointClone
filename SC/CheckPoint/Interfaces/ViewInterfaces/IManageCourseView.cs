@@ -12,6 +12,7 @@ namespace CheckPointCommon.ViewInterfaces
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }
 
+
         void BindData();
 
 

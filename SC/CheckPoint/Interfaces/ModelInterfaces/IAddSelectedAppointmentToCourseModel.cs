@@ -10,5 +10,6 @@ namespace CheckPointCommon.ModelInterfaces
     {
         int GetSessionAppointmentId();
 
+        void SetSessionCourseId(int id);
     }
 }

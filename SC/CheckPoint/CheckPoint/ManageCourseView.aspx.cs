@@ -26,6 +26,7 @@ namespace CheckPoint.Views
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
         }
 
+
         public string Message
         {
             set { lblMessage.Text = value; }
@@ -63,6 +64,7 @@ namespace CheckPoint.Views
             get { return AppointmentGridView.SelectedRowIndex; }
             set { AppointmentGridView.SelectedRowIndex = value; }
         }
+
 
         public void BindData()
         {

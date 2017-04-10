@@ -36,6 +36,11 @@ namespace CheckPointModel.Models
             _sessionService.SessionAppointmentId = id;
         }
 
+        public void SetSessionCourseId(int id)
+        {
+            _sessionService.SessionCourseId = id;
+        }
+
         public void ResetSessionState()
         {
             SetSessionRowIndex(-1);
