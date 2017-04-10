@@ -25,7 +25,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-
         private void OnAddSelectedAppointmentToCourseButtonClicked(object sender, EventArgs e)
         {
 

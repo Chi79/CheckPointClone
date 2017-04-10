@@ -63,6 +63,7 @@ namespace CheckPointPresenters.Presenters
 
         private void CreateClientDTOFromInput()
         {
+
             _clientDTO.UserName = _view.UserName;
             _clientDTO.FirstName = _view.Firstname;
             _clientDTO.LastName = _view.LastName;
@@ -72,18 +73,22 @@ namespace CheckPointPresenters.Presenters
             _clientDTO.PhoneNumber = _view.PhoneNumber;
             _clientDTO.Password = _view.Password;
             _clientDTO.ClientType = _view.ClientType;
+
         }
 
         private void SaveClientToDatabase(CLIENT newClient)
         {
+
             _uOW.CLIENTs.Add(newClient);
 
             AttemptSaveToDb(); 
+
         }
 
 
         private void CheckClientIsValid()
         {
+
             bool clientFieldsAreValid = _clientDTO.IsValid(_clientDTO);
             if (!clientFieldsAreValid)
             {
@@ -94,10 +99,12 @@ namespace CheckPointPresenters.Presenters
                 var _newClient = _model.ConvertClientDTOToClient(_clientDTO) as CLIENT;
                 SaveClientToDatabase(_newClient);
             }
+
         }
 
         private void DisplayValidationMessage()
         {
+
             _view.Message = string.Empty;
 
             var validationErrorMessage = _clientDTO.GetBrokenBusinessRules().ToList();
@@ -106,11 +113,13 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message += message;
             }
+
         }
  
 
         private void AttemptSaveToDb()
         {
+
             SaveResult saveResult = _uOW.Complete();
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
@@ -122,6 +131,7 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = "New Registration Succesfull!";
                 _view.LoginButtonVisible = true;
             }
+
         }
     }
 }

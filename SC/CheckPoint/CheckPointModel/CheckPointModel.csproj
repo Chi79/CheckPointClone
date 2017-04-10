@@ -77,7 +77,6 @@
     <Compile Include="Models\HomePageModel.cs" />
     <Compile Include="Models\HostHomeModel.cs" />
     <Compile Include="Models\InviteUserModel.cs" />
-    <Compile Include="Models\ManageAppointmentModel.cs" />
     <Compile Include="Models\ManageAttendanceModel.cs" />
     <Compile Include="Models\ManageCourseModel.cs" />
     <Compile Include="Models\UpdateProfileModel.cs" />

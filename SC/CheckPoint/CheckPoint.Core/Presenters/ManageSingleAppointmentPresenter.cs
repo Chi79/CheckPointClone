@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.ServiceInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
@@ -17,19 +16,16 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IManageSingleAppointmentView _view;
         private readonly IManageSingleAppointmentModel _model;
-        private readonly IShowAppointments _displayService;
 
         private AppointmentDTO _dTO = new AppointmentDTO();
 
         public ManageSingleAppointmentPresenter(IManageSingleAppointmentView manageAppointmentView,
-                                                IManageSingleAppointmentModel manageAppointmentModel,
-                                                IShowAppointments displayService)
+                                                IManageSingleAppointmentModel manageAppointmentModel)
 
         {
 
             _view = manageAppointmentView;
             _model = manageAppointmentModel;
-            _displayService = displayService;
 
         }
 
@@ -87,9 +83,12 @@ namespace CheckPointPresenters.Presenters
         private void OnReloadPageEvent(object sender, EventArgs e)
         {
 
-            _displayService.GetAllAppointmentsFor<APPOINTMENT>(_model.GetLoggedInClient());  //refresh cache
+            _model.RefreshAllAppointmentsForClient();  //refresh cache
+
             _view.RedirectAfterClickEvent();
+
             DisplaySelectedAppointmentData();
+
         }
 
 
@@ -224,7 +223,7 @@ namespace CheckPointPresenters.Presenters
         private void DisplaySelectedAppointmentData()
         {
 
-            var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId(_model.GetSessionAppointmentId()) as APPOINTMENT;
+            var selectedAppointment = _model.GetAppointmentForClientByAppointmentId() as APPOINTMENT;
 
             _view.AppointmentName = selectedAppointment.AppointmentName;
             _view.Description = selectedAppointment.Description;
@@ -270,21 +269,6 @@ namespace CheckPointPresenters.Presenters
             _view.DeleteButtonVisible = false;
             _view.ContinueButtonVisible = false;
         }
-
-
-        //private void SetFieldsToReadOnly()
-        //{
-        //    _view.AppointmentNameReadOnly = true;
-        //    _view.AppointmentDescriptionReadOnly = true;
-        //    _view.DateReadOnly = true;
-        //    _view.StartTimeReadOnly = true;
-        //    _view.EndTimeReadOnly = true;
-        //    _view.IsCancelledEnabled = false;
-        //    _view.IsObligatoryEnabled = false;
-        //    _view.PostalCodeReadOnly = true;
-        //    _view.AddressReadOnly = true;
-        //    _view.IsPrivateEnabled = false;
-        //}
 
     }
 }

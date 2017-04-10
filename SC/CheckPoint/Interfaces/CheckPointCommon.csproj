@@ -64,7 +64,6 @@
     <Compile Include="ModelInterfaces\IHostCoursesModel.cs" />
     <Compile Include="ModelInterfaces\IHostHomeModel.cs" />
     <Compile Include="ModelInterfaces\IInviteUserModel.cs" />
-    <Compile Include="ModelInterfaces\IManageAppointmentModel.cs" />
     <Compile Include="ModelInterfaces\IManageAttendanceModel.cs" />
     <Compile Include="ModelInterfaces\IManageCourseModel.cs" />
     <Compile Include="ModelInterfaces\IManageSingleAppointmentModel.cs" />
@@ -103,7 +102,6 @@
     <Compile Include="ViewInterfaces\IHostHomeView.cs" />
     <Compile Include="ViewInterfaces\IInviteUserView.cs" />
     <Compile Include="ViewInterfaces\ILoginView.cs" />
-    <Compile Include="ViewInterfaces\IManageAppointmentView.cs" />
     <Compile Include="ViewInterfaces\IManageAttendanceView.cs" />
     <Compile Include="ViewInterfaces\IManageCourseView.cs" />
     <Compile Include="ViewInterfaces\IManageSingleAppointmentView.cs" />
