@@ -103,33 +103,19 @@ runat="server"
 AllowSorting="True"
 AutoGenerateColumns="False"
 Height="100%" 
-OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged" 
 ShowHeader="true"
 ShowHeaderWhenEmpty="True"
 style="
 width:100%;
 z-index:2;"
 ShowFooter="false">
+
      
 <Columns>
 
 <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">CourseId</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="CourseId" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command" 
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="CourseId" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
@@ -139,20 +125,6 @@ CssClass="roundedButtons"/>
 <asp:TemplateField AccessibleHeaderText="CourseName" HeaderText="CourseName" HeaderStyle-CssClass="courseNameHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">Name</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Name" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command" 
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Name" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center"/>
 <HeaderStyle/>
@@ -162,20 +134,6 @@ CssClass="roundedButtons"/>
 <asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" HeaderStyle-CssClass="descriptionHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">Description</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
@@ -185,20 +143,6 @@ CssClass="roundedButtons"/>
 <asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" HeaderStyle-CssClass="isObligatoryHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">Obligatory</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="IsObligatory" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons"/>
-<asp:ImageButton 
-runat="server" 
-CommandName="IsObligatory" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command"  
-ToolTip="sort by descending"
-CssClass="roundedButtons" />
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
@@ -208,20 +152,6 @@ CssClass="roundedButtons" />
 <asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" HeaderStyle-CssClass="isPrivateHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">Private</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="IsPrivate" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons"/>
-<asp:ImageButton 
-runat="server" 
-CommandName="IsPrivate" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command"  
-ToolTip="sort by descending"
-CssClass="roundedButtons" />
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />

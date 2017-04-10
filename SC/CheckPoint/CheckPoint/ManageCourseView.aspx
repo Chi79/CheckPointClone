@@ -9,10 +9,6 @@
 <%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
 
 
-
-
-
-
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
 

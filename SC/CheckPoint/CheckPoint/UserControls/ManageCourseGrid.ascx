@@ -135,12 +135,10 @@ Height="100%"
 Width="100%"  
 style=" table-layout:fixed;
 z-index:1" 
-AllowSorting="True" 
-OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
-OnRowDataBound="gvHostTable_RowDataBound"
 ShowHeaderWhenEmpty="True" 
 ShowHeader="false" 
 DataKeyNames="CourseId" >
+
                  
 <RowStyle BackColor="White" CssClass="Row"/>
 <AlternatingRowStyle
