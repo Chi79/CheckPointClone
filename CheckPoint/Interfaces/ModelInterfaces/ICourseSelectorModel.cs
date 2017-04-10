@@ -8,6 +8,11 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface ICourseSelectorModel
     {
-        
+        object GetSelectedAppointment();
+
+        int? GetSessionCourseId();
+
+        void AddSelectedAppointmentToCourse(object appointment);
     }
+
 }

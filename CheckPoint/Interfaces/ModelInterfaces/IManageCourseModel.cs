@@ -15,6 +15,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void SetSessionAppointmentId(int id);
 
+        void SetSessionCourseId(int id);
+
         void ResetSessionState();
 
         string GetColumnName();

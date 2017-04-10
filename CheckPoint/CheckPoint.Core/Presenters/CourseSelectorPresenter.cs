@@ -45,8 +45,20 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+                AddAppointmentToSelectedCourse();
+
                 _view.RedirectToManageCourseView();
             }
+        }
+
+        private void AddAppointmentToSelectedCourse()
+        {
+            var selectedAppointment = _model.GetSelectedAppointment() as APPOINTMENT;
+            selectedAppointment.CourseId = _model.GetSessionCourseId();
+
+            _model.AddSelectedAppointmentToCourse(selectedAppointment);
+
+
         }
 
         private void OnCancelButtonClicked(object sender, EventArgs e)
