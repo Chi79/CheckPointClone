@@ -8,6 +8,29 @@ namespace CheckPointCommon.ModelInterfaces
 {
      public interface IUserHomeModel
     {
-        //TODO
+        int? GetSessionRowIndex();
+
+        void SetSessionRowIndex(int index);
+
+        int? GetSessionAppointmentId();
+
+        void SetSessionAppointmentId(int id);
+
+        void ResetSessionState();
+
+        string GetColumnName();
+
+        string GetLoggedInClient();
+
+        IEnumerable<object> GetAllAppointmentsForClient();
+
+        IEnumerable<object> GetEmptyList();
+
+        IEnumerable<object> GetCachedAppointments();
+
+        IEnumerable<object> GetAppointmentsSortedByPropertyAsc();
+
+        IEnumerable<object> GetAppointmentsSortedByPropertyDesc();
+
     }
 }

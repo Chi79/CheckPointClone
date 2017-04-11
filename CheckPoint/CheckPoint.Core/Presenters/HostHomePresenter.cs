@@ -200,13 +200,20 @@ namespace CheckPointPresenters.Presenters
             if (_model.GetSessionRowIndex() != unAssigned)
             {
 
-                int selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
+                SaveSelectedAppointmentIdToSession();
 
-                _model.SetSessionAppointmentId(selectedAppointmentId);
-
-                _view.Message = selectedAppointmentId.ToString();
+                _view.Message = _model.GetSessionAppointmentId().ToString();
 
             }
+        }
+
+        private void SaveSelectedAppointmentIdToSession()
+        {
+
+            int selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
+
+            _model.SetSessionAppointmentId(selectedAppointmentId);
+
         }
     }
 }

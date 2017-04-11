@@ -15,12 +15,16 @@ namespace CheckPoint.Views
 
         public string Message
         {
+
             set { lblMessage.Text = value; }
+
         }
 
         public IEnumerable<object> SetDataSource
         {
+
             set { AppointmentGridView.SetDataSource = value; }
+
         }
 
         public IEnumerable<object> SetDataSource2
@@ -30,13 +34,17 @@ namespace CheckPoint.Views
 
         public int SelectedRowIndex
         {
+
             get { return AppointmentGridView.SelectedRowIndex; }
             set { AppointmentGridView.SelectedRowIndex = value; }
+
         }
 
         public object SelectedRowValueDataKey
         {
+
             get { return AppointmentGridView.SelectedRowValueDataKey; }
+
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -46,24 +54,32 @@ namespace CheckPoint.Views
 
         public override void HookUpEvents()
         {
+
             AppointmentGridView.RowSelected += OnRowSelected;
             AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_Selected;
+
         }
 
         public void BindData()
         {
+
             AppointmentGridViewHeader.DataBind();
             AppointmentGridView.DataBind();
+
         }
         public void RedirectToCreateAppointment()
         {
+
             Response.Redirect("CreateAppointmentView.aspx");
+
         }
         public void RedirectToManageAppointment()
         {
+
             Response.Redirect("ManageSingleAppointmentView.aspx");
+
         }
 
         public event EventHandler<EventArgs> RowSelected;

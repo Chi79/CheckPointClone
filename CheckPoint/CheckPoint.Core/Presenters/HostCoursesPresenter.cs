@@ -25,37 +25,62 @@ namespace CheckPointPresenters.Presenters
 
         private void OnViewAppointmentsButtonClicked(object sender, EventArgs e)
         {
+
             _view.RedirectToAppointmentsView();
+
         }
 
         private void OnCreateReportButtonClicked(object sender, EventArgs e)
         {
+
             _view.Message = "Fabio Goose";
+
         }
 
         private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
         {
+
             _view.Message = "Fabio Goose";
+
         }
 
         private void OnManageCourseButtonClicked(object sender, EventArgs e)
         {
 
-            int noCourseSelected = -1;
+            bool RowSelected = CheckRowIsSelected();
 
-            if (_model.GetSessionCourseId() == noCourseSelected)
-            {
-
-                _view.Message = "No course has been selected!";
-
-            }
-            else
+            if (RowSelected)
             {
 
                 _view.RedirectToManageCourse();
 
             }
+            else
+            {
 
+                _view.Message = "No appointment has been selected!";
+
+            }
+
+        }
+
+        private bool CheckRowIsSelected()
+        {
+
+            int unAssigned = -1;
+
+            if (_model.GetSessionRowIndex() == unAssigned)
+            {
+
+                return false;
+
+            }
+            else
+            {
+
+                return true;
+
+            }
         }
 
         private void OnCreateCourseButtonClicked(object sender, EventArgs e)
@@ -147,6 +172,7 @@ namespace CheckPointPresenters.Presenters
             GetSelectedCourseIdFromGrid();
 
         }
+
         private void GetSelectedCourseIdFromGrid()
         {
 
@@ -167,13 +193,20 @@ namespace CheckPointPresenters.Presenters
             if (courseId != null)
             {
 
-                var selectedCourseId = _view.SelectedRowValueDataKey;
+                StoreSelectedCourseIdToSession();
 
-                _model.SetSessionCourseId((int)selectedCourseId);
-
-                _view.Message = selectedCourseId.ToString();
+                _view.Message = _model.GetSessionCourseId().ToString();
 
             }
+        }
+
+        private void StoreSelectedCourseIdToSession()
+        {
+
+            var selectedCourseId = _view.SelectedRowValueDataKey;
+
+            _model.SetSessionCourseId((int)selectedCourseId);
+
         }
     }
 }
