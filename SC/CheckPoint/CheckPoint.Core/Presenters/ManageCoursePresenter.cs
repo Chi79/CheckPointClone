@@ -58,13 +58,8 @@ namespace CheckPointPresenters.Presenters
             {
 
                 ShowData();
-                //ShowSelectedCourse();
 
-                //ShowAppointmentData();
-
-                //SetSessionRowIndex();
-
-                //_view.BindData();
+                ResetSessionRowIndex();
 
             }
             else
@@ -95,12 +90,10 @@ namespace CheckPointPresenters.Presenters
             }
         }
 
-        private void SetSessionRowIndex()
+        private void ResetSessionRowIndex()
         {
 
-            int ResetRowIndex = -1;
-
-            _model.SetSessionRowIndex(ResetRowIndex);
+            _model.ResetSessionRowIndex();
 
         }
 
@@ -112,8 +105,6 @@ namespace CheckPointPresenters.Presenters
             ShowSelectedCourse();
 
             ShowAppointmentData();
-
-            SetSessionRowIndex();
 
             _view.BindData();
 
@@ -184,6 +175,7 @@ namespace CheckPointPresenters.Presenters
             GetSelectedAppointmentIdFromGrid();
 
         }
+
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
 
