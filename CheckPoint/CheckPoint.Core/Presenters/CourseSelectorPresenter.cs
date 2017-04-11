@@ -111,14 +111,6 @@ namespace CheckPointPresenters.Presenters
             ResetSessionState();
 
             ShowData();
-   
-            //_view.SetDataSource = _model.GetAllCoursesForClient();
-
-            //_view.SetDataSource2 = _model.GetEmptyList();
-
-            //_model.ResetSessionState();
-
-            //_view.BindData();
 
         }
 
