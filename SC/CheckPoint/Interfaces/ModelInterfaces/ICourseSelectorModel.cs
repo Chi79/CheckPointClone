@@ -10,9 +10,31 @@ namespace CheckPointCommon.ModelInterfaces
     {
         object GetSelectedAppointment();
 
+        string GetLoggedInClient();
+
+        string GetColumnName();
+
         int? GetSessionCourseId();
 
         void AddSelectedAppointmentToCourse(object appointment);
+
+        int? GetSessionRowIndex();
+
+        void ResetSessionState();
+
+        void SetSessionRowIndex(int index);
+
+        void SetSessionCourseId(int id);
+
+        IEnumerable<object> GetAllCoursesForClient();
+
+        IEnumerable<object> GetEmptyList();
+
+        IEnumerable<object> GetCachedCourses();
+
+        IEnumerable<object> GetCoursesSortedByPropertyAsc();
+
+        IEnumerable<object> GetCoursesSortedByPropertyDesc();
     }
 
 }

@@ -6,81 +6,120 @@ using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Bases;
-using CheckPointCommon.ServiceInterfaces;
-using CheckPointDataTables.Tables;
+
 
 namespace CheckPointPresenters.Presenters
 {
     public class ManageCoursePresenter : PresenterBase
     {
+
         private readonly IManageCourseView _view;
         private readonly IManageCourseModel _model;
-        private readonly IShowCourses _courseDisplayService;
-        private readonly IShowAppointments _appointmentDisplayService;
-        private readonly ISessionService _sessionService;
 
-        public ManageCoursePresenter(IManageCourseView view, IManageCourseModel model,
-                                     IShowCourses courseDisplayService, IShowAppointments appointmentDisplayService,
-                                     ISessionService sessionService)
+
+        public ManageCoursePresenter(IManageCourseView view, IManageCourseModel model)
+                       
         {
             _view = view;
             _model = model;
-            _courseDisplayService = courseDisplayService;
-            _appointmentDisplayService = appointmentDisplayService;
-            _sessionService = sessionService;
 
-
-            _view.RowSelected += OnRowSelected;
-            _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
-            _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
         }
  
 
         public override void Load()
         {
+
             FetchData();
+
+            WireUpEvents();
         }
+  
+        private void WireUpEvents()
+        {
+
+            _view.RowSelected += OnRowSelected;
+            _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
+            _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
+
+        }
+
         private void FetchData()
         {
-            var courses = _courseDisplayService.GetCoursesCached<COURSE>();
+
+            var courses = _model.GetCachedCourses();
 
         }
         public override void FirstTimeInit()
         {
-            bool noCourseSelected = _sessionService.SessionCourseId == -1;
-            if (noCourseSelected)
+
+            bool CourseSelected = CheckIsCourseSelected();
+
+            if(CourseSelected)
+            {
+
+                ShowSelectedCourse();
+
+                ShowAppointmentData();
+
+                SetSessionRowIndex();
+
+                _view.BindData();
+
+            }
+            else
             {
 
                 _view.RedirectToCourseSelectorView();
 
             }
-            else
-            {
-                SetCourseDataSources();
-
-                SetAppointmentDataSources();
-
-                _sessionService.SessionRowIndex = -1;
-
-                _view.BindData();
-            }
 
         }
 
-        private void SetCourseDataSources()
-        {
-            List<COURSE> Course = _courseDisplayService.GetEmptyList<COURSE>().ToList();
-            Course.Add(_courseDisplayService.GetSelectedCourseByCourseId(_sessionService.SessionCourseId) as COURSE);
-            _view.SetDataSource = Course;
-            _view.SetDataSource2 = _courseDisplayService.GetEmptyList<COURSE>();
-        } 
-
-        private void SetAppointmentDataSources()
+        private bool CheckIsCourseSelected()
         {
 
-            _view.SetDataSourceAppointmentData = _model.GetAllAppointmentsForClientByCourseId(_sessionService.SessionCourseId);
+            int noCourseSelected = -1;
 
-            _view.SetDataSourceAppointmentHeader = _model.GetEmptyList();
+            if (_model.GetSessionCourseId() == noCourseSelected)
+            {
+
+                return false;
+
+            }
+            else
+            {
+
+                return true;
+
+            }
+        }
+
+        private void SetSessionRowIndex()
+        {
+
+            int ResetRowIndex = -1;
+
+            _model.SetSessionRowIndex(ResetRowIndex);
+
+        }
+
+
+        private void ShowSelectedCourse()
+        {
+
+            _view.SetDataSource = _model.GetSelectedCourse();
+
+            _view.SetDataSource2 = _model.GetEmptyCourseList();
+
+        }
+
+
+        private void ShowAppointmentData()
+        {
+
+            _view.SetDataSourceAppointmentData = _model.GetAllAppointmentsForClientByCourseId();
+
+            _view.SetDataSourceAppointmentHeader = _model.GetEmptyAppointmentList();
 
         }
 
@@ -88,10 +127,18 @@ namespace CheckPointPresenters.Presenters
         private void OnRowSelected(object sender, EventArgs e)
         {
 
-            int rowIndex = _view.SelectedRowIndex;
-            _model.SetSessionRowIndex(rowIndex);
+            SaveRowIndexToSession();
 
             GetSelectedAppointmentIdFromGrid();
+
+        }
+
+        private void SaveRowIndexToSession()
+        {
+
+            int rowSelected = _view.SelectedRowIndex;
+
+            _model.SetSessionRowIndex(rowSelected);
 
         }
 
@@ -102,9 +149,9 @@ namespace CheckPointPresenters.Presenters
 
             _view.SetDataSourceAppointmentData = apps;
 
-            _view.SetDataSourceAppointmentHeader = _model.GetEmptyList();
+            _view.SetDataSourceAppointmentHeader = _model.GetEmptyAppointmentList();
 
-            SetCourseDataSources();
+            ShowSelectedCourse();
 
             _view.BindData();
 
@@ -118,30 +165,39 @@ namespace CheckPointPresenters.Presenters
 
             _view.SetDataSourceAppointmentData = apps;
 
-            _view.SetDataSourceAppointmentHeader = _model.GetEmptyList();
+            _view.SetDataSourceAppointmentHeader = _model.GetEmptyAppointmentList();
 
-            SetCourseDataSources();
+            ShowSelectedCourse();
 
             _view.BindData();
 
             GetSelectedAppointmentIdFromGrid();
 
         }
+
+
         private void GetSelectedAppointmentIdFromGrid()
         {
 
-            int unAssigned = -1;
+            int noRowSelected = -1;
 
-            if (_model.GetSessionRowIndex() != unAssigned)
+            if (_model.GetSessionRowIndex() != noRowSelected)
             {
 
-                int selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
+                SaveSelectedAppointmentIdToSession();
 
-                _model.SetSessionAppointmentId(selectedAppointmentId);
-
-                _view.Message = selectedAppointmentId.ToString();
+                _view.Message = _model.GetSessionAppointmentId().ToString();
 
             }
+        }
+
+        private void SaveSelectedAppointmentIdToSession()
+        {
+
+            int selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
+
+            _model.SetSessionAppointmentId(selectedAppointmentId);
+
         }
     }
 }
