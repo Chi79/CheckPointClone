@@ -42,6 +42,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public void ResetSessionRowIndex()
+        {
+
+            _sessionService.SessionRowIndex = -1;
+
+        }
+
         public bool GetNewAppointmentAddedToCourseStatus()
         {
 
