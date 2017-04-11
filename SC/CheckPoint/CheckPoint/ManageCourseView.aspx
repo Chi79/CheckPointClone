@@ -68,7 +68,7 @@
 .logoslide{
       position:absolute;
       left: 85%;
-      top:  -8%;
+      top:  -9%;
       animation: slideleft 2s ;
 }
 @keyframes slideleft {
