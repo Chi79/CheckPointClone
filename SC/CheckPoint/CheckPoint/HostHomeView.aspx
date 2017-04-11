@@ -203,7 +203,12 @@
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker"))
+
+    beforeShowDay: function (date) {
+    var selected = $(this).datepicker('getDate');
+    return [selected && date.getTime() === selected.getTime(), ''];
+    }
+    //onSelect: $(".picker").datepicker("setDate", $(".picker"))
     });
     $(".picker").datepicker("setDate", $(".picker"))
     });
@@ -218,7 +223,12 @@
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker")),
+
+    beforeShowDay: function (date) {
+    var selected = $(this).datepicker('getDate');
+    return [selected && date.getTime() === selected.getTime(), ''];
+    }
+    //onSelect: $(".picker").datepicker("setDate", $(".picker")),
     });
     }
     });

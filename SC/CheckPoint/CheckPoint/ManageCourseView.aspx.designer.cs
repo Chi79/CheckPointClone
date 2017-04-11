@@ -121,13 +121,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// AppointmentGridViewHeader control.
+        /// ManageCourseAppGridHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AppointmentGridViewHeader AppointmentGridViewHeader;
+        protected global::CheckPoint.Views.UserControls.ManageCourseAppGridHeader ManageCourseAppGridHeader;
         
         /// <summary>
         /// Panel4 control.
@@ -157,12 +157,12 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// AppointmentGridView control.
+        /// ManageCourseAppGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.GridView AppointmentGridView;
+        protected global::CheckPoint.Views.UserControls.ManageCourseAppGrid ManageCourseAppGrid;
     }
 }

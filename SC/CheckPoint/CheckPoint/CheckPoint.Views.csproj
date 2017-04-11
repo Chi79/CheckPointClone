@@ -181,6 +181,8 @@
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\CourseGridView.ascx" />
     <Content Include="UserControls\CourseGridViewHeader.ascx" />
+    <Content Include="UserControls\ManageCourseAppGrid.ascx" />
+    <Content Include="UserControls\ManageCourseAppGridHeader.ascx" />
     <Content Include="UserControls\ManageCourseGrid.ascx" />
     <Content Include="UserControls\ManageCourseHeader.ascx" />
     <Content Include="UserMaster.Master" />
@@ -360,6 +362,20 @@
     </Compile>
     <Compile Include="UserControls\CourseGridViewHeader.ascx.designer.cs">
       <DependentUpon>CourseGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGrid.ascx.cs">
+      <DependentUpon>ManageCourseAppGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGrid.ascx.designer.cs">
+      <DependentUpon>ManageCourseAppGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGridHeader.ascx.cs">
+      <DependentUpon>ManageCourseAppGridHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGridHeader.ascx.designer.cs">
+      <DependentUpon>ManageCourseAppGridHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ManageCourseGrid.ascx.cs">
       <DependentUpon>ManageCourseGrid.ascx</DependentUpon>

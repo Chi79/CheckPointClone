@@ -186,7 +186,7 @@ runat="server">
 </asp:Label>
                         
                       
-<script type="text/javascript">
+<%--<script type="text/javascript">
  
 $(function () {
 $(".picker").datepicker({
@@ -211,7 +211,7 @@ buttonText: "calender"
 }
 });
 };
-</script>
+</script>--%>
 
 
 <uc1:CourseGridView runat="server" id="CourseGridView" />
