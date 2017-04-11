@@ -5,8 +5,12 @@
 <%@ Register Src="~/UserControls/ManageCourseHeader.ascx" TagPrefix="uc1" TagName="ManageCourseHeader" %>
 
 
-<%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
-<%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
+<%--<%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
+<%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>--%>
+<%@ Register Src="~/UserControls/ManageCourseAppGridHeader.ascx" TagPrefix="uc1" TagName="ManageCourseAppGridHeader" %>
+<%@ Register Src="~/UserControls/ManageCourseAppGrid.ascx" TagPrefix="uc1" TagName="ManageCourseAppGrid" %>
+
+
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -233,8 +237,9 @@ runat="server">
     runat="server" 
     Text="HostPage">
     </asp:Label>
-   
-    <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />
+
+   <uc1:ManageCourseAppGridHeader runat="server" id="ManageCourseAppGridHeader" />
+   <%-- <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />--%>
    
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -267,7 +272,11 @@ runat="server">
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker"))
+    beforeShowDay: function (date) {
+    var selected = $(this).datepicker('getDate');
+    return [selected && date.getTime() === selected.getTime(), ''];
+    }
+    //onSelect: $(".picker").datepicker("setDate", $(".picker"))
     });
     $(".picker").datepicker("setDate", $(".picker"))
     });
@@ -282,7 +291,11 @@ runat="server">
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker")),
+    beforeShowDay: function (date) {
+    var selected = $(this).datepicker('getDate');
+    return [selected && date.getTime() === selected.getTime(), ''];
+    }
+    //onSelect: $(".picker").datepicker("setDate", $(".picker")),
     });
     }
     });
@@ -291,7 +304,8 @@ runat="server">
     };
     </script>
 
-    <uc1:AppointmentGridView runat="server" id="AppointmentGridView" />
+     <uc1:ManageCourseAppGrid runat="server" id="ManageCourseAppGrid" />
+    <%--<uc1:AppointmentGridView runat="server" id="AppointmentGridView" />--%>
 
     </ContentTemplate>
     </asp:UpdatePanel>

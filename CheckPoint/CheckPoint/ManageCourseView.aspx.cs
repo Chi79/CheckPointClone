@@ -20,10 +20,12 @@ namespace CheckPoint.Views
 
         public override void HookUpEvents()
         {
-            AppointmentGridView.RowSelected += GridView_RowSelected;
-            AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
-            AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
-            AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
+
+            ManageCourseAppGrid.RowSelected += GridView_RowSelected;
+            ManageCourseAppGridHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
+            ManageCourseAppGridHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
+            ManageCourseAppGridHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
+
         }
 
 
@@ -43,26 +45,26 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> SetDataSourceAppointmentHeader
         {
-            set { AppointmentGridViewHeader.SetDataSource2 = value;  }
+            set { ManageCourseAppGridHeader.SetDataSource2 = value;  }
         }
 
         public IEnumerable<object> SetDataSourceAppointmentData
         {
-            set { AppointmentGridView.SetDataSource = value; }
+            set { ManageCourseAppGrid.SetDataSource = value; }
         }
 
         public object SelectedRowValueDataKey
         {
 
-            get { return AppointmentGridView.SelectedRowValueDataKey; }
+            get { return ManageCourseAppGrid.SelectedRowValueDataKey; }
 
         }
 
         public int SelectedRowIndex
         {
 
-            get { return AppointmentGridView.SelectedRowIndex; }
-            set { AppointmentGridView.SelectedRowIndex = value; }
+            get { return ManageCourseAppGrid.SelectedRowIndex; }
+            set { ManageCourseAppGrid.SelectedRowIndex = value; }
         }
 
 
@@ -71,8 +73,8 @@ namespace CheckPoint.Views
             ManageCourseGrid.DataBind();
             ManageCourseHeader.DataBind();
 
-            AppointmentGridView.DataBind();
-            AppointmentGridViewHeader.DataBind();
+            ManageCourseAppGrid.DataBind();
+            ManageCourseAppGridHeader.DataBind();
         }
 
         public void RedirectToCourseSelectorView()
