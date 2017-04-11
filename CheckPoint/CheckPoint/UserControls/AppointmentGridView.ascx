@@ -235,7 +235,7 @@ table {
  </asp:TemplateField>
 
 
- <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
+ <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem" Visible="false">
  <HeaderTemplate>
  <h3 style="color:white">CourseId</h3>
  </HeaderTemplate>

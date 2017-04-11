@@ -215,7 +215,7 @@ table {
  <HeaderStyle />
  </asp:TemplateField>
 
- <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" >
+ <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="courseIdHeader" Visible="false">
  <HeaderTemplate>
  <h3 class="headertext" style="color:white;">CourseId</h3>
  <asp:ImageButton 

@@ -5,8 +5,6 @@
 <%@ Register Src="~/UserControls/ManageCourseHeader.ascx" TagPrefix="uc1" TagName="ManageCourseHeader" %>
 
 
-<%--<%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
-<%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>--%>
 <%@ Register Src="~/UserControls/ManageCourseAppGridHeader.ascx" TagPrefix="uc1" TagName="ManageCourseAppGridHeader" %>
 <%@ Register Src="~/UserControls/ManageCourseAppGrid.ascx" TagPrefix="uc1" TagName="ManageCourseAppGrid" %>
 
@@ -122,6 +120,36 @@
     position:relative;
     animation:buttonsup;
 }
+
+.ui-datepicker .ui-datepicker-prev, 
+.ui-datepicker .ui-datepicker-next
+{
+    display:none;
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+    border-radius: 14px;
+}
+.ui-datepicker .ui-widget{
+    border-radius:10px;
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+    /*background-color: #10591B;*/
+    background-image:url(/Images/buttonshade1.png);
+    border-radius: 9px;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid #32E236;
+    background: #32E236;
+    font-weight: normal;
+    color: #ffffff;
+    -webkit-animation:flashingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+
 .navButtons{
     border-radius: 5px;
     border-width:0px;
@@ -239,7 +267,6 @@ runat="server">
     </asp:Label>
 
    <uc1:ManageCourseAppGridHeader runat="server" id="ManageCourseAppGridHeader" />
-   <%-- <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />--%>
    
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -276,8 +303,9 @@ runat="server">
     var selected = $(this).datepicker('getDate');
     return [selected && date.getTime() === selected.getTime(), ''];
     }
-    //onSelect: $(".picker").datepicker("setDate", $(".picker"))
     });
+    $('.picker').find('.ui-datepicker-next').remove();
+    $('.picker').find('.ui-datepicker-prev').remove();
     $(".picker").datepicker("setDate", $(".picker"))
     });
    
@@ -295,7 +323,6 @@ runat="server">
     var selected = $(this).datepicker('getDate');
     return [selected && date.getTime() === selected.getTime(), ''];
     }
-    //onSelect: $(".picker").datepicker("setDate", $(".picker")),
     });
     }
     });
@@ -305,7 +332,6 @@ runat="server">
     </script>
 
      <uc1:ManageCourseAppGrid runat="server" id="ManageCourseAppGrid" />
-    <%--<uc1:AppointmentGridView runat="server" id="AppointmentGridView" />--%>
 
     </ContentTemplate>
     </asp:UpdatePanel>
