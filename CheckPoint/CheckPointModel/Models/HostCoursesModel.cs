@@ -64,6 +64,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public void ResetNewAppointmentAddedToCourseStatus()
+        {
+
+            _sessionService.NewAppointmentAddedToCourseStatus = false;
+        
+        }
+
         public void ResetSessionState()
         {
 

@@ -75,6 +75,30 @@
       from { left: -100%; }
       to { left: 85%; }
 }
+.coursesmanageslide{
+      position:absolute;
+      top: -7%;
+      left: 2%;
+      animation:slidedown 4s;
+      top:-7%;
+}
+@keyframes slidedown {
+      from { top: -100%; }
+      to { top: -7%; }
+}
+
+.appointmentaddedslide{
+      z-index:5;
+      position:absolute;
+      left:56%;
+      animation:slideup 4s;
+      top:104%;
+}
+@keyframes slideup {
+      from { top: 150%; }
+      to { top: 104%; }
+}
+
 .buttons0{
       float:left;
       margin-left: 11%;
@@ -192,7 +216,10 @@ ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
 
+
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+<div id="courseManagerHeading" class="coursesmanageslide" style="z-index:5"><img src="Images/CourseManagerHeading.svg" /></div>
+<asp:Image ID="appointmentAddedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentAddedMessage1.svg"  />
 
 
 <asp:Panel

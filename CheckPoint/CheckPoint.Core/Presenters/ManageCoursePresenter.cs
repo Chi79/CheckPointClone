@@ -57,13 +57,14 @@ namespace CheckPointPresenters.Presenters
             if(CourseSelected)
             {
 
-                ShowSelectedCourse();
+                ShowData();
+                //ShowSelectedCourse();
 
-                ShowAppointmentData();
+                //ShowAppointmentData();
 
-                SetSessionRowIndex();
+                //SetSessionRowIndex();
 
-                _view.BindData();
+                //_view.BindData();
 
             }
             else
@@ -103,6 +104,21 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+        private void ShowData()
+        {
+
+            CheckIfNewAppointmentAdded();
+
+            ShowSelectedCourse();
+
+            ShowAppointmentData();
+
+            SetSessionRowIndex();
+
+            _view.BindData();
+
+        }
+
 
         private void ShowSelectedCourse()
         {
@@ -123,6 +139,16 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+        private void CheckIfNewAppointmentAdded()
+        {
+
+            bool newAppointmentAdded = _model.GetNewAppointmentAddedToCourseStatus();
+            if(newAppointmentAdded)
+            {
+                _view.AppointmentAddedMessageVisible = true;
+            }
+
+        }
 
         private void OnRowSelected(object sender, EventArgs e)
         {

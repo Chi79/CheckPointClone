@@ -50,6 +50,17 @@
       from { left: -100%; }
       to { left: 85%; }
 }
+.Appointmentslide{
+      position:absolute;
+      top: -7%;
+      left: 2%;
+      animation:slidedown 4s;
+      top:-7%;
+}
+@keyframes slidedown {
+      from { top: -100%; }
+      to { top: -7%; }
+}
 .buttons0{
       float:left;
       margin-left: 0%;
@@ -173,6 +184,7 @@
     </asp:ScriptManager> 
 
     <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+    <div id="AppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentHeading.svg" /></div>
 
 
     <asp:Panel

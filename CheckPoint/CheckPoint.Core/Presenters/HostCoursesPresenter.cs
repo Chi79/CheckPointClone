@@ -116,13 +116,27 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
 
+             ResetSessionState();
+
+             ShowData();
+        }
+
+        private void ShowData()
+        {
             _view.SetDataSource = _model.GetAllCoursesForClient();
 
             _view.SetDataSource2 = _model.GetEmptyList();
 
+            _view.BindData();
+        }
+
+        private void ResetSessionState()
+        {
+
+            _model.ResetNewAppointmentAddedToCourseStatus();
+
             _model.ResetSessionState();
 
-            _view.BindData();
         }
 
         private void FetchData()
