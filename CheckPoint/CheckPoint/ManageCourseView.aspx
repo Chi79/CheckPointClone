@@ -19,15 +19,16 @@
 <style type="text/css">
   
 
-.Panel1{
-    position:relative; 
-    height:79px; 
-    width:100%;
-    overflow-y:scroll;
-    right:1%;
+.PanelCourseGrid{
+    position: relative;
+    height: 79px;
+    width: 100%;
+    overflow-y: hidden;
+    right: 1%;
     border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
-.Panel2{
+.PanelCourseHeader{
     height:100%;
     width:100%;
     border-top-left-radius: 10px;
@@ -36,15 +37,15 @@
     position:relative;
     right:1%;
 }
-.Panel3{
+.PanelAppGrid{
     position:relative; 
-    height:385px; 
+    height:315px; 
     width:100%;
     overflow-y:scroll;
     right:1%;
     border-bottom-left-radius: 10px;
 }
-.Panel4{
+.PanelAppGridHeader{
     height:100%;
     width:100%;
     border-top-left-radius: 10px;
@@ -199,7 +200,7 @@ ID="Panel2"
 runat="server" 
 ScrollBars="None"
 BackImageUrl="~/Images/headershade3.png"
-CssClass="Panel2">
+CssClass="PanelCourseHeader">
 
        
 <asp:UpdatePanel 
@@ -224,7 +225,7 @@ Text="HostPage">
 <asp:Panel 
 ID="Panel1"
 runat="server" 
-CssClass="Panel1">
+CssClass="PanelCourseGrid">
 
 
  
@@ -252,7 +253,7 @@ runat="server">
     runat="server" 
     ScrollBars="None"
     BackImageUrl="~/Images/headershade3.png"
-    CssClass="Panel4">  
+    CssClass="PanelAppGridHeader">  
 
     <asp:UpdatePanel 
     ID="UpdatePanel3"  
@@ -276,7 +277,7 @@ runat="server">
        <asp:Panel 
     ID="Panel4"
     runat="server" 
-    CssClass="Panel3">
+    CssClass="PanelAppGrid">
 
     <asp:UpdatePanel 
     ID="UpdatePanel4"  

@@ -82,7 +82,7 @@
 }
 .buttons6{
       float:left;
-      margin-left: 15%;
+      margin-left: 1%;
       z-index:3;
       margin-top:0.5%;
 }

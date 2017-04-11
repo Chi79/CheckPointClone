@@ -54,7 +54,7 @@
 }
 .buttons0{
       float:left;
-      margin-left: 11%;
+      margin-left: 0%;
       z-index:3;
       margin-top:0.5%;
 }
