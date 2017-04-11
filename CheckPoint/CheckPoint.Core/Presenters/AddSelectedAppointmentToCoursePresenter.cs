@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 using CheckPointPresenters.Bases;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.ServiceInterfaces;
 using CheckPointDataTables.Tables;
-using CheckPointModel.DTOs;
 
 namespace CheckPointPresenters.Presenters
 {
     public class AddSelectedAppointmentToCoursePresenter : PresenterBase
     {
+
         private IAddSelectedAppointmentToCourseView _view;
         private IAddSelectedAppointmentToCourseModel _model;
-        private readonly IShowAppointments _displayService;
 
         public AddSelectedAppointmentToCoursePresenter(IAddSelectedAppointmentToCourseView view,
-                                                       IAddSelectedAppointmentToCourseModel model,
-                                                       IShowAppointments displayService)
+                                                       IAddSelectedAppointmentToCourseModel model)
         {
             _view = view;
             _model = model;
-            _displayService = displayService;
+
         }
 
         public override void FirstTimeInit()
@@ -42,24 +39,31 @@ namespace CheckPointPresenters.Presenters
 
         public override void Load()
         {
+
             WireUpEvents();
+
         }
 
         public void WireUpEvents()
         {
+
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
+
         }
 
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
+
             _view.RedirectBackToHostHomeView();
+
         }
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
 
             _view.RedirectToCourseSelectorView();
+
         }
 
         private void ConfirmAction()
@@ -72,7 +76,7 @@ namespace CheckPointPresenters.Presenters
         private void DisplaySelectedAppointmentData()
         {
 
-            var selectedAppointment = _displayService.GetSelectedAppointmentByAppointmentId(_model.GetSessionAppointmentId()) as APPOINTMENT;
+            var selectedAppointment = _model.GetSelectedAppointmentById() as APPOINTMENT;
 
             _view.AppointmentName = selectedAppointment.AppointmentName;
             _view.Description = selectedAppointment.Description;
