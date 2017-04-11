@@ -57,21 +57,23 @@ table {
 .courseNameColumnItemCourse{
     width: 12.09%;
     padding-left: 0%;
+    padding-right: 1%;
     margin: auto;
 }
 .descriptionColumnItemCourse{
     width: 11.09%;
-    padding-left: 1%;
+    padding-left: 0%;
     margin: auto;
 }
 .isPrivateColumnItemCourse{
     width: 10.09%;
-    padding-left: 2%;
+    padding-left: 0%;
     margin: auto;
 }
 .isObligatoryColumnItemCourse{
     width: 10.09%;
     padding-left: 0%;
+    padding-right: 2%;
     margin: auto;
 }
 
