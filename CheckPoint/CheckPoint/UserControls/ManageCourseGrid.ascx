@@ -63,6 +63,7 @@ table {
 .descriptionColumnItemCourse{
     width: 11.09%;
     padding-left: 0%;
+    padding-right: 1%;
     margin: auto;
 }
 .isPrivateColumnItemCourse{
