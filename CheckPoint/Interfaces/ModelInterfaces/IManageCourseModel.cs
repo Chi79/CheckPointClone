@@ -15,7 +15,11 @@ namespace CheckPointCommon.ModelInterfaces
 
         void SetSessionAppointmentId(int id);
 
+        int? GetSessionAppointmentId();
+
         void SetSessionCourseId(int id);
+
+        int? GetSessionCourseId();
 
         void ResetSessionState();
 
@@ -25,17 +29,23 @@ namespace CheckPointCommon.ModelInterfaces
 
         IEnumerable<object> GetAllAppointmentsForClient();
 
-        IEnumerable<object> GetAllAppointmentsForClientByCourseId(int? courseId);
+        IEnumerable<object> GetAllAppointmentsForClientByCourseId();
 
-        IEnumerable<object> GetEmptyList();
+        IEnumerable<object> GetEmptyAppointmentList();
+
+        IEnumerable<object> GetEmptyCourseList();
 
         IEnumerable<object> GetCachedAppointments();
+
+        IEnumerable<object> GetCachedCourses();
 
         IEnumerable<object> GetCachedAppointmentsInCourse();
 
         IEnumerable<object> GetAppointmentsInCourseSortedByPropertyAsc();
 
         IEnumerable<object> GetAppointmentsInCourseSortedByPropertyDesc();
+
+         IEnumerable<object> GetSelectedCourse();
 
     }
 }

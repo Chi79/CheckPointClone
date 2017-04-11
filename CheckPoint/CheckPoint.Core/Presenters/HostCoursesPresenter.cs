@@ -132,14 +132,22 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+
         private void OnRowSelected(object sender, EventArgs e)
+        {
+
+            SaveRowIndexToSession();
+
+            GetSelectedCourseIdFromGrid();
+
+        }
+
+        private void SaveRowIndexToSession()
         {
 
             int rowSelected = _view.SelectedRowIndex;
 
             _model.SetSessionRowIndex(rowSelected);
-
-            GetSelectedCourseIdFromGrid();
 
         }
 

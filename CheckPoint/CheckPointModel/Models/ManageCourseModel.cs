@@ -5,91 +5,168 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointDataTables.Tables;
-using CheckPointModel.DTOs;
 using CheckPointCommon.ServiceInterfaces;
 
 namespace CheckPointModel.Models
 {
     public class ManageCourseModel : IManageCourseModel
     {
-        private ISessionService _sessionService;
-        private IShowAppointments _displayService;
 
-        public ManageCourseModel(ISessionService sessionService, IShowAppointments displayService)
+        private ISessionService _sessionService;
+        private IShowAppointments _appointmentDisplayService;
+        private IShowCourses _coursesDisplayService;
+
+
+        public ManageCourseModel(ISessionService sessionService, IShowAppointments appointmentDisplayService,
+                                 IShowCourses coursesDisplayService)
+
         {
+
             _sessionService = sessionService;
-            _displayService = displayService;
+            _appointmentDisplayService = appointmentDisplayService;
+            _coursesDisplayService = coursesDisplayService;
+
         }
 
         public int? GetSessionRowIndex()
         {
+
             return _sessionService.SessionRowIndex;
+
         }
 
         public void SetSessionRowIndex(int index)
         {
+
             _sessionService.SessionRowIndex = index;
+
+        }
+
+        public int? GetSessionAppointmentId()
+        {
+
+            return _sessionService.SessionAppointmentId;
         }
 
         public void SetSessionAppointmentId(int id)
         {
+
             _sessionService.SessionAppointmentId = id;
+
         }
 
         public void SetSessionCourseId(int id)
         {
+
             _sessionService.SessionCourseId = id;
+
+        }
+
+        public int? GetSessionCourseId()
+        {
+
+            return _sessionService.SessionCourseId;
+
         }
 
         public void ResetSessionState()
         {
-            SetSessionRowIndex(-1);
-            SetSessionAppointmentId(-1);
+
+            int noRowSelected = -1;
+            int noAppointmentSelected = -1;
+            SetSessionRowIndex(noRowSelected);
+            SetSessionAppointmentId(noAppointmentSelected);
+
         }
 
         public string GetColumnName()
         {
+
             return _sessionService.ColumnName;
+
         }
 
         public string GetLoggedInClient()
         {
+
             return _sessionService.LoggedInClient;
+
         }
 
         public IEnumerable<object> GetAllAppointmentsForClient()
         {
-            return _displayService.GetAllAppointmentsFor<APPOINTMENT>(GetLoggedInClient());
+
+            return _appointmentDisplayService.GetAllAppointmentsFor<APPOINTMENT>(GetLoggedInClient());
+
         }
 
-        public IEnumerable<object> GetAllAppointmentsForClientByCourseId(int? courseId)
+        public IEnumerable<object> GetAllAppointmentsForClientByCourseId()
         {
-            return _displayService.GetAllAppointmentsForClientByCourseId<APPOINTMENT>(courseId);
+
+            return _appointmentDisplayService.GetAllAppointmentsForClientByCourseId<APPOINTMENT>(GetSessionCourseId());
+
         }
 
-        public IEnumerable<object> GetEmptyList()
+        public IEnumerable<object> GetEmptyAppointmentList()
         {
-            return _displayService.GetEmptyList<APPOINTMENT>();
+
+            return _appointmentDisplayService.GetEmptyList<APPOINTMENT>();
+
+        }
+
+        public IEnumerable<object> GetEmptyCourseList()
+        {
+
+            return _coursesDisplayService.GetEmptyList<COURSE>();
+
         }
 
         public IEnumerable<object> GetCachedAppointments()
         {
-            return _displayService.GetAppointmentsCached<APPOINTMENT>();
+
+            return _appointmentDisplayService.GetAppointmentsCached<APPOINTMENT>();
+
+        }
+
+        public IEnumerable<object> GetCachedCourses()
+        {
+
+            return _coursesDisplayService.GetCoursesCached<COURSE>();
+
         }
 
         public IEnumerable<object> GetCachedAppointmentsInCourse()
         {
-            return _displayService.GetAppointmentsInCourseCached<APPOINTMENT>();
+
+            return _appointmentDisplayService.GetAppointmentsInCourseCached<APPOINTMENT>();
+
         }
 
         public IEnumerable<object> GetAppointmentsInCourseSortedByPropertyAsc()
         {
-            return _displayService.GetAppointmentsInCourseSortedByPropertyAscending<object>(GetColumnName());
+
+            return _appointmentDisplayService.GetAppointmentsInCourseSortedByPropertyAscending<object>(GetColumnName());
+
         }
 
         public IEnumerable<object> GetAppointmentsInCourseSortedByPropertyDesc()
         {
-            return _displayService.GetAppointmentsInCourseSortedByPropertyDescending<object>(GetColumnName());
+
+            return _appointmentDisplayService.GetAppointmentsInCourseSortedByPropertyDescending<object>(GetColumnName());
+
+        }
+
+        public IEnumerable<object> GetSelectedCourse()
+        {
+
+            List<COURSE> selectedCourseAsList = _coursesDisplayService.GetEmptyList<COURSE>().ToList();
+
+            var selectedCourse = _coursesDisplayService.GetSelectedCourseByCourseId(GetSessionCourseId());
+
+            selectedCourseAsList.Add(selectedCourse as COURSE);
+
+            return selectedCourseAsList;
+
         }
     }
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using CheckPointPresenters.Bases;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.ServiceInterfaces;
-using CheckPointDataTables.Tables;
+
 
 namespace CheckPointPresenters.Presenters
 {
@@ -140,10 +139,18 @@ namespace CheckPointPresenters.Presenters
         private void OnRowSelected(object sender, EventArgs e)
         {
 
-            int rowIndex = _view.SelectedRowIndex;
-            _model.SetSessionRowIndex(rowIndex);
+            SaveRowIndexToSession();
 
             GetSelectedAppointmentIdFromGrid();
+
+        }
+
+        private void SaveRowIndexToSession()
+        {
+
+            int rowSelected = _view.SelectedRowIndex;
+
+            _model.SetSessionRowIndex(rowSelected);
 
         }
 

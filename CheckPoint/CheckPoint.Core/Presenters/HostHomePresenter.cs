@@ -154,14 +154,22 @@ namespace CheckPointPresenters.Presenters
             }
         }
 
+
         private void OnRowSelected(object sender, EventArgs e)
         {
 
-            int rowIndex = _view.SelectedRowIndex;
+            SaveRowIndexToSession();
 
-            _model.SetSessionRowIndex(rowIndex);
+            GetSelectedAppointmentIdFromGrid();
 
-            GetSelectedAppointmentIdFromGrid();    
+        }
+
+        private void SaveRowIndexToSession()
+        {
+
+            int rowSelected = _view.SelectedRowIndex;
+
+            _model.SetSessionRowIndex(rowSelected);
 
         }
 
