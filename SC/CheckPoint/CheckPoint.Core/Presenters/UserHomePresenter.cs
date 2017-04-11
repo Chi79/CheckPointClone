@@ -60,9 +60,9 @@ namespace CheckPointPresenters.Presenters
 
         private bool CheckRowIsSelected()
         {
-            int unAssigned = -1;
+            int noRowSelected = -1;
 
-            if (_model.GetSessionRowIndex() == unAssigned)
+            if (_model.GetSessionRowIndex() == noRowSelected)
             {
 
                 return false;
@@ -184,9 +184,9 @@ namespace CheckPointPresenters.Presenters
         private void GetSelectedAppointmentIdFromGrid()
         {
 
-            int unAssigned = -1;
+            int noRowSelected = -1;
 
-            if (_model.GetSessionRowIndex() != unAssigned)
+            if (_model.GetSessionRowIndex() != noRowSelected)
             {
 
                 SaveSelectedAppointmentIdToSession();
