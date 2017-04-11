@@ -27,7 +27,7 @@ namespace CheckPointHTTPServices.Cache
             set { HttpContext.Current.Session["LoggedInClient"] = value; }
         }
 
-        public bool? AddingAppointmentToCourseStatus
+        public bool? NewAppointmentAddedToCourseStatus
         {
             get
             {

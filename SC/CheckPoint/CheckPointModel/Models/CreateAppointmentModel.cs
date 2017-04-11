@@ -71,7 +71,7 @@ namespace CheckPointModel.Models
         public bool? GetAddingAppointmentToCourseStatus()
         {
 
-            return _sessionService.AddingAppointmentToCourseStatus;
+            return _sessionService.NewAppointmentAddedToCourseStatus;
 
         }
 
@@ -156,7 +156,7 @@ namespace CheckPointModel.Models
         public void ResetAddingAppointmentToCourseStatus()
         {
 
-            _sessionService.AddingAppointmentToCourseStatus = false;
+            _sessionService.NewAppointmentAddedToCourseStatus = false;
 
         }
 

@@ -13,6 +13,7 @@ namespace CheckPoint.Views
 {
     public partial class ManageCourseView : ViewBase<ManageCoursePresenter> , IManageCourseView
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
          
@@ -31,26 +32,44 @@ namespace CheckPoint.Views
 
         public string Message
         {
+
             set { lblMessage.Text = value; }
+
         }
+
+        public bool AppointmentAddedMessageVisible
+        {
+
+            set { appointmentAddedMessage.Visible = value; }
+
+        }
+
         public IEnumerable<object> SetDataSource
         {
+
             set { ManageCourseGrid.SetDataSource = value; }
+
         }
 
         public IEnumerable<object> SetDataSource2
         {
+
             set { ManageCourseHeader.SetDataSource2 = value; }
+
         }
 
         public IEnumerable<object> SetDataSourceAppointmentHeader
         {
+
             set { ManageCourseAppGridHeader.SetDataSource2 = value;  }
+
         }
 
         public IEnumerable<object> SetDataSourceAppointmentData
         {
+
             set { ManageCourseAppGrid.SetDataSource = value; }
+
         }
 
         public object SelectedRowValueDataKey
@@ -65,21 +84,26 @@ namespace CheckPoint.Views
 
             get { return ManageCourseAppGrid.SelectedRowIndex; }
             set { ManageCourseAppGrid.SelectedRowIndex = value; }
+
         }
 
 
         public void BindData()
         {
+
             ManageCourseGrid.DataBind();
             ManageCourseHeader.DataBind();
 
             ManageCourseAppGrid.DataBind();
             ManageCourseAppGridHeader.DataBind();
+
         }
 
         public void RedirectToCourseSelectorView()
         {
+
             Response.Redirect("CourseSelectorView.aspx");
+
         }
 
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;

@@ -50,6 +50,18 @@
       from { left: -100%; }
       to { left: 85%; }
 }
+.courseselectslide{
+      position:absolute;
+      top: -7%;
+      left: 2%;
+      animation:slidedown 4s;
+      top:-7%;
+}
+@keyframes slidedown {
+      from { top: -100%; }
+      to { top: -7%; }
+}
+
 .buttons0{
       float:left;
       margin-left: 0%;
@@ -138,6 +150,7 @@ runat="server">
 </asp:ScriptManager> 
 
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+<div id="courseSelectHeading" class="courseselectslide" style="z-index:5"><img src="Images/SelectCourseHeading.svg" /></div>
 
 
 <asp:Panel

@@ -8,6 +8,7 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IManageCourseView
     {
+        bool AppointmentAddedMessageVisible { set; }
         string Message { set; }
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }

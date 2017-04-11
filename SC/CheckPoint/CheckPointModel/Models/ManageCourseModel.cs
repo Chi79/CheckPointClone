@@ -42,6 +42,18 @@ namespace CheckPointModel.Models
 
         }
 
+        public bool GetNewAppointmentAddedToCourseStatus()
+        {
+
+            return (bool)_sessionService.NewAppointmentAddedToCourseStatus;
+
+        }
+
+        public void ResetNewAppointmentAddedToCourseStatus()
+        {
+            _sessionService.NewAppointmentAddedToCourseStatus = false;
+        }
+
         public int? GetSessionAppointmentId()
         {
 

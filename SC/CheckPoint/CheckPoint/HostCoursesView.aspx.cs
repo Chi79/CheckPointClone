@@ -62,13 +62,16 @@ namespace CheckPoint.Views
 
         public void RedirectToCreateCourse()
         {
+
             Response.Redirect("CreateCourseView.aspx");
+
         }
 
         public void RedirectToManageCourse()
         {
-            //TODO  Response.Redirect("ManageCourseView.aspx");
-            this.Message = "bumbum!";
+
+            Response.Redirect("ManageCourseView.aspx");
+
         }
 
         public void RedirectToAppointmentsView()
