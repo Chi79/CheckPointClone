@@ -40,6 +40,8 @@ namespace CheckPointPresenters.Presenters
             _view.RowSelected += OnRowSelected;
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
+            _view.ViewAppointementsButtonClicked += OnViewAppointementsButtonClicked;
+            _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
 
         }
 
@@ -65,7 +67,7 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.RedirectToCourseSelectorView();
+                _view.RedirectToCoursesView();
 
             }
 
@@ -215,6 +217,20 @@ namespace CheckPointPresenters.Presenters
             int selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
 
             _model.SetSessionAppointmentId(selectedAppointmentId);
+
+        }
+
+        private void OnViewCoursesButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToCoursesView();
+
+        }
+
+        private void OnViewAppointementsButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToAppointmentsView();
 
         }
     }

@@ -91,18 +91,18 @@
 .appointmentaddedslide{
       z-index:5;
       position:absolute;
-      left:56%;
+      left:59%;
       animation:slideup 4s;
-      top:104%;
+      top:94%;
 }
 @keyframes slideup {
       from { top: 150%; }
-      to { top: 104%; }
+      to { top: 94%; }
 }
 
 .buttons0{
       float:left;
-      margin-left: 11%;
+      margin-left: 0%;
       z-index:3;
       margin-top:0.5%;
 }
@@ -304,19 +304,34 @@ runat="server">
 
 <div id="slidebuttons1" class="buttonslider">
 
-<%--<div id="Div1" runat="server" style="z-index:5;" class="buttons0">
-<asp:UpdatePanel ID="UpdatePanel3" runat="server" > 
+<div id="Div1" runat="server" style="z-index:5;" class="buttons0">
+<asp:UpdatePanel ID="buttonspanel0" runat="server" > 
 <ContentTemplate>
-<asp:Button ID="btnAddAppointmentToSelectedCourse"
+<asp:Button ID="btnBackToAppointmentsView"
     CssClass="navButtons" 
     runat="server" 
-    OnClick="btnAddAppointmentToSelectedCourse_Click" 
-    Text="Add Appointment To Selected Course"  
+    OnClick="btnBackToAppointmentsView_Click" 
+    Text="View Appointments"  
     Visible="True" 
     ForeColor="White"/>
 </ContentTemplate>
 </asp:UpdatePanel>
-</div>--%>
+</div>
+
+
+<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
+<asp:UpdatePanel ID="buttonspanel1" runat="server" > 
+<ContentTemplate>
+<asp:Button ID="btnBackToCoursesView" 
+    CssClass="navButtons" 
+    runat="server" 
+    OnClick="btnBackToCoursesView_Click" 
+    Text="View Courses"  
+    Visible="True" 
+    ForeColor="White" />
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
 
 
 <%--<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
