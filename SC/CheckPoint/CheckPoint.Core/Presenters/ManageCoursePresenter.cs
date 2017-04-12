@@ -32,6 +32,7 @@ namespace CheckPointPresenters.Presenters
             FetchData();
 
             WireUpEvents();
+
         }
   
         private void WireUpEvents()
