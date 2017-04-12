@@ -17,6 +17,9 @@ namespace CheckPointCommon.ViewInterfaces
         void BindData();
         void RedirectToCourseSelectorView();
 
+        void RedirectToAppointmentsView();
+        void RedirectToCoursesView();
+
         IEnumerable<object> SetDataSourceAppointmentHeader { set; }
         IEnumerable<object> SetDataSourceAppointmentData { set; }
         object SelectedRowValueDataKey { get; }
@@ -26,5 +29,8 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         event EventHandler<EventArgs> RowSelected;
+
+        event EventHandler<EventArgs> ViewAppointementsButtonClicked;
+        event EventHandler<EventArgs> ViewCoursesButtonClicked;
     }
 }

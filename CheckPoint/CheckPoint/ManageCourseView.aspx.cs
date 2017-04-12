@@ -29,7 +29,6 @@ namespace CheckPoint.Views
 
         }
 
-
         public string Message
         {
 
@@ -106,9 +105,26 @@ namespace CheckPoint.Views
 
         }
 
+        public void RedirectToAppointmentsView()
+        {
+
+            Response.Redirect("HostHomeView.aspx");
+
+        }
+
+        public void RedirectToCoursesView()
+        {
+
+            Response.Redirect("HostCoursesView.aspx");
+
+        }
+
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;
+
+        public event EventHandler<EventArgs> ViewAppointementsButtonClicked;
+        public event EventHandler<EventArgs> ViewCoursesButtonClicked;
 
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
@@ -148,6 +164,22 @@ namespace CheckPoint.Views
             if (RowSelected != null)
             {
                 RowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnBackToAppointmentsView_Click(object sender, EventArgs e)
+        {
+            if(ViewAppointementsButtonClicked != null)
+            {
+                ViewAppointementsButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnBackToCoursesView_Click(object sender, EventArgs e)
+        {
+            if(ViewCoursesButtonClicked != null)
+            {
+                ViewCoursesButtonClicked(this, EventArgs.Empty);
             }
         }
     }
