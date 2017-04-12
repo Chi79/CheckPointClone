@@ -225,12 +225,17 @@
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker"))
+    beforeShowDay: function (date) {
+    var selected = $(this).datepicker('getDate');
+    return [selected && date.getTime() === selected.getTime(), ''];
+    }
     });
+    $('.picker').find('.ui-datepicker-next').remove();
+    $('.picker').find('.ui-datepicker-prev').remove();
     $(".picker").datepicker("setDate", $(".picker"))
     });
-   
-    
+
+
     var prm = Sys.WebForms.PageRequestManager.getInstance();
     if (prm != null) {
     prm.add_endRequest(function (sender, e) {
@@ -240,7 +245,10 @@
     buttonImage: "/images/calendar2.png",
     buttonImageOnly: true,
     buttonText: "calender",
-    onSelect: $(".picker").datepicker("setDate", $(".picker")),
+    beforeShowDay: function (date) {
+    var selected = $(this).datepicker('getDate');
+    return [selected && date.getTime() === selected.getTime(), ''];
+    }
     });
     }
     });
