@@ -55,7 +55,7 @@ namespace CheckPointPresenters.Presenters
             if (loginAttemptSuccessful)
             {
 
-                _model.StoreLoggedInClientToSession(username);
+                InitializeSession(username);
 
                 _clientType = (ClientType)_model.GetClientType();
 
@@ -85,6 +85,15 @@ namespace CheckPointPresenters.Presenters
 
             }
         } 
+
+        private void InitializeSession(string username)
+        {
+
+            _model.StoreLoggedInClientToSession(username);
+
+            _model.ResetSessionState();
+
+        }
 
     } 
 }

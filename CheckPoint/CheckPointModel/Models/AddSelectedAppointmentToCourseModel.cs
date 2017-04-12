@@ -21,12 +21,20 @@ namespace CheckPointModel.Models
 
         }
 
-        public int GetSessionAppointmentId()
+        public int? GetSessionAppointmentId()
         {
 
             return (int)_sessionService.SessionAppointmentId;
 
         }
+
+        public int? GetSessionCourseId()
+        {
+
+            return (int)_sessionService.SessionCourseId;
+
+        }
+
         public void SetSessionCourseId(int id)
         {
 

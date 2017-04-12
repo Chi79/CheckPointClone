@@ -211,13 +211,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Button btnBackToAppointmentsView;
         
         /// <summary>
-        /// buttonsdiv0 control.
+        /// buttonsdiv1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonsdiv0;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonsdiv1;
         
         /// <summary>
         /// buttonspanel1 control.
@@ -236,5 +236,32 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBackToCoursesView;
+        
+        /// <summary>
+        /// buttonsdiv2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonsdiv2;
+        
+        /// <summary>
+        /// buttonspanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel buttonspanel2;
+        
+        /// <summary>
+        /// btnRemoveSelectedAppointmentFromCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemoveSelectedAppointmentFromCourse;
     }
 }

@@ -12,6 +12,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         string GetLoggedInClient();
 
+        int? GetSessionAppointmentId();
+
         void SetNewAppointmentAddedToCourseStatus();
 
         void ResetNewAppointmentAddedToCourseStatus();
@@ -20,7 +22,9 @@ namespace CheckPointCommon.ModelInterfaces
 
         int? GetSessionCourseId();
 
-        void AddSelectedAppointmentToCourse(object appointment);
+        //void AddSelectedAppointmentToCourse(object appointment);
+
+        void AddSelectedAppointmentToCourse();
 
         int? GetSessionRowIndex();
 

@@ -65,17 +65,17 @@ namespace CheckPointModel.Services
         }
     }
 
-    public class AddExistingAppointmentToCourseJob : JobServiceBase
+    public class ChangeAppointmentCourseIdJob : JobServiceBase
     {
 
         private IHandleAppointments _handler;
-        public AddExistingAppointmentToCourseJob(IHandleAppointments handler)
+        public ChangeAppointmentCourseIdJob(IHandleAppointments handler)
         {
             _handler = handler;
         }
         public override DbAction Jobtype
         {
-            get { return DbAction.AddExistingAppointmentToCourse; }
+            get { return DbAction.ChangeAppointmentCourseId; }
             set { Jobtype = value; }
         }
         public override string ConfirmationMessage

@@ -63,6 +63,12 @@ namespace CheckPointModel.Models
 
         }
 
+        public int? GetSessionAppointmentId()
+        {
+
+            return _sessionService.SessionAppointmentId;
+        }
+
         public void SetNewAppointmentAddedToCourseStatus()
         {
 
@@ -101,13 +107,29 @@ namespace CheckPointModel.Models
 
         }
 
-        public void AddSelectedAppointmentToCourse(object appointment)
+        //public void AddSelectedAppointmentToCourse(object appointment)
+        //{
+
+        //    var selectedAppointment = GetSelectedAppointment() as APPOINTMENT;
+        //    //selectedAppointment.CourseId = GetSessionCourseId();
+
+        //    var job =_factory.CreateAppointmentJobType(DbAction.ChangeAppointmentCourseId) as JobServiceBase;
+        //    job.AppointmentId = (int)_sessionService.SessionAppointmentId;
+        //    job.CourseId = _sessionService.SessionCourseId;
+        //    job.PerformTask(selectedAppointment);
+        //    job.SaveChanges();
+
+        //}
+
+        public void AddSelectedAppointmentToCourse()
         {
 
-            var job =_factory.CreateAppointmentJobType(DbAction.AddExistingAppointmentToCourse) as JobServiceBase;
+            var selectedAppointment = GetSelectedAppointment() as APPOINTMENT;
+
+            var job = _factory.CreateAppointmentJobType(DbAction.ChangeAppointmentCourseId) as JobServiceBase;
             job.AppointmentId = (int)_sessionService.SessionAppointmentId;
             job.CourseId = _sessionService.SessionCourseId;
-            job.PerformTask(appointment);
+            job.PerformTask(selectedAppointment);
             job.SaveChanges();
 
         }

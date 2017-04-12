@@ -17,6 +17,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         int GetClientType();
 
+        void ResetSessionState();
+
         void StoreLoggedInClientToSession(string username);
     }
 }

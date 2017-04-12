@@ -9,16 +9,20 @@ namespace CheckPointCommon.ViewInterfaces
     public interface IManageCourseView
     {
         bool AppointmentAddedMessageVisible { set; }
+        bool RemoveSelectedAppointmentButtonVisible { set; }
         string Message { set; }
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }
 
 
         void BindData();
-        void RedirectToCourseSelectorView();
 
+        void RedirectToCourseSelectorView();
         void RedirectToAppointmentsView();
         void RedirectToCoursesView();
+    
+        void ReloadPageAfterEditing();
+
 
         IEnumerable<object> SetDataSourceAppointmentHeader { set; }
         IEnumerable<object> SetDataSourceAppointmentData { set; }
@@ -29,8 +33,9 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         event EventHandler<EventArgs> RowSelected;
-
         event EventHandler<EventArgs> ViewAppointementsButtonClicked;
         event EventHandler<EventArgs> ViewCoursesButtonClicked;
+
+        event EventHandler<EventArgs> RemoveSelectedAppointmentButtonClicked;
     }
 }
