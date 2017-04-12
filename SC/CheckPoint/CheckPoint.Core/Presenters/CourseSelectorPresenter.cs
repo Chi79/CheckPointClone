@@ -65,25 +65,6 @@ namespace CheckPointPresenters.Presenters
         private void AddAppointmentToSelectedCourse()
         {
 
-            //bool AppointmentIsSelected = CheckAppointmentIsSelected();
-
-            //if(AppointmentIsSelected)
-            //{
-
-            //    _model.AddSelectedAppointmentToCourse();
-
-            //    _model.SetNewAppointmentAddedToCourseStatus();
-
-            //    _view.RedirectToManageCourseView();
-
-            //}
-            //else
-            //{
-
-            //    _view.Message = "no appointment has been selected - please return to the appointments page and select an appointment";
-
-            //}
-
             _model.AddSelectedAppointmentToCourse();
 
             _model.SetNewAppointmentAddedToCourseStatus();
@@ -159,8 +140,6 @@ namespace CheckPointPresenters.Presenters
 
                 ShowData();
 
-                _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
-
             }
             else
             {
@@ -207,8 +186,6 @@ namespace CheckPointPresenters.Presenters
             SaveRowIndexToSession();
 
             GetSelectedCourseIdFromGrid();
-
-            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
 
         }
 

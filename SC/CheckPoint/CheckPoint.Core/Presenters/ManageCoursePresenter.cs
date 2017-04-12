@@ -50,19 +50,7 @@ namespace CheckPointPresenters.Presenters
         private void OnRemoveSelectedAppointmentButtonClicked(object sender, EventArgs e)
         {
 
-            bool CourseSelected = CheckIsCourseSelected();  
-            if(CourseSelected)
-            {
-
-                RemoveSelectedAppointement();
-
-            }
-            else
-            {
-
-                _view.Message = "No course has been selected! - please return to the course page and select a course.";
-
-            }
+            RemoveSelectedAppointement();
 
         }
 
@@ -110,13 +98,10 @@ namespace CheckPointPresenters.Presenters
                 
                 ResetSessionAppointmentId();
 
-                _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
-
             }
             else
             {
 
-                //_view.RedirectToCoursesView();
                 _view.RedirectToAppointmentsView();
 
             }
@@ -235,7 +220,6 @@ namespace CheckPointPresenters.Presenters
 
             GetSelectedAppointmentIdFromGrid();
 
-            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
 
         }
 
