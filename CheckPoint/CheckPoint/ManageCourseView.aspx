@@ -92,7 +92,7 @@
       z-index:5;
       position:absolute;
       left:59%;
-      animation:slideup 4s;
+      animation:slideup 3s;
       top:94%;
 }
 @keyframes slideup {
