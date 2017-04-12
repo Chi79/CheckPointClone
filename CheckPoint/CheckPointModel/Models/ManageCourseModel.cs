@@ -66,6 +66,20 @@ namespace CheckPointModel.Models
             _sessionService.NewAppointmentAddedToCourseStatus = false;
 
         }
+       
+        public bool GetAppointmentDeletedFromCourseStatus()
+        {
+
+            return (bool)_sessionService.AppointmentDeletedFromCourseStatus;
+
+        }
+
+        public void ResetAppointmentDeltedFromCourseStatus()
+        {
+
+            _sessionService.AppointmentDeletedFromCourseStatus = false;
+
+        }
 
         public int? GetSessionAppointmentId()
         {
@@ -137,6 +151,8 @@ namespace CheckPointModel.Models
             job.CourseId = null;
             job.PerformTask(selectedAppointment);
             job.SaveChanges();
+
+            _sessionService.AppointmentDeletedFromCourseStatus = true;
 
         }
 

@@ -172,6 +172,8 @@ namespace CheckPointPresenters.Presenters
 
             CheckIfNewAppointmentAdded();
 
+            CheckIfAppointmentDeleted();
+
             ShowSelectedCourse();
 
             ShowAppointmentData();
@@ -206,9 +208,26 @@ namespace CheckPointPresenters.Presenters
             bool newAppointmentAdded = _model.GetNewAppointmentAddedToCourseStatus();
             if(newAppointmentAdded)
             {
+
                 _view.AppointmentAddedMessageVisible = true;
 
                 _model.ResetNewAppointmentAddedToCourseStatus();
+
+            }
+
+        }
+
+        private void CheckIfAppointmentDeleted()
+        {
+
+            bool appointmentDeleted = _model.GetAppointmentDeletedFromCourseStatus();
+            if(appointmentDeleted)
+            {
+
+                _view.AppointmentDeletedMessageVisible = true;
+
+                _model.ResetAppointmentDeltedFromCourseStatus();
+
             }
 
         }

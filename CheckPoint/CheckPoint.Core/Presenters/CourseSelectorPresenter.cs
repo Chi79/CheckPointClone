@@ -67,8 +67,6 @@ namespace CheckPointPresenters.Presenters
 
             _model.AddSelectedAppointmentToCourse();
 
-            _model.SetNewAppointmentAddedToCourseStatus();
-
             _view.RedirectToManageCourseView();
 
         }

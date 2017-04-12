@@ -69,7 +69,6 @@ namespace CheckPointPresenters.Presenters
 
             DisplayDesicionButtons();
 
-            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
 
         }
 
