@@ -127,6 +127,7 @@
     <Content Include="Images\alterprofile2.png" />
     <Content Include="Images\AppointmentAddedMessage.svg" />
     <Content Include="Images\AppointmentAddedMessage1.svg" />
+    <Content Include="Images\AppointmentDeletedMessage.svg" />
     <Content Include="Images\AppointmentHeading.svg" />
     <Content Include="Images\buttonshade1.png" />
     <Content Include="Images\calendar2.png" />

@@ -65,6 +65,8 @@ namespace CheckPointModel.Models
 
             _sessionService.SessionAppointmentId = -1;
             _sessionService.SessionCourseId = -1;
+            _sessionService.AppointmentDeletedFromCourseStatus = false;
+            _sessionService.NewAppointmentAddedToCourseStatus = false;
 
         }
     }

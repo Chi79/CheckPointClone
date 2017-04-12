@@ -19,6 +19,10 @@ namespace CheckPointCommon.ModelInterfaces
 
         void ResetNewAppointmentAddedToCourseStatus();
 
+        bool GetAppointmentDeletedFromCourseStatus();
+
+        void ResetAppointmentDeltedFromCourseStatus();
+
         void SetSessionAppointmentId(int id);
 
         void ResetSessionAppointmentId();

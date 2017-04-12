@@ -43,6 +43,24 @@ namespace CheckPointHTTPServices.Cache
             }
             set { HttpContext.Current.Session["AddingAppointmentToCourseStatus"] = value; }
         }
+
+        public bool? AppointmentDeletedFromCourseStatus
+        {
+            get
+            {
+                var AppointmentDeletedStatus = HttpContext.Current.Session["DeletedAppointmentFromCourseStatus"];
+                if (AppointmentDeletedStatus != null)
+                {
+                    return (bool)AppointmentDeletedStatus;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { HttpContext.Current.Session["DeletedAppointmentFromCourseStatus"] = value; }
+        }
+
         public int? SessionAppointmentId
         {
             get

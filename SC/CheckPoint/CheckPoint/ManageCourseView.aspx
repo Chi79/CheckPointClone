@@ -190,9 +190,12 @@ runat="server">
 
 
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+
 <div id="courseManagerHeading" class="coursesmanageslide" style="z-index:5"><img src="Images/CourseManagerHeading.svg" /></div>
+
 <asp:Image ID="appointmentAddedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentAddedMessage1.svg"  />
 
+<asp:Image ID="appointmentDeletedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentDeletedMessage.svg"  />
 
 <asp:Panel
 ID="Panel2"

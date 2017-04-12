@@ -43,6 +43,13 @@ namespace CheckPoint.Views
 
         }
 
+        public bool AppointmentDeletedMessageVisible
+        {
+
+            set { appointmentDeletedMessage.Visible = value; }
+
+        }
+
         public bool RemoveSelectedAppointmentButtonVisible
         {
 
