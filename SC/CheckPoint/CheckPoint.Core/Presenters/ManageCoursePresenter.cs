@@ -43,6 +43,50 @@ namespace CheckPointPresenters.Presenters
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
             _view.ViewAppointementsButtonClicked += OnViewAppointementsButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
+            _view.RemoveSelectedAppointmentButtonClicked += OnRemoveSelectedAppointmentButtonClicked;
+
+        }
+
+        private void OnRemoveSelectedAppointmentButtonClicked(object sender, EventArgs e)
+        {
+
+            bool CourseSelected = CheckIsCourseSelected();  
+            if(CourseSelected)
+            {
+
+                RemoveSelectedAppointement();
+
+            }
+            else
+            {
+
+                _view.Message = "No course has been selected! - please return to the course page and select a course.";
+
+            }
+
+        }
+
+        private void RemoveSelectedAppointement()
+        {
+
+            bool AppointmentSelected = CheckIsAppointmentSelected();
+
+            if (AppointmentSelected)
+            {
+
+                _model.RemoveSelectedAppointmentFromCourse();
+
+                ResetSessionState();
+
+                _view.ReloadPageAfterEditing();
+
+            }
+            else
+            {
+
+                _view.Message = "No appointment has been selected";
+
+            }
 
         }
 
@@ -63,12 +107,17 @@ namespace CheckPointPresenters.Presenters
                 ShowData();
 
                 ResetSessionRowIndex();
+                
+                ResetSessionAppointmentId();
+
+                _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
 
             }
             else
             {
 
-                _view.RedirectToCoursesView();
+                //_view.RedirectToCoursesView();
+                _view.RedirectToAppointmentsView();
 
             }
 
@@ -93,10 +142,43 @@ namespace CheckPointPresenters.Presenters
             }
         }
 
+        private bool CheckIsAppointmentSelected()
+        {
+
+            int noAppointmentSelected = -1;
+
+            if (_model.GetSessionAppointmentId() == noAppointmentSelected)
+            {
+
+                return false;
+
+            }
+            else
+            {
+
+                return true;
+
+            }
+        }
+
         private void ResetSessionRowIndex()
         {
 
             _model.ResetSessionRowIndex();
+
+        }
+
+        private void ResetSessionAppointmentId()
+        {
+
+            _model.ResetSessionAppointmentId();
+
+        }
+
+        private void ResetSessionState()
+        {
+
+            _model.ResetSessionState();
 
         }
 
@@ -140,6 +222,8 @@ namespace CheckPointPresenters.Presenters
             if(newAppointmentAdded)
             {
                 _view.AppointmentAddedMessageVisible = true;
+
+                _model.ResetNewAppointmentAddedToCourseStatus();
             }
 
         }
@@ -150,6 +234,8 @@ namespace CheckPointPresenters.Presenters
             SaveRowIndexToSession();
 
             GetSelectedAppointmentIdFromGrid();
+
+            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
 
         }
 

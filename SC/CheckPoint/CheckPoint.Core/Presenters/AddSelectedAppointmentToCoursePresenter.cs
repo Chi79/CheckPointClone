@@ -27,14 +27,8 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
 
-            DisplaySelectedAppointmentData();
+            CheckIsAppointmentSelected();
 
-            SetFieldsToReadOnly();
-
-            ConfirmAction();
-
-            DisplayDesicionButtons();
-   
         }
 
         public override void Load()
@@ -44,7 +38,43 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        public void WireUpEvents()
+        private void CheckIsAppointmentSelected()
+        {
+
+            int noAppointmentSelected = -1;
+
+            if(_model.GetSessionAppointmentId() == noAppointmentSelected)
+            {
+
+                _view.RedirectBackToHostHomeView();
+
+            }
+            else
+            {
+
+                ConfrimAction();
+
+            }
+
+        }
+
+        private void ConfrimAction()
+        {
+
+            DisplaySelectedAppointmentData();
+
+            SetFieldsToReadOnly();
+
+            ConfirmAction();
+
+            DisplayDesicionButtons();
+
+            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
+
+        }
+
+
+        private void WireUpEvents()
         {
 
             _view.YesButtonClicked += OnYesButtonClicked;

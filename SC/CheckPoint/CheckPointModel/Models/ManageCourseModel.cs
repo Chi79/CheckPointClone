@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.ServiceInterfaces;
+using CheckPointCommon.FactoryInterfaces;
+using CheckPointCommon.Enums;
+using CheckPointModel.Services;
 
 namespace CheckPointModel.Models
 {
@@ -15,17 +18,18 @@ namespace CheckPointModel.Models
         private ISessionService _sessionService;
         private IShowAppointments _appointmentDisplayService;
         private IShowCourses _coursesDisplayService;
+        private IFactory _factory;
 
 
         public ManageCourseModel(ISessionService sessionService, IShowAppointments appointmentDisplayService,
-                                 IShowCourses coursesDisplayService)
+                                 IShowCourses coursesDisplayService, IFactory factory)
 
         {
 
             _sessionService = sessionService;
             _appointmentDisplayService = appointmentDisplayService;
             _coursesDisplayService = coursesDisplayService;
-
+            _factory = factory;
         }
 
         public int? GetSessionRowIndex()
@@ -58,19 +62,29 @@ namespace CheckPointModel.Models
 
         public void ResetNewAppointmentAddedToCourseStatus()
         {
+
             _sessionService.NewAppointmentAddedToCourseStatus = false;
+
         }
 
         public int? GetSessionAppointmentId()
         {
 
             return _sessionService.SessionAppointmentId;
+
         }
 
         public void SetSessionAppointmentId(int id)
         {
 
             _sessionService.SessionAppointmentId = id;
+
+        }
+
+        public void ResetSessionAppointmentId()
+        {
+
+            _sessionService.SessionAppointmentId = -1;
 
         }
 
@@ -109,6 +123,20 @@ namespace CheckPointModel.Models
         {
 
             return _sessionService.LoggedInClient;
+
+        }
+
+        public void RemoveSelectedAppointmentFromCourse()
+        {
+
+            var selectedAppointment = _appointmentDisplayService.GetSelectedAppointmentByAppointmentId(GetSessionAppointmentId()) as APPOINTMENT;
+            selectedAppointment.CourseId = null;
+
+            var job = _factory.CreateAppointmentJobType(DbAction.ChangeAppointmentCourseId) as JobServiceBase;
+            job.AppointmentId = (int)_sessionService.SessionAppointmentId;
+            job.CourseId = null;
+            job.PerformTask(selectedAppointment);
+            job.SaveChanges();
 
         }
 

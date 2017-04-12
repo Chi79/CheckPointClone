@@ -43,6 +43,13 @@ namespace CheckPoint.Views
 
         }
 
+        public bool RemoveSelectedAppointmentButtonVisible
+        {
+
+            set { btnRemoveSelectedAppointmentFromCourse.Visible = value; }
+
+        }
+
         public IEnumerable<object> SetDataSource
         {
 
@@ -119,12 +126,20 @@ namespace CheckPoint.Views
 
         }
 
+        public void ReloadPageAfterEditing()
+        {
+
+            Response.Redirect("ManageCourseView.aspx");
+
+        }
+
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> RowSelected;
-
         public event EventHandler<EventArgs> ViewAppointementsButtonClicked;
         public event EventHandler<EventArgs> ViewCoursesButtonClicked;
+
+        public event EventHandler<EventArgs> RemoveSelectedAppointmentButtonClicked;
 
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
@@ -180,6 +195,14 @@ namespace CheckPoint.Views
             if(ViewCoursesButtonClicked != null)
             {
                 ViewCoursesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnRemoveSelectedAppointmentFromCourse_Click(object sender, EventArgs e)
+        {
+            if(RemoveSelectedAppointmentButtonClicked != null)
+            {
+                RemoveSelectedAppointmentButtonClicked(this, EventArgs.Empty);
             }
         }
     }

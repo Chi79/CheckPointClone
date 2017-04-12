@@ -319,7 +319,7 @@ runat="server">
 </div>
 
 
-<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
+<div id="buttonsdiv1" runat="server" style="z-index:5;" class="buttons1">
 <asp:UpdatePanel ID="buttonspanel1" runat="server" > 
 <ContentTemplate>
 <asp:Button ID="btnBackToCoursesView" 
@@ -333,6 +333,20 @@ runat="server">
 </asp:UpdatePanel>
 </div>
 
+
+<div id="buttonsdiv2" runat="server" style="z-index:5;" class="buttons1">
+<asp:UpdatePanel ID="buttonspanel2" runat="server" > 
+<ContentTemplate>
+<asp:Button ID="btnRemoveSelectedAppointmentFromCourse" 
+    CssClass="navButtons" 
+    runat="server" 
+    OnClick="btnRemoveSelectedAppointmentFromCourse_Click" 
+    Text="Remove the Selected Appointment"  
+    Visible="true"
+    ForeColor="White" />
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
 
 <%--<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
 <asp:UpdatePanel ID="buttonspanel" runat="server" > 

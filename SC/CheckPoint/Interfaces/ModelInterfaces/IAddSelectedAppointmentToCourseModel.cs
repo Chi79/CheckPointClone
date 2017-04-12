@@ -8,7 +8,9 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface IAddSelectedAppointmentToCourseModel
     {
-        int GetSessionAppointmentId();
+        int? GetSessionAppointmentId();
+
+        int? GetSessionCourseId();
 
         void SetSessionCourseId(int id);
 

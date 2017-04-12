@@ -21,6 +21,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void SetSessionAppointmentId(int id);
 
+        void ResetSessionAppointmentId();
+
         int? GetSessionAppointmentId();
 
         void SetSessionCourseId(int id);
@@ -32,6 +34,8 @@ namespace CheckPointCommon.ModelInterfaces
         string GetColumnName();
 
         string GetLoggedInClient();
+
+        void RemoveSelectedAppointmentFromCourse();
 
         IEnumerable<object> GetAllAppointmentsForClient();
 
@@ -51,7 +55,7 @@ namespace CheckPointCommon.ModelInterfaces
 
         IEnumerable<object> GetAppointmentsInCourseSortedByPropertyDesc();
 
-         IEnumerable<object> GetSelectedCourse();
+        IEnumerable<object> GetSelectedCourse();
 
     }
 }

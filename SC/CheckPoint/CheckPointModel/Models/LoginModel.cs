@@ -59,5 +59,13 @@ namespace CheckPointModel.Models
             _sessionService.LoggedInClient = username;
 
         }
+
+        public void ResetSessionState()
+        {
+
+            _sessionService.SessionAppointmentId = -1;
+            _sessionService.SessionCourseId = -1;
+
+        }
     }
 }

@@ -52,6 +52,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public int? GetSessionCourseId()
+        {
+
+            return _sessionService.SessionCourseId;
+
+        }
+
         public void ResetSessionState()
         {
 

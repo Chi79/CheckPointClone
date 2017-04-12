@@ -66,7 +66,7 @@ namespace CheckPointModel.Models
         public void PrepareAddExistingAppointmentToCourseJob()
         {
 
-            _job = _factory.CreateAppointmentJobType(DbAction.AddExistingAppointmentToCourse) as JobServiceBase;
+            _job = _factory.CreateAppointmentJobType(DbAction.ChangeAppointmentCourseId) as JobServiceBase;
             SetInitialSessionJobState();
 
         }

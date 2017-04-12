@@ -122,6 +122,8 @@ namespace CheckPointPresenters.Presenters
 
             ShowData();
 
+            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
+
         }
 
         private void ShowData()
@@ -174,6 +176,8 @@ namespace CheckPointPresenters.Presenters
             SaveRowIndexToSession();
 
             GetSelectedAppointmentIdFromGrid();
+
+            _view.Message = "AppointmentID is:  " + _model.GetSessionAppointmentId().ToString() + "  and CourseID is:  " + _model.GetSessionCourseId();
 
         }
 
