@@ -106,6 +106,52 @@
 {
     display:none;
 }
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+    border-radius: 14px;
+}
+.ui-datepicker .ui-widget{
+    border-radius:10px;
+}
+.ui-datepicker .ui-datepicker-header {
+    position: relative;
+    padding: .2em 0;
+    /*background-color: #10591B;*/
+    background-image:url(/Images/buttonshade1.png);
+    border-radius: 9px;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid #32E236;
+    background: #32E236;
+    font-weight: normal;
+    color: #ffffff;
+    -webkit-animation:flashingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+.navButtons{
+    border-radius: 5px;
+    border-width:0px;
+    border-color:darkgreen;
+    padding-bottom: 1%;
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-image:url(/Images/buttonshade1.png);
+}
+.navButtons:hover{
+    border-radius:0px;
+    -webkit-animation:flashingbutton;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+}
+@-webkit-keyframes flashingbutton{
+    from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
+}
+
 
 
 
@@ -216,7 +262,7 @@
     <div id="slidebuttons1" class="buttonslider">
 
     <div id="Div1" runat="server" style="z-index:5;" class="buttons0">
-    <asp:UpdatePanel ID="UpdatePanel3" runat="server" > 
+    <asp:UpdatePanel ID="buttonspanel0" runat="server" > 
     <ContentTemplate>
     <asp:Button ID="btnViewCourses" 
         CssClass="navButtons" 
