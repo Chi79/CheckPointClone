@@ -196,33 +196,6 @@ ID="lblIndex"
 runat="server">
 </asp:Label>
                         
-                      
-<script type="text/javascript">
- 
-$(function () {
-$(".picker").datepicker({
-showOn: "button",
-buttonImage: "/images/calendar2.png",
-buttonImageOnly: true,
-buttonText: "calender"
-});
-$(".picker").datepicker("setDate", $(".picker"))
-});
-
-var prm = Sys.WebForms.PageRequestManager.getInstance();
-if (prm != null) {
-prm.add_endRequest(function (sender, e) {
-if (sender._postBackSettings.panelsToUpdate != null) {
-$(".picker").datepicker({
-showOn: "button",
-buttonImage: "/images/calendar2.png",
-buttonImageOnly: true,
-buttonText: "calender"
-});
-}
-});
-};
-</script>
 
 
 <uc1:CourseGridView runat="server" id="CourseGridView" />
