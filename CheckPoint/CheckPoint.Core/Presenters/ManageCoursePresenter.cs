@@ -44,6 +44,27 @@ namespace CheckPointPresenters.Presenters
             _view.ViewAppointementsButtonClicked += OnViewAppointementsButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
             _view.RemoveSelectedAppointmentButtonClicked += OnRemoveSelectedAppointmentButtonClicked;
+            _view.MoveSelectedAppointmentToAnotherCourseButtonClicked += OnMoveSelectedAppointmentToAnotherCourseButtonClicked;
+
+        }
+
+        private void OnMoveSelectedAppointmentToAnotherCourseButtonClicked(object sender, EventArgs e)
+        {
+
+            bool AppointmentSelected = CheckIsAppointmentSelected();
+
+            if (AppointmentSelected)
+            {
+
+                _view.RedirectToCourseSelectorView();
+
+            }
+            else
+            {
+
+                _view.Message = "No appointment has been selected";
+
+            }       
 
         }
 

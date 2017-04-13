@@ -272,5 +272,32 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRemoveSelectedAppointmentFromCourse;
+        
+        /// <summary>
+        /// buttonsdiv3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonsdiv3;
+        
+        /// <summary>
+        /// buttonspanel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel buttonspanel3;
+        
+        /// <summary>
+        /// btnMoveSelectedAppointmentToAnotherCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMoveSelectedAppointmentToAnotherCourse;
     }
 }

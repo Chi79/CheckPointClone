@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="502"
-   height="43"
-   viewBox="0 0 132.82038 11.377089"
+   height="34"
+   viewBox="0 0 132.82038 8.995839"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
@@ -54,7 +54,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-285.62284)">
+     transform="translate(0,-288.00406)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot5036"
@@ -70,12 +70,12 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none"
        x="0.98498273"
-       y="294.65805"
+       y="295.18723"
        id="text5046"><tspan
          sodipodi:role="line"
          id="tspan5044"
          x="0.98498273"
-         y="294.65805"
+         y="295.18723"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667099px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Appointment was removed!</tspan></text>
   </g>
 </svg>

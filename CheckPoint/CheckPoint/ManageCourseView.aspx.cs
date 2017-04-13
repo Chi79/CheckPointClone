@@ -147,6 +147,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> ViewCoursesButtonClicked;
 
         public event EventHandler<EventArgs> RemoveSelectedAppointmentButtonClicked;
+        public event EventHandler<EventArgs> MoveSelectedAppointmentToAnotherCourseButtonClicked;
 
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
@@ -210,6 +211,14 @@ namespace CheckPoint.Views
             if(RemoveSelectedAppointmentButtonClicked != null)
             {
                 RemoveSelectedAppointmentButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnMoveSelectedAppointmentToAnotherCourse_Click(object sender, EventArgs e)
+        {
+            if(MoveSelectedAppointmentToAnotherCourseButtonClicked != null)
+            {
+                MoveSelectedAppointmentToAnotherCourseButtonClicked(this, EventArgs.Empty);
             }
         }
     }
