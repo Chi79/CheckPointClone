@@ -91,13 +91,13 @@
 .appointmentaddedslide{
       z-index:5;
       position:absolute;
-      left:59%;
+      left:61%;
       animation:slideup 3s;
-      top:94%;
+      top:101%;
 }
 @keyframes slideup {
       from { top: 150%; }
-      to { top: 94%; }
+      to { top: 101%; }
 }
 
 .buttons0{
@@ -350,6 +350,21 @@ runat="server">
 </ContentTemplate>
 </asp:UpdatePanel>
 </div>
+
+<div id="buttonsdiv3" runat="server" style="z-index:5;" class="buttons1">
+<asp:UpdatePanel ID="buttonspanel3" runat="server" > 
+<ContentTemplate>
+<asp:Button ID="btnMoveSelectedAppointmentToAnotherCourse" 
+    CssClass="navButtons" 
+    runat="server" 
+    OnClick="btnMoveSelectedAppointmentToAnotherCourse_Click" 
+    Text="Move the Selected Appointment to Another Course"  
+    Visible="True" 
+    ForeColor="White" />
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
+
 
 <%--<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
 <asp:UpdatePanel ID="buttonspanel" runat="server" > 

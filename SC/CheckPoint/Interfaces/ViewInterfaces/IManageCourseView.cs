@@ -38,5 +38,6 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> ViewCoursesButtonClicked;
 
         event EventHandler<EventArgs> RemoveSelectedAppointmentButtonClicked;
+        event EventHandler<EventArgs> MoveSelectedAppointmentToAnotherCourseButtonClicked;
     }
 }
