@@ -55,6 +55,7 @@
     <Compile Include="Enums\DbAction.cs" />
     <Compile Include="FactoryInterfaces\IFactory.cs" />
     <Compile Include="ModelInterfaces\IAddSelectedAppointmentToCourseModel.cs" />
+    <Compile Include="ModelInterfaces\IAppointmentSelectorModel.cs" />
     <Compile Include="ModelInterfaces\ICourseSelectorModel.cs" />
     <Compile Include="ModelInterfaces\ICreateAppointmentModel.cs" />
     <Compile Include="ModelInterfaces\ICreateCourseModel.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="ValidationInterfaces\IAttendeeValidator.cs" />
     <Compile Include="ValidationInterfaces\ICourseValidator.cs" />
     <Compile Include="ViewInterfaces\IAddSelectedAppointmentToCourseView.cs" />
+    <Compile Include="ViewInterfaces\IAppointmentSelectorView.cs" />
     <Compile Include="ViewInterfaces\ICourseSelectorView.cs" />
     <Compile Include="ViewInterfaces\ICreateAppointmentView.cs" />
     <Compile Include="ViewInterfaces\ICreateCourseView.cs" />

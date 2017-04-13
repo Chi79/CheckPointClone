@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Framework\IOC.cs" />
     <Compile Include="Presenters\AddSelectedAppointmentToCoursePresenter.cs" />
+    <Compile Include="Presenters\AppointmentSelectorPresenter.cs" />
     <Compile Include="Presenters\CourseSelectorPresenter.cs" />
     <Compile Include="Presenters\CreateAppointmentPresenter.cs" />
     <Compile Include="Presenters\CreateCoursePresenter.cs" />

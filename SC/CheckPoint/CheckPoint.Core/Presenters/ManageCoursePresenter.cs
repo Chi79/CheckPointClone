@@ -52,6 +52,8 @@ namespace CheckPointPresenters.Presenters
         private void OnAddAnotherAppointmentToThisCourseButtonClicked(object sender, EventArgs e)
         {
 
+            _model.SetValidNavigationStatus();
+
             _view.RedirectToAppointmentSelectorView();
 
         }
@@ -123,9 +125,7 @@ namespace CheckPointPresenters.Presenters
 
                 ShowData();
 
-                ResetSessionRowIndex();
-                
-                ResetSessionAppointmentId();
+                InitializeState();
 
             }
             else
@@ -175,6 +175,17 @@ namespace CheckPointPresenters.Presenters
             }
         }
 
+        private void InitializeState()
+        {
+
+            ResetSessionRowIndex();
+
+            ResetSessionAppointmentId();
+
+            ResetValidNavigationStatus();
+
+        }
+
         private void ResetSessionRowIndex()
         {
 
@@ -193,6 +204,20 @@ namespace CheckPointPresenters.Presenters
         {
 
             _model.ResetSessionState();
+
+        }
+
+        private void SetValidNavigationStatus()
+        {
+
+            _model.SetValidNavigationStatus();
+
+        }
+
+        private void ResetValidNavigationStatus()
+        {
+
+            _model.ResetValidNavigationStatus();
 
         }
 

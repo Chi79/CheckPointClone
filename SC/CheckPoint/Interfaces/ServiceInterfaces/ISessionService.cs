@@ -18,5 +18,6 @@ namespace CheckPointCommon.ServiceInterfaces
         int? JobType { get; set; }
         string SessionAppointmentName { get; set; }
         string SessionCourseName { get; set; }
+        bool? NavigationIsValid { get; set; }
     }
 }

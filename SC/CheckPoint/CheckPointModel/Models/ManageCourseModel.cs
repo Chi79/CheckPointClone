@@ -60,6 +60,19 @@ namespace CheckPointModel.Models
 
         }
 
+        public void SetValidNavigationStatus()
+        {
+
+            _sessionService.NavigationIsValid = true;
+
+        }
+
+        public void ResetValidNavigationStatus()
+        {
+
+            _sessionService.NavigationIsValid = false;
+        }
+
         public void ResetNewAppointmentAddedToCourseStatus()
         {
 
