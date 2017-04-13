@@ -17,6 +17,10 @@ namespace CheckPointCommon.ModelInterfaces
 
         bool GetNewAppointmentAddedToCourseStatus();
 
+        void SetValidNavigationStatus();
+
+        void ResetValidNavigationStatus();
+
         void ResetNewAppointmentAddedToCourseStatus();
 
         bool GetAppointmentDeletedFromCourseStatus();

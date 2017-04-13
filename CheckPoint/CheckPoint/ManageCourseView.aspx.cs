@@ -122,7 +122,7 @@ namespace CheckPoint.Views
         public void RedirectToAppointmentSelectorView()
         {
 
-
+            Response.Redirect("AppointmentSelectorView.aspx");
 
         }
 

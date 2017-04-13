@@ -176,6 +176,24 @@ namespace CheckPointHTTPServices.Cache
             }
             set { HttpContext.Current.Session["courseName"] = value; }
         }
+
+        public bool? NavigationIsValid
+        {
+            get
+            {
+                var sessionNavigation = HttpContext.Current.Session["navigationIsValid"];
+                if (sessionNavigation != null)
+                {
+                    return (bool)sessionNavigation;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            set { HttpContext.Current.Session["navigationIsValid"] = value; }
+        }
     }
 
 }
