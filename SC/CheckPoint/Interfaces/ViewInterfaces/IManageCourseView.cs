@@ -19,10 +19,13 @@ namespace CheckPointCommon.ViewInterfaces
         void BindData();
 
         void RedirectToCourseSelectorView();
+        void RedirectToAppointmentSelectorView();
         void RedirectToAppointmentsView();
         void RedirectToCoursesView();
+        
     
         void ReloadPageAfterEditing();
+
 
 
         IEnumerable<object> SetDataSourceAppointmentHeader { set; }
@@ -39,5 +42,6 @@ namespace CheckPointCommon.ViewInterfaces
 
         event EventHandler<EventArgs> RemoveSelectedAppointmentButtonClicked;
         event EventHandler<EventArgs> MoveSelectedAppointmentToAnotherCourseButtonClicked;
+        event EventHandler<EventArgs> AddAnotherAppointmentToThisCourseButtonClicked;
     }
 }

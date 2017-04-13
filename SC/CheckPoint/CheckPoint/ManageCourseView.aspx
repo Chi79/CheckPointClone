@@ -366,6 +366,21 @@ runat="server">
 </div>
 
 
+<div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons1">
+<asp:UpdatePanel ID="buttonspanel4" runat="server" > 
+<ContentTemplate>
+<asp:Button ID="btnAddAnotherAppointmentToThisCourse" 
+    CssClass="navButtons" 
+    runat="server" 
+    OnClick="btnAddAnotherAppointmentToThisCourse_Click" 
+    Text="Add Another Appointment to this Course"  
+    Visible="True" 
+    ForeColor="White" />
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
+
+
 <%--<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
 <asp:UpdatePanel ID="buttonspanel" runat="server" > 
 <ContentTemplate>
