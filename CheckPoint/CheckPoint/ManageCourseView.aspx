@@ -81,7 +81,6 @@
       top: -7%;
       left: 2%;
       animation:slidedown 4s;
-      top:-7%;
 }
 @keyframes slidedown {
       from { top: -100%; }
@@ -92,8 +91,9 @@
       z-index:5;
       position:absolute;
       left:61%;
-      animation:slideup 3s;
       top:101%;
+      animation:slideup 3s;
+  
 }
 @keyframes slideup {
       from { top: 150%; }
