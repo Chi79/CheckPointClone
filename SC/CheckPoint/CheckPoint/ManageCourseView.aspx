@@ -91,13 +91,13 @@
       z-index:5;
       position:absolute;
       left:61%;
-      top:101%;
+      top:93%;
       animation:slideup 3s;
   
 }
 @keyframes slideup {
       from { top: 150%; }
-      to { top: 101%; }
+      to { top: 93%; }
 }
 
 .buttons0{
