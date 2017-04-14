@@ -19,7 +19,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool CreateCourseButtonVisible { set; }
-        bool BackToCoursesPageButtonVisible { set; }
+      
 
 
         void RedirectToCoursesPage();
@@ -27,7 +27,7 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> CreateNewCourse;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-        event EventHandler<EventArgs> BackToCoursesPageClicked;
+
 
     }
 }

@@ -56,10 +56,7 @@
 
         </div>
 
-          <div class="list-item">
-              <asp:Button CssClass="button" ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
-              </div>
-
+ 
     
  
 </asp:Content>
