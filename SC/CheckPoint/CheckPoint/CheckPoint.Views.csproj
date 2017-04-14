@@ -156,6 +156,7 @@
     <Content Include="Images\manageattendancebutton1.png" />
     <Content Include="Images\managecoursebutton.png" />
     <Content Include="Images\managecoursesbutton1.png" />
+    <Content Include="Images\MyCoursesIcon.png" />
     <Content Include="Images\SelectAppointmentHeading.svg" />
     <Content Include="Images\SelectCourseHeading.svg" />
     <Content Include="Images\small_logo.png" />
