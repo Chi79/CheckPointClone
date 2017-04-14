@@ -31,11 +31,13 @@
 <style type="text/css">
 
 #create_course_buttons{
-    position:fixed;
+   position:absolute;
     top:40%;
     left:15%;
 }
 .button{
+
+    
     border-radius:6px;
     border:outset gray 2px;
     padding:3px;
