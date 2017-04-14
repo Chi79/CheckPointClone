@@ -32,10 +32,10 @@
     float:left;
 }
 .message{
-    margin-top:5px;
+    margin-top:3%;
     width:25%;
-    border:dotted rgb(0, 255, 33) 2px;
-    border-radius:6px;
+    color:rgb(0, 255, 33)  ;
+
 }
 </style>
 
@@ -89,8 +89,6 @@
         <li class="list-item">
             
                   <asp:Label ID="lblMessage" CssClass="message" runat="server"></asp:Label>
-            
-          
 
         </li>
 
