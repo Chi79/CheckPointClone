@@ -197,6 +197,8 @@ runat="server">
 
 <asp:Image ID="appointmentDeletedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentDeletedMessage.svg"  />
 
+<asp:Image ID="courseUpdatedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/CourseUpdatedMessage.svg"  />
+
 <asp:Panel
 ID="Panel2"
 runat="server" 

@@ -10,7 +10,8 @@ namespace CheckPointCommon.ViewInterfaces
     {
         bool AppointmentAddedMessageVisible { set; }
         bool AppointmentDeletedMessageVisible { set; }
-        bool RemoveSelectedAppointmentButtonVisible { set; }
+        bool CourseUpdatedMessageVisible { set; }
+        bool RemoveSelectedAppointmentButtonVisible { set; }   
         string Message { set; }
         IEnumerable<object> SetDataSource { set; }
         IEnumerable<object> SetDataSource2 { set; }

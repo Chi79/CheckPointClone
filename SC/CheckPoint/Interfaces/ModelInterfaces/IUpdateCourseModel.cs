@@ -17,6 +17,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void SetInitialSessionJobState();
 
+        void SetUpdateCourseStatus();
+
         string GetJobConfirmationMessage();
 
         object ConvertToCourse(object _dTO);

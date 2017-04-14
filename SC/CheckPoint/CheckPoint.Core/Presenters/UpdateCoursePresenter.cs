@@ -163,6 +163,8 @@ namespace CheckPointPresenters.Presenters
 
                 RefreshCourseCache();
 
+                SetCourseUpdatedStatus();
+
                 _view.RedirectToManageCourseView();
 
             }
@@ -170,6 +172,13 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
             }
+
+        }
+
+        private void SetCourseUpdatedStatus()
+        {
+
+            _model.SetUpdateCourseStatus();
 
         }
 

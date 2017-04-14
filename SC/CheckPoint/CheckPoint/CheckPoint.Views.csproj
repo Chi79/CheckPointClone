@@ -135,6 +135,7 @@
     <Content Include="Images\checkpointlogo1.png" />
     <Content Include="Images\CourseManagerHeading.svg" />
     <Content Include="Images\CoursesHeading.svg" />
+    <Content Include="Images\CourseUpdatedMessage.svg" />
     <Content Include="Images\createappointmentbutton.png" />
     <Content Include="Images\createcoursebutton.png" />
     <Content Include="Images\createreportbutton1.png" />

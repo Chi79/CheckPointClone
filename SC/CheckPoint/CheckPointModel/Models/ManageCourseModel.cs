@@ -60,6 +60,20 @@ namespace CheckPointModel.Models
 
         }
 
+        public bool GetCourseUpdatedStatus()
+        {
+
+            return (bool)_sessionService.UpdatedCourseStatus;
+
+        }
+
+        public void ResetUpdateCourseStatus()
+        {
+
+            _sessionService.UpdatedCourseStatus = false;
+
+        }
+
         public void SetValidNavigationStatus()
         {
 
@@ -87,7 +101,7 @@ namespace CheckPointModel.Models
 
         }
 
-        public void ResetAppointmentDeltedFromCourseStatus()
+        public void ResetAppointmentDeletedFromCourseStatus()
         {
 
             _sessionService.AppointmentDeletedFromCourseStatus = false;

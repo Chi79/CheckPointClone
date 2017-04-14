@@ -43,6 +43,13 @@ namespace CheckPoint.Views
 
         }
 
+        public bool CourseUpdatedMessageVisible
+        {
+
+            set { courseUpdatedMessage.Visible = value; }
+
+        }
+
         public bool AppointmentDeletedMessageVisible
         {
 
