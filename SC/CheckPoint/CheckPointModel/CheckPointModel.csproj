@@ -57,6 +57,7 @@
     <Compile Include="Models\CourseSelectorModel.cs" />
     <Compile Include="Models\HostCoursesModel.cs" />
     <Compile Include="Models\ManageSingleAppointmentModel.cs" />
+    <Compile Include="Models\UpdateCourseModel.cs" />
     <Compile Include="Services\AppointmentHandler.cs" />
     <Compile Include="Services\CourseHandler.cs" />
     <Compile Include="Services\JobService.cs" />

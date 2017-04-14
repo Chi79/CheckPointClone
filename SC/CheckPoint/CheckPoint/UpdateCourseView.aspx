@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateCourseView.aspx.cs" Inherits="CheckPoint.Views.CreateCourseView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateCourseView.aspx.cs" Inherits="CheckPoint.Views.UpdateCourseView"  %>
 
 <%@ Register Src="~/UserControls/CourseCreator.ascx" TagPrefix="uc1" TagName="CourseCreator" %>
 
@@ -15,7 +15,7 @@
     top:19em;
     left:45em;
 }
-#btnCreateCourse{
+#btnUpdateCourse{
     position: absolute;
     top:21em;
     left:45em;
@@ -56,7 +56,7 @@
 
 
 <asp:Button ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
-<asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
+<asp:Button ID="btnUpdateCourse" runat="server" Text="Update Course" OnClick="btnUpdateCourse_Click1" />
 <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
 <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
 

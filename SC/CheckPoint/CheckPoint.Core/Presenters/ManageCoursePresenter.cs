@@ -46,6 +46,14 @@ namespace CheckPointPresenters.Presenters
             _view.RemoveSelectedAppointmentButtonClicked += OnRemoveSelectedAppointmentButtonClicked;
             _view.MoveSelectedAppointmentToAnotherCourseButtonClicked += OnMoveSelectedAppointmentToAnotherCourseButtonClicked;
             _view.AddAnotherAppointmentToThisCourseButtonClicked += OnAddAnotherAppointmentToThisCourseButtonClicked;
+            _view.UpdateCourseButtonClicked += OnUpdateCourseButtonClicked;
+
+        }
+
+        private void OnUpdateCourseButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToUpdateCourseView();
 
         }
 

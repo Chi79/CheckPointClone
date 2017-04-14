@@ -315,13 +315,14 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object course)
         {
-            var courseToUpdate = _handler.GetCourseById(AppointmentId) as COURSE;
+            var courseToUpdate = _handler.GetCourseById((int)CourseId) as COURSE;
             var newCourse = course as COURSE;
 
             courseToUpdate.Name = newCourse.Name;
             courseToUpdate.UserName = newCourse.UserName;
             courseToUpdate.Description = newCourse.Description;
             courseToUpdate.IsPrivate = newCourse.IsPrivate;
+            courseToUpdate.IsObligatory = newCourse.IsObligatory;
         }
 
         public override SaveResult SaveChanges()

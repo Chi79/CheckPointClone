@@ -126,7 +126,7 @@
 }
 .buttons5{
       float:left;
-      margin-left: 1%;
+      margin-left: 0%;
       z-index:3;
       margin-top:0.5%;
 }
@@ -374,6 +374,21 @@ runat="server">
     runat="server" 
     OnClick="btnAddAnotherAppointmentToThisCourse_Click" 
     Text="Add Another Appointment to this Course"  
+    Visible="True" 
+    ForeColor="White" />
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
+
+
+<div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
+<asp:UpdatePanel ID="buttonspanel5" runat="server" > 
+<ContentTemplate>
+<asp:Button ID="btnUpdateCourse" 
+    CssClass="navButtons" 
+    runat="server" 
+    OnClick="btnUpdateCourse_Click" 
+    Text="Update Course"  
     Visible="True" 
     ForeColor="White" />
 </ContentTemplate>

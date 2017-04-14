@@ -68,6 +68,7 @@
     <Compile Include="ModelInterfaces\IManageAttendanceModel.cs" />
     <Compile Include="ModelInterfaces\IManageCourseModel.cs" />
     <Compile Include="ModelInterfaces\IManageSingleAppointmentModel.cs" />
+    <Compile Include="ModelInterfaces\IUpdateCourseModel.cs" />
     <Compile Include="ModelInterfaces\IUpdateProfileModel.cs" />
     <Compile Include="RepositoryInterfaces\IAttendeeRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="ViewInterfaces\IManageCourseView.cs" />
     <Compile Include="ViewInterfaces\IManageSingleAppointmentView.cs" />
     <Compile Include="ViewInterfaces\IRegisterClientView.cs" />
+    <Compile Include="ViewInterfaces\IUpdateCourseView.cs" />
     <Compile Include="ViewInterfaces\IUpdateProfileView.cs" />
     <Compile Include="ViewInterfaces\IUserHomeView.cs" />
     <Compile Include="ViewInterfaces\IView.cs" />

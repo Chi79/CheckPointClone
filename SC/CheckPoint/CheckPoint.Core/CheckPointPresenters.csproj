@@ -81,6 +81,7 @@
     <Compile Include="Presenters\ManageCoursePresenter.cs" />
     <Compile Include="Presenters\ManageSingleAppointmentPresenter.cs" />
     <Compile Include="Presenters\RegisterClientPresenter.cs" />
+    <Compile Include="Presenters\UpdateCoursePresenter.cs" />
     <Compile Include="Presenters\UpdateProfilePresenter.cs" />
     <Compile Include="Presenters\UserHomePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
