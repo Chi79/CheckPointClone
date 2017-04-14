@@ -30,7 +30,11 @@
 
 <style type="text/css">
 
-
+#create_course_buttons{
+    position:fixed;
+    top:40%;
+    left:15%;
+}
 .button{
     border-radius:6px;
     border:outset gray 2px;
@@ -48,7 +52,7 @@
     <uc1:CourseCreator runat="server" id="CourseCreator" />
  
 
-        <div id="handle_course">
+        <div id="create_course_buttons">
 
             <asp:Button CssClass="button" ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
             <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
