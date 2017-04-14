@@ -13,15 +13,6 @@ namespace CheckPoint.Views.UserControls {
     public partial class CourseCreator {
         
         /// <summary>
-        /// lblCourseName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCourseName;
-        
-        /// <summary>
         /// txtCourseName control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace CheckPoint.Views.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCourseName;
-        
-        /// <summary>
-        /// lblDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
         
         /// <summary>
         /// txtDescription control.
@@ -49,15 +31,6 @@ namespace CheckPoint.Views.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
         
         /// <summary>
-        /// lblPrivate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrivate;
-        
-        /// <summary>
         /// ddlIsPrivate control.
         /// </summary>
         /// <remarks>
@@ -65,15 +38,6 @@ namespace CheckPoint.Views.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlIsPrivate;
-        
-        /// <summary>
-        /// lblObligatory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblObligatory;
         
         /// <summary>
         /// ddlIsObligatory control.

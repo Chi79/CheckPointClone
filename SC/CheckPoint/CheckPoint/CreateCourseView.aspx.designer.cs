@@ -13,15 +13,6 @@ namespace CheckPoint.Views {
     public partial class CreateCourseView {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// CourseCreator control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CheckPoint.Views.UserControls.CourseCreator CourseCreator;
-        
-        /// <summary>
-        /// btnBackToCoursesPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBackToCoursesPage;
         
         /// <summary>
         /// btnCreateCourse control.
@@ -65,5 +47,14 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNo;
+        
+        /// <summary>
+        /// btnBackToCoursesPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBackToCoursesPage;
     }
 }
