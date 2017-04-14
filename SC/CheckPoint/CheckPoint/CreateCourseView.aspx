@@ -1,165 +1,165 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateCourseView.aspx.cs" Inherits="CheckPoint.Views.CreateCourseView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/HostMaster.Master" CodeBehind="CreateCourseView.aspx.cs" Inherits="CheckPoint.Views.CreateCourseView" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="head" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+
+
+
 <style type="text/css">
 
-.container{
-    width: 42%;
-    height: 570px;
-    margin-left: 27%;
-    margin-top: 2%;
-    background-color: #333333;
-    border: #66cc66;
-    border-width: 20px;
-    border-style: solid;
-    border-radius:36px;
+
+
+.list{   
+    position:fixed;
+    top:15%;
+    left:15%;
+    border:none;
+    list-style:none;
+    width:70%;
+    margin:0;
+    padding:0%;
+
+
 }
-.panel{
-    position:relative;
-}
-#lblCourseName{
-    position: absolute;
-    top:2.7em;
-    left:4em;
+.list-item{    
     color:white;
+    font-size:large;
+    font-family:'Times New Roman', Times, serif;
+    font:bolder;
+    width:100%;
+    display:block;
+    margin-top:2%;
+    
 }
-#txtCourseName{
-    position: absolute;
-    top:3em;
-    left:16em;
+.label{
+    width:25%;
+    float:left;
 }
-#lblDescription{
-    position: absolute;
-    top:5em;
-    left:4em;
-    color:white;
+.message{
+    margin-top:5px;
+    width:25%;
+    border:dotted rgb(0, 255, 33) 2px;
+    border-radius:6px;
 }
-#txtDescription{
-    position: absolute;
-    top:5.8em;
-    left:16em;
+.button{
+    border-radius:6px;
+    border:outset gray 2px;
+    padding:3px;
 }
-#lblCourseId{
-    position: absolute;
-    top:6.8em;
-    left:4em;
-    color:white;
-}
-#txtCourseId{
-    position: absolute;
-    top:7.9em;
-    left:16em;
-}
-#lblPrivate{
-    position: absolute;
-    top:7.5em;
-    left:4em;
-    color:white;
-}
-#ddlIsPrivate{
-    position: absolute;
-    top:9em;
-    left:16em;
-}
-#lblObligatory{
-    position: absolute;
-    top:9.3em;
-    left:4em;
-    color:white;
-}
-#ddlIsObligatory{
-    position: absolute;
-    top:11em;
-    left:16em;
-}
-
-#lblMessage{
-    position: absolute;
-    top:22em;
-    left:4em;
-    color:white;
-}
-
-#btnBackToCoursesPage{
-    position: absolute;
-    top:14em;
-    left:16em;
-}
-#btnCreateCourse{
-    position: absolute;
-    top:16em;
-    left:16em;
-    width:151px;
-}
-
-#btnYes{
-    position: absolute;
-    top:18em;
-    left:16em;
-}
-#btnNo{
-    position: absolute;
-    top:18em;
-    left:23em;
-}
-
-
-
-.auto-style1 {
-    width: 59%;
-    height: 533px;
-    margin-left: 21%;
-    margin-top: 2%;
-    background-color: #333333;
-    border-radius: 36px;
-}
-
 
 </style>
 
 <title></title>
-</head>
+</asp:Content>
 
 
-<body>
-<form id="form1" runat="server">
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-<div id="container" class="container">
-<div id="panel" class="panel">
+
     
-        <asp:Label ID="lblCourseName" runat="server" Text="Course Name"></asp:Label>
-        <asp:TextBox ID="txtCourseName" runat="server"></asp:TextBox>
-      
-        <asp:Label ID="lblDescription" runat="server" Text="Description"></asp:Label>
-        <asp:TextBox ID="txtDescription" runat="server" Height="19px" Width="275px"></asp:TextBox>
+    <ul class="list">
+        <li class="list-item">
+              <div class="label">
+                  Course name
+              </div> 
+               <asp:TextBox ID="txtCourseName" runat="server"></asp:TextBox>
+        </li>
 
-        <asp:Label ID="lblPrivate" runat="server" Text="Private"></asp:Label>
+        <li class="list-item">
+               <div class="label">  
+            Description
+                   </div>
+             
+        <asp:TextBox ID="txtDescription" runat="server" Width="275px"></asp:TextBox>
 
-        <asp:DropDownList ID="ddlIsPrivate" runat="server">
+        </li>
+
+        <li class="list-item">
+            <div class="label"> 
+             Private
+                </div>
+             
+
+           <asp:DropDownList ID="ddlIsPrivate" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
-        </asp:DropDownList>
+           </asp:DropDownList>
 
-        <asp:Label ID="lblObligatory" runat="server" Text="Obligatory"></asp:Label>
+        </li >
+
+        <li class="list-item">
+            <div class="label">   
+            Obligatory
+                    </div>
 
         <asp:DropDownList ID="ddlIsObligatory" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
         </asp:DropDownList>
-        
-        <asp:Label ID="lblMessage" runat="server"></asp:Label>
 
-<asp:Button ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
-<asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
-<asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
-<asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
+        </li>
+
+        <li class="list-item">
+            
+                  <asp:Label ID="lblMessage" CssClass="message" runat="server"></asp:Label>
+            
+          
+
+        </li>
+
+        <li class="list-item">
+
+            <asp:Button CssClass="button" ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
+            <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
+            <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
+
+        </li>
+
+          <li class="list-item">
+              <asp:Button CssClass="button" ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
+              </li>
+
+    </ul>
+ 
+
+      
+      
+       
+
+
+
+
+        
+        
+
+
+
 
     
-</div>
-</div>
-</form>
-</body>
-</html>
+
+
+</asp:Content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
