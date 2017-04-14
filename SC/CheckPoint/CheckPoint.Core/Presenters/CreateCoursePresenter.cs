@@ -45,7 +45,7 @@ namespace CheckPointPresenters.Presenters
             _view.CreateNewCourse += OnCreateNewCourseButtonClicked;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
-            _view.BackToCoursesPageClicked += OnBackToCoursesPageClicked;
+     
 
         }
 
@@ -197,12 +197,7 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnBackToCoursesPageClicked(object sender, EventArgs e)
-        {
-
-            _view.RedirectToCoursesPage();
-
-        }
+    
 
         private void DecisionButtonsShow()
         {
@@ -221,7 +216,7 @@ namespace CheckPointPresenters.Presenters
         public void DisplayCourseSavedButtons()
         {
             _view.CreateCourseButtonVisible = false;
-            _view.BackToCoursesPageButtonVisible = true;
+           
         }
     }
 }
