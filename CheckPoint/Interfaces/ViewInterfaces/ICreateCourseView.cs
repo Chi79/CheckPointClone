@@ -22,7 +22,7 @@ namespace CheckPointCommon.ViewInterfaces
       
 
 
-        void RedirectToCoursesPage();
+    
 
         event EventHandler<EventArgs> CreateNewCourse;
         event EventHandler<EventArgs> YesButtonClicked;
