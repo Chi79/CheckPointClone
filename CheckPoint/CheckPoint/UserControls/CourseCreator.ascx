@@ -3,119 +3,98 @@
 
 <style type="text/css">
 
-.container{
-    width: 42%;
-    height: 570px;
-    margin-left: 27%;
-    margin-top: 2%;
-    background-color: #333333;
-    border: #66cc66;
-    border-width: 20px;
-    border-style: solid;
-    border-radius:36px;
-}
-.panel{
-    position:relative;
-}
-.lblCourseCreatorName{
-    position: absolute;
-    top:2.7em;
-    left:4em;
-    color:white;
-}
-.txtCourseCreatorName{
-    position: absolute;
-    top:3em;
-    left:16em;
-}
-.lblCreatorDescription{
-    position: absolute;
-    top:5em;
-    left:4em;
-    color:white;
-}
-.txtCreatorDescription{
-    position: absolute;
-    top:5.8em;
-    left:16em;
-}
-.lblCreatorCourseId{
-    position: absolute;
-    top:6.8em;
-    left:4em;
-    color:white;
-}
-.txtCreatorCourseId{
-    position: absolute;
-    top:7.9em;
-    left:16em;
-}
-.lblCreatorPrivate{
-    position: absolute;
-    top:7.5em;
-    left:4em;
-    color:white;
-}
-.ddlCreatorIsPrivate{
-    position: absolute;
-    top:9em;
-    left:16em;
-}
-.lblCreatorObligatory{
-    position: absolute;
-    top:9.3em;
-    left:4em;
-    color:white;
-}
-.ddlCreatorIsObligatory{
-    position: absolute;
-    top:11em;
-    left:16em;
-}
+    
 
-.lblCreatorMessage{
-    position: absolute;
-    top:22em;
-    left:4em;
+.list{   
+    position:fixed;
+    top:15%;
+    left:15%;
+    border:none;
+    list-style:none;
+    width:70%;
+    margin:0;
+    padding:0%;
+
+
+}
+.list-item{    
     color:white;
+    font-size:large;
+    font-family:'Times New Roman', Times, serif;
+    font:bolder;
+    width:100%;
+    display:block;
+    margin-top:2%;
+    
 }
-
-.auto-style1 {
-    width: 59%;
-    height: 533px;
-    margin-left: 21%;
-    margin-top: 2%;
-    background-color: #333333;
-    border-radius: 36px;
+.label{
+    width:25%;
+    float:left;
 }
-
+.message{
+    margin-top:5px;
+    width:25%;
+    border:dotted rgb(0, 255, 33) 2px;
+    border-radius:6px;
+}
 </style>
 
 
 <div id="container" class="container">
 <div id="panel" class="panel">
     
-        <asp:Label ID="lblCourseName" runat="server" Text="Course Name" CssClass="lblCourseCreatorName"></asp:Label>
-        <asp:TextBox ID="txtCourseName" runat="server" CssClass="txtCourseCreatorName"></asp:TextBox>
-      
-        <asp:Label ID="lblDescription" runat="server" Text="Description" CssClass="lblCreatorDescription"></asp:Label>
-        <asp:TextBox ID="txtDescription" runat="server" Height="19px" Width="275px" CssClass="txtCreatorDescription"></asp:TextBox>
+   
+    <ul class="list">
+        <li class="list-item">
+              <div class="label">
+                  Course name
+              </div> 
+               <asp:TextBox ID="txtCourseName" runat="server"></asp:TextBox>
+        </li>
 
-        <asp:Label ID="lblPrivate" runat="server" Text="Private" CssClass="lblCreatorPrivate"></asp:Label>
+        <li class="list-item">
+               <div class="label">  
+            Description
+                   </div>
+             
+        <asp:TextBox ID="txtDescription" runat="server" Width="275px"></asp:TextBox>
 
-        <asp:DropDownList ID="ddlIsPrivate" runat="server" CssClass="ddlCreatorIsPrivate">
+        </li>
+
+        <li class="list-item">
+            <div class="label"> 
+             Private
+                </div>
+             
+
+           <asp:DropDownList ID="ddlIsPrivate" runat="server">
+            <asp:ListItem Value="False">No</asp:ListItem>
+            <asp:ListItem Value="True">Yes</asp:ListItem>
+           </asp:DropDownList>
+
+        </li >
+
+        <li class="list-item">
+            <div class="label">   
+            Obligatory
+                    </div>
+
+        <asp:DropDownList ID="ddlIsObligatory" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
         </asp:DropDownList>
 
-        <asp:Label ID="lblObligatory" runat="server" Text="Obligatory" CssClass="lblCreatorObligatory"></asp:Label>
+        </li>
 
-        <asp:DropDownList ID="ddlIsObligatory" runat="server" CssClass="ddlCreatorIsObligatory">
-            <asp:ListItem Value="False">No</asp:ListItem>
-            <asp:ListItem Value="True">Yes</asp:ListItem>
-        </asp:DropDownList>
-        
-        <asp:Label ID="lblMessage" runat="server" CssClass="lblCreatorMessage"></asp:Label>
+        <li class="list-item">
+            
+                  <asp:Label ID="lblMessage" CssClass="message" runat="server"></asp:Label>
+            
+          
+
+        </li>
+
+        </ul>
     
 </div>
 </div>

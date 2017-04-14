@@ -1,58 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateCourseView.aspx.cs" Inherits="CheckPoint.Views.CreateCourseView" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/HostMaster.Master" CodeBehind="CreateCourseView.aspx.cs" Inherits="CheckPoint.Views.CreateCourseView" %>
 <%@ Register Src="~/UserControls/CourseCreator.ascx" TagPrefix="uc1" TagName="CourseCreator" %>
 
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<style type="text/css">
 
 
-#btnBackToCoursesPage{
-    position: absolute;
-    top:19em;
-    left:45em;
-}
-#btnCreateCourse{
-    position: absolute;
-    top:21em;
-    left:45em;
-    width:151px;
-}
 
-#btnYes{
-    position: absolute;
-    top:21em;
-    left:45em;
-}
-#btnNo{
-    position: absolute;
-    top:21em;
-    left:54em;
-}
-
-.auto-style1 {
-    width: 59%;
-    height: 533px;
-    margin-left: 21%;
-    margin-top: 2%;
-    background-color: #333333;
-    border-radius: 36px;
-}
-
-
-</style>
-
-<title></title>
-</head>
-
-
-<body>
+<%--<body>
 <form id="form1" runat="server">
 
-<uc1:CourseCreator runat="server" id="CourseCreator" />
+
 
 
 <asp:Button ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
@@ -63,4 +19,48 @@
    
 </form>
 </body>
-</html>
+</html>--%>
+
+
+
+<asp:Content ContentPlaceHolderID="head" runat="server">
+
+
+
+
+<style type="text/css">
+
+
+.button{
+    border-radius:6px;
+    border:outset gray 2px;
+    padding:3px;
+}
+
+</style>
+
+<title></title>
+</asp:Content>
+
+
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+    <uc1:CourseCreator runat="server" id="CourseCreator" />
+ 
+
+        <div id="handle_course">
+
+            <asp:Button CssClass="button" ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
+            <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
+            <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
+
+        </div>
+
+          <div class="list-item">
+              <asp:Button CssClass="button" ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
+              </div>
+
+    
+ 
+</asp:Content>
+
