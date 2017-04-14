@@ -62,7 +62,7 @@ table {
 }
 .descriptionColumnItem{
     width: 11.09%;
-    padding-left: 2%;
+    padding-left: 0%;
     margin: auto;
 }
 .isPrivateColumnItem{
