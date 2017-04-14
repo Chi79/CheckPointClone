@@ -236,6 +236,8 @@ namespace CheckPointPresenters.Presenters
 
             CheckIfAppointmentDeleted();
 
+            CheckIfCourseUpdated();
+
             ShowSelectedCourse();
 
             ShowAppointmentData();
@@ -288,11 +290,27 @@ namespace CheckPointPresenters.Presenters
 
                 _view.AppointmentDeletedMessageVisible = true;
 
-                _model.ResetAppointmentDeltedFromCourseStatus();
+                _model.ResetAppointmentDeletedFromCourseStatus();
 
             }
 
         }
+
+        private void CheckIfCourseUpdated()
+        {
+
+            bool courseUpdated = _model.GetCourseUpdatedStatus();
+            if (courseUpdated)
+            {
+
+                _view.CourseUpdatedMessageVisible = true;
+
+                _model.ResetUpdateCourseStatus();
+
+            }
+
+        }
+
 
         private void OnRowSelected(object sender, EventArgs e)
         {

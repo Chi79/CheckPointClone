@@ -44,6 +44,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public void SetUpdateCourseStatus()
+        {
+
+            _sessionService.UpdatedCourseStatus = true;
+
+        }
+
         private int? GetSessionCourseId()
         {
 
