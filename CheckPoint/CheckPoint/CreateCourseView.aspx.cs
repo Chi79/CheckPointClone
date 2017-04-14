@@ -82,12 +82,7 @@ namespace CheckPoint.Views
 
 
 
-        public void RedirectToCoursesPage()
-        {
-
-            Response.Redirect("HostCoursesView.aspx");
-
-        }
+   
 
 
         public event EventHandler<EventArgs> CreateNewCourse;
