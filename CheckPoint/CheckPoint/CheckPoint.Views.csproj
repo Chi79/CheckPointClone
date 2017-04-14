@@ -185,9 +185,11 @@
     </Content>
     <Content Include="Scripts\package.json" />
     <Content Include="HostMaster.Master" />
+    <Content Include="UpdateCourseView.aspx" />
     <Content Include="UserControls\AppointmentCreator.ascx" />
     <Content Include="UserControls\AppointmentGridView.ascx" />
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
+    <Content Include="UserControls\CourseCreator.ascx" />
     <Content Include="UserControls\CourseGridView.ascx" />
     <Content Include="UserControls\CourseGridViewHeader.ascx" />
     <Content Include="UserControls\DatePicker.ascx" />
@@ -338,6 +340,13 @@
     <Compile Include="RegisterClientView.aspx.designer.cs">
       <DependentUpon>RegisterClientView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateCourseView.aspx.cs">
+      <DependentUpon>UpdateCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCourseView.aspx.designer.cs">
+      <DependentUpon>UpdateCourseView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateProfileView.aspx.cs">
       <DependentUpon>UpdateProfileView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -365,6 +374,13 @@
     </Compile>
     <Compile Include="UserControls\AppointmentGridViewHeader.ascx.designer.cs">
       <DependentUpon>AppointmentGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CourseCreator.ascx.cs">
+      <DependentUpon>CourseCreator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CourseCreator.ascx.designer.cs">
+      <DependentUpon>CourseCreator.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CourseGridView.ascx.cs">
       <DependentUpon>CourseGridView.ascx</DependentUpon>

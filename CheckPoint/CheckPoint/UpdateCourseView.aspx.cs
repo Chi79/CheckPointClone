@@ -10,54 +10,46 @@ using CheckPointPresenters.Presenters;
 
 namespace CheckPoint.Views
 {
-    public partial class CreateCourseView : ViewBase<CreateCoursePresenter> , ICreateCourseView
+
+    public partial class UpdateCourseView : ViewBase<UpdateCoursePresenter> , IUpdateCourseView
     {
 
-        public string CourseName
+       public string Message
+       {
+
+            get { return CourseCreator.Message; }
+            set { CourseCreator.Message = value; }
+
+       }
+       public string CourseName
         {
 
             get { return CourseCreator.CourseName; }
+            set { CourseCreator.CourseName = value; }
 
         }
-
-
-        public string Description
+       public string Description
         {
 
             get { return CourseCreator.Description; }
+            set { CourseCreator.Description = value; }
 
         }
-
-        public string IsPrivate
+       public string IsPrivate
         {
 
             get { return CourseCreator.IsPrivate; }
+            set { CourseCreator.IsPrivate = value; }
 
         }
-
         public string IsObligatory
         {
 
             get { return CourseCreator.IsObligatory; }
+            set { CourseCreator.IsObligatory = value; }
 
         }
 
-        public string Message
-        {
-
-            get { return CourseCreator.Message; }
-
-            set { CourseCreator.Message= value; }
-
-        }
-
-
-        public bool CreateButtonVisible
-        {
-
-            set { btnCreateCourse.Visible = value; }
-
-        }
 
         public bool YesButtonVisible
         {
@@ -73,10 +65,10 @@ namespace CheckPoint.Views
 
         }
 
-        public bool CreateCourseButtonVisible
+        public bool UpdateCourseButtonVisible
         {
 
-            set { btnCreateCourse.Visible = value; } 
+            set { btnUpdateCourse.Visible = value; }
 
         }
 
@@ -87,7 +79,6 @@ namespace CheckPoint.Views
 
         }
 
-
         public void RedirectToCoursesPage()
         {
 
@@ -95,31 +86,28 @@ namespace CheckPoint.Views
 
         }
 
+        public void RedirectToManageCourseView()
+        {
 
-        public event EventHandler<EventArgs> CreateNewCourse;
+            Response.Redirect("ManageCourseView.aspx");
+
+        }
+
+        public event EventHandler<EventArgs> UpdateCourseButtonClicked;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> BackToCoursesPageClicked;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        protected void btnCreateCourse_Click(object sender, EventArgs e)
+        protected void btnBackToCoursesPage_Click(object sender, EventArgs e)
         {
-            if(CreateNewCourse != null)
+            if(BackToCoursesPageClicked != null)
             {
-                CreateNewCourse(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnNo_Click(object sender, EventArgs e)
-        {
-            if(NoButtonClicked != null)
-            {
-                NoButtonClicked(this, EventArgs.Empty);
+                BackToCoursesPageClicked(this, EventArgs.Empty);
             }
         }
 
@@ -131,11 +119,19 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnBackToCoursesPage_Click(object sender, EventArgs e)
+        protected void btnNo_Click(object sender, EventArgs e)
         {
-            if (BackToCoursesPageClicked != null)
+            if(NoButtonClicked != null)
             {
-                BackToCoursesPageClicked(this, EventArgs.Empty);
+                NoButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnUpdateCourse_Click1(object sender, EventArgs e)
+        {
+            if(UpdateCourseButtonClicked != null)
+            {
+                UpdateCourseButtonClicked(this, EventArgs.Empty);
             }
         }
     }
