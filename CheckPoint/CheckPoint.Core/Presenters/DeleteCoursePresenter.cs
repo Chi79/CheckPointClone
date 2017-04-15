@@ -48,14 +48,20 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                var course = _model.GetSelectedCourseByCourseId();
-
-                _model.PerformJob(course);
-
-                CheckChangesSaved();
-
+                ContinueWithDeletion();
 
             }
+        }
+
+        private void ContinueWithDeletion()
+        {
+
+            var course = _model.GetSelectedCourseByCourseId();
+
+            _model.PerformJob(course);
+
+            CheckChangesSaved();
+
         }
 
         private void DisplayPage()
