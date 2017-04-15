@@ -33,33 +33,20 @@ namespace CheckPointPresenters.Presenters
 
             CheckValidNavigation();
 
-            //DisplayPage();
-
         }
-
-
 
         private void CheckValidNavigation()
         {
-            bool invalidNavigation = _model.GetDeleteCourseStatus();
-            if(invalidNavigation)
+            bool courseDeleted = _model.GetDeleteCourseStatus();
+            if(courseDeleted)
             {
 
-
-                _view.RedirectToCoursesPage();
-                //_view.RedirectToAppointmentsView();
+                _view.RedirectToAppointmentsView();
 
             }
             else
             {
-
                 DisplayPage();
-
-                //var course = _model.GetSelectedCourseByCourseId();
-
-                //_model.PerformJob(course);
-
-                //CheckChangesSaved();
 
             }
         }
@@ -96,7 +83,6 @@ namespace CheckPointPresenters.Presenters
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
-
             if(_model.GetDeleteCourseStatus())
             {
 
@@ -111,9 +97,8 @@ namespace CheckPointPresenters.Presenters
                 _model.PerformJob(course);
 
                 CheckChangesSaved();
-
-                //CheckValidNavigation();
             }
+
 
         }
 
@@ -128,9 +113,7 @@ namespace CheckPointPresenters.Presenters
 
                 SetCourseDeletedStatus();
 
-                //_view.RedirectToCoursesPage();
-
-                _view.RedirectAfterClick();
+                _view.RedirectToCoursesPage();
 
             }
             else
