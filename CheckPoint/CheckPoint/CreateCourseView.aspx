@@ -31,13 +31,13 @@
 <style type="text/css">
 
 #create_course_buttons{
-   position:absolute;
-    top:40%;
-    left:15%;
-}
+    margin-top:5%;
+    margin-left:15%;
+    }
+
 .button{
 
-    
+   
     border-radius:6px;
     border:outset gray 2px;
     padding:3px;
@@ -50,8 +50,10 @@
 
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-
-    <uc1:CourseCreator runat="server" id="CourseCreator" />
+    
+         <uc1:CourseCreator runat="server" id="CourseCreator" />
+    
+   
  
 
         <div id="create_course_buttons">
