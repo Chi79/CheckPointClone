@@ -203,6 +203,8 @@
     <Content Include="UserControls\ManageCourseGrid.ascx" />
     <Content Include="UserControls\ManageCourseHeader.ascx" />
     <Content Include="UserControls\NavigationMessage.ascx" />
+    <Content Include="UserControls\UserAppointmentGridView.ascx" />
+    <Content Include="UserControls\UserAppointmentGridViewHeader.ascx" />
     <Content Include="UserCoursesView.aspx" />
     <Content Include="UserMaster.Master" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
@@ -465,6 +467,20 @@
     </Compile>
     <Compile Include="UserControls\NavigationMessage.ascx.designer.cs">
       <DependentUpon>NavigationMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridView.ascx.cs">
+      <DependentUpon>UserAppointmentGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridView.ascx.designer.cs">
+      <DependentUpon>UserAppointmentGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridViewHeader.ascx.cs">
+      <DependentUpon>UserAppointmentGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridViewHeader.ascx.designer.cs">
+      <DependentUpon>UserAppointmentGridViewHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserCoursesView.aspx.cs">
       <DependentUpon>UserCoursesView.aspx</DependentUpon>
