@@ -31,14 +31,15 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
 
-            CheckValidNavigation();
+            DisplayPage();
 
         }
 
         private void CheckValidNavigation()
         {
-            bool courseDeleted = _model.GetDeleteCourseStatus();
-            if(courseDeleted)
+
+            bool invalidNavigation = _model.GetDeleteCourseStatus();
+            if(invalidNavigation)
             {
 
                 _view.RedirectToAppointmentsView();
@@ -46,7 +47,13 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
-                DisplayPage();
+
+                var course = _model.GetSelectedCourseByCourseId();
+
+                _model.PerformJob(course);
+
+                CheckChangesSaved();
+
 
             }
         }
@@ -83,22 +90,8 @@ namespace CheckPointPresenters.Presenters
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
-            if(_model.GetDeleteCourseStatus())
-            {
 
-                _view.RedirectToAppointmentsView();
-
-            }
-            else
-            {
-
-                var course = _model.GetSelectedCourseByCourseId();
-
-                _model.PerformJob(course);
-
-                CheckChangesSaved();
-            }
-
+            CheckValidNavigation();
 
         }
 
