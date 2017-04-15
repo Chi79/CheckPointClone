@@ -154,6 +154,13 @@ namespace CheckPoint.Views
 
         }
 
+        public void RedirectToDeleteCourseView()
+        {
+
+            Response.Redirect("DeleteCourseView.aspx");
+
+        }
+
         public void ReloadPageAfterEditing()
         {
 
@@ -171,6 +178,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> MoveSelectedAppointmentToAnotherCourseButtonClicked;
         public event EventHandler<EventArgs> AddAnotherAppointmentToThisCourseButtonClicked;
         public event EventHandler<EventArgs> UpdateCourseButtonClicked;
+        public event EventHandler<EventArgs> DeleteCourseButtonClicked;
 
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
@@ -258,6 +266,14 @@ namespace CheckPoint.Views
             if(UpdateCourseButtonClicked != null)
             {
                 UpdateCourseButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnDeleteCourse_Click(object sender, EventArgs e)
+        {
+            if(DeleteCourseButtonClicked != null)
+            {
+                DeleteCourseButtonClicked(this, EventArgs.Empty);
             }
         }
     }

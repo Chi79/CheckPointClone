@@ -18,7 +18,8 @@ namespace CheckPointModel.Factories
         private IHandleCourses _coursesHandler;
 
 
-        private Dictionary<DbAction, JobServiceBase> Jobs;
+        private Dictionary<DbAction, JobServiceBase> AppointmentJobs;
+        private Dictionary<DbAction, JobServiceBase> CourseJobs;
 
 
         public JobFactory(IHandleAppointments appointmentsHandler, IHandleCourses coursesHandler)
@@ -29,40 +30,40 @@ namespace CheckPointModel.Factories
 
         public void LoadAppointmentDictionary(IHandleAppointments handler)
         {
-            if (Jobs == null)
+            if (AppointmentJobs == null)
             {
-                Jobs = new Dictionary<DbAction, JobServiceBase>();
+                AppointmentJobs = new Dictionary<DbAction, JobServiceBase>();
 
-                Jobs.Add(DbAction.CreateAppointment, new CreateAppointmentJob(handler));
-                Jobs.Add(DbAction.DeleteAppointment, new DeleteAppointmentJob(handler));
-                Jobs.Add(DbAction.UpdateAppointment, new UpdateAppointmentJob(handler));
-                Jobs.Add(DbAction.AddNewAppointmentToCourse, new AddAppointmentToCourseJob(handler));
-                Jobs.Add(DbAction.ChangeAppointmentCourseId, new ChangeAppointmentCourseIdJob(handler));
+                AppointmentJobs.Add(DbAction.CreateAppointment, new CreateAppointmentJob(handler));
+                AppointmentJobs.Add(DbAction.DeleteAppointment, new DeleteAppointmentJob(handler));
+                AppointmentJobs.Add(DbAction.UpdateAppointment, new UpdateAppointmentJob(handler));
+                AppointmentJobs.Add(DbAction.AddNewAppointmentToCourse, new AddAppointmentToCourseJob(handler));
+                AppointmentJobs.Add(DbAction.ChangeAppointmentCourseId, new ChangeAppointmentCourseIdJob(handler));
             }
         }
 
         public void LoadCourseDictionary(IHandleCourses handler)
         {
-            if (Jobs == null)
+            if (CourseJobs == null)
             {
-                Jobs = new Dictionary<DbAction, JobServiceBase>();
+                CourseJobs = new Dictionary<DbAction, JobServiceBase>();
 
-                Jobs.Add(DbAction.CreateCourse, new CreateCourseJob(handler));
-                Jobs.Add(DbAction.DeleteCourse, new DeleteCourseJob(handler));
-                Jobs.Add(DbAction.UpdateCourse, new UpdateCourseJob(handler));
+                CourseJobs.Add(DbAction.CreateCourse, new CreateCourseJob(handler));
+                CourseJobs.Add(DbAction.DeleteCourse, new DeleteCourseJob(handler));
+                CourseJobs.Add(DbAction.UpdateCourse, new UpdateCourseJob(handler));
             }
         }
 
         public object CreateAppointmentJobType(object action)
         {
             LoadAppointmentDictionary(_appointmentsHandler);
-            return Jobs[(DbAction)action] as JobServiceBase;
+            return AppointmentJobs[(DbAction)action] as JobServiceBase;
         }
 
         public object CreateCourseJobType(object action)
         {
             LoadCourseDictionary(_coursesHandler);
-            return Jobs[(DbAction)action] as JobServiceBase;
+            return CourseJobs[(DbAction)action] as JobServiceBase;
         }
     }
 }

@@ -47,6 +47,15 @@ namespace CheckPointPresenters.Presenters
             _view.MoveSelectedAppointmentToAnotherCourseButtonClicked += OnMoveSelectedAppointmentToAnotherCourseButtonClicked;
             _view.AddAnotherAppointmentToThisCourseButtonClicked += OnAddAnotherAppointmentToThisCourseButtonClicked;
             _view.UpdateCourseButtonClicked += OnUpdateCourseButtonClicked;
+            _view.DeleteCourseButtonClicked += OnDeleteCourseButtonClicked;
+        }
+
+        private void OnDeleteCourseButtonClicked(object sender, EventArgs e)
+        {
+
+            ResetCourseDeletedStatus();
+
+            _view.RedirectToDeleteCourseView();
 
         }
 
@@ -198,6 +207,13 @@ namespace CheckPointPresenters.Presenters
         {
 
             _model.ResetSessionRowIndex();
+
+        }
+
+        private void ResetCourseDeletedStatus()
+        {
+
+            _model.ResetCourseDeletedStatus();
 
         }
 

@@ -24,6 +24,7 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectToAppointmentsView();
         void RedirectToCoursesView();
         void RedirectToUpdateCourseView();
+        void RedirectToDeleteCourseView();
     
         void ReloadPageAfterEditing();
 
@@ -45,5 +46,6 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> MoveSelectedAppointmentToAnotherCourseButtonClicked;
         event EventHandler<EventArgs> AddAnotherAppointmentToThisCourseButtonClicked;
         event EventHandler<EventArgs> UpdateCourseButtonClicked;
+        event EventHandler<EventArgs> DeleteCourseButtonClicked;
     }
 }

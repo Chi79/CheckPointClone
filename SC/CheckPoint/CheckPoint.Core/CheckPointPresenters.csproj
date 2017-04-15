@@ -71,6 +71,7 @@
     <Compile Include="Presenters\CreateAppointmentPresenter.cs" />
     <Compile Include="Presenters\CreateCoursePresenter.cs" />
     <Compile Include="Presenters\CreateReportPresenter.cs" />
+    <Compile Include="Presenters\DeleteCoursePresenter.cs" />
     <Compile Include="Presenters\FindAppointmentsPresenter.cs" />
     <Compile Include="Presenters\HomePagePresenter.cs" />
     <Compile Include="Presenters\HostCoursesPresenter.cs" />

@@ -119,6 +119,7 @@
     <Content Include="CSS\jquery-ui.theme.css" />
     <Content Include="CSS\login.css" />
     <Content Include="CSS\StyleMaster.css" />
+    <Content Include="DeleteCourseView.aspx" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="HomePageView.aspx" />
     <Content Include="HostCoursesView.aspx" />
@@ -256,6 +257,13 @@
     </Compile>
     <Compile Include="CreateReportView.aspx.designer.cs">
       <DependentUpon>CreateReportView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCourseView.aspx.cs">
+      <DependentUpon>DeleteCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteCourseView.aspx.designer.cs">
+      <DependentUpon>DeleteCourseView.aspx</DependentUpon>
     </Compile>
     <Compile Include="FindAppointmentsView.aspx.cs">
       <DependentUpon>FindAppointmentsView.aspx</DependentUpon>

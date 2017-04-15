@@ -130,6 +130,12 @@
       z-index:3;
       margin-top:0.5%;
 }
+.buttons6{
+      float:left;
+      margin-left: 1%;
+      z-index:3;
+      margin-top:0.5%;
+}
 @keyframes buttonsup {
       from { top: 300%; }
       to { top: 0%;}
@@ -391,6 +397,21 @@ runat="server">
     runat="server" 
     OnClick="btnUpdateCourse_Click" 
     Text="Update Course"  
+    Visible="True" 
+    ForeColor="White" />
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
+
+
+<div id="buttonsdiv6" runat="server" style="z-index:5;" class="buttons6">
+<asp:UpdatePanel ID="buttonspanel6" runat="server" > 
+<ContentTemplate>
+<asp:Button ID="btnDeleteCourse" 
+    CssClass="navButtons" 
+    runat="server" 
+    OnClick="btnDeleteCourse_Click" 
+    Text="Delete Course"  
     Visible="True" 
     ForeColor="White" />
 </ContentTemplate>

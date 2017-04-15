@@ -60,6 +60,7 @@
     <Compile Include="ModelInterfaces\ICreateAppointmentModel.cs" />
     <Compile Include="ModelInterfaces\ICreateCourseModel.cs" />
     <Compile Include="ModelInterfaces\ICreateReportModel.cs" />
+    <Compile Include="ModelInterfaces\IDeleteCourseModel.cs" />
     <Compile Include="ModelInterfaces\IFindAppointmentsModel.cs" />
     <Compile Include="ModelInterfaces\IHomePageModel.cs" />
     <Compile Include="ModelInterfaces\IHostCoursesModel.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="ViewInterfaces\ICreateAppointmentView.cs" />
     <Compile Include="ViewInterfaces\ICreateCourseView.cs" />
     <Compile Include="ViewInterfaces\ICreateReportView.cs" />
+    <Compile Include="ViewInterfaces\IDeleteCourseView.cs" />
     <Compile Include="ViewInterfaces\IFindAppointmentsView.cs" />
     <Compile Include="ViewInterfaces\IHomePageView.cs" />
     <Compile Include="ModelInterfaces\ILoginModel.cs" />

@@ -15,6 +15,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void ResetSessionRowIndex();
 
+        void ResetCourseDeletedStatus();
+
         bool GetNewAppointmentAddedToCourseStatus();
 
         void SetValidNavigationStatus();
