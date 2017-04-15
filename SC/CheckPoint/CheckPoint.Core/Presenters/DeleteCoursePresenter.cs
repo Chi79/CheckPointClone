@@ -43,8 +43,7 @@ namespace CheckPointPresenters.Presenters
 
                 _view.RedirectToInvalidNavigationView();
 
-            }
-            
+            }         
 
         }
 
@@ -65,6 +64,7 @@ namespace CheckPointPresenters.Presenters
                 return true; 
 
             }
+
         }
 
         private void ContinueWithDeletion()
