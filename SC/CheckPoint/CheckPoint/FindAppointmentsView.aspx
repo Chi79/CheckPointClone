@@ -243,9 +243,9 @@
         CssClass="navButtons" 
         runat="server" 
         OnClick="btnFindCourses_Click1"
-        Text="Find Courses"  
+        Text="Find Public Courses"  
         Visible="True" 
-        ToolTip="Find Courses" 
+        ToolTip="Find Public Courses" 
         ForeColor="White" />
     </ContentTemplate>
     </asp:UpdatePanel>
