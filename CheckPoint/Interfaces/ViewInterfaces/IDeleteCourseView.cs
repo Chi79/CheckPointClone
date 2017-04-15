@@ -31,6 +31,8 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectToManageCourseView();
         void RedirectAfterClick();
 
+        void RedirectToInvalidNavigationView();
+
         event EventHandler<EventArgs> DeleteCourseButtonClicked;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;

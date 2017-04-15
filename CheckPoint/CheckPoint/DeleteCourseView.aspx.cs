@@ -112,6 +112,13 @@ namespace CheckPoint.Views
 
         }
 
+        public void RedirectToInvalidNavigationView()
+        {
+
+            Response.Redirect("InvalidNavigationView.aspx");
+
+        }
+
         public event EventHandler<EventArgs> DeleteCourseButtonClicked;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
