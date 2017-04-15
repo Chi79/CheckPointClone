@@ -6,13 +6,12 @@
     
 
 .list{   
-    position:fixed;
-    top:15%;
-    left:15%;
+    display:block;
+    margin-top:15%;
+    margin-left:15%;
     border:none;
     list-style:none;
-    width:70%;
-    margin:0;
+    width:70%;    
     padding:0%;
 
 
