@@ -77,7 +77,6 @@ namespace CheckPointModel.Models
         public IEnumerable<object> GetAllPublicAppointments()
         {
 
-            //return _displayService.GetAllAppointmentsFor<APPOINTMENT>(GetLoggedInClient());
             return _displayService.GetAllPublicAppointments<APPOINTMENT>();
 
         }
