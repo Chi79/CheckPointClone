@@ -148,13 +148,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel buttonspanel;
         
         /// <summary>
-        /// btnCreateAppointment control.
+        /// btnFindAppointments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateAppointment;
+        protected global::System.Web.UI.WebControls.Button btnFindAppointments;
         
         /// <summary>
         /// buttons2 control.
@@ -175,13 +175,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel buttonspanel2;
         
         /// <summary>
-        /// btnManageAppointment control.
+        /// btnFindCourses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnManageAppointment;
+        protected global::System.Web.UI.WebControls.Button btnFindCourses;
         
         /// <summary>
         /// buttonsdiv4 control.
@@ -209,32 +209,5 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnManageAttendance;
-        
-        /// <summary>
-        /// buttonsdiv5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonsdiv5;
-        
-        /// <summary>
-        /// buttonspanel5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel buttonspanel5;
-        
-        /// <summary>
-        /// btnCreateReport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateReport;
     }
 }

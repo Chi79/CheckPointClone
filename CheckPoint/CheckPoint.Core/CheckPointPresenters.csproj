@@ -73,6 +73,7 @@
     <Compile Include="Presenters\CreateReportPresenter.cs" />
     <Compile Include="Presenters\DeleteCoursePresenter.cs" />
     <Compile Include="Presenters\FindAppointmentsPresenter.cs" />
+    <Compile Include="Presenters\FindCoursesPresenter.cs" />
     <Compile Include="Presenters\HomePagePresenter.cs" />
     <Compile Include="Presenters\HostCoursesPresenter.cs" />
     <Compile Include="Presenters\HostHomePresenter.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Presenters\RegisterClientPresenter.cs" />
     <Compile Include="Presenters\UpdateCoursePresenter.cs" />
     <Compile Include="Presenters\UpdateProfilePresenter.cs" />
+    <Compile Include="Presenters\UserCoursesPresenter.cs" />
     <Compile Include="Presenters\UserHomePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
