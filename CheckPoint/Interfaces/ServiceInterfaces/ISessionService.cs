@@ -12,6 +12,7 @@ namespace CheckPointCommon.ServiceInterfaces
         bool? NewAppointmentAddedToCourseStatus { get; set; }
         bool? AppointmentDeletedFromCourseStatus { get; set; }
         bool? UpdatedCourseStatus { get; set; }
+        bool? DeletedCourseStatus { get; set; }
         int? SessionAppointmentId { get; set; }
         int? SessionRowIndex { get; set; }
         string ColumnName { get; set; }

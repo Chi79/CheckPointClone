@@ -16,10 +16,20 @@ namespace CheckPoint.Views.UserControls
             set { txtCourseName.Text = value; }
         }
 
+        public bool CourseNameReadonly
+        {
+            set { txtCourseName.ReadOnly = value; }
+        }
+
         public string Description
         {
             get { return txtDescription.Text; }
             set { txtDescription.Text = value; }
+        }
+
+        public bool DescriptionReadonly
+        {
+            set { txtDescription.ReadOnly = value; }
         }
 
         public string IsPrivate
@@ -28,10 +38,20 @@ namespace CheckPoint.Views.UserControls
             set { ddlIsPrivate.Text = value;  }
         }
 
+        public bool IsPrivateEnabled
+        {
+            set { ddlIsPrivate.Enabled = value; }
+        }
+
         public string IsObligatory
         {
             get { return ddlIsObligatory.SelectedValue; }
             set { ddlIsObligatory.Text = value; }
+        }
+
+        public bool IsObligatoryEnabled
+        {
+            set { ddlIsObligatory.Enabled = value; }
         }
 
         public string Message

@@ -53,6 +53,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public void ResetCourseDeletedStatus()
+        {
+
+            _sessionService.DeletedCourseStatus = false;
+
+        }
+
         public bool GetNewAppointmentAddedToCourseStatus()
         {
 

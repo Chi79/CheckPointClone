@@ -271,7 +271,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the course with Id number: " + AppointmentId + "!  Do you wish to continue?"; }
+            get { return "You are about to delete the course with Id number: " + CourseId + "! All associated appointments will be removed!  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -280,8 +280,10 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(object course)
         {
-            var courseToDelete = _handler.GetCourseByName(ItemName);
+
+            var courseToDelete = _handler.GetCourseById((int)CourseId);
             _handler.Delete(courseToDelete);
+
         }
         public override SaveResult SaveChanges()
         {
