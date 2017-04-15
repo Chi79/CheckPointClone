@@ -168,6 +168,7 @@
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
     <Content Include="index.aspx" />
+    <Content Include="InvalidNavigationView.aspx" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
@@ -200,6 +201,7 @@
     <Content Include="UserControls\ManageCourseAppGridHeader.ascx" />
     <Content Include="UserControls\ManageCourseGrid.ascx" />
     <Content Include="UserControls\ManageCourseHeader.ascx" />
+    <Content Include="UserControls\NavigationMessage.ascx" />
     <Content Include="UserMaster.Master" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
     <None Include="Web.Debug.config">
@@ -306,6 +308,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvalidNavigationView.aspx.cs">
+      <DependentUpon>InvalidNavigationView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvalidNavigationView.aspx.designer.cs">
+      <DependentUpon>InvalidNavigationView.aspx</DependentUpon>
     </Compile>
     <Compile Include="InviteUserView.aspx.cs">
       <DependentUpon>InviteUserView.aspx</DependentUpon>
@@ -440,6 +449,13 @@
     </Compile>
     <Compile Include="UserControls\ManageCourseHeader.ascx.designer.cs">
       <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationMessage.ascx.cs">
+      <DependentUpon>NavigationMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationMessage.ascx.designer.cs">
+      <DependentUpon>NavigationMessage.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserHomeView.aspx.cs">
       <DependentUpon>UserHomeView.aspx</DependentUpon>

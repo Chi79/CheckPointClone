@@ -65,6 +65,7 @@
     <Compile Include="ModelInterfaces\IHomePageModel.cs" />
     <Compile Include="ModelInterfaces\IHostCoursesModel.cs" />
     <Compile Include="ModelInterfaces\IHostHomeModel.cs" />
+    <Compile Include="ModelInterfaces\IInvalidNavigationModel.cs" />
     <Compile Include="ModelInterfaces\IInviteUserModel.cs" />
     <Compile Include="ModelInterfaces\IManageAttendanceModel.cs" />
     <Compile Include="ModelInterfaces\IManageCourseModel.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="ValidationInterfaces\IValidator.cs" />
     <Compile Include="ViewInterfaces\IHostCoursesView.cs" />
     <Compile Include="ViewInterfaces\IHostHomeView.cs" />
+    <Compile Include="ViewInterfaces\IInvalidNavigationView.cs" />
     <Compile Include="ViewInterfaces\IInviteUserView.cs" />
     <Compile Include="ViewInterfaces\ILoginView.cs" />
     <Compile Include="ViewInterfaces\IManageAttendanceView.cs" />
