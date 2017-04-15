@@ -23,12 +23,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnCreateReportButtonClicked(object sender, EventArgs e)
-        {
-
-            _view.Message = "Fabio Goose";
-
-        }
 
         private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
         {
@@ -37,25 +31,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnManageAppointmentButtonClicked(object sender, EventArgs e)
-        {
-
-            bool RowSelected = CheckRowIsSelected();
-
-            if (RowSelected)
-            {
-
-                _view.RedirectToManageAppointment();
-
-            }
-            else
-            {
-
-                _view.Message = "No appointment has been selected!";
-
-            }
-
-        }
 
         private bool CheckRowIsSelected()
         {
@@ -76,21 +51,6 @@ namespace CheckPointPresenters.Presenters
         }
 
 
-        private void OnManageCoursesButtonClicked(object sender, EventArgs e)
-        {
-
-            _view.Message = "Fabio Goose";
-
-        }
-
-
-        private void OnCreateAppointmentButtonClicked(object sender, EventArgs e)
-        {
-
-            _view.RedirectToCreateAppointment();
-
-        }
-
         public override void Load()
         {
 
@@ -105,14 +65,34 @@ namespace CheckPointPresenters.Presenters
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
             _view.RowSelected += OnRowSelected;
-            _view.CreateAppointmentButtonClicked += OnCreateAppointmentButtonClicked;
-            _view.ManageCoursesButtonClicked += OnManageCoursesButtonClicked;
-            _view.ManageAppointmentButtonClicked += OnManageAppointmentButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
-            _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
+
+            _view.FindAppointmentsButtonClicked += OnFindAppointmentsButtonClicked;
+            _view.FindCoursesButtonClicked += OnFindCoursesButtonClicked;
+            _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
 
         }
 
+        private void OnViewCoursesButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToViewCourses();
+
+        }
+
+        private void OnFindCoursesButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToFindCoursesView();
+
+        }
+
+        private void OnFindAppointmentsButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToFindAppointmentsView();
+
+        }
 
         public override void FirstTimeInit()
         {

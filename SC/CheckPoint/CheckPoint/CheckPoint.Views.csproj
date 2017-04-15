@@ -121,6 +121,7 @@
     <Content Include="CSS\StyleMaster.css" />
     <Content Include="DeleteCourseView.aspx" />
     <Content Include="FindAppointmentsView.aspx" />
+    <Content Include="FindCoursesView.aspx" />
     <Content Include="HomePageView.aspx" />
     <Content Include="HostCoursesView.aspx" />
     <Content Include="HostHomeView.aspx" />
@@ -202,6 +203,7 @@
     <Content Include="UserControls\ManageCourseGrid.ascx" />
     <Content Include="UserControls\ManageCourseHeader.ascx" />
     <Content Include="UserControls\NavigationMessage.ascx" />
+    <Content Include="UserCoursesView.aspx" />
     <Content Include="UserMaster.Master" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
     <None Include="Web.Debug.config">
@@ -273,6 +275,13 @@
     </Compile>
     <Compile Include="FindAppointmentsView.aspx.designer.cs">
       <DependentUpon>FindAppointmentsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindCoursesView.aspx.cs">
+      <DependentUpon>FindCoursesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindCoursesView.aspx.designer.cs">
+      <DependentUpon>FindCoursesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePageView.aspx.cs">
       <DependentUpon>HomePageView.aspx</DependentUpon>
@@ -456,6 +465,13 @@
     </Compile>
     <Compile Include="UserControls\NavigationMessage.ascx.designer.cs">
       <DependentUpon>NavigationMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCoursesView.aspx.cs">
+      <DependentUpon>UserCoursesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCoursesView.aspx.designer.cs">
+      <DependentUpon>UserCoursesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserHomeView.aspx.cs">
       <DependentUpon>UserHomeView.aspx</DependentUpon>

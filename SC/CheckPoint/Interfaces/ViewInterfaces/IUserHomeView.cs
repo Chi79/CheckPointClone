@@ -16,16 +16,19 @@ namespace CheckPointCommon.ViewInterfaces
         object SelectedRowValueDataKey { get; }
 
         void BindData();
-        void RedirectToCreateAppointment();
-        void RedirectToManageAppointment();
+
+        void RedirectToFindCoursesView();
+        void RedirectToFindAppointmentsView();
+        void RedirectToViewCourses();
 
         event EventHandler<EventArgs> RowSelected;
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        event EventHandler<EventArgs> CreateAppointmentButtonClicked;
-        event EventHandler<EventArgs> ManageCoursesButtonClicked;
-        event EventHandler<EventArgs> ManageAppointmentButtonClicked;
         event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        event EventHandler<EventArgs> CreateReportButtonClicked;
+
+
+        event EventHandler<EventArgs> FindAppointmentsButtonClicked;
+        event EventHandler<EventArgs> FindCoursesButtonClicked;
+        event EventHandler<EventArgs> ViewCoursesButtonClicked;
     }
 }

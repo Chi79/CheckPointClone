@@ -209,7 +209,7 @@
     <asp:Button ID="btnViewCourses" 
         CssClass="navButtons" 
         runat="server" 
-        OnClick="btnViewCourses_Click"
+        OnClick="btnViewCourses_Click1"
         Text="View Courses"  
         Visible="True" 
         ToolTip="View All Courses" 
@@ -222,13 +222,12 @@
     <div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
     <asp:UpdatePanel ID="buttonspanel" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnCreateAppointment" 
+    <asp:Button ID="btnFindAppointments" 
         CssClass="navButtons" 
         runat="server" 
-        OnClick="btnCreateAppointment_Click" 
-        Text="Create Appointment"  
+        OnClick="btnFindAppointments_Click"
+        Text="Find Appointments"  
         Visible="True" 
-        ToolTip="Create a New Appointment" 
         ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -238,13 +237,13 @@
     <div id="buttons2" runat="server" style="z-index:5;" class="buttons2">
     <asp:UpdatePanel ID="buttonspanel2" runat="server" > 
     <ContentTemplate>
-    <asp:Button ID="btnManageAppointment" 
+    <asp:Button ID="btnFindCourses" 
         CssClass="navButtons" 
         runat="server" 
-        OnClick="btnManageAppointment_Click"
-        Text="Manage Appointment"  
+        OnClick="btnFindCourses_Click"
+        Text="Find Courses"  
         Visible="True" 
-        ToolTip="Manage Appointment Details" 
+        ToolTip="Find Courses" 
         ForeColor="White" />
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -268,7 +267,7 @@
     </div>
 
 
-    <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
+<%--    <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
     <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
     <ContentTemplate>
     <asp:Button ID="btnCreateReport" 
@@ -281,7 +280,7 @@
         ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
-    </div>
+    </div>--%>
 
     </div>
 

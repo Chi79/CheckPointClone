@@ -62,6 +62,7 @@
     <Compile Include="ModelInterfaces\ICreateReportModel.cs" />
     <Compile Include="ModelInterfaces\IDeleteCourseModel.cs" />
     <Compile Include="ModelInterfaces\IFindAppointmentsModel.cs" />
+    <Compile Include="ModelInterfaces\IFindCoursesModel.cs" />
     <Compile Include="ModelInterfaces\IHomePageModel.cs" />
     <Compile Include="ModelInterfaces\IHostCoursesModel.cs" />
     <Compile Include="ModelInterfaces\IHostHomeModel.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="ModelInterfaces\IManageSingleAppointmentModel.cs" />
     <Compile Include="ModelInterfaces\IUpdateCourseModel.cs" />
     <Compile Include="ModelInterfaces\IUpdateProfileModel.cs" />
+    <Compile Include="ModelInterfaces\IUserCoursesModel.cs" />
     <Compile Include="RepositoryInterfaces\IAttendeeRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
     <Compile Include="ServiceInterfaces\IHandleAppointments.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="ViewInterfaces\ICreateReportView.cs" />
     <Compile Include="ViewInterfaces\IDeleteCourseView.cs" />
     <Compile Include="ViewInterfaces\IFindAppointmentsView.cs" />
+    <Compile Include="ViewInterfaces\IFindCoursesView.cs" />
     <Compile Include="ViewInterfaces\IHomePageView.cs" />
     <Compile Include="ModelInterfaces\ILoginModel.cs" />
     <Compile Include="ModelInterfaces\IRegisterClientModel.cs" />
@@ -115,6 +118,7 @@
     <Compile Include="ViewInterfaces\IRegisterClientView.cs" />
     <Compile Include="ViewInterfaces\IUpdateCourseView.cs" />
     <Compile Include="ViewInterfaces\IUpdateProfileView.cs" />
+    <Compile Include="ViewInterfaces\IUserCoursesView.cs" />
     <Compile Include="ViewInterfaces\IUserHomeView.cs" />
     <Compile Include="ViewInterfaces\IView.cs" />
   </ItemGroup>

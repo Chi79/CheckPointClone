@@ -69,27 +69,38 @@ namespace CheckPoint.Views
             AppointmentGridView.DataBind();
 
         }
-        public void RedirectToCreateAppointment()
+
+
+        public void RedirectToFindAppointmentsView()
         {
 
-            Response.Redirect("CreateAppointmentView.aspx");
+            Response.Redirect("FindAppointmentsView.aspx");
 
         }
-        public void RedirectToManageAppointment()
+
+        public void RedirectToFindCoursesView()
         {
 
-            Response.Redirect("ManageSingleAppointmentView.aspx");
+            Response.Redirect("FindCoursesView.aspx");
+
+        }
+
+        public void RedirectToViewCourses()
+        {
+
+            Response.Redirect("UserCoursesView.aspx");
 
         }
 
         public event EventHandler<EventArgs> RowSelected;
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
-        public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
-        public event EventHandler<EventArgs> ManageCoursesButtonClicked;
-        public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
+        public event EventHandler<EventArgs> SortColumnsByPropertyDescending; 
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        public event EventHandler<EventArgs> CreateReportButtonClicked;
+
+
+        public event EventHandler<EventArgs> FindCoursesButtonClicked;
+        public event EventHandler<EventArgs> FindAppointmentsButtonClicked;
+        public event EventHandler<EventArgs> ViewCoursesButtonClicked;
 
         private void OnAppointmentGridViewHeader_Selected(object sender, EventArgs e)
         {
@@ -132,36 +143,32 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnManageAppointment_Click(object sender, EventArgs e)
+
+        protected void btnFindAppointments_Click(object sender, EventArgs e)
         {
-            if (ManageAppointmentButtonClicked != null)
+            if(FindAppointmentsButtonClicked != null)
             {
-                ManageAppointmentButtonClicked(this, EventArgs.Empty);
+                FindAppointmentsButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnCreateAppointment_Click(object sender, EventArgs e)
+        protected void btnFindCourses_Click(object sender, EventArgs e)
         {
-            if (CreateAppointmentButtonClicked != null)
+            if(FindCoursesButtonClicked != null)
             {
-                CreateAppointmentButtonClicked(this, EventArgs.Empty);
+                FindCoursesButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnViewCourses_Click(object sender, EventArgs e)
+        protected void btnViewCourses_Click1(object sender, EventArgs e)
         {
-            if (ManageCoursesButtonClicked != null)
-            {
-                ManageCoursesButtonClicked(this, EventArgs.Empty);
-            }
-        }
 
-        protected void btnCreateReport_Click(object sender, EventArgs e)
-        {
-            if (CreateReportButtonClicked != null)
+            if(ViewCoursesButtonClicked != null)
             {
-                CreateReportButtonClicked(this, EventArgs.Empty);
+
+                ViewCoursesButtonClicked(this, EventArgs.Empty);
             }
+
         }
     }
 }
