@@ -29,6 +29,11 @@ namespace DataAccess.Concrete.Repositories
             return CheckPointContext.APPOINTMENTs.Where(c => c.CourseId == courseId).ToList();
         }
 
+        public IEnumerable<APPOINTMENT> GetAllPublicAppointments()
+        {
+            return CheckPointContext.APPOINTMENTs.Where(a => a.IsPrivate == false).ToList();
+        }
+
         public APPOINTMENT GetAppointmentByAppointmentName(string appointmentName)
         {
             return CheckPointContext.APPOINTMENTs.FirstOrDefault(app => app.AppointmentName == appointmentName);

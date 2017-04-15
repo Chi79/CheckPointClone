@@ -30,5 +30,6 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> FindAppointmentsButtonClicked;
         event EventHandler<EventArgs> FindCoursesButtonClicked;
         event EventHandler<EventArgs> ViewCoursesButtonClicked;
+
     }
 }

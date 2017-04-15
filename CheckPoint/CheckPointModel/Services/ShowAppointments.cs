@@ -99,6 +99,13 @@ namespace CheckPointModel.Services
 
         }
 
+        public IEnumerable<T> GetAllPublicAppointments<T>()
+        {
+
+            return _uOW.APPOINTMENTs.GetAllPublicAppointments() as IEnumerable<T>;
+
+        }
+
         public IEnumerable<T> GetEmptyList<T>()
         {
 
