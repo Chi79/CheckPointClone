@@ -226,7 +226,7 @@
         CssClass="navButtons" 
         runat="server" 
         OnClick="btnFindAppointments_Click"
-        Text="Find Appointments"  
+        Text="Find Public Appointments"  
         Visible="True" 
         ForeColor="White"/>
     </ContentTemplate>
@@ -241,9 +241,9 @@
         CssClass="navButtons" 
         runat="server" 
         OnClick="btnFindCourses_Click"
-        Text="Find Courses"  
+        Text="Find Public Courses"  
         Visible="True" 
-        ToolTip="Find Courses" 
+        ToolTip="Find Public Courses" 
         ForeColor="White" />
     </ContentTemplate>
     </asp:UpdatePanel>
