@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FindAppointmentsView.aspx.cs" Inherits="CheckPoint.Views.FindAppointmentsView" EnableEventValidation="false" MasterPageFile="~/HostMaster.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FindAppointmentsView.aspx.cs" Inherits="CheckPoint.Views.FindAppointmentsView" EnableEventValidation="false" MasterPageFile="~/UserMaster.Master" %>
 
 
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
