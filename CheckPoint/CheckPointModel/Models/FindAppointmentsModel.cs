@@ -91,21 +91,21 @@ namespace CheckPointModel.Models
         public IEnumerable<object> GetCachedAppointments()
         {
 
-            return _displayService.GetAppointmentsCached<APPOINTMENT>();
+            return _displayService.GetPublicAppointmentsCached<APPOINTMENT>();
 
         }
 
         public IEnumerable<object> GetAppointmentsSortedByPropertyAsc()
         {
 
-            return _displayService.GetAppointmentsSortedByPropertyAscending<object>(GetColumnName());
+            return _displayService.GetPublicAppointmentsSortedByPropertyAscending<object>(GetColumnName());
 
         }
 
         public IEnumerable<object> GetAppointmentsSortedByPropertyDesc()
         {
 
-            return _displayService.GetAppointmentsSortedByPropertyDescending<object>(GetColumnName());
+            return _displayService.GetPublicAppointmentsSortedByPropertyDescending<object>(GetColumnName());
 
         }
 

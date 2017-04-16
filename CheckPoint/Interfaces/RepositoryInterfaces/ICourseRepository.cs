@@ -11,6 +11,8 @@ namespace CheckPointCommon.RepositoryInterfaces
     {
         IEnumerable<COURSE> GetAllCoursesFor(string userName);
 
+        IEnumerable<COURSE> GetAllPublicCourses();
+
         COURSE GetCourseByCourseName(string courseName);
 
         COURSE GetCourseByCourseId(int coursetId);

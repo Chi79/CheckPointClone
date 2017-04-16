@@ -23,6 +23,12 @@ namespace DataAccess.Concrete.Repositories
         {
             return CheckPointContext.COURSEs.Where(course => course.UserName == userName).ToList();
         }
+
+        public IEnumerable<COURSE> GetAllPublicCourses()
+        {
+            return CheckPointContext.COURSEs.Where(course => course.IsPrivate == false).ToList();
+        }
+
         public COURSE GetCourseByCourseName(string courseName)
         {
             return CheckPointContext.COURSEs.FirstOrDefault(course => course.Name == courseName);
