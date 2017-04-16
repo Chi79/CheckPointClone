@@ -38,7 +38,7 @@
 
                 
           <%--       <span class="tooltiptext">Show my activeties</span>--%>
-                 <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="1" >                                             
+                 <a class="main-sidebar-menu-list-item-link" href="UserHomeView.aspx" tabindex="1" >                                             
                   
                 <img class="main-sidebar-menu-list-item-icon"  src="Images/activitiesicon1.png" alt="[]"></img>
                    
