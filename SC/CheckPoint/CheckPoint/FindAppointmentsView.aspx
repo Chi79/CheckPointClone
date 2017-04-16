@@ -105,6 +105,17 @@
     position:relative;
     animation:buttonsup;
 }
+.Appointmentslide{
+      position:absolute;
+      top: -7%;
+      left: 2%;
+      animation:slidedown 4s;
+      top:-7%;
+}
+@keyframes slidedown {
+      from { top: -100%; }
+      to { top: -7%; }
+}
 
 .navButtons{
     border-radius: 5px;
@@ -150,6 +161,7 @@
 
     <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
+    <div id="AppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/PublicAppointmentsHeading.svg" /></div>
 
     <asp:Panel
     ID="Panel2"

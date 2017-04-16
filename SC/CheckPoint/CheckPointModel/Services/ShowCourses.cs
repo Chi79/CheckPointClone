@@ -17,6 +17,7 @@ namespace CheckPointModel.Services
         private ICacheData _cache;
 
         public const string key = "courseKey";
+        public const string publicCoursesKey = "publicCoursesKey";
         public string client;
 
         private List<COURSE> emptyList = new List<COURSE>();
@@ -45,10 +46,36 @@ namespace CheckPointModel.Services
             }
 
         }
+
+        public IEnumerable<T> GetPublicCoursesCached<T>()
+        {
+
+            if (PublicCoursesCache != null)
+            {
+
+                return PublicCoursesCache as IEnumerable<T>;
+
+            }
+            else
+            {
+
+                return GetAllPublicCourses<T>();
+
+            }
+
+        }
+
         public List<COURSE> CoursesCache
         {
 
             get { return _cache.FetchCollection<COURSE>(key).ToList(); }
+
+        }
+
+        public List<COURSE> PublicCoursesCache
+        {
+
+            get { return _cache.FetchCollection<COURSE>(publicCoursesKey).ToList(); }
 
         }
 
@@ -62,6 +89,19 @@ namespace CheckPointModel.Services
             return courses as IEnumerable<T>;
 
         }
+
+        public IEnumerable<T> GetAllPublicCourses<T>()
+        {
+
+            _cache.Add(publicCoursesKey, _uOW.COURSEs.GetAllPublicCourses());
+
+            var courses = PublicCoursesCache;
+
+            return courses as IEnumerable<T>;
+
+
+        }
+
 
         public IEnumerable<T> GetEmptyList<T>()
         {
@@ -88,6 +128,34 @@ namespace CheckPointModel.Services
         {
 
             var courses = GetCoursesCached<T>();
+
+            var coursesSorted = courses.OrderByDescending(course => typeof(COURSE)
+                                                              .GetProperty(property)
+                                                              .GetValue(course))
+                                                              .ToList();
+
+            return coursesSorted as IEnumerable<T>;
+
+        }
+
+        public IEnumerable<T> GetPublicCoursesSortedByPropertyAscending<T>(string property)
+        {
+
+            var courses = GetPublicCoursesCached<T>();
+
+
+            var coursesSorted = courses.OrderBy(course => typeof(COURSE)
+                                                .GetProperty(property)
+                                                .GetValue(course))
+                                                .ToList();
+
+            return coursesSorted as IEnumerable<T>;
+
+        }
+        public IEnumerable<T> GetPublicCoursesSortedByPropertyDescending<T>(string property)
+        {
+
+            var courses = GetPublicCoursesCached<T>();
 
             var coursesSorted = courses.OrderByDescending(course => typeof(COURSE)
                                                               .GetProperty(property)

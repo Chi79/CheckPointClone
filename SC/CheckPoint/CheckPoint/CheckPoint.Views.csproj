@@ -135,6 +135,7 @@
     <Content Include="Images\buttonshade1.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\checkpointlogo1.png" />
+    <Content Include="Images\CourseDeletedMessage.svg" />
     <Content Include="Images\CourseManagerHeading.svg" />
     <Content Include="Images\CoursesHeading.svg" />
     <Content Include="Images\CourseUpdatedMessage.svg" />
@@ -158,7 +159,11 @@
     <Content Include="Images\manageattendancebutton1.png" />
     <Content Include="Images\managecoursebutton.png" />
     <Content Include="Images\managecoursesbutton1.png" />
+    <Content Include="Images\MyAppointmentsHeading.svg" />
+    <Content Include="Images\MyCoursesHeading.svg" />
     <Content Include="Images\MyCoursesIcon.png" />
+    <Content Include="Images\PublicAppointmentsHeading.svg" />
+    <Content Include="Images\PublicCoursesHeading.svg" />
     <Content Include="Images\SelectAppointmentHeading.svg" />
     <Content Include="Images\SelectCourseHeading.svg" />
     <Content Include="Images\small_logo.png" />
@@ -205,6 +210,8 @@
     <Content Include="UserControls\NavigationMessage.ascx" />
     <Content Include="UserControls\UserAppointmentGridView.ascx" />
     <Content Include="UserControls\UserAppointmentGridViewHeader.ascx" />
+    <Content Include="UserControls\UserCourseGridView.ascx" />
+    <Content Include="UserControls\UserCourseGridViewHeader.ascx" />
     <Content Include="UserCoursesView.aspx" />
     <Content Include="UserMaster.Master" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
@@ -481,6 +488,20 @@
     </Compile>
     <Compile Include="UserControls\UserAppointmentGridViewHeader.ascx.designer.cs">
       <DependentUpon>UserAppointmentGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridView.ascx.cs">
+      <DependentUpon>UserCourseGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridView.ascx.designer.cs">
+      <DependentUpon>UserCourseGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridViewHeader.ascx.cs">
+      <DependentUpon>UserCourseGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridViewHeader.ascx.designer.cs">
+      <DependentUpon>UserCourseGridViewHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserCoursesView.aspx.cs">
       <DependentUpon>UserCoursesView.aspx</DependentUpon>

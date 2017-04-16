@@ -17,6 +17,14 @@ namespace CheckPointCommon.ServiceInterfaces
 
         IEnumerable<T> GetCoursesCached<T>();
 
+        IEnumerable<T> GetPublicCoursesCached<T>();
+
+        IEnumerable<T> GetPublicCoursesSortedByPropertyAscending<T>(string property);
+
+        IEnumerable<T> GetPublicCoursesSortedByPropertyDescending<T>(string property);
+
+        IEnumerable<T> GetAllPublicCourses<T>();
+
         object GetSelectedCourseByCourseId(int? CourseId);
     }
 }
