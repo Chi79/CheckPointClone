@@ -40,7 +40,7 @@
 }
 .PanelAppGrid{
     position:relative; 
-    height:315px; 
+    height:315px;
     width:100%;
     overflow-y:scroll;
     right:1%;
