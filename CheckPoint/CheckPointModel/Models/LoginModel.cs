@@ -83,7 +83,7 @@ namespace CheckPointModel.Models
 
         }
 
-        public string fetchLoggedInClientTagId()
+        private string fetchLoggedInClientTagId()
         {
 
             string client = GetLoggedInClient();
