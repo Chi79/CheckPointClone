@@ -56,7 +56,9 @@ namespace CheckPointPresenters.Presenters
             {
                 
                 _clientType = (ClientType)_model.GetClientType();
-                InitializeSession(username,_clientType);
+
+                InitializeSession(username);
+
                 CheckClientType();
 
             }
@@ -69,14 +71,22 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+        private void InitializeSession(string username)
+        {
+
+            _model.StoreLoggedInClientToSession(username);
+
+            _model.ResetSessionState();
+
+        }
+
         private void CheckClientType()
         {
             switch (_clientType)
             {
 
                 case ClientType.User:
-                   
-                   
+                    StoreTagIdToSession();                   
                     _view.RedirectToUserHomePage();
                     break;
                 case ClientType.Host:
@@ -86,17 +96,10 @@ namespace CheckPointPresenters.Presenters
             }
         } 
 
-        private void InitializeSession(string username,ClientType clientType)
+        private void StoreTagIdToSession()
         {
-          
-            _model.StoreLoggedInClientToSession(username);
-          
-            _model.ResetSessionState();
 
-            if (clientType == ClientType.User)
-            {
-                _model.StoreClientTagIdToSession(_model.fetchLoggedInClientTagId());
-            }
+            _model.StoreClientTagIdToSession();
 
         }
 

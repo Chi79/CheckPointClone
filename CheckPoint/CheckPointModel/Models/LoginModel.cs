@@ -51,10 +51,10 @@ namespace CheckPointModel.Models
 
         public int GetClientType()
         {
-            return loginResult.ClientType;
-        }
 
-       
+            return loginResult.ClientType;
+
+        }      
 
         public void StoreLoggedInClientToSession(string username)
         {
@@ -62,7 +62,6 @@ namespace CheckPointModel.Models
             _sessionService.LoggedInClient = username;
 
         }
-
 
 
         public void ResetSessionState()
@@ -75,17 +74,32 @@ namespace CheckPointModel.Models
             _sessionService.UpdatedCourseStatus = false;
             _sessionService.DeletedCourseStatus = false;
            
+        }
+
+        private string GetLoggedInClient()
+        {
+
+            return _sessionService.LoggedInClient;
 
         }
+
         public string fetchLoggedInClientTagId()
         {
 
-                return _uOW.Client_TagIds.GetClientTagId(_sessionService.LoggedInClient);             
+            string client = GetLoggedInClient();
+
+            return _uOW.Client_TagIds.GetClientTagId(client);             
   
         }
-        public void StoreClientTagIdToSession(string ClientTagId)
+
+        public void StoreClientTagIdToSession()
         {
-            _sessionService.ClientTagId = ClientTagId;
+
+            string clientTagId = fetchLoggedInClientTagId();
+
+            _sessionService.ClientTagId = clientTagId;
+
         }
+
     }
 }
