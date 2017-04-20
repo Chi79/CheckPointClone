@@ -21,10 +21,6 @@ namespace CheckPointCommon.ModelInterfaces
 
         void StoreLoggedInClientToSession(string username);
 
-        //string fetchLoggedInClientTagId();
-
-        //void StoreClientTagIdToSession(string ClientTagId);
-
         void StoreClientTagIdToSession();
 
     }
