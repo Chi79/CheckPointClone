@@ -90,7 +90,6 @@ namespace CheckPointModel.Models
         public IEnumerable<object> GetAllPublicCourses()
         {
 
-            //return _displayService.GetAllCoursesFor<COURSE>(GetLoggedInClient());
             return _displayService.GetAllPublicCourses<COURSE>();
 
         }
