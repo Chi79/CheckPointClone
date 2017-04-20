@@ -12,7 +12,8 @@ namespace CheckPointCommon.RepositoryInterfaces
         IClientRepository CLIENTs { get; }   //exposes our repositories via interfaces (testable)
         IAppointmentRepository APPOINTMENTs { get; }
         ICourseRepository COURSEs { get; }
-        IAttendeeRepository ATTENDEEs { get; } 
+        IAttendeeRepository ATTENDEEs { get; }
+        IClientTagRepository Client_TagIds { get; }
         SaveResult Complete();
         
     }

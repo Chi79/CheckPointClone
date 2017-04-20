@@ -26,6 +26,8 @@ namespace DataAccess.Concrete.Repositories
             COURSEs = new CourseRepository(_context);
 
             ATTENDEEs = new AttendeeRepository(_context);
+
+            Client_TagIds = new ClientTagRepository(_context);
         }
         public IClientRepository CLIENTs { get; private set; }
 
@@ -34,6 +36,8 @@ namespace DataAccess.Concrete.Repositories
         public ICourseRepository COURSEs { get; private set; }
 
         public IAttendeeRepository ATTENDEEs { get; private set; }
+
+        public IClientTagRepository Client_TagIds { get; private set; }
 
         //public int Complete()
         //{

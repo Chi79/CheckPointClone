@@ -49,6 +49,12 @@ namespace CheckPointModel.Models
             _sessionService.SessionAppointmentId = id;
 
         }
+        public string GetClientTagId()
+        {
+            return _sessionService.ClientTagId;
+        }
+
+        
 
         public void ResetSessionState()
         {

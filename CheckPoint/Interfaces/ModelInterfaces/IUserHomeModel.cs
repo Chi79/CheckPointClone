@@ -32,5 +32,7 @@ namespace CheckPointCommon.ModelInterfaces
 
         IEnumerable<object> GetAppointmentsSortedByPropertyDesc();
 
+
+
     }
 }

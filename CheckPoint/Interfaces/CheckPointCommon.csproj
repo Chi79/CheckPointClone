@@ -75,6 +75,7 @@
     <Compile Include="ModelInterfaces\IUpdateProfileModel.cs" />
     <Compile Include="ModelInterfaces\IUserCoursesModel.cs" />
     <Compile Include="RepositoryInterfaces\IAttendeeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IClientTagRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
     <Compile Include="ServiceInterfaces\IHandleAppointments.cs" />
     <Compile Include="ServiceInterfaces\IHandleCourses.cs" />

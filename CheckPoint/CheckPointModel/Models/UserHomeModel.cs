@@ -108,5 +108,6 @@ namespace CheckPointModel.Models
             return _displayService.GetAppointmentsSortedByPropertyDescending<object>(GetColumnName());
 
         }
+
     }
 }

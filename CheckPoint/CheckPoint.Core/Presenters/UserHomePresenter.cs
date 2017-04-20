@@ -98,7 +98,6 @@ namespace CheckPointPresenters.Presenters
         {
 
             ResetSessionState();
-
             ShowData();
 
         }

@@ -27,6 +27,25 @@ namespace CheckPointHTTPServices.Cache
             set { HttpContext.Current.Session["LoggedInClient"] = value; }
         }
 
+        public string ClientTagId
+        {
+            get
+            {
+                var tagId = HttpContext.Current.Session["ClientTagId"].ToString();
+                if(tagId!=null)
+                {
+                    return tagId;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set {
+                HttpContext.Current.Session["ClientTagId"] = value;
+            }
+        }
+
         public bool? NewAppointmentAddedToCourseStatus
         {
             get
