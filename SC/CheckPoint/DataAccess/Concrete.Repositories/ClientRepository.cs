@@ -60,7 +60,7 @@ namespace DataAccess.Concrete.Repositories
             {
                 var myresult = result.FirstOrDefault();
                 myLoginResult.ClientType = myresult.ClientType;
-                myLoginResult.Success = true;
+                myLoginResult.Success = true;                
             }
             return myLoginResult;
         }

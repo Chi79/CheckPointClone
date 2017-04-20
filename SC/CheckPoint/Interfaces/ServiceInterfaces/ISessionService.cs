@@ -9,6 +9,7 @@ namespace CheckPointCommon.ServiceInterfaces
     public interface ISessionService
     {
         string LoggedInClient { get; set; }
+        string ClientTagId { get; set; }
         bool? NewAppointmentAddedToCourseStatus { get; set; }
         bool? AppointmentDeletedFromCourseStatus { get; set; }
         bool? UpdatedCourseStatus { get; set; }

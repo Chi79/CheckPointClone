@@ -54,11 +54,9 @@ namespace CheckPointPresenters.Presenters
             bool loginAttemptSuccessful = _model.GetLoginAttemptStatus();
             if (loginAttemptSuccessful)
             {
-
-                InitializeSession(username);
-
+                
                 _clientType = (ClientType)_model.GetClientType();
-
+                InitializeSession(username,_clientType);
                 CheckClientType();
 
             }
@@ -77,6 +75,8 @@ namespace CheckPointPresenters.Presenters
             {
 
                 case ClientType.User:
+                   
+                   
                     _view.RedirectToUserHomePage();
                     break;
                 case ClientType.Host:
@@ -86,12 +86,17 @@ namespace CheckPointPresenters.Presenters
             }
         } 
 
-        private void InitializeSession(string username)
+        private void InitializeSession(string username,ClientType clientType)
         {
-
+          
             _model.StoreLoggedInClientToSession(username);
-
+          
             _model.ResetSessionState();
+
+            if (clientType == ClientType.User)
+            {
+                _model.StoreClientTagIdToSession(_model.fetchLoggedInClientTagId());
+            }
 
         }
 

@@ -8,6 +8,7 @@ using CheckPointModel.Utilities;
 using CheckPointCommon.Structs;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
+using CheckPointCommon.Enums;
 
 namespace CheckPointModel.Models
 {
@@ -53,12 +54,16 @@ namespace CheckPointModel.Models
             return loginResult.ClientType;
         }
 
+       
+
         public void StoreLoggedInClientToSession(string username)
         {
 
             _sessionService.LoggedInClient = username;
 
         }
+
+
 
         public void ResetSessionState()
         {
@@ -69,7 +74,18 @@ namespace CheckPointModel.Models
             _sessionService.NewAppointmentAddedToCourseStatus = false;
             _sessionService.UpdatedCourseStatus = false;
             _sessionService.DeletedCourseStatus = false;
+           
 
+        }
+        public string fetchLoggedInClientTagId()
+        {
+
+                return _uOW.Client_TagIds.GetClientTagId(_sessionService.LoggedInClient);             
+  
+        }
+        public void StoreClientTagIdToSession(string ClientTagId)
+        {
+            _sessionService.ClientTagId = ClientTagId;
         }
     }
 }

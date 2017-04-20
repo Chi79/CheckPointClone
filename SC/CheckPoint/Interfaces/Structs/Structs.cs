@@ -10,6 +10,7 @@ namespace CheckPointCommon.Structs
     {
          public int ClientType;
          public bool Success;
+         
     }
     public struct SaveResult
     {
