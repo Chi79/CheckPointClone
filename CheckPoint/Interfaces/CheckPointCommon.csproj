@@ -78,6 +78,7 @@
     <Compile Include="RepositoryInterfaces\IClientTagRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICourseRepository.cs" />
     <Compile Include="ServiceInterfaces\IHandleAppointments.cs" />
+    <Compile Include="ServiceInterfaces\IHandleAttendee.cs" />
     <Compile Include="ServiceInterfaces\IHandleCourses.cs" />
     <Compile Include="ServiceInterfaces\IHandler.cs" />
     <Compile Include="ServiceInterfaces\ISessionService.cs" />

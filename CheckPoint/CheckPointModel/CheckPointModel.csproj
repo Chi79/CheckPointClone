@@ -63,6 +63,7 @@
     <Compile Include="Models\UpdateCourseModel.cs" />
     <Compile Include="Models\UserCoursesModel.cs" />
     <Compile Include="Services\AppointmentHandler.cs" />
+    <Compile Include="Services\AttendeeHandler.cs" />
     <Compile Include="Services\CourseHandler.cs" />
     <Compile Include="Services\JobService.cs" />
     <Compile Include="Services\ShowAppointments.cs" />
