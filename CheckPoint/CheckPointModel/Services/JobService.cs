@@ -10,7 +10,7 @@ using CheckPointDataTables.Tables;
 
 namespace CheckPointModel.Services
 {
-    public class JobServiceBase 
+    public class JobServiceBase
     {
         public virtual DbAction Jobtype { get; set; }
         public virtual string ItemName { get; set; }
@@ -21,7 +21,7 @@ namespace CheckPointModel.Services
 
 
 
-        public virtual void PerformTask(object appointment)
+        public virtual void PerformTask(object obj)
         {
             //not implemented
         }
@@ -50,7 +50,7 @@ namespace CheckPointModel.Services
         }
         public override string CompletedMessage
         {
-            get  { return "New Appointment Added Succesfully!"; }
+            get { return "New Appointment Added Succesfully!"; }
         }
 
         public override void PerformTask(object appointment)
@@ -156,7 +156,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the appointment with Id number: " + AppointmentId +"!  Do you wish to continue?"; }
+            get { return "You are about to delete the appointment with Id number: " + AppointmentId + "!  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -334,5 +334,44 @@ namespace CheckPointModel.Services
             return result;
         }
     }
+    public class CreateAttendeeJob : JobServiceBase
+    {
+        private IHandleAttendee _handler;
+
+        public CreateAttendeeJob(IHandleAttendee handler)
+        {
+            _handler = handler;
+        }
+
+        public override DbAction Jobtype
+        {
+            get { return DbAction.CreateAttendee; }
+            set { Jobtype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to be an attendee! Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "You are now an attendee!"; }
+        }
+
+        public override void PerformTask(object attendee)
+        {
+            _handler.Create(attendee);
+        }
+
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+
+    }
 }
+    
+
+
 

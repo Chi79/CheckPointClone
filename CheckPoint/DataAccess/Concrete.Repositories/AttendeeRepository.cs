@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.Repositories
     {
         public AttendeeRepository(CheckPointContext context):base(context)  // calls our base constructor Repository<User>
         {
-            //TODO
+           
         }
     }
 }
