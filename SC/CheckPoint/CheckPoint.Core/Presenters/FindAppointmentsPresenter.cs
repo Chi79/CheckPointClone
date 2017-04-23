@@ -5,7 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
+using CheckPointCommon.CacheInterfaces;
 using CheckPointPresenters.Bases;
+using CheckPointModel.DTOs;
+using CheckPointCommon.Enums;
+using CheckPointDataTables.Tables;
+
 
 namespace CheckPointPresenters.Presenters
 {
@@ -14,7 +19,8 @@ namespace CheckPointPresenters.Presenters
         private readonly IFindAppointmentsView _view;
         private readonly IFindAppointmentsModel _model;
 
-        public FindAppointmentsPresenter(IFindAppointmentsView view, IFindAppointmentsModel model)
+        private AttendeeDTO _dTO;
+        public FindAppointmentsPresenter(IFindAppointmentsView view,IFindAppointmentsModel model)
         {
 
             _view = view;
@@ -22,12 +28,7 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
-        {
 
-            _view.Message = "Fabio Goose";
-
-        }
 
 
         private bool CheckRowIsSelected()
@@ -65,13 +66,6 @@ namespace CheckPointPresenters.Presenters
             _view.RowSelected += OnRowSelected;
             _view.FindCoursesButtonClicked += OnFindCoursesButtonClicked;
             _view.ApplyToAttendAppointmentButtonClicked += OnApplyToAttendAppointmentButtonClicked;
-
-        }
-
-        private void OnApplyToAttendAppointmentButtonClicked(object sender, EventArgs e)
-        {
-           
-
 
         }
 
@@ -196,5 +190,96 @@ namespace CheckPointPresenters.Presenters
             _model.SetSessionAppointmentId(selectedAppointmentId);
 
         }
+        private void OnApplyToAttendAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            PrepareJobType();       
+
+            CreateAttendee();
+        }
+
+        private void CreateAttendee()
+        {
+          
+
+            CreateAttendeeDTOFromInput();
+
+            bool validDTO = ValidateDTO();
+            if(validDTO)
+            {
+                var attendee = ConvertDTOToAttendee();
+                _model.PerformJob(attendee);
+                CheckChangesSaved();
+            }
+            else
+            {
+                _view.Message = "Faild to apply to Appointment";
+            }
+
+        }
+
+        private void CheckChangesSaved()
+        {
+
+            bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
+            if (UpdateSuccessful)
+            {
+
+                _view.Message = _model.GetJobCompletedMessage();
+                
+
+            
+
+            }
+            else
+            {
+                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+            }
+
+        }
+
+        public ATTENDEE ConvertDTOToAttendee()
+        {
+            return _model.ConvertToAttendee(_dTO) as ATTENDEE;
+        }
+
+        public void PrepareJobType()
+        {
+            _model.PrepareCreateAttendee();
+        }
+        public void CreateAttendeeDTOFromInput()
+        {
+            SaveSelectedAppointmentIdToSession();
+
+            _dTO = new AttendeeDTO
+            {
+                AppointmentId = (int)_model.GetSessionAppointmentId(),
+                TagId = _model.GetLoggedInClientTagId(),
+                StatusId = (int)AttendeeStatus.RequestedToAttend               
+            };                            
+
+        }
+
+        private bool ValidateDTO()
+        {
+
+            bool attendeeDataIsValid = _dTO.IsValid(_dTO);
+            if (attendeeDataIsValid)
+            {
+
+                return true;
+
+            }
+            else
+            {
+
+                return false;
+
+            }
+
+        }
+
+
+
+
     }
 }

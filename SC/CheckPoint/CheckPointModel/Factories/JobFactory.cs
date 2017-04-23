@@ -16,16 +16,18 @@ namespace CheckPointModel.Factories
 
         private IHandleAppointments _appointmentsHandler;
         private IHandleCourses _coursesHandler;
-
+        private IHandleAttendee _attendeeHandler;
+        
 
         private Dictionary<DbAction, JobServiceBase> AppointmentJobs;
         private Dictionary<DbAction, JobServiceBase> CourseJobs;
+        private Dictionary<DbAction, JobServiceBase> AttendeeJobs;
 
-
-        public JobFactory(IHandleAppointments appointmentsHandler, IHandleCourses coursesHandler)
+        public JobFactory(IHandleAppointments appointmentsHandler, IHandleAttendee attendeeHandler, IHandleCourses coursesHandler)
         {
             _appointmentsHandler = appointmentsHandler;
             _coursesHandler = coursesHandler;
+            _attendeeHandler = attendeeHandler;
         }
 
         public void LoadAppointmentDictionary(IHandleAppointments handler)
@@ -54,6 +56,15 @@ namespace CheckPointModel.Factories
             }
         }
 
+        public void LoadAttendeeDictionary(IHandleAttendee handler)
+        {
+         if(AttendeeJobs==null)
+            {
+                AttendeeJobs = new Dictionary<DbAction, JobServiceBase>();
+                AttendeeJobs.Add(DbAction.CreateAttendee, new CreateAttendeeJob(handler));
+            }   
+        }
+
         public object CreateAppointmentJobType(object action)
         {
             LoadAppointmentDictionary(_appointmentsHandler);
@@ -64,6 +75,12 @@ namespace CheckPointModel.Factories
         {
             LoadCourseDictionary(_coursesHandler);
             return CourseJobs[(DbAction)action] as JobServiceBase;
+        }
+
+        public object CreateAttendeeJobType(object action)
+        {
+            LoadAttendeeDictionary(_attendeeHandler);
+            return AttendeeJobs[(DbAction)action] as JobServiceBase;
         }
     }
 }
