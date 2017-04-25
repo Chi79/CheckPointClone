@@ -16,6 +16,7 @@ namespace CheckPointModel.DTOs
         public string UserName { get; set; }
         public bool IsPrivate { get; set; }
         public bool IsObligatory { get; set; }
+        public int CourseId { get; set; }
 
         public override void CheckForBrokenRules(ICourseDTO client)
         {

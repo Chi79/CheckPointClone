@@ -37,5 +37,10 @@ namespace DataAccess.Concrete.Repositories
         {
             return CheckPointContext.COURSEs.FirstOrDefault(course => course.CourseId == courseId);
         }
+
+        public IEnumerable<COURSE> GetCourseWithAppliedAttendees(ATTENDEE attendee)
+        {
+            return CheckPointContext.COURSEs.Where(course => course.CourseId == attendee.CourseId).Distinct().ToList();
+        }
     }
 }

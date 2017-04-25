@@ -9,6 +9,10 @@ namespace CheckPointCommon.RepositoryInterfaces
 {
     public interface IAttendeeRepository : IRepository<ATTENDEE>
     {
-        //TODO
+        IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointment(int appointmentId);
+
+        IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourse();
+
+        
     }
 }

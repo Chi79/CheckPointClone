@@ -14,19 +14,52 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IManageAttendanceView _view;
         private readonly IManageAttendanceModel _model;
-        private readonly IUnitOfWork _unitOfWork;
-
+        
+     
         public ManageAttendancePresenter(IManageAttendanceView view, IManageAttendanceModel model, IUnitOfWork unitOfWork)
         {
             _view = view;
-            _model = model;
-            _unitOfWork = unitOfWork;
-            _view.AcceptAttendeeForAppointment += OnAcceptAttendeeRequestButtonClicked;
+            _model = model;                               
         }
 
-        private void OnAcceptAttendeeRequestButtonClicked(object sender, EventArgs e)
+        private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
         {
             //TODO
+        }
+
+        public override void Load()
+        {
+            FetchData();
+
+            WireUpEvents();
+        }
+
+        public override void FirstTimeInit()
+        {
+            ShowData();
+        }
+
+
+
+        private void FetchData()
+        {
+           //
+
+        }
+        private void WireUpEvents()
+        {
+            _view.AcceptAttendanceRequest += OnAcceptAttendanceRequestButtonClicked;
+        }
+
+        private void ShowData()
+        {
+            
+            _view.CoursesAppliedToSetDataSource = _model.GetAllCoursesWithAppliedAttendees();
+            _view.CoursesAppliedToHeaderSetDataSource = _model.GetEmptyCourseList();
+
+            _view.AppointmentsAppliedToSetDataSource = null;
+            _view.AppointmentsAppliedToHeaderSetDataSource = _model.GetEmptyAppointmentList();
+            _view.BindData();            
         }
     }
 }

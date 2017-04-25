@@ -1,4 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAttendanceView" EnableEventValidation="false"  MasterPageFile="~/Master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAttendanceView" EnableEventValidation="false"   MasterPageFile="~/HostMaster.Master" %>
+
+<%@ Register Src="~/UserControls/CourseGridViewHeader.ascx" TagPrefix="uc1" TagName="CourseGridViewHeader" %>
+<%@ Register Src="~/UserControls/CourseGridView.ascx" TagPrefix="uc1" TagName="CourseGridView" %>
+<%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
+<%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
+
+
+
+
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <title></title>
@@ -10,26 +19,6 @@
             background: #333333;
         }
 
-        #dgvApplicants{
-            position:absolute;
-            left:60%;
-            top:30%;
-        }
-
-        #dgvAppointments{
-            position:absolute;
-            left:20%;
-            top:30%;
-        }
-
-        #btnAcceptAttendeeRequest{
-            position:absolute;
-            left:45%;
-            width:10%;
-            height:8%;
-            top:40%;
-        }
-
 
     </style>
 
@@ -38,10 +27,14 @@
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
     <div id="wrapper">
-        <asp:GridView ID="dgvApplicants" runat="server" ShowHeaderWhenEmpty="True"></asp:GridView>
-        <asp:Button ID="btnAcceptAttendeeRequest" runat="server" Text="Accept as attendee" OnClick="btnAcceptAttendeeRequest_Click" />
-        <asp:GridView ID="dgvAppointments" runat="server" ShowHeaderWhenEmpty="True"></asp:GridView>
+        <uc1:CourseGridViewHeader runat="server" id="CourseGridViewHeader" />
+        <uc1:CourseGridView runat="server" id="CourseGridView" />
+        <br/>
+        <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />
+        <uc1:AppointmentGridView runat="server" id="AppointmentGridView" />
+        <asp:Button ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" />
     </div>
+
 
 </asp:Content>
 
