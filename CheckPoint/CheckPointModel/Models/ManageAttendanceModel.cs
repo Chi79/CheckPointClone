@@ -52,11 +52,9 @@ namespace CheckPointModel.Models
             var clientCourses = GetAllCoursesForClient();
             var AttendeesAppliedToCourses = GetAllAttendeesAppliedForCourses();
             List<object> coursesWithAttendees = new List<object>();
-            foreach (var course in clientCourses)
+            foreach (var attendee in AttendeesAppliedToCourses)
             {
-
-                coursesWithAttendees.Add(clientCourses.Where(c => c.IsPrivate == false));
-
+                coursesWithAttendees.Add(clientCourses.Where(c => c.CourseId == attendee.CourseId).Distinct());
             }
             return coursesWithAttendees;
 
