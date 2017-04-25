@@ -16,5 +16,6 @@ namespace CheckPointCommon.RepositoryInterfaces
         COURSE GetCourseByCourseName(string courseName);
 
         COURSE GetCourseByCourseId(int coursetId);
+
     }
 }

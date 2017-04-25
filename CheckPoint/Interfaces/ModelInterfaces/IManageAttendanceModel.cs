@@ -8,6 +8,12 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface IManageAttendanceModel
     {
-        //TODO
+        string GetLoggedInClient();
+
+        IEnumerable<object> GetAllCoursesWithAppliedAttendees();
+
+        IEnumerable<object> GetEmptyCourseList();
+        IEnumerable<object> GetEmptyAppointmentList();
+
     }
 }

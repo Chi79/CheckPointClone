@@ -13,30 +13,48 @@ namespace CheckPoint.Views {
     public partial class ManageAttendanceView {
         
         /// <summary>
-        /// dgvApplicants control.
+        /// CourseGridViewHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvApplicants;
+        protected global::CheckPoint.Views.UserControls.CourseGridViewHeader CourseGridViewHeader;
         
         /// <summary>
-        /// btnAcceptAttendeeRequest control.
+        /// CourseGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcceptAttendeeRequest;
+        protected global::CheckPoint.Views.UserControls.CourseGridView CourseGridView;
         
         /// <summary>
-        /// dgvAppointments control.
+        /// AppointmentGridViewHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvAppointments;
+        protected global::CheckPoint.Views.UserControls.AppointmentGridViewHeader AppointmentGridViewHeader;
+        
+        /// <summary>
+        /// AppointmentGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CheckPoint.Views.UserControls.GridView AppointmentGridView;
+        
+        /// <summary>
+        /// btnAcceptAttendanceRequest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAcceptAttendanceRequest;
     }
 }

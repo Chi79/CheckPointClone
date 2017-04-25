@@ -12,18 +12,27 @@ namespace CheckPoint.Views
 {
     public partial class ManageAttendanceView : ViewBase<ManageAttendancePresenter> ,IManageAttendanceView
     {
-        public IEnumerable<object> ApplicantsGridviewSource
+        public IEnumerable<object> CoursesAppliedToSetDataSource
         {
-            set
-            { dgvApplicants.DataSource = value; }
+            set {CourseGridView.SetDataSource = value; }
         }
 
-        public IEnumerable<object> AppointmentsGridviewSource
+        public IEnumerable<object> CoursesAppliedToHeaderSetDataSource
         {
-            set { dgvAppointments.DataSource = value; ; }
+            set { CourseGridViewHeader.SetDataSource2 = value; }
         }
 
-        public event EventHandler<EventArgs> AcceptAttendeeForAppointment;
+        public IEnumerable<object> AppointmentsAppliedToSetDataSource
+        {
+            set {  AppointmentGridView.SetDataSource = value; }
+        }
+
+        public IEnumerable<object> AppointmentsAppliedToHeaderSetDataSource
+        {
+            set { AppointmentGridViewHeader.SetDataSource2 = value; }
+        }
+
+        public event EventHandler<EventArgs> AcceptAttendanceRequest;
 
 
 
@@ -35,10 +44,19 @@ namespace CheckPoint.Views
 
         protected void btnAcceptAttendeeRequest_Click(object sender, EventArgs e)
         {
-            if(AcceptAttendeeForAppointment != null)
+            if(AcceptAttendanceRequest != null)
             {
-                AcceptAttendeeForAppointment(this, EventArgs.Empty);
+                AcceptAttendanceRequest(this, EventArgs.Empty);
             }
+        }
+
+        public void BindData()
+        {
+            AppointmentGridView.BindData();
+            AppointmentGridViewHeader.BindData();
+
+            CourseGridView.DataBind();
+            CourseGridViewHeader.BindData();
         }
     }
 }

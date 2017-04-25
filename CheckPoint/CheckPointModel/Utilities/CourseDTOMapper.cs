@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.DTOInterfaces;
+using CheckPointModel.DTOs;
 
 namespace CheckPointModel.Utilities
 {
@@ -19,10 +20,14 @@ namespace CheckPointModel.Utilities
                 Name = courseDTO.Name,
                 Description = courseDTO.Description,
                 IsPrivate = courseDTO.IsPrivate,
-                IsObligatory = courseDTO.IsObligatory
+                IsObligatory = courseDTO.IsObligatory,
+                CourseId = courseDTO.CourseId
+
             };
 
             return course;
+
+
         }
     }
 }

@@ -14,5 +14,15 @@ namespace DataAccess.Concrete.Repositories
         {
            
         }
+
+        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointment(int appointmentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourse()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
