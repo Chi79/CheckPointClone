@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.RepositoryInterfaces;
+using CheckPointCommon.Enums;
 
 namespace DataAccess.Concrete.Repositories
 {
@@ -15,6 +16,11 @@ namespace DataAccess.Concrete.Repositories
            
         }
 
+        public CheckPointContext CheckPointContext  // casting our context class as an entity DbContext 
+        {
+            get { return Context as CheckPointContext; }
+        }
+
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointment(int appointmentId)
         {
             throw new NotImplementedException();
@@ -22,7 +28,7 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourse()
         {
-            throw new NotImplementedException();
+            return CheckPointContext.ATTENDEEs.Where(a => a.CourseId != null && a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
         }
     }
 }
