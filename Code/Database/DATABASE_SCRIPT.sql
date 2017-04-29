@@ -118,10 +118,13 @@ CREATE TABLE [ATTENDEE]
 	[TimeAttended]       datetime  NULL ,
 	[StatusId]           int  NOT NULL ,
 	[TagId]              varchar(30)  NOT NULL ,
+	[CourseId]           int  NOT NULL,
 	CONSTRAINT [XPKATTENDEE] PRIMARY KEY  CLUSTERED ([AppointmentId] ASC,[TagId] ASC),
 	CONSTRAINT [R_15] FOREIGN KEY ([AppointmentId]) REFERENCES [APPOINTMENT]([AppointmentId]),
 CONSTRAINT [R_29] FOREIGN KEY ([StatusId]) REFERENCES [ATTENDEE_STATUS]([StatusId]),
-CONSTRAINT [R_34] FOREIGN KEY ([TagId]) REFERENCES [CLIENT_TAG]([TagId])
+CONSTRAINT [R_34] FOREIGN KEY ([TagId]) REFERENCES [CLIENT_TAG]([TagId]),
+CONSTRAINT [R_48] FOREIGN KEY ([CourseId]) REFERENCES [COURSE]([CourseId])
+
 
 )
 go
