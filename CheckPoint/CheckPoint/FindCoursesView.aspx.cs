@@ -69,8 +69,7 @@ namespace CheckPoint.Views
 
         public void RedirectToApplyToCourseView()
         {
-
-  
+            Response.Redirect("ApplyToCourseView.aspx");
         }
 
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
