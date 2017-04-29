@@ -16,10 +16,10 @@ body {
 #form1 #main-sidebar{   
    
     background: rgb(24,77,16); /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient( rgb(24,77,16),rgb(51,51,51)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgb(24,77,16),rgb(51,51,51)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgb(24,77,16),rgb(51,51,51)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgb(24,77,16),rgb(51,51,51)); /* Standard syntax */
+        background: -webkit-linear-gradient( rgb(24,77,16),rgb(180,250,150),rgb(24,77,16)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(24,77,16),rgb(180,250,150),rgb(24,77,16)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(24,77,16),rgb(180,250,150),rgb(24,77,16)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(24,77,16),rgb(180,250,150),rgb(24,77,16)); /* Standard syntax */
     border:none;
     position:fixed;   
     padding:0%;
