@@ -57,8 +57,8 @@ body {
     max-width: 100%;
     height: auto;
 }*/
-.main-sidebar-top-logo-small{
-    /*visibility:hidden;*/    
+/*.main-sidebar-top-logo-small{*/
+    /*visibility:hidden;  
     border:none;
     margin:0;
     padding:0%;
@@ -66,11 +66,11 @@ body {
     height: auto;
     visibility:visible;
        
-}
+}*/
 
 .main-sidebar-menu-list{
 position:absolute;
-top:40%;
+top:30%;
 list-style:none;
 width:100%;
 padding:0%;
