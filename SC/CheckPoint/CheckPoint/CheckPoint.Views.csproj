@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddSelectedAppointmentToCourseView.aspx" />
+    <Content Include="ApplyToCourseView.aspx" />
     <Content Include="AppointmentSelectorView.aspx" />
     <Content Include="CourseSelectorView.aspx" />
     <Content Include="CreateAppointmentView.aspx" />
@@ -125,9 +126,8 @@
     <Content Include="HomePageView.aspx" />
     <Content Include="HostCoursesView.aspx" />
     <Content Include="HostHomeView.aspx" />
-    <Content Include="Images\activitiesicon1.png" />
     <Content Include="Images\addselectedappointmentbutton.png" />
-    <Content Include="Images\alterprofile2.png" />
+    <Content Include="Images\alterprofile.png" />
     <Content Include="Images\AppointmentAddedMessage.svg" />
     <Content Include="Images\AppointmentAddedMessage1.svg" />
     <Content Include="Images\AppointmentDeletedMessage.svg" />
@@ -153,7 +153,6 @@
     <Content Include="Images\headershade3.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo4.png" />
-    <Content Include="Images\logouticon13.png" />
     <Content Include="Images\logo_white2.png" />
     <Content Include="Images\manageappointmentbutton.png" />
     <Content Include="Images\manageattendancebutton1.png" />
@@ -235,6 +234,13 @@
     </Compile>
     <Compile Include="AddSelectedAppointmentToCourseView.aspx.designer.cs">
       <DependentUpon>AddSelectedAppointmentToCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyToCourseView.aspx.cs">
+      <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyToCourseView.aspx.designer.cs">
+      <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppointmentSelectorView.aspx.cs">
       <DependentUpon>AppointmentSelectorView.aspx</DependentUpon>
