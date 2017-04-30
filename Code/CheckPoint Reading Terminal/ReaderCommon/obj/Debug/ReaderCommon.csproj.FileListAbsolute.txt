@@ -37,3 +37,16 @@ C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoin
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.csprojResolveAssemblyReference.cache
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.dll
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderCommon.dll.config
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderCommon.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderCommon.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.SqlServer.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\MySql.Data.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderDTO.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderDTO.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.SqlServer.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.csprojResolveAssemblyReference.cache
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.pdb

@@ -87,3 +87,34 @@ C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoin
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.GenerateResource.Cache
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.exe
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\InjectionManager.exe.config
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.exe
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\InjectionManager.exe
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\InjectionManager.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.SqlServer.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Reader.DataAccessREST.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderCommon.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderModel.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderPresenters.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderSerialProtocols.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderViews.exe
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\StructureMap.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderDTO.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Marvin.JsonPatch.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Newtonsoft.Json.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderCommon.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Reader.DataAccessREST.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderModel.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderPresenters.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderSerialProtocols.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderViews.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.SqlServer.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderDTO.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Newtonsoft.Json.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csprojResolveAssemblyReference.cache
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.InjectionManager.exe.config
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.Properties.Resources.resources
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.GenerateResource.Cache

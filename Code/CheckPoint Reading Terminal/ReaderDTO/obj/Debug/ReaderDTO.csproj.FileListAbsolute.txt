@@ -43,3 +43,18 @@ C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoin
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.csprojResolveAssemblyReference.cache
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.dll
 C:\Users\Bruker\Documents\CheckPoint\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\ReaderDTO.dll.config
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\ReaderDTO.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\ReaderDTO.pdb
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\CacheCow.Common.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\Microsoft.Web.Infrastructure.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\Newtonsoft.Json.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Net.Http.Formatting.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Web.Http.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\CacheCow.Common.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\Newtonsoft.Json.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Net.Http.Formatting.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Debug\System.Web.Http.xml
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.csprojResolveAssemblyReference.cache
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.dll
+Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Debug\ReaderDTO.pdb
