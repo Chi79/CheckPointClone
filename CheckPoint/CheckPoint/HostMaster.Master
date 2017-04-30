@@ -29,17 +29,17 @@
     
        
         <ul class="main-sidebar-menu-list">
-                   <li class="tooltip">
+         <%--          <li class="tooltip">
                   <span class="tooltiptext">Create report</span>
-                <div class="main-sidebar-menu-list-item">
+                <div class="main-sidebar-menu-list-item">--%>
             <%--     <span class="tooltiptext">Logout</span>--%>
-                  <a class="main-sidebar-menu-list-item-link" href="CreateReportView.aspx" tabindex="1">
+                  <%--<a class="main-sidebar-menu-list-item-link" href="CreateReportView.aspx" tabindex="1">
                            <img class="main-sidebar-menu-list-item-icon" src="Images/CreateReportIcon.png" alt="[]"></img>
                 
 
                   </a>
                     </div>
-            </li>
+            </li>--%>
             <li class="tooltip">
                   <span class="tooltiptext">Manage attendance</span>
                 <div class="main-sidebar-menu-list-item">
