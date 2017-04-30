@@ -72,7 +72,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnApplyToAttendCourseButtonClicked(object sender, EventArgs e)
         {
-
+           
             _view.RedirectToApplyToCourseView();
 
         }
