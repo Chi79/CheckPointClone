@@ -160,7 +160,6 @@
     <Content Include="Images\managecoursesbutton1.png" />
     <Content Include="Images\MyAppointmentsHeading.svg" />
     <Content Include="Images\MyCoursesHeading.svg" />
-    <Content Include="Images\MyCoursesIcon.png" />
     <Content Include="Images\PublicAppointmentsHeading.svg" />
     <Content Include="Images\PublicCoursesHeading.svg" />
     <Content Include="Images\SelectAppointmentHeading.svg" />

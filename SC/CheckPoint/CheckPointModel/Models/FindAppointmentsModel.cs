@@ -26,7 +26,7 @@ namespace CheckPointModel.Models
         private JobServiceBase _job;
         public FindAppointmentsModel(ISessionService sessionService,IFactory factory, IShowAppointments displayService)
         {
-            _factory = factory;// add to ioc?
+            _factory = factory;
             _sessionService = sessionService;
             _displayService = displayService;
         }
