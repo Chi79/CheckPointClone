@@ -66,13 +66,15 @@ border:none;
             background-color:#66cc66;
 		    color:white;
 		    font-weight:bold;
-		    font-size:20px;	
+            padding-left:2%;
+            padding-right:2%;
+		    font-size:medium;	
 		    border-radius: 6px;
             border-color:#333333;
             margin-right:2%;
 }
 .button:hover {
-border:gray;
+border-color:gray;
 }
 </style>
 
