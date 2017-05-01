@@ -64,7 +64,7 @@
     <Compile Include="Bases\ViewBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Framework\IOC.cs" />
+    <Compile Include="Presenters\Framework\IOC.cs" />
     <Compile Include="Presenters\AddSelectedAppointmentToCoursePresenter.cs" />
     <Compile Include="Presenters\ApplyToCoursePresenter.cs" />
     <Compile Include="Presenters\AppointmentSelectorPresenter.cs" />
