@@ -33,7 +33,7 @@
 .message{
     margin-top:3%;
     width:25%;
-    color:rgb(0, 255, 33)  ;
+    color:white ;
 
 }
 </style>

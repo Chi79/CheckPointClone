@@ -13,15 +13,6 @@ namespace CheckPoint.Views {
     public partial class CreateAppointmentView {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// AppointmentCreator control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CheckPoint.Views.UserControls.AppointmentCreator AppointmentCreator;
-        
-        /// <summary>
-        /// btnBackToHomePage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBackToHomePage;
         
         /// <summary>
         /// btnContinue control.

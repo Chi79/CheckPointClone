@@ -90,10 +90,6 @@ namespace CheckPoint.Views
             set { btnNo.Visible = value; }
         }
 
-        public bool BackToHomePageButtonVisible
-        {
-            set { btnBackToHomePage.Visible = value; }
-        }
 
         public void RedirectAfterClickEvent()
         {
@@ -110,7 +106,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> Continue;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-        public event EventHandler<EventArgs> BackToHomePageClicked;
+
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -150,13 +146,7 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnBackToHomePage_Click(object sender, EventArgs e)
-        {
-            if (BackToHomePageClicked != null)
-            {
-                BackToHomePageClicked(this, EventArgs.Empty);
-            }
-        }
+
 
     }
 }
