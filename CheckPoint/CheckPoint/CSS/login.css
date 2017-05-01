@@ -15,7 +15,12 @@
 }
  
  #lblMessage{
-     position:absolute;
+    position: absolute;
+    top: 3%;
+    display: inline-block;
+    color: white;   
+    width: 100%;
+    text-align: center;
 
  }
  
