@@ -37,13 +37,10 @@ namespace CheckPointPresenters.Presenters
 
             if (_model.GetSessionRowIndex() == noRowSelected)
             {
-
                 return false;
-
             }
             else
             {
-
                 return true;
 
             }

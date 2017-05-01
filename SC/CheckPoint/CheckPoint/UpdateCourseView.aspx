@@ -12,13 +12,34 @@
     margin-left:15%;
     }
 
-.button{
-
-   
-    border-radius:6px;
-    border:outset gray 2px;
-    padding:3px;
+@-webkit-keyframes flashingbutton{
+    from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
 }
+.button{
+    color:white;
+
+    border-radius: 5px;
+    border-width:0px;
+    border-color:darkgreen;
+    margin-right:1%;
+    padding-top:0.5%;
+    padding-bottom: 0.5%;
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-image:url(/Images/buttonshade1.png);
+}
+.button:hover {
+        border-radius: 0px;
+        -webkit-animation: flashingbutton;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+}
+
+
 
 
 

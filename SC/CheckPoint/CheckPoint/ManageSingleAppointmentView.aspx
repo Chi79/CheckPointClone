@@ -65,6 +65,33 @@ border:none;
 }
 
 
+@-webkit-keyframes flashingbutton{
+    from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
+}
+.button{
+    color:white;
+
+    border-radius: 5px;
+    border-width:0px;
+    border-color:darkgreen;
+    margin-right:1%;
+    padding-top:0.5%;
+    padding-bottom: 0.5%;
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    background-image:url(/Images/buttonshade1.png);
+}
+.button:hover {
+        border-radius: 0px;
+        -webkit-animation: flashingbutton;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+}
+
 
 
 
@@ -80,11 +107,11 @@ border:none;
         <uc1:AppointmentCreator runat="server" ID="AppointmentCreator" />
         </li >
     <li class="list1-item">
-                <asp:Button ID="btnUpdateAppointment" runat="server" Text="Update Appointment" OnClick="btnCreateAppointment_Click" />
-        <asp:Button ID="btnDeleteAppointment" runat="server" Text="Delete Appointment" OnClick="btnDelete_Click" />
-        <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="47px" />
-        <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="45px" />
-        <asp:Button ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
+                <asp:Button CssClass="button" ID="btnUpdateAppointment" runat="server" Text="Update Appointment" OnClick="btnCreateAppointment_Click" />
+        <asp:Button CssClass="button" ID="btnDeleteAppointment" runat="server" Text="Delete Appointment" OnClick="btnDelete_Click" />
+        <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="47px" />
+        <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="45px" />
+        <asp:Button CssClass="button" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
     </li>
 
     </ul>

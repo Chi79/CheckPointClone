@@ -296,16 +296,14 @@
     <asp:Button ID="btnAddSelectedAppointmentToCourse" 
         CssClass="navButtons" 
         runat="server" 
-        OnClick="btnAddSelectedAppointmentToCourse_Click1" 
+        OnClick="btnAddSelectedAppointmentToCourse_Click1"
         Text="Add Selected Appointment To Course"  
         Visible="True"  
         ForeColor="White"/>
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
-
     </div>
-
     </div>
     </div>
     </div>
