@@ -103,7 +103,7 @@ table {
 
 }
 .Row:hover{
-      background:url(/Images/greenshade1.png) repeat-x;
+      background:url(/Images/greenshade7.png) repeat-x;
       color:white;
       fill:#32E236;  
       -webkit-animation:glowingrow;
@@ -111,7 +111,7 @@ table {
       -webkit-animation-iteration-count:infinite;
 }
 .AltRow:hover{
-      background:url(/Images/greenshade1.png) repeat-x; 
+      background:url(/Images/greenshade7.png) repeat-x; 
       background-color:#32E236;
       color:white;
       fill:#32E236;  
