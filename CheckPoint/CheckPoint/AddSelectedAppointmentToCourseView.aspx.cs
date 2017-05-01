@@ -154,7 +154,14 @@ namespace CheckPoint.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.HttpMethod == "GET")
+            {
+                //if true is not a postback
+            }
+            if (Request.HttpMethod == "POST")
+            {
+                //if true is a postback
+            }
         }
 
         protected void btnYes_Click(object sender, EventArgs e)

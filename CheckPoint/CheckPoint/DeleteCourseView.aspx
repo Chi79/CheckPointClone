@@ -34,13 +34,23 @@
 }
 
 .auto-style1 {
-    width: 59%;
+    /*width: 59%;
     height: 533px;
     margin-left: 21%;
     margin-top: 2%;
     background-color: #333333;
-    border-radius: 36px;
+    border-radius: 36px;*/
+    width: 42%;
+    height: 570px;
+    margin-left: 27%;
+    margin-top: 2%;
+    background-color: #333333;
+    border: #66cc66;
+    border-width: 20px;
+    border-style: solid;
+    border-radius:36px;
 }
+
 
 
 </style>
@@ -51,8 +61,9 @@
 
 <body>
 <form id="form1" runat="server">
+<div class="auto-style1">
 
-<uc1:CourseCreator runat="server" id="CourseCreator" />
+<uc1:CourseCreator runat="server" id="CourseCreator"  />
 
 
 <asp:Button ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
@@ -60,7 +71,7 @@
 <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
 <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
 
-   
+</div>
 </form>
 </body>
 </html>

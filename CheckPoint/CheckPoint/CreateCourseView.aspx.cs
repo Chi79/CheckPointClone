@@ -81,10 +81,6 @@ namespace CheckPoint.Views
         }
 
 
-
-   
-
-
         public event EventHandler<EventArgs> CreateNewCourse;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
