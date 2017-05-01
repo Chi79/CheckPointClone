@@ -35,7 +35,7 @@
 <uc1:CourseCreator runat="server" id="CourseCreator" />
 
       <div id="Update_course_buttons">
-          <asp:Button class="button" ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
+     
 <asp:Button class="button" ID="btnUpdateCourse" runat="server" Text="Update Course" OnClick="btnUpdateCourse_Click1" />
 <asp:Button class="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
 <asp:Button class="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />

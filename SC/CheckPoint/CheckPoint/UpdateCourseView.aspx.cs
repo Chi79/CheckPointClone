@@ -72,19 +72,8 @@ namespace CheckPoint.Views
 
         }
 
-        public bool BackToCoursesPageButtonVisible
-        {
 
-            set { btnBackToCoursesPage.Visible = value; }
 
-        }
-
-        public void RedirectToCoursesPage()
-        {
-
-            Response.Redirect("HostCoursesView.aspx");
-
-        }
 
         public void RedirectToManageCourseView()
         {
@@ -96,20 +85,14 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> UpdateCourseButtonClicked;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-        public event EventHandler<EventArgs> BackToCoursesPageClicked;
+   
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
-        protected void btnBackToCoursesPage_Click(object sender, EventArgs e)
-        {
-            if(BackToCoursesPageClicked != null)
-            {
-                BackToCoursesPageClicked(this, EventArgs.Empty);
-            }
-        }
+
 
         protected void btnYes_Click(object sender, EventArgs e)
         {
