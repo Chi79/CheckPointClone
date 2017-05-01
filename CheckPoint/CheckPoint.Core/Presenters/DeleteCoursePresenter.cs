@@ -22,7 +22,7 @@ namespace CheckPointPresenters.Presenters
             _model = model;
 
 
-            _view.BackToCoursesPageClicked += OnBackToCoursesPageClicked;
+
             _view.DeleteCourseButtonClicked += OnDeleteCourseButtonClicked;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
@@ -184,7 +184,7 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.DeleteCourseButtonVisible = false;
-            _view.BackToCoursesPageButtonVisible = false;
+           
             _view.NoButtonVisible = true;
             _view.YesButtonVisible = true;
 
@@ -194,7 +194,7 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.DeleteCourseButtonVisible = true;
-            _view.BackToCoursesPageButtonVisible = true;
+          
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
 
@@ -210,11 +210,5 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnBackToCoursesPageClicked(object sender, EventArgs e)
-        {
-
-            _view.RedirectToCoursesPage();
-
-        }
     }
 }
