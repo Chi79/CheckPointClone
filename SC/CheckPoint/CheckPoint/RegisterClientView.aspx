@@ -6,7 +6,11 @@
 <head runat="server">
 
 <style type="text/css">
-
+    *{
+           box-sizing: border-box;
+          
+}
+body{      background:#333333;}
 .container{
     width: 42%;
     height: 570px;
@@ -20,133 +24,56 @@
 }
 .panel{
     position:relative;
+}.list{
+     margin-top:10%;
+     line-height:2;
+display:inline-block;
+width:100%;
+list-style:none;
+padding:0%;
+border:none;
+color:white;
 }
-#lblUserName{
-    position: absolute;
-    top:5.2em;
-    left:4em;
-    color:white;
-}
-#txtUserName{
-    position: absolute;
-    top:6em;
-    left:16em;
-}
-#lblPassword{
-    position: absolute;
-    top:10.2em;
-    left:4em;
-    color:white;
-}
-#txtPassword{
-    position: absolute;
-    top:12em;
-    left:16em;
-}
-#lblFirstName{
-    position: absolute;
-    top:8.5em;
-    left:4em;
-    color:white;
-}
-#txtFirstName{
-    position: absolute;
-    top:9.8em;
-    left:16em;
-}
-#lblLastName{
-    position: absolute;
-    top:6.8em;
-    left:4em;
-    color:white;
-}
-#txtLastName{
-    position: absolute;
-    top:7.9em;
-    left:16em;
-}
-#lblEmail{
-    position: absolute;
-    top:11.9em;
-    left:4em;
-    color:white;
-}
-#txtEmail{
-    position: absolute;
-    top:14em;
-    left:16em;
-}
-#lblStreetAddress{
-    position: absolute;
-    top:13.6em;
-    left:4em;
-    color:white;
-}
-#txtStreetAddress{
-    position: absolute;
-    top:16em;
-    left:16em;
-}
-#lblPostalCode{
-    position: absolute;
-    top:16.8em;
-    left:4em;
-    color:white;
-}
-#txtPostalCode{
-    position: absolute;
-    top:20em;
-    left:16em;
-}
-#lblPhoneNumber{
-    position: absolute;
-    top:15.2em;
-    left:4em;
-    color:white;
-}
-#txtPhoneNumber{
-    position: absolute;
-    top:18em;
-    left:16em;
-}
-#lblClientType{
-    position: absolute;
-    top:18.5em;
-    left:4em;
-    color:white;
-}
-#ddlClientType{
-    position: absolute;
-    top:22.5em;
-    left:16em;
-}
-#lblMessage{
-    position: absolute;
-    top:27em;
-    left:4em;
-    color:white;
-}
-#btnRegisterClient{
-    position: absolute;
-    top:25em;
-    left:16em;
-    width:145px;
-}
-#btnBackToHomePage{
-    position: absolute;
-    top:27em;
-    left:16em;
-    width:145px;
-}
-#btnGoToLogin{
-    position: absolute;
-    top:29em;
-    left:16em;
-    width:145px;
+.list-item{
+
+position:relative;
+display:inline-block;
+width:100%;
+left:20%;
+text-align:left;
+padding:0%;
+margin:0;
+border:none;
 }
 
 
+.list-item-label{
+    display:inline-block;
+    width:30%;
+    text-align:left;
+    margin:0%;
+    padding:0%;
 
+}
+.list-item-box{
+    display:inline-block;
+    background:white;
+}
+
+
+.button{
+        
+            background-color:#66cc66;
+		    color:white;
+		    font-weight:bold;
+		    font-size:20px;	
+		    border-radius: 6px;
+            border-color:#333333;
+            margin-right:2%;
+}
+.button:hover {
+border:gray;
+}
 </style>
 
 <title></title>
@@ -159,42 +86,75 @@
 <div id="panel" class="panel">
     
 
-<asp:Label ID="lblUserName" runat="server" Text="User Name:"></asp:Label>
-<asp:TextBox ID="txtUserName" runat="server">Sting</asp:TextBox>
+    <ul class="list">
+        <li class="list-item">
+            <asp:Label CssClass=" list-item-label" ID="lblUserName" runat="server" Text="User Name:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtUserName" runat="server">Sting</asp:TextBox>
 
-<asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-<asp:TextBox ID="txtPassword" runat="server">Lambda</asp:TextBox>
+        </li>
+        <li class="list-item">
 
-<asp:Label ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
-<asp:TextBox ID="txtFirstName" runat="server">Sting</asp:TextBox>
+            <asp:Label CssClass=" list-item-label" ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtPassword" runat="server">Lambda</asp:TextBox>
+        </li>
+        <li class="list-item">
 
-<asp:Label ID="lblLastName" runat="server" Text="Last Name:"></asp:Label>
-<asp:TextBox ID="txtLastName" runat="server">Stung</asp:TextBox>
+            <asp:Label CssClass=" list-item-label" ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtFirstName" runat="server">Sting</asp:TextBox>
+        </li>
+        <li class="list-item">
+            <asp:Label CssClass=" list-item-label" ID="lblLastName" runat="server" Text="Last Name:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtLastName" runat="server">Stung</asp:TextBox>
 
-<asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
-<asp:TextBox ID="txtEmail" runat="server">Sting@Stung.com</asp:TextBox>
+        </li>
+        <li class="list-item">
+            <asp:Label CssClass=" list-item-label" ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+<asp:TextBox  CssClass="list-item-box" ID="txtEmail" runat="server">Sting@Stung.com</asp:TextBox>
 
-<asp:Label ID="lblStreetAddress" runat="server" Text="Street Address:"></asp:Label>
-<asp:TextBox ID="txtStreetAddress" runat="server">goldenfields</asp:TextBox>
+        </li>
+        <li class="list-item">
 
-<asp:Label ID="lblPostalCode" runat="server" Text="Postal Code:"></asp:Label>
-<asp:TextBox ID="txtPostalCode" runat="server">3714</asp:TextBox>
+            
 
-<asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number:"></asp:Label>
-<asp:TextBox ID="txtPhoneNumber" runat="server">87654321</asp:TextBox>
+<asp:Label CssClass=" list-item-label" ID="lblStreetAddress" runat="server" Text="Street Address:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtStreetAddress" runat="server">goldenfields</asp:TextBox>
+        </li>
+        <li class="list-item">
 
-<asp:Label ID="lblClientType" runat="server" Text="Client Type:"></asp:Label>
+            
+<asp:Label CssClass=" list-item-label" ID="lblPostalCode" runat="server" Text="Postal Code:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtPostalCode" runat="server">3714</asp:TextBox>
+        </li>
+        <li class="list-item">
 
-<asp:DropDownList ID="ddlClientType" runat="server" Height="16px" Width="66px">
+            <asp:Label CssClass=" list-item-label" ID="lblPhoneNumber" runat="server" Text="Phone Number:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtPhoneNumber" runat="server">87654321</asp:TextBox>
+        </li>
+        <li class="list-item">
+
+            <asp:Label CssClass=" list-item-label" ID="lblClientType" runat="server" Text="Client Type:"></asp:Label>
+
+<asp:DropDownList CssClass="list-item-box" ID="ddlClientType" runat="server" Height="16px" Width="66px">
 <asp:ListItem Value="0">User</asp:ListItem>
 <asp:ListItem Value="1">Host</asp:ListItem>
 </asp:DropDownList>
-  
+        </li>
+        <li class="list-item">
+
+            
 <asp:Label ID="lblMessage" runat="server"></asp:Label>
 
-<asp:Button ID="btnRegisterClient" runat="server" OnClick="btnRegisterClient_Click" Text="Register" />
-<asp:Button ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back Home" />
-<asp:Button ID="btnGoToLogin" runat="server" OnClick="btnGoToLogin_Click" Text="Login" Visible="False" />
+        </li>
+        <li  class="list-item">
+
+<asp:Button CssClass="button" ID="btnRegisterClient" runat="server" OnClick="btnRegisterClient_Click" Text="Register" />
+<asp:Button CssClass="button" ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back Home" />
+<asp:Button CssClass="button" ID="btnGoToLogin" runat="server" OnClick="btnGoToLogin_Click" Text="Login" Visible="False" />
+        </li>
+
+
+
+    </ul>
 
 
 </div>    
