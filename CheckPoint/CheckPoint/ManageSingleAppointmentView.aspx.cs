@@ -150,10 +150,7 @@ namespace CheckPoint.Views
             set { btnNo.Visible = value; }
         }
 
-        public bool BackToHomePageButtonVisible
-        {
-            set { btnBackToHomePage.Visible = value; }
-        }
+
 
 
         public void RedirectAfterClickEvent()
@@ -161,10 +158,7 @@ namespace CheckPoint.Views
             Response.Redirect("ManageSingleAppointmentView.aspx");
         }
 
-        public void RedirectToHostHomeView()
-        {
-            Response.Redirect("HostHomeView.aspx");
-        }
+
  
 
         public event EventHandler<EventArgs> YesButtonClicked;
@@ -172,7 +166,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> UpdateAppointment;
         public event EventHandler<EventArgs> DeleteAppointment;
         public event EventHandler<EventArgs> ReloadPage;
-        public event EventHandler<EventArgs> BackToHomePage;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -219,12 +213,6 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnBackToHomePage_Click(object sender, EventArgs e)
-        {
-            if(BackToHomePage != null)
-            {
-                BackToHomePage(this, EventArgs.Empty);
-            }
-        }
+
     }
 }

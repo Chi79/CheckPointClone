@@ -42,5 +42,7 @@ namespace CheckPointCommon.ModelInterfaces
         void RefreshAllAppointmentsForClient();
 
         object GetAppointmentForClientByAppointmentId();
+
+        bool IsJobTypeDeleteAppointment();
     }
 }

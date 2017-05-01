@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
+using CheckPointCommon.Enums;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
@@ -46,12 +47,7 @@ namespace CheckPointPresenters.Presenters
             ConfirmAction();
         }
 
-        private void OnBackToHomePageClicked(object sender, EventArgs e)
-        {
 
-            _view.RedirectToHostHomeView();
-
-        }
 
 
         public override void FirstTimeInit()
@@ -76,7 +72,8 @@ namespace CheckPointPresenters.Presenters
             _view.DeleteAppointment += OnDeleteAppointmentButtonClicked;
             _view.YesButtonClicked += _OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
-            _view.BackToHomePage += OnBackToHomePageClicked;
+            
+     
 
         }
 
@@ -209,14 +206,31 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message = _model.GetJobCompletedMessage();
 
-                ContinueButtonsShow();
 
+                DisplayButtonsAfterUpdateSuccessful();              
             }
             else
             {
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
             }
 
+        }
+
+        private void DisplayButtonsAfterUpdateSuccessful()
+        {
+           bool isJobTypeDeleteAppointment = _model.IsJobTypeDeleteAppointment();
+
+           if(isJobTypeDeleteAppointment)
+            {
+                AllButtonsHide();
+            }
+           else
+            {
+                ContinueButtonsShow();
+            }
+        
+
+            
         }
 
 

@@ -27,7 +27,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool CreateButtonVisible { set; }
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
-        bool BackToHomePageButtonVisible { set; }
+      
 
 
         void RedirectAfterClickEvent();
@@ -38,7 +38,7 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> Continue;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-        event EventHandler<EventArgs> BackToHomePageClicked;
+     
 
     }
 }

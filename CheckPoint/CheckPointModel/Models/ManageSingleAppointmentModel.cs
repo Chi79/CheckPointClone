@@ -189,5 +189,16 @@ namespace CheckPointModel.Models
 
         }
 
+        public bool IsJobTypeDeleteAppointment()
+        {
+            if (_job.Jobtype == DbAction.DeleteAppointment)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
