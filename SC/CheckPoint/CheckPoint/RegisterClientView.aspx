@@ -4,11 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
+     <meta name="viewport"   content="width=device-width, initial-scale=2"/>
 <style type="text/css">
     *{
            box-sizing: border-box;
-          
+   
 }
 body{      background:#333333;}
 .container{
@@ -65,7 +65,7 @@ border:none;
         
             background-color:#66cc66;
 		    color:white;
-		    font-weight:bold;
+		    font-weight:normal;
             padding-left:2%;
             padding-right:2%;
 		    font-size:medium;	
