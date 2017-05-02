@@ -178,6 +178,7 @@
     <Content Include="Images\uparrow3.png" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
+    <Content Include="Images\WorkInProgress1.png" />
     <Content Include="index.aspx" />
     <Content Include="InvalidNavigationView.aspx" />
     <Content Include="InviteUserView.aspx" />
