@@ -24,6 +24,11 @@ namespace DataAccess.Concrete.Repositories
             return CheckPointContext.APPOINTMENTs.Where(c => c.UserName == userName).ToList();
         }
 
+        public IEnumerable<APPOINTMENT> GetAllAppointmentsWithAttendeeRequestsFor(string userName)
+        {
+            return CheckPointContext.APPOINTMENTs.Where(a => a.UserName == userName && a.CourseId == null).ToList();
+        }
+
         public IEnumerable<APPOINTMENT> GetAllAppointmentsByCourseId(int? courseId)
         {
             return CheckPointContext.APPOINTMENTs.Where(c => c.CourseId == courseId).ToList();

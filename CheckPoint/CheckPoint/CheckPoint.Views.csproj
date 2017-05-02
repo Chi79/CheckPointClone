@@ -203,6 +203,8 @@
     <Content Include="UserControls\AppointmentCreator.ascx" />
     <Content Include="UserControls\AppointmentGridView.ascx" />
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
+    <Content Include="UserControls\AttendeeGridView.ascx" />
+    <Content Include="UserControls\AttendeeGridViewHeader.ascx" />
     <Content Include="UserControls\CourseCreator.ascx" />
     <Content Include="UserControls\CourseGridView.ascx" />
     <Content Include="UserControls\CourseGridViewHeader.ascx" />
@@ -242,7 +244,6 @@
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.designer.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
@@ -422,6 +423,20 @@
     </Compile>
     <Compile Include="UserControls\AppointmentGridViewHeader.ascx.designer.cs">
       <DependentUpon>AppointmentGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridView.ascx.cs">
+      <DependentUpon>AttendeeGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridView.ascx.designer.cs">
+      <DependentUpon>AttendeeGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridViewHeader.ascx.cs">
+      <DependentUpon>AttendeeGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridViewHeader.ascx.designer.cs">
+      <DependentUpon>AttendeeGridViewHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CourseCreator.ascx.cs">
       <DependentUpon>CourseCreator.ascx</DependentUpon>

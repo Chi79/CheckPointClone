@@ -246,7 +246,7 @@ namespace CheckPointHTTPServices.Cache
 
             }
             set { HttpContext.Current.Session["navigationIsValid"] = value; }
-        }
+        }     
     }
 
 }

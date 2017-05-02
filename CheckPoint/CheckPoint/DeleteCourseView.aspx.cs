@@ -79,7 +79,13 @@ namespace CheckPoint.Views
             set { btnDeleteCourse.Visible = value; }
         }
 
-
+        public bool BackToCoursesPageButtonVisible
+        {
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public void RedirectToCoursesPage()
         {
@@ -119,8 +125,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> DeleteCourseButtonClicked;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-
-
+        public event EventHandler<EventArgs> BackToCoursesPageClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {

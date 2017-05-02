@@ -10,10 +10,18 @@ namespace CheckPointCommon.ModelInterfaces
     {
         string GetLoggedInClient();
 
-        IEnumerable<object> GetAllCoursesWithAppliedAttendees();
+        IEnumerable<object> GetAllCoursesWithAttendeeRequests();
+        IEnumerable<object> GetAllAppointmentsWithAttendeeRequests();
+        int? GetSessionRowIndex();
+        void SetSessionRowIndex(int index);
+        void ResetSessionState();
+       
+
+
 
         IEnumerable<object> GetEmptyCourseList();
         IEnumerable<object> GetEmptyAppointmentList();
+        IEnumerable<object> GetEmptyAttendeeList();
 
     }
 }

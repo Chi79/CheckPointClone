@@ -16,19 +16,20 @@ namespace CheckPointModel.Models
         private readonly IUnitOfWork _uOW;
         private IShowCourses _courseDisplayService;
         private IShowAppointments _appointmentDisplayService;
+        private IShowAttendees _attendeeDisplayService;
         public ManageAttendanceModel(ISessionService sessionService, IUnitOfWork unitOfWork, IShowCourses courseDisplayService,
-                                        IShowAppointments appointmentDisplayService)
+                                        IShowAppointments appointmentDisplayService, IShowAttendees attendeeDisplayService)
         {
             _sessionService = sessionService;
             _uOW = unitOfWork;
             _courseDisplayService = courseDisplayService;
             _appointmentDisplayService = appointmentDisplayService;
+            _attendeeDisplayService = attendeeDisplayService;
         }
 
         public string GetLoggedInClient()
-        {
-            return "morten";
-            //return _sessionService.LoggedInClient;
+        {           
+            return _sessionService.LoggedInClient;
         }
 
         public IEnumerable<COURSE> GetAllCoursesForClient()
@@ -47,17 +48,75 @@ namespace CheckPointModel.Models
             return _appointmentDisplayService.GetEmptyList<APPOINTMENT>();
         }
 
-        public IEnumerable<object> GetAllCoursesWithAppliedAttendees()
+        public IEnumerable<object> GetEmptyAttendeeList()
+        {
+            return _attendeeDisplayService.GetEmptyList<ATTENDEE>();
+        }
+
+        public int? GetSessionRowIndex()
+        {
+            return _sessionService.SessionRowIndex;
+        }
+
+        public void SetSessionRowIndex(int index)
+        {
+            _sessionService.SessionRowIndex = index;
+        }
+
+        public int? GetSessionAppointmentId()
+        {
+            return _sessionService.SessionAppointmentId;
+        }
+
+        public void SetSessionAppointmentId(int id)
+        {
+            _sessionService.SessionAppointmentId = id;
+        }
+
+        public int? GetSessionCourseId()
+        {
+            return _sessionService.SessionCourseId;
+        }
+
+        public void SetSessionCourseId(int id)
+        {
+            _sessionService.SessionCourseId = id;
+        }
+
+        public void ResetSessionState()
+        {
+            int noRowSelected = -1;
+            int noAppointmentSelected = -1;
+            SetSessionRowIndex(noRowSelected);
+            SetSessionAppointmentId(noAppointmentSelected);
+        }
+
+        public IEnumerable<object> GetAllCoursesWithAttendeeRequests()
         {
             var clientCourses = GetAllCoursesForClient();
             var AttendeesAppliedToCourses = GetAllAttendeesAppliedForCourses();
-            List<object> coursesWithAttendees = new List<object>();
+            List<object> coursesWithAttendeeRequests = new List<object>();
+
             foreach (var attendee in AttendeesAppliedToCourses)
             {
-                coursesWithAttendees.Add(clientCourses.Where(c => c.CourseId == attendee.CourseId).Distinct());
+                var courseToAdd = GetCourseById((int)attendee.CourseId);
+                if(clientCourses.Contains(courseToAdd))
+                {
+                    coursesWithAttendeeRequests.Add(courseToAdd);
+                }              
             }
-            return coursesWithAttendees;
+            return coursesWithAttendeeRequests;
+        }
 
+        public object GetCourseById(int id)
+        {
+            return _uOW.COURSEs.GetCourseByCourseId((int)id);
+        }
+
+        public IEnumerable<object> GetAllAppointmentsWithAttendeeRequests()
+        {
+            var client = GetLoggedInClient();
+            return _uOW.APPOINTMENTs.GetAllAppointmentsWithAttendeeRequestsFor(client);                   
         }
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses()
@@ -65,12 +124,6 @@ namespace CheckPointModel.Models
             return _uOW.ATTENDEEs.GetAllAttendeesAppliedForCourse();
         }
 
-
-
-    
-
-       
-
-
+     
     }
 }
