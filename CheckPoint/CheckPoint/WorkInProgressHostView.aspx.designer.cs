@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 namespace CheckPoint.Views {
-    
+    //
     
     public partial class WorkInProgressView { 
     }

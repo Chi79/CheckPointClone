@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 namespace CheckPoint.Views
 {
     public partial class WorkInProgressUserView : System.Web.UI.Page
-    {
+    {//
         protected void Page_Load(object sender, EventArgs e)
         {
 
