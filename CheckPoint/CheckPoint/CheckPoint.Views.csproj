@@ -178,7 +178,7 @@
     <Content Include="Images\uparrow3.png" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
-    <Content Include="Images\WorkInProgress.png" />
+    <Content Include="Images\WorkInProgress1.png" />
     <Content Include="index.aspx" />
     <Content Include="InvalidNavigationView.aspx" />
     <Content Include="InviteUserView.aspx" />
@@ -222,6 +222,8 @@
     <Content Include="UserControls\UserCourseGridViewHeader.ascx" />
     <Content Include="UserCoursesView.aspx" />
     <Content Include="UserMaster.Master" />
+    <Content Include="WorkInProgressHostView.aspx" />
+    <Content Include="WorkInProgressUserView.aspx" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
@@ -562,6 +564,20 @@
     </Compile>
     <Compile Include="UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WorkInProgressHostView.aspx.cs">
+      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkInProgressHostView.aspx.designer.cs">
+      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkInProgressUserView.aspx.cs">
+      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkInProgressUserView.aspx.designer.cs">
+      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
