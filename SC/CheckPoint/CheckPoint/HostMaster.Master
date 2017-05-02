@@ -44,7 +44,7 @@
                   <span class="tooltiptext">Manage attendance</span>
                 <div class="main-sidebar-menu-list-item">
             <%--     <span class="tooltiptext">Logout</span>--%>
-                  <a class="main-sidebar-menu-list-item-link" href="ManageAttendanceView.aspx" tabindex="1">
+                  <a class="main-sidebar-menu-list-item-link" href="ManageCourseAttendanceView.aspx" tabindex="1">
                            <img class="main-sidebar-menu-list-item-icon" src="Images/ManageAttendanceIcon.png" alt="[]"></img>
                 
 

@@ -128,7 +128,7 @@ table {
 
 
 <asp:GridView
-ID="gvHostTable"
+ID="gvAttendeeTable"
 runat="server"
 AutoGenerateColumns="False" 
 Height="100%" 
@@ -136,8 +136,8 @@ Width="100%"
 style=" table-layout:fixed;
 z-index:1" 
 AllowSorting="True" 
-OnSelectedIndexChanged="gvHostTable_SelectedIndexChanged"
-OnRowDataBound="gvHostTable_RowDataBound"
+OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged"
+OnRowDataBound="gvAttendeeTable_RowDataBound"
 ShowHeaderWhenEmpty="True" 
 ShowHeader="false" 
 DataKeyNames="CourseId" >
@@ -151,57 +151,34 @@ BackColor="#99FF99" />
 <Columns>
 
                    
-<asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
+<asp:TemplateField AccessibleHeaderText="Username" HeaderText="Username" ItemStyle-CssClass="courseIdColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">CourseId</h3>
+<h3 style="color:white">Username</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
+<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("Username") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle  />
 </asp:TemplateField>
 
 
-<asp:TemplateField AccessibleHeaderText="Name"  HeaderText="Name" ItemStyle-CssClass="courseNameColumnItem">
+<asp:TemplateField AccessibleHeaderText="Email"  HeaderText="Email" ItemStyle-CssClass="courseNameColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">CourseName</h3>
+<h3 style="color:white">Email</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseName"  runat="server" Text='<%# Bind("Name") %>'></asp:Label>
+<asp:Label ID="lblCourseName"  runat="server" Text='<%# Bind("Email") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle />
 </asp:TemplateField>
 
 
-<asp:TemplateField AccessibleHeaderText="Description" HeaderText="Description" ItemStyle-CssClass="descriptionColumnItem">
+<asp:TemplateField AccessibleHeaderText="PhoneNumber" HeaderText="PhoneNumber" ItemStyle-CssClass="descriptionColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">Description</h3>
+<h3 style="color:white">PhoneNumber</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Description") %>'></asp:Label>
-</ItemTemplate>
-<ItemStyle />
-</asp:TemplateField>
-
-<asp:TemplateField AccessibleHeaderText="IsObligatory" HeaderText="IsObligatory" ItemStyle-CssClass="isObligatoryColumnItem">
-<HeaderTemplate>
-<h3 style="color:white">IsObligatory</h3>
-</HeaderTemplate>
-<ItemTemplate>
-<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsObligatory").Equals(true) %>'/>
-<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsObligatory").Equals(false) %>' /> 
-</ItemTemplate>
-<ItemStyle />
-</asp:TemplateField>
-
-
-<asp:TemplateField AccessibleHeaderText="IsPrivate" HeaderText="IsPrivate" ItemStyle-CssClass="isPrivateColumnItem">
-<HeaderTemplate>
-<h3 style="color:white">IsPrivate</h3>
-</HeaderTemplate>
-<ItemTemplate>
-<asp:Image ID="IsObligTrue"   runat="server" ImageUrl="~/Images/tick3.svg" Visible='<%# Eval("IsPrivate").Equals(true) %>'/>
-<asp:Image ID="IsObligFalse"  runat="server"  ImageUrl="~/Images/cross2.svg" Visible ='<%# Eval("IsPrivate").Equals(false) %>' /> 
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("PhoneNumber") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle />
 </asp:TemplateField>

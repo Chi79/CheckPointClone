@@ -182,6 +182,8 @@
     <Content Include="index.aspx" />
     <Content Include="InvalidNavigationView.aspx" />
     <Content Include="InviteUserView.aspx" />
+    <Content Include="ManageAppointmentAttendanceView.aspx" />
+    <Content Include="ManageCourseAttendanceView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
@@ -375,12 +377,26 @@
     <Compile Include="LoginView.aspx.designer.cs">
       <DependentUpon>LoginView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageAppointmentAttendanceView.aspx.cs">
+      <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageAppointmentAttendanceView.aspx.designer.cs">
+      <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageAttendanceView.aspx.cs">
       <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageAttendanceView.aspx.designer.cs">
       <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCourseAttendanceView.aspx.cs">
+      <DependentUpon>ManageCourseAttendanceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCourseAttendanceView.aspx.designer.cs">
+      <DependentUpon>ManageCourseAttendanceView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCourseView.aspx.cs">
       <DependentUpon>ManageCourseView.aspx</DependentUpon>
