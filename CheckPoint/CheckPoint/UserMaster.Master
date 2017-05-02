@@ -64,7 +64,7 @@
                 <div class="main-sidebar-menu-list-item">
              <%--    <span class="tooltiptext">Alter Profile</span>--%>
                                    
-                    <a class="main-sidebar-menu-list-item-link" href="UpdateProfileView.aspx" tabindex="2">                         
+                    <a class="main-sidebar-menu-list-item-link" href="WorkInProgressUserView.aspx" tabindex="2">                         
                        <img class="main-sidebar-menu-list-item-icon" alt="[]" src="Images/alterprofile.png" ></img>
                        
                   </a>   
