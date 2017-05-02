@@ -6,6 +6,8 @@
 <%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
 <%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
 <%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
+<%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
+
 
 
 
@@ -94,7 +96,7 @@
          border-radius: 5px;
          border-width:0px;
          border-color:darkgreen;
-         padding-bottom: 1%;
+         padding-bottom: 0%;
          height: 40px;
          font-family: sans-serif;
          font-size: 15px;
@@ -169,7 +171,7 @@ runat="server">
 
     <ContentTemplate>
     <uc1:AppointmentGridView runat="server" id="AppointmentGridView" />
-        
+        <uc1:DatePicker runat="server" ID="DatePicker" />   
         
         </ContentTemplate>
          </asp:UpdatePanel>
@@ -194,9 +196,9 @@ runat="server">
 </div>
  <div id="buttonRow"> 
               
- <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" />
- <asp:Button CssClass="navButtons" ID="btnShowAppointments" runat="server" Text="Show Appointments" OnClick="btnShowAppointments_Click" />
- <asp:Button CssClass="navButtons" ID="btnShowCourses" runat="server" Text="Show Courses" OnClick="btnShowCourses_Click"/>   
+ <asp:Button CssClass="navButtons" ForeColor="White" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" />
+ <asp:Button CssClass="navButtons" ForeColor="White" ID="btnShowAppointments" runat="server" Text="Show Appointments" OnClick="btnShowAppointments_Click" />
+ <asp:Button CssClass="navButtons" ForeColor="White" ID="btnShowCourses" runat="server" Text="Show Courses" OnClick="btnShowCourses_Click"/>   
   </div>  
              
 
