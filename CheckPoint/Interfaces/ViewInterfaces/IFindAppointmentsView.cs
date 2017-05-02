@@ -18,6 +18,8 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectToFindCoursesView();
 
+        void RedirectToApplyToAppointmentView();
+
         event EventHandler<EventArgs> RowSelected;
         event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;

@@ -37,6 +37,7 @@ namespace CheckPointPresenters.Presenters
            _model.PrepareUpdateAppointmentJob();
 
             ConfirmAction();
+
         }
 
         private void OnDeleteAppointmentButtonClicked(object sender, EventArgs e)
@@ -45,9 +46,8 @@ namespace CheckPointPresenters.Presenters
             _model.PrepareDeleteAppointmentJob();
 
             ConfirmAction();
+
         }
-
-
 
 
         public override void FirstTimeInit()
@@ -73,8 +73,6 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonClicked += _OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
             
-     
-
         }
 
         private void OnReloadPageEvent(object sender, EventArgs e)
@@ -207,11 +205,14 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = _model.GetJobCompletedMessage();
 
 
-                DisplayButtonsAfterUpdateSuccessful();              
+                DisplayButtonsAfterUpdateSuccessful();     
+                         
             }
             else
             {
+
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+
             }
 
         }
@@ -221,15 +222,17 @@ namespace CheckPointPresenters.Presenters
            bool isJobTypeDeleteAppointment = _model.IsJobTypeDeleteAppointment();
 
            if(isJobTypeDeleteAppointment)
-            {
-                AllButtonsHide();
-            }
-           else
-            {
-                ContinueButtonsShow();
-            }
-        
+           {
 
+                AllButtonsHide();
+
+           }
+           else
+           {
+
+                ContinueButtonsShow();
+
+           }
             
         }
 

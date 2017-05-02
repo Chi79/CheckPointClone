@@ -22,6 +22,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         string GetLoggedInClient();
 
+        string GetLoggedInClientTagId();
+
         IEnumerable<object> GetAllPublicAppointments();
 
         IEnumerable<object> GetEmptyList();
@@ -31,12 +33,6 @@ namespace CheckPointCommon.ModelInterfaces
         IEnumerable<object> GetAppointmentsSortedByPropertyAsc();
 
         IEnumerable<object> GetAppointmentsSortedByPropertyDesc();
-        void PrepareCreateAttendee();
-        string GetLoggedInClientTagId();
-        object ConvertToAttendee(object dTO);
-        void PerformJob(object attendee);
-        bool UpdateDatabaseWithChanges();
-        string GetJobCompletedMessage();
-        string GetUpdateErrorMessage();
+
     }
 }

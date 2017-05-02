@@ -13,8 +13,6 @@ namespace CheckPointModel.Services
     {
         IUnitOfWork _uOW;
 
-        private ATTENDEE attendee ;
-
         public AttendeeHandler(IUnitOfWork uOW)
         {
             _uOW = uOW;

@@ -25,9 +25,6 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectAfterClickEvent();
 
-    
-
-
         bool ContinueButtonVisible { set; }
         bool UpdateButtonVisible { set; }
         bool DeleteButtonVisible { set; }
