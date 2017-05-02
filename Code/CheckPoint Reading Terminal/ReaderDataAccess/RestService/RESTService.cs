@@ -132,8 +132,9 @@ namespace Reader.DataAccessREST
 
                 // create a JSON Patch Document
                 JsonPatchDocument<Attendee> patchDoc = new JsonPatchDocument<Attendee>();
-                //make changeset             
-                patchDoc.Replace(c => c.TimeAttended, DateTime.Now);
+                //make changeset  
+                           
+                patchDoc.Replace(c => c.TimeAttended, DateTime.UtcNow.AddHours(2));
                 if (isAppointmentObligatory)
                 {
                     patchDoc.Replace(c => c.StatusId, (int)AttendeeStatus.ObligHasAttended);

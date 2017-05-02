@@ -58,3 +58,18 @@ Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderSerialProto
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\obj\Debug\ReaderSerialProtocols.csprojResolveAssemblyReference.cache
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\obj\Debug\ReaderSerialProtocols.dll
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\obj\Debug\ReaderSerialProtocols.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderSerialProtocols.dll.config
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderSerialProtocols.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderSerialProtocols.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\EntityFramework.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\MySql.Data.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderCommon.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderDTO.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderCommon.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\EntityFramework.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\bin\Debug\ReaderDTO.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\obj\Debug\ReaderSerialProtocols.csprojResolveAssemblyReference.cache
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\obj\Debug\ReaderSerialProtocols.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderSerialProtocols\obj\Debug\ReaderSerialProtocols.pdb

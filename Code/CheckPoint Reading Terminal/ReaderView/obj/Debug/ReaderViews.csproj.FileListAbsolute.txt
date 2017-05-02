@@ -91,3 +91,27 @@ Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderView\obj\De
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.csproj.GenerateResource.Cache
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.exe
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderViews.exe.config
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderViews.exe
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderViews.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\EntityFramework.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\MySql.Data.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderCommon.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderPresenters.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderDTO.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderModel.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderCommon.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderPresenters.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\EntityFramework.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderDTO.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\bin\Debug\ReaderModel.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.csprojResolveAssemblyReference.cache
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.HostControlView.resources
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.LoginView.resources
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.Properties.Resources.resources
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.TerminalView.resources
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.csproj.GenerateResource.Cache
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.exe
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderView\obj\Debug\ReaderViews.pdb

@@ -50,3 +50,16 @@ Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\bin\
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.csprojResolveAssemblyReference.cache
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.dll
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderCommon.dll.config
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderCommon.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderCommon.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\MySql.Data.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderDTO.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\ReaderDTO.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.csprojResolveAssemblyReference.cache
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderCommon\obj\Debug\ReaderCommon.pdb

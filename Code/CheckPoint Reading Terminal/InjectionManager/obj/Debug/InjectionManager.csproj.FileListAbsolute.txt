@@ -118,3 +118,34 @@ Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.InjectionManager.exe.config
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.Properties.Resources.resources
 Z:\CheckPointAttendanceSystem\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.GenerateResource.Cache
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\InjectionManager.exe.config
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.exe
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\InjectionManager.exe
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\InjectionManager.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Reader.DataAccessREST.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderCommon.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderModel.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderPresenters.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderSerialProtocols.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderViews.exe
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\StructureMap.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderDTO.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Marvin.JsonPatch.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderCommon.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Reader.DataAccessREST.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderModel.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderPresenters.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderSerialProtocols.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderViews.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\ReaderDTO.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csprojResolveAssemblyReference.cache
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.InjectionManager.exe.config
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.Properties.Resources.resources
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\InjectionManager\obj\Debug\InjectionManager.csproj.GenerateResource.Cache
