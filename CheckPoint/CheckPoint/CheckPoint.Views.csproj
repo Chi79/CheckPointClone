@@ -222,8 +222,6 @@
     <Content Include="UserControls\UserCourseGridViewHeader.ascx" />
     <Content Include="UserCoursesView.aspx" />
     <Content Include="UserMaster.Master" />
-    <Content Include="WorkInProgressHostView.aspx" />
-    <Content Include="WorkInProgressUserView.aspx" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
@@ -564,18 +562,6 @@
     </Compile>
     <Compile Include="UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="WorkInProgressHostView.aspx.cs">
-      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WorkInProgressHostView.aspx.designer.cs">
-      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WorkInProgressUserView.aspx.cs">
-      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WorkInProgressUserView.aspx.designer.cs">
-      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
