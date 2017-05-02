@@ -107,7 +107,6 @@ namespace CheckPointModel.Models
 
         }
 
- 
 
         public bool UpdateDatabaseWithChanges()
         {
@@ -117,12 +116,15 @@ namespace CheckPointModel.Models
             bool IsSavedToDb = saveResult.Result > 0;
             if (IsSavedToDb)
             {
+
                 return true;
 
             }
             else
             {
+
                 return false;
+
             }
 
         }
@@ -170,28 +172,6 @@ namespace CheckPointModel.Models
 
         }
 
-        public bool? GetDeleteAppointmentStatus()
-        {
-
-            return _sessionService.DeletedAppointmentStatus;
-
-        }
-
-        public void SetDeleteAppointmentStatus()
-        {
-
-            _sessionService.DeletedAppointmentStatus = true;
-
-        }
-
-        public void ResetDeleteAppointmentStatus()
-        {
-
-            _sessionService.DeletedAppointmentStatus = false;
-
-        }
-
-
 
         public object ConvertToAppointment(object appointmentModel)
         {
@@ -218,11 +198,15 @@ namespace CheckPointModel.Models
         {
             if (_job.Jobtype == DbAction.DeleteAppointment)
             {
+
                 return true;
+
             }
             else
             {
+
                 return false;
+
             }
         }
     }

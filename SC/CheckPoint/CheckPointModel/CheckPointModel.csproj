@@ -53,6 +53,7 @@
     <Compile Include="DTOs\CourseDTO.cs" />
     <Compile Include="Factories\JobFactory.cs" />
     <Compile Include="Models\AddSelectedAppointmentToCourseModel.cs" />
+    <Compile Include="Models\ApplyToAttendAppointmentModel.cs" />
     <Compile Include="Models\ApplyToCourseModel.cs" />
     <Compile Include="Models\AppointmentSelectorModel.cs" />
     <Compile Include="Models\CourseSelectorModel.cs" />

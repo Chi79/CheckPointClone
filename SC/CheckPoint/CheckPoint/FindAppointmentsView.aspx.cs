@@ -77,6 +77,12 @@ namespace CheckPoint.Views
 
         }
 
+        public void RedirectToApplyToAppointmentView()
+        {
+
+            Response.Redirect("ApplyToAttendAppointmentView.aspx");
+        }
+
 
         public event EventHandler<EventArgs> RowSelected;
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;

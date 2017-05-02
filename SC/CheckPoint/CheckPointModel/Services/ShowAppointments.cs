@@ -234,5 +234,15 @@ namespace CheckPointModel.Services
             return apps.FirstOrDefault(a => a.AppointmentId.Equals(AppointmentId));
 
         }
+
+        public object GetSelectedPublicAppointmentByAppointmentId(int? AppointmentId)
+        {
+
+            var apps = GetPublicAppointmentsCached<APPOINTMENT>() as List<APPOINTMENT>;
+
+            return apps.FirstOrDefault(a => a.AppointmentId.Equals(AppointmentId));
+
+        }
+
     }
 }

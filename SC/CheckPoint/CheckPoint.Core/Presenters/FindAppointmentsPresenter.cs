@@ -5,21 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.CacheInterfaces;
 using CheckPointPresenters.Bases;
-using CheckPointModel.DTOs;
-using CheckPointCommon.Enums;
-using CheckPointDataTables.Tables;
 
 
 namespace CheckPointPresenters.Presenters
 {
     public class FindAppointmentsPresenter : PresenterBase
     {
+
         private readonly IFindAppointmentsView _view;
         private readonly IFindAppointmentsModel _model;
 
-        private AttendeeDTO _dTO;
         public FindAppointmentsPresenter(IFindAppointmentsView view,IFindAppointmentsModel model)
         {
 
@@ -28,24 +24,25 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-
-
-
         private bool CheckRowIsSelected()
         {
+
             int noRowSelected = -1;
 
             if (_model.GetSessionRowIndex() == noRowSelected)
             {
+
                 return false;
+
             }
             else
             {
+
                 return true;
 
             }
-        }
 
+        }
 
         public override void Load()
         {
@@ -67,7 +64,6 @@ namespace CheckPointPresenters.Presenters
         }
 
 
-
         private void OnFindCoursesButtonClicked(object sender, EventArgs e)
         {
 
@@ -75,7 +71,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
- 
 
         public override void FirstTimeInit()
         {
@@ -147,7 +142,6 @@ namespace CheckPointPresenters.Presenters
         }
 
 
-
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
 
@@ -177,6 +171,7 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = _model.GetSessionAppointmentId().ToString();
 
             }
+
         }
 
         private void SaveSelectedAppointmentIdToSession()
@@ -186,111 +181,47 @@ namespace CheckPointPresenters.Presenters
 
             _model.SetSessionAppointmentId(selectedAppointmentId);
 
-
         }
 
 
         private void OnApplyToAttendAppointmentButtonClicked(object sender, EventArgs e)
-        {
+        {  
 
-            PrepareJobType();       
-
-            CreateAttendee();
-
-        }
-
-        private void CreateAttendee()
-        {
-          
-
-            CreateAttendeeDTOFromInput();
-
-            bool validDTO = ValidateDTO();
-            if(validDTO)
-            {
-                var attendee = ConvertDTOToAttendee();
-                _model.PerformJob(attendee);
-                CheckChangesSaved();
-            }
-            else
-            {
-                _view.Message = "Faild to apply to Appointment";
-            }
-
-        }
-
-        private void CheckChangesSaved()
-        {
-
-            bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
-            if (UpdateSuccessful)
+            bool rowIsSelected = CheckRowIsSelected();
+            if(rowIsSelected)
             {
 
-                _view.Message = _model.GetJobCompletedMessage();
+                CheckUserHasValidTagId();
                 
 
-            
-
             }
             else
             {
-                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+
+                _view.Message = "No appointment has been selected!";
+
             }
 
         }
 
-
-        public ATTENDEE ConvertDTOToAttendee()
+        public void CheckUserHasValidTagId()
         {
 
-            return _model.ConvertToAttendee(_dTO) as ATTENDEE;
-
-        }
-
-
-
-        public void PrepareJobType()
-        {
-
-            _model.PrepareCreateAttendee();
-
-        }
-
-
-        public void CreateAttendeeDTOFromInput()
-        {
-            SaveSelectedAppointmentIdToSession();
-
-            _dTO = new AttendeeDTO
-            {
-                AppointmentId = (int)_model.GetSessionAppointmentId(),
-                TagId = _model.GetLoggedInClientTagId(),
-                StatusId = (int)AttendeeStatus.RequestedToAttend               
-            };                            
-
-        }
-
-        private bool ValidateDTO()
-        {
-
-            bool attendeeDataIsValid = _dTO.IsValid(_dTO);
-            if (attendeeDataIsValid)
+            bool userHasValidTagId = _model.GetLoggedInClientTagId() != null;
+            if(userHasValidTagId)
             {
 
-                return true;
+                _view.RedirectToApplyToAppointmentView();
 
             }
             else
             {
 
-                return false;
+                _view.Message = "User needs a valid tagId to attend appointments!";
 
             }
 
         }
-
-
-
 
     }
 }

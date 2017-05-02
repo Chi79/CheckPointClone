@@ -10,99 +10,76 @@ using CheckPointPresenters.Presenters;
 
 namespace CheckPoint.Views
 {
-    public partial class ManageSingleAppointmentView : ViewBase<ManageSingleAppointmentPresenter>, IManageSingleAppointmentView
+    public partial class ApplyToAttendAppointmentView : ViewBase<ApplyToAttendAppointmentPresesnter> , IApplyToAttendAppointmentView
     {
-
-        public string AppointmentName
+        public string Message
         {
 
-            get { return AppointmentCreator.AppointmentName; }
-            set { AppointmentCreator.AppointmentName = value; }
-
-        }
-
-        public string Description
-        {
-
-            get { return AppointmentCreator.Description; }
-            set { AppointmentCreator.Description = value; }
-
-        }
-
-        public string Date
-        {
-
-            get { return AppointmentCreator.Date; }
-            set { AppointmentCreator.Date = value; }
+            set { AppointmentCreator.Message = value; }
 
         }
 
         public string StartTime
         {
 
-            get { return AppointmentCreator.StartTime; }
             set { AppointmentCreator.StartTime = value; }
 
         }
-
         public string EndTime
         {
 
-            get { return AppointmentCreator.EndTime; }
             set { AppointmentCreator.EndTime = value; }
-
         }
 
         public string PostalCode
         {
 
-            get { return AppointmentCreator.PostalCode; }
             set { AppointmentCreator.PostalCode = value; }
 
         }
+        public string AppointmentName
+        {
 
+            set { AppointmentCreator.AppointmentName = value; }
+
+        }
+        public string Description
+        {
+
+            set { AppointmentCreator.Description = value; }
+
+        }
         public string Address
         {
 
-            get { return AppointmentCreator.Address; }
             set { AppointmentCreator.Address = value; }
 
         }
+        public string Date
+        {
 
+            set { AppointmentCreator.Date = value; }
+
+        }
         public string IsCancelled
         {
 
-            get { return AppointmentCreator.IsCancelled; }
             set { AppointmentCreator.IsCancelled = value; }
 
         }
-
         public string IsObligatory
         {
 
-            get { return AppointmentCreator.IsObligatory; }
             set { AppointmentCreator.IsObligatory = value; }
 
         }
-
         public string IsPrivate
         {
 
-            get { return AppointmentCreator.IsPrivate; }
             set { AppointmentCreator.IsPrivate = value; }
 
         }
-
-        public string Message
-        {
-
-            get { return AppointmentCreator.Message; }
-            set { AppointmentCreator.Message = value; }
-
-        }
-
-
-
+  
         public bool AppointmentNameReadOnly
         {
 
@@ -127,21 +104,18 @@ namespace CheckPoint.Views
             set { AppointmentCreator.StartTimeReadOnly = value; }
 
         }
-
         public bool EndDateReadOnly
         {
 
             set { AppointmentCreator.EndDateReadOnly = value; }
 
         }
-
         public bool IsCancelledEnabled
         {
 
             set { AppointmentCreator.IsCancelledEnabled = value; }
 
         }
-
         public bool IsObligatoryEnabled
         {
 
@@ -160,101 +134,62 @@ namespace CheckPoint.Views
             set { AppointmentCreator.PostalCodeReadOnly = value; }
 
         }
-
         public bool AddressReadOnly
         {
 
             set { AppointmentCreator.AddressReadOnly = value; }
 
         }
-
         public bool EndTimeReadOnly
         {
 
             set { AppointmentCreator.EndTimeReadOnly = value; }
 
         }
+  
+        public void RedirectToFindAppointmentsView()
+        {
 
+            Response.Redirect("FindAppointmentsView.aspx");
 
+        }
+ 
         public bool ContinueButtonVisible
         {
 
             set { btnContinue.Visible = value; }
 
         }
-
-        public bool UpdateButtonVisible
-        {
-
-            set { btnUpdateAppointment.Visible = value; }
-
-        }
-
-        public bool DeleteButtonVisible
-        {
-
-            set { btnDeleteAppointment.Visible = value; }
-
-        }
-
         public bool YesButtonVisible
         {
 
-            set { btnYes.Visible = value; }
+            set {btnYes.Visible = value; }
 
         }
-
         public bool NoButtonVisible
         {
 
-            set { btnNo.Visible = value; }
+            set {btnNo.Visible = value; }
 
         }
-
-
-
-        public void RedirectAfterClickEvent()
-        {
-            Response.Redirect("ManageSingleAppointmentView.aspx");
-        }
-
- 
-
+    
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-        public event EventHandler<EventArgs> UpdateAppointment;
-        public event EventHandler<EventArgs> DeleteAppointment;
-        public event EventHandler<EventArgs> ReloadPage;
-
+        public event EventHandler<EventArgs> ContinueButtonClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-        }
 
-        protected void btnCreateAppointment_Click(object sender, EventArgs e)
-        {
-            if (UpdateAppointment != null)
-            {
-                UpdateAppointment(this, EventArgs.Empty);
-            }
         }
 
         protected void btnContinue_Click(object sender, EventArgs e)
         {
-            if (ReloadPage != null)
+            if (ContinueButtonClicked != null)
             {
-                ReloadPage(this, EventArgs.Empty);
+                ContinueButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (DeleteAppointment != null)
-            {
-                DeleteAppointment(this, EventArgs.Empty);
-            }
-        }
 
         protected void btnYes_Click(object sender, EventArgs e)
         {
@@ -271,7 +206,6 @@ namespace CheckPoint.Views
                 NoButtonClicked(this, EventArgs.Empty);
             }
         }
-
 
     }
 }

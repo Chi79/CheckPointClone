@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/HostMaster.Master" AutoEventWireup="true" CodeBehind="ManageSingleAppointmentView.aspx.cs" Inherits="CheckPoint.Views.ManageSingleAppointmentView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApplyToAttendAppointmentView.aspx.cs" Inherits="CheckPoint.Views.ApplyToAttendAppointmentView" MasterPageFile="~/UserMaster.Master" EnableEventValidation="false" %>
 
 <%@ Register Src="~/UserControls/AppointmentCreator.ascx" TagPrefix="uc1" TagName="AppointmentCreator" %>
 
@@ -73,16 +73,14 @@ border:none;
         <uc1:AppointmentCreator runat="server" ID="AppointmentCreator" />
         </li >
     <li class="list1-item">
-                <asp:Button CssClass="button" ID="btnUpdateAppointment" runat="server" Text="Update Appointment" OnClick="btnCreateAppointment_Click" />
-        <asp:Button CssClass="button" ID="btnDeleteAppointment" runat="server" Text="Delete Appointment" OnClick="btnDelete_Click" />
-        <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="47px" />
-        <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="45px" />
+
+        <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="True" Width="47px" />
+        <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="True" Width="45px" />
         <asp:Button CssClass="button" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
+ 
     </li>
 
     </ul>
 
 
     </asp:Content>
-
-
