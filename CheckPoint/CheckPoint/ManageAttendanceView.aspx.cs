@@ -114,8 +114,12 @@ namespace CheckPoint.Views
             AppointmentGridView.BindData();
             AppointmentGridViewHeader.BindData();
 
-            CourseGridView.DataBind();
+            CourseGridView.BindData();
             CourseGridViewHeader.BindData();
+
+            AttendeeGridView.BindData();
+            AttendeeGridViewHeader.BindData();
+
         }
 
         protected void btnAcceptAttendanceRequest_Click(object sender, EventArgs e)

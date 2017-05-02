@@ -87,7 +87,7 @@ namespace CheckPointPresenters.Presenters
             {
 
                 case ClientType.User:
-                    StoreTagIdToSession();                   
+                     StoreTagIdToSession();                   
                     _view.RedirectToUserHomePage();
                     break;
                 case ClientType.Host:

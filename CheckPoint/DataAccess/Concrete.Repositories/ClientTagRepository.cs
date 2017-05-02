@@ -28,8 +28,8 @@ namespace DataAccess.Concrete.Repositories
 
             if (!result.Any())
             {
-                throw new Exception("No TagId found for this client");   
-                //return null;   
+                //throw new Exception("No TagId found for this client");   
+                return null;   
             }
             else
             {

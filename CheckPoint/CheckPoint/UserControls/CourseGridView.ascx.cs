@@ -32,6 +32,13 @@ namespace CheckPoint.Views.UserControls
 
         }
 
+        public void BindData()
+        {
+
+            gvHostTable.DataBind();
+
+        }
+
         public object SelectedRowValueDataKey
         {
 
