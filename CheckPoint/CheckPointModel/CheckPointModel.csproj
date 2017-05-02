@@ -61,6 +61,8 @@
     <Compile Include="Models\FindCoursesModel.cs" />
     <Compile Include="Models\HostCoursesModel.cs" />
     <Compile Include="Models\InvalidNavigationModel.cs" />
+    <Compile Include="Models\ManageAppointmentAttendanceModel.cs" />
+    <Compile Include="Models\ManageCourseAttendanceModel.cs" />
     <Compile Include="Models\ManageSingleAppointmentModel.cs" />
     <Compile Include="Models\UpdateCourseModel.cs" />
     <Compile Include="Models\UserCoursesModel.cs" />

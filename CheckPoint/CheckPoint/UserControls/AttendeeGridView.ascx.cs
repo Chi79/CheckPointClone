@@ -20,29 +20,29 @@ namespace CheckPoint.Views.UserControls
         public int SelectedRowIndex
         {
 
-            get { return gvHostTable.SelectedIndex; }
-            set { gvHostTable.SelectedIndex = value; }
+            get { return gvAttendeeTable.SelectedIndex; }
+            set { gvAttendeeTable.SelectedIndex = value; }
 
         }
 
         public IEnumerable<object> SetDataSource
         {
 
-            set { gvHostTable.DataSource = value; }
+            set { gvAttendeeTable.DataSource = value; }
 
         }
 
         public void BindData()
         {
 
-            gvHostTable.DataBind();
+            gvAttendeeTable.DataBind();
 
         }
 
         public object SelectedRowValueDataKey
         {
 
-            get { return gvHostTable.DataKeys[(int)SessionRowIndex].Value; }
+            get { return gvAttendeeTable.DataKeys[(int)SessionRowIndex].Value; }
 
         }
 
@@ -67,7 +67,7 @@ namespace CheckPoint.Views.UserControls
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvHostTable, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvAttendeeTable, "Select$" + e.Row.RowIndex);
             }
 
         }

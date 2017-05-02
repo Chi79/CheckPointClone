@@ -20,7 +20,7 @@ namespace CheckPoint.Views.UserControls
         public IEnumerable<object> SetDataSource2
         {
 
-            set { gvHostTable1.DataSource = value; }
+            set { gvAttendeeTable1.DataSource = value; }
 
         }
 
@@ -32,7 +32,7 @@ namespace CheckPoint.Views.UserControls
         public void BindData()
         {
 
-            gvHostTable1.DataBind();
+            gvAttendeeTable1.DataBind();
 
         }
 
