@@ -107,6 +107,8 @@ namespace CheckPointModel.Models
 
         }
 
+ 
+
         public bool UpdateDatabaseWithChanges()
         {
 
@@ -167,6 +169,29 @@ namespace CheckPointModel.Models
             _sessionService.NewAppointmentAddedToCourseStatus = false;
 
         }
+
+        public bool? GetDeleteAppointmentStatus()
+        {
+
+            return _sessionService.DeletedAppointmentStatus;
+
+        }
+
+        public void SetDeleteAppointmentStatus()
+        {
+
+            _sessionService.DeletedAppointmentStatus = true;
+
+        }
+
+        public void ResetDeleteAppointmentStatus()
+        {
+
+            _sessionService.DeletedAppointmentStatus = false;
+
+        }
+
+
 
         public object ConvertToAppointment(object appointmentModel)
         {

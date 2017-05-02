@@ -186,12 +186,17 @@ namespace CheckPointPresenters.Presenters
 
             _model.SetSessionAppointmentId(selectedAppointmentId);
 
+
         }
+
+
         private void OnApplyToAttendAppointmentButtonClicked(object sender, EventArgs e)
         {
+
             PrepareJobType();       
 
             CreateAttendee();
+
         }
 
         private void CreateAttendee()
@@ -234,15 +239,24 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+
         public ATTENDEE ConvertDTOToAttendee()
         {
+
             return _model.ConvertToAttendee(_dTO) as ATTENDEE;
+
         }
+
+
 
         public void PrepareJobType()
         {
+
             _model.PrepareCreateAttendee();
+
         }
+
+
         public void CreateAttendeeDTOFromInput()
         {
             SaveSelectedAppointmentIdToSession();
