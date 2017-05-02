@@ -90,6 +90,28 @@
         #buttonRow{
             
         }
+        .navButtons{
+         border-radius: 5px;
+         border-width:0px;
+         border-color:darkgreen;
+         padding-bottom: 1%;
+         height: 40px;
+         font-family: sans-serif;
+         font-size: 15px;
+         font-weight: 600;
+         background-image:url(/Images/buttonshade1.png);
+         }
+         .navButtons:hover{
+         border-radius:0px;
+         -webkit-animation:flashingbutton;
+         -webkit-animation-duration:2s;
+         -webkit-animation-iteration-count:infinite;
+         }
+          @-webkit-keyframes flashingbutton{
+          from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+           50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+            to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
+         }
 
 
 
@@ -172,9 +194,9 @@ runat="server">
 </div>
  <div id="buttonRow"> 
               
- <asp:Button ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" />
- <asp:Button ID="btnShowAppointments" runat="server" Text="Show Appointments" OnClick="btnShowAppointments_Click" />
- <asp:Button ID="btnShowCourses" runat="server" Text="Show Courses" OnClick="btnShowCourses_Click"/>   
+ <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" />
+ <asp:Button CssClass="navButtons" ID="btnShowAppointments" runat="server" Text="Show Appointments" OnClick="btnShowAppointments_Click" />
+ <asp:Button CssClass="navButtons" ID="btnShowCourses" runat="server" Text="Show Courses" OnClick="btnShowCourses_Click"/>   
   </div>  
              
 
