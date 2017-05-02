@@ -7,15 +7,16 @@ using System.Web.UI.WebControls;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Bases;
 using CheckPointPresenters.Presenters;
+using CheckPoint.Views;
 
 namespace CheckPoint.Views
 {
-    public partial class ApplyToCourseView :ViewBase<ApplyToCoursePresenter>, IApplyToCourseView
+    public partial class ApplyToCourseView //:ViewBase<ApplyToCoursePresenter>, ApplyToCourseView
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            HookUpEvents();
+            //HookUpEvents();
 
         }
         public string Message
@@ -72,13 +73,13 @@ namespace CheckPoint.Views
             UserAppointmentGridViewHeader.DataBind();
             UserAppointmentGridView.DataBind();
         }
-        public override void HookUpEvents()
-        {
-            RowSelected += ApplyToCourseView_RowSelected;
-            SortColumnsByPropertyAscending += ApplyToCourseView_SortColumnsByPropertyAscending;
-            SortColumnsByPropertyDescending += ApplyToCourseView_SortColumnsByPropertyDescending;
+    //    public override void HookUpEvents()
+    //    {
+    //        RowSelected += ApplyToCourseView_RowSelected;
+    //        SortColumnsByPropertyAscending += ApplyToCourseView_SortColumnsByPropertyAscending;
+    //        SortColumnsByPropertyDescending += ApplyToCourseView_SortColumnsByPropertyDescending;
         
-    }
+    //}
 
         private void ApplyToCourseView_SortColumnsByPropertyDescending(object sender, EventArgs e)
         {
