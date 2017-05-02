@@ -37,6 +37,12 @@ namespace CheckPointCommon.ModelInterfaces
 
         void ResetAddingAppointmentToCourseStatus();
 
+        bool? GetDeleteAppointmentStatus();
+
+        void SetDeleteAppointmentStatus();
+
+        void ResetDeleteAppointmentStatus();
+
         string GetLoggedInClient();
 
         void RefreshAllAppointmentsForClient();
