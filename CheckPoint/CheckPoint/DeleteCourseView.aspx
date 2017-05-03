@@ -4,6 +4,8 @@
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
+
+
 <style type="text/css">
 
 #Delete_course_buttons{

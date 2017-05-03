@@ -10,7 +10,7 @@
 namespace CheckPoint.Views {
     
     
-    public partial class RegisterClientView {
+    public partial class RegisterUserView {
         
         /// <summary>
         /// form1 control.
@@ -175,13 +175,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label lblClientType;
         
         /// <summary>
-        /// ddlClientType control.
+        /// txtClientTrype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlClientType;
+        protected global::System.Web.UI.WebControls.TextBox txtClientTrype;
         
         /// <summary>
         /// lblMessage control.

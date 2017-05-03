@@ -157,7 +157,7 @@
     </asp:ScriptManager> 
 
     <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="AppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/SelectAppointmentHeading.svg" /></div>
+    <div id="AppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/SelectAppointmentHeading1.svg" /></div>
 
 
     <asp:Panel
@@ -229,20 +229,6 @@
     </asp:UpdatePanel>
     </div>
 
-
-<%--    <div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
-    <asp:UpdatePanel ID="buttonspanel" runat="server" > 
-    <ContentTemplate>
-    <asp:Button ID="btnCreateAppointment" 
-        CssClass="navButtons" 
-        runat="server" 
-        OnClick="btnCreateAppointment_Click" 
-        Text="Create Appointment"  
-        Visible="True" 
-        ForeColor="White"/>
-    </ContentTemplate>
-    </asp:UpdatePanel>
-    </div>--%>
 
     </div>
 

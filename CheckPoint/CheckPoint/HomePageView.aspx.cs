@@ -43,7 +43,7 @@ namespace CheckPoint.Views
 
         public void RedirectToClientRegisterView()
         {
-            Response.Redirect("RegisterClientView.aspx");
+            Response.Redirect("HostUserInfoView.aspx");
         }
     }
 }

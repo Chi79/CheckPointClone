@@ -150,7 +150,7 @@ runat="server">
 </asp:ScriptManager> 
 
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-<div id="courseSelectHeading" class="courseselectslide" style="z-index:5"><img src="Images/SelectCourseHeading.svg" /></div>
+<div id="courseSelectHeading" class="courseselectslide" style="z-index:5"><img src="Images/SelectCourseHeading1.svg" /></div>
 
 
 <asp:Panel

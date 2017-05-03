@@ -152,7 +152,7 @@ runat="server">
 </asp:ScriptManager> 
 
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-<div id="coursesHeading" class="coursesslide" style="z-index:5"><img src="Images/CoursesHeading.svg" /></div>
+<div id="coursesHeading" class="coursesslide" style="z-index:5"><img src="Images/CoursesHeading1.svg" /></div>
 
 
 <asp:Panel

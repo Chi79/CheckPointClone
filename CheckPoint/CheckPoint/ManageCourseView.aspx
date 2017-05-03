@@ -3,11 +3,8 @@
 
 <%@ Register Src="~/UserControls/ManageCourseGrid.ascx" TagPrefix="uc1" TagName="ManageCourseGrid" %>
 <%@ Register Src="~/UserControls/ManageCourseHeader.ascx" TagPrefix="uc1" TagName="ManageCourseHeader" %>
-
-
 <%@ Register Src="~/UserControls/ManageCourseAppGridHeader.ascx" TagPrefix="uc1" TagName="ManageCourseAppGridHeader" %>
 <%@ Register Src="~/UserControls/ManageCourseAppGrid.ascx" TagPrefix="uc1" TagName="ManageCourseAppGrid" %>
-
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
 
 
@@ -197,13 +194,13 @@ runat="server">
 
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
-<div id="courseManagerHeading" class="coursesmanageslide" style="z-index:5"><img src="Images/CourseManagerHeading.svg" /></div>
+<div id="courseManagerHeading" class="coursesmanageslide" style="z-index:5"><img src="Images/CourseManagerHeading1.svg" /></div>
 
 <asp:Image ID="appointmentAddedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentAddedMessage1.svg"  />
 
-<asp:Image ID="appointmentDeletedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentDeletedMessage.svg"  />
+<asp:Image ID="appointmentDeletedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentDeletedMessage1.svg"  />
 
-<asp:Image ID="courseUpdatedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/CourseUpdatedMessage.svg"  />
+<asp:Image ID="courseUpdatedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/CourseUpdatedMessage1.svg"  />
 
 <asp:Panel
 ID="Panel2"
