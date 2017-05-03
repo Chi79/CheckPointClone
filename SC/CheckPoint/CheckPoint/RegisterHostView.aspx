@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterClientView.aspx.cs" Inherits="CheckPoint.Views.RegisterClientView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/RegisterHostView.aspx.cs" Inherits="CheckPoint.Views.RegisterHostView" %>
 
 <!DOCTYPE html>
 
@@ -25,7 +25,7 @@ body{      background:#333333;}
 .panel{
     position:relative;
 }.list{
-     margin-top:10%;
+     margin-top:18%;
      line-height:2;
 display:inline-block;
 width:100%;
@@ -45,7 +45,20 @@ padding:0%;
 margin:0;
 border:none;
 }
-
+.list-item-message {
+position: relative;
+display: inline-block;
+width: 100%;
+left: 24%;
+text-align: left;
+padding: 0%;
+margin: 0;
+margin-top: 3%;
+border: none;
+}
+.message{
+   font-size: x-large;
+}
 
 .list-item-label{
     display:inline-block;
@@ -60,22 +73,40 @@ border:none;
     background:white;
 }
 
+.RegHeadingslide{
+      position:absolute;
+      left: 21%;
+      animation:slidedown 3s;
+      top:5%;
+}
+@keyframes slidedown {
+      from { top: -100%; }
+      to { top: 5%; }
+}
+
 
 .button{
-        
-            background-color:#66cc66;
-		    color:white;
-		    font-weight:normal;
-            padding-left:2%;
-            padding-right:2%;
-		    font-size:medium;	
-		    border-radius: 6px;
-            border-color:#333333;
-            margin-right:2%;
+    background-color: #66cc66;
+    color: white;
+    font-weight: normal;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: medium;
+    border-radius: 6px;
+    border-color: #333333;
+    margin-right: 0%;
+    margin-top: 4%;
+    margin-left: 3%;
 }
 .button:hover {
 border-color:gray;
 }
+
+
+
+
+
+
 </style>
 
 <title></title>
@@ -86,6 +117,8 @@ border-color:gray;
 <form id="form1" runat="server">
 <div id="container" class="container">
 <div id="panel" class="panel">
+
+    <div id="AppointmentHeading" class="RegHeadingslide" style="z-index:5"><img src="Images/RegisterAsHostHeading1.svg" /></div>
     
 
     <ul class="list">
@@ -134,17 +167,14 @@ border-color:gray;
         </li>
         <li class="list-item">
 
-            <asp:Label CssClass=" list-item-label" ID="lblClientType" runat="server" Text="Client Type:"></asp:Label>
+<asp:Label CssClass=" list-item-label" ID="lblClientType" runat="server" Text="Client Type:"></asp:Label>
+<asp:TextBox CssClass="list-item-box" ID="txtClientTrype" runat="server" ReadOnly="true" >Host</asp:TextBox>
 
-<asp:DropDownList CssClass="list-item-box" ID="ddlClientType" runat="server" Height="16px" Width="66px">
-<asp:ListItem Value="0">User</asp:ListItem>
-<asp:ListItem Value="1">Host</asp:ListItem>
-</asp:DropDownList>
         </li>
-        <li class="list-item">
+        <li class="list-item-message">
 
             
-<asp:Label ID="lblMessage" runat="server"></asp:Label>
+<asp:Label  CssClass="message" ID="lblMessage" runat="server"></asp:Label>
 
         </li>
         <li  class="list-item">

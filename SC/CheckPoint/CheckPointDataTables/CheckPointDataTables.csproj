@@ -60,6 +60,7 @@
     <Compile Include="Tables\APPOINTMENT.cs" />
     <Compile Include="Tables\ATTENDEE.cs" />
     <Compile Include="Tables\ATTENDEE_STATUS.cs" />
+    <Compile Include="Tables\CheckPointContext.cs" />
     <Compile Include="Tables\CLIENT.cs" />
     <Compile Include="Tables\CLIENT_TAG.cs" />
     <Compile Include="Tables\CLIENT_TYPE.cs" />

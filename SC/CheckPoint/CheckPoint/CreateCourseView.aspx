@@ -3,26 +3,6 @@
 
 
 
-
-
-<%--<body>
-<form id="form1" runat="server">
-
-
-
-
-<asp:Button ID="btnBackToCoursesPage" runat="server" OnClick="btnBackToCoursesPage_Click" Text="Back To Courses Page" />
-<asp:Button ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
-<asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
-<asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
-
-   
-</form>
-</body>
-</html>--%>
-
-
-
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
 

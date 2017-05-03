@@ -10,9 +10,9 @@ using CheckPointPresenters.Presenters;
 
 namespace CheckPoint.Views
 {
-    public partial class RegisterClientView : ViewBase<RegisterClientPresenter> , IRegisterClientView
+    public partial class RegisterUserView : ViewBase<RegisterClientPresenter> , IRegisterClientView
     {
-        public int ClientType { get { return ddlClientType.SelectedIndex; } }
+        public int ClientType { get { return 0; } }
 
         public string Email  { get { return txtEmail.Text; } }
 

@@ -118,6 +118,7 @@
     <Compile Include="ValidationInterfaces\IValidator.cs" />
     <Compile Include="ViewInterfaces\IHostCoursesView.cs" />
     <Compile Include="ViewInterfaces\IHostHomeView.cs" />
+    <Compile Include="ViewInterfaces\IHostUserInfoView.cs" />
     <Compile Include="ViewInterfaces\IInvalidNavigationView.cs" />
     <Compile Include="ViewInterfaces\IInviteUserView.cs" />
     <Compile Include="ViewInterfaces\ILoginView.cs" />

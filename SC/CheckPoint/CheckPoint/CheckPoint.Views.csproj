@@ -127,25 +127,40 @@
     <Content Include="HomePageView.aspx" />
     <Content Include="HostCoursesView.aspx" />
     <Content Include="HostHomeView.aspx" />
+    <Content Include="HostUserInfoView.aspx" />
     <Content Include="Images\activitiesicon.png" />
+    <Content Include="Images\AddAppointmentToCourseHeading1.svg" />
     <Content Include="Images\addselectedappointmentbutton.png" />
     <Content Include="Images\alterprofile.png" />
+    <Content Include="Images\ApplyToAttendAppointmentHeading1.svg" />
+    <Content Include="Images\ApplyToAttendCourseHeading1.svg" />
     <Content Include="Images\AppointmentAddedMessage.svg" />
     <Content Include="Images\AppointmentAddedMessage1.svg" />
     <Content Include="Images\AppointmentDeletedMessage.svg" />
+    <Content Include="Images\AppointmentDeletedMessage1.svg" />
     <Content Include="Images\AppointmentHeading.svg" />
+    <Content Include="Images\AppointmentHeading1.svg" />
+    <Content Include="Images\BeforeYouRegisterHeading1.svg" />
     <Content Include="Images\buttonshade1.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\checkpointlogo1.png" />
     <Content Include="Images\CourseDeletedMessage.svg" />
+    <Content Include="Images\CourseDeletedMessage1.svg" />
     <Content Include="Images\CourseManagerHeading.svg" />
+    <Content Include="Images\CourseManagerHeading1.svg" />
     <Content Include="Images\CoursesHeading.svg" />
+    <Content Include="Images\CoursesHeading1.svg" />
     <Content Include="Images\CourseUpdatedMessage.svg" />
+    <Content Include="Images\CourseUpdatedMessage1.svg" />
+    <Content Include="Images\CreateaCourseHeading1.svg" />
+    <Content Include="Images\CreateanAppointmentHeading1.svg" />
     <Content Include="Images\createappointmentbutton.png" />
     <Content Include="Images\createcoursebutton.png" />
     <Content Include="Images\createreportbutton1.png" />
     <Content Include="Images\cross.png" />
     <Content Include="Images\cross2.svg" />
+    <Content Include="Images\DeleteAppointmentHeading1.svg" />
+    <Content Include="Images\DeleteCourseHeading1.svg" />
     <Content Include="Images\downarrow2.png" />
     <Content Include="Images\downarrow3.png" />
     <Content Include="Images\findappointmentsicon.png" />
@@ -165,17 +180,28 @@
     <Content Include="Images\managecoursebutton.png" />
     <Content Include="Images\managecoursesbutton1.png" />
     <Content Include="Images\MyAppointmentsHeading.svg" />
+    <Content Include="Images\MyAppointmentsHeading1.svg" />
     <Content Include="Images\MyCourses.png" />
     <Content Include="Images\MyCoursesHeading.svg" />
+    <Content Include="Images\MyCoursesHeading1.svg" />
     <Content Include="Images\PublicAppointmentsHeading.svg" />
+    <Content Include="Images\PublicAppointmentsHeading1.svg" />
     <Content Include="Images\PublicCoursesHeading.svg" />
+    <Content Include="Images\PublicCoursesHeading1.svg" />
+    <Content Include="Images\RegisterAccountHeading1.svg" />
+    <Content Include="Images\RegisterAsHostHeading1.svg" />
+    <Content Include="Images\RegisterAsUserHeading1.svg" />
     <Content Include="Images\SelectAppointmentHeading.svg" />
+    <Content Include="Images\SelectAppointmentHeading1.svg" />
     <Content Include="Images\SelectCourseHeading.svg" />
+    <Content Include="Images\SelectCourseHeading1.svg" />
     <Content Include="Images\small_logo.png" />
     <Content Include="Images\small_logo2.png" />
     <Content Include="Images\tick3.svg" />
     <Content Include="Images\uparrow2.png" />
     <Content Include="Images\uparrow3.png" />
+    <Content Include="Images\UpdateAppointmentHeading1.svg" />
+    <Content Include="Images\UpdateCourseHeading1.svg" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
     <Content Include="Images\WorkInProgress1.png" />
@@ -185,6 +211,7 @@
     <Content Include="ManageAppointmentAttendanceView.aspx" />
     <Content Include="ManageCourseAttendanceView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
+    <Content Include="RegisterUserView.aspx" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.js" />
@@ -237,7 +264,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RegisterClientView.aspx" />
+    <Content Include="RegisterHostView.aspx" />
     <Content Include="UpdateProfileView.aspx" />
     <Content Include="UserHomeView.aspx" />
     <Content Include="Web.config">
@@ -349,6 +376,13 @@
     <Compile Include="HostMaster.Master.designer.cs">
       <DependentUpon>HostMaster.Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="HostUserInfoView.aspx.cs">
+      <DependentUpon>HostUserInfoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostUserInfoView.aspx.designer.cs">
+      <DependentUpon>HostUserInfoView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -413,12 +447,19 @@
       <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterClientView.aspx.cs">
-      <DependentUpon>RegisterClientView.aspx</DependentUpon>
+    <Compile Include="RegisterUserView.aspx.cs">
+      <DependentUpon>RegisterUserView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegisterClientView.aspx.designer.cs">
-      <DependentUpon>RegisterClientView.aspx</DependentUpon>
+    <Compile Include="RegisterUserView.aspx.designer.cs">
+      <DependentUpon>RegisterUserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterHostView.aspx.cs">
+      <DependentUpon>RegisterHostView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterHostView.aspx.designer.cs">
+      <DependentUpon>RegisterHostView.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateCourseView.aspx.cs">
       <DependentUpon>UpdateCourseView.aspx</DependentUpon>
@@ -580,6 +621,20 @@
     </Compile>
     <Compile Include="UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WorkInProgressHostView.aspx.cs">
+      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkInProgressHostView.aspx.designer.cs">
+      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkInProgressUserView.aspx.cs">
+      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkInProgressUserView.aspx.designer.cs">
+      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

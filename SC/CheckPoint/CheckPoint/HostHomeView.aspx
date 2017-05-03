@@ -157,7 +157,7 @@
     </asp:ScriptManager> 
 
     <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="AppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentHeading.svg" /></div>
+    <div id="AppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentHeading1.svg" /></div>
 
 
     <asp:Panel
