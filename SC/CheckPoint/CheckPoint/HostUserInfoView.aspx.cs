@@ -12,7 +12,6 @@ namespace CheckPoint.Views
 {
     public partial class HostUserInfoView : ViewBase<HostIUserInfoPresenter> , IHostUserInfoView
     {
-        public string Message { set { lblMessage.Text = value; } }
         public string HostInfoHeading {  set { lblHostInfoHeading.Text = value; } }
         public string HostInfo { set { lblHostInfo.Text = value; } }
         public string UserInfoHeading { set { lblUserInfoHeading.Text = value; } }
