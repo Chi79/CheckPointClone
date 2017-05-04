@@ -125,16 +125,24 @@ runat="server">
     <
 <%-- Course Header --%> 
 <asp:Panel ID="panelCourseHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelCourseHeader">
+
+     <asp:UpdatePanel 
+    ID="UpdatePanel1"  
+    runat="server" >
+
+    <ContentTemplate>
     <asp:Label ID="lblattendeecourserequest" runat="server" Text="Courses with active attendee requests" CssClass="GridviewLabel"></asp:Label>
     <uc1:CourseGridViewHeader runat="server" id="CourseGridViewHeader" />
 
+    </ContentTemplate>
+         </asp:UpdatePanel>
 </asp:Panel>
 
 <%-- Course Gridview --%>
 <asp:Panel ID="panelCourseGridView" runat="server" CssClass="PanelCourseGrid">
 
      <asp:UpdatePanel 
-    ID="UpdatePanel4"  
+    ID="UpdatePanel0"  
     runat="server" >
 
     <ContentTemplate>
@@ -148,14 +156,29 @@ runat="server">
 <div id="attendeeGridContainer">
 <%-- Attendee Header --%>
 <asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
+    <asp:UpdatePanel 
+    ID="UpdatePanel3"  
+    runat="server" >
+    <ContentTemplate>
 <%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
     <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" />
+
+    </ContentTemplate>
+         </asp:UpdatePanel>
 </asp:Panel>
 
  
 <%-- Attendee Gridview --%>
 <asp:Panel ID="panelAttendeeGridView" runat="server" CssClass="PanelAppGrid" Visible="true">
+
+    <asp:UpdatePanel 
+    ID="UpdatePanel7"  
+    runat="server" >
+    <ContentTemplate>
     <uc1:AttendeeGridView runat="server" id="AttendeeGridView" />
+
+    </ContentTemplate>
+         </asp:UpdatePanel>
 
 </asp:Panel>
 </div>

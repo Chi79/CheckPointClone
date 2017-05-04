@@ -125,10 +125,15 @@ runat="server">
 <div id="appointmentGridContainer">
         
 <%-- Appointment Header --%>    
-<asp:Panel ID="panelAppointmentHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true"> 
+<asp:Panel ID="panelAppointmentHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
+    <asp:UpdatePanel
+    ID="UpdatePanel7"  
+    runat="server" > 
+        <ContentTemplate>
 <asp:Label ID="lblattendeeappointmentrequest" runat="server" Text="Appointments with active attendee requests" CssClass="GridviewLabel"></asp:Label>    
     <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />
-
+        </ContentTemplate>
+         </asp:UpdatePanel>
 </asp:Panel>
 
 <%-- Appointment Gridview --%>
@@ -151,15 +156,28 @@ runat="server">
 <div id="attendeeGridContainer">
 <%-- Attendee Header --%>
 <asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
+    <asp:UpdatePanel 
+    ID="UpdatePanel2"  
+    runat="server" >
+
+    <ContentTemplate>
 <asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> 
     <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" />
+        </ContentTemplate>
+         </asp:UpdatePanel>
 </asp:Panel>
 
  
 <%-- Attendee Gridview --%>
 <asp:Panel ID="panelAttendeeGridView" runat="server" CssClass="PanelAppGrid" Visible="true">
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" />
+    <asp:UpdatePanel 
+    ID="UpdatePanel3"  
+    runat="server" >
 
+    <ContentTemplate>
+    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" />
+        </ContentTemplate>
+         </asp:UpdatePanel>
 </asp:Panel>
 </div>
 
