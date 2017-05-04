@@ -130,7 +130,7 @@ runat="server">
 </asp:Panel>
 
 <%-- Appointment Gridview --%>
-<asp:Panel ID="panelAppointmentGrid" runat="server" CssClass="PanelAppGrid" Visible="true">
+<asp:Panel ID="panelAppointmentGridView" runat="server" CssClass="PanelAppGrid" Visible="true">
     
      <asp:UpdatePanel 
     ID="UpdatePanel1"  
@@ -155,7 +155,7 @@ runat="server">
 
  
 <%-- Attendee Gridview --%>
-<asp:Panel ID="panelAttendeeGrid" runat="server" CssClass="PanelAppGrid" Visible="true">
+<asp:Panel ID="panelAttendeeGridView" runat="server" CssClass="PanelAppGrid" Visible="true">
     <uc1:AttendeeGridView runat="server" id="AttendeeGridView" />
 
 </asp:Panel>

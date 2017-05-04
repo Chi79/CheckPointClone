@@ -129,7 +129,7 @@ runat="server">
 </asp:Panel>
 
 <%-- Course Gridview --%>
-<asp:Panel ID="panelCourseGrid" runat="server" CssClass="PanelCourseGrid">
+<asp:Panel ID="panelCourseGridView" runat="server" CssClass="PanelCourseGrid">
 
      <asp:UpdatePanel 
     ID="UpdatePanel4"  
@@ -146,13 +146,13 @@ runat="server">
 <div id="attendeeGridContainer">
 <%-- Attendee Header --%>
 <asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
-<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> 
+<%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
     <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" />
 </asp:Panel>
 
  
 <%-- Attendee Gridview --%>
-<asp:Panel ID="panelAttendeeGrid" runat="server" CssClass="PanelAppGrid" Visible="true">
+<asp:Panel ID="panelAttendeeGridView" runat="server" CssClass="PanelAppGrid" Visible="true">
     <uc1:AttendeeGridView runat="server" id="AttendeeGridView" />
 
 </asp:Panel>

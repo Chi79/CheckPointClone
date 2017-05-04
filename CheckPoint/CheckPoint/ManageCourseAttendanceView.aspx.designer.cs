@@ -49,13 +49,13 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.CourseGridViewHeader CourseGridViewHeader;
         
         /// <summary>
-        /// panelCourseGrid control.
+        /// panelCourseGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelCourseGrid;
+        protected global::System.Web.UI.WebControls.Panel panelCourseGridView;
         
         /// <summary>
         /// UpdatePanel4 control.
@@ -85,15 +85,6 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Panel panelAttendeeHeader;
         
         /// <summary>
-        /// lblAttendeesApplying control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAttendeesApplying;
-        
-        /// <summary>
         /// AttendeeGridViewHeader control.
         /// </summary>
         /// <remarks>
@@ -103,13 +94,13 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader AttendeeGridViewHeader;
         
         /// <summary>
-        /// panelAttendeeGrid control.
+        /// panelAttendeeGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAttendeeGrid;
+        protected global::System.Web.UI.WebControls.Panel panelAttendeeGridView;
         
         /// <summary>
         /// AttendeeGridView control.

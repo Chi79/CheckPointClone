@@ -15,15 +15,15 @@ namespace CheckPointModel.Models
         private ISessionService _sessionService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IShowAppointments _appointmentDisplayService;
-        private readonly IShowAttendees _attendeeDisplayService;
+        private readonly IShowClients _clientDisplayService;
 
         public ManageAppointmentAttendanceModel(ISessionService sessionService, IUnitOfWork unitOfWork, IShowAppointments appointmentDisplayService,
-                                                IShowAttendees attendeeDisplayService)
+                                                IShowClients clientDisplayService)
         {
             _sessionService = sessionService;
             _unitOfWork = unitOfWork;
             _appointmentDisplayService = appointmentDisplayService;
-            _attendeeDisplayService = attendeeDisplayService;
+            _clientDisplayService = clientDisplayService;
         }
 
         public string GetLoggedInClient()
@@ -35,6 +35,12 @@ namespace CheckPointModel.Models
         {
             var client = GetLoggedInClient();
             return _unitOfWork.APPOINTMENTs.GetAllAppointmentsWithAttendeeRequestsFor(client);
+        }
+
+        public IEnumerable<object> GetAllAppliedAttendeesForAppointmentById()
+        {
+            var selectedAppointmentId = (int)_sessionService.SessionAppointmentId;
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForAppointmentById(selectedAppointmentId);
         }
 
         public IEnumerable<object> GetEmptyAppointmentList()
@@ -64,9 +70,9 @@ namespace CheckPointModel.Models
             _sessionService.SessionAppointmentId = id;
         }
 
-        public IEnumerable<object> GetEmptyAttendeeList()
+        public IEnumerable<object> GetEmptyClientList()
         {
-            return null;
+            return _clientDisplayService.GetEmptyList<CLIENT>();
         }
     }
 }

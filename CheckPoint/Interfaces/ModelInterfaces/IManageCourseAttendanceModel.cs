@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CheckPointDataTables.Tables;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,15 @@ namespace CheckPointCommon.ModelInterfaces
         string GetLoggedInClient();
 
         IEnumerable<object> GetAllCoursesWithAttendeeRequests();
-        IEnumerable<object> GetAllAppointmentsWithAttendeeRequests();
         IEnumerable<object> GetEmptyCourseList();
-        IEnumerable<object> GetEmptyAttendeeList();
+        IEnumerable<object> GetEmptyClientList();
         int? GetSessionRowIndex();
+        void SetSessionCourseId(int id);
         void SetSessionRowIndex(int index);
         void ResetSessionState();
+        IEnumerable<object> GetClientInformationForAttendees();
 
-       
+
+
     }
 }

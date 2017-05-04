@@ -53,7 +53,7 @@ namespace CheckPoint.Views.UserControls
 
         public event EventHandler<EventArgs> RowSelected;
 
-        protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvAttendeeTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (RowSelected != null)
@@ -62,7 +62,7 @@ namespace CheckPoint.Views.UserControls
             }
 
         }
-        protected void gvHostTable_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void gvAttendeeTable_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
             if (e.Row.RowType == DataControlRowType.DataRow)

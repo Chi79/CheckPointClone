@@ -72,6 +72,7 @@
     <Compile Include="Services\JobService.cs" />
     <Compile Include="Services\ShowAppointments.cs" />
     <Compile Include="Services\ShowAttendees.cs" />
+    <Compile Include="Services\ShowClients.cs" />
     <Compile Include="Services\ShowCourses.cs" />
     <Compile Include="Utilities\AppointmentDTOMapper.cs" />
     <Compile Include="Utilities\AttendeeDTOMapper.cs" />

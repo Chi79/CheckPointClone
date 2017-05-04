@@ -22,7 +22,7 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
             ResetSessionState();
-            ShowData();
+            ShowAppointmentData();
         }
 
         private void ResetSessionState()
@@ -30,13 +30,22 @@ namespace CheckPointPresenters.Presenters
             _model.ResetSessionState();
         }
 
-        private void ShowData()
+        private void ShowAppointmentData()
         {
             _view.AppointmentsAppliedToHeaderSetDataSource = _model.GetEmptyAppointmentList();
             _view.AppointmentsAppliedToSetDataSource = _model.GetAllAppointmentsWithAttendeeRequests();
 
             _view.BindAppointmentData();
         }
+
+        private void ShowAttendeeData()
+        {
+            _view.AppliedAttendeesHeaderSetDataSource = _model.GetEmptyClientList();
+            _view.AppliedAttendeesSetDataSource = null;
+
+            _view.BindAttendeeData();
+        }
+
 
         public override void Load()
         {

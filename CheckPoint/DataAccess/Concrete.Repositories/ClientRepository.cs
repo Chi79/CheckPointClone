@@ -26,9 +26,9 @@ namespace DataAccess.Concrete.Repositories
         {
             return CheckPointContext.CLIENTs.Where(c => - c.ClientType == (int)ClientType.User).OrderBy(c => c.FirstName);
         }
-        public IEnumerable<CLIENT> GetClientByName(string name)
+        public IEnumerable<CLIENT> GetClientByName(string username)
         {
-            return CheckPointContext.CLIENTs.Where(c => c.UserName == name);
+            return CheckPointContext.CLIENTs.Where(c => c.UserName == username);
         }
    
         public CLIENT GetAClientByName(string clientName)
