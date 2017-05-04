@@ -88,7 +88,7 @@
               <li class="tooltip">
                     <span class="tooltiptext">Alter profile</span>
 
-                <div class="main-sidebar-menu-list-item">
+                <div class="main-sidebar-menu-list-item" >
              <%--    <span class="tooltiptext">Alter Profile</span>--%>
                                    
                     <a class="main-sidebar-menu-list-item-link" href="WorkInProgressHostView.aspx" tabindex="4">                         

@@ -84,15 +84,17 @@
             
         }
         .navButtons{
-         border-radius: 5px;
-         border-width:0px;
-         border-color:darkgreen;
-         padding-bottom: 1%;
-         height: 40px;
-         font-family: sans-serif;
-         font-size: 15px;
-         font-weight: 600;
-         background-image:url(/Images/buttonshade1.png);
+        border-radius: 5px;
+        border-width: 0px;
+        border-color: darkgreen;
+        padding-bottom: 1%;
+        height: 40px;
+        font-family: sans-serif;
+        font-size: 15px;
+        color: white;
+        padding-top: 0.5%;
+        font-weight: 600;
+        background-image: url(/Images/buttonshade1.png);
          }
          .navButtons:hover{
          border-radius:0px;
