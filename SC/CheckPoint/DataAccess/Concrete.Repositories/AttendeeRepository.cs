@@ -21,14 +21,22 @@ namespace DataAccess.Concrete.Repositories
             get { return Context as CheckPointContext; }
         }
 
-        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointment(int appointmentId)
+        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointmentById(int appointmentId)
         {
-            throw new NotImplementedException();
+            return CheckPointContext.ATTENDEEs.Where(a => a.AppointmentId == appointmentId &&
+                                                a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
+        }
+
+        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourseById(int courseId)
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.CourseId == courseId &&
+                                                a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
         }
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourse()
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.CourseId != null && a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
+            return CheckPointContext.ATTENDEEs.Where(a => a.CourseId != null && 
+                                                a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
         }
     }
 }

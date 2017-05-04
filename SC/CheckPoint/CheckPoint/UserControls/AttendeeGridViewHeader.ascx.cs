@@ -31,9 +31,7 @@ namespace CheckPoint.Views.UserControls
 
         public void BindData()
         {
-
             gvAttendeeTable1.DataBind();
-
         }
 
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
@@ -62,7 +60,7 @@ namespace CheckPoint.Views.UserControls
 
         }
 
-        protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvAttendeeTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (RowSelected != null)

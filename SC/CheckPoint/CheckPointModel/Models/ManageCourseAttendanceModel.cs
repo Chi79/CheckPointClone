@@ -15,12 +15,15 @@ namespace CheckPointModel.Models
         private ISessionService _sessionService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IShowCourses _courseDisplayService;
+        private readonly IShowClients _clientDisplayService;
 
-        public ManageCourseAttendanceModel(ISessionService sessionService, IUnitOfWork unitOfWork, IShowCourses courseDisplayService)
+        public ManageCourseAttendanceModel(ISessionService sessionService, IUnitOfWork unitOfWork, IShowCourses courseDisplayService,
+                                            IShowClients clientDisplayService)
         {
             _sessionService = sessionService;
             _unitOfWork = unitOfWork;
             _courseDisplayService = courseDisplayService;
+            _clientDisplayService = clientDisplayService;
         }
 
         public string GetLoggedInClient()
@@ -32,17 +35,18 @@ namespace CheckPointModel.Models
         {
             var clientCourses = GetAllCoursesForClient();
             var AttendeesAppliedToCourses = GetAllAttendeesAppliedForCourses();
-            List<object> coursesWithAttendeeRequests = new List<object>();
+            //List<object> coursesWithAttendeeRequests = new List<object>();
 
             foreach (var attendee in AttendeesAppliedToCourses)
             {
                 var courseToAdd = GetCourseById((int)attendee.CourseId);
                 if (clientCourses.Contains(courseToAdd))
                 {
-                    coursesWithAttendeeRequests.Add(courseToAdd);
+                    yield return courseToAdd;
+                    //return coursesWithAttendeeRequests.Add(courseToAdd);
                 }
             }
-            return coursesWithAttendeeRequests;
+            //return coursesWithAttendeeRequests;
         }
         public IEnumerable<COURSE> GetAllCoursesForClient()
         {
@@ -53,14 +57,36 @@ namespace CheckPointModel.Models
         {
             return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForCourse();
         }
+
+        public IEnumerable<object> GetClientInformationForAttendees()
+        {
+            var attendeesForSelectedCourse = GetAttendeesForSelectedCourse();
+            List<object> attendeesAsClients = new List<object>();
+            foreach (var attendee in attendeesForSelectedCourse)
+            {
+                var attendeeUsername = attendee.CLIENT_TAG.UserName;
+                var clientToAdd = (CLIENT)GetClientByUserName(attendeeUsername);
+                attendeesAsClients.Add(clientToAdd);
+            }
+            return attendeesAsClients;
+        }
+
+        private IEnumerable<ATTENDEE> GetAttendeesForSelectedCourse()
+        {
+            var selectedCourseId = (int)_sessionService.SessionCourseId;
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForCourseById(selectedCourseId);
+        }
+
+        
+
+        public object GetClientByUserName(string userName)
+        {
+            return _unitOfWork.CLIENTs.GetAClientByName(userName);
+        }
+
         public object GetCourseById(int id)
         {
             return _unitOfWork.COURSEs.GetCourseByCourseId((int)id);
-        }
-
-        public IEnumerable<object> GetAllAppointmentsWithAttendeeRequests()
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<object> GetEmptyCourseList()
@@ -78,6 +104,11 @@ namespace CheckPointModel.Models
             _sessionService.SessionRowIndex = index;
         }
 
+        public void SaveSelectedCourseIdToSession(int id)
+        {
+            _sessionService.SessionCourseId = id;
+        }
+
         public void ResetSessionState()
         {
             int noRowSelected = -1;
@@ -86,14 +117,14 @@ namespace CheckPointModel.Models
             SetSessionCourseId(noCourseSelected);
         }
 
-        private void SetSessionCourseId(int id)
+        public void SetSessionCourseId(int id)
         {
             _sessionService.SessionCourseId = id;
         }
 
-        public IEnumerable<object> GetEmptyAttendeeList()
+        public IEnumerable<object> GetEmptyClientList()
         {
-            return null;
+            return _clientDisplayService.GetEmptyList<CLIENT>();
         }
     }
 }

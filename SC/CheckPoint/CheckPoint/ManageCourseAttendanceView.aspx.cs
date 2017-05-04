@@ -30,10 +30,24 @@ namespace CheckPoint.Views
             set { CourseGridViewHeader.SetDataSource2 = value; }
         }
 
+        public IEnumerable<object> AppliedAttendeesHeaderSetDataSource
+        {
+            set { AttendeeGridViewHeader.SetDataSource2 = value; }
+        }
+
+        public IEnumerable<object> AppliedAttendeesSetDataSource
+        {
+            set { AttendeeGridView.SetDataSource = value; }
+        }
+
         public int SelectedRowIndex
         {
             get { return CourseGridView.SelectedRowIndex; }
             set { CourseGridView.SelectedRowIndex = value; }
+        }
+        public object SelectedRowValueDataKey
+        {
+            get { return CourseGridView.SelectedRowValueDataKey; }
         }
 
         public override void HookUpEvents()
@@ -66,6 +80,18 @@ namespace CheckPoint.Views
         {
             AttendeeGridViewHeader.BindData();
             AttendeeGridView.BindData();
+        }
+
+        public bool ShowAttendeeGridViewHeaderPanel
+        {
+            get { return panelAttendeeHeader.Visible; }
+            set { panelAttendeeHeader.Visible = value; }
+        }
+
+        public bool ShowAttendeeGridViewPanel
+        {
+            get { return panelAttendeeGridView.Visible; }
+            set { panelAttendeeGridView.Visible = value; }
         }
 
         protected void btnManageAppointmentAttendance_Click(object sender, EventArgs e)

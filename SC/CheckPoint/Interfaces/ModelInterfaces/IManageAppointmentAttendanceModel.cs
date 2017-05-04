@@ -11,7 +11,7 @@ namespace CheckPointCommon.ModelInterfaces
         string GetLoggedInClient();
         IEnumerable<object> GetAllAppointmentsWithAttendeeRequests();
         IEnumerable<object> GetEmptyAppointmentList();
-        IEnumerable<object> GetEmptyAttendeeList();
+        IEnumerable<object> GetEmptyClientList();
         int? GetSessionRowIndex();
         void SetSessionRowIndex(int index);
         void ResetSessionState();

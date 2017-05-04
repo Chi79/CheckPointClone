@@ -21,9 +21,8 @@ namespace CheckPointPresenters.Presenters
         }
         public override void FirstTimeInit()
         {
-
             ResetSessionState();
-            ShowData();
+            ShowCourseData();
         }
 
         private void ResetSessionState()
@@ -31,12 +30,20 @@ namespace CheckPointPresenters.Presenters
             _model.ResetSessionState();
         }
 
-        private void ShowData()
+        private void ShowCourseData()
         {
             _view.CoursesAppliedToHeaderSetDataSource = _model.GetEmptyCourseList();
             _view.CoursesAppliedToSetDataSource = _model.GetAllCoursesWithAttendeeRequests();
 
             _view.BindCourseData();
+        }
+
+        private void ShowAttendeeData()
+        {
+            _view.AppliedAttendeesHeaderSetDataSource = _model.GetEmptyClientList();
+            _view.AppliedAttendeesSetDataSource = _model.GetClientInformationForAttendees();
+
+            _view.BindAttendeeData();
         }
 
         public override void Load()
@@ -58,7 +65,67 @@ namespace CheckPointPresenters.Presenters
 
         private void OnGridViewRowSelected(object sender, EventArgs e)
         {
-            
+            SaveRowIndexToSession();
+
+            GetSelectedCourseIdFromGrid();
+
+            DisplayAppliedAttendeesForSelectedCourse();                     
+        }
+
+        private void ShowAttendeePanel()
+        {
+            _view.ShowAttendeeGridViewHeaderPanel = true;
+            _view.ShowAttendeeGridViewPanel = true;
+        }
+
+        private void DisplayAppliedAttendeesForSelectedCourse()
+        {
+            //ShowAttendeePanel();
+            ShowAttendeeData();
+        }
+
+        private void SaveRowIndexToSession()
+        {
+
+            int rowSelected = _view.SelectedRowIndex;
+
+            _model.SetSessionRowIndex(rowSelected);
+
+        }
+
+        private void GetSelectedCourseIdFromGrid()
+        {
+
+            int noRowSelected = -1;
+
+            if (_model.GetSessionRowIndex() != noRowSelected)
+            {
+                SaveSelectedCourseIdToSession();
+
+            }
+
+        }
+
+        private void SaveSelectedCourseIdToSession()
+        {
+
+            int selectedCourseId = (int)_view.SelectedRowValueDataKey;
+
+            _model.SetSessionCourseId(selectedCourseId);
+
+        }
+        private bool CheckRowIsSelected()
+        {
+            int noRowSelected = -1;
+
+            if (_model.GetSessionRowIndex() == noRowSelected)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)

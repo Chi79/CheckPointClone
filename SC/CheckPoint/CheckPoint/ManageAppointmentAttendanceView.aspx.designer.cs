@@ -49,13 +49,13 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.AppointmentGridViewHeader AppointmentGridViewHeader;
         
         /// <summary>
-        /// panelAppointmentGrid control.
+        /// panelAppointmentGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAppointmentGrid;
+        protected global::System.Web.UI.WebControls.Panel panelAppointmentGridView;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -103,13 +103,13 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader AttendeeGridViewHeader;
         
         /// <summary>
-        /// panelAttendeeGrid control.
+        /// panelAttendeeGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAttendeeGrid;
+        protected global::System.Web.UI.WebControls.Panel panelAttendeeGridView;
         
         /// <summary>
         /// AttendeeGridView control.

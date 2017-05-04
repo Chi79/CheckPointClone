@@ -60,9 +60,9 @@
             this.lblScanTagRequest.ForeColor = System.Drawing.Color.White;
             this.lblScanTagRequest.Location = new System.Drawing.Point(502, 562);
             this.lblScanTagRequest.Name = "lblScanTagRequest";
-            this.lblScanTagRequest.Size = new System.Drawing.Size(935, 55);
+            this.lblScanTagRequest.Size = new System.Drawing.Size(952, 55);
             this.lblScanTagRequest.TabIndex = 0;
-            this.lblScanTagRequest.Text = "Please scan you tag on the reader below";
+            this.lblScanTagRequest.Text = "Please scan your tag on the reader below";
             // 
             // lblWelcomeTo
             // 

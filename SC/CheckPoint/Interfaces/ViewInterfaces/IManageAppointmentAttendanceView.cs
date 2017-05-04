@@ -8,17 +8,23 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IManageAppointmentAttendanceView
     {
-        event EventHandler<EventArgs> RowSelected;
-        event EventHandler<EventArgs> AcceptAttendanceRequest;
-        event EventHandler<EventArgs> RedirectToManageCourseAttendance;
-
-        void RedirectToManageCourseAttendanceView();
 
         IEnumerable<object> AppointmentsAppliedToSetDataSource { set; }
         IEnumerable<object> AppointmentsAppliedToHeaderSetDataSource { set; }
+        IEnumerable<object> AppliedAttendeesHeaderSetDataSource { set; }
+        IEnumerable<object> AppliedAttendeesSetDataSource { set; }
         int SelectedRowIndex { get; set; }
+        object SelectedRowValueDataKey { get;}
+        bool ShowAttendeeGridViewHeaderPanel { get; set; }
+        bool ShowAttendeeGridViewPanel { get; set; }
+
+        void RedirectToManageCourseAttendanceView();
         void BindAppointmentData();
         void BindAttendeeData();
+
+        event EventHandler<EventArgs> RowSelected;
+        event EventHandler<EventArgs> AcceptAttendanceRequest;
+        event EventHandler<EventArgs> RedirectToManageCourseAttendance;
 
     }
 }
