@@ -12,10 +12,10 @@
    
 }
 body{      background:#333333;}
-.container{
-    width: 82%;
+.container1{
+    width: 42%;
     height: 570px;
-    margin-left: 8%;
+    margin-left: 4%;
     margin-top: 2%;
     background-color: #333333;
     border: #66cc66;
@@ -120,13 +120,13 @@ border: none;
 
 .RegHeadingslide{
       position:absolute;
-      left: 32%;
+      left: 79%;
       animation:slidedown 3s;
-      top:5%;
+      top:16%;
 }
 @keyframes slidedown {
       from { top: -100%; }
-      to { top: 5%; }
+      to { top: 16%; }
 }
 .Message{
     font-family: sans-serif;
@@ -182,7 +182,7 @@ border-color:gray;
 </head>
 <body>
 <form id="form1" runat="server">
-<div id="container" class="container">
+<div id="container" class="container1">
 <div id="panel" class="panel">
 
     <div id="AppointmentHeading" class="RegHeadingslide" style="z-index:5"><img src="Images/BeforeYouRegisterHeading1.svg" /></div>
