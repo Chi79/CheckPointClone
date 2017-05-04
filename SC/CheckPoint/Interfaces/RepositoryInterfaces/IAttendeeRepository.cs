@@ -12,8 +12,10 @@ namespace CheckPointCommon.RepositoryInterfaces
         IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointmentById(int appointmentId);
         IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourseById(int courseId);
 
-        IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourse();
+        IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses();
+        IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointments();
 
-        
+
+
     }
 }
