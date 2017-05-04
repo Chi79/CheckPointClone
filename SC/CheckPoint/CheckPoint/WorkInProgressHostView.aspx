@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/HostMaster.Master" AutoEventWireup="true" CodeBehind="WorkInProgressHostView.aspx.cs" Inherits="CheckPoint.Views.WorkInProgressView" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/HostMaster.Master" AutoEventWireup="true" CodeBehind="WorkInProgressHostView.aspx.cs" Inherits="CheckPoint.Views.WorkInProgressHostView" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
