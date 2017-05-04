@@ -8,7 +8,6 @@ namespace CheckPointCommon.ViewInterfaces
 {
     public interface IHostUserInfoView
     {
-        string Message { set; }
 
         string HostInfoHeading { set; }
         string HostInfo { set; }

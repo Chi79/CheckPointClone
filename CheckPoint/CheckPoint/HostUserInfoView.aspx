@@ -12,165 +12,153 @@
    
 }
 body{      background:#333333;}
+
+.parent{
+    width: 100%;
+    height: 500px;
+    background: #333333;
+    margin: auto;
+    padding: 10px;
+}
 .container1{
-    width: 42%;
-    height: 570px;
-    margin-left: 4%;
-    margin-top: 2%;
+    float:left;
+    width: 46%;
+    height: 485px;
+    margin-left: 3%;
+    margin-top: 6%;
+ 
+
     background-color: #333333;
     border: #66cc66;
     border-width: 20px;
     border-style: solid;
-    border-radius:36px;
+    border-radius: 36px;
 }
-.panel{
-    position:relative;
-}.list{
-     margin-top:6%;
-     line-height:2;
-display:inline-block;
-width:100%;
-list-style:none;
-padding:0%;
-border:none;
-color:white;
-}
-.list-item{
+.container2{
+    width: 46%;
+    height: 485px;
+    margin-left: 51%;
+    margin-top: 6%;
+  
 
-position:relative;
-display:inline-block;
-width:100%;
-left:15%;
-text-align:left;
-padding:0%;
-margin:0;
-margin-top: 2%;
-border:none;
+    background-color: #333333;
+    border: #66cc66;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 36px;
 }
-.list-item-message{
+
+.HostInfoHeaderDiv{
+
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-right: 8%;
+    margin-top: 5%;
+    margin-bottom: 4%;
+
+}
+.HostInfoDiv{
 
     position: relative;
     display: inline-block;
-    width: 70%;
-    left: 15%;
+    width: 77%;
+    left: 8%;
     text-align: left;
-    padding: 0%;
-    margin: 0;
-    margin-top: 2%;
-    border: none;
-}
-.list-item-HostInfoHeader{
-
-position:relative;
-display:inline-block;
-width:100%;
-left:15%;
-text-align:left;
-padding:0%;
-margin:0;
-border:none;
-}
-.list-item-HostInfo{
-
-position: relative;
-display: inline-block;
-width: 77%;
-left: 15%;
-text-align: left;
-padding: 0%;
-margin: 0;
-border: none;
-}
-.list-item-UserInfoHeader{
-
-position:relative;
-display:inline-block;
-width:100%;
-left:15%;
-text-align:left;
-padding:0%;
-margin:0;
-border:none;
-}
-.list-item-UserInfo{
-
-position: relative;
-display: inline-block;
-width: 79%;
-left: 15%;
-text-align: left;
-padding: 0%;
-margin: 0;
-border: none;
-}
+    margin-top: 3%;
 
 
-.list-item-label{
-    display:inline-block;
-    width:30%;
-    text-align:left;
-    margin:0%;
-    padding:0%;
+}
+.UserInfoHeaderDiv{
+
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 6%;
+    margin-bottom: 7%;
 
 }
-.list-item-box{
-    display:inline-block;
-    background:white;
+.UserInfoDiv{
+
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    left: 8%;
+    text-align: left;
+
+
 }
+.button1{
+
+    margin:0 auto;
+    display: table;
+    margin-top:20%
+}
+.button2{
+
+    margin:0 auto;
+    display: table;
+    margin-top:15%
+
+}
+.button3{
+
+    position: relative;
+    display: inline-block;
+    margin-top: 7%;
+    right: 3.8%;
+
+}
+
 
 .RegHeadingslide{
       position:absolute;
-      left: 79%;
-      animation:slidedown 3s;
-      top:16%;
+      left: 32%;
+      animation:slidedown 2s;
+      top: 3%;
 }
 @keyframes slidedown {
       from { top: -100%; }
-      to { top: 16%; }
+      to { top: 3%; }
 }
-.Message{
-    font-family: sans-serif;
-    font-size: larger;
-}
+
 .HostInfoHeader{
     font-family: sans-serif;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: 900;
+    color:white;
 }
 .HostInfo{
     font-size: larger;
     font-family: sans-serif;
+    color:white;
 }
 .UserInfoHeader{
     font-family: sans-serif;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: 900;
+    color:white;
 }
 .UserInfo{
     font-size: larger;
     font-family: sans-serif;
+    color:white;
 }
 
-
-.button{
-        
-            background-color:#66cc66;
-		    color:white;
-		    font-weight:normal;
-            padding-left:2%;
-            padding-right:2%;
-		    font-size:medium;	
-		    border-radius: 6px;
-            border-color:#333333;
-            margin-right: 4%;
-            margin-left: 5%;
+.button{       
+    background-color: #66cc66;
+    color: white;
+    font-weight: normal;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: x-large;
+    border-radius: 6px;
+    border-color: #333333;
 }
+
 .button:hover {
 border-color:gray;
 }
-
-
-
 
 
 
@@ -182,48 +170,55 @@ border-color:gray;
 </head>
 <body>
 <form id="form1" runat="server">
+
+<div id="AppointmentHeading" class="RegHeadingslide" style="z-index:5"><img src="Images/BeforeYouRegisterHeading1.svg" /></div>
+
+<div id="panel1" class="parent">
+
+
 <div id="container" class="container1">
-<div id="panel" class="panel">
 
-    <div id="AppointmentHeading" class="RegHeadingslide" style="z-index:5"><img src="Images/BeforeYouRegisterHeading1.svg" /></div>
-    
-
-    <ul class="list">
-
-        <li class="list-item-message">        
-        <asp:Label CssClass="Message"  ID="lblMessage" runat="server" ></asp:Label>
-        </li>
-
-        <li class="list-item-HostInfoHeader">        
+ 
+        <div class ="HostInfoHeaderDiv">   
         <asp:Label CssClass="HostInfoHeader" ID="lblHostInfoHeading" runat="server"></asp:Label>
-        </li>
+        </div>  
+       
 
-        <li class="list-item-HostInfo">        
+        <div class="HostInfoDiv">        
         <asp:Label CssClass="HostInfo" ID="lblHostInfo" runat="server"></asp:Label>
-        </li>
+          
+        <div class="button1">
+        <asp:Button CssClass="button" ID="btnRegisterHost" runat="server" OnClick="btnRegisterHost_Click" Text="Register as Host" />
+        </div>
 
-        <li class="list-item-UserInfoHeader">        
-        <asp:Label CssClass="UserInfoHeader" ID="lblUserInfoHeading" runat="server"></asp:Label>
-        </li>
+        </div>
 
-        <li class="list-item-UserInfo">        
-        <asp:Label CssClass="UserInfo" ID="lblUserInfo" runat="server"></asp:Label>
-        </li>
-
-
-        <li  class="list-item">
-<asp:Button CssClass="button" ID="btnRegisterHost" runat="server" OnClick="btnRegisterHost_Click" Text="Register as Host" />
-<asp:Button CssClass="button" ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back Home" />
-<asp:Button CssClass="button" ID="btnRegisterUser" runat="server" OnClick="btnRegisterUser_Click" Text="Register as User" Visible="true" />
-        </li>
-
-
-
-    </ul>
-
-
-</div>    
 </div>
+
+<div id="container2" class="container2">
+
+
+        <div class="UserInfoHeaderDiv">        
+        <asp:Label CssClass="UserInfoHeader" ID="lblUserInfoHeading" runat="server"></asp:Label>
+        </div>
+
+        <div class="UserInfoDiv">        
+        <asp:Label CssClass="UserInfo" ID="lblUserInfo" runat="server"></asp:Label>
+
+        <div class="button2">
+        <asp:Button CssClass="button" ID="btnRegisterUser" runat="server" OnClick="btnRegisterUser_Click" Text="Register as User" Visible="true" />
+        </div>
+
+        </div>
+
+</div>
+
+</div>  
+  
+     <div class="button3">
+     <asp:Button CssClass="button" ID="btnBackToHomePage" runat="server" OnClick="btnBackToHomePage_Click" Text="Back Home" />
+     </div>
+
 </form>
 </body>
 </html>

@@ -22,15 +22,6 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
         /// lblHostInfoHeading control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblHostInfo;
+        
+        /// <summary>
+        /// btnRegisterHost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegisterHost;
         
         /// <summary>
         /// lblUserInfoHeading control.
@@ -67,13 +67,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Label lblUserInfo;
         
         /// <summary>
-        /// btnRegisterHost control.
+        /// btnRegisterUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegisterHost;
+        protected global::System.Web.UI.WebControls.Button btnRegisterUser;
         
         /// <summary>
         /// btnBackToHomePage control.
@@ -83,14 +83,5 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBackToHomePage;
-        
-        /// <summary>
-        /// btnRegisterUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegisterUser;
     }
 }

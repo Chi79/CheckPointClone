@@ -76,7 +76,7 @@ border: none;
 .RegHeadingslide{
       position:absolute;
       left: 21%;
-      animation:slidedown 3s;
+      animation:slidedown 2s;
       top:5%;
 }
 @keyframes slidedown {

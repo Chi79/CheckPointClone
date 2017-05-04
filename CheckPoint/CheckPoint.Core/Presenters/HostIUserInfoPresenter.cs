@@ -52,15 +52,14 @@ namespace CheckPointPresenters.Presenters
 
         public override void FirstTimeInit()
         {
-            _view.Message = "IMPORTANT INFORMATION : When registering a new account you have two choices. 1. Register as a Host -- or -- 2. Register as a User.";
 
-            _view.HostInfoHeading = "What is a Host?";
+            _view.HostInfoHeading = "Be a Host";
 
-            _view.HostInfo = "A 'Host' account allows you to create and manage events along with managing who can attend the events you create. If you wish to be a 'Host' please click the appropriate button below.";
+            _view.HostInfo = "As a CheckPoint Host you can create and manage events of any kind for CheckPoint Users to attend. With our simple to use tag system it's easy to see who has attended your events. If you wish to be a Host please click the appropriate button below and lets get started...";
 
-            _view.UserInfoHeading = "What is a User?";
+            _view.UserInfoHeading = "Be a User";
 
-            _view.UserInfo = "A 'User' account allows you to search and discover events that have been created by a CheckPoint Host.  You can apply to attend these events and your attendence will be recorded with the help of an identification tag that will be sent to you once registration is complete.";
+            _view.UserInfo = "As a User you can search for, discover and attend events that have been created by a CheckPoint Host.  With the help of a unique identification tag that will be sent to you once registration is complete - whenever you attend an event you can be sure that your attendance will be safely recorded. Just click the button below and get started... ";
         }
 
         public override void Load()
