@@ -31,6 +31,15 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Panel panelAppointmentHeader;
         
         /// <summary>
+        /// UpdatePanel7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel7;
+        
+        /// <summary>
         /// lblattendeeappointmentrequest control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Panel panelAttendeeHeader;
         
         /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
         /// lblAttendeesApplying control.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelAttendeeGridView;
+        
+        /// <summary>
+        /// UpdatePanel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
         /// AttendeeGridView control.

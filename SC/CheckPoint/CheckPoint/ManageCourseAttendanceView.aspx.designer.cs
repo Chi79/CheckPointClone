@@ -31,6 +31,15 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Panel panelCourseHeader;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// lblattendeecourserequest control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Panel panelCourseGridView;
         
         /// <summary>
-        /// UpdatePanel4 control.
+        /// UpdatePanel0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel0;
         
         /// <summary>
         /// CourseGridView control.
@@ -85,6 +94,15 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Panel panelAttendeeHeader;
         
         /// <summary>
+        /// UpdatePanel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
+        
+        /// <summary>
         /// AttendeeGridViewHeader control.
         /// </summary>
         /// <remarks>
@@ -101,6 +119,15 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelAttendeeGridView;
+        
+        /// <summary>
+        /// UpdatePanel7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel7;
         
         /// <summary>
         /// AttendeeGridView control.

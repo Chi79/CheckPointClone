@@ -104,12 +104,6 @@ namespace CheckPointPresenters.Presenters
 
             DisplayAppliedAttendeesForSelectedCourse();
 
-            //ForcePostBack();                     
-        }
-
-        private void ForcePostBack()
-        {
-            _view.ForcePostBack();
         }
 
         private void ShowAttendeePanel()

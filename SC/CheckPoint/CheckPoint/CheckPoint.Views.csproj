@@ -209,8 +209,6 @@
     <Content Include="InvalidNavigationView.aspx" />
     <Content Include="InviteUserView.aspx" />
     <Content Include="ManageAppointmentAttendanceView.aspx" />
-    <Content Include="ManageAttendanceAppointmentView.aspx" />
-    <Content Include="ManageAttendanceCourseView.aspx" />
     <Content Include="ManageCourseAttendanceView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
     <Content Include="RegisterUserView.aspx" />
@@ -419,20 +417,6 @@
     </Compile>
     <Compile Include="ManageAppointmentAttendanceView.aspx.designer.cs">
       <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageAttendanceAppointmentView.aspx.cs">
-      <DependentUpon>ManageAttendanceAppointmentView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageAttendanceAppointmentView.aspx.designer.cs">
-      <DependentUpon>ManageAttendanceAppointmentView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageAttendanceCourseView.aspx.cs">
-      <DependentUpon>ManageAttendanceCourseView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageAttendanceCourseView.aspx.designer.cs">
-      <DependentUpon>ManageAttendanceCourseView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageAttendanceView.aspx.cs">
       <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
