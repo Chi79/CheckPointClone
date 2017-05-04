@@ -61,14 +61,15 @@ namespace CheckPointModel.Models
         public IEnumerable<object> GetClientInformationForAttendees()
         {
             var attendeesForSelectedCourse = GetAttendeesForSelectedCourse();
-            List<object> attendeesAsClients = new List<object>();
+            List<object> appliedAttendeesAsClients = new List<object>();
+
             foreach (var attendee in attendeesForSelectedCourse)
             {
-                var attendeeUsername = attendee.CLIENT_TAG.UserName;
-                var clientToAdd = (CLIENT)GetClientByUserName(attendeeUsername);
-                attendeesAsClients.Add(clientToAdd);
+                var username = attendee.CLIENT_TAG.UserName;
+                var attendeeAsClient = (CLIENT)GetClientByUserName(username);
+                appliedAttendeesAsClients.Add(attendeeAsClient);
             }
-            return attendeesAsClients;
+            return appliedAttendeesAsClients;
         }
 
         private IEnumerable<ATTENDEE> GetAttendeesForSelectedCourse()
@@ -99,22 +100,34 @@ namespace CheckPointModel.Models
             return _sessionService.SessionRowIndex;
         }
 
+        public string GetSessionAttendeeUsername()
+        {
+            return _sessionService.SessionAttendeeUsername;
+        }
+
         public void SetSessionRowIndex(int index)
         {
             _sessionService.SessionRowIndex = index;
         }
 
-        public void SaveSelectedCourseIdToSession(int id)
+        public void SetAttendeeUsername(string username)
         {
-            _sessionService.SessionCourseId = id;
+            _sessionService.SessionAttendeeUsername = username;
         }
 
         public void ResetSessionState()
         {
             int noRowSelected = -1;
             int noCourseSelected = -1;
+            string noAttendeeSelected = string.Empty;
             SetSessionRowIndex(noRowSelected);
             SetSessionCourseId(noCourseSelected);
+            SetSessionAttendeeUsername(noAttendeeSelected);
+        }
+
+        private void SetSessionAttendeeUsername(string username)
+        {
+            _sessionService.SessionAttendeeUsername = username;
         }
 
         public void SetSessionCourseId(int id)

@@ -13,8 +13,10 @@ namespace CheckPointCommon.ViewInterfaces
         IEnumerable<object> AppointmentsAppliedToHeaderSetDataSource { set; }
         IEnumerable<object> AppliedAttendeesHeaderSetDataSource { set; }
         IEnumerable<object> AppliedAttendeesSetDataSource { set; }
-        int SelectedRowIndex { get; set; }
-        object SelectedRowValueDataKey { get;}
+        int SelectedAppointmentRowIndex { get; set; }
+        int SelectedAttendeeRowIndex { get; set; }
+        object SelectedAppointmentRowValueDataKey { get;}
+        object SelectedAttendeeRowValueDataKey { get; }
         bool ShowAttendeeGridViewHeaderPanel { get; set; }
         bool ShowAttendeeGridViewPanel { get; set; }
 
@@ -22,7 +24,8 @@ namespace CheckPointCommon.ViewInterfaces
         void BindAppointmentData();
         void BindAttendeeData();
 
-        event EventHandler<EventArgs> RowSelected;
+        event EventHandler<EventArgs> AppointmentRowSelected;
+        event EventHandler<EventArgs> AttendeeRowSelected;
         event EventHandler<EventArgs> AcceptAttendanceRequest;
         event EventHandler<EventArgs> RedirectToManageCourseAttendance;
 
