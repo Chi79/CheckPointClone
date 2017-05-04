@@ -63,6 +63,11 @@ namespace CheckPoint.Views
             get { return AttendeeGridView.SelectedRowValueDataKey; }
         }
 
+        public void ForcePostBack()
+        {
+            Response.Redirect("ManageCourseAttendanceView.aspx");
+        }
+
         public override void HookUpEvents()
         {           
             CourseGridView.RowSelected += OnCourseRowSelected;

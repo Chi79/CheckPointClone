@@ -23,6 +23,7 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectToManageAppointmentAttendanceView();
         void BindCourseData();
         void BindAttendeeData();
+        void ForcePostBack();
 
         event EventHandler<EventArgs> CourseRowSelected;
         event EventHandler<EventArgs> AttendeeRowSelected;

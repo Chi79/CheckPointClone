@@ -35,18 +35,17 @@ namespace CheckPointModel.Models
         {
             var clientCourses = GetAllCoursesForClient();
             var AttendeesAppliedToCourses = GetAllAttendeesAppliedForCourses();
-            //List<object> coursesWithAttendeeRequests = new List<object>();
+            var coursesWithAttendeeRequests = new HashSet<object>();
 
             foreach (var attendee in AttendeesAppliedToCourses)
             {
                 var courseToAdd = GetCourseById((int)attendee.CourseId);
                 if (clientCourses.Contains(courseToAdd))
                 {
-                    yield return courseToAdd;
-                    //return coursesWithAttendeeRequests.Add(courseToAdd);
+                    coursesWithAttendeeRequests.Add(courseToAdd);
                 }
             }
-            //return coursesWithAttendeeRequests;
+            return coursesWithAttendeeRequests;
         }
         public IEnumerable<COURSE> GetAllCoursesForClient()
         {
@@ -55,7 +54,7 @@ namespace CheckPointModel.Models
         }
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses()
         {
-            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForCourse();
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForCourses();
         }
 
         public IEnumerable<object> GetClientInformationForAttendees()
@@ -76,9 +75,7 @@ namespace CheckPointModel.Models
         {
             var selectedCourseId = (int)_sessionService.SessionCourseId;
             return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForCourseById(selectedCourseId);
-        }
-
-        
+        }      
 
         public object GetClientByUserName(string userName)
         {

@@ -121,7 +121,7 @@ namespace CheckPointModel.Models
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses()
         {
-            return _uOW.ATTENDEEs.GetAllAttendeesAppliedForCourse();
+            return _uOW.ATTENDEEs.GetAllAttendeesAppliedForCourses();
         }
 
      

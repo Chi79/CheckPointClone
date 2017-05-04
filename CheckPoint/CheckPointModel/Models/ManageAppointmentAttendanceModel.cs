@@ -32,9 +32,37 @@ namespace CheckPointModel.Models
         }
 
         public IEnumerable<object> GetAllAppointmentsWithAttendeeRequests()
+        {       
+            var clientAppointments = GetAllAppointmentsForClient();
+            var AttendeesAppliedToAppointments = GetAllAttendeesAppliedForAppointments();
+            var appointmentsWithAttendeeRequests = new HashSet<object>();
+
+            foreach (var attendee in AttendeesAppliedToAppointments)
+            {
+                var appointmentWithAttendee = GetAppointmentById((int)attendee.AppointmentId);
+                if (clientAppointments.Contains(appointmentWithAttendee))
+                {
+                    appointmentsWithAttendeeRequests.Add(appointmentWithAttendee);
+                }
+            }
+            return appointmentsWithAttendeeRequests;
+
+        }
+
+        private IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointments()
         {
-            var client = GetLoggedInClient();
-            return _unitOfWork.APPOINTMENTs.GetAllAppointmentsWithAttendeeRequestsFor(client);
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForAppointments();
+        }
+
+        private IEnumerable<APPOINTMENT> GetAllAppointmentsForClient()
+        {
+            var client = _sessionService.LoggedInClient;
+            return _unitOfWork.APPOINTMENTs.GetAllAppointmentsFor(client);
+        }
+
+        private APPOINTMENT GetAppointmentById(int id)
+        {
+            return _unitOfWork.APPOINTMENTs.GetAppointmentByAppointmentId(id);
         }
 
         public IEnumerable<object> GetAllAppliedAttendeesForAppointmentById()

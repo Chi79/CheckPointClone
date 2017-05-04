@@ -23,7 +23,6 @@ namespace CheckPointPresenters.Presenters
         {
             ResetSessionState();
             ShowCourseData();
-            //ShowAttendeeData();
         }
 
         private void ResetSessionState()
@@ -103,7 +102,14 @@ namespace CheckPointPresenters.Presenters
 
             GetSelectedCourseIdFromGrid();
 
-            DisplayAppliedAttendeesForSelectedCourse();                     
+            DisplayAppliedAttendeesForSelectedCourse();
+
+            //ForcePostBack();                     
+        }
+
+        private void ForcePostBack()
+        {
+            _view.ForcePostBack();
         }
 
         private void ShowAttendeePanel()

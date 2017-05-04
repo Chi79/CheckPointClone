@@ -33,10 +33,16 @@ namespace DataAccess.Concrete.Repositories
                                                 a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
         }
 
-        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourse()
+        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses()
         {
             return CheckPointContext.ATTENDEEs.Where(a => a.CourseId != null && 
                                                 a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
+        }
+
+        public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointments()
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.CourseId == null &&
+                                        a.StatusId == (int)AttendeeStatus.RequestedToAttend).Distinct().ToList();
         }
     }
 }
