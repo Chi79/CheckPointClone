@@ -23,6 +23,7 @@ namespace CheckPointPresenters.Presenters
         {
             ResetSessionState();
             ShowCourseData();
+            //ShowAttendeeData();
         }
 
         private void ResetSessionState()
@@ -54,8 +55,41 @@ namespace CheckPointPresenters.Presenters
         private void WireUpEvents()
         {
             _view.AcceptAttendanceRequest += OnAcceptAttendanceRequestButtonClicked;
-            _view.RowSelected += OnGridViewRowSelected;
+            _view.CourseRowSelected += OnCourseGridViewRowSelected;
+            _view.AttendeeRowSelected += OnAttendeeGridViewSelected;
             _view.RedirectToManageAppointmentAttendance += OnManageAppointmentAttendanceButtonClicked;
+        }
+
+        private void OnAttendeeGridViewSelected(object sender, EventArgs e)
+        {
+            SaveAttendeeRowIndexToSession();
+
+            GetSelectedAttendeeUsernameFromGrid();
+        }
+
+        private void GetSelectedAttendeeUsernameFromGrid()
+        {
+            int noRowSelected = -1;
+
+            if (_model.GetSessionRowIndex() != noRowSelected)
+            {
+                SaveSelectedAttendeeUsernameToSession();
+
+            }
+        }
+
+        private void SaveSelectedAttendeeUsernameToSession()
+        {
+            var attendeeUsername = (string)_view.SelectedAttendeeRowValueDataKey;
+
+            _model.SetAttendeeUsername(attendeeUsername);
+        }
+
+        private void SaveAttendeeRowIndexToSession()
+        {
+            int rowSelected = _view.SelectedAttendeeRowIndex;
+
+            _model.SetSessionRowIndex(rowSelected);
         }
 
         private void OnManageAppointmentAttendanceButtonClicked(object sender, EventArgs e)
@@ -63,9 +97,9 @@ namespace CheckPointPresenters.Presenters
             _view.RedirectToManageAppointmentAttendanceView();
         }
 
-        private void OnGridViewRowSelected(object sender, EventArgs e)
+        private void OnCourseGridViewRowSelected(object sender, EventArgs e)
         {
-            SaveRowIndexToSession();
+            SaveCourseRowIndexToSession();
 
             GetSelectedCourseIdFromGrid();
 
@@ -80,14 +114,15 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplayAppliedAttendeesForSelectedCourse()
         {
-            //ShowAttendeePanel();
+            ShowAttendeePanel();
+
             ShowAttendeeData();
         }
 
-        private void SaveRowIndexToSession()
+        private void SaveCourseRowIndexToSession()
         {
 
-            int rowSelected = _view.SelectedRowIndex;
+            int rowSelected = _view.SelectedCourseRowIndex;
 
             _model.SetSessionRowIndex(rowSelected);
 
@@ -109,16 +144,16 @@ namespace CheckPointPresenters.Presenters
         private void SaveSelectedCourseIdToSession()
         {
 
-            int selectedCourseId = (int)_view.SelectedRowValueDataKey;
+            int selectedCourseId = (int)_view.SelectedCourseRowValueDataKey;
 
             _model.SetSessionCourseId(selectedCourseId);
 
         }
-        private bool CheckRowIsSelected()
+        private bool IsAttendeeSelected()
         {
-            int noRowSelected = -1;
+            string noAttendeeSelected = string.Empty;
 
-            if (_model.GetSessionRowIndex() == noRowSelected)
+            if (_model.GetSessionAttendeeUsername() == noAttendeeSelected)
             {
                 return false;
             }
@@ -129,8 +164,13 @@ namespace CheckPointPresenters.Presenters
         }
 
         private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
-        {
-            
+        {        
+            if(IsAttendeeSelected() == true)
+            {
+                var attendeeUsername = _model.GetSessionAttendeeUsername();
+                //TODO: update attendee status.
+            }
+
         }
     }
 }

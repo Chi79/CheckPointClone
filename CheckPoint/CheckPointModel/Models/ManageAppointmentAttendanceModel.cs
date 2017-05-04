@@ -65,14 +65,57 @@ namespace CheckPointModel.Models
             SetSessionRowIndex(noRowSelected);
             SetSessionAppointmentId(noAppointmentSelected);
         }
-        private void SetSessionAppointmentId(int id)
+        public void SetSessionAppointmentId(int id)
         {
             _sessionService.SessionAppointmentId = id;
+        }
+
+        public void SetSessionAttendeeUsername(string username)
+        {
+            _sessionService.SessionAttendeeUsername = username;
         }
 
         public IEnumerable<object> GetEmptyClientList()
         {
             return _clientDisplayService.GetEmptyList<CLIENT>();
+        }
+
+        public string GetSessionAttendeUsername()
+        {
+            return _sessionService.SessionAttendeeUsername;
+        }
+
+        public IEnumerable<object> GetClientInformationForAttendees()
+        {
+
+            var attendeesForSelectedAppointment = GetAttendeesForSelectedAppointment();
+            List<object> appliedAttendeesAsClients = new List<object>();
+
+            foreach (var attendee in attendeesForSelectedAppointment)
+            {
+                var username = attendee.CLIENT_TAG.UserName;
+                var attendeeAsClient = (CLIENT)GetClientByUserName(username);
+                appliedAttendeesAsClients.Add(attendeeAsClient);
+            }
+            return appliedAttendeesAsClients;
+        }
+
+        private IEnumerable<ATTENDEE> GetAttendeesForSelectedAppointment()
+        {
+            var selectedAppointment = (int)_sessionService.SessionAppointmentId;
+
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForAppointmentById(selectedAppointment);
+        }
+
+        private object GetClientByUserName(string username)
+        {
+            return _unitOfWork.CLIENTs.GetAClientByName(username);
+        }
+
+
+        public string GetSessionAttendeeUsername()
+        {
+            return _sessionService.SessionAttendeeUsername;
         }
     }
 }

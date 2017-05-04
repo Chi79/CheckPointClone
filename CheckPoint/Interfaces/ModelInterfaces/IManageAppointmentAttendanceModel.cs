@@ -8,13 +8,19 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface IManageAppointmentAttendanceModel
     {
-        string GetLoggedInClient();
+        
         IEnumerable<object> GetAllAppointmentsWithAttendeeRequests();
         IEnumerable<object> GetEmptyAppointmentList();
         IEnumerable<object> GetEmptyClientList();
-        int? GetSessionRowIndex();
+      
         void SetSessionRowIndex(int index);
+        void SetSessionAppointmentId(int id);
+        void SetSessionAttendeeUsername(string username);
+        
         void ResetSessionState();
-       
+        int? GetSessionRowIndex();
+        string GetSessionAttendeeUsername();
+        string GetLoggedInClient();
+        IEnumerable<object> GetClientInformationForAttendees();
     }
 }

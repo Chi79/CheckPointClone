@@ -41,7 +41,7 @@ namespace CheckPointPresenters.Presenters
         private void ShowAttendeeData()
         {
             _view.AppliedAttendeesHeaderSetDataSource = _model.GetEmptyClientList();
-            _view.AppliedAttendeesSetDataSource = null;
+            _view.AppliedAttendeesSetDataSource = _model.GetClientInformationForAttendees();
 
             _view.BindAttendeeData();
         }
@@ -55,8 +55,41 @@ namespace CheckPointPresenters.Presenters
         private void WireUpEvents()
         {
             _view.AcceptAttendanceRequest += OnAcceptAttendanceRequestButtonClicked;
-            _view.RowSelected += OnGridViewRowSelected;
+            _view.AppointmentRowSelected += OnAppointmentGridViewRowSelected;
+            _view.AttendeeRowSelected += OnAttendeeGridViewRowSelected;
             _view.RedirectToManageCourseAttendance += OnManageCourseAttendanceButtonClicked;
+        }
+
+        private void OnAttendeeGridViewRowSelected(object sender, EventArgs e)
+        {
+            SaveAttendeeRowIndexToSession();
+
+            GetSelectedAttendeeUsernameFromGrid();
+        }
+
+        private void GetSelectedAttendeeUsernameFromGrid()
+        {
+            int noRowSelected = -1;
+
+            if (_model.GetSessionRowIndex() != noRowSelected)
+            {
+                SaveSelectedAttendeeUsernameToSession();
+
+            }
+        }
+
+        private void SaveSelectedAttendeeUsernameToSession()
+        {
+            var attendeeUsername = (string)_view.SelectedAttendeeRowValueDataKey;
+
+            _model.SetSessionAttendeeUsername(attendeeUsername);
+        }
+
+        private void SaveAttendeeRowIndexToSession()
+        {
+            int rowSelected = _view.SelectedAttendeeRowIndex;
+
+            _model.SetSessionRowIndex(rowSelected);
         }
 
         private void OnManageCourseAttendanceButtonClicked(object sender, EventArgs e)
@@ -64,14 +97,67 @@ namespace CheckPointPresenters.Presenters
             _view.RedirectToManageCourseAttendanceView();
         }
 
-        private void OnGridViewRowSelected(object sender, EventArgs e)
+        private void OnAppointmentGridViewRowSelected(object sender, EventArgs e)
         {
-            
+            SaveAppointmentRowIndexToSession();
+
+            GetSelectedAppointmentIdFromGrid();
+
+            DisplayAppliedAttendeesForSelectedAppointment();
+        }
+
+        private void GetSelectedAppointmentIdFromGrid()
+        {
+            int noRowSelected = -1;
+
+            if (_model.GetSessionRowIndex() != noRowSelected)
+            {
+                SaveSelectedAppointmentIdToSession();
+
+            }
+        }
+
+        private void DisplayAppliedAttendeesForSelectedAppointment()
+        {
+            ShowAttendeeData();
+        }
+
+        private void SaveSelectedAppointmentIdToSession()
+        {
+            var selectedAppointmentId = (int)_view.SelectedAppointmentRowValueDataKey;
+
+            _model.SetSessionAppointmentId(selectedAppointmentId);
+
+        }
+
+        private bool IsAttendeeSelected()
+        {
+            string noAttendeeSelected = string.Empty;
+
+            if (_model.GetSessionAttendeeUsername() == noAttendeeSelected)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
         {
-            
+            if (IsAttendeeSelected() == true)
+            {
+                var attendeeUsername = _model.GetSessionAttendeeUsername();
+                //TODO: update attendee status.
+            }
+
+        }
+
+        private void SaveAppointmentRowIndexToSession()
+        {
+            var selectedRowIndex = _view.SelectedAppointmentRowIndex;
+            _model.SetSessionRowIndex(selectedRowIndex);
         }
     }
 }

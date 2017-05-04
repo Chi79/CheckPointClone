@@ -31,14 +31,15 @@ namespace CheckPoint.Views
             set { AttendeeGridView.SetDataSource = value; }
         }
 
-        public int SelectedRowIndex
+        public int SelectedAppointmentRowIndex
         {
             get { return AppointmentGridView.SelectedRowIndex; }
             set { AppointmentGridView.SelectedRowIndex = value; }
         }
 
         public event EventHandler<EventArgs> AcceptAttendanceRequest;
-        public event EventHandler<EventArgs> RowSelected;
+        public event EventHandler<EventArgs> AppointmentRowSelected;
+        public event EventHandler<EventArgs> AttendeeRowSelected;
         public event EventHandler<EventArgs> RedirectToManageCourseAttendance;
 
         public void BindAppointmentData()
@@ -65,21 +66,41 @@ namespace CheckPoint.Views
             set { panelAttendeeGridView.Visible = value; }
         }
 
-        public object SelectedRowValueDataKey
+        public object SelectedAppointmentRowValueDataKey
         {
             get { return AppointmentGridView.SelectedRowValueDataKey; }
         }
 
+        public object SelectedAttendeeRowValueDataKey
+        {
+            get { return AttendeeGridView.SelectedRowValueDataKey; }
+        }
+
+        public int SelectedAttendeeRowIndex
+        {
+            get { return AttendeeGridView.SelectedRowIndex; }
+            set { AttendeeGridView.SelectedRowIndex = value; }
+        }
+
         public override void HookUpEvents()
         {
-            AppointmentGridView.RowSelected += OnAppointmentRowSelected;            
+            AppointmentGridView.RowSelected += OnAppointmentRowSelected;
+            AttendeeGridView.RowSelected += OnAttendeeRowSelected;          
         }
 
         private void OnAppointmentRowSelected(object sender, EventArgs e)
         {
-            if(RowSelected != null)
+            if(AppointmentRowSelected != null)
             {
-                RowSelected(this, EventArgs.Empty);
+                AppointmentRowSelected(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnAttendeeRowSelected(object sender, EventArgs e)
+        {
+            if(AttendeeRowSelected != null)
+            {
+                AttendeeRowSelected(this, EventArgs.Empty);
             }
         }
 

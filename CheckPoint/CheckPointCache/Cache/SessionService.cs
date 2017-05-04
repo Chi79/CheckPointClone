@@ -247,7 +247,25 @@ namespace CheckPointHTTPServices.Cache
 
             }
             set { HttpContext.Current.Session["navigationIsValid"] = value; }
-        }     
+        }
+
+        public string SessionAttendeeUsername
+        {
+            get
+            {
+                var sessionAttendeeUsername = HttpContext.Current.Session["attendeeUsername"];
+                if (sessionAttendeeUsername != null)
+                {
+                    return (string)sessionAttendeeUsername;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            set { HttpContext.Current.Session["attendeeUsername"] = value; }
+        }
     }
 
 }
