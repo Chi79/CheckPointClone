@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="WorkInProgressUserView.aspx.cs" Inherits="CheckPoint.Views.WorkInProgressUserView" %>
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/UserMaster.Master" CodeBehind="WorkInProgressUserView.aspx.cs" Inherits="CheckPoint.Views.WorkInProgressUserView" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
