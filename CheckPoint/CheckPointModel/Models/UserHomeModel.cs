@@ -11,7 +11,7 @@ using CheckPointCommon.Enums;
 
 namespace CheckPointModel.Models
 {
-    public class UserHomeModel:IUserHomeModel
+    public class UserHomeModel : IUserHomeModel
     {
         private ISessionService _sessionService;
         private IShowAppointments _displayService;
@@ -86,31 +86,24 @@ namespace CheckPointModel.Models
         }
     
 
-        public IEnumerable<object> GetAllAppointmentsClientIsAcceptedFor()
+        public IEnumerable<object> GetAllAppointmentsClientIsApprovedToAttend()
         {
 
-            var clientUserName = _sessionService.LoggedInClient;
+            var allAppointmentsApproved = _displayService.GetAllAppointmentsClientIsApprovedToAttend<APPOINTMENT>(GetLoggedInClient());
 
-            var AllAcceptedAttendeesForClient = (IEnumerable<ATTENDEE>)_unitOfWork.ATTENDEEs.GetAcceptedAttendeesByUserName(clientUserName);
-            var ApprovedAppointmentsForClient = new List<object>();
-
-            foreach (var acceptedAttende in AllAcceptedAttendeesForClient)
+            if(allAppointmentsApproved != null)
             {
 
-                int appointmentId = acceptedAttende.AppointmentId;
-                var approvedAppointment = _unitOfWork.APPOINTMENTs.GetAppointmentByAppointmentId(appointmentId);
-                ApprovedAppointmentsForClient.Add(approvedAppointment);
+                return allAppointmentsApproved;
 
             }
+            else
+            {
 
-            return ApprovedAppointmentsForClient;
-        }
+                return _displayService.GetEmptyList<APPOINTMENT>();
 
-        public void SetAcceptedAppointmentsCache(IEnumerable<object> acceptedAppointments)
-        {
-
-            _displayService.SetAllAcceptedAppointments<APPOINTMENT>(acceptedAppointments);
-
+            }
+            
         }
 
         public IEnumerable<object> GetEmptyList()
@@ -124,6 +117,13 @@ namespace CheckPointModel.Models
         {
 
             return _displayService.GetAppointmentsCached<APPOINTMENT>();
+
+        }
+
+        public IEnumerable<object> GetCachedAcceptedAppointments()
+        {
+
+            return _displayService.GetAcceptedAppointmentsCached<APPOINTMENT>();
 
         }
 

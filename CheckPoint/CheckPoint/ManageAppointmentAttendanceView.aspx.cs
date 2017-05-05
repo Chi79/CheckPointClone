@@ -55,10 +55,16 @@ namespace CheckPoint.Views
             AttendeeGridView.BindData();
         }
 
+        //public bool ShowAttendeeGridViewHeader
+        //{
+        //    get { return panelAttendeeHeader.Visible; }
+        //    set { panelAttendeeHeader.Visible = value; }
+        //}
+
         public bool ShowAttendeeGridViewHeader
         {
-            get { return panelAttendeeHeader.Visible; }
-            set { panelAttendeeHeader.Visible = value; }
+            get { return AttendeeGridViewHeader.Visible; }
+            set { AttendeeGridViewHeader.Visible = value; }
         }
 
         public bool ShowAttendeeGridView

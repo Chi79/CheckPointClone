@@ -11,6 +11,9 @@ namespace CheckPointCommon.ServiceInterfaces
         IEnumerable<T> GetAllAppointmentsFor<T>(string client);
 
         IEnumerable<T> GetAllAppointmentsForClientByCourseId<T>(int? courseId);
+
+        IEnumerable<T> GetAllAppointmentsClientIsApprovedToAttend<T>(string client);
+
         IEnumerable<T> GetEmptyList<T>();
 
         IEnumerable<T> GetAppointmentsSortedByPropertyAscending<T>(string property);
@@ -35,12 +38,15 @@ namespace CheckPointCommon.ServiceInterfaces
 
         IEnumerable<T> GetPublicAppointmentsCached<T>();
 
+        IEnumerable<T> GetAcceptedAppointmentsCached<T>();
+
         IEnumerable<T> GetAllPublicAppointments<T>();
+
 
         object GetSelectedAppointmentByAppointmentId(int? AppointmentId);
 
         object GetSelectedPublicAppointmentByAppointmentId(int? AppointmentId);
 
-        void SetAllAcceptedAppointments<T>(IEnumerable<object> acceptedAppoiontments);
+        //void SetAllAcceptedAppointments<T>(IEnumerable<object> acceptedAppoiontments);
     }
 }

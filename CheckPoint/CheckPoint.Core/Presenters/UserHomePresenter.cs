@@ -98,30 +98,24 @@ namespace CheckPointPresenters.Presenters
         {
 
             ResetSessionState();
+
             ShowData();
 
         }
 
         private void ShowData()
         {
-            var acceptedAppointments = _model.GetAllAppointmentsClientIsAcceptedFor();
+            var acceptedAppointments = _model.GetAllAppointmentsClientIsApprovedToAttend();
 
             _view.SetDataSource = acceptedAppointments;
 
             _view.SetDataSource2 = _model.GetEmptyList();
 
-            SetAcceptedAppointmentsCache(acceptedAppointments);
 
             _view.BindData();
 
         }
 
-        public void SetAcceptedAppointmentsCache(IEnumerable<object> acceptedAppointments)
-        {
-
-            _model.SetAcceptedAppointmentsCache(acceptedAppointments);
-
-        }
 
         private void ResetSessionState()
         {
@@ -133,7 +127,7 @@ namespace CheckPointPresenters.Presenters
         private void FetchData()
         {
 
-            //var appointments = _model.GetCachedAppointments();
+            var appointments = _model.GetCachedAcceptedAppointments();
 
         }
 
