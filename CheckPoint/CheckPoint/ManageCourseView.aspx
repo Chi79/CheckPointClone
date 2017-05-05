@@ -254,8 +254,10 @@ runat="server">
 
 </asp:Panel>
 <br />
-        <br />
+<br />
+
 <div id="appointmentsInCourseHeader" style="z-index:5"><img src="Images/AppointmentsInCourse.svg" /></div>
+
     <asp:Panel
     ID="Panel3"
     runat="server" 
@@ -416,20 +418,6 @@ runat="server">
 </asp:UpdatePanel>
 </div>
 
-
-<%--<div id="buttonsdiv0" runat="server" style="z-index:5;" class="buttons1">
-<asp:UpdatePanel ID="buttonspanel" runat="server" > 
-<ContentTemplate>
-<asp:Button ID="btnCancel" 
-    CssClass="navButtons" 
-    runat="server" 
-    OnClick="btnCancel_Click" 
-    Text="Cancel"  
-    Visible="True" 
-    ForeColor="White" />
-</ContentTemplate>
-</asp:UpdatePanel>
-</div>--%>
 
 </div>
 </div>

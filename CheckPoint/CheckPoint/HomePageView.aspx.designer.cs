@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CheckPoint.Views
-{
+namespace CheckPoint.Views {
     
     
-    public partial class HomePageView
-    {
+    public partial class HomePageView {
         
         /// <summary>
         /// frmCheckPointUI control.
@@ -67,5 +65,14 @@ namespace CheckPoint.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGetStarted;
+        
+        /// <summary>
+        /// imgBodyActionWindow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgBodyActionWindow;
     }
 }
