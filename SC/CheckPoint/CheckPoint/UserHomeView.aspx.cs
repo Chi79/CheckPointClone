@@ -66,6 +66,7 @@ namespace CheckPoint.Views
         {
 
             AppointmentGridViewHeader.DataBind();
+
             AppointmentGridView.DataBind();
 
         }

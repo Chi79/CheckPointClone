@@ -12,10 +12,12 @@ namespace CheckPointCommon.RepositoryInterfaces
         IEnumerable<APPOINTMENT> GetAllAppointmentsFor(string userName);
 
         IEnumerable<APPOINTMENT> GetAllAppointmentsByCourseId(int? courseId);
+
         IEnumerable<APPOINTMENT> GetAllAppointmentsWithAttendeeRequestsFor(string userName);
 
         IEnumerable<APPOINTMENT> GetAllPublicAppointments();
-        IEnumerable<APPOINTMENT> GetAllAcceptedAppointmentsForAttendee(ATTENDEE attendee);
+
+        IEnumerable<APPOINTMENT> GetAllAppointmentsClientIsApprovedToAttend(string userName);
 
         APPOINTMENT GetAppointmentByAppointmentName(string appointmentName);
 
