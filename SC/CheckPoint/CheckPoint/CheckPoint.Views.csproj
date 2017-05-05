@@ -123,6 +123,7 @@
     <Content Include="CSS\StyleMaster.css" />
     <Content Include="DeleteCourseView.aspx" />
     <Content Include="DownloadView.aspx" />
+    <Content Include="ErrorView.aspx" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="FindCoursesView.aspx" />
     <Content Include="HomePageView.aspx" />
@@ -144,6 +145,7 @@
     <Content Include="Images\AppointmentsInCourse.svg" />
     <Content Include="Images\AttendeesRequestingToBeAccepted.svg" />
     <Content Include="Images\BeforeYouRegisterHeading1.svg" />
+    <Content Include="Images\bug.png" />
     <Content Include="Images\buttonshade1.png" />
     <Content Include="Images\calendar2.png" />
     <Content Include="Images\calender-white.png" />
@@ -169,6 +171,7 @@
     <Content Include="Images\DeleteCourseHeading1.svg" />
     <Content Include="Images\downarrow2.png" />
     <Content Include="Images\downarrow3.png" />
+    <Content Include="Images\DownloadPage.svg" />
     <Content Include="Images\findappointmentsicon.png" />
     <Content Include="Images\front-page-filler.jpg" />
     <Content Include="Images\greenshade1.png" />
@@ -178,6 +181,7 @@
     <Content Include="Images\headershade.png" />
     <Content Include="Images\headershade3.png" />
     <Content Include="Images\identify.png" />
+    <Content Include="Images\Installicon.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo4.png" />
     <Content Include="Images\logouticon.png" />
@@ -194,6 +198,7 @@
     <Content Include="Images\MyCourses.png" />
     <Content Include="Images\MyCoursesHeading.svg" />
     <Content Include="Images\MyCoursesHeading1.svg" />
+    <Content Include="Images\pdfsymbol.png" />
     <Content Include="Images\PublicAppointmentsHeading.svg" />
     <Content Include="Images\PublicAppointmentsHeading1.svg" />
     <Content Include="Images\PublicCoursesHeading.svg" />
@@ -266,6 +271,7 @@
     <Content Include="WorkInProgressUserView.aspx" />
     <Content Include="Downloadable\Host\CheckPoint Host User Manual.pdf" />
     <Content Include="Downloadable\Host\ReadingTerminalSetup.zip" />
+    <Content Include="Downloadable\User\CheckPoint UserManual.pdf" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
@@ -353,6 +359,13 @@
     </Compile>
     <Compile Include="DownloadView.aspx.designer.cs">
       <DependentUpon>DownloadView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorView.aspx.cs">
+      <DependentUpon>ErrorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorView.aspx.designer.cs">
+      <DependentUpon>ErrorView.aspx</DependentUpon>
     </Compile>
     <Compile Include="FindAppointmentsView.aspx.cs">
       <DependentUpon>FindAppointmentsView.aspx</DependentUpon>
