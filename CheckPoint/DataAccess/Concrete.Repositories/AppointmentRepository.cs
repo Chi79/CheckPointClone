@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointDataTables.Tables;
 using CheckPointCommon.RepositoryInterfaces;
+using CheckPointCommon.Enums;
 
 namespace DataAccess.Concrete.Repositories
 {
@@ -46,6 +47,11 @@ namespace DataAccess.Concrete.Repositories
         public APPOINTMENT GetAppointmentByAppointmentId(int appointmentId)
         {
             return CheckPointContext.APPOINTMENTs.FirstOrDefault(app => app.AppointmentId == appointmentId);
+        }
+
+        public IEnumerable<APPOINTMENT> GetAllAcceptedAppointmentsForAttendee(ATTENDEE attendee)
+        {
+            throw new NotImplementedException();
         }
     }
 }

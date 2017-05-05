@@ -104,12 +104,22 @@ namespace CheckPointPresenters.Presenters
 
         private void ShowData()
         {
+            var acceptedAppointments = _model.GetAllAppointmentsClientIsAcceptedFor();
 
-            _view.SetDataSource = _model.GetAllAppointmentsForClient();
+            _view.SetDataSource = acceptedAppointments;
 
             _view.SetDataSource2 = _model.GetEmptyList();
 
+            SetAcceptedAppointmentsCache(acceptedAppointments);
+
             _view.BindData();
+
+        }
+
+        public void SetAcceptedAppointmentsCache(IEnumerable<object> acceptedAppointments)
+        {
+
+            _model.SetAcceptedAppointmentsCache(acceptedAppointments);
 
         }
 
@@ -123,7 +133,7 @@ namespace CheckPointPresenters.Presenters
         private void FetchData()
         {
 
-            var appointments = _model.GetCachedAppointments();
+            //var appointments = _model.GetCachedAppointments();
 
         }
 
@@ -150,7 +160,7 @@ namespace CheckPointPresenters.Presenters
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
 
-            var apps = _model.GetAppointmentsSortedByPropertyAsc();
+            var apps = _model.GetAcceptedAppointmentsSortedByPropertyAsc();
 
             _view.SetDataSource = apps;
 
@@ -167,7 +177,7 @@ namespace CheckPointPresenters.Presenters
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
 
-            var apps = _model.GetAppointmentsSortedByPropertyDesc();
+            var apps = _model.GetAcceptedAppointmentsSortedByPropertyDesc();
 
             _view.SetDataSource = apps;
 

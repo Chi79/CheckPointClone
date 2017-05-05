@@ -20,6 +20,7 @@ namespace CheckPointModel.Services
         public const string appointmentsKey = "appointmentKey";
         public const string appointmentsInCoursesKey = "appointmentInCoursesKey";
         public const string publicAppointmentsKey = "publicAppointmentsKey";
+        public const string acceptedAppointmentsKey = "acceptedAppointmentsKey";
         public string client;
         public int? courseId;
 
@@ -82,6 +83,24 @@ namespace CheckPointModel.Services
             }
         }
 
+        public IEnumerable<T> GetAcceptedAppointmentsCached<T>()
+        {
+
+            if (AcceptedAppointmentsCache != null)
+            {
+
+                return AcceptedAppointmentsCache as IEnumerable<T>;
+
+            }
+            else
+            {
+
+                //return GetAllAcceptedAppointments<T>();
+                return null;
+
+            }
+        }
+
         public List<APPOINTMENT> AppointmentsCache
         {
 
@@ -100,6 +119,13 @@ namespace CheckPointModel.Services
         {
 
             get { return _cache.FetchCollection<APPOINTMENT>(publicAppointmentsKey).ToList(); }
+
+        }
+
+        public List<APPOINTMENT> AcceptedAppointmentsCache
+        {
+
+            get { return _cache.FetchCollection<APPOINTMENT>(acceptedAppointmentsKey).ToList(); }
 
         }
 
@@ -132,6 +158,20 @@ namespace CheckPointModel.Services
             var apps = PublicAppointmentsCache;
 
             return apps as IEnumerable<T>;
+
+        }
+
+        //public IEnumerable<T> GetAllAcceptedAppointments<T>()
+        //{
+        //    _cache.Add(acceptedAppointmentsKey, _uOW.APPOINTMENTs.GetAllPublicAppointments());
+
+        //    var apps = PublicAppointmentsCache
+        //}
+
+        public void SetAllAcceptedAppointments<T>(IEnumerable<object> acceptedAppoiontments)
+        {
+
+            _cache.Add(acceptedAppointmentsKey, acceptedAppoiontments);
 
         }
 
@@ -223,6 +263,52 @@ namespace CheckPointModel.Services
                                                               .ToList();
 
             return appsSorted as IEnumerable<T>;
+
+        }
+
+        public IEnumerable<T> GetAcceptedAppointmentsSortedByPropertyAscending<T>(string property)
+        {
+
+            if(GetAcceptedAppointmentsCached<T>() != null)
+            {
+
+                var apps = GetAcceptedAppointmentsCached<T>();
+
+
+                var appsSorted = apps.OrderBy(a => typeof(APPOINTMENT)
+                                                    .GetProperty(property)
+                                                    .GetValue(a))
+                                                    .ToList();
+
+                return appsSorted as IEnumerable<T>;
+            }
+            else
+            {
+                return null;
+            }
+            
+            
+
+        }
+        public IEnumerable<T> GetAcceptedAppointmentsSortedByPropertyDescending<T>(string property)
+        {
+
+            if (GetAcceptedAppointmentsCached<T>() != null)
+            {
+
+                var apps = GetAcceptedAppointmentsCached<T>();
+
+                var appsSorted = apps.OrderByDescending(a => typeof(APPOINTMENT)
+                                                                  .GetProperty(property)
+                                                                  .GetValue(a))
+                                                                  .ToList();
+
+                return appsSorted as IEnumerable<T>;
+            }
+            else
+            {
+                return null;
+            }
 
         }
 

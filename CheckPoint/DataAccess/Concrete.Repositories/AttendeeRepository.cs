@@ -30,8 +30,22 @@ namespace DataAccess.Concrete.Repositories
         {
             return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username && a.CourseId == id);
         }
-        
-               
+
+        public IEnumerable<object> GetAllAttendeesAcceptedForAppointments()
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.StatusId == (int)AttendeeStatus.RequestApproved);
+        }
+
+        public object GetAttendeeByUserName(string username)
+        {
+            return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username);
+        }
+
+        public IEnumerable<object> GetAcceptedAttendeesByUserName(string username)
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username && a.StatusId == (int)AttendeeStatus.RequestApproved).ToList();
+        }
+
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointmentById(int appointmentId)
         {
