@@ -23,7 +23,8 @@ namespace CheckPointCommon.ModelInterfaces
         string GetLoggedInClient();
 
         IEnumerable<object> GetAllAppointmentsForClient();
-
+        IEnumerable<object> GetAllAppointmentsClientIsAcceptedFor();
+        
         IEnumerable<object> GetEmptyList();
 
         IEnumerable<object> GetCachedAppointments();
@@ -31,8 +32,11 @@ namespace CheckPointCommon.ModelInterfaces
         IEnumerable<object> GetAppointmentsSortedByPropertyAsc();
 
         IEnumerable<object> GetAppointmentsSortedByPropertyDesc();
+        IEnumerable<object> GetAcceptedAppointmentsSortedByPropertyAsc();
 
+        IEnumerable<object> GetAcceptedAppointmentsSortedByPropertyDesc();
 
+        void SetAcceptedAppointmentsCache(IEnumerable<object> acceptedAppointments);
 
     }
 }

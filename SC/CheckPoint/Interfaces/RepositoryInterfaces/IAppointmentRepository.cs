@@ -15,6 +15,7 @@ namespace CheckPointCommon.RepositoryInterfaces
         IEnumerable<APPOINTMENT> GetAllAppointmentsWithAttendeeRequestsFor(string userName);
 
         IEnumerable<APPOINTMENT> GetAllPublicAppointments();
+        IEnumerable<APPOINTMENT> GetAllAcceptedAppointmentsForAttendee(ATTENDEE attendee);
 
         APPOINTMENT GetAppointmentByAppointmentName(string appointmentName);
 

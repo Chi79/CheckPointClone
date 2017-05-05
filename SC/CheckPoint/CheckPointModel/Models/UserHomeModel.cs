@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointDataTables.Tables;
+using CheckPointCommon.RepositoryInterfaces;
+using CheckPointCommon.Enums;
 
 namespace CheckPointModel.Models
 {
@@ -13,13 +15,15 @@ namespace CheckPointModel.Models
     {
         private ISessionService _sessionService;
         private IShowAppointments _displayService;
+        private readonly IUnitOfWork _unitOfWork;
 
 
-        public UserHomeModel(ISessionService sessionService, IShowAppointments displayService)
+        public UserHomeModel(ISessionService sessionService, IShowAppointments displayService, IUnitOfWork unitOfWork)
         {
 
             _sessionService = sessionService;
             _displayService = displayService;
+            _unitOfWork = unitOfWork;
 
         }
 
@@ -80,11 +84,32 @@ namespace CheckPointModel.Models
             return _displayService.GetAllAppointmentsFor<APPOINTMENT>(GetLoggedInClient());
 
         }
+    
 
         public IEnumerable<object> GetAllAppointmentsClientIsAcceptedFor()
         {
-            var client = _sessionService.LoggedInClient;
 
+            var clientUserName = _sessionService.LoggedInClient;
+
+            var AllAcceptedAttendeesForClient = (IEnumerable<ATTENDEE>)_unitOfWork.ATTENDEEs.GetAcceptedAttendeesByUserName(clientUserName);
+            var ApprovedAppointmentsForClient = new List<object>();
+
+            foreach (var acceptedAttende in AllAcceptedAttendeesForClient)
+            {
+
+                int appointmentId = acceptedAttende.AppointmentId;
+                var approvedAppointment = _unitOfWork.APPOINTMENTs.GetAppointmentByAppointmentId(appointmentId);
+                ApprovedAppointmentsForClient.Add(approvedAppointment);
+
+            }
+
+            return ApprovedAppointmentsForClient;
+        }
+
+        public void SetAcceptedAppointmentsCache(IEnumerable<object> acceptedAppointments)
+        {
+
+            _displayService.SetAllAcceptedAppointments<APPOINTMENT>(acceptedAppointments);
 
         }
 
@@ -113,6 +138,20 @@ namespace CheckPointModel.Models
         {
 
             return _displayService.GetAppointmentsSortedByPropertyDescending<object>(GetColumnName());
+
+        }
+
+        public IEnumerable<object> GetAcceptedAppointmentsSortedByPropertyAsc()
+        {
+
+            return _displayService.GetAcceptedAppointmentsSortedByPropertyAscending<object>(GetColumnName());
+
+        }
+
+        public IEnumerable<object> GetAcceptedAppointmentsSortedByPropertyDesc()
+        {
+
+            return _displayService.GetAcceptedAppointmentsSortedByPropertyDescending<object>(GetColumnName());
 
         }
 
