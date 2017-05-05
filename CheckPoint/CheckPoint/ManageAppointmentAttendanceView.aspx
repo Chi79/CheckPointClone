@@ -134,17 +134,16 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div id="outercontainer">
+    <div id="outercontainer" style="height:100%; width:auto;">
+        <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
 ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
     
-
-    
-    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
+   
         
 <%-- Appointment Header --%>    
 <asp:Panel ID="panelAppointmentHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">

@@ -81,6 +81,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public IEnumerable<object> GetAllAppointmentsClientIsAcceptedFor()
+        {
+            var client = _sessionService.LoggedInClient;
+
+
+        }
+
         public IEnumerable<object> GetEmptyList()
         {
 

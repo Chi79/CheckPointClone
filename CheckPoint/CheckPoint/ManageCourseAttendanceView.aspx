@@ -136,7 +136,9 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+<div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
+<div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageCourseAttendanceHeading.svg" /></div>
 <div id="outercontainer">
 
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
@@ -146,9 +148,7 @@ ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
 
-<div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
-<div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageCourseAttendanceHeading.svg" /></div>
 
     
 <%-- Course Header --%> 
@@ -218,9 +218,10 @@ runat="server">
     <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true"/>
 <br />
 <br />
+        <div id="buttoncontainer">
 <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Selected Attendance Request" Visible="false" OnClick="btnAcceptAttendanceRequest_Click" /> &nbsp &nbsp
 <asp:Button CssClass="navButtons" ID="btnAcceptAllAttendeeRequestsForSelectedCourse" runat="server" Text="Accept All Attendance Requests For Selected Course" OnClick="btnAcceptAllAttendeeRequestsForSelectedCourse_Click"  Visible="false"/>
- 
+</div> 
     </ContentTemplate>
          </asp:UpdatePanel>
 
