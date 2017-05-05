@@ -109,8 +109,19 @@
                   </a>
                     </div>
             </li>
-        </ul>
+                        <li class="tooltip">
+                  <span class="tooltiptext">download the host usermanual or the reading terminal installation file</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link" href="DownloadView.aspx" tabindex="5">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/DownloadIcon.png" alt="[]"></img>
+                
 
+                  </a>
+                    </div>
+            </li>
+        </ul>
+      
     </div>
         <div id="Main" style="height:100%;">
         <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
