@@ -26,9 +26,10 @@
     font-family: sans-serif;
     font-size: 15px;
     font-weight: 600;
-        padding-top:0.5%;
+    padding-top:0.5%;
     padding-bottom: 0.5%;
     background-image:url(/Images/buttonshade1.png);
+    margin-bottom:3%;
 
 
 }
@@ -46,7 +47,7 @@
 .containter{
    
     width: 100%;
-    height: 500px;
+    height: 100%;
     background: #333333;
     margin-top:5%;
     padding: 0px;
@@ -56,7 +57,7 @@
 .container-usermanual{
     float:left;
     width: 40%;
-    height: 485px;
+    height: 95%;
     margin-left: 3%;
     list-style:none;
     background-color: #333333;
@@ -65,21 +66,25 @@
     border-style: solid;
     border-radius: 36px;
     display:inline-block;
+    padding:0%;
 }
 .container-reading-terminal{    
  display:inline-block;
     list-style:none;
     width: 40%;
-    height: 485px;  
+    height: 95%;  
     background-color: #333333;
     border: darkgreen;
     border-width: 20px;
     border-style: solid;
     border-radius: 36px;
+    padding:0%;
    
 }
 .list-item{
     margin-top:3%;
+   
+   margin-left:0;
     display:inline-block;
     width:100%;
     min-height:10%;
@@ -101,6 +106,9 @@
 .heading{
     position:absolute;
     left:40%;
+    display:inline-block;
+    width:20%;
+    text-align:center;
     z-index:5;
 
 }
