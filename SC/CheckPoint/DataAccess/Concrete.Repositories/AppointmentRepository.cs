@@ -51,22 +51,22 @@ namespace DataAccess.Concrete.Repositories
         public IEnumerable<APPOINTMENT> GetAllAppointmentsClientIsApprovedToAttend(string userName)
         {
 
-            var AllAppointmentsClientIsApprovedToAttend = new List<APPOINTMENT>();
+            var allAppointmentsClientIsApprovedToAttend = new List<APPOINTMENT>();
 
-            var AllAcceptedAttendeeRequestsForClient = GetAllAcceptedAttendeeRequestsForClient(userName); 
+            var allAcceptedAttendeeRequestsForClient = GetAllAcceptedAttendeeRequestsForClient(userName); 
 
-            foreach (var acceptedAttendanceRequest in AllAcceptedAttendeeRequestsForClient)
+            foreach (var acceptedAttendanceRequest in allAcceptedAttendeeRequestsForClient)
             {
 
                 int appointmentId = acceptedAttendanceRequest.AppointmentId;
 
                 var approvedAppointment = GetAppointmentByAppointmentId(appointmentId);
 
-                AllAppointmentsClientIsApprovedToAttend.Add(approvedAppointment);
+                allAppointmentsClientIsApprovedToAttend.Add(approvedAppointment);
 
             }
 
-            return AllAppointmentsClientIsApprovedToAttend.ToList();
+            return allAppointmentsClientIsApprovedToAttend;
 
         }
 
