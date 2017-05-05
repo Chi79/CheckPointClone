@@ -12,9 +12,7 @@
             margin-bottom:3%;
         }
 .button{
-    display:inline-block;
-    padding:0.5%;
-    text-align:center;
+    display:inline-block; 
     color:white;
     text-decoration: none;
     width:auto;
@@ -26,8 +24,8 @@
     font-family: sans-serif;
     font-size: 15px;
     font-weight: 600;
-    padding-top:0.5%;
-    padding-bottom: 0.5%;
+    padding-top:2%;
+    padding-bottom: 0%;
     background-image:url(/Images/buttonshade1.png);
     margin-bottom:3%;
 
