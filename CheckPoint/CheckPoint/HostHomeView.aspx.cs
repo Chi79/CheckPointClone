@@ -91,13 +91,6 @@ namespace CheckPoint.Views
 
         }
 
-        public bool ManageAttendanceButtonVisible
-        {
-
-            set { btnManageAttendance.Visible = value; }
-
-        }
-
         public bool AddSelectedAppointmenButtonVisible
         {
 

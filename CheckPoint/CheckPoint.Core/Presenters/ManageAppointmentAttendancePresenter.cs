@@ -38,15 +38,6 @@ namespace CheckPointPresenters.Presenters
             _view.BindAppointmentData();
         }
 
-        private void ShowAttendeeData()
-        {
-            _view.AppliedAttendeesHeaderSetDataSource = _model.GetEmptyClientList();
-            _view.AppliedAttendeesSetDataSource = _model.GetClientInformationForAttendees();
-
-            _view.BindAttendeeData();
-        }
-
-
         public override void Load()
         {
             WireUpEvents();
@@ -55,16 +46,100 @@ namespace CheckPointPresenters.Presenters
         private void WireUpEvents()
         {
             _view.AcceptAttendanceRequest += OnAcceptAttendanceRequestButtonClicked;
+            _view.AcceptAllAttendanceRequestsForSelectedAppointment += OnAcceptAllAttendanceRequestsForSelectedAppointmentButtonClicked;
             _view.AppointmentRowSelected += OnAppointmentGridViewRowSelected;
             _view.AttendeeRowSelected += OnAttendeeGridViewRowSelected;
             _view.RedirectToManageCourseAttendance += OnManageCourseAttendanceButtonClicked;
+        }
+
+        private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
+        {
+            if (IsAttendeeSelected() == true)
+            {
+                ChangeSelectedAttendeesStatusToApproved();
+                UpdateGridViews();
+            }
+
+        }
+
+        private void UpdateGridViews()
+        {
+            ShowAppointmentData();
+            ShowAttendeeData();
+        }
+
+        private void ChangeSelectedAttendeesStatusToApproved()
+        {
+            _model.ChangeSelectedAttendeesStatusToApproved();
+        }
+
+
+        private bool IsAttendeeSelected()
+        {
+            string noAttendeeSelected = string.Empty;
+
+            if (_model.GetSessionAttendeeUsername() == noAttendeeSelected)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void ShowAttendeeData()
+        {
+            _view.AppliedAttendeesHeaderSetDataSource = _model.GetEmptyClientList();
+            _view.AppliedAttendeesSetDataSource = _model.GetClientInformationForAttendees();
+
+            _view.BindAttendeeData();
+        }
+
+        private void ShowAttendeeGridView()
+        {
+            _view.ShowAttendeeGridViewHeader = true;
+            _view.ShowAttendeeGridView = true;
+        }
+
+        private void ShowAcceptAttendanceButtons()
+        {
+            _view.ShowAcceptAttendanceRequestButton = true;
+            _view.ShowAcceptAllAttendanceRequestsForSelectedAppointmentButton = true;
+        }
+
+    
+        
+
+        private void OnAcceptAllAttendanceRequestsForSelectedAppointmentButtonClicked(object sender, EventArgs e)
+        {
+            if(IsAppointmentSelected() == true)
+            {
+                ChangeAllAttendeeStatusesToApproved();
+                UpdateGridViews();
+
+            }
+        }
+
+        private bool IsAppointmentSelected()
+        {
+            int noAppointmentSelected = -1;
+
+            if (_model.GetSessionAppointmentId() == noAppointmentSelected)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void OnAttendeeGridViewRowSelected(object sender, EventArgs e)
         {
             SaveAttendeeRowIndexToSession();
 
-            GetSelectedAttendeeUsernameFromGrid();
+            GetSelectedAttendeeUsernameFromGrid();            
         }
 
         private void GetSelectedAttendeeUsernameFromGrid()
@@ -104,6 +179,8 @@ namespace CheckPointPresenters.Presenters
             GetSelectedAppointmentIdFromGrid();
 
             DisplayAppliedAttendeesForSelectedAppointment();
+
+            ShowAcceptAttendanceButtons();
         }
 
         private void GetSelectedAppointmentIdFromGrid()
@@ -119,6 +196,7 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplayAppliedAttendeesForSelectedAppointment()
         {
+            ShowAttendeeGridView();
             ShowAttendeeData();
         }
 
@@ -130,28 +208,17 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private bool IsAttendeeSelected()
+        
+
+
+
+  
+
+       
+
+        private void ChangeAllAttendeeStatusesToApproved()
         {
-            string noAttendeeSelected = string.Empty;
-
-            if (_model.GetSessionAttendeeUsername() == noAttendeeSelected)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
-        {
-            if (IsAttendeeSelected() == true)
-            {
-                var attendeeUsername = _model.GetSessionAttendeeUsername();
-                //TODO: update attendee status.
-            }
-
+            _model.ChangeAllAttendeesStatusesToApproved();
         }
 
         private void SaveAppointmentRowIndexToSession()

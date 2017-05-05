@@ -38,6 +38,7 @@ namespace CheckPoint.Views
         }
 
         public event EventHandler<EventArgs> AcceptAttendanceRequest;
+        public event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedAppointment;
         public event EventHandler<EventArgs> AppointmentRowSelected;
         public event EventHandler<EventArgs> AttendeeRowSelected;
         public event EventHandler<EventArgs> RedirectToManageCourseAttendance;
@@ -54,13 +55,13 @@ namespace CheckPoint.Views
             AttendeeGridView.BindData();
         }
 
-        public bool ShowAttendeeGridViewHeaderPanel
+        public bool ShowAttendeeGridViewHeader
         {
             get { return panelAttendeeHeader.Visible; }
             set { panelAttendeeHeader.Visible = value; }
         }
 
-        public bool ShowAttendeeGridViewPanel
+        public bool ShowAttendeeGridView
         {
             get { return panelAttendeeGridView.Visible; }
             set { panelAttendeeGridView.Visible = value; }
@@ -74,6 +75,16 @@ namespace CheckPoint.Views
         public object SelectedAttendeeRowValueDataKey
         {
             get { return AttendeeGridView.SelectedRowValueDataKey; }
+        }
+
+        public bool ShowAcceptAttendanceRequestButton
+        {
+            set { btnAcceptAttendanceRequest.Visible = value; }
+        }
+
+        public bool ShowAcceptAllAttendanceRequestsForSelectedAppointmentButton
+        {
+            set { btnAcceptAllAttendeeRequestsForSelectedAppointment.Visible = value; }
         }
 
         public int SelectedAttendeeRowIndex
@@ -109,6 +120,11 @@ namespace CheckPoint.Views
 
         }
 
+        public void ForcePostBack()
+        {
+            Response.Redirect("ManageAppointmentAttendanceView.aspx");
+        }
+
 
         protected void btnManageCourseAttendance_Click(object sender, EventArgs e)
         {
@@ -128,6 +144,14 @@ namespace CheckPoint.Views
             if(AcceptAttendanceRequest != null)
             {
                 AcceptAttendanceRequest(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnAcceptAllAttendeeRequestsForSelectedAppointment_Click(object sender, EventArgs e)
+        {
+            if(AcceptAllAttendanceRequestsForSelectedAppointment != null)
+            {
+                AcceptAllAttendanceRequestsForSelectedAppointment(this, EventArgs.Empty);
             }
         }
     }

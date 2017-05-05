@@ -258,21 +258,6 @@ runat="server">
 </div>
 
 
-<div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
-<asp:UpdatePanel ID="buttonspanel4" runat="server" > 
-<ContentTemplate>
-<asp:Button ID="manageattendance" 
-    CssClass="navButtons" 
-    runat="server" 
-    OnClick="manageattendance_Click1" 
-    Text="Manage Attendance"  
-    Visible="True" 
-    ForeColor="White" />
-</ContentTemplate>
-</asp:UpdatePanel>
-</div>
-
-
 <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
 <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
 <ContentTemplate>

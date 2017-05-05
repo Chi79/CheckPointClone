@@ -17,10 +17,13 @@ namespace CheckPointCommon.ModelInterfaces
         int? GetSessionRowIndex();
         string GetSessionAttendeeUsername();
         void SetSessionCourseId(int id);
+        int GetSessionCourseId();
         void SetAttendeeUsername(string username);
         void SetSessionRowIndex(int index);
         void ResetSessionState();
         IEnumerable<object> GetClientInformationForAttendees();
+        void ChangeSelectedAttendeesStatusToApproved();
+        void ChangeAllAttendeesStatusesToApproved();
 
 
 

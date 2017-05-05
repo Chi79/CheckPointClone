@@ -183,7 +183,7 @@ BackColor="#99FF99" />
 <ItemStyle />
 </asp:TemplateField>
 
-<asp:TemplateField AccessibleHeaderText="FirstName" HeaderText="FirstName" ItemStyle-CssClass="descriptionColumnItem">
+<%--<asp:TemplateField AccessibleHeaderText="FirstName" HeaderText="FirstName" ItemStyle-CssClass="descriptionColumnItem">
 <HeaderTemplate>
 <h3 style="color:white">FirstName</h3>
 </HeaderTemplate>
@@ -191,9 +191,9 @@ BackColor="#99FF99" />
 <asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("FirstName") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
-<asp:TemplateField AccessibleHeaderText="LastName" HeaderText="LastName" ItemStyle-CssClass="descriptionColumnItem">
+<%--<asp:TemplateField AccessibleHeaderText="LastName" HeaderText="LastName" ItemStyle-CssClass="descriptionColumnItem">
 <HeaderTemplate>
 <h3 style="color:white">LastName</h3>
 </HeaderTemplate>
@@ -241,7 +241,7 @@ BackColor="#99FF99" />
 <asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("ClientType") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
 </Columns>
 <SelectedRowStyle 

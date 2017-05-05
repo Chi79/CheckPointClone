@@ -140,6 +140,8 @@
     <Content Include="Images\AppointmentDeletedMessage1.svg" />
     <Content Include="Images\AppointmentHeading.svg" />
     <Content Include="Images\AppointmentHeading1.svg" />
+    <Content Include="Images\AppointmentsInCourse.svg" />
+    <Content Include="Images\AttendeesRequestingToBeAccepted.svg" />
     <Content Include="Images\BeforeYouRegisterHeading1.svg" />
     <Content Include="Images\buttonshade1.png" />
     <Content Include="Images\calendar2.png" />
@@ -174,9 +176,11 @@
     <Content Include="Images\logo4.png" />
     <Content Include="Images\logouticon.png" />
     <Content Include="Images\logo_white2.png" />
+    <Content Include="Images\ManageAppointmentAttendanceHeading.svg" />
     <Content Include="Images\manageappointmentbutton.png" />
     <Content Include="Images\manageattendancebutton1.png" />
     <Content Include="Images\ManageAttendanceIcon.png" />
+    <Content Include="Images\ManageCourseAttendanceHeading.svg" />
     <Content Include="Images\managecoursebutton.png" />
     <Content Include="Images\managecoursesbutton1.png" />
     <Content Include="Images\MyAppointmentsHeading.svg" />

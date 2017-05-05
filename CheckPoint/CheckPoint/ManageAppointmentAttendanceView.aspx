@@ -55,7 +55,7 @@
             position:relative; 
             height:315px;
             width:100%;
-            overflow-y:scroll;
+            overflow-y:auto;
             right:1%;
             border-bottom-left-radius: 10px;
         }
@@ -68,20 +68,43 @@
             position:relative;
             right:1%;
         }
-        .PanelAttendeeGrid{
+                
+        .container{
+      position:relative;
+      right:0%;
+      animation: slideright 2s;
+}
+        @keyframes slideright {
+      from { right: -100%; }
+      to { right: 0%;}
+}
 
+        .logoslide{
+      position:absolute;
+      left: 85%;
+      top:  -12%;
+      animation: slideleft 2s ;
+}
+@keyframes slideleft {
+      from { left: -100%; }
+      to { left: 85%; }
+        }
+      .Appointmentslide{
+      position:absolute;
+      top: -7%;
+      left: 2%;
+      animation:slidedown 4s;
+      top:-8%;
         }
 
-        .PanelAttendeeHeader{
-
+      @keyframes slidedown {
+      from { top: -100%; }
+      to { top: -8%; }
         }
 
         .GridviewLabel{
             font-size: 38px;
             color: white;            
-        }
-        #buttonRow{
-            
         }
         .navButtons{
         border-radius: 5px;
@@ -107,22 +130,22 @@
            50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
             to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
          }
-
-
-
-
     </style>
 
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-
+    <div id="outercontainer">
+<div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
 ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
+    
 
-<div id="appointmentGridContainer">
+    
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
         
 <%-- Appointment Header --%>    
 <asp:Panel ID="panelAppointmentHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
@@ -130,8 +153,7 @@ runat="server">
     ID="UpdatePanel7"  
     runat="server" > 
         <ContentTemplate>
-<asp:Label ID="lblattendeeappointmentrequest" runat="server" Text="Appointments with active attendee requests" CssClass="GridviewLabel"></asp:Label>    
-    <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />
+            <uc1:AppointmentGridViewHeader runat="server" ID="AppointmentGridViewHeader"/>
         </ContentTemplate>
          </asp:UpdatePanel>
 </asp:Panel>
@@ -144,49 +166,57 @@ runat="server">
     runat="server" >
 
     <ContentTemplate>
-    <uc1:AppointmentGridView runat="server" id="AppointmentGridView" />
-        
-        
+        <uc1:AppointmentGridView runat="server" ID="AppointmentGridView" />
+
         </ContentTemplate>
          </asp:UpdatePanel>
 
 </asp:Panel>
-</div>
 
-<div id="attendeeGridContainer">
+
+<br />
+<br />
+<asp:Button CssClass="navButtons" ID="btnManageCourseAttendance" runat="server" Text="Manage Attendance For Courses" OnClick="btnManageCourseAttendance_Click"/>
+
+<br />
+<br />
+<br />
 <%-- Attendee Header --%>
-<asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
+<asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" Visible="true">
     <asp:UpdatePanel 
     ID="UpdatePanel2"  
     runat="server" >
 
     <ContentTemplate>
-<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> 
-    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" />
+<%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
+    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" Visible="true"/>
         </ContentTemplate>
          </asp:UpdatePanel>
 </asp:Panel>
 
  
 <%-- Attendee Gridview --%>
-<asp:Panel ID="panelAttendeeGridView" runat="server" CssClass="PanelAppGrid" Visible="true">
+<asp:Panel ID="panelAttendeeGridView" runat="server" Visible="true">
     <asp:UpdatePanel 
     ID="UpdatePanel3"  
     runat="server" >
 
     <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" />
+    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true"/> 
+        <br />
+<br />
+                <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" Visible="false"/> &nbsp &nbsp
+<asp:Button CssClass="navButtons" ID="btnAcceptAllAttendeeRequestsForSelectedAppointment" runat="server" Text="Accept All Attendance Requests For Selected Appointment" OnClick="btnAcceptAllAttendeeRequestsForSelectedAppointment_Click" Visible="false"/>
         </ContentTemplate>
          </asp:UpdatePanel>
 </asp:Panel>
-</div>
 
- <div id="buttonRow"> 
-              
- <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" />
- <asp:Button CssClass="navButtons" ID="btnManageCourseAttendance" runat="server" Text="Manage Attendance For Courses" OnClick="btnManageCourseAttendance_Click"/>   
-  </div>  
              
+ 
+         
+    
+  </div>
+        </div>
 
 
 </asp:Content>

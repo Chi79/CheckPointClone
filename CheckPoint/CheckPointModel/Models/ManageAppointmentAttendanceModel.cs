@@ -1,4 +1,5 @@
-﻿using CheckPointCommon.ModelInterfaces;
+﻿using CheckPointCommon.Enums;
+using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointDataTables.Tables;
@@ -98,6 +99,11 @@ namespace CheckPointModel.Models
             _sessionService.SessionAppointmentId = id;
         }
 
+        public int GetSessionAppointmentId()
+        {
+            return (int)_sessionService.SessionAppointmentId;
+        }
+
         public void SetSessionAttendeeUsername(string username)
         {
             _sessionService.SessionAttendeeUsername = username;
@@ -126,6 +132,39 @@ namespace CheckPointModel.Models
                 appliedAttendeesAsClients.Add(attendeeAsClient);
             }
             return appliedAttendeesAsClients;
+        }
+
+        public void ChangeSelectedAttendeesStatusToApproved()
+        {
+            var attendeeToApprove = GetAttendeeToApproveForAppointment();
+            attendeeToApprove.StatusId = (int)AttendeeStatus.RequestApproved;
+            _unitOfWork.Complete();
+        }
+
+        public ATTENDEE GetAttendeeToApproveForAppointment()
+        {
+            var username = _sessionService.SessionAttendeeUsername;
+            var appointmentId = (int)_sessionService.SessionAppointmentId;
+            return _unitOfWork.ATTENDEEs.GetAttendeeByUserNameAndAppointmentId(username, appointmentId) as ATTENDEE;
+
+        }
+        public void ChangeAllAttendeesStatusesToApproved()
+        {
+            var attendeesToApprove = GetAllAttendeesToApproveForAppointment();
+
+            foreach (ATTENDEE attendee in attendeesToApprove)
+            {
+                attendee.StatusId = (int)AttendeeStatus.RequestApproved;               
+            }
+            _unitOfWork.Complete();
+            
+        }
+
+        private IEnumerable<ATTENDEE> GetAllAttendeesToApproveForAppointment()
+        {
+            var appointmentId = (int)_sessionService.SessionAppointmentId;
+
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForAppointmentById(appointmentId);
         }
 
         private IEnumerable<ATTENDEE> GetAttendeesForSelectedAppointment()

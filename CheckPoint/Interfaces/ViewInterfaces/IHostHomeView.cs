@@ -15,7 +15,6 @@ namespace CheckPointCommon.ViewInterfaces
         bool CreateAppointmentButtonVisible { set; }
         bool ManageAppointmentButtonVisible { set; }
         bool CreateReportButtonVisible { set; }
-        bool ManageAttendanceButtonVisible { set; }
         bool AddSelectedAppointmenButtonVisible { set; }
 
 
