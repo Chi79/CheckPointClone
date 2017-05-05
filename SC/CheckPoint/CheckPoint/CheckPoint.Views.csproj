@@ -122,6 +122,7 @@
     <Content Include="CSS\login.css" />
     <Content Include="CSS\StyleMaster.css" />
     <Content Include="DeleteCourseView.aspx" />
+    <Content Include="DownloadView.aspx" />
     <Content Include="FindAppointmentsView.aspx" />
     <Content Include="FindCoursesView.aspx" />
     <Content Include="HomePageView.aspx" />
@@ -263,6 +264,8 @@
     <Content Include="UserMaster.Master" />
     <Content Include="WorkInProgressHostView.aspx" />
     <Content Include="WorkInProgressUserView.aspx" />
+    <Content Include="Downloadable\Host\CheckPoint Host User Manual.pdf" />
+    <Content Include="Downloadable\Host\ReadingTerminalSetup.zip" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
@@ -343,6 +346,13 @@
     </Compile>
     <Compile Include="DeleteCourseView.aspx.designer.cs">
       <DependentUpon>DeleteCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadView.aspx.cs">
+      <DependentUpon>DownloadView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownloadView.aspx.designer.cs">
+      <DependentUpon>DownloadView.aspx</DependentUpon>
     </Compile>
     <Compile Include="FindAppointmentsView.aspx.cs">
       <DependentUpon>FindAppointmentsView.aspx</DependentUpon>
