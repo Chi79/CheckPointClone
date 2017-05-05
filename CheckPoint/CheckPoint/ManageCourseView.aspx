@@ -123,7 +123,7 @@
 }
 .buttons5{
       float:left;
-      margin-left: 0%;
+      margin-left: 1%;
       z-index:3;
       margin-top:0.5%;
 }
@@ -253,8 +253,6 @@ runat="server">
 </asp:UpdatePanel>
 
 </asp:Panel>
-<br />
-<br />
 
 <div id="appointmentsInCourseHeader" style="z-index:5"><img src="Images/AppointmentsInCourse.svg" /></div>
 
@@ -323,7 +321,7 @@ runat="server">
     runat="server" 
     OnClick="btnBackToAppointmentsView_Click" 
     Text="View Appointments"  
-    Visible="True" 
+    Visible="false" 
     ForeColor="White"/>
 </ContentTemplate>
 </asp:UpdatePanel>
@@ -338,7 +336,7 @@ runat="server">
     runat="server" 
     OnClick="btnBackToCoursesView_Click" 
     Text="View Courses"  
-    Visible="True" 
+    Visible="false" 
     ForeColor="White" />
 </ContentTemplate>
 </asp:UpdatePanel>
