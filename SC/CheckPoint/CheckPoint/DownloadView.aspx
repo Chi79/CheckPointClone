@@ -20,6 +20,8 @@
     border-width:0px;
     border-color:darkgreen;
     text-align:center;
+    padding-left:1%;
+    padding-right:1%;
     height: 40px;
     font-family: sans-serif;
     font-size: 15px;
@@ -94,7 +96,7 @@
     border:none;
     margin:0;
     padding:0%; 
-    width:40%;
+    width:30%;
     height: auto;
     vertical-align:middle;
     line-height:3;
@@ -103,7 +105,7 @@
 
 .heading{
     position:absolute;
-    left:40%;
+    left:42%;
     display:inline-block;
     width:20%;
     text-align:center;
@@ -126,7 +128,7 @@
                  
 
                  <li class="list-item">
-                     <img class="imgclass" src="Images/pdfsymbol.png" />
+                     <img class="imgclass" src="Images/pdf2.svg" />
                  </li>
                                   <li class="list-item">
                               <h3>
@@ -143,7 +145,7 @@
     <ul class="container-reading-terminal">
 
         <li class="list-item">
-            <img class="imgclass" src="Images/Installicon.png" />
+            <img class="imgclass" src="Images/installer2.svg" />
         </li>
                 <li class="list-item">
              <h3>
