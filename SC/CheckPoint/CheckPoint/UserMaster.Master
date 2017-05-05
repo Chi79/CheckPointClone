@@ -82,6 +82,17 @@
                   </a>
                     </div>
             </li>
+                                    <li class="tooltip">
+                  <span class="tooltiptext">download the user manual</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link"  href="Downloadable/User/CheckPoint%20UserManual.pdf" tabindex="5">                     
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/DownloadIcon.png" alt="[]"></img>
+                
+
+                  </a>
+                    </div>
+            </li>
         </ul>
 
     </div>
