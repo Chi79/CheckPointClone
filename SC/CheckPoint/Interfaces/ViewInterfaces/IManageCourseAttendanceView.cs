@@ -17,16 +17,21 @@ namespace CheckPointCommon.ViewInterfaces
         int SelectedAttendeeRowIndex { get; set; }
         object SelectedCourseRowValueDataKey { get; }
         object SelectedAttendeeRowValueDataKey { get; }
-        bool ShowAttendeeGridViewHeaderPanel { get; set; }
-        bool ShowAttendeeGridViewPanel { get; set; }
+        bool ShowAttendeeGridViewHeader { get; set; }
+        bool ShowAttendeeGridView { get; set; }
+        bool ShowAcceptAttendanceRequestButton { set; }
+        bool ShowAcceptAllAttendanceRequestsForSelectedCourseButton { set; }
+
 
         void RedirectToManageAppointmentAttendanceView();
         void BindCourseData();
         void BindAttendeeData();
 
+
         event EventHandler<EventArgs> CourseRowSelected;
         event EventHandler<EventArgs> AttendeeRowSelected;
         event EventHandler<EventArgs> AcceptAttendanceRequest;
+        event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedCourse;
         event EventHandler<EventArgs> RedirectToManageAppointmentAttendance;
     }
         

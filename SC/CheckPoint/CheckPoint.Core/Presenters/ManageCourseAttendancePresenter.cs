@@ -1,4 +1,5 @@
-﻿using CheckPointCommon.ModelInterfaces;
+﻿using CheckPointCommon.Enums;
+using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointPresenters.Bases;
 using System;
@@ -13,6 +14,7 @@ namespace CheckPointPresenters.Presenters
     {
         private readonly IManageCourseAttendanceView _view;
         private readonly IManageCourseAttendanceModel _model;
+
 
         public ManageCourseAttendancePresenter(IManageCourseAttendanceView view, IManageCourseAttendanceModel model)
         {
@@ -38,6 +40,12 @@ namespace CheckPointPresenters.Presenters
             _view.BindCourseData();
         }
 
+        private void ShowAcceptAttendanceButtons()
+        {
+            _view.ShowAcceptAttendanceRequestButton = true;
+            _view.ShowAcceptAllAttendanceRequestsForSelectedCourseButton = true;
+        }
+
         private void ShowAttendeeData()
         {
             _view.AppliedAttendeesHeaderSetDataSource = _model.GetEmptyClientList();
@@ -54,16 +62,50 @@ namespace CheckPointPresenters.Presenters
         private void WireUpEvents()
         {
             _view.AcceptAttendanceRequest += OnAcceptAttendanceRequestButtonClicked;
+            _view.AcceptAllAttendanceRequestsForSelectedCourse += OnAcceptAllAttendanceRequestsForSelectedCourseButtonClicked;
             _view.CourseRowSelected += OnCourseGridViewRowSelected;
             _view.AttendeeRowSelected += OnAttendeeGridViewSelected;
             _view.RedirectToManageAppointmentAttendance += OnManageAppointmentAttendanceButtonClicked;
         }
 
-        private void OnAttendeeGridViewSelected(object sender, EventArgs e)
+        private bool IsCourseSelected()
         {
+            int noCourseSelected = -1;
+
+            if (_model.GetSessionCourseId() == noCourseSelected)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void OnAcceptAllAttendanceRequestsForSelectedCourseButtonClicked(object sender, EventArgs e)
+        {
+            if(IsCourseSelected() == true)
+            {
+                ChangeAllAttendeesStatusesToApproved();
+            }
+        }
+
+        private void UpdateGridViews()
+        {
+            ShowAttendeeData();
+            ShowCourseData();
+        }
+
+        private void ChangeAllAttendeesStatusesToApproved()
+        {
+            _model.ChangeAllAttendeesStatusesToApproved();
+        }
+
+        private void OnAttendeeGridViewSelected(object sender, EventArgs e)
+        {          
             SaveAttendeeRowIndexToSession();
 
-            GetSelectedAttendeeUsernameFromGrid();
+            GetSelectedAttendeeUsernameFromGrid(); 
         }
 
         private void GetSelectedAttendeeUsernameFromGrid()
@@ -104,17 +146,19 @@ namespace CheckPointPresenters.Presenters
 
             DisplayAppliedAttendeesForSelectedCourse();
 
+            ShowAcceptAttendanceButtons();
+
         }
 
-        private void ShowAttendeePanel()
+        private void ShowAttendeeGridView()
         {
-            _view.ShowAttendeeGridViewHeaderPanel = true;
-            _view.ShowAttendeeGridViewPanel = true;
+            _view.ShowAttendeeGridViewHeader = true;
+            _view.ShowAttendeeGridView = true;
         }
 
         private void DisplayAppliedAttendeesForSelectedCourse()
         {
-            ShowAttendeePanel();
+            ShowAttendeeGridView();
 
             ShowAttendeeData();
         }
@@ -167,10 +211,16 @@ namespace CheckPointPresenters.Presenters
         {        
             if(IsAttendeeSelected() == true)
             {
-                var attendeeUsername = _model.GetSessionAttendeeUsername();
-                //TODO: update attendee status.
+                ChangeSelectedAttendeesStatusToApproved();
             }
 
         }
+
+        private void ChangeSelectedAttendeesStatusToApproved()
+        {
+            _model.ChangeSelectedAttendeesStatusToApproved();
+        }
+
+
     }
 }

@@ -182,7 +182,7 @@ CssClass="roundedButtons"/>
 <HeaderStyle />
 </asp:TemplateField>
 
-<asp:TemplateField AccessibleHeaderText="FirstName" HeaderText="FirstName" HeaderStyle-CssClass="descriptionHeader">
+<%--<asp:TemplateField AccessibleHeaderText="FirstName" HeaderText="FirstName" HeaderStyle-CssClass="descriptionHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">FirstName</h3>
 <asp:ImageButton 
@@ -202,9 +202,9 @@ CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
-<asp:TemplateField AccessibleHeaderText="LastName" HeaderText="LastName" HeaderStyle-CssClass="descriptionHeader">
+<%--<asp:TemplateField AccessibleHeaderText="LastName" HeaderText="LastName" HeaderStyle-CssClass="descriptionHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">LastName</h3>
 <asp:ImageButton 
@@ -312,7 +312,7 @@ CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
 </Columns>
 <HeaderStyle />

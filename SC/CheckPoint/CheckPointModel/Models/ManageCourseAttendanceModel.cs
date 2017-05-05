@@ -1,4 +1,5 @@
-﻿using CheckPointCommon.ModelInterfaces;
+﻿using CheckPointCommon.Enums;
+using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.RepositoryInterfaces;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointDataTables.Tables;
@@ -102,6 +103,38 @@ namespace CheckPointModel.Models
             return _sessionService.SessionAttendeeUsername;
         }
 
+        public void ChangeSelectedAttendeesStatusToApproved()
+        {
+            var attendeeToApprove = GetAttendeeToApproveForCourse();
+            attendeeToApprove.StatusId = (int)AttendeeStatus.RequestApproved;
+            _unitOfWork.Complete();
+        }
+
+        public void ChangeAllAttendeesStatusesToApproved()
+        {
+            var attendeesToApprove = GetAllAttendeesToApproveForCourse();
+
+            foreach(ATTENDEE attendee in attendeesToApprove)
+            {
+                attendee.StatusId = (int)AttendeeStatus.RequestApproved;
+            }
+            _unitOfWork.Complete();
+        }
+
+        private IEnumerable<ATTENDEE> GetAllAttendeesToApproveForCourse()
+        {
+            var courseId = (int)_sessionService.SessionCourseId;
+
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesAppliedForCourseById(courseId);
+        }
+
+        public ATTENDEE GetAttendeeToApproveForCourse()
+        {
+            var username = _sessionService.SessionAttendeeUsername;
+            var courseId = (int)_sessionService.SessionCourseId;
+            return _unitOfWork.ATTENDEEs.GetAttendeeByUserNameAndCourseId(username, courseId) as ATTENDEE;           
+        }
+
         public void SetSessionRowIndex(int index)
         {
             _sessionService.SessionRowIndex = index;
@@ -130,6 +163,11 @@ namespace CheckPointModel.Models
         public void SetSessionCourseId(int id)
         {
             _sessionService.SessionCourseId = id;
+        }
+
+        public int GetSessionCourseId()
+        {
+            return (int)_sessionService.SessionCourseId;
         }
 
         public IEnumerable<object> GetEmptyClientList()

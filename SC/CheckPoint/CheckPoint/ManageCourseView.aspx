@@ -253,14 +253,16 @@ runat="server">
 </asp:UpdatePanel>
 
 </asp:Panel>
-
-
+<br />
+        <br />
+<div id="appointmentsInCourseHeader" style="z-index:5"><img src="Images/AppointmentsInCourse.svg" /></div>
     <asp:Panel
     ID="Panel3"
     runat="server" 
     ScrollBars="None"
     BackImageUrl="~/Images/headershade3.png"
-    CssClass="PanelAppGridHeader">  
+    CssClass="PanelAppGridHeader"> 
+         
 
     <asp:UpdatePanel 
     ID="UpdatePanel3"  
@@ -273,7 +275,6 @@ runat="server">
     runat="server" 
     Text="HostPage">
     </asp:Label>
-
    <uc1:ManageCourseAppGridHeader runat="server" id="ManageCourseAppGridHeader" />
    
     </ContentTemplate>

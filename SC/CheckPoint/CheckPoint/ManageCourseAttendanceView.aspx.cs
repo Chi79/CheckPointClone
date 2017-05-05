@@ -15,6 +15,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> CourseRowSelected;
         public event EventHandler<EventArgs> AttendeeRowSelected;
         public event EventHandler<EventArgs> AcceptAttendanceRequest;
+        public event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedCourse;
         public event EventHandler<EventArgs> RedirectToManageAppointmentAttendance;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -63,6 +64,11 @@ namespace CheckPoint.Views
             get { return AttendeeGridView.SelectedRowValueDataKey; }
         }
 
+        public bool ShowAcceptAttendanceRequestButton
+        {
+            set { btnAcceptAttendanceRequest.Visible = value; }
+        }
+
         public override void HookUpEvents()
         {           
             CourseGridView.RowSelected += OnCourseRowSelected;
@@ -104,16 +110,21 @@ namespace CheckPoint.Views
             AttendeeGridView.BindData();
         }
 
-        public bool ShowAttendeeGridViewHeaderPanel
+        public bool ShowAttendeeGridViewHeader
         {
             get { return panelAttendeeHeader.Visible; }
             set { panelAttendeeHeader.Visible = value; }
         }
 
-        public bool ShowAttendeeGridViewPanel
+        public bool ShowAttendeeGridView
         {
             get { return panelAttendeeGridView.Visible; }
             set { panelAttendeeGridView.Visible = value; }
+        }
+
+        public bool ShowAcceptAllAttendanceRequestsForSelectedCourseButton
+        {
+            set{ btnAcceptAllAttendeeRequestsForSelectedCourse.Visible = value; }
         }
 
         protected void btnManageAppointmentAttendance_Click(object sender, EventArgs e)
@@ -127,6 +138,14 @@ namespace CheckPoint.Views
         public void RedirectToManageAppointmentAttendanceView()
         {
             Response.Redirect("ManageAppointmentAttendanceView.aspx");
+        }
+
+        protected void btnAcceptAllAttendeeRequestsForSelectedCourse_Click(object sender, EventArgs e)
+        {
+            if(AcceptAllAttendanceRequestsForSelectedCourse != null)
+            {
+                AcceptAllAttendanceRequestsForSelectedCourse(this, EventArgs.Empty);
+            }
         }
     }
 }

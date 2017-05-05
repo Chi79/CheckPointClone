@@ -40,15 +40,6 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel7;
         
         /// <summary>
-        /// lblattendeeappointmentrequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblattendeeappointmentrequest;
-        
-        /// <summary>
         /// AppointmentGridViewHeader control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.GridView AppointmentGridView;
         
         /// <summary>
+        /// btnManageCourseAttendance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageCourseAttendance;
+        
+        /// <summary>
         /// panelAttendeeHeader control.
         /// </summary>
         /// <remarks>
@@ -101,15 +101,6 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
-        /// <summary>
-        /// lblAttendeesApplying control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAttendeesApplying;
         
         /// <summary>
         /// AttendeeGridViewHeader control.
@@ -157,12 +148,12 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Button btnAcceptAttendanceRequest;
         
         /// <summary>
-        /// btnManageCourseAttendance control.
+        /// btnAcceptAllAttendeeRequestsForSelectedAppointment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnManageCourseAttendance;
+        protected global::System.Web.UI.WebControls.Button btnAcceptAllAttendeeRequestsForSelectedAppointment;
     }
 }
