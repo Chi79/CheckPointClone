@@ -22,7 +22,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="height:100%;">
 
     <div id="main-sidebar">
 
@@ -112,7 +112,7 @@
         </ul>
 
     </div>
-        <div id="Main">
+        <div id="Main" style="height:100%;">
         <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
         </asp:ContentPlaceHolder>
         </div>
