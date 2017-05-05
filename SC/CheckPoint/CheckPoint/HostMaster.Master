@@ -100,7 +100,7 @@
               </li>
                               </li>
                         <li class="tooltip">
-                  <span class="tooltiptext">download the host usermanual or the reading terminal installation file</span>
+                  <span class="tooltiptext">Downloads</span>
                 <div class="main-sidebar-menu-list-item">
             <%--     <span class="tooltiptext">Logout</span>--%>
                   <a class="main-sidebar-menu-list-item-link" href="DownloadView.aspx" tabindex="5">
