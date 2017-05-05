@@ -91,7 +91,6 @@
         }
       .Appointmentslide{
       position:absolute;
-      top: -7%;
       left: 2%;
       animation:slidedown 4s;
       top:-8%;

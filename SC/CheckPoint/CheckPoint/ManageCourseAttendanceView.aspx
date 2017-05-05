@@ -136,15 +136,19 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div id="outercontainer">
+
+<div id="outercontainer">
+
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
-    <asp:ScriptManager
+
+<asp:ScriptManager
 ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
 
 <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageCourseAttendanceHeading.svg" /></div>
+
+<div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageCourseAttendanceHeading.svg" /></div>
 
     
 <%-- Course Header --%> 
@@ -153,12 +157,14 @@ runat="server">
      <asp:UpdatePanel 
     ID="UpdatePanel1"  
     runat="server" >
-
     <ContentTemplate>
+
     <uc1:CourseGridViewHeader runat="server" id="CourseGridViewHeader" />
 
     </ContentTemplate>
-         </asp:UpdatePanel>
+
+    </asp:UpdatePanel>
+
 </asp:Panel>
 
 <%-- Course Gridview --%>
@@ -175,8 +181,10 @@ runat="server">
          </asp:UpdatePanel>
 
 </asp:Panel> 
+
 <br />
 <br />
+
 <asp:Button CssClass="navButtons" ID="btnManageAppointmentAttendance" runat="server" Text="Manage Attendance For Appointments" OnClick="btnManageAppointmentAttendance_Click"/>
 <br />
 <br />
@@ -185,14 +193,18 @@ runat="server">
 
 <%-- Attendee Header --%>
 <asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" Visible="true">
+
     <asp:UpdatePanel 
     ID="UpdatePanel3"  
     runat="server" >
+
     <ContentTemplate> 
+
     <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" Visible="true"/>
 
     </ContentTemplate>
-         </asp:UpdatePanel>
+    </asp:UpdatePanel>
+
 </asp:Panel>
 
  

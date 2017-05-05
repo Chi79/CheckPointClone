@@ -24,7 +24,8 @@
                 window.open("LogIn.aspx", "", "height=400, width=200 left=50%", true); return false;;
             }
            
-        </script>          
+        </script>  
+       
 </head>
 <body>
     <div id="fb-root"></div>
@@ -38,19 +39,19 @@
         <asp:Button ID="btnLogIn" CssClass="default-button-style" runat="server" Text="Login" OnClick="btnLogIn_Click" />
         <%-- Navigation Bar --%>
         <div id="nav-bar-header"> 
-        <asp:Button ID="btnFeatures" CssClass="nav-button-style" runat="server" Text="Features" /> 
+        <asp:Button ID="btnFeatures" CssClass="default-button-style" runat="server" Text="Features" /> 
         <div id="separator1" class="nav-button-style">/</div> 
-        <asp:Button ID="btnContact" CssClass="nav-button-style" runat="server" Text="Contact Us" />
+        <asp:Button ID="btnContact" CssClass="default-button-style" runat="server" Text="Contact Us" />
         <div id="separator2" class="nav-button-style">/</div>
-        <asp:Button ID="btnAbout" CssClass="nav-button-style" runat="server" Text="About" />
+        <asp:Button ID="btnAbout" CssClass="default-button-style" runat="server" Text="About" />
         </div>       
     </div>
         <%-- Body --%>
     <div id="body">
         <div id="body-main-headline">Attend Anything,<br />Anywhere,<br /> Anytime..</div>
         <div id="body-main-subtext">
-            Register attendance for any type of appointment and some other stuff.<br/>
-			More text here just to fill the empty space, but this will of course contain <br/>
+            Hosting and attending courses and appointments have never been easier!<br/>
+			The CheckPoint Attendance System provides a simple and efficient way of <br/>
 			some useful information about the checkpoint product later on.
         </div>    
          <asp:Button ID="btnGetStarted" CssClass="default-button-style" runat="server" Text="Get Started With CheckPoint" OnClick="btnGetStarted_Click" />    
@@ -62,10 +63,7 @@
         <%--<div id="twitter-feed"><a class="twitter-timeline" data-width="220" data-height="200" data-theme="dark" data-link-color="#66cc66" href="https://twitter.com/CheckPointAS">Tweets by CheckPointAS</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>--%>
          <%-- Action Window Content --%>       
          <div id="body-action-window">
-            <div id="action-window-feature"></div>
-            <div id="action-window-about"></div>
-            <div id="action-window-contact"></div>
-        </div> 
+             <asp:Image ID="imgBodyActionWindow" runat="server" ImageUrl="~/Images/cheesy-placeholder3.jpg" style="margin-left: 0px; margin-bottom: 0px" /></div> 
     </div>
         <%-- Footer --%>
     <div id="footer">
