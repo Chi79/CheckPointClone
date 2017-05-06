@@ -23,6 +23,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void GetJobItemNameFromSession();
 
+        bool? GetChangesSavedSessionStatus();
+
         string GetJobConfirmationMessage();
 
         string GetLoggedInClient();

@@ -56,6 +56,7 @@
     <Compile Include="Models\ApplyToAttendAppointmentModel.cs" />
     <Compile Include="Models\ApplyToCourseModel.cs" />
     <Compile Include="Models\AppointmentSelectorModel.cs" />
+    <Compile Include="Models\ChangesSavedModel.cs" />
     <Compile Include="Models\CourseSelectorModel.cs" />
     <Compile Include="Models\DeleteCourseModel.cs" />
     <Compile Include="Models\FindCoursesModel.cs" />

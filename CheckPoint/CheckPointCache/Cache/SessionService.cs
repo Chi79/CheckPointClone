@@ -46,6 +46,23 @@ namespace CheckPointHTTPServices.Cache
             }
         }
 
+        public bool? SavedChangesStatus
+        {
+            get
+            {
+                var savedChangesStatus = HttpContext.Current.Session["SavedChangesStatus"];
+                if (savedChangesStatus != null)
+                {
+                    return (bool)savedChangesStatus;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { HttpContext.Current.Session["SavedChangesStatus"] = value; }
+        }
+
         public bool? NewAppointmentAddedToCourseStatus
         {
             get

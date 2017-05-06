@@ -30,10 +30,33 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+        public override void FirstTimeInit()
+        {
+
+            CheckAttemptToResaveStatus();
+ 
+        }
+
+
         public override void Load()
         {
 
             WireUpEvents();
+
+            CheckAttemptToResaveStatus();
+
+        }
+
+        private void CheckAttemptToResaveStatus()
+        {
+
+            bool attemptToResave = (bool)_model.GetChangesSavedSessionStatus();
+            if (attemptToResave)
+            {
+
+                _view.RedirectToHomePage();
+
+            }
 
         }
 
@@ -193,9 +216,7 @@ namespace CheckPointPresenters.Presenters
             if (UpdateSuccessful)
             {
 
-                _view.Message = _model.GetJobCompletedMessage();
-
-                ContinueButtonsShow();
+                _view.RedirectToChangesSavedPage();
 
             }
             else
@@ -213,11 +234,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void ContinueButtonsShow()
-        {
-            _view.CreateButtonVisible = false;
-            _view.ContinueButtonVisible = true;
-        }
 
         private void DecisionButtonsShow()
         {

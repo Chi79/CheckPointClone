@@ -73,6 +73,7 @@ namespace CheckPointModel.Models
             _sessionService.NewAppointmentAddedToCourseStatus = false;
             _sessionService.UpdatedCourseStatus = false;
             _sessionService.DeletedCourseStatus = false;
+            _sessionService.SavedChangesStatus = false;
            
         }
 

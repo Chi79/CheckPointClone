@@ -172,6 +172,20 @@ namespace CheckPointModel.Models
 
         }
 
+        public  bool? GetChangesSavedSessionStatus()
+        {
+
+            return _sessionService.SavedChangesStatus;
+
+        }
+
+        public void ResetChangesSavedSessionStatus()
+        {
+
+            _sessionService.SavedChangesStatus = false;
+
+        }
+
 
         public object ConvertToAppointment(object appointmentModel)
         {

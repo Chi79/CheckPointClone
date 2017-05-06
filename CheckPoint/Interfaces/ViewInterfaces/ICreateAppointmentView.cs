@@ -33,6 +33,7 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectAfterClickEvent();
         void RedirectToHomePage();
 
+        void RedirectToChangesSavedPage();
 
         event EventHandler<EventArgs> CreateNewAppointment;
         event EventHandler<EventArgs> Continue;

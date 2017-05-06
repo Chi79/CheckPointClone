@@ -20,6 +20,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void ResetSessionState();
 
+        void ResetChangesSavedStatus();
+
         string GetColumnName();
 
         string GetLoggedInClient();

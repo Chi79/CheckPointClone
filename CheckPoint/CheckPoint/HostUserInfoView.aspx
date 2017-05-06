@@ -66,8 +66,6 @@ body{      background:#333333;}
     left: 8%;
     text-align: left;
     margin-top: 3%;
-
-
 }
 .UserInfoHeaderDiv{
 

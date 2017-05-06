@@ -10,6 +10,7 @@ namespace CheckPointCommon.ServiceInterfaces
     {
         string LoggedInClient { get; set; }
         string ClientTagId { get; set; }
+        bool? SavedChangesStatus { get; set; }
         bool? NewAppointmentAddedToCourseStatus { get; set; }
         bool? AppointmentDeletedFromCourseStatus { get; set; }
         bool? UpdatedCourseStatus { get; set; }

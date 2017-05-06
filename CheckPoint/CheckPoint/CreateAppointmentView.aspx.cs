@@ -93,14 +93,24 @@ namespace CheckPoint.Views
 
         public void RedirectAfterClickEvent()
         {
+
             Response.Redirect("CreateAppointmentView.aspx");
+
         }
 
         public void RedirectToHomePage()
         {
+
             Response.Redirect("HostHomeView.aspx");
+
         }
 
+        public void RedirectToChangesSavedPage()
+        {
+
+            Response.Redirect("ChangesSavedView.aspx");
+
+        }
 
         public event EventHandler<EventArgs> CreateNewAppointment;
         public event EventHandler<EventArgs> Continue;

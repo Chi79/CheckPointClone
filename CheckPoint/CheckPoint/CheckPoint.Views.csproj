@@ -110,6 +110,7 @@
     <Content Include="ApplyToAttendAppointmentView.aspx" />
     <Content Include="ApplyToCourseView.aspx" />
     <Content Include="AppointmentSelectorView.aspx" />
+    <Content Include="ChangesSavedView.aspx" />
     <Content Include="CourseSelectorView.aspx" />
     <Content Include="CreateAppointmentView.aspx" />
     <Content Include="CreateCourseView.aspx" />
@@ -182,6 +183,7 @@
     <Content Include="Images\headershade.png" />
     <Content Include="Images\headershade3.png" />
     <Content Include="Images\identify.png" />
+    <Content Include="Images\installer2.svg" />
     <Content Include="Images\Installicon.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo4.png" />
@@ -199,6 +201,7 @@
     <Content Include="Images\MyCourses.png" />
     <Content Include="Images\MyCoursesHeading.svg" />
     <Content Include="Images\MyCoursesHeading1.svg" />
+    <Content Include="Images\pdf2.svg" />
     <Content Include="Images\pdfsymbol.png" />
     <Content Include="Images\PublicAppointmentsHeading.svg" />
     <Content Include="Images\PublicAppointmentsHeading1.svg" />
@@ -318,6 +321,13 @@
     </Compile>
     <Compile Include="AppointmentSelectorView.aspx.designer.cs">
       <DependentUpon>AppointmentSelectorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesSavedView.aspx.cs">
+      <DependentUpon>ChangesSavedView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangesSavedView.aspx.designer.cs">
+      <DependentUpon>ChangesSavedView.aspx</DependentUpon>
     </Compile>
     <Compile Include="CourseSelectorView.aspx.cs">
       <DependentUpon>CourseSelectorView.aspx</DependentUpon>
