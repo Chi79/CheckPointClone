@@ -34,6 +34,8 @@ namespace CheckPointCommon.ViewInterfaces
         bool DeleteButtonVisible { set; }
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
+        bool MessagePanelVisible { set; }
+        bool MessageVisible { set; }
    
 
 

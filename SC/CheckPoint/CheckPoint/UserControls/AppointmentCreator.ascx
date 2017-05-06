@@ -14,52 +14,54 @@
     border: none;
 
 }
+
 .panel{
     position:relative;
 }
 
-
-    
-
-
 .list{
     color:white;
-position:fixed;
-top:10%;
-left:30%;
-list-style:none;
-width:60%;
-padding:0%;
-margin:0;
-border:none;
+    position:fixed;
+    top:10%;
+    left:30%;
+    list-style:none;
+    width:60%;
+    padding:0%;
+    margin:0;
+    border:none;
 }
 
 .list-item{
 
-width:100%;
-display:inline-block;
-border:none;
-padding:0%;
-margin:0;
-line-height:3;
-
+    width:100%;
+    display:inline-block;
+    border:none;
+    padding:0%;
+    margin:0;
+    line-height:3;   
     background-color: #333333;
 }
 .list-item-label{
     display: inline-block;
+    font-family: sans-serif;
+    font-size: large;
+    font-weight:bolder;
     width: 22%;
-    color:white;
-    border:none;
-padding:0%;
-margin:0;
+    color: white;
+    border: none;
+    padding: 0%;
+    margin: 0;
+    zoom: 101%;
 }
 .list-item-box{
     display: inline-block;
     border:none;
-padding:0%;
-margin:0;
+    padding:0%;
+    margin:0;
+    zoom: 171%;
 }
 </style>
+
 
 <div id="container" class="container">
 <div id="panel" class="panel">
@@ -71,7 +73,7 @@ margin:0;
         </li>
         <li class="list-item">
              <asp:Label CssClass="list-item-label" ID="lblDescription" runat="server" Text="Description"></asp:Label>
-        <asp:TextBox CssClass="list-item-box" ID="txtAppointmentDescription" runat="server" Height="19px" Width="275px"></asp:TextBox>
+        <asp:TextBox CssClass="list-item-box" ID="txtAppointmentDescription" runat="server" ></asp:TextBox>
         </li>
         <li class="list-item">
                     <asp:Label CssClass="list-item-label" ID="lblDate" runat="server" Text="Date"></asp:Label>
@@ -122,9 +124,11 @@ margin:0;
         </li>
               
         <li class="list-item">
-            <asp:Label  ID="lblMessage" runat="server"></asp:Label>
+            <asp:Label  ID="lblMessage1" runat="server"></asp:Label>
         </li>
     </ul>
+
+
 
       
 

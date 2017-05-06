@@ -96,8 +96,8 @@ namespace CheckPoint.Views
         public string Message
         {
 
-            get { return AppointmentCreator.Message; }
-            set { AppointmentCreator.Message = value; }
+            get { return MessagePanel.Message; }
+            set { MessagePanel.Message = value; }
 
         }
 
@@ -175,11 +175,10 @@ namespace CheckPoint.Views
 
         }
 
-
         public bool ContinueButtonVisible
         {
 
-            set { btnContinue.Visible = value; }
+            set { MessagePanel.ContinueButtonVisible = value; }
 
         }
 
@@ -200,18 +199,29 @@ namespace CheckPoint.Views
         public bool YesButtonVisible
         {
 
-            set { btnYes.Visible = value; }
+            set { MessagePanel.YesButtonVisible = value; }
 
         }
 
         public bool NoButtonVisible
         {
 
-            set { btnNo.Visible = value; }
+            set { MessagePanel.NoButtonVisible = value; }
 
         }
 
+        public bool MessagePanelVisible
+        {
 
+            set { MessagePanel.MessagePanelVisible = value; }
+
+        }
+        public bool MessageVisible
+        {
+
+            set { MessagePanel.MessageVisible = value; }
+
+        }
 
         public void RedirectAfterClickEvent()
         {
@@ -234,8 +244,6 @@ namespace CheckPoint.Views
 
         }
 
-
-
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> UpdateAppointment;
@@ -245,7 +253,46 @@ namespace CheckPoint.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+
+        }
+
+        public override void HookUpEvents()
+        {
+
+            MessagePanel.YesButtonClicked += btnYes_Click;
+            MessagePanel.NoButtonClicked += btnNo_Click;
+            MessagePanel.ReloadPage += btnContinue_Click;
+
+        }
+
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            if (ReloadPage != null)
+            {
+                ReloadPage(this, EventArgs.Empty);
+            }
+        }
+
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+
+            if (NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
+            }
+
+        }
+
+        private void btnYes_Click(object sender, EventArgs e)
+        {
+
+            if (YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
+
         }
 
         protected void btnCreateAppointment_Click(object sender, EventArgs e)
@@ -256,14 +303,6 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnContinue_Click(object sender, EventArgs e)
-        {
-            if (ReloadPage != null)
-            {
-                ReloadPage(this, EventArgs.Empty);
-            }
-        }
-
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             if (DeleteAppointment != null)
@@ -271,23 +310,5 @@ namespace CheckPoint.Views
                 DeleteAppointment(this, EventArgs.Empty);
             }
         }
-
-        protected void btnYes_Click(object sender, EventArgs e)
-        {
-            if (YesButtonClicked != null)
-            {
-                YesButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnNo_Click(object sender, EventArgs e)
-        {
-            if (NoButtonClicked != null)
-            {
-                NoButtonClicked(this, EventArgs.Empty);
-            }
-        }
-
-
     }
 }

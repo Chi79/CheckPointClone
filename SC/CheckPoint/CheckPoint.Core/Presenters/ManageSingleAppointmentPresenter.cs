@@ -53,7 +53,7 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
 
-            CheckAttemptToResaveStatus();
+            CheckAttemptToReSaveStatus();
 
 
             DisplaySelectedAppointmentData();
@@ -68,11 +68,11 @@ namespace CheckPointPresenters.Presenters
 
             WireUpEvents();
 
-            CheckAttemptToResaveStatus();
+            CheckAttemptToReSaveStatus();
 
         }
 
-        private void CheckAttemptToResaveStatus()
+        private void CheckAttemptToReSaveStatus()
         {
 
             bool attemptToResave = (bool)_model.GetChangesSavedSessionStatus();
@@ -119,6 +119,8 @@ namespace CheckPointPresenters.Presenters
         private void ConfirmAction()
         {
 
+            _view.MessagePanelVisible = true;
+
             _view.Message = _model.GetJobConfirmationMessage();
 
             DecisionButtonsShow();
@@ -128,9 +130,9 @@ namespace CheckPointPresenters.Presenters
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
 
-            DecisionButtonsHide();
+            _view.MessagePanelVisible = false;
 
-            _view.Message = "Ready.";
+            DecisionButtonsHide();
 
         }
 
@@ -197,14 +199,19 @@ namespace CheckPointPresenters.Presenters
         private void DisplayValidationMessage()
         {
 
+            _view.MessagePanelVisible = true;
+
             _view.Message = string.Empty;
 
             var validationMessages = _dTO.GetBrokenBusinessRules().ToList();
 
             foreach (string message in validationMessages)
             {
+
                 _view.Message += message;
             }
+
+            ContinueButtonShow();
 
         }
 
@@ -239,8 +246,11 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
+                _view.MessagePanelVisible = true;
+
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
 
+                ContinueButtonShow();
             }
 
         }
@@ -287,6 +297,13 @@ namespace CheckPointPresenters.Presenters
             _view.UpdateButtonVisible = false;
             _view.DeleteButtonVisible = false;
             _view.ContinueButtonVisible = false;
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
         }
 
     }
