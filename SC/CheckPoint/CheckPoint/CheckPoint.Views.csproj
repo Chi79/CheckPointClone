@@ -171,6 +171,7 @@
     <Content Include="Images\DeleteCourseHeading1.svg" />
     <Content Include="Images\downarrow2.png" />
     <Content Include="Images\downarrow3.png" />
+    <Content Include="Images\DownloadIcon.png" />
     <Content Include="Images\DownloadPage.svg" />
     <Content Include="Images\findappointmentsicon.png" />
     <Content Include="Images\front-page-filler.jpg" />
