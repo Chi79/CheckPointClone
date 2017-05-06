@@ -191,6 +191,7 @@
     <Content Include="Images\logo_white2.png" />
     <Content Include="Images\ManageAppointmentAttendanceHeading.svg" />
     <Content Include="Images\manageappointmentbutton.png" />
+    <Content Include="Images\ManageAppointmentsHeading1.svg" />
     <Content Include="Images\manageattendancebutton1.png" />
     <Content Include="Images\ManageAttendanceIcon.png" />
     <Content Include="Images\ManageCourseAttendanceHeading.svg" />
@@ -265,6 +266,7 @@
     <Content Include="UserControls\ManageCourseAppGridHeader.ascx" />
     <Content Include="UserControls\ManageCourseGrid.ascx" />
     <Content Include="UserControls\ManageCourseHeader.ascx" />
+    <Content Include="UserControls\MessagePanel.ascx" />
     <Content Include="UserControls\NavigationMessage.ascx" />
     <Content Include="UserControls\UserAppointmentGridView.ascx" />
     <Content Include="UserControls\UserAppointmentGridViewHeader.ascx" />
@@ -610,6 +612,13 @@
     </Compile>
     <Compile Include="UserControls\ManageCourseHeader.ascx.designer.cs">
       <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessagePanel.ascx.cs">
+      <DependentUpon>MessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessagePanel.ascx.designer.cs">
+      <DependentUpon>MessagePanel.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\NavigationMessage.ascx.cs">
       <DependentUpon>NavigationMessage.ascx</DependentUpon>

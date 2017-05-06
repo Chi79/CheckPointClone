@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CheckPoint.Views {
+namespace CheckPoint.Views.UserControls {
     
     
-    public partial class ManageSingleAppointmentView {
+    public partial class MessagePanel {
         
         /// <summary>
-        /// MessagePanel control.
+        /// MessageDisplayPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.MessagePanel MessagePanel;
+        protected global::System.Web.UI.WebControls.Panel MessageDisplayPanel;
         
         /// <summary>
-        /// AppointmentCreator control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AppointmentCreator AppointmentCreator;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// btnUpdateAppointment control.
+        /// btnYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateAppointment;
+        protected global::System.Web.UI.WebControls.Button btnYes;
         
         /// <summary>
-        /// btnDeleteAppointment control.
+        /// btnNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteAppointment;
+        protected global::System.Web.UI.WebControls.Button btnNo;
+        
+        /// <summary>
+        /// btnContinue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnContinue;
     }
 }

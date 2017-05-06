@@ -72,9 +72,9 @@ namespace CheckPoint.Views.UserControls
 
         public string Message
         {
-            get { return lblMessage.Text; }
+            get { return lblMessage1.Text; }
 
-            set { lblMessage.Text = value; }
+            set { lblMessage1.Text = value; }
         }
 
 
@@ -123,7 +123,6 @@ namespace CheckPoint.Views.UserControls
         {
             set { txtEndTime.ReadOnly = value; }
         }
-
 
         protected void Page_Load(object sender, EventArgs e)
         {

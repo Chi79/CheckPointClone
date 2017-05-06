@@ -1,6 +1,9 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/HostMaster.Master" AutoEventWireup="true" CodeBehind="ManageSingleAppointmentView.aspx.cs" Inherits="CheckPoint.Views.ManageSingleAppointmentView" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/HostMaster.Master" AutoEventWireup="true" CodeBehind="ManageSingleAppointmentView.aspx.cs" Inherits="CheckPoint.Views.ManageSingleAppointmentView" EnableEventValidation="false" %>
 
 <%@ Register Src="~/UserControls/AppointmentCreator.ascx" TagPrefix="uc1" TagName="AppointmentCreator" %>
+
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 
@@ -11,17 +14,17 @@
 
 .list1{
     position:fixed;
-top:10%;
-left:30%;
-list-style:none;
-width:100%;
-padding:0%;
-margin:0;
-border:none;
+    top:10%;
+    left:30%;
+    list-style:none;
+    width:100%;
+    padding:0%;
+    margin:0;
+    border:none;
 }
 .list1-item{
 position:fixed;
-top:90%;
+top:92%;
 left:30%;
 list-style:none;
 width:100%;
@@ -57,6 +60,26 @@ border:none;
         -webkit-animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
 }
+.logoslide{
+      position:absolute;
+      left: 85%;
+      top:  -8%;
+      animation: slideleft 2s ;
+}
+@keyframes slideleft {
+      from { left: -100%; }
+      to { left: 85%; }
+}
+.Headerslide{
+      position:absolute;
+      left: 6%;
+      animation:slidedown 4s;
+      top:5px;
+}
+@keyframes slidedown {
+     from { top: -200px; }
+      to { top: 5px; }
+}
 
 
 
@@ -67,21 +90,22 @@ border:none;
 </asp:Content>
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+
+    <div id="AppointmentHeading" class="Headerslide" style="z-index:5"><img src="Images/ManageAppointmentsHeading1.svg" /></div>
+
+    <uc1:MessagePanel runat="server" id="MessagePanel" />
     
 <ul class="list1">
     <li class="list1-item">
         <uc1:AppointmentCreator runat="server" ID="AppointmentCreator" />
         </li >
     <li class="list1-item">
-                <asp:Button CssClass="button" ID="btnUpdateAppointment" runat="server" Text="Update Appointment" OnClick="btnCreateAppointment_Click" />
+        <asp:Button CssClass="button" ID="btnUpdateAppointment" runat="server" Text="Update Appointment" OnClick="btnCreateAppointment_Click" />
         <asp:Button CssClass="button" ID="btnDeleteAppointment" runat="server" Text="Delete Appointment" OnClick="btnDelete_Click" />
-        <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="47px" />
-        <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="45px" />
-        <asp:Button CssClass="button" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
     </li>
 
     </ul>
-
 
     </asp:Content>
 
