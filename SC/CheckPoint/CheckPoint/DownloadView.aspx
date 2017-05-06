@@ -86,7 +86,7 @@
    
    margin-left:0;
     display:inline-block;
-    width:100%;
+    width:77%;
     min-height:10%;
     
 

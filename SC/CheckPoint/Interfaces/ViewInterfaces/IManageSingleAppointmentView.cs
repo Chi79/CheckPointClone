@@ -25,6 +25,10 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectAfterClickEvent();
 
+        void RedirectAfterChangesSaved();
+
+        void RedirectToHostHomePage();
+
         bool ContinueButtonVisible { set; }
         bool UpdateButtonVisible { set; }
         bool DeleteButtonVisible { set; }

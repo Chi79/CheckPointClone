@@ -215,10 +215,26 @@ namespace CheckPoint.Views
 
         public void RedirectAfterClickEvent()
         {
+
             Response.Redirect("ManageSingleAppointmentView.aspx");
+
         }
 
- 
+        public void RedirectAfterChangesSaved()
+        {
+
+            Response.Redirect("ChangesSavedView.aspx");
+
+        }
+
+        public void RedirectToHostHomePage()
+        {
+
+            Response.Redirect("HostHomeView.aspx");
+
+        }
+
+
 
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;

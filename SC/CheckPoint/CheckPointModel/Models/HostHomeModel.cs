@@ -69,6 +69,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public void ResetChangesSavedStatus()
+        {
+
+            _sessionService.SavedChangesStatus = false;
+
+        }
+
         public string GetColumnName()
         {
 

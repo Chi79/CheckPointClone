@@ -53,7 +53,13 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
 
+            CheckAttemptToResaveStatus();
+
+
             DisplaySelectedAppointmentData();
+
+
+            ResetPageSessionStatus();
 
         }
 
@@ -62,7 +68,30 @@ namespace CheckPointPresenters.Presenters
 
             WireUpEvents();
 
+            CheckAttemptToResaveStatus();
+
         }
+
+        private void CheckAttemptToResaveStatus()
+        {
+
+            bool attemptToResave = (bool)_model.GetChangesSavedSessionStatus();
+            if(attemptToResave)
+            {
+
+                _view.RedirectToHostHomePage();
+
+            }
+
+        }
+
+        private void ResetPageSessionStatus()
+        {
+
+            _model.ResetChangesSavedSessionStatus();
+
+        }
+
 
         public void WireUpEvents()
         {
@@ -188,6 +217,7 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+
         private APPOINTMENT ConvertDTOToAppointment()
         {
 
@@ -201,11 +231,9 @@ namespace CheckPointPresenters.Presenters
 
             bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
             if(UpdateSuccessful)
-            {
-                _view.Message = _model.GetJobCompletedMessage();
+            {   
 
-
-                DisplayButtonsAfterUpdateSuccessful();     
+                _view.RedirectAfterChangesSaved();
                          
             }
             else
@@ -215,25 +243,6 @@ namespace CheckPointPresenters.Presenters
 
             }
 
-        }
-
-        private void DisplayButtonsAfterUpdateSuccessful()
-        {
-           bool isJobTypeDeleteAppointment = _model.IsJobTypeDeleteAppointment();
-
-           if(isJobTypeDeleteAppointment)
-           {
-
-                AllButtonsHide();
-
-           }
-           else
-           {
-
-                ContinueButtonsShow();
-
-           }
-            
         }
 
 
@@ -253,13 +262,6 @@ namespace CheckPointPresenters.Presenters
             _view.IsCancelled = selectedAppointment.IsCancelled.ToString();
             _view.IsPrivate = selectedAppointment.IsPrivate.ToString();
 
-        }
-
-        private void ContinueButtonsShow()
-        {
-            _view.UpdateButtonVisible = false;
-            _view.DeleteButtonVisible = false;
-            _view.ContinueButtonVisible = true;
         }
 
         private void DecisionButtonsShow()

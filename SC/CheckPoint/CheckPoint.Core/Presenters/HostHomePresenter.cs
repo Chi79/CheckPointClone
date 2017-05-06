@@ -73,7 +73,9 @@ namespace CheckPointPresenters.Presenters
             if (RowSelected)
             {
 
-                _view.RedirectToManageAppointment();
+                ResetChangesSavedSessionStatus();
+
+                _view.RedirectToManageAppointment();  
 
             }
             else
@@ -87,7 +89,9 @@ namespace CheckPointPresenters.Presenters
         private void OnCreateAppointmentButtonClicked(object sender, EventArgs e)
         {
 
-           _view.RedirectToCreateAppointment();
+            ResetChangesSavedSessionStatus();
+
+            _view.RedirectToCreateAppointment();
 
         }
 
@@ -141,6 +145,14 @@ namespace CheckPointPresenters.Presenters
             _model.ResetSessionState();
 
         }
+
+        private void ResetChangesSavedSessionStatus()
+        {
+
+            _model.ResetChangesSavedStatus();
+
+        }
+
 
         private void FetchData()
         {

@@ -33,6 +33,10 @@ namespace CheckPointCommon.ModelInterfaces
 
         int GetSessionAppointmentId();
 
+        bool? GetChangesSavedSessionStatus();
+
+        void ResetChangesSavedSessionStatus();
+
         bool? GetAddingAppointmentToCourseStatus();
 
         void ResetAddingAppointmentToCourseStatus();
