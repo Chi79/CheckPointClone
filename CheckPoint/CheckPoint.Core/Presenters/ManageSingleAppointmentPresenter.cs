@@ -119,7 +119,7 @@ namespace CheckPointPresenters.Presenters
         private void ConfirmAction()
         {
 
-            _view.MessagePanelVisible = true;
+            ShowMessagePanel();
 
             _view.Message = _model.GetJobConfirmationMessage();
 
@@ -130,7 +130,7 @@ namespace CheckPointPresenters.Presenters
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
 
-            _view.MessagePanelVisible = false;
+            HideMessagePanel();
 
             DecisionButtonsHide();
 
@@ -199,7 +199,7 @@ namespace CheckPointPresenters.Presenters
         private void DisplayValidationMessage()
         {
 
-            _view.MessagePanelVisible = true;
+            ShowMessagePanel();
 
             _view.Message = string.Empty;
 
@@ -246,7 +246,7 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.MessagePanelVisible = true;
+                ShowMessagePanel();
 
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
 
@@ -303,6 +303,20 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.ContinueButtonVisible = true;
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
 
         }
 

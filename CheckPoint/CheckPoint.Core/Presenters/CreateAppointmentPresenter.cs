@@ -95,6 +95,7 @@ namespace CheckPointPresenters.Presenters
         {
 
             string appointmentName = _view.AppointmentName;
+
             _model.SaveAppointmentNameToSession(appointmentName);
 
         }
@@ -103,9 +104,25 @@ namespace CheckPointPresenters.Presenters
         private void ConfirmJob()
         {
 
+            ShowMessagePanel();
+
             _view.Message = _model.GetJobConfirmationMessage();
 
             DecisionButtonsShow();
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
 
         }
 
@@ -113,7 +130,8 @@ namespace CheckPointPresenters.Presenters
         {
 
             DecisionButtonsHide();
-            _view.Message = "Ready.";
+            //_view.Message = "Ready.";
+            HideMessagePanel();
 
         }
 
@@ -181,6 +199,8 @@ namespace CheckPointPresenters.Presenters
         private void DisplayValidationMessage()
         {
 
+            ShowMessagePanel();
+
             _view.Message = string.Empty;
 
             var validationMessages = _dTO.GetBrokenBusinessRules().ToList();
@@ -189,6 +209,8 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message += message;
             }
+
+            ContinueButtonShow();
 
         }
 
@@ -221,7 +243,13 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+
+                ShowMessagePanel();
+
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+
+                ContinueButtonShow();
+
             }
 
         }
@@ -249,6 +277,13 @@ namespace CheckPointPresenters.Presenters
             _view.CreateButtonVisible = true;
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
         }
     }
 }
