@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/HostMaster.Master" CodeBehind="CreateAppointmentView.aspx.cs" Inherits="CheckPoint.Views.CreateAppointmentView" %>
 
 <%@ Register Src="~/UserControls/AppointmentCreator.ascx" TagPrefix="uc1" TagName="AppointmentCreator" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -12,7 +14,7 @@
 
 
 .lista{
-    position:fixed;
+position:fixed;
 top:10%;
 left:30%;
 list-style:none;
@@ -42,6 +44,7 @@ border:none;
     border-radius: 5px;
     border-width:0px;
     border-color:darkgreen;
+    margin-top:1%;
     margin-right:1%;
     padding-top:0.5%;
     padding-bottom: 0.5%;
@@ -57,6 +60,26 @@ border:none;
         -webkit-animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
 }
+.logoslide{
+      position:absolute;
+      left: 85%;
+      top:  -8%;
+      animation: slideleft 2s ;
+}
+@keyframes slideleft {
+      from { left: -100%; }
+      to { left: 85%; }
+}
+.Headerslide{
+      position:absolute;
+      left: 6%;
+      animation:slidedown 4s;
+      top:5px;
+}
+@keyframes slidedown {
+     from { top: -200px; }
+      to { top: 5px; }
+}
 
 
 
@@ -70,7 +93,11 @@ border:none;
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
+    <div id="AppointmentHeading" class="Headerslide" style="z-index:5"><img src="Images/CreateanAppointmentHeading1.svg" /></div>
+
+    <uc1:MessagePanel runat="server" ID="MessagePanel" />
 
 <ul class="lista">
     <li class="lista-item">
@@ -79,8 +106,8 @@ border:none;
     <li class="lista-item">
  <asp:Button CssClass="button" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Visible="False" />
 <asp:Button CssClass="button" ID="btnCreateAppointment" runat="server" Text="Create Appointment" OnClick="btnCreateAppointment_Click" />
-<asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False"  />
-<asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
+<%--<asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False"  />
+<asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />--%>
     </li>
 </ul>
 

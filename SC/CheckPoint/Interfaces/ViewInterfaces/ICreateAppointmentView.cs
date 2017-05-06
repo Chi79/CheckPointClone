@@ -27,7 +27,8 @@ namespace CheckPointCommon.ViewInterfaces
         bool CreateButtonVisible { set; }
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
-      
+        bool MessagePanelVisible { set; }
+
 
 
         void RedirectAfterClickEvent();
