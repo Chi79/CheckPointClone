@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HostMaster.Master.cs" Inherits="CheckPoint.Views.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden">
+<head runat="server">
+    <meta name="viewport"   content="width=device-width, initial-scale=2"/>
+    <link href="CSS/StyleMaster.css" rel="stylesheet" />    
+    <link rel="stylesheet" href="CSS/hosthome.css" />
+    <link rel="stylesheet" href="CSS/jquery-ui.css"  /> 
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <link rel="stylesheet" href="CSS/jquery-ui.min.css"  />
+    <link rel="stylesheet" href="CSS/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="CSS/jquery-ui.theme.css"  />
+
+    <script src="Scripts/jquery.js" ></script>
+    <script src="Scripts/jquery-ui.js" ></script>
+
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="height:100%;">
+
+    <div id="main-sidebar">
+
+    
+       
+        <ul class="main-sidebar-menu-list">
+         <%--          <li class="tooltip">
+                  <span class="tooltiptext">Create report</span>
+                <div class="main-sidebar-menu-list-item">--%>
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <%--<a class="main-sidebar-menu-list-item-link" href="CreateReportView.aspx" tabindex="1">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/CreateReportIcon.png" alt="[]"></img>
+                
+
+                  </a>
+                    </div>
+            </li>--%>
+            <li class="tooltip">
+                  <span class="tooltiptext">Manage attendance</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link" href="ManageCourseAttendanceView.aspx" tabindex="1">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/ManageAttendanceIcon.png" alt="[]"></img>
+                
+
+                  </a>
+                    </div>
+            </li>
+
+
+              <li class="tooltip">
+                <span class="tooltiptext"> My courses</span>
+                <div class="main-sidebar-menu-list-item">
+
+
+                
+          <%--       <span class="tooltiptext">Show my activeties</span>--%>
+                 <a class="main-sidebar-menu-list-item-link" href="HostCoursesView.aspx" tabindex="2" >                                             
+                  
+                <img class="main-sidebar-menu-list-item-icon"  src="Images/MyCourses.png" alt="[]"></img>
+                   
+
+                 </a>
+                </div>
+            </li>
+
+            <li class="tooltip">
+                <span class="tooltiptext"> My appointments</span>
+                <div class="main-sidebar-menu-list-item">
+
+
+                
+          <%--       <span class="tooltiptext">Show my activeties</span>--%>
+                 <a class="main-sidebar-menu-list-item-link" href="HostHomeView.aspx" tabindex="3" >                                             
+                  
+                <img class="main-sidebar-menu-list-item-icon"  src="Images/activitiesicon.png" alt="[]"></img>
+                   
+
+                 </a>
+                </div>
+            </li>
+           
+              <li class="tooltip">
+                    <span class="tooltiptext">Alter profile</span>
+
+                <div class="main-sidebar-menu-list-item" >
+             <%--    <span class="tooltiptext">Alter Profile</span>--%>
+                                   
+                    <a class="main-sidebar-menu-list-item-link" href="WorkInProgressHostView.aspx" tabindex="4">                         
+                       <img class="main-sidebar-menu-list-item-icon" alt="[]" src="Images/alterprofile.png" ></img>
+                       
+                  </a>   
+                  </div>
+
+              </li>
+                              </li>
+                        <li class="tooltip">
+                  <span class="tooltiptext">Downloads</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link" href="DownloadView.aspx" tabindex="5">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/DownloadIcon.png" alt="[]"></img>
+
+                  </a>
+                    </div>
+            </li>   
+            <li class="tooltip">
+                  <span class="tooltiptext">Logout</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link" href="HomePageView.aspx" tabindex="5">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/logouticon.png" alt="[]"></img>
+                
+
+                  </a>
+                    </div>
+
+        </ul>
+      
+    </div>
+        <div id="Main" style="height:100%;">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

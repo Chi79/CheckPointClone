@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(Namespace=CheckPoint.Bootstrap.Registries)" Category="CodeSchema_Namespace" Bounds="-26.2710827191671,64.8303375244141,208.253333333333,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPoint‎.Bootstrap‎.Registries" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPoint.Views)" Category="CodeSchema_Namespace" Bounds="630.980232823825,40.7938728258048,133.52,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPoint‎.Views" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointDataTables.Tables)" Category="CodeSchema_Namespace" Bounds="-26.886549507116,-120.678148557998,195.256666666667,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointDataTables‎.Tables" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointInterfaces.ModelInterfaces)" Category="CodeSchema_Namespace" Bounds="1031.52390698965,114.953223603784,239.726666666666,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointInterfaces‎.ModelInterfaces" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointInterfaces.RepositoryInterfaces)" Category="CodeSchema_Namespace" Bounds="1325.96525526479,116.469844818115,262.283333333333,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointInterfaces‎.RepositoryInterfaces" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointInterfaces.ViewInterfaces)" Category="CodeSchema_Namespace" Bounds="757.652569386311,114.993225434839,230.98,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointInterfaces‎.ViewInterfaces" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointModel.DataLists)" Category="CodeSchema_Namespace" Bounds="248.933814798991,208.908488818359,184.676666666667,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointModel‎.DataLists" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointModel.Models)" Category="CodeSchema_Namespace" Bounds="-1.51661271741951,211.941768805166,176.323333333333,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointModel‎.Models" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointPOCOs.POCOs)" Category="CodeSchema_Namespace" Bounds="-18.69890758051,-62.3357919587227,177.79,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointPOCOs‎.POCOs" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointPresenters.Bases)" Category="CodeSchema_Namespace" Bounds="622.375605278572,261.875317935488,187.506666666667,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointPresenters‎.Bases" UseManualLocation="True" />
+    <Node Id="(Namespace=CheckPointPresenters.Framework)" Category="CodeSchema_Namespace" Bounds="369.659069824219,264.908588818359,216.65,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointPresenters‎.Framework" UseManualLocation="True" />
+    <Node Id="(Namespace=DataAccess)" Category="CodeSchema_Namespace" Bounds="354.401978618218,122.860692872884,100.983333333333,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="DataAccess" UseManualLocation="True" />
+    <Node Id="@2" Category="CodeSchema_Solution" Bounds="483.81264364621,-121.710201246337,79.5166666666669,25.96" Label="CheckPoint" UseManualLocation="True" />
+    <Node Id="@3" Category="CodeSchema_Namespace" Bounds="-0.486304893283659,-3.30256652388371,154.616666666667,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPoint‎.Bootstrap" UseManualLocation="True" />
+    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="1078.10691098128,-109.115206695627,147.793333333333,25.96" Label="CheckPointInterfaces" UseManualLocation="True" />
+    <Node Id="@5" Category="CodeSchema_Namespace" Bounds="148.284516482546,131.715961053993,130.573333333333,25.96" Label="CheckPointModel" UseManualLocation="True" />
+    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="511.531294022864,146.842092500649,155.456666666667,26" Icon="Microsoft.VisualStudio.Namespace.Public" Label="CheckPointPresenters" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="@2" Target="(Namespace=CheckPoint.Views)" Category="Contains" Bounds="537.481041451981,-95.7501979064941,139.747581647461,130.403888774653" />
+    <Link Source="@2" Target="(Namespace=CheckPointDataTables.Tables)" Category="Contains" Bounds="177.370093139746,-108.637827947605,306.442572672428,0.711953582213113" />
+    <Link Source="@2" Target="(Namespace=CheckPointPOCOs.POCOs)" Category="Contains" Bounds="167.561161680078,-103.521655268156,316.251504132096,41.4305456393341" />
+    <Link Source="@2" Target="(Namespace=DataAccess)" Category="Contains" Bounds="415.130160370719,-95.7501979064941,102.14284440896,210.513703794635" />
+    <Link Source="@2" Target="@3" Category="Contains" Bounds="134.561942375007,-98.204044534316,349.300856237774,92.5953414273105" />
+    <Link Source="@2" Target="@4" Category="Contains" Bounds="563.329332478841,-107.933364718659,505.779408937188,10.1367885667115" />
+    <Link Source="@2" Target="@5" Category="Contains" Bounds="236.416705201118,-95.7501979064941,271.276700089531,221.769847456107" />
+    <Link Source="@2" Target="@6" Category="Contains" Bounds="526.745705021102,-95.7501979064941,57.1960626194052,233.84997599535" />
+    <Link Source="@3" Target="(Namespace=CheckPoint.Bootstrap.Registries)" Category="Contains" Bounds="77.0192382772298,22.6974334716797,0.502629550086553,33.1339394033724" />
+    <Link Source="@4" Target="(Namespace=CheckPointInterfaces.ModelInterfaces)" Category="Contains" Bounds="1151.44775177228,-83.1552043151856,0.520147491610942,189.108461963014" />
+    <Link Source="@4" Target="(Namespace=CheckPointInterfaces.RepositoryInterfaces)" Category="Contains" Bounds="1169.55746841868,-83.1552043151855,262.732018029287,194.274089412888" />
+    <Link Source="@4" Target="(Namespace=CheckPointInterfaces.ViewInterfaces)" Category="Contains" Bounds="896.33224699672,-83.1552043151856,239.521613112628,192.510241802919" />
+    <Link Source="@5" Target="(Namespace=CheckPointModel.DataLists)" Category="Contains" Bounds="235.038661612713,157.675960998535,77.0312804665949,46.5758463584945" />
+    <Link Source="@5" Target="(Namespace=CheckPointModel.Models)" Category="Contains" Bounds="114.814549654587,157.675960998535,78.2259514349048,49.4563644351903" />
+    <Link Source="@6" Target="(Namespace=CheckPointPresenters.Bases)" Category="Contains" Bounds="603.597207644696,172.842086791992,91.5267504461848,82.9878736337233" />
+    <Link Source="@6" Target="(Namespace=CheckPointPresenters.Framework)" Category="Contains" Bounds="496.409145874165,172.842086791992,80.5981898029652,85.516981173363" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Namespace" Label="Namespace" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="Namespaces" />
+    <Category Id="CodeSchema_Solution" Label="Solution" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" NavigationActionLabel="Solutions" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(VsSolutionUri)/CheckPoint.sln" />
+    <Alias n="2" Id="(@1)" />
+    <Alias n="3" Id="(Namespace=CheckPoint.Bootstrap)" />
+    <Alias n="4" Id="(Namespace=CheckPointInterfaces)" />
+    <Alias n="5" Id="(Namespace=CheckPointModel)" />
+    <Alias n="6" Id="(Namespace=CheckPointPresenters)" />
+  </IdentifierAliases>
+  <Paths>
+    <Path Id="VsSolutionUri" Value="file:///C:/Users/Bruker/Desktop/CheckPointFinal" />
+  </Paths>
+</DirectedGraph>

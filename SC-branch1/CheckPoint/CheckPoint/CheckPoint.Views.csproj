@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36A35C88-81EE-44B5-ACD2-D4CA66F7794B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CheckPoint.Views</RootNamespace>
+    <AssemblyName>CheckPoint.Views</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddSelectedAppointmentToCourseView.aspx" />
+    <Content Include="ApplyToAttendAppointmentView.aspx" />
+    <Content Include="ApplyToCourseView.aspx" />
+    <Content Include="AppointmentSelectorView.aspx" />
+    <Content Include="ChangesSavedCourseView.aspx" />
+    <Content Include="ChangesSavedView.aspx" />
+    <Content Include="CourseSelectorView.aspx" />
+    <Content Include="CreateAppointmentView.aspx" />
+    <Content Include="CreateCourseView.aspx" />
+    <Content Include="CreateReportView.aspx" />
+    <Content Include="CSS\homepage.css" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="CSS\jquery-ui.min.css" />
+    <Content Include="CSS\jquery-ui.structure.css" />
+    <Content Include="CSS\jquery-ui.theme.css" />
+    <Content Include="CSS\login.css" />
+    <Content Include="CSS\StyleMaster.css" />
+    <Content Include="DeleteCourseView.aspx" />
+    <Content Include="DownloadView.aspx" />
+    <Content Include="ErrorView.aspx" />
+    <Content Include="FindAppointmentsView.aspx" />
+    <Content Include="FindCoursesView.aspx" />
+    <Content Include="HomePageView.aspx" />
+    <Content Include="HostCoursesView.aspx" />
+    <Content Include="HostHomeView.aspx" />
+    <Content Include="HostUserInfoView.aspx" />
+    <Content Include="Images\activitiesicon.png" />
+    <Content Include="Images\AddAppointmentToCourseHeading1.svg" />
+    <Content Include="Images\addselectedappointmentbutton.png" />
+    <Content Include="Images\alterprofile.png" />
+    <Content Include="Images\ApplyToAttendAppointmentHeading1.svg" />
+    <Content Include="Images\ApplyToAttendCourseHeading1.svg" />
+    <Content Include="Images\AppointmentAddedMessage.svg" />
+    <Content Include="Images\AppointmentAddedMessage1.svg" />
+    <Content Include="Images\AppointmentDeletedMessage.svg" />
+    <Content Include="Images\AppointmentDeletedMessage1.svg" />
+    <Content Include="Images\AppointmentHeading.svg" />
+    <Content Include="Images\AppointmentHeading1.svg" />
+    <Content Include="Images\AppointmentsInCourse.svg" />
+    <Content Include="Images\AttendeesRequestingToBeAccepted.svg" />
+    <Content Include="Images\BeforeYouRegisterHeading1.svg" />
+    <Content Include="Images\bug.png" />
+    <Content Include="Images\buttonshade1.png" />
+    <Content Include="Images\calendar2.png" />
+    <Content Include="Images\calender-white.png" />
+    <Content Include="Images\checkpointlogo1.png" />
+    <Content Include="Images\cheesy-placeholder3.jpg" />
+    <Content Include="Images\CourseDeletedMessage.svg" />
+    <Content Include="Images\CourseDeletedMessage1.svg" />
+    <Content Include="Images\CourseManagerHeading.svg" />
+    <Content Include="Images\CourseManagerHeading1.svg" />
+    <Content Include="Images\CoursesHeading.svg" />
+    <Content Include="Images\CoursesHeading1.svg" />
+    <Content Include="Images\CourseUpdatedMessage.svg" />
+    <Content Include="Images\CourseUpdatedMessage1.svg" />
+    <Content Include="Images\CreateaCourseHeading1.svg" />
+    <Content Include="Images\CreateanAppointmentHeading1.svg" />
+    <Content Include="Images\createappointmentbutton.png" />
+    <Content Include="Images\createcoursebutton.png" />
+    <Content Include="Images\createreportbutton1.png" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\cross2.svg" />
+    <Content Include="Images\crowd.png" />
+    <Content Include="Images\DeleteAppointmentHeading1.svg" />
+    <Content Include="Images\DeleteCourseHeading1.svg" />
+    <Content Include="Images\downarrow2.png" />
+    <Content Include="Images\downarrow3.png" />
+    <Content Include="Images\DownloadIcon.png" />
+    <Content Include="Images\DownloadPage.svg" />
+    <Content Include="Images\findappointmentsicon.png" />
+    <Content Include="Images\front-page-filler.jpg" />
+    <Content Include="Images\greenshade1.png" />
+    <Content Include="Images\greenshade2.png" />
+    <Content Include="Images\greenshade6.png" />
+    <Content Include="Images\greenshade7.png" />
+    <Content Include="Images\headershade.png" />
+    <Content Include="Images\headershade3.png" />
+    <Content Include="Images\identify.png" />
+    <Content Include="Images\installer2.svg" />
+    <Content Include="Images\Installicon.png" />
+    <Content Include="Images\logo1.png" />
+    <Content Include="Images\logo4.png" />
+    <Content Include="Images\logouticon.png" />
+    <Content Include="Images\logo_white2.png" />
+    <Content Include="Images\ManageAppointmentAttendanceHeading.svg" />
+    <Content Include="Images\manageappointmentbutton.png" />
+    <Content Include="Images\ManageAppointmentsHeading1.svg" />
+    <Content Include="Images\manageattendancebutton1.png" />
+    <Content Include="Images\ManageAttendanceIcon.png" />
+    <Content Include="Images\ManageCourseAttendanceHeading.svg" />
+    <Content Include="Images\managecoursebutton.png" />
+    <Content Include="Images\managecoursesbutton1.png" />
+    <Content Include="Images\MyAppointmentsHeading.svg" />
+    <Content Include="Images\MyAppointmentsHeading1.svg" />
+    <Content Include="Images\MyCourses.png" />
+    <Content Include="Images\MyCoursesHeading.svg" />
+    <Content Include="Images\MyCoursesHeading1.svg" />
+    <Content Include="Images\pdf2.svg" />
+    <Content Include="Images\pdfsymbol.png" />
+    <Content Include="Images\PublicAppointmentsHeading.svg" />
+    <Content Include="Images\PublicAppointmentsHeading1.svg" />
+    <Content Include="Images\PublicCoursesHeading.svg" />
+    <Content Include="Images\PublicCoursesHeading1.svg" />
+    <Content Include="Images\RegisterAccountHeading1.svg" />
+    <Content Include="Images\RegisterAsHostHeading1.svg" />
+    <Content Include="Images\RegisterAsUserHeading1.svg" />
+    <Content Include="Images\SelectAppointmentHeading.svg" />
+    <Content Include="Images\SelectAppointmentHeading1.svg" />
+    <Content Include="Images\SelectCourseHeading.svg" />
+    <Content Include="Images\SelectCourseHeading1.svg" />
+    <Content Include="Images\small_logo.png" />
+    <Content Include="Images\small_logo2.png" />
+    <Content Include="Images\tick3.svg" />
+    <Content Include="Images\uparrow2.png" />
+    <Content Include="Images\uparrow3.png" />
+    <Content Include="Images\UpdateAppointmentHeading1.svg" />
+    <Content Include="Images\UpdateCourseHeading1.svg" />
+    <Content Include="Images\vector_smiley.svg" />
+    <Content Include="Images\viewappointmentsbutton.png" />
+    <Content Include="Images\viewcoursesbutton.png" />
+    <Content Include="Images\white-check.png" />
+    <Content Include="Images\WorkInProgress1.png" />
+    <Content Include="index.aspx" />
+    <Content Include="InvalidNavigationView.aspx" />
+    <Content Include="InviteUserView.aspx" />
+    <Content Include="ManageAppointmentAttendanceView.aspx" />
+    <Content Include="ManageCourseAttendanceView.aspx" />
+    <Content Include="ManageSingleAppointmentView.aspx" />
+    <Content Include="RegisterUserView.aspx" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\LoginView.js" />
+    <Content Include="LoginView.aspx" />
+    <Content Include="ManageAttendanceView.aspx" />
+    <Content Include="ManageCourseView.aspx" />
+    <Content Include="Config\packages.config" />
+    <Content Include="Config\ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\package.json" />
+    <Content Include="HostMaster.Master" />
+    <Content Include="UpdateCourseView.aspx" />
+    <Content Include="UserControls\AppointmentCreator.ascx" />
+    <Content Include="UserControls\AppointmentGridView.ascx" />
+    <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
+    <Content Include="UserControls\AttendeeGridView.ascx" />
+    <Content Include="UserControls\AttendeeGridViewHeader.ascx" />
+    <Content Include="UserControls\CourseCreator.ascx" />
+    <Content Include="UserControls\CourseGridView.ascx" />
+    <Content Include="UserControls\CourseGridViewHeader.ascx" />
+    <Content Include="UserControls\DatePicker.ascx" />
+    <Content Include="UserControls\ManageCourseAppGrid.ascx" />
+    <Content Include="UserControls\ManageCourseAppGridHeader.ascx" />
+    <Content Include="UserControls\ManageCourseGrid.ascx" />
+    <Content Include="UserControls\ManageCourseHeader.ascx" />
+    <Content Include="UserControls\MessagePanel.ascx" />
+    <Content Include="UserControls\NavigationMessage.ascx" />
+    <Content Include="UserControls\SmallMessagePanel.ascx" />
+    <Content Include="UserControls\UserAppointmentGridView.ascx" />
+    <Content Include="UserControls\UserAppointmentGridViewHeader.ascx" />
+    <Content Include="UserControls\UserCourseGridView.ascx" />
+    <Content Include="UserControls\UserCourseGridViewHeader.ascx" />
+    <Content Include="UserCoursesView.aspx" />
+    <Content Include="UserMaster.Master" />
+    <Content Include="WorkInProgressHostView.aspx" />
+    <Content Include="WorkInProgressUserView.aspx" />
+    <Content Include="Downloadable\Host\CheckPoint Host User Manual.pdf" />
+    <Content Include="Downloadable\Host\ReadingTerminalSetup.zip" />
+    <Content Include="Downloadable\User\CheckPoint UserManual.pdf" />
+    <None Include="Properties\PublishProfiles\checkpoint - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\checkpoint - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RegisterHostView.aspx" />
+    <Content Include="UpdateProfileView.aspx" />
+    <Content Include="UserHomeView.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddSelectedAppointmentToCourseView.aspx.cs">
+      <DependentUpon>AddSelectedAppointmentToCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSelectedAppointmentToCourseView.aspx.designer.cs">
+      <DependentUpon>AddSelectedAppointmentToCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyToAttendAppointmentView.aspx.cs">
+      <DependentUpon>ApplyToAttendAppointmentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplyToAttendAppointmentView.aspx.designer.cs">
+      <DependentUpon>ApplyToAttendAppointmentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyToCourseView.aspx.cs">
+      <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplyToCourseView.aspx.designer.cs">
+      <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentSelectorView.aspx.cs">
+      <DependentUpon>AppointmentSelectorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointmentSelectorView.aspx.designer.cs">
+      <DependentUpon>AppointmentSelectorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesSavedCourseView.aspx.cs">
+      <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangesSavedCourseView.aspx.designer.cs">
+      <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesSavedView.aspx.cs">
+      <DependentUpon>ChangesSavedView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangesSavedView.aspx.designer.cs">
+      <DependentUpon>ChangesSavedView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseSelectorView.aspx.cs">
+      <DependentUpon>CourseSelectorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseSelectorView.aspx.designer.cs">
+      <DependentUpon>CourseSelectorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAppointmentView.aspx.cs">
+      <DependentUpon>CreateAppointmentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAppointmentView.aspx.designer.cs">
+      <DependentUpon>CreateAppointmentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCourseView.aspx.cs">
+      <DependentUpon>CreateCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateCourseView.aspx.designer.cs">
+      <DependentUpon>CreateCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateReportView.aspx.cs">
+      <DependentUpon>CreateReportView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateReportView.aspx.designer.cs">
+      <DependentUpon>CreateReportView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCourseView.aspx.cs">
+      <DependentUpon>DeleteCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteCourseView.aspx.designer.cs">
+      <DependentUpon>DeleteCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadView.aspx.cs">
+      <DependentUpon>DownloadView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownloadView.aspx.designer.cs">
+      <DependentUpon>DownloadView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorView.aspx.cs">
+      <DependentUpon>ErrorView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorView.aspx.designer.cs">
+      <DependentUpon>ErrorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindAppointmentsView.aspx.cs">
+      <DependentUpon>FindAppointmentsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindAppointmentsView.aspx.designer.cs">
+      <DependentUpon>FindAppointmentsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindCoursesView.aspx.cs">
+      <DependentUpon>FindCoursesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindCoursesView.aspx.designer.cs">
+      <DependentUpon>FindCoursesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePageView.aspx.cs">
+      <DependentUpon>HomePageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePageView.aspx.designer.cs">
+      <DependentUpon>HomePageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostCoursesView.aspx.cs">
+      <DependentUpon>HostCoursesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostCoursesView.aspx.designer.cs">
+      <DependentUpon>HostCoursesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostHomeView.aspx.cs">
+      <DependentUpon>HostHomeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostHomeView.aspx.designer.cs">
+      <DependentUpon>HostHomeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HostMaster.Master.cs">
+      <DependentUpon>HostMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostMaster.Master.designer.cs">
+      <DependentUpon>HostMaster.Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostUserInfoView.aspx.cs">
+      <DependentUpon>HostUserInfoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HostUserInfoView.aspx.designer.cs">
+      <DependentUpon>HostUserInfoView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvalidNavigationView.aspx.cs">
+      <DependentUpon>InvalidNavigationView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvalidNavigationView.aspx.designer.cs">
+      <DependentUpon>InvalidNavigationView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InviteUserView.aspx.cs">
+      <DependentUpon>InviteUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InviteUserView.aspx.designer.cs">
+      <DependentUpon>InviteUserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginView.aspx.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginView.aspx.designer.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAppointmentAttendanceView.aspx.cs">
+      <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageAppointmentAttendanceView.aspx.designer.cs">
+      <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAttendanceView.aspx.cs">
+      <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageAttendanceView.aspx.designer.cs">
+      <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCourseAttendanceView.aspx.cs">
+      <DependentUpon>ManageCourseAttendanceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCourseAttendanceView.aspx.designer.cs">
+      <DependentUpon>ManageCourseAttendanceView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCourseView.aspx.cs">
+      <DependentUpon>ManageCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCourseView.aspx.designer.cs">
+      <DependentUpon>ManageCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSingleAppointmentView.aspx.cs">
+      <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageSingleAppointmentView.aspx.designer.cs">
+      <DependentUpon>ManageSingleAppointmentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterUserView.aspx.cs">
+      <DependentUpon>RegisterUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterUserView.aspx.designer.cs">
+      <DependentUpon>RegisterUserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterHostView.aspx.cs">
+      <DependentUpon>RegisterHostView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterHostView.aspx.designer.cs">
+      <DependentUpon>RegisterHostView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCourseView.aspx.cs">
+      <DependentUpon>UpdateCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCourseView.aspx.designer.cs">
+      <DependentUpon>UpdateCourseView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProfileView.aspx.cs">
+      <DependentUpon>UpdateProfileView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProfileView.aspx.designer.cs">
+      <DependentUpon>UpdateProfileView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppointmentCreator.ascx.cs">
+      <DependentUpon>AppointmentCreator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppointmentCreator.ascx.designer.cs">
+      <DependentUpon>AppointmentCreator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppointmentGridView.ascx.cs">
+      <DependentUpon>AppointmentGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppointmentGridView.ascx.designer.cs">
+      <DependentUpon>AppointmentGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppointmentGridViewHeader.ascx.cs">
+      <DependentUpon>AppointmentGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppointmentGridViewHeader.ascx.designer.cs">
+      <DependentUpon>AppointmentGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridView.ascx.cs">
+      <DependentUpon>AttendeeGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridView.ascx.designer.cs">
+      <DependentUpon>AttendeeGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridViewHeader.ascx.cs">
+      <DependentUpon>AttendeeGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendeeGridViewHeader.ascx.designer.cs">
+      <DependentUpon>AttendeeGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CourseCreator.ascx.cs">
+      <DependentUpon>CourseCreator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CourseCreator.ascx.designer.cs">
+      <DependentUpon>CourseCreator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CourseGridView.ascx.cs">
+      <DependentUpon>CourseGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CourseGridView.ascx.designer.cs">
+      <DependentUpon>CourseGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CourseGridViewHeader.ascx.cs">
+      <DependentUpon>CourseGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CourseGridViewHeader.ascx.designer.cs">
+      <DependentUpon>CourseGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DatePicker.ascx.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DatePicker.ascx.designer.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGrid.ascx.cs">
+      <DependentUpon>ManageCourseAppGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGrid.ascx.designer.cs">
+      <DependentUpon>ManageCourseAppGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGridHeader.ascx.cs">
+      <DependentUpon>ManageCourseAppGridHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseAppGridHeader.ascx.designer.cs">
+      <DependentUpon>ManageCourseAppGridHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseGrid.ascx.cs">
+      <DependentUpon>ManageCourseGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseGrid.ascx.designer.cs">
+      <DependentUpon>ManageCourseGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseHeader.ascx.cs">
+      <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCourseHeader.ascx.designer.cs">
+      <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessagePanel.ascx.cs">
+      <DependentUpon>MessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessagePanel.ascx.designer.cs">
+      <DependentUpon>MessagePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationMessage.ascx.cs">
+      <DependentUpon>NavigationMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationMessage.ascx.designer.cs">
+      <DependentUpon>NavigationMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallMessagePanel.ascx.cs">
+      <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallMessagePanel.ascx.designer.cs">
+      <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridView.ascx.cs">
+      <DependentUpon>UserAppointmentGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridView.ascx.designer.cs">
+      <DependentUpon>UserAppointmentGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridViewHeader.ascx.cs">
+      <DependentUpon>UserAppointmentGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserAppointmentGridViewHeader.ascx.designer.cs">
+      <DependentUpon>UserAppointmentGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridView.ascx.cs">
+      <DependentUpon>UserCourseGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridView.ascx.designer.cs">
+      <DependentUpon>UserCourseGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridViewHeader.ascx.cs">
+      <DependentUpon>UserCourseGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserCourseGridViewHeader.ascx.designer.cs">
+      <DependentUpon>UserCourseGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCoursesView.aspx.cs">
+      <DependentUpon>UserCoursesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCoursesView.aspx.designer.cs">
+      <DependentUpon>UserCoursesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserHomeView.aspx.cs">
+      <DependentUpon>UserHomeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserHomeView.aspx.designer.cs">
+      <DependentUpon>UserHomeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserMaster.Master.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMaster.Master.designer.cs">
+      <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WorkInProgressHostView.aspx.cs">
+      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkInProgressHostView.aspx.designer.cs">
+      <DependentUpon>WorkInProgressHostView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkInProgressUserView.aspx.cs">
+      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkInProgressUserView.aspx.designer.cs">
+      <DependentUpon>WorkInProgressUserView.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckPoint.Bootstrap\CheckPoint.Bootstrap.csproj">
+      <Project>{5932511b-00b0-49d4-9ddd-eb5764820668}</Project>
+      <Name>CheckPoint.Bootstrap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CheckPoint.Core\CheckPointPresenters.csproj">
+      <Project>{ed11a003-9452-432c-99b2-cd10056eace1}</Project>
+      <Name>CheckPointPresenters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\CheckPointCommon.csproj">
+      <Project>{da5c83db-1e7a-4c12-961e-6c73373506bc}</Project>
+      <Name>CheckPointCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12570</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12570/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
