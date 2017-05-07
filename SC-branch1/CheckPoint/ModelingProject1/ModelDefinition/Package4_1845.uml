@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a73e5427-7c1c-43a4-90c5-1d418688fbef"
+  name="RepositoryInterfaces‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="e3d601fa-b84f-4d4f-b411-0117ab6adb6a"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPoint.Bootstrap%2Fbin%2FDebug%2FCheckPoint.Bootstrap.dll Namespace%3DCheckPointInterfaces.RepositoryInterfaces Type%3DCheckPointInterfaces.RepositoryInterfaces.IUnitOfWork"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="15831b4e-5cdc-4538-b04a-95d446b54589"
+        name="CheckPointInterfaces.RepositoryInterfaces.IUnitOfWork"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="22d89dae-11ca-45d5-bbd4-7978c1a69720"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPoint.Bootstrap%2Fbin%2FDebug%2FCheckPoint.Bootstrap.dll Type%3DCheckPointInterfaces.RepositoryInterfaces.IUnitOfWork"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5c8d34a1-bcdf-4acf-a22c-2140b6a97a92"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="097aa53b-0c7f-45d7-8981-fe0f1f0bffca">
+                <propertyInstance
+                  Id="2c3f41c4-27a5-412e-bae1-13e8f78dd568"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5fdff231-a2eb-4a03-b927-987dd678c1ec">
+                <propertyInstance
+                  Id="a6365bb7-1ada-4136-beb8-fa6f75a0f5f1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="575bf64c-228d-45d7-8e16-69875bc9a745">
+                <propertyInstance
+                  Id="88fba876-dee9-493b-a761-78a0b79a331b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d3f82d93-df11-4dc8-82a9-366c248045eb">
+                <propertyInstance
+                  Id="697ebdf2-cf95-454f-8cb0-c580f31b5224"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="226bb994-4f3d-4414-b291-91e767d40528">
+                <propertyInstance
+                  Id="d37fd0de-fc03-4249-b93a-004abdb223dc"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

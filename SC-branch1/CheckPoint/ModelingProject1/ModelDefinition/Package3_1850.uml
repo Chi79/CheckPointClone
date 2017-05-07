@@ -1,0 +1,2672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="36d7b1da-1cac-49fe-83b5-1546e1058546"
+  name="ViewInterfaces"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="ace3a568-747e-4945-bc7a-bae449b3ec69"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCheckPointInterfaces.ViewInterfaces"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="120ca96c-3078-4449-8dfa-669092a28bcc"
+        name="IAppointmentView"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="57d8df67-ca29-4f4b-94e4-3f64d5bfeef3"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a1dc7b54-4fa7-40a8-a7ee-33292424de59"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="405322df-f947-4e90-9fc7-84e595c85c15">
+                <propertyInstance
+                  Id="fb571dce-e7a5-47da-be05-16c002f7a7fb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="00250feb-901d-4655-a1df-d31dd408fa6e">
+                <propertyInstance
+                  Id="7afe11ad-ff20-411b-8854-4cc1eb9495fc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e22ad126-fa31-40c0-8a94-ca373c1af352">
+                <propertyInstance
+                  Id="8bc78fd7-4ad2-49e9-846b-00cdc202d8f8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5f570d76-47e2-4f2d-b361-3c76009abe66">
+                <propertyInstance
+                  Id="17036d08-3482-4f9b-93be-543c955a37bb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="23914bf3-3d36-4ff1-aa5b-fbd4fc9eba53"
+            isDerived="false"
+            sourceEndRoleName="IAppointmentView"
+            targetEndRoleName="SessionList"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c66a5e31-672b-416c-9aeb-63690c0e80d4"
+              LastKnownName="List&lt;Appointment‎&gt;"
+              LastKnownLocation="Package4_1826.uml" />
+            <description>Property SessionList references type List&lt;Appointment‎&gt;.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8b0ffaf3-25a5-4044-8508-e09eff67136a"
+                  name="IAppointmentView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8f08db58-5c1d-4536-9bbb-59a74a5aabf1"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b51fcd8a-c933-47fd-bf2f-34ee2c54186b"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a2363248-7948-49b6-969d-742a9dcc62c9"
+                  name="SessionList"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bae8f2d5-96da-4636-8545-5b554b427986"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ae95db76-f57f-470e-96b6-95bb2b6507d9"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributes>
+          <property
+            Id="52ce66e2-a9c2-493b-8954-eab1881f400f"
+            name="AppointmentName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="931dcc17-dc1d-41bb-b7a9-5c2038439159"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DAppointmentName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a270118c-1b21-462b-ab33-154f5b52af7e"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="847b0b76-400f-4fb8-a8bd-b5134ac56613">
+                    <propertyInstance
+                      Id="941a4e0a-b24c-43a8-b42f-814497310571"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91ac65c7-27af-4257-b1c2-636cf6e0de2f">
+                    <propertyInstance
+                      Id="6836f6a0-add8-4254-987f-01d7eaa278a8"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cae89d30-235d-4df3-8002-8da86c4b5d91">
+                    <propertyInstance
+                      Id="88e9be1b-e6cf-4d25-a619-35fadb1d5f15"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="065f3080-010a-4c2e-8d2b-54fe58ffacc2">
+                    <propertyInstance
+                      Id="5bbcbf76-7fa3-4e5d-b7f8-4a1564286404"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3c7dd4c-b097-4ad0-aa93-da6bd5c833cc">
+                    <propertyInstance
+                      Id="61f9328e-98ec-4e14-a0ad-fedfaac91bad"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95bf1663-5c7f-40bb-9e45-a81a1ef5375d">
+                    <propertyInstance
+                      Id="3ebcf682-0b8a-44b1-8dee-a06d176ae9d3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21b2baab-44f3-453b-96e6-79694f3d8a4e">
+                    <propertyInstance
+                      Id="3f17ca72-4867-4323-b9b1-f78d8bcf6cec"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d7dcd5b1-7c98-417f-8830-279f672d432f"
+            name="Priority"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c850218e-8a62-4418-9a6c-f99a4755ff56"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DPriority"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6fd6149a-b34a-4ce7-9504-adff748bcdfb"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1fadee29-cd6e-4b49-ac3f-1a784c1ab1a4">
+                    <propertyInstance
+                      Id="d4883458-19e3-401c-b4b6-de723e72a380"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6d464c2-e769-46ca-8aff-5ddd79bfa7ff">
+                    <propertyInstance
+                      Id="adec737c-b00a-4596-8c6d-8cb7be5582a6"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2b6acab-79d1-438d-9a7f-57ce2ef97bfd">
+                    <propertyInstance
+                      Id="c20ed702-a159-452b-a101-58dfd31859d0"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1273bf6-c4ce-4972-b58e-b944a6b4008d">
+                    <propertyInstance
+                      Id="2af4efdb-2e69-42a9-97a9-063dc920da9e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7646bf90-6694-40e3-97c3-b7793914b436">
+                    <propertyInstance
+                      Id="fba5ad91-f75a-4180-8687-2aede96e5970"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b1c6785-94c2-4c66-a729-ee4cd2aaffa0">
+                    <propertyInstance
+                      Id="7cc5b7bb-d1de-424e-83c5-f20185dd162c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9865bace-0bc1-49c3-96e5-421ace35b28d">
+                    <propertyInstance
+                      Id="c9b9a0c2-e9f0-46c7-b210-732ea43d1560"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ee70da36-cef8-4212-9bd9-f4b0ba2ded1a"
+            name="StartDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="41a28298-05b1-4a71-adce-e7c6328e37dc"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DStartDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d56bd2f2-12b2-4c5a-bcdc-49ef70b822bf"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50be291f-ec32-45d8-ad6e-d3fb2a30c537">
+                    <propertyInstance
+                      Id="0c72ef88-f340-4375-9cee-43bc083bd229"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c87fbcb-0244-4a61-90ff-f377a48b1116">
+                    <propertyInstance
+                      Id="e85409b2-01b8-43cf-95cb-2c947c4e9921"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0795e571-3161-46b7-b053-e483c9a5f7ab">
+                    <propertyInstance
+                      Id="b60b0740-2b18-444f-a16c-6c61ad8e3df7"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae36affe-47b7-427c-8fdf-4bd6b6f690bd">
+                    <propertyInstance
+                      Id="c38e90fd-c3c4-4948-a6c1-604ba21c8a2f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8c18758-6c11-4a57-87f6-26432bc5f059">
+                    <propertyInstance
+                      Id="7546a5dc-7128-4b4f-9364-0ddd74ebd1f0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a928669-baac-4612-8c48-1d4cde547e93">
+                    <propertyInstance
+                      Id="37ca1136-7b33-42e5-9956-842c06026027"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae9dfb7b-7977-499b-9ae4-020037d09232">
+                    <propertyInstance
+                      Id="01b15cb8-e120-43e3-bc54-d635c6c3561d"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ce4e5dcb-9e80-47b5-ad2a-dfae6a8b65d5"
+            name="DueDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6c813d5f-4ef9-4d89-8364-96d35d7c6371"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DDueDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6ba7c243-bd23-469b-b199-88c088f70d37"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44104e6f-6c40-4f0b-980b-113fdbff40d0">
+                    <propertyInstance
+                      Id="20eae76a-e62a-4bfb-8e6e-47d7d5deeed3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92bbbb85-f6b9-45db-af4b-9cf263de80da">
+                    <propertyInstance
+                      Id="0b65e1db-99c5-4fa6-9c0c-2a58d8e7fdf0"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f4f9078-6964-4ffd-a51c-73b6d68889f7">
+                    <propertyInstance
+                      Id="2b2619b1-ee46-4800-9b12-f9ca45c856a2"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a6eb68e-87d5-47e1-864c-152b65d9bad9">
+                    <propertyInstance
+                      Id="766a6f3a-1601-4c67-ba98-a73bfc25f6cb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b0a29a3-5727-4b29-a7ae-f4aa5b8b8ba4">
+                    <propertyInstance
+                      Id="c1016d29-a5b1-48b5-be1d-dc8fd32fc1bd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cd3a8e9-c09d-4c46-bbfc-4b48fb60635d">
+                    <propertyInstance
+                      Id="2a69d0a5-c032-4f5f-bde3-8f00b29e3d1a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bdbd06e-9541-41ce-952e-9c75331055ea">
+                    <propertyInstance
+                      Id="18947609-4001-4fb1-bcd7-bbaadebb1b0c"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="92287dea-93c8-43c4-8fb1-5d488f0f8798"
+            name="CompletionDate"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="af5802a9-121c-42bd-8b03-a9452ed0dfae"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DCompletionDate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7a287624-447d-46c6-a43d-2a6eab28303d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="701df378-e9d8-43a2-b98c-51076d543909">
+                    <propertyInstance
+                      Id="2c086a07-e877-47f4-95a2-62c0bf1de9d5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6748961d-193c-4683-841c-1d20777c2e46">
+                    <propertyInstance
+                      Id="63d9681e-f798-4600-8209-3cbaac3688c0"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="adc77dd3-9453-48db-b787-3e8e149d3ac2">
+                    <propertyInstance
+                      Id="f91b1361-3d1e-4d5a-a5cb-004cd951ca35"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17f17e4c-85c7-4452-9377-1678a664bb35">
+                    <propertyInstance
+                      Id="462be2a6-6e0c-4cbb-8a70-52468fa1bb8a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2320389c-b195-4f6d-a379-19dbd86d7f86">
+                    <propertyInstance
+                      Id="fde52f5d-340f-4014-9280-0666a6d4e751"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a1ab5f01-cc78-4300-b6ed-914f6c264c4c">
+                    <propertyInstance
+                      Id="f520ad26-7cd5-4359-ad64-0a3057a2cd20"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a24bd6c4-56eb-43e9-9703-77fc7acfe73b">
+                    <propertyInstance
+                      Id="fc452f20-c64b-41b3-a6f9-89302a9d93ea"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6dec68fa-3416-449c-b9e8-768b2a1c056f"
+            name="Completed"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="bfa9495f-d126-44cd-a849-4c5b839bac65"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DCompleted"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9575b471-db44-4d12-b8c4-f9cd667f3811"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a5b7c56-ee56-4cd4-a1f1-778b2c6ff400">
+                    <propertyInstance
+                      Id="87448d29-2658-4962-9f42-60d93c6cbac2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66ec357f-00c2-4add-b531-f092e8249f49">
+                    <propertyInstance
+                      Id="1bd95c14-4b99-4e05-9cd2-f952f0d49aff"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09ebc6f0-4df9-4573-8f7a-ac5122b4732a">
+                    <propertyInstance
+                      Id="480a47fd-df4d-4e19-b468-64c7c0b1192f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9cde115f-0fc4-4841-a9dd-4c46389a3798">
+                    <propertyInstance
+                      Id="206d272b-e600-4360-bbd4-0e3f4d4d80d4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1a9d6c3-285b-4be5-9b8e-e67ba6fb29ab">
+                    <propertyInstance
+                      Id="aef526e9-bd78-4268-92e1-0a73deeff158"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a822f3db-050f-4de6-9f10-a5e0efa7bfc6">
+                    <propertyInstance
+                      Id="da99c701-bb83-48b2-a2a2-39a3c4914f90"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8750fdb9-178b-420c-a043-557ae6ea67e9">
+                    <propertyInstance
+                      Id="ff3f7845-999e-4ecb-8b19-475b651bda0d"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="65938a94-0f9a-4652-b1ff-33b4dfbeaa02"
+            name="NextButtonVisible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="0508bef2-6246-4f8a-a02e-6658c1061b78"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DNextButtonVisible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="093a8cd6-6cba-44e5-9299-d8dedb58f33f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b15a1041-67d8-48cb-9f1e-d95b644e2851">
+                    <propertyInstance
+                      Id="0d04129b-015b-4431-abcf-1b9425c5f82d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d702901-8e62-4457-a51a-795bd2953586">
+                    <propertyInstance
+                      Id="7126d587-bad2-41ba-a0a1-03ae1e3d8396"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25887286-c27a-4156-bd7e-2439c15d4ea6">
+                    <propertyInstance
+                      Id="be608648-efda-4017-9f4d-f622983a56dd"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="355e0379-26c9-43cc-9ce6-ef1308fb986e">
+                    <propertyInstance
+                      Id="7f52f862-d452-4726-a763-aee3e404633c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4304200b-2735-4ac3-849f-de47836cd05d">
+                    <propertyInstance
+                      Id="1dd96b1e-b9c8-44de-b815-7b561d78c361"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="205212d3-8bb2-4752-8b52-905304470e9b">
+                    <propertyInstance
+                      Id="fdc13e01-e646-4053-83f7-1ccad592c29c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6bd59f09-ddc9-42d8-ad99-b35c88fc6087">
+                    <propertyInstance
+                      Id="68256b08-d322-4abe-8e06-a5edbe8d4665"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c561987f-c648-4416-82fb-8180c39454a5"
+            name="PreviousButtonVisible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="36d0042b-81d2-4452-a507-fadd280695b0"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DPreviousButtonVisible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f916a0ed-6ede-4bd5-a8fd-6409a2505c29"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38e243cb-da75-4ddf-89c8-d215932aefb8">
+                    <propertyInstance
+                      Id="77653996-af49-4f50-9097-5acb4ac3a497"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06de892b-4560-453c-893f-2a255c333ed3">
+                    <propertyInstance
+                      Id="5bbb8dc2-b4ad-43fc-9ac9-b796ea9c15eb"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27a93490-3bc9-44b0-bf8e-1678ed1b3057">
+                    <propertyInstance
+                      Id="15d0032a-6fdd-4f14-a6c7-58880bb1fb20"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4d30571-f1ba-4bfb-8b0e-79657270dd1a">
+                    <propertyInstance
+                      Id="24c5fb99-2377-475f-9698-00ee029ae2a4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0940ce9-5d3e-41c5-a2a6-b3a4419a2826">
+                    <propertyInstance
+                      Id="b9585ad6-8d91-4067-89ca-56c3f1f90853"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a2d782e-0bc3-4fa1-a3d5-3fbb70581b4c">
+                    <propertyInstance
+                      Id="967ddaf8-6d7a-4777-8ac1-7ff0f2d6db62"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0babb151-4425-45bf-b66e-50be95cf656a">
+                    <propertyInstance
+                      Id="a1850bd1-2549-49f5-b576-f84e4f8d5f55"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5b68eb9f-d8bb-449e-9f82-ef3a2b1c33fa"
+            name="SaveButtonVisible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="12621d29-b2d3-44e8-9cd3-76a33280a171"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DSaveButtonVisible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4d5e4e67-7da8-48cf-97b7-b23585671782"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1868f2d7-30ef-428d-8873-a0837aab03e2">
+                    <propertyInstance
+                      Id="3d324def-2654-4c07-9d4d-a424a7d3a8f5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c91fc264-49f2-4010-9f44-2ba2a3ab49de">
+                    <propertyInstance
+                      Id="307622d0-5c11-4c3e-96c7-4a3d967f9bc7"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3cda70a2-336d-41d5-af01-8828866cbcfa">
+                    <propertyInstance
+                      Id="99d63e30-a6dc-49e3-bd22-2f7495728afb"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33a7d49c-2b8c-4117-be47-bafa029ad360">
+                    <propertyInstance
+                      Id="6b8fdf20-8836-4062-9ebc-20597c4b25b3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e5b4ac2-825b-4fbe-b19a-6b9c4a334bb6">
+                    <propertyInstance
+                      Id="ae778c77-952b-48fa-82a4-48e4b0e7564d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c831b827-6377-4532-a195-b02cfa4b1e31">
+                    <propertyInstance
+                      Id="72bec122-2cc5-4f19-883d-5796f93cfe6a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f0ee490-5a0f-440a-9061-749c18bf2e76">
+                    <propertyInstance
+                      Id="514eb8dc-baa8-48ff-af31-de3a8929104d"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c148812a-dc0c-4d5d-865a-be551a96021d"
+            name="NewButtonVisible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="be2a8eb4-01bd-49d2-b7cf-68c2f26be436"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DNewButtonVisible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a0784110-82a1-4558-9341-385f46572f23"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6502d1e-5fc9-4003-85d7-90df35ebddc6">
+                    <propertyInstance
+                      Id="1ac399fd-ffa0-4b1f-a17f-5d3feb00a623"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb2764e7-122a-4213-a08a-f15392f89213">
+                    <propertyInstance
+                      Id="e1a54096-7e7a-47ad-bf47-f778e2a48016"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cca48864-5cb4-4f66-b34d-b809ee2a8888">
+                    <propertyInstance
+                      Id="93825f7d-0346-4c68-86e4-80b2af91b7e7"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5a49bce-97fd-41f3-8f67-f0ba628d48c3">
+                    <propertyInstance
+                      Id="f9688944-6e83-4d70-ae19-deadf8aa9c7d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="58110b9a-84fc-4b5e-a59c-6a806b1b7358">
+                    <propertyInstance
+                      Id="d144e82e-4de4-4072-b4ed-59bd47b81b0e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="424100e2-3adb-467e-a068-8a1f7b6471f4">
+                    <propertyInstance
+                      Id="861d384b-d184-4275-bfdd-7a7196179cba"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="baa42cd5-6bd0-4523-a9da-224e6039f3f0">
+                    <propertyInstance
+                      Id="e521c111-bc7c-4753-b9ed-8145a124806b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a6a3ca85-587c-4f57-bdb6-de70fa0c3d4a"
+            name="YesButtonVisible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b55b3ea3-9179-4dbe-92d1-8b5e11106428"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DYesButtonVisible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="38b56bc8-ba19-449c-8ac3-02dc7cb2328d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02cea4e3-b88e-4210-af14-83c7aefb5a91">
+                    <propertyInstance
+                      Id="33cb0902-6ea1-4eb2-a6dd-ced36356fbcd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ffb78e0-a8ca-4bed-98a8-56bd331412e1">
+                    <propertyInstance
+                      Id="fb9f9efb-07a8-45c3-a4b0-6fe75013c0ad"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5ba2e8d-ac15-471e-acf3-7d8961e9cc41">
+                    <propertyInstance
+                      Id="15ef041e-0caf-49fe-b5fb-b1f728ba15d9"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa0dd2e5-8a20-42c9-9192-d76bd19fa4aa">
+                    <propertyInstance
+                      Id="c0deb88e-9355-4b8b-9cd2-25ecd960530c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="abc8b8d6-225e-4eaf-8e5d-1a845c2ecca1">
+                    <propertyInstance
+                      Id="2f49f05b-0726-4aab-87e7-47764ef4d1c7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ace3128-2ca5-40c1-acbf-a068b1888699">
+                    <propertyInstance
+                      Id="4f32c6e9-3023-4e12-9350-1d10332fad8d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1067f40a-b8ad-445c-a5ee-60bf7bbd47b7">
+                    <propertyInstance
+                      Id="5b136bfc-5644-4b3c-b69f-e38d151a71de"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="641693a4-a678-4615-91f3-806ad198bbf8"
+            name="NoButtonVisible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="caa265c9-7772-4f70-918a-7cc794436fcf"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DNoButtonVisible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5d7b0ecc-8943-4872-91d3-d0fa85ca37a7"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="976c1a77-e7d1-47f8-b6de-8140ea5168aa">
+                    <propertyInstance
+                      Id="8321d202-df1e-4968-8469-dee7df3f8fae"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9baa46a1-e722-41d3-bea3-29f7544c7961">
+                    <propertyInstance
+                      Id="57657a1a-868e-48e0-8500-74b03ee7878e"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5e91056-ce2e-4a6a-bfae-674426e4b4d2">
+                    <propertyInstance
+                      Id="a8ee6944-625c-4530-bb8e-ffc37a860887"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0392bcd-4e24-4299-a358-a3d833158d08">
+                    <propertyInstance
+                      Id="7bd7f9cf-b826-4767-83f2-9239bebcd915"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d68e3696-3c3a-4174-be47-9be9c76d27dc">
+                    <propertyInstance
+                      Id="9944eac5-a7ef-4b6c-b83b-102d880a521a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cbfd0147-3e8c-4f03-8015-70db9de28c27">
+                    <propertyInstance
+                      Id="25be74cf-54c6-4cad-903d-22c5fc2238c4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11580be9-15d8-4c2a-9389-319ce5dc3997">
+                    <propertyInstance
+                      Id="4b16af45-13f5-4a87-9290-0c85f3262bd5"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="15c43c41-1c5a-498b-bd63-e16f54916ff1"
+            name="StatusChange"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a760d205-c5f0-4956-a723-c3581cdf814d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DStatusChange"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4acd2077-fa74-4ace-a2c5-2de5fa1d3c5e"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4685b336-f7f3-4ef9-a18f-3ad14bc5c0a6">
+                    <propertyInstance
+                      Id="803db306-0d00-4d33-ac42-40f3ffcc1fa9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1cf6d5e-9133-4558-9382-d8078c07b4e5">
+                    <propertyInstance
+                      Id="c3a3118c-f669-43c1-853e-b694a435da7b"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb0504f2-2597-4ea1-b0ec-01b0383926f4">
+                    <propertyInstance
+                      Id="26f06f9f-f3a3-4ed2-ac98-aff937c645db"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91148a0b-bb4b-43a9-b1fd-0f46c9250dfb">
+                    <propertyInstance
+                      Id="4c5cf57f-a797-40a0-804a-f75706db628a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88bc4243-236d-4e3e-9407-202b575fd418">
+                    <propertyInstance
+                      Id="1dd2633f-54b0-444f-b968-00a6ba04d833"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6589ba16-f9d3-4189-9988-fc0155ba9cac">
+                    <propertyInstance
+                      Id="85650860-d550-4094-8c24-3142f5af61da"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0240f6c-6a23-4217-b79b-c5f1c619dfb0">
+                    <propertyInstance
+                      Id="6fbbbad0-33d1-4b29-a85d-068cb6891f19"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="582432b0-9455-43a9-8f6b-03c43e4ff370"
+            name="isDirty"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dc215ea1-b915-41c1-9d62-64e4ac7f0bd1"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DisDirty"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="262a9a11-b225-4902-8bed-12ece0d129aa"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b693566-9848-4720-9876-a84f29201607">
+                    <propertyInstance
+                      Id="0d5f38eb-3bec-425a-a1d2-6a4abfdab9c7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9bb338a2-d374-4726-8b4d-e90f08421779">
+                    <propertyInstance
+                      Id="b5313a4b-0ac4-43fd-bb17-0942398e9c72"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d73616b-1cce-4684-84a0-61bf9ec396fe">
+                    <propertyInstance
+                      Id="34c1846d-ae80-4381-a650-fa03d43dbc03"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8dc28892-7b67-40aa-9ce6-4f551233ba82">
+                    <propertyInstance
+                      Id="503ca8f3-6723-4213-b028-31882b6e11b2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2da8c10-df92-4ce0-a3cd-b48e870cdb8d">
+                    <propertyInstance
+                      Id="c77adf94-154d-455f-85d6-a977917ea79d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b746a90e-e681-4664-87a3-a98150413bce">
+                    <propertyInstance
+                      Id="b60274ff-6cfa-47f8-8391-633aa7ce082a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0604f17f-1ff8-41f8-b2a5-d1fa8babddcd">
+                    <propertyInstance
+                      Id="e3bb96c1-12c6-4462-ac70-d64c37acd150"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d6b1c728-c31d-41aa-8242-39c250c87c02"
+            name="SessionList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d4a30dad-1a86-4517-9df6-5587c5dbfab9"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DSessionList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3ecef7c2-1619-49be-84c2-6749f02bd97b"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6cf56a9-c26b-48ef-81e7-dc0439d8b996">
+                    <propertyInstance
+                      Id="25397957-50d1-435c-ac55-559408e0ef92"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a5da13a7-bd8a-4002-ac8d-cbed4bb6a2f6">
+                    <propertyInstance
+                      Id="1c83d32b-64fc-4e08-abaa-3bf742ece9ee"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac87f294-4a8d-4b87-91b2-ecec4fecfea6">
+                    <propertyInstance
+                      Id="3032bb93-2301-4df9-88f6-6a1218b6633e"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e47ab2c4-3d40-48d3-9788-4f51a7bc5604">
+                    <propertyInstance
+                      Id="28134ff3-809d-4b44-a446-5de91de33bd1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aeb46e19-6177-4d5e-84bc-8650446b0afa">
+                    <propertyInstance
+                      Id="1e4396ff-3923-4386-95aa-f029c14c0937"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8965eea-f61c-46d5-a819-e7830200a2c5">
+                    <propertyInstance
+                      Id="b865ca2c-d1dc-4081-b330-96126ac25406"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dff9628a-d897-4987-aa6c-874f5effe592">
+                    <propertyInstance
+                      Id="0ef81f03-a1b8-45ab-8273-40067f3c698d"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="c66a5e31-672b-416c-9aeb-63690c0e80d4"
+                LastKnownName="List&lt;Appointment‎&gt;"
+                LastKnownLocation="Package4_1826.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6f8f7bee-803a-434b-9aea-7d959b75c6af"
+            name="LastButtonClicked"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f5686efd-a52c-4855-9365-513dfda861f3"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DLastButtonClicked"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="652b3f66-ca4a-4172-b55e-3d8af1a6aa36"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9c751b3-b05b-44af-93ef-9d5f750d9f92">
+                    <propertyInstance
+                      Id="0e9eb199-1533-400f-8bdf-7b66caa38e98"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82fd18ac-4be3-4c1e-b0c5-01cd82ac183e">
+                    <propertyInstance
+                      Id="a1ffa683-e145-45b2-a202-b0e13002af3c"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf7f2c13-2a8d-483d-89de-3250e6fc8b18">
+                    <propertyInstance
+                      Id="24b3cac0-a455-4a8e-a0bb-57936f5bac37"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2ea19de-17c6-40d3-8d8b-63053a3ed107">
+                    <propertyInstance
+                      Id="27a8b021-cc3e-46b1-a0d5-f48a09aa9240"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aaf9acd8-6dc0-4911-bb97-212817f5df31">
+                    <propertyInstance
+                      Id="ef9e7757-ed86-494d-9b5c-732521ec77d6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4e692fb-d227-403a-b39a-ccd68b6a9578">
+                    <propertyInstance
+                      Id="5e7a42e2-3855-4f68-8c46-22279dec3804"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4dd2e937-cef7-4fd0-9453-0a062678373e">
+                    <propertyInstance
+                      Id="79bfcbd6-2ab8-4ecc-8d23-ec8ee5ec270c"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5d8647c5-856f-40a2-8dce-9639f660c539"
+            name="LastIndex"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e5382866-127e-4547-ad2e-b3bee6a1a29e"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DLastIndex"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d90817af-c744-49c5-a58e-3ec86e4f93de"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="024341c5-2d2a-4f0e-8fe2-a090057d0e81">
+                    <propertyInstance
+                      Id="fd003b7f-3b41-45c6-8598-b58c7e4fa8e6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c84d3017-c6b8-49ec-88eb-b9886a7de012">
+                    <propertyInstance
+                      Id="c8f4dd6c-97be-49b7-bdb7-2dabc33bb48a"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="353175a4-09e5-4702-870a-793884ca2730">
+                    <propertyInstance
+                      Id="f971533b-caf8-42ae-a938-68a6ebc10eda"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e20ac58d-fdba-4e3d-acd9-159265b767a8">
+                    <propertyInstance
+                      Id="375ce1b9-f78c-459a-a02e-6f66acd440eb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39a1b926-cece-4f70-adb9-fa4b2ccfb454">
+                    <propertyInstance
+                      Id="45bc3f3c-19ef-4b38-82d6-c58523703d24"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c2eb628-443e-4f3c-9d63-5ade9c67a5ad">
+                    <propertyInstance
+                      Id="b3c28f76-4648-48c9-892c-5ef9cc79d47d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b48c2839-89d4-4575-951b-3cd8d1d6f8a2">
+                    <propertyInstance
+                      Id="c4c556d7-05ce-40c1-983e-e0dd6b5e9861"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fbfbdac0-a814-49cf-82cb-f7f55e713ad1"
+            name="SaveAppointment"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a83cee60-f47f-4c79-a6c1-3fc43e894516"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DSaveAppointment"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a417df42-4da2-4a65-af93-eee04ba35620"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ec0a140-30fa-409f-a0ee-a9049526dc67">
+                    <propertyInstance
+                      Id="b9afc056-6f92-4c47-8606-07c7d047f23b"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1373c6d1-7486-4ad6-9adf-16302779bd67">
+                    <propertyInstance
+                      Id="14d320cc-7f2d-4470-a3d6-18e5289bb5ac"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da7099bd-d84d-468f-bd95-01e12e8e1c39">
+                    <propertyInstance
+                      Id="ffffa610-ecf8-4b35-850d-aa23d306a1cf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09e5d4a9-7e93-44f7-9077-7b6085142180">
+                    <propertyInstance
+                      Id="5212b346-9a0e-491a-8578-9824305eca08"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4207bac4-9a3e-4894-ac0f-7319e5feba31">
+                    <propertyInstance
+                      Id="565f4ddd-f454-4e10-ab4d-307fc3fe0aa1"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fa9035a4-1a10-43c6-9557-748a4379176d"
+                LastKnownName="EventHandler&lt;EventArgs‎&gt;"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8b8ce6db-d27d-412e-825a-aa4d386f6411"
+            name="NewAppointment"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="36df4b1d-ba0e-4977-bb01-09e39cc7020d"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DNewAppointment"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4af52a30-fdb2-4a29-a73c-cbc37b604c40"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07c35f8a-8132-403a-83ec-b425710b7b17">
+                    <propertyInstance
+                      Id="a7691293-589a-4a9b-8abb-b27ff0b57ba4"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d24b7d5-ce40-4efd-8589-715dd2bf2610">
+                    <propertyInstance
+                      Id="e3d994e6-a69e-4a98-9cdf-d3a4a69240c2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e37ea966-df9a-4ce8-9772-29e9a31c4ed5">
+                    <propertyInstance
+                      Id="c5f4d744-122b-467a-b8aa-8bbd65d223c5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="418ce657-5dbc-457a-b62b-44b14938df19">
+                    <propertyInstance
+                      Id="c27cd466-e574-4562-b651-9c498a4f84eb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="691f6d12-d9e8-4057-a2b1-ff65e500b1f5">
+                    <propertyInstance
+                      Id="bcfc0a31-07e4-4f35-ab32-93d18ca8a7fd"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fa9035a4-1a10-43c6-9557-748a4379176d"
+                LastKnownName="EventHandler&lt;EventArgs‎&gt;"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="02745237-57e4-4b35-9ea9-4976e5ad5104"
+            name="PreviousAppointment"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f0f8d93d-6819-4ee4-ab5c-2c8d5d310fe6"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DPreviousAppointment"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="752a618c-3120-480b-b84a-ecbeb7b4c978"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ec657a9-1471-4880-8458-8560b9c0953c">
+                    <propertyInstance
+                      Id="ed07208d-4ee2-4deb-8aaa-6321ee4d9482"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be35afd1-3ae9-415e-b64c-0fbec8f713ae">
+                    <propertyInstance
+                      Id="81607eb2-6a2d-4118-a2dd-bf2cc63597b9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f233bf31-6aa6-47b4-aa7e-54a9fe016345">
+                    <propertyInstance
+                      Id="fe3a97be-43aa-4c16-9e1c-26f82a77ccae"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf68af25-569d-4f83-98eb-20aedb87c336">
+                    <propertyInstance
+                      Id="97957ed0-5736-4b55-b275-39dfc0cb783e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="972a0aa2-7c74-4fe0-ba3a-e51d094be245">
+                    <propertyInstance
+                      Id="9f954b43-2b45-4a75-b113-638350f04350"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fa9035a4-1a10-43c6-9557-748a4379176d"
+                LastKnownName="EventHandler&lt;EventArgs‎&gt;"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b69134d8-bb4a-4a7b-b3e5-ab32b0e6385a"
+            name="NextAppointment"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="514dd707-2160-4ca2-97fe-e0c788b8fe95"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DNextAppointment"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="90b680f0-db21-47dc-9241-6c489e34b039"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc4278c3-7dc6-414b-b04b-8609b0b381f8">
+                    <propertyInstance
+                      Id="f7853d81-29e4-475d-a5fa-1809ac94f1ee"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf473781-242e-4c28-9ad7-3e090efa88da">
+                    <propertyInstance
+                      Id="e105084e-ff2a-4a96-9d7e-70213a6c9db7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d83235e3-1aad-4a37-8078-e1541596d479">
+                    <propertyInstance
+                      Id="35bdfb41-a969-4a49-b7b7-a62597995b86"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf6c7539-e97b-4d52-a533-db97ea0dcbe8">
+                    <propertyInstance
+                      Id="25e04c4a-45cd-4d10-89ce-4da98559995d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc85f72b-dcbc-41b8-99f4-2b3ef8e1e2ba">
+                    <propertyInstance
+                      Id="493ad31a-3523-43f1-be6d-f29b2b864bc3"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fa9035a4-1a10-43c6-9557-748a4379176d"
+                LastKnownName="EventHandler&lt;EventArgs‎&gt;"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f3682a67-26c6-4a91-9bdb-d6eac66816ec"
+            name="YesButtonClick"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d76ec947-4344-4a27-b549-f838d9ed7417"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DYesButtonClick"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cf9d80dd-2122-4b8c-9a68-211fdebdb468"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd1674da-8c55-45a7-b3fe-293fa909e3b0">
+                    <propertyInstance
+                      Id="7695736b-9469-4ee3-8244-d12053d20d8f"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4219b870-c06e-4300-97d0-27ea32b14b3a">
+                    <propertyInstance
+                      Id="67d9ef28-2ce8-41de-bb52-b3631a471454"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a6689d8-b536-4d10-a4a5-07b4062dee9f">
+                    <propertyInstance
+                      Id="3d9e22de-2390-4a9a-8030-cfae9829ba05"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6318d251-b2e5-4795-9376-33541226b4cb">
+                    <propertyInstance
+                      Id="974e45db-aa9a-45b1-a2e2-468110a15e00"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd5239e1-3bae-4af7-b23e-29fca4e114d9">
+                    <propertyInstance
+                      Id="5ef90e41-8be5-441c-b84d-065712bb08c4"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fa9035a4-1a10-43c6-9557-748a4379176d"
+                LastKnownName="EventHandler&lt;EventArgs‎&gt;"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5b2682d3-447f-4c0f-9b71-7f4c6c15f85b"
+            name="NoButtonClick"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="53bbe8e7-86b5-4384-976b-6d9c281decfa"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DNoButtonClick"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d0ab41c2-6ce0-4809-9aa8-ecc2bb3a148a"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69b6858d-0909-4dc7-a29e-65a45f9ce011">
+                    <propertyInstance
+                      Id="53000e49-e8b3-4782-9b3d-9fa405b76b62"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fd0959a-be75-4e6a-af57-addece5fecce">
+                    <propertyInstance
+                      Id="a4338d8d-710b-4099-afab-bff6f2e065fc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1b8ffa3-e511-4392-a1d6-9508067b1a99">
+                    <propertyInstance
+                      Id="9345e715-0009-40b8-9e52-4ca20485da63"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2ea3fb4-9a9c-4b47-8428-dfbf09a17ee5">
+                    <propertyInstance
+                      Id="a6f185cc-fd8e-42a9-b9fa-b57e0cbc2d5d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7576463-deca-45f4-953f-e176dd4aed09">
+                    <propertyInstance
+                      Id="5d53ddd1-c202-4425-b5f3-abd031a0620e"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fa9035a4-1a10-43c6-9557-748a4379176d"
+                LastKnownName="EventHandler&lt;EventArgs‎&gt;"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="11d6ad7b-d948-44e7-a874-fe96f0fa0acb"
+            name="ShowGrid"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="da238a4d-f669-4440-b2e7-4e32aaad5a63"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DShowGrid"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6e54b15c-a4ea-4768-a91c-cea60a141fee"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a19e89b7-ab2d-412e-921c-2df4c52e5210">
+                    <propertyInstance
+                      Id="723dd76e-f67d-4c1a-aec3-8bf0098fd79d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a39488e2-e6ce-4678-aafd-c4c34a99ccbc">
+                    <propertyInstance
+                      Id="aeeefd05-8009-4724-98ad-9a2503664a71"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e653767f-15e8-45a8-b960-0b2186bee7cd">
+                    <propertyInstance
+                      Id="65714103-5ca3-40cb-a0c1-80d0542b7d66"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e242afc7-f168-4c5a-b855-0eca24f787db">
+                    <propertyInstance
+                      Id="1f1f88b1-c909-4aa2-860e-6ba48957d847"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69e1785f-bf8f-43d0-ae0e-e11a3deca3d0">
+                    <propertyInstance
+                      Id="ef74aae5-72b7-4772-b581-a71bd93b8ae1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62071075-472e-4004-a56f-a3d033b16de5">
+                    <propertyInstance
+                      Id="a27fbadd-33d0-4191-97b4-91ebe93a8d43"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="cd972ef8-1229-4d28-a5ff-8e76438a1f28"
+            name="AddToList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="40ab57ae-5b7c-4d11-8233-2f21ec37d98f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3D(Name%3DAddToList OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2d05940a-84d7-4bda-8e47-b92432c12861"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb3eb97a-b3e6-43fa-9f23-e935b44b5a24">
+                    <propertyInstance
+                      Id="ad31b28d-e178-4f92-a4ed-787bbd7a6819"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="367ff27b-04de-49b5-9ba6-6fc964dc53c3">
+                    <propertyInstance
+                      Id="2a2fb7f0-14ce-43de-8c2c-b5f48f86ebdf"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c64778dd-d894-4466-ab9a-a3fa2814fd8b">
+                    <propertyInstance
+                      Id="5a95e30e-4276-4d68-a99a-60b9aef9ee60"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c70459af-a2e1-4a34-868d-b124441b95db">
+                    <propertyInstance
+                      Id="ae6183fe-df0b-437e-931a-22e2d9525e06"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="708ead78-7bf5-4d5b-a597-68b35c16e521">
+                    <propertyInstance
+                      Id="892404d1-e95d-456b-98bf-ac26e7d5a89a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89ac0a94-6e47-4aff-8b12-afe1bc007c05">
+                    <propertyInstance
+                      Id="4dad6bca-e015-4f14-a1a0-c4b13022fe68"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="51cebce3-66a8-40de-8978-8c5b1b13832c"
+                  name="appointment"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="bc195ff2-180a-4548-a726-0b102412ca90"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3D(Name%3DAddToList OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FCheckPointPOCOs%2Fbin%2FDebug%2FCheckPointPOCOs.dll Namespace%3DCheckPointPOCOs.POCOs Type%3DAppointment)]) ParameterIdentifier%3Dappointment"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f07e5df2-e1e0-47f4-93ad-52054b8be569"
+                      LastKnownName="Appointment"
+                      LastKnownLocation="Package1_1850.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="88059f68-d3ab-4b42-b617-0d845356282d"
+            name="InitiateSession"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a77dc72c-a86a-4651-bb6b-d62d20ad38e8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DInitiateSession"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="50eee4c1-81cf-4383-bc06-2605e7017d9d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3d5e53e-e92d-4255-8d04-07bf88ab00ea">
+                    <propertyInstance
+                      Id="6ca47e5b-b371-41a5-ab70-b9a06000f117"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="407d9b0a-1518-4840-a7bd-8ab801b27007">
+                    <propertyInstance
+                      Id="fe43bc06-0b8d-4cac-9fa2-cbbba5bb707b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8f0bd38-f897-4c61-af2a-c0a8ca5c7329">
+                    <propertyInstance
+                      Id="7b53fb58-009d-4d81-8bba-c322affbaea1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5770a657-f414-49b4-8592-fd23eb2d773f">
+                    <propertyInstance
+                      Id="cb899676-f0a8-4d6b-ad23-455e445a7e4d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="441a6577-60a5-46b8-9a7b-f69be6dcb3d7">
+                    <propertyInstance
+                      Id="23c509db-e3f0-4ff8-983a-33afe9d90be2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="106edd59-e939-48b0-94f5-0efa5d329bce">
+                    <propertyInstance
+                      Id="d3a0f0fa-9229-434a-9ab6-2cc8dc80662e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="be5c92b3-5257-4827-82cc-90f2fd299be5"
+            name="UpdateListWithSession"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9ede13c4-c1c7-4216-a534-53cbab80cf6f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3DUpdateListWithSession"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b8c53e25-fb81-408d-85a0-5348d6d1d446"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffa16ed2-8883-4388-8efb-ba3aca46f6ef">
+                    <propertyInstance
+                      Id="c1417896-2fa4-48df-bfb6-2450c7d7b8c0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb03cdae-b4b3-4f0f-8f7d-cdc70d15fff9">
+                    <propertyInstance
+                      Id="6235c02c-447d-4d34-9163-73f79e102ace"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43f77ae1-99ac-4841-bcfd-d709344b940e">
+                    <propertyInstance
+                      Id="73f6865d-5d2f-4a78-8aef-44263d018839"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74db262b-0130-4c2c-80ef-6909c9cb3f5d">
+                    <propertyInstance
+                      Id="b6600542-3057-4570-9fc3-01e4a057fdd6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75bc67c5-69b0-437b-8e8e-fe7962a8fe61">
+                    <propertyInstance
+                      Id="40d644f6-a2a3-4876-ad10-4c9f2cc5cadb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a807110c-5048-4ed7-aea4-db04f4876d95">
+                    <propertyInstance
+                      Id="c549dd85-e2b7-4ea2-9776-320ac8ab15eb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="3366e4d9-6a31-4904-afac-4990dfc90860"
+            name="BindGrid"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="266f4a7d-9461-4405-a61a-2a375ad1e4da"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3D(Name%3DBindGrid OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DIList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1d89ce82-6069-4ff7-89c0-fe0e7d5b3f90"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a201612-eaa5-4a23-b80c-1eed9f0a881c">
+                    <propertyInstance
+                      Id="664acbd4-1a72-47ef-b549-6a75eeb201fb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0652ce6-6d96-4aee-b96e-84e5c8b0bffa">
+                    <propertyInstance
+                      Id="2e55dfe8-698d-4a97-baf8-81c829dcfa5f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e9febd6-e2f6-46f1-87bb-f0a4b1e48e7c">
+                    <propertyInstance
+                      Id="62528150-a7f8-4c23-9050-7fe60257d897"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc743b9d-a4e9-4c48-a64a-4aa4fedee08b">
+                    <propertyInstance
+                      Id="5d4d7ecc-c43c-4025-8b3d-73328f84365d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49372567-18bc-44a8-a410-debd5287739c">
+                    <propertyInstance
+                      Id="175a93e0-801e-49f2-bb1b-a46e77cbd97c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e985307-67f7-4bf7-bade-78dca81dcd36">
+                    <propertyInstance
+                      Id="987af799-f557-4284-8b4b-8b478cbcb5bf"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b568e743-07f0-40d5-a44d-3a7789428009"
+                  name="dataSource"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2288b1df-c7df-434b-a3e2-5d3878943988"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIAppointmentView Member%3D(Name%3DBindGrid OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2Fmscorlib.dll&quot; Namespace%3DSystem.Collections.Generic Type%3D(Name%3DIList GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.2%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]))]) ParameterIdentifier%3DdataSource"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="f793f85c-7706-411a-9571-2e2deb44b4a0"
+                      LastKnownName="IList&lt;String‎&gt;"
+                      LastKnownLocation="Package4_1826.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="2dd445e7-72f5-4406-9d40-56361c200243"
+        name="IHomeView"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d810b14c-80a6-4811-9ac0-f07703a6f70e"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIHomeView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6def5086-7e7f-471c-b680-b3aee0561535"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="22fd2ef2-00b1-46a5-aa40-bcc7b83b004c">
+                <propertyInstance
+                  Id="21dc6c1e-336f-4743-9dd6-6817e225d9e3"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="83115fc2-cc59-4a81-8da3-5ac39584ce3e">
+                <propertyInstance
+                  Id="277bba3f-5892-4ff3-bd91-7e27b03c1496"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="83c86050-795d-48f7-94c7-1c7302b07a8a">
+                <propertyInstance
+                  Id="1c019aa1-8685-4e9b-8734-4528eea13477"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="24944167-ec78-41c4-8aca-0e5857444619">
+                <propertyInstance
+                  Id="6acac5fc-35e6-4afd-ab9a-0280973787ca"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributes>
+          <property
+            Id="b00bec45-a6f1-4dad-87aa-f176fb187823"
+            name="Heading"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="536edfcc-a3a5-4d0d-8199-d608556276d3"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIHomeView Member%3DHeading"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="95c5d8ce-26a9-47d5-b16f-078053ff6d2f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e6a2b6ce-9644-4e4a-b51d-d6fd226e42aa">
+                    <propertyInstance
+                      Id="40aa0e4e-44fb-4110-989f-98c8a0f18704"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6bb96fa-32e5-4b0d-b526-4a07a36adead">
+                    <propertyInstance
+                      Id="5cacfa95-916b-4a9f-a4fc-012e60be2ca0"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf5ac2d9-8f92-48e6-8114-4d3754ed1f56">
+                    <propertyInstance
+                      Id="f478e601-4f59-4cd5-bddc-e583a2cf2a63"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cdb5a809-67fc-481c-8c41-6e0d3d005364">
+                    <propertyInstance
+                      Id="8021cc26-5938-4914-8248-b78f4a7af2f5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d0720fb-ae93-49c4-93e0-a5b9faf82ad6">
+                    <propertyInstance
+                      Id="5b8b6de4-d0e5-4ab2-85a7-f4ef7c9d6810"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e70805a6-23ce-4918-a0a3-6e02a59e03eb">
+                    <propertyInstance
+                      Id="5556b7f0-0abb-40d1-8609-11ce88b125ed"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="042ecc8b-aa86-45f8-8326-dfeb098e508b">
+                    <propertyInstance
+                      Id="57020cea-bbd0-40dc-aaef-b08fe48cdb6e"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8e857a65-e3af-4393-9ad9-d79935c1f9ed"
+            name="Message"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a945b923-d689-4955-a102-6e4372f1567b"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIHomeView Member%3DMessage"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5b545bd1-23c1-4164-8eec-9e6cf3501586"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f31038f7-a51f-4a7d-b6a9-d837fdc00dce">
+                    <propertyInstance
+                      Id="cea632c1-6a4b-488e-8356-70c7d7ae6f8e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ba4dc7a-e86a-4a89-993b-aaf58401f9cb">
+                    <propertyInstance
+                      Id="86897e7d-bced-4956-acbc-5ffbae501c12"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d711cc5-3646-4654-bb2a-2e984958ad92">
+                    <propertyInstance
+                      Id="753426d4-d311-47ac-90f0-5366224e6dea"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="446cf92b-3328-4b61-94c0-4cada8cd7ea3">
+                    <propertyInstance
+                      Id="6ffb03a5-95cf-4280-94fb-b5b4e3d3f1ca"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="640ecf47-5c7d-4722-85e6-98547edd29b0">
+                    <propertyInstance
+                      Id="2e187ac9-c36b-481f-aa72-b1adc3b30ea3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7dba5086-c008-47a7-b9d5-fc97ebbc19b8">
+                    <propertyInstance
+                      Id="2cbe6441-322c-45dc-b40b-ac18e3cfc348"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c71a66f-a005-40fc-b5ba-829734f55b90">
+                    <propertyInstance
+                      Id="2ffdf425-a9d6-4c32-8635-28d8447a96bf"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="8a7d5fff-9c8b-4cde-bdca-b5ab200627a0"
+        name="IView"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="66c6f449-f158-4665-b88b-aa6de9eec977"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="62837c77-5bd0-4491-be38-c0c79e0dea0a"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f8387713-1ecc-46be-9bd2-fa3e0f9906e8">
+                <propertyInstance
+                  Id="5188dd7c-0dcf-40df-8b5f-960fb65cabd8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="53d8f1b9-590e-4b23-a3fa-b05ff59548ef">
+                <propertyInstance
+                  Id="9ddab1dc-f3da-4b4d-ad15-4b0d83efeb8d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0aaeeaf8-5218-429e-b2cb-367510668080">
+                <propertyInstance
+                  Id="93ad7998-69fc-4c63-bb52-19434d3e1df2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6d90dc5a-755c-4d06-8c9d-1bbe1ba7dd55">
+                <propertyInstance
+                  Id="32c7dad2-01de-48ef-9a67-3276238f7b09"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="d0a37d08-501b-49ae-87fd-f7ddc37b73be"
+            isDerived="false"
+            sourceEndRoleName="IView"
+            targetEndRoleName="Uri"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0d3087d1-de0b-4450-a23e-152b2f8fb468"
+              LastKnownName="Uri"
+              LastKnownLocation="Package2_1826.uml" />
+            <description>Property Uri references type Uri.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="69a31923-dd00-407d-8028-597761378df2"
+                  name="IView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1034b38c-66b5-4190-b054-45ec745ca102"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7138491f-577d-4399-b721-18ee3e68443c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="49df0500-1125-4e21-9c8f-c16fd4084c8b"
+                  name="Uri"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f007d34d-834c-494f-bc3a-a4857676a335"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c56ff230-0e1b-4720-a4e2-623456217faa"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributes>
+          <property
+            Id="075b36e1-527d-40b4-ad20-6f5f58255b97"
+            name="Uri"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="493ef0c0-511e-4caa-b8cd-7859b891a642"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBruker%2FDesktop%2FCheckPointFinal%2FInterfaces%2Fbin%2FDebug%2FCheckPointInterfaces.dll Namespace%3DCheckPointInterfaces.ViewInterfaces Type%3DIView Member%3DUri"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5d993c90-ed11-428b-b8e9-4ff5940b9c54"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4737afcf-678b-4721-ac7d-1440488e102a">
+                    <propertyInstance
+                      Id="4ed51beb-075e-4912-8480-06020754bf39"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9de87702-24fa-4b1e-84cd-6312de9ebb22">
+                    <propertyInstance
+                      Id="6200d434-2740-4db5-b2e3-f455664ac62d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c219195d-1f12-4faa-92c1-c70f59e394f7">
+                    <propertyInstance
+                      Id="84411d79-8c90-4190-a10b-866d0580c7ce"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2bfb625e-d7bc-4bb2-86f0-be1e3585964f">
+                    <propertyInstance
+                      Id="f3bfa8d2-ec37-4c1a-99c6-782077339618"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="631b87b7-101b-4cfd-b9c5-f9c869c4c834">
+                    <propertyInstance
+                      Id="7e7c7a18-f0e2-45c9-a997-597f90fc1780"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8beca8d-aeae-49c4-9d57-2666977b066a">
+                    <propertyInstance
+                      Id="e403a92a-48b2-4c3a-88f3-aa7301a23af0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c973c392-79d3-481f-819f-3ee67c364797">
+                    <propertyInstance
+                      Id="a35126bc-539e-461f-ad9e-a70febc11fa1"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="0d3087d1-de0b-4450-a23e-152b2f8fb468"
+                LastKnownName="Uri"
+                LastKnownLocation="Package2_1826.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

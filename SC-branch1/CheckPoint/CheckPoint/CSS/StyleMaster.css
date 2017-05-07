@@ -1,0 +1,263 @@
+﻿* {
+    box-sizing: border-box;
+}
+body {
+ background-color:rgb(51,51,51);
+
+    position:relative;
+    left:0;
+    top:0;
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+
+#form1 #main-sidebar{   
+   
+    background: rgb(24,77,16); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient( rgb(24,77,16),rgb(100,150,50),rgb(24,77,16)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(24,77,16),rgb(100,150,50),rgb(24,77,16)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(24,77,16),rgb(100,150,50),rgb(24,77,16)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(24,77,16),rgb(100,150,50),rgb(24,77,16)); /* Standard syntax */
+    border-right:outset;
+    border-top:outset;
+    border-color:black;
+   
+    position:fixed;   
+    padding:0%;
+    margin:0;
+   
+    height:100%;
+    z-index:100;
+    /*width:10%;*/
+       width: 4%;
+    /*border-bottom-right-radius:10%;
+    border-top-right-radius:10%;*/
+}
+/*.main-sidebar-showhidebutton{
+
+    float:right;
+    width:100%;    
+    height:5%;
+    border:none;
+    background-color:transparent;
+    color:white;
+    padding:0;
+    margin-bottom:5%;
+
+}*/
+/*.main-sidebar-showhidebutton:hover{
+       background-color:rgb(70,70,70);
+}*/
+/*.main-sidebar-top-logo{
+    
+    max-width: 100%;
+    height: auto;
+    visibility:hidden;
+}*/
+/*.main-sidebar-top-logo-big{
+    max-width: 100%;
+    height: auto;
+}*/
+/*.main-sidebar-top-logo-small{*/
+    /*visibility:hidden;  
+    border:none;
+    margin:0;
+    padding:0%;
+    width:100%;
+    height: auto;
+    visibility:visible;
+       
+}*/
+
+.main-sidebar-menu-list{
+position:absolute;
+top:30%;
+list-style:none;
+width:100%;
+padding:0%;
+margin:0;
+}
+.main-sidebar-menu-list-item{
+ width:100%;
+/*border-bottom:solid white  1px;*/
+
+border:none;
+padding:0%;
+margin:0;
+
+
+}
+/*.main-sidebar-menu-list-item .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 0px 0;
+    font-size:5%;
+    border-radius: 6px;     
+    position: absolute;
+    z-index: 110;
+}
+.main-sidebar-menu-list-item:hover{
+    background-color:rgb(0,150,0)
+}*/
+
+.main-sidebar-menu-list-item-link{
+    display:block;     
+    /*font-size:medium;*/
+    text-decoration:none;
+    /*color:white;*/
+    padding-top:10%;
+    padding-bottom:10%;
+    margin:0;
+
+    line-height: 3; 
+    font-size: 0;
+    color: transparent;
+ 
+
+}
+/*.main-sidebar-menu-list-item-link:hover{
+   
+    background-color:rgb(0,150,0)
+
+}*/
+
+.main-sidebar-menu-list-item-icon{
+    border-radius: 20%;
+    border:solid black;
+    margin:0;
+    padding:0%; 
+    width:90%;
+    height: auto;
+    vertical-align:middle;
+    line-height:3;
+   
+ }
+.main-sidebar-menu-list-item-icon:hover {
+    width:100%;
+    }
+
+/*@media only screen and (max-width: 1600px) {*/
+/*#form1 #main-sidebar {      
+       position:fixed;
+       background-color:rgb(0,90,0);   
+       padding: 0;
+       margin: 0;
+       border: none;
+       height: 100%;
+       z-index: 100;
+       width: 3%;
+    }*/
+
+
+/*.main-sidebar-top-logo-big{
+    visibility:hidden;
+    max-width: 100%;
+    height: auto;
+}*/
+/*.main-sidebar-top-logo-small{
+    visibility:visible;
+    max-width: 100%;
+    height: auto;
+}*/
+
+/*.main-sidebar-menu-list-item {
+border:none;
+padding:0%;
+margin:0;
+
+}*/
+.main-sidebar-menu-list-item-link{
+     
+    line-height: 3; 
+    font-size: 0;
+    color: transparent;
+
+}
+.main-sidebar-menu-list-item:hover .tooltiptext{
+    visibility:visible;
+}
+#form1 #Main {
+        width: 94%;
+        float:right;
+    }
+/*}*/
+/*@media only screen and (min-width: 2500px) {
+#form1 #main-sidebar{      
+        float: left;
+    background-color:rgb(0,90,0);
+        padding: 0;
+        margin: 0;
+        border: none;
+        height: 100%;
+        z-index: 100;
+        width: 8%;
+    }
+
+#form1 #Main{
+        width: 90%;
+        float:right;
+    }
+}
+@media only screen and (min-width: 3000px) {
+#form1 #main-sidebar{      
+        float: left;
+    background-color:rgb(0,90,0);
+        padding: 0;
+        margin: 0;
+        border: none;
+        height: 100%;
+        z-index: 100;
+        width: 6%;
+    }
+
+#form1 #Main {
+        width: 92%;
+        float:right;
+    }
+}*/
+
+
+/*#form1 #Main #MainContentPlaceHolder{
+    float:right;
+    width:90%;
+    top:0;
+    height:auto;
+    max-width:97%;
+    padding:0;
+    margin:0;
+    border:none;
+
+    
+}*/
+
+
+.tooltip {
+    position: relative;
+    
+}
+
+
+.tooltip .tooltiptext {
+    display:none;  
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border-color:white;
+    top: 25%;
+    left: 120%; 
+
+    position: absolute;
+    z-index: 200;
+}
+
+.tooltip:hover .tooltiptext {
+    display:inline-block;
+}
