@@ -3,7 +3,7 @@
 <style type="text/css">
 
 .container1{
-    position: relative;
+    position: absolute;
     width: 46%;
     height: 317px;
     margin-top: 11%;
@@ -14,11 +14,12 @@
     border-width: 20px;
     border-style: solid;
     border-radius: 36px;
-    z-index: 1;
+    z-index: 30;
 }
 .Message{
     display: block;
     font-family: sans-serif;
+    text-align: center;
     color: white;
     font-size: larger;
     margin: 0 auto;
@@ -26,8 +27,15 @@
 }
 .MessagePanelButton{
     position: relative;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.PanelButton{  
+
+    margin: 32px;
+
     color: white;
-    margin-left: 134px;
     border-radius: 5px;
     border-width: 0px;
     border-color: darkgreen;
@@ -40,15 +48,15 @@
     background-image: url(/Images/buttonshade1.png);
 
 }
+
 .MessagePanelContinueButton{
     position: relative;
     color: white;
-    margin-left: 210px;
-    margin-bottom: 0px;
+    display: block;
+    margin: 0 auto;
     border-radius: 5px;
     border-width: 0px;
     border-color: darkgreen;
-    margin-right: 8%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     height: 40px;
@@ -57,7 +65,7 @@
     font-weight: 600;
     background-image: url(/Images/buttonshade1.png);
  }
-.MessagePanelButton:hover {
+.PanelButton:hover {
         border-radius: 0px;
         -webkit-animation: flashingbutton;
         -webkit-animation-duration: 2s;
@@ -76,9 +84,10 @@
      <asp:panel runat="server" ID="MessageDisplayPanel"  CssClass="container1"  Visible="false">
         
           <asp:Label  CssClass="Message" ID="lblMessage" runat="server"></asp:Label>
-
-          <asp:Button CssClass="MessagePanelButton" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="70px" />
-          <asp:Button CssClass="MessagePanelButton" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="70px" />
+          <div class="MessagePanelButton">
+          <asp:Button CssClass="PanelButton" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="70px" />
+          <asp:Button CssClass="PanelButton" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="70px" />
+          </div>
           <asp:Button CssClass="MessagePanelContinueButton" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue Editing" Visible="False" />
 
     </asp:panel>
