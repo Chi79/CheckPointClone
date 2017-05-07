@@ -15,7 +15,7 @@ namespace CheckPoint.Views
 
         public string Message
         {
-            set { lblMessage.Text = value; }
+            set { MessagePanel.Message = value; }
         }
 
         public IEnumerable<object> SetDataSource
@@ -41,6 +41,20 @@ namespace CheckPoint.Views
 
         }
 
+        public bool MessagePanelVisible
+        {
+
+            set { MessagePanel.MessagePanelVisible = value; }
+
+        }
+
+        public bool ContinueButtonVisible
+        {
+
+            set { MessagePanel.ContinueButtonVisible = value; }
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -52,6 +66,16 @@ namespace CheckPoint.Views
             CourseGridViewHeader.RowSelected += OnCourseGridViewHeader_RowSelected;
             CourseGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             CourseGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
+
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+        }
+
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+            if(ContinueButtonClicked != null)
+            {
+                ContinueButtonClicked(this, EventArgs.Empty);
+            }
         }
 
         public void BindData()
@@ -87,6 +111,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         public event EventHandler<EventArgs> CreateReportButtonClicked;
         public event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
+        public event EventHandler<EventArgs> ContinueButtonClicked;
 
 
         private void OnSortColumnsByPropertyAscending(object sender, EventArgs e)

@@ -130,7 +130,7 @@ namespace CheckPointPresenters.Presenters
         {
 
             DecisionButtonsHide();
-            //_view.Message = "Ready.";
+  
             HideMessagePanel();
 
         }
@@ -246,7 +246,7 @@ namespace CheckPointPresenters.Presenters
 
                 ShowMessagePanel();
 
-                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+                _view.Message = "Failed to save changes!  <br />" + _model.GetUpdateErrorMessage();
 
                 ContinueButtonShow();
 
@@ -258,7 +258,7 @@ namespace CheckPointPresenters.Presenters
         private void OnContinueEvent(object sender, EventArgs e)
         {
 
-            _view.RedirectAfterClickEvent();
+            HideMessagePanel();
 
         }
 

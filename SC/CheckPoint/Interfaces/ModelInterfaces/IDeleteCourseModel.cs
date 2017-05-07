@@ -17,6 +17,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         void SetInitialSessionJobState();
 
+        bool GetChangesSavedSessionStatus();
+
         bool GetDeleteCourseStatus();
 
         void SetDeleteCourseStatus();

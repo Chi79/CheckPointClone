@@ -44,6 +44,8 @@ namespace CheckPointPresenters.Presenters
 
                 _view.Message = "Whoops! Sorry, this form has already been submitted....";
 
+                _model.SetSessionCourseNoRowSelected();
+
             }
 
         }

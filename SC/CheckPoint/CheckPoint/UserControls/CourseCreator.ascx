@@ -11,7 +11,7 @@
     margin-left:15%;
     border:none;
     list-style:none;
-    width:70%;    
+    width:60%;    
     padding:0%;
 
 
@@ -26,9 +26,27 @@
     margin-top:2%;
     
 }
+.list-item-box{
+    display: inline-block;
+    border: inset;
+    padding: 0%;
+    margin: 0;
+    zoom: 171%;
+    background-color: blanchedalmond;
+}
 .label{
-    width:25%;
-    float:left;
+    /*width:25%;
+    float:left;*/
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: large;
+    font-weight:bolder;
+    width: 22%;
+    color: white;
+    border: none;
+    padding: 0%;
+    margin: 0;
+    zoom: 101%;
 }
 .message{
     margin-top:3%;
@@ -45,28 +63,22 @@
    
     <ul class="list">
         <li class="list-item">
-              <div class="label">
-                  Course name
-              </div> 
-               <asp:TextBox ID="txtCourseName" runat="server"></asp:TextBox>
+              <div class="label"> Course name </div> 
+
+               <asp:TextBox CssClass="list-item-box" ID="txtCourseName" runat="server"></asp:TextBox>
         </li>
 
         <li class="list-item">
-               <div class="label">  
-            Description
-                   </div>
+               <div class="label"> Description </div>
              
-        <asp:TextBox ID="txtDescription" runat="server" Width="275px"></asp:TextBox>
+        <asp:TextBox CssClass="list-item-box" ID="txtDescription" runat="server" Width="275px"></asp:TextBox>
 
         </li>
 
         <li class="list-item">
-            <div class="label"> 
-             Private
-                </div>
-             
+            <div class="label"> Private </div>
 
-           <asp:DropDownList ID="ddlIsPrivate" runat="server">
+             <asp:DropDownList CssClass="list-item-box" ID="ddlIsPrivate" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
            </asp:DropDownList>
@@ -74,11 +86,9 @@
         </li >
 
         <li class="list-item">
-            <div class="label">   
-            Obligatory
-                    </div>
+            <div class="label"> Obligatory </div>
 
-        <asp:DropDownList ID="ddlIsObligatory" runat="server">
+        <asp:DropDownList CssClass="list-item-box" ID="ddlIsObligatory" runat="server">
             <asp:ListItem Value="False">No</asp:ListItem>
             <asp:ListItem Value="True">Yes</asp:ListItem>
         </asp:DropDownList>

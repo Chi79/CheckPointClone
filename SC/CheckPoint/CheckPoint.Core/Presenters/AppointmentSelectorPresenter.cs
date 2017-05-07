@@ -38,7 +38,11 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.Message = "No appointment has been selected!";
+                ShowMessagePanel();
+
+                _view.Message = " <br /> No appointment has been selected! <br /><br /> Please click a row to select the appointment you wish to add to the course.<br />";
+
+                ContinueButtonShow();
 
             }
         }
@@ -74,8 +78,16 @@ namespace CheckPointPresenters.Presenters
             _view.RowSelected += OnRowSelected;
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
- 
             _view.AddSelectedAppointmentToCourseButtonClicked += OnAddSelectedAppointmentToCourseButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+
+
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
 
         }
 
@@ -159,6 +171,8 @@ namespace CheckPointPresenters.Presenters
 
             GetSelectedAppointmentIdFromGrid();
 
+            HideMessagePanel();
+
         }
 
         private void SaveRowIndexToSession()
@@ -221,6 +235,27 @@ namespace CheckPointPresenters.Presenters
             int selectedAppointmentId = (int)_view.SelectedRowValueDataKey;
 
             _model.SetSessionAppointmentId(selectedAppointmentId);
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
 
         }
     }

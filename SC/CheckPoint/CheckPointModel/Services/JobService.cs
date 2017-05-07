@@ -46,7 +46,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to add this appointment! Do you wish to continue?"; }
+            get { return "You are about to add this appointment!  <br /> <br />  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -80,7 +80,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to add this appointment to the course! Do you wish to continue?"; }
+            get { return "You are about to add this appointment to the course! <br /> <br /> Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -117,7 +117,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to add this appointment to the course! Do you wish to continue?"; }
+            get { return "You are about to add this appointment to the course! <br /> <br /> Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -156,7 +156,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the appointment with Id number: " + AppointmentId + "!  Do you wish to continue?"; }
+            get { return "You are about to delete the appointment with Id number: " + AppointmentId + "! <br /> <br />  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -190,7 +190,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to update this appointment! Do you wish to continue?"; }
+            get { return "You are about to update this appointment! <br /> <br /> Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -237,7 +237,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to add this course! Do you wish to continue?"; }
+            get { return "You are about to add this course! <br /> <br /> Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -271,7 +271,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to delete the course with Id number: " + CourseId + "! All associated appointments will be removed!  Do you wish to continue?"; }
+            get { return "You are about to delete the course with Id number: " + CourseId + "! <br /> <br /> All associated appointments will be removed! <br /> <br />  Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -308,7 +308,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to update this course! Do you wish to continue?"; }
+            get { return "You are about to update this course! <br /> <br /> Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {
@@ -350,7 +350,7 @@ namespace CheckPointModel.Services
         }
         public override string ConfirmationMessage
         {
-            get { return "You are about to be an attendee! Do you wish to continue?"; }
+            get { return "You are about to be an attendee! <br /> <br /> Do you wish to continue?"; }
         }
         public override string CompletedMessage
         {

@@ -15,6 +15,9 @@ namespace CheckPointCommon.ViewInterfaces
         IEnumerable<object> SetDataSource2 { set; }
         object SelectedRowValueDataKey { get; }
 
+        bool MessagePanelVisible { set; }
+        bool ContinueButtonVisible { set; }
+
         void BindData();
         void RedirectToCreateCourse();
         void RedirectToManageCourse();
@@ -28,5 +31,6 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> ManageAttendanceButtonClicked;
         event EventHandler<EventArgs> CreateReportButtonClicked;
         event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
+        event EventHandler<EventArgs> ContinueButtonClicked;
     }
 }

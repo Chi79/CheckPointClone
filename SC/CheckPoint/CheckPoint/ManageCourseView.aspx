@@ -6,6 +6,8 @@
 <%@ Register Src="~/UserControls/ManageCourseAppGridHeader.ascx" TagPrefix="uc1" TagName="ManageCourseAppGridHeader" %>
 <%@ Register Src="~/UserControls/ManageCourseAppGrid.ascx" TagPrefix="uc1" TagName="ManageCourseAppGrid" %>
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 
@@ -196,11 +198,6 @@ runat="server">
 
 <div id="courseManagerHeading" class="coursesmanageslide" style="z-index:5"><img src="Images/CourseManagerHeading1.svg" /></div>
 
-<asp:Image ID="appointmentAddedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentAddedMessage1.svg"  />
-
-<asp:Image ID="appointmentDeletedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/AppointmentDeletedMessage1.svg"  />
-
-<asp:Image ID="courseUpdatedMessage" Visible="false" CssClass="appointmentaddedslide" runat="server" ImageUrl="~/Images/CourseUpdatedMessage1.svg"  />
 
 <asp:Panel
 ID="Panel2"
@@ -214,6 +211,8 @@ CssClass="PanelCourseHeader">
 ID="UpdatePanel2"  
 runat="server" >
 <ContentTemplate>
+
+<uc1:MessagePanel runat="server" ID="MessagePanel" />
 
 <asp:Label 
 ID="lblMessage" 

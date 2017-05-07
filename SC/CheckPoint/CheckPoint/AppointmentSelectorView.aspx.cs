@@ -15,7 +15,21 @@ namespace CheckPoint.Views
         public string Message
         {
 
-            set { lblMessage.Text = value; }
+            set { MessagePanel.Message = value; }
+
+        }
+
+        public bool MessagePanelVisible
+        {
+
+            set { MessagePanel.MessagePanelVisible = value; }
+
+        }
+
+        public bool ContinueButtonVisible
+        {
+
+            set { MessagePanel.ContinueButtonVisible = value; }
 
         }
 
@@ -53,6 +67,16 @@ namespace CheckPoint.Views
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
 
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+
+        }
+
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+           if(ContinueButtonClicked != null)
+            {
+                ContinueButtonClicked(this, EventArgs.Empty);
+            }
         }
 
         public void BindData()
@@ -88,6 +112,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
+        public event EventHandler<EventArgs> ContinueButtonClicked;
 
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)

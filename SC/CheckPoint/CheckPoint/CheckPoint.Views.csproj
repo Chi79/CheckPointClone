@@ -110,6 +110,7 @@
     <Content Include="ApplyToAttendAppointmentView.aspx" />
     <Content Include="ApplyToCourseView.aspx" />
     <Content Include="AppointmentSelectorView.aspx" />
+    <Content Include="ChangesSavedCourseView.aspx" />
     <Content Include="ChangesSavedView.aspx" />
     <Content Include="CourseSelectorView.aspx" />
     <Content Include="CreateAppointmentView.aspx" />
@@ -268,6 +269,7 @@
     <Content Include="UserControls\ManageCourseHeader.ascx" />
     <Content Include="UserControls\MessagePanel.ascx" />
     <Content Include="UserControls\NavigationMessage.ascx" />
+    <Content Include="UserControls\SmallMessagePanel.ascx" />
     <Content Include="UserControls\UserAppointmentGridView.ascx" />
     <Content Include="UserControls\UserAppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\UserCourseGridView.ascx" />
@@ -324,6 +326,13 @@
     </Compile>
     <Compile Include="AppointmentSelectorView.aspx.designer.cs">
       <DependentUpon>AppointmentSelectorView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesSavedCourseView.aspx.cs">
+      <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangesSavedCourseView.aspx.designer.cs">
+      <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangesSavedView.aspx.cs">
       <DependentUpon>ChangesSavedView.aspx</DependentUpon>
@@ -626,6 +635,13 @@
     </Compile>
     <Compile Include="UserControls\NavigationMessage.ascx.designer.cs">
       <DependentUpon>NavigationMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallMessagePanel.ascx.cs">
+      <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallMessagePanel.ascx.designer.cs">
+      <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserAppointmentGridView.ascx.cs">
       <DependentUpon>UserAppointmentGridView.ascx</DependentUpon>

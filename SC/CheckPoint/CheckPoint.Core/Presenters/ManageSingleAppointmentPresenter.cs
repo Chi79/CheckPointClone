@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ViewInterfaces;
-using CheckPointCommon.Enums;
 using CheckPointPresenters.Bases;
 using CheckPointDataTables.Tables;
 using CheckPointModel.DTOs;
@@ -248,7 +247,7 @@ namespace CheckPointPresenters.Presenters
 
                 ShowMessagePanel();
 
-                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+                _view.Message = "Failed to save changes!  <br />" + _model.GetUpdateErrorMessage();
 
                 ContinueButtonShow();
             }

@@ -36,12 +36,15 @@ namespace CheckPointCommon.ViewInterfaces
 
         bool YesButtonVisible { set;}
         bool NoButtonVisible { set; }
+ 
+        bool MessagePanelVisible { set; }
 
         void RedirectBackToHostHomeView();
         void RedirectToCourseSelectorView();
 
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
+
 
 
     }

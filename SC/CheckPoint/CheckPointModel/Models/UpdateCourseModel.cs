@@ -162,6 +162,13 @@ namespace CheckPointModel.Models
             _courseDisplayService.GetAllCoursesFor<COURSE>(GetLoggedInClient());
 
         }
-        
+
+        public bool? GetChangesSavedSessionStatus()
+        {
+
+            return _sessionService.SavedChangesStatus;
+
+        }
+
     }
 }

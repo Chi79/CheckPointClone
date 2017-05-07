@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/HostMaster.Master" CodeBehind="CreateCourseView.aspx.cs" Inherits="CheckPoint.Views.CreateCourseView" %>
 <%@ Register Src="~/UserControls/CourseCreator.ascx" TagPrefix="uc1" TagName="CourseCreator" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 
@@ -41,6 +43,26 @@
         -webkit-animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
 }
+.logoslide{
+      position:absolute;
+      left: 85%;
+      top:  -8%;
+      animation: slideleft 2s ;
+}
+@keyframes slideleft {
+      from { left: -100%; }
+      to { left: 85%; }
+}
+.Headerslide{
+      position:absolute;
+      left: 6%;
+      animation:slidedown 4s;
+      top:5px;
+}
+@keyframes slidedown {
+     from { top: -200px; }
+      to { top: 5px; }
+}
 
 
 </style>
@@ -50,17 +72,19 @@
 
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+
+    <uc1:MessagePanel runat="server" ID="MessagePanel" />  
+
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+
+    <div id="courseManagerHeading" class="Headerslide" style="z-index:5"><img src="Images/CreateaCourseHeading1.svg" /></div>
+
+    <uc1:CourseCreator runat="server" id="CourseCreator" />
     
-         <uc1:CourseCreator runat="server" id="CourseCreator" />
-    
-   
- 
 
         <div id="create_course_buttons">
 
             <asp:Button CssClass="button" ID="btnCreateCourse" runat="server" Text="Create Course" OnClick="btnCreateCourse_Click" />
-            <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False" />
-            <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />
 
         </div>
 

@@ -27,33 +27,36 @@ namespace CheckPoint.Views
             ManageCourseAppGridHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             ManageCourseAppGridHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
 
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+
+        }
+
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+            if(ContinueButtonClicked != null)
+            {
+                ContinueButtonClicked(this, EventArgs.Empty);
+            }
         }
 
         public string Message
         {
 
-            set { lblMessage.Text = value; }
+            set { MessagePanel.Message = value; }
 
         }
 
-        public bool AppointmentAddedMessageVisible
+        public bool MessagePanelVisible
         {
 
-            set { appointmentAddedMessage.Visible = value; }
+            set { MessagePanel.MessagePanelVisible = value; }
 
         }
 
-        public bool CourseUpdatedMessageVisible
+        public bool ContinueButtonVisible
         {
 
-            set { courseUpdatedMessage.Visible = value; }
-
-        }
-
-        public bool AppointmentDeletedMessageVisible
-        {
-
-            set { appointmentDeletedMessage.Visible = value; }
+            set { MessagePanel.ContinueButtonVisible = value; }
 
         }
 
@@ -179,6 +182,9 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> AddAnotherAppointmentToThisCourseButtonClicked;
         public event EventHandler<EventArgs> UpdateCourseButtonClicked;
         public event EventHandler<EventArgs> DeleteCourseButtonClicked;
+
+        public event EventHandler<EventArgs> ContinueButtonClicked;
+
 
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)

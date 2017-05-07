@@ -58,6 +58,7 @@
     <Compile Include="ModelInterfaces\IApplyToAttendAppointmentModel.cs" />
     <Compile Include="ModelInterfaces\IApplyToCourseModel.cs" />
     <Compile Include="ModelInterfaces\IAppointmentSelectorModel.cs" />
+    <Compile Include="ModelInterfaces\IChangesSavedCourseModel.cs" />
     <Compile Include="ModelInterfaces\IChangesSavedModel.cs" />
     <Compile Include="ModelInterfaces\ICourseSelectorModel.cs" />
     <Compile Include="ModelInterfaces\ICreateAppointmentModel.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="ViewInterfaces\IApplyToAttendAppointmentView.cs" />
     <Compile Include="ViewInterfaces\IApplyToCourseView.cs" />
     <Compile Include="ViewInterfaces\IAppointmentSelectorView.cs" />
+    <Compile Include="ViewInterfaces\IChangesSavedCourseView.cs" />
     <Compile Include="ViewInterfaces\IChangesSavedView.cs" />
     <Compile Include="ViewInterfaces\ICourseSelectorView.cs" />
     <Compile Include="ViewInterfaces\ICreateAppointmentView.cs" />

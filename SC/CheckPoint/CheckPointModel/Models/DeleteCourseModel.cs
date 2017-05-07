@@ -61,6 +61,13 @@ namespace CheckPointModel.Models
 
         }
 
+        public bool GetChangesSavedSessionStatus()
+        {
+
+           return  (bool)_sessionService.SavedChangesStatus;
+
+        }
+
         private int? GetSessionCourseId()
         {
 
@@ -195,6 +202,7 @@ namespace CheckPointModel.Models
         {
 
             var saveResult = _job.SaveChanges();
+
             return saveResult.ErrorMessage;
 
         }

@@ -15,19 +15,21 @@ namespace CheckPointCommon.ViewInterfaces
         string IsPrivate { get; }
         string IsObligatory { get; }
 
+        void RedirectToHostCoursesPage();
+
+        void RedirectToChangesSavedCoursePage();
 
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool CreateCourseButtonVisible { set; }
+        bool ContinueButtonVisible { set; }
+        bool MessagePanelVisible { set; }
       
-
-
-    
 
         event EventHandler<EventArgs> CreateNewCourse;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-
+        event EventHandler<EventArgs> ContinueButtonClicked;
 
     }
 }

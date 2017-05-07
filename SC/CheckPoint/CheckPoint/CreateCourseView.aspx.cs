@@ -20,7 +20,6 @@ namespace CheckPoint.Views
 
         }
 
-
         public string Description
         {
 
@@ -45,9 +44,9 @@ namespace CheckPoint.Views
         public string Message
         {
 
-            get { return CourseCreator.Message; }
+            get { return MessagePanel.Message; }
 
-            set { CourseCreator.Message= value; }
+            set { MessagePanel.Message= value; }
 
         }
 
@@ -62,14 +61,28 @@ namespace CheckPoint.Views
         public bool YesButtonVisible
         {
 
-            set { btnYes.Visible = value; }
+            set { MessagePanel.YesButtonVisible = value; }
 
         }
 
         public bool NoButtonVisible
         {
 
-            set { btnNo.Visible = value; }
+            set { MessagePanel.NoButtonVisible = value; }
+
+        }
+
+        public bool ContinueButtonVisible
+        {
+
+            set { MessagePanel.ContinueButtonVisible = value; }
+
+        }
+
+        public bool MessagePanelVisible
+        {
+
+            set { MessagePanel.MessagePanelVisible = value; }
 
         }
 
@@ -80,11 +93,25 @@ namespace CheckPoint.Views
 
         }
 
+        public void RedirectToHostCoursesPage()
+        {
+
+            Response.Redirect("HostCoursesView.aspx");
+
+        }
+
+        public void RedirectToChangesSavedCoursePage()
+        {
+
+            Response.Redirect("ChangesSavedCourseView.aspx");
+
+        }
+
 
         public event EventHandler<EventArgs> CreateNewCourse;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-       
+        public event EventHandler<EventArgs> ContinueButtonClicked;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -92,27 +119,43 @@ namespace CheckPoint.Views
 
         }
 
-        protected void btnCreateCourse_Click(object sender, EventArgs e)
+        public override void HookUpEvents()
         {
-            if(CreateNewCourse != null)
+
+            MessagePanel.YesButtonClicked += OnMessagePanel_YesButtonClicked;
+            MessagePanel.NoButtonClicked += OnMessagePanel_NoButtonClicked;
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+        }
+
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+            if (ContinueButtonClicked != null)
             {
-                CreateNewCourse(this, EventArgs.Empty);
+                ContinueButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnNo_Click(object sender, EventArgs e)
+        private void OnMessagePanel_NoButtonClicked(object sender, EventArgs e)
         {
-            if(NoButtonClicked != null)
+            if (NoButtonClicked != null)
             {
                 NoButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnYes_Click(object sender, EventArgs e)
+        private void OnMessagePanel_YesButtonClicked(object sender, EventArgs e)
         {
-            if(YesButtonClicked != null)
+            if (YesButtonClicked != null)
             {
                 YesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnCreateCourse_Click(object sender, EventArgs e)
+        {
+            if(CreateNewCourse != null)
+            {
+                CreateNewCourse(this, EventArgs.Empty);
             }
         }
     }

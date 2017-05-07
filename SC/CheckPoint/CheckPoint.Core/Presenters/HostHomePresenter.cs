@@ -40,7 +40,7 @@ namespace CheckPointPresenters.Presenters
             {
                 ShowMessagePanel();
 
-                _view.Message = "No appointment has been selected! Please click a row to select an appointment.";
+                _view.Message = "No appointment has been selected! <br /> <br /> <br /> Please click a row to select the appointment you wish to add to a course.";
 
                 ContinueButtonShow();
 
@@ -57,14 +57,22 @@ namespace CheckPointPresenters.Presenters
         private void OnCreateReportButtonClicked(object sender, EventArgs e)
         {
 
-            _view.Message = "Fabio Goose";
+            ShowMessagePanel();
+
+            _view.Message = "Q: Is 'Average Power' expressed as Lambda? <br /> <br /> A: No! Of course it's not. Have a nice day. <br /> <br /> PS: Joy has made a fresh batch of Lazzan today! Hurry, Yum Yum..";
+
+            ContinueButtonShow();
 
         }
 
         private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
         {
 
-            _view.Message = "Fabio Goose";
+            ShowMessagePanel();
+
+            _view.Message = "Joy has made a fresh batch of Lazzan today! Hurry, Yum Yum..";
+
+            ContinueButtonShow();
 
         }
 
@@ -78,7 +86,7 @@ namespace CheckPointPresenters.Presenters
 
                 ResetChangesSavedSessionStatus();
 
-                _view.RedirectToManageAppointment();  
+                _view.RedirectToManageAppointment();
 
             }
             else
@@ -86,7 +94,7 @@ namespace CheckPointPresenters.Presenters
 
                 ShowMessagePanel();
 
-                _view.Message = "No appointment has been selected! Please click a row to select an appointment.";
+                _view.Message = "No appointment has been selected! <br /> <br /> <br /> Please click a row to select the appointment you wish to manage.";
 
                 ContinueButtonShow();
 
@@ -215,6 +223,8 @@ namespace CheckPointPresenters.Presenters
             SaveRowIndexToSession();
 
             GetSelectedAppointmentIdFromGrid();
+
+            HideMessagePanel();
 
         }
 

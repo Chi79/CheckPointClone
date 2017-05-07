@@ -4,6 +4,8 @@
 <%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
 
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -172,7 +174,9 @@
     runat="server" >
    
     <ContentTemplate>
-   
+
+    <uc1:MessagePanel runat="server" ID="MessagePanel" />
+
     <asp:Label 
     ID="lblMessage" 
     runat="server" 

@@ -29,12 +29,31 @@ namespace CheckPointPresenters.Presenters
         public override void Load()
         {
 
-            FetchData();
-
-            WireUpEvents();
+            CheckForValidNavigation();
 
         }
-  
+
+        public void CheckForValidNavigation()
+        {
+            bool validNavigation = CheckIsCourseSelected();
+
+            if (validNavigation)
+            {
+
+                FetchData();
+
+                WireUpEvents();
+
+            }
+            else
+            {
+
+                _view.RedirectToAppointmentsView();
+
+            }
+
+        }
+
         private void WireUpEvents()
         {
 
@@ -48,6 +67,15 @@ namespace CheckPointPresenters.Presenters
             _view.AddAnotherAppointmentToThisCourseButtonClicked += OnAddAnotherAppointmentToThisCourseButtonClicked;
             _view.UpdateCourseButtonClicked += OnUpdateCourseButtonClicked;
             _view.DeleteCourseButtonClicked += OnDeleteCourseButtonClicked;
+
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
+
         }
 
         private void OnDeleteCourseButtonClicked(object sender, EventArgs e)
@@ -88,8 +116,11 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+                ShowMessagePanel();
 
-                _view.Message = "No appointment has been selected";
+                _view.Message = "No appointment has been selected! <br /> <br /> Please click a row to select the appointment you wish to move to another course.";
+
+                ContinueButtonShow();
 
             }       
 
@@ -119,8 +150,11 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+                ShowMessagePanel();
 
-                _view.Message = "No appointment has been selected";
+                _view.Message = "No appointment has been selected! <br /> <br /> Please click a row to select the appointment you wish to remove from the course.";
+
+                ContinueButtonShow();
 
             }
 
@@ -288,8 +322,11 @@ namespace CheckPointPresenters.Presenters
             bool newAppointmentAdded = _model.GetNewAppointmentAddedToCourseStatus();
             if(newAppointmentAdded)
             {
+                ShowMessagePanel();
 
-                _view.AppointmentAddedMessageVisible = true;
+                _view.Message = "<br /> The appointment has been added to this course!<br /><br />";
+
+                ContinueButtonShow();
 
                 _model.ResetNewAppointmentAddedToCourseStatus();
 
@@ -304,7 +341,11 @@ namespace CheckPointPresenters.Presenters
             if(appointmentDeleted)
             {
 
-                _view.AppointmentDeletedMessageVisible = true;
+                ShowMessagePanel();
+
+                _view.Message = " <br /> The appointment has been removed from this course!<br /><br />";
+
+                ContinueButtonShow();
 
                 _model.ResetAppointmentDeletedFromCourseStatus();
 
@@ -319,7 +360,11 @@ namespace CheckPointPresenters.Presenters
             if (courseUpdated)
             {
 
-                _view.CourseUpdatedMessageVisible = true;
+                ShowMessagePanel();
+
+                _view.Message = "<br />This course has been updated successfuly!<br /><br />";
+
+                ContinueButtonShow();
 
                 _model.ResetUpdateCourseStatus();
 
@@ -417,6 +462,27 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.RedirectToAppointmentsView();
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
 
         }
     }

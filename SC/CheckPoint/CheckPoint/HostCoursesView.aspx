@@ -2,6 +2,8 @@
 
 <%@ Register Src="~/UserControls/CourseGridView.ascx" TagPrefix="uc1" TagName="CourseGridView" %>
 <%@ Register Src="~/UserControls/CourseGridViewHeader.ascx" TagPrefix="uc1" TagName="CourseGridViewHeader" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -167,6 +169,8 @@ CssClass="Panel2">
 ID="UpdatePanel2"  
 runat="server" >
 <ContentTemplate>
+
+<uc1:MessagePanel runat="server" ID="MessagePanel" />
 
 <asp:Label 
 ID="lblMessage" 
