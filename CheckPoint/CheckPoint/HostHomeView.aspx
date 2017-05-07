@@ -5,6 +5,9 @@
 
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
 
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
+
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
@@ -146,11 +149,13 @@
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-
+ 
 
     <div id ="outercontainer" >
+
     <div id="container" class="container" style="width:auto; margin-top:3.5%; " >
 
+   
     <asp:ScriptManager
     ID="ScriptManager1"
     runat="server">
@@ -173,6 +178,8 @@
     runat="server" >
    
     <ContentTemplate>
+
+    <uc1:MessagePanel runat="server" ID="MessagePanel" />
    
     <asp:Label 
     ID="lblMessage" 

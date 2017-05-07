@@ -15,9 +15,29 @@ namespace CheckPoint.Views
     public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
     {
 
+        //public string Message
+        //{
+        //    set { lblMessage.Text = value; }
+        //}
+
         public string Message
         {
-            set { lblMessage.Text = value; }
+
+            set { MessagePanel.Message = value; }
+
+        }
+
+        public bool MessagePanelVisible
+        {
+
+            set { MessagePanel.MessagePanelVisible = value; }
+
+        }
+        public bool ContinueButtonVisible
+        {
+
+            set { MessagePanel.ContinueButtonVisible = value; }
+
         }
 
         public IEnumerable<object> SetDataSource
@@ -47,6 +67,17 @@ namespace CheckPoint.Views
             AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
             AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_RowSelected;
+
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+        }
+
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+            if(ContinueButtonClicked != null)
+            {
+                ContinueButtonClicked(this, EventArgs.Empty);
+            }
+           
         }
 
         public void BindData()
@@ -136,7 +167,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> CreateReportButtonClicked;
         public event EventHandler<EventArgs> ViewCoursesButtonClicked;
         public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
-
+        public event EventHandler<EventArgs> ContinueButtonClicked;
 
         private void OnAppointmentGridViewHeader_RowSelected(object sender, EventArgs e)
         {

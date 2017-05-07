@@ -55,10 +55,11 @@
 }
 .list-item-box{
     display: inline-block;
-    border:none;
-    padding:0%;
-    margin:0;
+    border: inset;
+    padding: 0%;
+    margin: 0;
     zoom: 171%;
+    background-color: blanchedalmond;
 }
 </style>
 
