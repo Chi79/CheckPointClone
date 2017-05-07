@@ -24,23 +24,23 @@ namespace CheckPointModel.Validation
 
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {
-                base.AddBrokenRule("One or more field is empty! Please fill in all fields. ");
+                base.AddBrokenRule("One or more field is empty! Please fill in all fields. <br /> ");
             }
             if (!ValidateDateInput.IsDateValidate(appointment.StartTime))
             {
-                base.AddBrokenRule("Time must be in correct format! Please enter a time hh:mm. ");
+                base.AddBrokenRule("Start Time must be in correct format! hh:mm. <br />");
             }
             if (!ValidateDateInput.IsDateValidate(appointment.Date))
             {
-                base.AddBrokenRule("Dates must be in correct format! Please enter a date mm/dd/yyyy:  ");
+                base.AddBrokenRule("Dates must be in correct format! mm/dd/yyyy: <br />");
             }
             if (!ValidateDateInput.IsDateValidate(appointment.EndTime))
             {
-                base.AddBrokenRule("Time must be in correct format! Please enter a time hh:mm. ");
+                base.AddBrokenRule("End Time must be in correct format! hh:mm. <br /> ");
             }
             if (appointment.PostalCode.Length > 4)
             {
-                base.AddBrokenRule("PostCode cannot exceed 4 characters!");
+                base.AddBrokenRule("PostCode cannot exceed 4 characters! <br />");
             }
             try
             {
@@ -48,7 +48,7 @@ namespace CheckPointModel.Validation
             }
             catch
             {
-                base.AddBrokenRule("Postal Code must be an valid integer value!");
+                base.AddBrokenRule("Postal Code not found! <br /> Please check Postal Code is valid ");
             }
         }
     }

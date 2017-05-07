@@ -29,13 +29,43 @@ namespace CheckPointPresenters.Presenters
             _view.UpdateCourseButtonClicked += OnUpdateCourseButtonClicked;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
 
         }
 
         public override void FirstTimeInit()
         {
 
+            CheckAttemptToResaveStatus();
+
             DisplaySelectedCourseData();
+
+        }
+
+        public override void Load()
+        {
+
+            CheckAttemptToResaveStatus();
+
+        }
+
+        private void CheckAttemptToResaveStatus()
+        {
+
+            bool attemptToResave = (bool)_model.GetChangesSavedSessionStatus();
+            if (attemptToResave)
+            {
+
+                _view.RedirectToHostCoursesPage();
+
+            }
 
         }
 
@@ -56,7 +86,7 @@ namespace CheckPointPresenters.Presenters
 
             DecisionButtonsHide();
 
-            _view.Message = "Ready.";
+            HideMessagePanel();
 
         }
 
@@ -132,6 +162,7 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplayValidationMessage()
         {
+            ShowMessagePanel();
 
             _view.Message = string.Empty;
 
@@ -141,6 +172,8 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message += message;
             }
+
+            ContinueButtonShow();
 
         }
 
@@ -170,7 +203,11 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+                ShowMessagePanel();
+
                 _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+
+                ContinueButtonShow();
             }
 
         }
@@ -193,6 +230,8 @@ namespace CheckPointPresenters.Presenters
         private void ConfirmAction()
         {
 
+            ShowMessagePanel();
+
             _view.Message = _model.GetJobConfirmationMessage();
 
             DecisionButtonsShow();
@@ -206,6 +245,7 @@ namespace CheckPointPresenters.Presenters
       
             _view.NoButtonVisible = true;
             _view.YesButtonVisible = true;
+            _view.ContinueButtonVisible = false;
 
         }
 
@@ -216,7 +256,28 @@ namespace CheckPointPresenters.Presenters
    
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
+            _view.ContinueButtonVisible = false;
 
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
         }
 
     }

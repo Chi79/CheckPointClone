@@ -81,6 +81,7 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
 
@@ -95,10 +96,27 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
         private void ConfirmAction()
         {
 
+            ShowMessagePanel();
+
             _view.Message = "Do you wish to add this appointment to a course?";
+
 
         }
 
@@ -139,5 +157,6 @@ namespace CheckPointPresenters.Presenters
             _view.YesButtonVisible = true;
             _view.NoButtonVisible = true;
         }
+
     }
 }

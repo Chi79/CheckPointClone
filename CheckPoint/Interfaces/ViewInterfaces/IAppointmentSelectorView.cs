@@ -11,6 +11,8 @@ namespace CheckPointCommon.ViewInterfaces
         string Message { set; }
 
         int SelectedRowIndex { get; set; }
+        bool MessagePanelVisible { set; }
+        bool ContinueButtonVisible { set; }
 
 
         IEnumerable<object> SetDataSource { set; }
@@ -27,6 +29,7 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> SortColumnsByPropertyDescending;
         event EventHandler<EventArgs> RowSelected;
         event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
+        event EventHandler<EventArgs> ContinueButtonClicked;
 
     }
 }

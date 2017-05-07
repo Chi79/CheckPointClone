@@ -1,17 +1,16 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MessagePanel.ascx.cs" Inherits="CheckPoint.Views.UserControls.MessagePanel"  %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SmallMessagePanel.ascx.cs" Inherits="CheckPoint.Views.UserControls.SmallMessagePanel" %>
 
 <style type="text/css">
 
 .container1{
     position: absolute;
-    width: 46%;
-    height: 306px;
-    margin-top: 11%;
-    margin-left: 24.5%;
-
+    width: 24%;
+    height: 150px;
+    margin-top: 32.5%;
+    margin-left: 63.5%;
     background-color: #333333;
     border: #66cc66;
-    border-width: 20px;
+    border-width: 15px;
     border-style: solid;
     border-radius: 36px;
     z-index: 30;
@@ -23,13 +22,13 @@
     color: white;
     font-size: larger;
     margin: 0 auto;
-    padding: 26px;
+    padding: 7px;
 }
 .MessagePanelButton{
     position: relative;
     text-align: center;
     display: block;
-    margin: 0 auto;
+    margin: -17px auto;
 }
 .PanelButton{  
 

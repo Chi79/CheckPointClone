@@ -26,13 +26,21 @@ namespace CheckPointPresenters.Presenters
             _view.DeleteCourseButtonClicked += OnDeleteCourseButtonClicked;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+
+
         }
 
         public override void FirstTimeInit()
         {
 
             bool validNavigation = CheckValidNavigation();
-            if(validNavigation)
+            if (validNavigation)
             {
 
                 DisplayPage();
@@ -43,25 +51,26 @@ namespace CheckPointPresenters.Presenters
 
                 _view.RedirectToInvalidNavigationView();
 
-            }         
+            }
 
         }
 
         private bool CheckValidNavigation()
         {
 
-            bool invalidNavigation = _model.GetDeleteCourseStatus();
-            if(invalidNavigation)
+           bool invalidNavigation = _model.GetDeleteCourseStatus();
+           //bool invalidNavigation = _model.GetChangesSavedSessionStatus();
+            if (invalidNavigation)
             {
 
                 return false;
-                
+
 
             }
             else
             {
 
-                return true; 
+                return true;
 
             }
 
@@ -104,15 +113,15 @@ namespace CheckPointPresenters.Presenters
 
             DecisionButtonsHide();
 
-            _view.Message = "Ready.";
+            HideMessagePanel();
 
         }
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
 
-           bool validNavigation = CheckValidNavigation();
-            if(validNavigation)
+            bool validNavigation = CheckValidNavigation();
+            if (validNavigation)
             {
 
                 ContinueWithDeletion();
@@ -138,12 +147,16 @@ namespace CheckPointPresenters.Presenters
 
                 SetCourseDeletedStatus();
 
-                _view.RedirectToCoursesPage();
+                _view.RedirectToChangesSavedCoursePage();
 
             }
             else
             {
-                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+                ShowMessagePanel();
+
+                _view.Message = "Failed to save changes!  <br /><br />" + _model.GetUpdateErrorMessage();
+
+                ContinueButtonShow();
             }
 
         }
@@ -173,6 +186,7 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction()
         {
+            ShowMessagePanel();
 
             _view.Message = _model.GetJobConfirmationMessage();
 
@@ -184,9 +198,10 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.DeleteCourseButtonVisible = false;
-           
+
             _view.NoButtonVisible = true;
             _view.YesButtonVisible = true;
+            _view.ContinueButtonVisible = false;
 
         }
 
@@ -194,9 +209,10 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.DeleteCourseButtonVisible = true;
-          
+
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
+            _view.ContinueButtonVisible = false;
 
         }
 
@@ -210,5 +226,25 @@ namespace CheckPointPresenters.Presenters
 
         }
 
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
+        }
     }
 }

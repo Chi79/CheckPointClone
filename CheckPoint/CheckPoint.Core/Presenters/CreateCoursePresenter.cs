@@ -37,6 +37,8 @@ namespace CheckPointPresenters.Presenters
 
             WireUpEvents();
 
+            CheckAttemptToResaveStatus();
+
         }
 
         private void WireUpEvents()
@@ -45,7 +47,27 @@ namespace CheckPointPresenters.Presenters
             _view.CreateNewCourse += OnCreateNewCourseButtonClicked;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
-     
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+
+        }
+
+        private void CheckAttemptToResaveStatus()
+        {
+
+            bool attemptToResave = (bool)_model.GetChangesSavedSessionStatus();
+            if (attemptToResave)
+            {
+
+                _view.RedirectToHostCoursesPage();
+
+            }
+
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
 
         }
 
@@ -64,15 +86,19 @@ namespace CheckPointPresenters.Presenters
         {
 
             string courseName = _view.CourseName;
+
             _model.SaveCourseNameToSession(courseName);
 
         }
 
         private void ConfirmJob()
         {
+            ShowMessagePanel();
+
             _view.Message = _model.GetJobConfirmationMessage();
 
             DecisionButtonsShow();
+
         }
 
 
@@ -80,7 +106,8 @@ namespace CheckPointPresenters.Presenters
         {
 
             DecisionButtonsHide();
-            _view.Message = "Ready.";
+
+            HideMessagePanel();
 
         }
 
@@ -139,6 +166,7 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplayValidationMessage()
         {
+            ShowMessagePanel();
 
             _view.Message = string.Empty;
 
@@ -148,6 +176,8 @@ namespace CheckPointPresenters.Presenters
             {
                 _view.Message += message;
             }
+
+            ContinueButtonShow();
 
         }
 
@@ -176,14 +206,17 @@ namespace CheckPointPresenters.Presenters
             if (UpdateSuccessful)
             {
 
-                _view.Message = _model.GetJobCompletedMessage();
-                DisplayCourseSavedButtons();
+                _view.RedirectToChangesSavedCoursePage();
 
             }
             else
             {
 
-                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+                ShowMessagePanel();
+
+                _view.Message = "Failed to save changes! <br />" + _model.GetUpdateErrorMessage();
+
+                ContinueButtonShow();
 
             }
 
@@ -204,6 +237,7 @@ namespace CheckPointPresenters.Presenters
             _view.CreateCourseButtonVisible = false;
             _view.NoButtonVisible = true;
             _view.YesButtonVisible = true;
+            _view.ContinueButtonVisible = false;
         }
 
         private void DecisionButtonsHide()
@@ -211,12 +245,33 @@ namespace CheckPointPresenters.Presenters
             _view.CreateCourseButtonVisible = true;
             _view.NoButtonVisible = false;
             _view.YesButtonVisible = false;
+            _view.ContinueButtonVisible = false;
         }
 
         public void DisplayCourseSavedButtons()
         {
             _view.CreateCourseButtonVisible = false;
            
+        }
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
         }
     }
 }

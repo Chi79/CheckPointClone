@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CheckPointCommon.ModelInterfaces
 {
-    public interface IInvalidNavigationModel
+    public interface IChangesSavedCourseModel
     {
-        bool GetCourseDeletedStatus();
+        void SetChangesSavedStatus();
 
-        void SetSessionCourseNoRowSelected();
     }
 }

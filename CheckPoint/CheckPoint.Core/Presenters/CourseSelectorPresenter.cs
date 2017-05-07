@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using CheckPointCommon.ViewInterfaces;
 using CheckPointCommon.ModelInterfaces;
 using CheckPointPresenters.Bases;
-using CheckPointDataTables.Tables;
 
 namespace CheckPointPresenters.Presenters
 {
@@ -38,7 +37,11 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.Message = "No course has been selected!";
+                ShowMessagePanel();
+
+                _view.Message = "No course has been selected!  <br /> <br /> Please click a row to select the course you wish to add the appointment to.";
+
+                ContinueButtonShow();
 
             }
         }
@@ -116,9 +119,16 @@ namespace CheckPointPresenters.Presenters
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
             _view.CancelButtonClicked += OnCancelButtonClicked;
             _view.AddAppointmentToSelectedCourseButtonClicked += OnAddAppointmentToSelectedCourseButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
 
         }
 
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
+            
+        }
 
         public override void FirstTimeInit()
         {
@@ -184,6 +194,8 @@ namespace CheckPointPresenters.Presenters
             SaveRowIndexToSession();
 
             GetSelectedCourseIdFromGrid();
+
+            HideMessagePanel();
 
         }
 
@@ -263,6 +275,27 @@ namespace CheckPointPresenters.Presenters
             var selectedCourseId = _view.SelectedRowValueDataKey;
 
             _model.SetSessionCourseId((int)selectedCourseId);
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
 
         }
     }

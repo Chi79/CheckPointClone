@@ -2,6 +2,11 @@
 
 <%@ Register Src="~/UserControls/AppointmentCreator.ascx" TagPrefix="uc1" TagName="AppointmentCreator" %>
 
+<%@ Register Src="~/UserControls/SmallMessagePanel.ascx" TagPrefix="uc1" TagName="SmallMessagePanel" %>
+
+
+
+
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
 
@@ -55,6 +60,26 @@ border:none;
         -webkit-animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
 }
+.logoslide{
+      position:absolute;
+      left: 85%;
+      top:  -8%;
+      animation: slideleft 2s ;
+}
+@keyframes slideleft {
+      from { left: -100%; }
+      to { left: 85%; }
+}
+.Headerslide{
+      position:absolute;
+      left: 6%;
+      animation:slidedown 4s;
+      top:5px;
+}
+@keyframes slidedown {
+     from { top: -200px; }
+      to { top: 5px; }
+}
 
 
 
@@ -66,16 +91,17 @@ border:none;
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
+
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+
+    <div id="AppointmentHeading" class="Headerslide" style="z-index:5"><img src="Images/AddAppointmentToCourseHeading1.svg" /></div>
+
+    <uc1:SmallMessagePanel runat="server" id="SmallMessagePanel" />
         
 <ul class="list1">
     <li class="list1-item">
  <uc1:AppointmentCreator runat="server" ID="AppointmentCreator" />
         </li >
-    <li class="list1-item">
-        <asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="47px" />
-        <asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="45px" />
-    </li>
-
     </ul>
 
 </asp:Content>

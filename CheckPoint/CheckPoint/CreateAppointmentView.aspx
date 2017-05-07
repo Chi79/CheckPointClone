@@ -106,8 +106,6 @@ border:none;
     <li class="lista-item">
  <asp:Button CssClass="button" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Visible="False" />
 <asp:Button CssClass="button" ID="btnCreateAppointment" runat="server" Text="Create Appointment" OnClick="btnCreateAppointment_Click" />
-<%--<asp:Button CssClass="button" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes"  Visible="False"  />
-<asp:Button CssClass="button" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No"  Visible="False" />--%>
     </li>
 </ul>
 

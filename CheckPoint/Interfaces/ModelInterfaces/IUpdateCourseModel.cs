@@ -31,6 +31,8 @@ namespace CheckPointCommon.ModelInterfaces
 
         string GetUpdateErrorMessage();
 
+        bool? GetChangesSavedSessionStatus();
+
 
         void RefreshCourseCache();
 

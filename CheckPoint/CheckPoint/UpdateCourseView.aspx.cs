@@ -17,8 +17,8 @@ namespace CheckPoint.Views
        public string Message
        {
 
-            get { return CourseCreator.Message; }
-            set { CourseCreator.Message = value; }
+            get { return MessagePanel.Message; }
+            set { MessagePanel.Message = value; }
 
        }
        public string CourseName
@@ -50,18 +50,29 @@ namespace CheckPoint.Views
 
         }
 
+        public bool MessagePanelVisible
+        {
+            set { MessagePanel.MessagePanelVisible = value; }
+        }
 
         public bool YesButtonVisible
         {
 
-            set { btnYes.Visible = value; }
+            set { MessagePanel.YesButtonVisible = value; }
 
         }
 
         public bool NoButtonVisible
         {
 
-            set { btnNo.Visible = value; }
+            set { MessagePanel.NoButtonVisible = value; }
+
+        }
+
+        public bool ContinueButtonVisible
+        {
+
+            set { MessagePanel.ContinueButtonVisible = value; }
 
         }
 
@@ -73,7 +84,12 @@ namespace CheckPoint.Views
         }
 
 
+        public void RedirectToHostCoursesPage()
+        {
 
+            Response.Redirect("HostCoursesView.aspx");
+
+        }
 
         public void RedirectToManageCourseView()
         {
@@ -85,6 +101,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> UpdateCourseButtonClicked;
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
+        public event EventHandler<EventArgs> ContinueButtonClicked;
    
 
         protected void Page_Load(object sender, EventArgs e)
@@ -92,21 +109,36 @@ namespace CheckPoint.Views
             
         }
 
-
-
-        protected void btnYes_Click(object sender, EventArgs e)
+        public override void HookUpEvents()
         {
-            if(YesButtonClicked != null)
+
+            MessagePanel.YesButtonClicked += OnMessagePanel_YesButtonClicked;
+            MessagePanel.NoButtonClicked += OnMessagePanel_NoButtonClicked;
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+
+        }
+
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+            if(ContinueButtonClicked != null)
             {
-                YesButtonClicked(this, EventArgs.Empty);
+                ContinueButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnNo_Click(object sender, EventArgs e)
+        private void OnMessagePanel_NoButtonClicked(object sender, EventArgs e)
         {
-            if(NoButtonClicked != null)
+            if (NoButtonClicked != null)
             {
                 NoButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnMessagePanel_YesButtonClicked(object sender, EventArgs e)
+        {
+            if (YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
             }
         }
 

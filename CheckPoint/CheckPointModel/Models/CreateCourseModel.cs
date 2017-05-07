@@ -65,6 +65,14 @@ namespace CheckPointModel.Models
 
         }
 
+        public bool? GetChangesSavedSessionStatus()
+        {
+
+            return _sessionService.SavedChangesStatus;
+
+        }
+
+
         public string GetJobConfirmationMessage()
         {
 

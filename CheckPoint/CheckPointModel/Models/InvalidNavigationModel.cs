@@ -26,5 +26,12 @@ namespace CheckPointModel.Models
 
         }
 
+        public void  SetSessionCourseNoRowSelected()
+        {
+
+            _sessionService.SessionCourseId = -1;
+
+        }
+
     }
 }

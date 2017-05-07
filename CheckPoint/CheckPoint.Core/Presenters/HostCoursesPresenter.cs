@@ -32,15 +32,22 @@ namespace CheckPointPresenters.Presenters
 
         private void OnCreateReportButtonClicked(object sender, EventArgs e)
         {
+            ShowMessagePanel();
 
-            _view.Message = "Fabio Goose";
+            _view.Message = "<br /> Once upon a time there was a man named Fabio....<br />";
+
+            ContinueButtonShow();
 
         }
 
         private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
         {
 
-            _view.Message = "Fabio Goose";
+            ShowMessagePanel();
+
+            _view.Message = "<br /><br />  Joy beckons you to her web of sin<br /><br /> Don't go in...<br />";
+
+            ContinueButtonShow();
 
         }
 
@@ -52,13 +59,18 @@ namespace CheckPointPresenters.Presenters
             if (RowSelected)
             {
 
+                ResetChangesSavedSessionStatus();
+
                 _view.RedirectToManageCourse();
 
             }
             else
             {
+                ShowMessagePanel();
 
-                _view.Message = "No appointment has been selected!";
+                _view.Message = "<br />No course has been selected! <br /> <br /> Please click a row to select the course you wish to manage.";
+
+                ContinueButtonShow();
 
             }
 
@@ -86,6 +98,8 @@ namespace CheckPointPresenters.Presenters
         private void OnCreateCourseButtonClicked(object sender, EventArgs e)
         {
 
+            ResetChangesSavedSessionStatus();
+
             _view.RedirectToCreateCourse();
 
         }
@@ -110,6 +124,13 @@ namespace CheckPointPresenters.Presenters
             _view.CreateCourseButtonClicked += OnCreateCourseButtonClicked;
             _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
 
         }
 
@@ -121,6 +142,7 @@ namespace CheckPointPresenters.Presenters
              ShowData();
 
         }
+
 
         private void ShowData()
         {
@@ -156,6 +178,8 @@ namespace CheckPointPresenters.Presenters
             SaveRowIndexToSession();
 
             GetSelectedCourseIdFromGrid();
+
+            HideMessagePanel();
 
         }
 
@@ -231,6 +255,34 @@ namespace CheckPointPresenters.Presenters
             var selectedCourseId = _view.SelectedRowValueDataKey;
 
             _model.SetSessionCourseId((int)selectedCourseId);
+
+        }
+
+        private void ResetChangesSavedSessionStatus()
+        {
+
+            _model.ResetChangesSavedStatus();
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
 
         }
     }

@@ -15,11 +15,6 @@ namespace CheckPoint.Views
     public partial class HostHomeView : ViewBase<HostHomePresenter> , IHostHomeView
     {
 
-        //public string Message
-        //{
-        //    set { lblMessage.Text = value; }
-        //}
-
         public string Message
         {
 

@@ -23,6 +23,8 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool DeleteCourseButtonVisible { set; }
+        bool MessagePanelVisible { set; }
+        bool ContinueButtonVisible { set; }
    
 
 
@@ -31,11 +33,14 @@ namespace CheckPointCommon.ViewInterfaces
         void RedirectToManageCourseView();
         void RedirectAfterClick();
 
+        void RedirectToChangesSavedCoursePage();
+
         void RedirectToInvalidNavigationView();
 
         event EventHandler<EventArgs> DeleteCourseButtonClicked;
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
+        event EventHandler<EventArgs> ContinueButtonClicked;
 
 
     }

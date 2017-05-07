@@ -23,15 +23,15 @@ namespace CheckPointModel.Validation
 
             if (!ValidateIntergerInput.IsIntergerValid(attendee.AppointmentId))
             {
-                base.AddBrokenRule("AppointmentId is not valid");
+                base.AddBrokenRule("AppointmentId is not valid  <br />");
             }
             if(!ValidateStringInput.IsStringValid(attendee.TagId))
             {
-                base.AddBrokenRule("TagId field is empty");
+                base.AddBrokenRule("TagId field is empty  <br />");
             }
             if (!Enum.IsDefined(typeof(AttendeeStatus), attendee.StatusId))
             {
-                base.AddBrokenRule("StatusId is not valid");
+                base.AddBrokenRule("StatusId is not valid  <br />");
             }
             if (!ValidateStringInput.IsStringValid(attendee.TimeAttended)) //if false & TimeAttended is null/empty..
             {

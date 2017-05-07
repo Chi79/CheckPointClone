@@ -62,14 +62,6 @@ namespace CheckPoint.Views
         {
             get { return AppointmentCreator.IsPrivate; }
         }
-
-        //public string Message
-        //{
-        //    get { return AppointmentCreator.Message; }
-
-        //    set { AppointmentCreator.Message = value; }
-        //}
-
         public string Message
         {
             get { return MessagePanel.Message; }
@@ -82,25 +74,11 @@ namespace CheckPoint.Views
             set { MessagePanel.MessagePanelVisible = value; }
         }
 
-        //public bool ContinueButtonVisible
-        //{
-        //    set { btnContinue.Visible = value; }
-        //}
 
         public bool CreateButtonVisible
         {
             set { btnCreateAppointment.Visible = value; }
         }
-
-        //public bool YesButtonVisible
-        //{
-        //    set { btnYes.Visible = value; }
-        //}
-
-        //public bool NoButtonVisible
-        //{
-        //    set { btnNo.Visible = value; }
-        //}
 
         public bool YesButtonVisible
         {

@@ -74,8 +74,8 @@ namespace CheckPoint.Views
 
         public string Message
         {
-            get { return AppointmentCreator.Message; }
-            set { AppointmentCreator.Message = value; }
+            get { return SmallMessagePanel.Message; }
+            set { SmallMessagePanel.Message = value; }
         }
 
 
@@ -126,12 +126,29 @@ namespace CheckPoint.Views
 
         public bool YesButtonVisible
         {
-            set { btnYes.Visible = value; }
+
+            set { SmallMessagePanel.YesButtonVisible = value; }
+
         }
 
         public bool NoButtonVisible
         {
-            set { btnNo.Visible = value; }
+
+            set { SmallMessagePanel.NoButtonVisible = value; }
+
+        }
+
+        public bool ContinueButtonVisible
+        {
+
+            set { SmallMessagePanel.ContinueButtonVisible = value; }
+
+        }
+        public bool MessagePanelVisible
+        {
+
+            set { SmallMessagePanel.MessagePanelVisible = value; }
+
         }
 
         public void RedirectBackToHostHomeView()
@@ -147,6 +164,7 @@ namespace CheckPoint.Views
             Response.Redirect("CourseSelectorView.aspx");
 
         }
+
 
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
@@ -164,20 +182,34 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnYes_Click(object sender, EventArgs e)
+        public override void HookUpEvents()
         {
-            if(YesButtonClicked != null)
+
+            SmallMessagePanel.YesButtonClicked += OnMessagePanel_YesButtonClicked;
+            SmallMessagePanel.NoButtonClicked += OnMessagePanel_NoButtonClicked;
+
+        }
+
+        private void OnMessagePanel_NoButtonClicked(object sender, EventArgs e)
+        {
+            if (NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnMessagePanel_YesButtonClicked(object sender, EventArgs e)
+        {
+            if (YesButtonClicked != null)
             {
                 YesButtonClicked(this, EventArgs.Empty);
             }
         }
 
-        protected void btnNo_Click(object sender, EventArgs e)
+        protected void btnContinueToAdd_Click(object sender, EventArgs e)
         {
-            if(NoButtonClicked != null)
-            {
-                NoButtonClicked(this, EventArgs.Empty);
-            }
+
         }
+
     }
 }

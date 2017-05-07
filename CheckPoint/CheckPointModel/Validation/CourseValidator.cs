@@ -22,7 +22,7 @@ namespace CheckPointModel.Validation
 
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {
-                base.AddBrokenRule("One or more field is empty! Please fill in all fields. ");
+                base.AddBrokenRule("One or more field is empty!  <br /> <br /> Please fill in all fields. ");
             }
         }
     }
