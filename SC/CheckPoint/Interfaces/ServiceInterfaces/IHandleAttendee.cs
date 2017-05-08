@@ -10,5 +10,7 @@ namespace CheckPointCommon.ServiceInterfaces
    public interface IHandleAttendee:IHandler
     {
        void CreateRange<T>(IEnumerable<ATTENDEE> attendees);
+
+        bool CheckIfAttendeeExists(ATTENDEE attendee);
     }
 }

@@ -24,7 +24,13 @@ namespace CheckPointModel.Services
 
         public void CreateRange<T>(IEnumerable<ATTENDEE> attendees)
         {
+           
             _uOW.ATTENDEEs.AddRange(attendees);
+        }
+
+        public bool CheckIfAttendeeExists(ATTENDEE attendee)
+        {
+            return _uOW.ATTENDEEs.CheckIfAttendeeExists(attendee);
         }
 
         public void Delete<T>(T item)
