@@ -72,8 +72,23 @@ namespace CheckPointPresenters.Presenters
 
         private void OnApplyToAttendCourseButtonClicked(object sender, EventArgs e)
         {
+            bool rowIsSelected = CheckRowIsSelected();
+            if (rowIsSelected)
+            {
+
+                CheckUserHasValidTagId();
+
+
+            }
+            else
+            {
+
+                _view.Message = "No Course has been selected!";
+
+            }
+        
            
-            _view.RedirectToApplyToCourseView();
+           
 
         }
 
@@ -197,6 +212,25 @@ namespace CheckPointPresenters.Presenters
             _model.SetSessionCourseId((int)selectedCourseId);
 
         }
+        public void CheckUserHasValidTagId()
+        {
+
+            bool userHasValidTagId = _model.GetLoggedInClientTagId() != null;
+            if (userHasValidTagId)
+            {
+
+                _view.RedirectToApplyToCourseView();
+
+            }
+            else
+            {
+
+                _view.Message = "User needs a valid tagId to attend appointments!";
+
+            }
+
+        }
+
     }
 }
 
