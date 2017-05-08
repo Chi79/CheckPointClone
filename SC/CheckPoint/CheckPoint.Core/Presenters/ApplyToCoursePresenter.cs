@@ -82,6 +82,7 @@ namespace CheckPointPresenters.Presenters
         private void _view_No_Click(object sender, EventArgs e)
         {
             ShowDefaultButtons();
+            _view.Message = string.Empty;
         }
 
         private void _view_Yes_Click(object sender, EventArgs e)
@@ -123,9 +124,19 @@ namespace CheckPointPresenters.Presenters
 
         private void OnbtnApplyToCourse_Click(object sender, EventArgs e)
         {
-            _model.PrepareCreateMultipleAttendeesJob();
-            _view.Message = _model.GetJobConfirmationMessage();
-            ShowDecitionButtons();
+            bool appointmentsInCourse = _model.AppointmentsInCourse();
+
+            if(appointmentsInCourse)
+            {
+                _model.PrepareCreateMultipleAttendeesJob();
+                _view.Message = _model.GetJobConfirmationMessage();
+                ShowDecitionButtons();
+            }
+            else
+            {
+                _view.Message = "There are no appointments to attend in this course!";
+            }
+   
         }
         private void ShowDecitionButtons()
         {

@@ -25,6 +25,7 @@ namespace CheckPointCommon.ModelInterfaces
         string GetJobCompletedMessage();
         string GetUpdateErrorMessage();
         void PrepareCreateMultipleAttendeesJob();
+        bool AppointmentsInCourse();
 
     }
 }
