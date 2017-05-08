@@ -9,6 +9,7 @@ namespace CheckPointCommon.ModelInterfaces
     public interface IFindCoursesModel
     {
         string GetLoggedInClient();
+        string GetLoggedInClientTagId();
 
         string GetColumnName();
 

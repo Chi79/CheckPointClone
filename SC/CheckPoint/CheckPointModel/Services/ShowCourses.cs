@@ -174,5 +174,13 @@ namespace CheckPointModel.Services
             return courses.FirstOrDefault(course => course.CourseId.Equals(courseId));
 
         }
+        public object GetSelectedPublicCourseByCourseId(int? courseId)
+        {
+
+            var courses = GetPublicCoursesCached<COURSE>() as List<COURSE>;
+
+            return courses.FirstOrDefault(course => course.CourseId.Equals(courseId));
+
+        }
     }
 }

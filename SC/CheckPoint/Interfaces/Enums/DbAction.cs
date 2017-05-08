@@ -20,6 +20,7 @@ namespace CheckPointCommon.Enums
         ChangeAppointmentCourseId,
         CreateAttendee,
         ReadAttendee,
-        UpdateAttendee
+        UpdateAttendee,
+        CreateMultipleAttendees
     }
 }

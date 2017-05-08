@@ -35,6 +35,10 @@ namespace CheckPointModel.Models
             return _sessionService.ColumnName;
 
         }
+        public string GetLoggedInClientTagId()
+        {
+            return _sessionService.ClientTagId;
+        }
 
         public int? GetSessionRowIndex()
         {

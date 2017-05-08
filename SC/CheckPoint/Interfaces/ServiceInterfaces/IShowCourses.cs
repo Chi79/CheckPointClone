@@ -25,6 +25,7 @@ namespace CheckPointCommon.ServiceInterfaces
 
         IEnumerable<T> GetAllPublicCourses<T>();
 
+        object GetSelectedPublicCourseByCourseId(int? CourseId);
         object GetSelectedCourseByCourseId(int? CourseId);
     }
 }

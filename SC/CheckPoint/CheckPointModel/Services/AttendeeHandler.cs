@@ -22,6 +22,11 @@ namespace CheckPointModel.Services
             _uOW.ATTENDEEs.Add(attendee as ATTENDEE);
         }
 
+        public void CreateRange<T>(IEnumerable<ATTENDEE> attendees)
+        {
+            _uOW.ATTENDEEs.AddRange(attendees);
+        }
+
         public void Delete<T>(T item)
         {
             throw new NotImplementedException();

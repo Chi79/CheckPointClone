@@ -254,6 +254,10 @@
     <Content Include="Scripts\package.json" />
     <Content Include="HostMaster.Master" />
     <Content Include="UpdateCourseView.aspx" />
+    <Content Include="UserControls\ApplyToCourseAppGrid.ascx" />
+    <Content Include="UserControls\ApplyToCourseAppGridHeader.ascx" />
+    <Content Include="UserControls\ApplyToCourseGrid.ascx" />
+    <Content Include="UserControls\ApplyToCourseHeader.ascx" />
     <Content Include="UserControls\AppointmentCreator.ascx" />
     <Content Include="UserControls\AppointmentGridView.ascx" />
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
@@ -316,6 +320,7 @@
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.designer.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
@@ -329,14 +334,12 @@
     </Compile>
     <Compile Include="ChangesSavedCourseView.aspx.cs">
       <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ChangesSavedCourseView.aspx.designer.cs">
       <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangesSavedView.aspx.cs">
       <DependentUpon>ChangesSavedView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ChangesSavedView.aspx.designer.cs">
       <DependentUpon>ChangesSavedView.aspx</DependentUpon>
@@ -531,6 +534,34 @@
     <Compile Include="UpdateProfileView.aspx.designer.cs">
       <DependentUpon>UpdateProfileView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.cs">
+      <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.designer.cs">
+      <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseAppGridHeader.ascx.cs">
+      <DependentUpon>ApplyToCourseAppGridHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseAppGridHeader.ascx.designer.cs">
+      <DependentUpon>ApplyToCourseAppGridHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseGrid.ascx.cs">
+      <DependentUpon>ApplyToCourseGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseGrid.ascx.designer.cs">
+      <DependentUpon>ApplyToCourseGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseHeader.ascx.cs">
+      <DependentUpon>ApplyToCourseHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ApplyToCourseHeader.ascx.designer.cs">
+      <DependentUpon>ApplyToCourseHeader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AppointmentCreator.ascx.cs">
       <DependentUpon>AppointmentCreator.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -624,7 +655,6 @@
     </Compile>
     <Compile Include="UserControls\MessagePanel.ascx.cs">
       <DependentUpon>MessagePanel.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\MessagePanel.ascx.designer.cs">
       <DependentUpon>MessagePanel.ascx</DependentUpon>
@@ -638,7 +668,6 @@
     </Compile>
     <Compile Include="UserControls\SmallMessagePanel.ascx.cs">
       <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\SmallMessagePanel.ascx.designer.cs">
       <DependentUpon>SmallMessagePanel.ascx</DependentUpon>

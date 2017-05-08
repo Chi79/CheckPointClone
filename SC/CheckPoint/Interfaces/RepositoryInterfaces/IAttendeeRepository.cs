@@ -28,5 +28,7 @@ namespace CheckPointCommon.RepositoryInterfaces
 
         IEnumerable<object> GetAcceptedAttendeesByUserName(string userName);
 
+        void AddRange(IEnumerable<ATTENDEE> attendees);
+
     }
 }
