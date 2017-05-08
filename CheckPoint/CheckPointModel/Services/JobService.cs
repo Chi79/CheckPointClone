@@ -400,7 +400,21 @@ namespace CheckPointModel.Services
 
         public override void PerformTask(IEnumerable<object> attendees)
         {
-            _handler.CreateRange<ATTENDEE>(attendees as IEnumerable<ATTENDEE>);
+            var attendeesToBeCreated = new List<ATTENDEE>();
+                       
+           foreach(ATTENDEE attendee in attendees)
+            {
+               if(!CheckIfAttendeeExists(attendee))
+                {
+                    attendeesToBeCreated.Add(attendee);
+                }
+            }            
+            _handler.CreateRange<ATTENDEE>(attendeesToBeCreated as IEnumerable<ATTENDEE>);
+        }
+
+        private bool CheckIfAttendeeExists(ATTENDEE attendee)
+        {
+            return _handler.CheckIfAttendeeExists(attendee);
         }
  
 
