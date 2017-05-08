@@ -66,8 +66,22 @@ namespace CheckPointModel.Models
             }
 
             return attendeeList;
-
         }
+
+        public bool AppointmentsInCourse()
+        {
+            bool appointmentsInCourse = GetAppointmentsInCourse().Any<object>();
+
+            if(appointmentsInCourse)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void PrepareCreateMultipleAttendeesJob()
         {
             _job = _factory.CreateAttendeeJobType(DbAction.CreateMultipleAttendees) as CreateMultipleAttendeesJob;
