@@ -23,19 +23,13 @@ namespace CheckPointPresenters.Presenters
        
         public override void FirstTimeInit()
         {
-  
-            ResetSessionState();
+
             ShowData();
         }
-        public void ResetSessionState()
-        {
-            _model.ResetSessionState();
-        }
+  
         public override void Load()
         {
             WireUpEvents();
-            FetchData();
-
 
         }
         private void ShowData()
@@ -69,23 +63,23 @@ namespace CheckPointPresenters.Presenters
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
 
             _view.ApplyToCourse_Click += OnbtnApplyToCourse_Click;
-            _view.Cancel_Click += _view_Cancel_Click;
-            _view.Continue_Click += _view_Continue_Click;
-            _view.Yes_Click += _view_Yes_Click;
-            _view.No_Click += _view_No_Click;
+            _view.Cancel_Click += OnCancel_Click;
+            _view.Continue_Click += OnContinue_Click;
+            _view.Yes_Click += OnYes_Click;
+            _view.No_Click += OnNo_Click;
             
         }
 
         
         
 
-        private void _view_No_Click(object sender, EventArgs e)
+        private void OnNo_Click(object sender, EventArgs e)
         {
             ShowDefaultButtons();
             _view.Message = string.Empty;
         }
 
-        private void _view_Yes_Click(object sender, EventArgs e)
+        private void OnYes_Click(object sender, EventArgs e)
         {
             _model.PerformJob();
             CheckChangesSaved();
@@ -112,12 +106,12 @@ namespace CheckPointPresenters.Presenters
         }
     
 
-        private void _view_Continue_Click(object sender, EventArgs e)
+        private void OnContinue_Click(object sender, EventArgs e)
         {
             _view.RedirectToFindPublicCourses();
         }
 
-        private void _view_Cancel_Click(object sender, EventArgs e)
+        private void OnCancel_Click(object sender, EventArgs e)
         {
             _view.RedirectToFindPublicCourses();
         }
@@ -164,11 +158,7 @@ namespace CheckPointPresenters.Presenters
             _view.BtnYesVisible = false;
         }
 
-        public void FetchData()
-        {
-            var courses = _model.GetCachedPublicCourses();
-
-        }
+    
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
 

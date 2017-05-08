@@ -15,10 +15,10 @@ namespace CheckPointCommon.ModelInterfaces
 
         IEnumerable<object> GetEmptyCourseList();
         IEnumerable<object> GetEmptyAppointmentList();
-        IEnumerable<object> GetCachedPublicCourses();
+       
         IEnumerable<object> GetAppointmentsInCourseSortedByPropertyAsc();
         IEnumerable<object> GetAppointmentsInCourseSortedByPropertyDesc();
-        void ResetSessionState();
+    
         void PerformJob();
         bool UpdateDatabaseWithChanges();
         string GetJobConfirmationMessage();
