@@ -51,6 +51,17 @@ namespace CheckPoint.Views
         public string IsCancelled
         {
             get { return AppointmentCreator.IsCancelled; }
+            set { AppointmentCreator.IsCancelled = value; }
+        }
+
+        public bool IsCancelledDropDownVisible
+        {
+            set { AppointmentCreator.IsCancelledDropDownVisible = value; }
+        }
+
+        public bool IsCancelledLabelVisible
+        {
+            set { AppointmentCreator.IsCancelledLabelVisible = value; }
         }
 
         public string IsObligatory

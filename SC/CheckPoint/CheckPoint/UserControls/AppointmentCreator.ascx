@@ -116,9 +116,9 @@
         </li>
         <li class="list-item">
                     
-        <asp:Label CssClass="list-item-label" ID="lblCancelled" runat="server" Text="Cancelled"></asp:Label>
+        <asp:Label CssClass="list-item-label" ID="lblCancelled" runat="server" Text="Cancelled" Visible="true"></asp:Label>
 
-        <asp:DropDownList CssClass="list-item-box" ID="ddlIsCancelled" runat="server">
+        <asp:DropDownList CssClass="list-item-box" ID="ddlIsCancelled" runat="server" Visible="true">
             <asp:ListItem Value="False" >No</asp:ListItem>
             <asp:ListItem Value="True" >Yes</asp:ListItem>
         </asp:DropDownList>

@@ -34,6 +34,8 @@ namespace CheckPointPresenters.Presenters
         {
 
             CheckAttemptToResaveStatus();
+
+            HideIsCancelledField();
  
         }
 
@@ -44,6 +46,8 @@ namespace CheckPointPresenters.Presenters
             WireUpEvents();
 
             CheckAttemptToResaveStatus();
+
+            HideIsCancelledField();
 
         }
 
@@ -191,7 +195,7 @@ namespace CheckPointPresenters.Presenters
             _dTO.Address = _view.Address;
             _dTO.PostalCode = _view.PostalCode;
             _dTO.IsObligatory = Convert.ToBoolean(_view.IsObligatory);
-            _dTO.IsCancelled = Convert.ToBoolean(_view.IsCancelled);
+            _dTO.IsCancelled = false;
             _dTO.IsPrivate = Convert.ToBoolean(_view.IsPrivate);
 
         }
@@ -283,6 +287,14 @@ namespace CheckPointPresenters.Presenters
         {
 
             _view.ContinueButtonVisible = true;
+
+        }
+
+        private void HideIsCancelledField()
+        {
+
+            _view.IsCancelledDropDownVisible = false;
+            _view.IsCancelledLabelVisible = false;
 
         }
     }

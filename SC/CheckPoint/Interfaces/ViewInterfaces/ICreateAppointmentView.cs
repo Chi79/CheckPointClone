@@ -18,7 +18,7 @@ namespace CheckPointCommon.ViewInterfaces
         string Description { get; }
         string Address { get; }
         string Date { get; }
-        string IsCancelled { get; }
+        string IsCancelled { get; set; }
         string IsObligatory { get; }
         string IsPrivate { get; }
 
@@ -28,7 +28,8 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool MessagePanelVisible { set; }
-
+        bool IsCancelledDropDownVisible { set; }
+        bool IsCancelledLabelVisible { set; }
 
 
         void RedirectAfterClickEvent();

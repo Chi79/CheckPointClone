@@ -58,6 +58,16 @@ namespace CheckPoint.Views.UserControls
             set { ddlIsCancelled.Text = value; }
         }
 
+        public bool IsCancelledDropDownVisible
+        {       
+            set { ddlIsCancelled.Visible = value; }
+        }
+
+        public bool IsCancelledLabelVisible
+        {
+            set { lblCancelled.Visible = value; }
+        }
+
         public string IsObligatory
         {
             get { return ddlIsObligatory.SelectedValue; }
