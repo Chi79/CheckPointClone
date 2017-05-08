@@ -58,8 +58,8 @@ namespace CheckPointPresenters.Presenters
         private bool CheckValidNavigation()
         {
 
-           bool invalidNavigation = _model.GetDeleteCourseStatus();
-           //bool invalidNavigation = _model.GetChangesSavedSessionStatus();
+            bool invalidNavigation = _model.GetDeleteCourseStatus();
+
             if (invalidNavigation)
             {
 
