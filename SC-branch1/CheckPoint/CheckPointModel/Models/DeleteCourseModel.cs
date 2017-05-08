@@ -59,6 +59,8 @@ namespace CheckPointModel.Models
 
             _sessionService.DeletedCourseStatus = true;
 
+            _sessionService.SessionCourseId = -1;
+
         }
 
         public bool GetChangesSavedSessionStatus()

@@ -217,6 +217,7 @@ namespace CheckPointPresenters.Presenters
 
             _model.SetUpdateCourseStatus();
 
+
         }
 
         private void RefreshCourseCache()
