@@ -73,7 +73,25 @@ namespace DataAccess.Concrete.Repositories
 
         public void AddRange(IEnumerable<ATTENDEE> attendees)
         {          
-                CheckPointContext.Set<ATTENDEE>().AddRange(attendees);
+            foreach(ATTENDEE attendee in attendees)
+            {
+                bool attendeeExists = CheckIfAttendeeExists(attendee);
+
+                if(!attendeeExists)
+                {
+                    CheckPointContext.ATTENDEEs.Add(attendee);
+                }
+
+            }
+               
+        }
+
+        public bool CheckIfAttendeeExists(ATTENDEE attendee)
+        {
+            bool attendeeExists = CheckPointContext.ATTENDEEs.Where(a => a.AppointmentId == attendee.AppointmentId &&
+                a.TagId == attendee.TagId).Any();
+
+            return attendeeExists;
         }
     }
 }

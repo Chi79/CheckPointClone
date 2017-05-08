@@ -30,5 +30,7 @@ namespace CheckPointCommon.RepositoryInterfaces
 
         void AddRange(IEnumerable<ATTENDEE> attendees);
 
+        bool CheckIfAttendeeExists(ATTENDEE attendee);
+
     }
 }

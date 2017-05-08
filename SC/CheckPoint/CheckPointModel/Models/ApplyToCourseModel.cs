@@ -102,7 +102,7 @@ namespace CheckPointModel.Models
             _job = GetJobTypeFromSession() as CreateMultipleAttendeesJob;
 
             var attendeeList = CreateAttendeesFromAppointmentsInCourse();
-
+                       
             _job.PerformTask(attendeeList);
         }
         public string GetUpdateErrorMessage()
