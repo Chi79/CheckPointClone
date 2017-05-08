@@ -81,7 +81,7 @@ namespace DataAccess.Concrete.Repositories
         public bool CheckIfAttendeeExists(ATTENDEE attendee)
         {
             bool attendeeExists = CheckPointContext.ATTENDEEs.Where(a => a.AppointmentId == attendee.AppointmentId &&
-                a.TagId == attendee.TagId).Any();
+                                                                    a.TagId == attendee.TagId).Any();
 
             return attendeeExists;
         }
