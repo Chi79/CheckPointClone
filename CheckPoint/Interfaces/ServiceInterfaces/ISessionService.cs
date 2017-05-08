@@ -24,5 +24,6 @@ namespace CheckPointCommon.ServiceInterfaces
         string SessionCourseName { get; set; }
         bool? NavigationIsValid { get; set; }
         string SessionAttendeeUsername { get; set; }
+        bool? AppliedToCourseStatus { get; set; }
     }
 }

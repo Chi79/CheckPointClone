@@ -62,6 +62,7 @@ namespace CheckPointModel.Factories
             {
                 AttendeeJobs = new Dictionary<DbAction, JobServiceBase>();
                 AttendeeJobs.Add(DbAction.CreateAttendee, new CreateAttendeeJob(handler));
+                AttendeeJobs.Add(DbAction.CreateMultipleAttendees, new CreateMultipleAttendeesJob(handler));
             }   
         }
 

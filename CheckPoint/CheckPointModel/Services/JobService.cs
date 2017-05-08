@@ -25,6 +25,11 @@ namespace CheckPointModel.Services
         {
             //not implemented
         }
+
+        public virtual void PerformTask(IEnumerable<object> obj)
+        {
+            //not implemented
+        }
         public virtual SaveResult SaveChanges()
         {
             SaveResult result = new SaveResult { ErrorMessage = "", Result = 0 };
@@ -361,6 +366,43 @@ namespace CheckPointModel.Services
         {
             _handler.Create(attendee);
         }
+
+        public override SaveResult SaveChanges()
+        {
+
+            SaveResult result = (SaveResult)_handler.SaveChanges();
+            return result;
+        }
+
+    }
+    public class CreateMultipleAttendeesJob : JobServiceBase
+    {
+        private IHandleAttendee _handler;
+
+        public CreateMultipleAttendeesJob(IHandleAttendee handler)
+        {
+            _handler = handler;
+        }
+
+        public override DbAction Jobtype
+        {
+            get { return DbAction.CreateMultipleAttendees; }
+            set { Jobtype = value; }
+        }
+        public override string ConfirmationMessage
+        {
+            get { return "You are about to attend this course! Do you wish to continue?"; }
+        }
+        public override string CompletedMessage
+        {
+            get { return "You are now an attendee to this course!"; }
+        }
+
+        public override void PerformTask(IEnumerable<object> attendees)
+        {
+            _handler.CreateRange<ATTENDEE>(attendees as IEnumerable<ATTENDEE>);
+        }
+ 
 
         public override SaveResult SaveChanges()
         {

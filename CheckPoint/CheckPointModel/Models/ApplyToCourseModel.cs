@@ -7,45 +7,135 @@ using CheckPointCommon.ModelInterfaces;
 using CheckPointCommon.ServiceInterfaces;
 using CheckPointCommon.FactoryInterfaces;
 using CheckPointDataTables.Tables;
+using CheckPointModel.Services;
+using CheckPointCommon.Enums;
 
 namespace CheckPointModel.Models
 {
-    class ApplyToCourseModel:IApplyToCourseModel
+   public class ApplyToCourseModel:IApplyToCourseModel
     {
         private readonly ISessionService _sessionService;
         private readonly IFactory _factory;
-        private readonly IShowAppointments _displayService;
+        private readonly IShowAppointments _appointmentDisplayService;
+        private IShowCourses _coursesDisplayService;
+        
 
-        public ApplyToCourseModel(ISessionService sessionService,IFactory factory,IShowAppointments displayService)
+        private JobServiceBase _job;
+        private ATTENDEE _attendee;
+        public ApplyToCourseModel(ISessionService sessionService,IFactory factory,IShowAppointments displayService, IShowCourses coursesDisplayService)
         {
             _sessionService = sessionService;
-            _displayService = displayService;
+            _appointmentDisplayService = displayService;
             _factory = factory;
+            _coursesDisplayService = coursesDisplayService;
         }
 
         public IEnumerable<object> GetAppointmentsInCourse()
         {
-            return _displayService.GetAllAppointmentsForClientByCourseId<APPOINTMENT>(_sessionService.SessionCourseId);
+            return _appointmentDisplayService.GetAllAppointmentsForClientByCourseId<APPOINTMENT>(_sessionService.SessionCourseId);
             
         }
-        public int? GetSessionRowIndex()
+        public object GetJobTypeFromSession()
         {
 
-            return _sessionService.SessionRowIndex;
+            _job = _factory.CreateAttendeeJobType((DbAction)_sessionService.JobType) as CreateMultipleAttendeesJob;
+         
+            return _job;
+
+        }
+        public List<ATTENDEE> CreateAttendeesFromAppointmentsInCourse()
+        {
+            var appointmentList = (List<APPOINTMENT>)GetAppointmentsInCourse();
+
+            var attendeeList = new List<ATTENDEE>();
+
+            var tagId = GetLoggedInClientTagId();
+
+            var courseId = GetSessionCourseId();
+
+            foreach(APPOINTMENT appointment in appointmentList)
+            {
+                _attendee = new ATTENDEE()
+                {
+                    AppointmentId = appointment.AppointmentId,
+                    TagId = tagId,
+                    StatusId = (int)AttendeeStatus.RequestedToAttend,
+                    CourseId = courseId
+                };
+                attendeeList.Add(_attendee);
+            }
+
+            return attendeeList;
+
+        }
+        public void PrepareCreateMultipleAttendeesJob()
+        {
+            _job = _factory.CreateAttendeeJobType(DbAction.CreateMultipleAttendees) as CreateMultipleAttendeesJob;
+
+            SetInitialSessionJobState();
+
+        
+    }
+        public void SetInitialSessionJobState()
+        {
+
+            SaveJobTypeToSession();
+        }
+
+        public void SaveJobTypeToSession()
+        {
+
+            _sessionService.JobType = (int)_job.Jobtype;
+
+        }
+        public void PerformJob()
+        {
+            _job = GetJobTypeFromSession() as CreateMultipleAttendeesJob;
+           
+            
+            var attendeeList = CreateAttendeesFromAppointmentsInCourse() as IEnumerable<ATTENDEE>;
+
+            _job.PerformTask(attendeeList);
+        }
+        public string GetUpdateErrorMessage()
+        {
+
+            var saveResult = _job.SaveChanges();
+            return saveResult.ErrorMessage;
+
+        }
+        public bool UpdateDatabaseWithChanges()
+        {
+
+            var saveResult = _job.SaveChanges();
+
+            bool IsSavedToDb = saveResult.Result > 0;
+            if (IsSavedToDb)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
+ 
+        public string GetJobConfirmationMessage()
+        {
+            return _job.ConfirmationMessage;
+        }
+        public string GetJobCompletedMessage()
+        {
+            return _job.CompletedMessage;
+        }
         public void SetSessionRowIndex(int index)
         {
 
             _sessionService.SessionRowIndex = index;
 
-        }
-
-        public int? GetSessionAppointmentId()
-        {
-
-            return _sessionService.SessionAppointmentId;
         }
 
         public void SetSessionAppointmentId(int id)
@@ -72,22 +162,72 @@ namespace CheckPointModel.Models
 
         }
 
-        public string GetLoggedInClient()
-        {
-
-            return _sessionService.LoggedInClient;
-
-        }
         public string GetLoggedInClientTagId()
         {
             return _sessionService.ClientTagId;
         }
-        public IEnumerable<object> GetEmptyList()
+
+        public int? GetSessionCourseId()
         {
 
-            return _displayService.GetEmptyList<APPOINTMENT>();
+            return _sessionService.SessionCourseId;
 
         }
+        public IEnumerable<object> GetSelectedCourse()
+        {
+
+            List<COURSE> selectedCourseAsList = _coursesDisplayService.GetEmptyList<COURSE>().ToList();
+
+            var selectedCourse = _coursesDisplayService.GetSelectedPublicCourseByCourseId(GetSessionCourseId());
+
+            selectedCourseAsList.Add(selectedCourse as COURSE);
+
+            return selectedCourseAsList;
+
+        }
+
+
+
+        public IEnumerable<object> GetEmptyAppointmentList()
+        {
+
+            return _appointmentDisplayService.GetEmptyList<APPOINTMENT>();
+
+        }
+
+        public IEnumerable<object> GetEmptyCourseList()
+        {
+
+            return _coursesDisplayService.GetEmptyList<COURSE>();
+
+        }
+
+
+
+        public IEnumerable<object> GetCachedPublicCourses()
+        {
+
+            return _coursesDisplayService.GetPublicCoursesCached<COURSE>();
+
+        }
+
+
+
+        public IEnumerable<object> GetAppointmentsInCourseSortedByPropertyAsc()
+        {
+
+            return _appointmentDisplayService.GetAppointmentsInCourseSortedByPropertyAscending<object>(GetColumnName());
+
+        }
+
+        public IEnumerable<object> GetAppointmentsInCourseSortedByPropertyDesc()
+        {
+
+            return _appointmentDisplayService.GetAppointmentsInCourseSortedByPropertyDescending<object>(GetColumnName());
+
+        }
+
+ 
     }
 
 }

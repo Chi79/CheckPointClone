@@ -14,5 +14,7 @@ namespace CheckPointCommon.FactoryInterfaces
         object CreateCourseJobType(object action);
 
         object CreateAttendeeJobType(object action);
+
+       
     }
 }

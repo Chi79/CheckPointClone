@@ -70,5 +70,10 @@ namespace DataAccess.Concrete.Repositories
             return CheckPointContext.ATTENDEEs.Where(a => a.CourseId == null &&
                                         a.StatusId == (int)AttendeeStatus.RequestedToAttend).Distinct().ToList();
         }
+
+        public void AddRange(IEnumerable<ATTENDEE> attendees)
+        {          
+                CheckPointContext.Set<ATTENDEE>().AddRange(attendees);
+        }
     }
 }
