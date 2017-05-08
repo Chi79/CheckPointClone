@@ -21,7 +21,7 @@ namespace CheckPointModel.Models
         
 
         private JobServiceBase _job;
-        private ATTENDEE _attendee;
+      
         public ApplyToCourseModel(ISessionService sessionService,IFactory factory,IShowAppointments displayService, IShowCourses coursesDisplayService)
         {
             _sessionService = sessionService;
@@ -43,29 +43,24 @@ namespace CheckPointModel.Models
             return _job;
 
         }
-        public List<ATTENDEE> CreateAttendeesFromAppointmentsInCourse()
+        public IEnumerable<ATTENDEE> CreateAttendeesFromAppointmentsInCourse()
         {
             var appointmentList = (List<APPOINTMENT>)GetAppointmentsInCourse();
-
             var attendeeList = new List<ATTENDEE>();
-
-            var tagId = GetLoggedInClientTagId();
-
-            var courseId = GetSessionCourseId();
 
             foreach(APPOINTMENT appointment in appointmentList)
             {
-                _attendee = new ATTENDEE()
+                var _attendee = new ATTENDEE()
                 {
                     AppointmentId = appointment.AppointmentId,
-                    TagId = tagId,
+                    TagId = GetLoggedInClientTagId(),
                     StatusId = (int)AttendeeStatus.RequestedToAttend,
-                    CourseId = courseId
+                    CourseId = GetSessionCourseId()
                 };
                 attendeeList.Add(_attendee);
             }
 
-            return attendeeList;
+            return attendeeList as IEnumerable<ATTENDEE>;
         }
 
         public bool AppointmentsInCourse()
@@ -105,9 +100,8 @@ namespace CheckPointModel.Models
         public void PerformJob()
         {
             _job = GetJobTypeFromSession() as CreateMultipleAttendeesJob;
-           
-            
-            var attendeeList = CreateAttendeesFromAppointmentsInCourse() as IEnumerable<ATTENDEE>;
+
+            var attendeeList = CreateAttendeesFromAppointmentsInCourse();
 
             _job.PerformTask(attendeeList);
         }
@@ -145,29 +139,11 @@ namespace CheckPointModel.Models
         {
             return _job.CompletedMessage;
         }
-        public void SetSessionRowIndex(int index)
-        {
 
-            _sessionService.SessionRowIndex = index;
 
-        }
 
-        public void SetSessionAppointmentId(int id)
-        {
 
-            _sessionService.SessionAppointmentId = id;
 
-        }
-
-        public void ResetSessionState()
-        {
-
-            int noRowSelected = -1;
-            int noAppointmentSelected = -1;
-            SetSessionRowIndex(noRowSelected);
-            SetSessionAppointmentId(noAppointmentSelected);
-
-        }
 
         public string GetColumnName()
         {
@@ -201,7 +177,6 @@ namespace CheckPointModel.Models
         }
 
 
-
         public IEnumerable<object> GetEmptyAppointmentList()
         {
 
@@ -215,17 +190,6 @@ namespace CheckPointModel.Models
             return _coursesDisplayService.GetEmptyList<COURSE>();
 
         }
-
-
-
-        public IEnumerable<object> GetCachedPublicCourses()
-        {
-
-            return _coursesDisplayService.GetPublicCoursesCached<COURSE>();
-
-        }
-
-
 
         public IEnumerable<object> GetAppointmentsInCourseSortedByPropertyAsc()
         {
