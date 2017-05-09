@@ -19,6 +19,7 @@ namespace CheckPointCommon.RepositoryInterfaces
         object GetAttendeeByUserNameAndCourseId(string username, int id);
 
         object GetAttendeeByUserName(string username);
+        object GetAttendeeByTagIdAndAppointmentId(string tagId, int id);
 
         IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses();
 
@@ -31,6 +32,8 @@ namespace CheckPointCommon.RepositoryInterfaces
         void AddRange(IEnumerable<ATTENDEE> attendees);
 
         bool CheckIfAttendeeExists(ATTENDEE attendee);
+
+        IEnumerable<object> GetAllAttendeesByUserName(string username);
 
     }
 }

@@ -33,8 +33,7 @@ namespace CheckPointPresenters.Presenters
         }
 
         private void ShowData()
-        {
-            //var acceptedCourses = logic for getting courses accepted for
+        {          
 
             _view.SetDataSource = _model.GetAllCoursesClientIsApprovedToAttend();
 
@@ -42,6 +41,11 @@ namespace CheckPointPresenters.Presenters
 
             _view.BindData();
 
+        }
+        public override void Load()
+        {
+
+            WireUpEvents();
         }
 
 
@@ -123,12 +127,12 @@ namespace CheckPointPresenters.Presenters
 
         private void OnSortColumnsDescendingClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

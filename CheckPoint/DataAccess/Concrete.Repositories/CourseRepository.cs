@@ -22,7 +22,7 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<COURSE> GetAllCoursesFor(string userName)
         {
-            return CheckPointContext.COURSEs.Where(course => course.UserName == userName).ToList();
+            return CheckPointContext.COURSEs.Where(course => course.UserName == userName).ToList().Distinct();
         }
 
         public IEnumerable<COURSE> GetAllPublicCourses()
@@ -42,18 +42,20 @@ namespace DataAccess.Concrete.Repositories
         public IEnumerable<COURSE> GetAllCoursesClientIsApprovedToAttend(string userName)
         {
 
-            var allCoursesClientIsApprovedToAttend = new List<COURSE>();
+            var allCoursesClientIsApprovedToAttend = new HashSet<COURSE>();
 
             var allAcceptedAttendeeRequestsForClient = GetAllAcceptedAttendeeRequestsForClient(userName);
 
             foreach (var acceptedAttendanceRequest in allAcceptedAttendeeRequestsForClient)
-            {
+            {   
+                if(acceptedAttendanceRequest.CourseId != null)
+                {
+                    var approvedCourse = GetCourseByCourseId((int)acceptedAttendanceRequest.CourseId);
 
-                int courseId = (int)acceptedAttendanceRequest.CourseId;
+                    allCoursesClientIsApprovedToAttend.Add(approvedCourse);
+                }          
 
-                var approvedCourse = GetCourseByCourseId(courseId);
-
-                allCoursesClientIsApprovedToAttend.Add(approvedCourse);
+                
 
             }
 
@@ -64,7 +66,7 @@ namespace DataAccess.Concrete.Repositories
         public IEnumerable<ATTENDEE> GetAllAcceptedAttendeeRequestsForClient(string userName)
         {
 
-            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == userName && a.StatusId == (int)AttendeeStatus.RequestApproved).ToList();
+            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == userName && a.StatusId == (int)AttendeeStatus.RequestApproved).Distinct().ToList();
 
         }
 

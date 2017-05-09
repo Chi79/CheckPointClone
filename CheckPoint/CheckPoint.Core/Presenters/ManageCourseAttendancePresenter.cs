@@ -35,7 +35,8 @@ namespace CheckPointPresenters.Presenters
         private void ShowCourseData()
         {
             _view.CoursesAppliedToHeaderSetDataSource = _model.GetEmptyCourseList();
-            _view.CoursesAppliedToSetDataSource = _model.GetAllCoursesWithAttendeeRequests();
+            var stuff = _model.GetAllCoursesWithAttendeeRequests();
+            _view.CoursesAppliedToSetDataSource = stuff;
 
             _view.BindCourseData();
         }
@@ -92,10 +93,11 @@ namespace CheckPointPresenters.Presenters
             {
                 ShowMessagePanel();
 
-                 _view.MessagePanelMessage = "<br /> Are you sure you would like to approve all attendee requests for this course?<br /><br />";
-
-                 ShowYesButton();
-                 ShowNoButton();
+                _view.MessagePanelMessage = "<br /> Are you sure you would like to approve all attendee requests for this course?<br /><br />";
+                
+                ShowYesButton();
+                ShowNoButton();
+       
             }
             else
             {

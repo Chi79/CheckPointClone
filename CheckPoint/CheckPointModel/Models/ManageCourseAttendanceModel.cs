@@ -40,8 +40,8 @@ namespace CheckPointModel.Models
 
             foreach (var attendee in AttendeesAppliedToCourses)
             {
-                var courseToAdd = GetCourseById((int)attendee.CourseId);
-                if (clientCourses.Contains(courseToAdd))
+                var courseToAdd = (COURSE)GetCourseById((int)attendee.CourseId);
+                if (clientCourses.Contains(courseToAdd) && courseToAdd.APPOINTMENTs.Count != 0)
                 {
                     coursesWithAttendeeRequests.Add(courseToAdd);
                 }
@@ -61,12 +61,14 @@ namespace CheckPointModel.Models
         public IEnumerable<object> GetClientInformationForAttendees()
         {
             var attendeesForSelectedCourse = GetAttendeesForSelectedCourse();
-            List<object> appliedAttendeesAsClients = new List<object>();
+            var appliedAttendeesAsClients = new HashSet<object>();
 
             foreach (var attendee in attendeesForSelectedCourse)
             {
                 var username = attendee.CLIENT_TAG.UserName;
+
                 var attendeeAsClient = (CLIENT)GetClientByUserName(username);
+
                 appliedAttendeesAsClients.Add(attendeeAsClient);
             }
             return appliedAttendeesAsClients;
@@ -105,9 +107,47 @@ namespace CheckPointModel.Models
 
         public void ChangeSelectedAttendeesStatusToApproved()
         {
-            var attendeeToApprove = GetAttendeeToApproveForCourse();
-            attendeeToApprove.StatusId = (int)AttendeeStatus.RequestApproved;
-            _unitOfWork.Complete();
+            //this should probably be refactored at some point
+
+            var username = GetSessionAttendeeUsername();
+            var attendeesToApprove = new HashSet<ATTENDEE>();
+            var tagIdForUsername = _unitOfWork.Client_TagIds.GetClientTagId(username);
+
+            var appointmentsInCourse = GetAppointmentsInCourse();
+            
+            foreach (APPOINTMENT appointment in appointmentsInCourse)
+            {
+                var attendeeToApprove = _unitOfWork.ATTENDEEs.GetAttendeeByTagIdAndAppointmentId(tagIdForUsername, appointment.AppointmentId);
+                if(attendeeToApprove != null)
+                {
+                    attendeesToApprove.Add((ATTENDEE)attendeeToApprove);
+                }              
+            }
+
+            foreach(ATTENDEE attendee in attendeesToApprove)
+            {
+                attendee.StatusId = (int)AttendeeStatus.RequestApproved;
+                _unitOfWork.Complete();
+            }
+            
+        }
+
+        private IEnumerable<object> GetAllAttendeesByUsername(string username)
+        {
+            return _unitOfWork.ATTENDEEs.GetAllAttendeesByUserName(username);
+        }
+
+
+        private IEnumerable<object> GetAppointmentsForAttendee(string username)
+        {
+            return _unitOfWork.APPOINTMENTs.GetAllAppointmentsFor(username);
+        }
+
+        private IEnumerable<object> GetAppointmentsInCourse()
+        {
+            var courseId = _sessionService.SessionCourseId;
+
+            return _unitOfWork.APPOINTMENTs.GetAllAppointmentsByCourseId(courseId);
         }
 
         public void ChangeAllAttendeesStatusesToApproved()
@@ -132,6 +172,7 @@ namespace CheckPointModel.Models
         {
             var username = _sessionService.SessionAttendeeUsername;
             var courseId = (int)_sessionService.SessionCourseId;
+
             return _unitOfWork.ATTENDEEs.GetAttendeeByUserNameAndCourseId(username, courseId) as ATTENDEE;           
         }
 

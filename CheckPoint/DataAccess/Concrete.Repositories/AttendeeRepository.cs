@@ -23,12 +23,19 @@ namespace DataAccess.Concrete.Repositories
 
         public object GetAttendeeByUserNameAndAppointmentId(string username, int id)
         {
-            return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username && a.AppointmentId == id);
+            var bob = CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username && a.AppointmentId == id);
+            return bob;
+        }
+
+        public object GetAttendeeByTagIdAndAppointmentId(string tagId, int id)
+        {
+            return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.TagId == tagId && a.AppointmentId == id);
         }
 
         public object GetAttendeeByUserNameAndCourseId(string username, int id)
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username && a.CourseId == id);
+            return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username && a.CourseId == id);
+            
         }
 
         public IEnumerable<object> GetAllAttendeesAcceptedForAppointments()
@@ -39,6 +46,11 @@ namespace DataAccess.Concrete.Repositories
         public object GetAttendeeByUserName(string username)
         {
             return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username);
+        }
+
+        public IEnumerable<object> GetAllAttendeesByUserName(string username)
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username);
         }
 
         public IEnumerable<object> GetAcceptedAttendeesByUserName(string username)
@@ -62,7 +74,7 @@ namespace DataAccess.Concrete.Repositories
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses()
         {
             return CheckPointContext.ATTENDEEs.Where(a => a.CourseId != null && 
-                                                a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
+                                                a.StatusId == (int)AttendeeStatus.RequestedToAttend).Distinct().ToList();
         }
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForAppointments()
