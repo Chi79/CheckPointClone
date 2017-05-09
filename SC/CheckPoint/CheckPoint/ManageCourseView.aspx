@@ -378,7 +378,7 @@ runat="server">
     CssClass="navButtons" 
     runat="server" 
     OnClick="btnAddAnotherAppointmentToThisCourse_Click" 
-    Text="Add Another Appointment to this Course"  
+    Text="Add an Appointment to this Course"  
     Visible="True" 
     ForeColor="White" />
 </ContentTemplate>

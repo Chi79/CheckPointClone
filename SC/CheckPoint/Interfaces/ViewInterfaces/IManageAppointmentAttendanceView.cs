@@ -27,7 +27,9 @@ namespace CheckPointCommon.ViewInterfaces
         bool YesButtonVisible { set;}
         bool NoButtonVisible { set; }
         bool ContinueButtonVisible { set; }
- 
+        bool AcceptAttendeesButtonVisible { set; }
+        bool AcceptAllAttendeesButtonVisible { set; }
+        bool ShowAttendeeHeader { set; }
 
 
         void RedirectToManageCourseAttendanceView();

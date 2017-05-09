@@ -132,7 +132,7 @@ ID="gvAttendeeTable"
 runat="server"
 AutoGenerateColumns="False" 
 Height="100%" 
-Width="100%"  
+Width="102%"  
 style=" table-layout:fixed;
 z-index:1" 
 AllowSorting="True" 

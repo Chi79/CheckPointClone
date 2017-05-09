@@ -22,7 +22,10 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
             ResetSessionState();
+
             ShowAppointmentData();
+
+            HideAttendeeHeader();
         }
 
         private void ResetSessionState()
@@ -160,6 +163,11 @@ namespace CheckPointPresenters.Presenters
             _view.ContinueButtonVisible = false;
         }
 
+        private void ShowAcceptAttendeeButtons()
+        {
+            _view.AcceptAttendeesButtonVisible = true;
+            _view.AcceptAllAttendeesButtonVisible = true;
+        }
 
         private bool CheckIsAttendeeSelected()
         {
@@ -187,6 +195,21 @@ namespace CheckPointPresenters.Presenters
         {
             _view.ShowAttendeeGridViewHeader = true;
             _view.ShowAttendeeGridView = true;
+            
+        }
+
+        private void ShowAttendeeHeader()
+        {
+
+            _view.ShowAttendeeHeader = true;
+
+        }
+
+        private void HideAttendeeHeader()
+        {
+
+            _view.ShowAttendeeHeader = false;
+
         }
 
         private void ShowAcceptAttendanceButtons()
@@ -258,11 +281,14 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAppointmentGridViewRowSelected(object sender, EventArgs e)
         {
+
             SaveAppointmentRowIndexToSession();
 
             GetSelectedAppointmentIdFromGrid();
 
             DisplayAppliedAttendeesForSelectedAppointment();
+
+            ShowAttendeeHeader();
 
             ShowAcceptAttendanceButtons();
         }
@@ -280,9 +306,13 @@ namespace CheckPointPresenters.Presenters
 
         private void DisplayAppliedAttendeesForSelectedAppointment()
         {
+            ShowAcceptAttendanceButtons();
+
             ShowAttendeeGridView();
             ShowAttendeeData();
+            
         }
+
 
         private void SaveSelectedAppointmentIdToSession()
         {

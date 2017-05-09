@@ -47,7 +47,7 @@
         .logoslide{
       position:absolute;
       left: 85%;
-      top:  -22%;
+      top: -11px;
       animation: slideleft 2s ;
 }
 @keyframes slideleft {
@@ -56,15 +56,14 @@
         }
       .Appointmentslide{
       position:absolute;
-      left: 2%;
+      left: 6%;
       animation:slidedown 4s;
-      top:-16%;
-        }
-
-      @keyframes slidedown {
-      from { top: -100%; }
-      to { top: -16%; }
-        }
+      top:4px;
+}
+@keyframes slidedown {
+     from { top: -200px; }
+      to { top: 4px; }
+}
 
 
         .PanelCourseGrid {
