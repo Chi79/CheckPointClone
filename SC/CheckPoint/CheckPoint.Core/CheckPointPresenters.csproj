@@ -86,7 +86,6 @@
     <Compile Include="Presenters\InviteUserPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\ManageAppointmentAttendancePresenter.cs" />
-    <Compile Include="Presenters\ManageAttendancePresenter.cs" />
     <Compile Include="Presenters\ManageCourseAttendancePresenter.cs" />
     <Compile Include="Presenters\ManageCoursePresenter.cs" />
     <Compile Include="Presenters\ManageSingleAppointmentPresenter.cs" />

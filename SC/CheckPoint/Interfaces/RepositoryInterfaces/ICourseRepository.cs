@@ -17,5 +17,7 @@ namespace CheckPointCommon.RepositoryInterfaces
 
         COURSE GetCourseByCourseId(int coursetId);
 
+        IEnumerable<COURSE> GetAllCoursesClientIsApprovedToAttend(string userName);
+
     }
 }

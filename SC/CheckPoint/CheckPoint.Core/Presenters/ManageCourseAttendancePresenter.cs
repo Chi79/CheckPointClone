@@ -66,9 +66,12 @@ namespace CheckPointPresenters.Presenters
             _view.CourseRowSelected += OnCourseGridViewRowSelected;
             _view.AttendeeRowSelected += OnAttendeeGridViewSelected;
             _view.RedirectToManageAppointmentAttendance += OnManageAppointmentAttendanceButtonClicked;
+            _view.YesButtonClicked += OnMessagePanelYesButtonClicked;
+            _view.NoButtonClicked += OnMessagePanelNoButtonClicked;
+            _view.ContinueButtonClicked += OnMessagePanelContinueButtonClicked;
         }
 
-        private bool IsCourseSelected()
+        private bool CheckIsCourseSelected()
         {
             int noCourseSelected = -1;
 
@@ -84,10 +87,54 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAcceptAllAttendanceRequestsForSelectedCourseButtonClicked(object sender, EventArgs e)
         {
-            if(IsCourseSelected() == true)
+            var isCourseSelected = CheckIsCourseSelected();
+            if (isCourseSelected)
             {
-                ChangeAllAttendeesStatusesToApproved();
+                ShowMessagePanel();
+
+                 _view.MessagePanelMessage = "<br /> Are you sure you would like to approve all attendee requests for this course?<br /><br />";
+
+                 ShowYesButton();
+                 ShowNoButton();
             }
+            else
+            {
+                ShowMessagePanel();
+
+                _view.MessagePanelMessage = "<br /> No course has been selected! <br /><br />";
+
+                ShowContinueButton();
+
+            }
+
+            
+        }
+
+        private void OnMessagePanelContinueButtonClicked(object sender, EventArgs e)
+        {
+            HideMessagePanel();
+            HideContinueButton();
+        }
+
+        private void OnMessagePanelNoButtonClicked(object sender, EventArgs e)
+        {
+            HideMessagePanel();
+            HideNoButton();
+            HideYesButton();
+        }
+
+        private void OnMessagePanelYesButtonClicked(object sender, EventArgs e)
+        {           
+                ChangeAllAttendeesStatusesToApproved();
+                UpdateGridViews();
+
+                HideYesButton();
+                HideNoButton();
+
+                _view.MessagePanelMessage = "All attendee requests for course accepted!";
+
+                ShowContinueButton();
+            
         }
 
         private void UpdateGridViews()
@@ -163,6 +210,44 @@ namespace CheckPointPresenters.Presenters
             ShowAttendeeData();
         }
 
+        private void ShowMessagePanel()
+        {
+            _view.MessagePanelVisible = true;
+        }
+
+        private void HideMessagePanel()
+        {
+            _view.MessagePanelVisible = false;
+        }
+
+        private void ShowYesButton()
+        {
+            _view.YesButtonVisible = true;
+        }
+
+        private void HideYesButton()
+        {
+            _view.YesButtonVisible = false;
+        }
+        private void ShowNoButton()
+        {
+            _view.NoButtonVisible = true;
+        }
+
+        private void HideNoButton()
+        {
+            _view.NoButtonVisible = false;
+        }
+        private void ShowContinueButton()
+        {
+            _view.ContinueButtonVisible = true;
+        }
+
+        private void HideContinueButton()
+        {
+            _view.ContinueButtonVisible = false;
+        }
+
         private void SaveCourseRowIndexToSession()
         {
 
@@ -193,7 +278,7 @@ namespace CheckPointPresenters.Presenters
             _model.SetSessionCourseId(selectedCourseId);
 
         }
-        private bool IsAttendeeSelected()
+        private bool CheckIsAttendeeSelected()
         {
             string noAttendeeSelected = string.Empty;
 
@@ -208,10 +293,26 @@ namespace CheckPointPresenters.Presenters
         }
 
         private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
-        {        
-            if(IsAttendeeSelected() == true)
+        {
+            var isAttendeeSelected = CheckIsAttendeeSelected();
+            if (isAttendeeSelected)
             {
                 ChangeSelectedAttendeesStatusToApproved();
+                UpdateGridViews();
+
+                ShowMessagePanel();
+
+                _view.MessagePanelMessage = "<br /> Attendee request approved for the course!<br /><br />";
+
+                ShowContinueButton();
+            }
+            else
+            {
+                ShowMessagePanel();
+
+                _view.MessagePanelMessage = "<br /> No attendee selected!<br /> <br / Please select an attendee<br />";
+
+                ShowContinueButton();
             }
 
         }

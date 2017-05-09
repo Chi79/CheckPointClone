@@ -15,12 +15,19 @@ namespace CheckPointCommon.ViewInterfaces
         IEnumerable<object> AppliedAttendeesSetDataSource { set; }
         int SelectedAppointmentRowIndex { get; set; }
         int SelectedAttendeeRowIndex { get; set; }
-        object SelectedAppointmentRowValueDataKey { get;}
+        object SelectedAppointmentRowValueDataKey { get; }
         object SelectedAttendeeRowValueDataKey { get; }
         bool ShowAttendeeGridViewHeader { get; set; }
         bool ShowAttendeeGridView { get; set; }
         bool ShowAcceptAttendanceRequestButton { set; }
         bool ShowAcceptAllAttendanceRequestsForSelectedAppointmentButton { set; }
+
+        string MessagePanelMessage { get; set; }        
+        bool MessagePanelVisible { set; }
+        bool YesButtonVisible { set;}
+        bool NoButtonVisible { set; }
+        bool ContinueButtonVisible { set; }
+ 
 
 
         void RedirectToManageCourseAttendanceView();
@@ -33,6 +40,9 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> AcceptAttendanceRequest;
         event EventHandler<EventArgs> RedirectToManageCourseAttendance;
         event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedAppointment;
+        event EventHandler<EventArgs> YesButtonClicked;
+        event EventHandler<EventArgs> NoButtonClicked;
+        event EventHandler<EventArgs> ContinueButtonClicked;
 
     }
 }

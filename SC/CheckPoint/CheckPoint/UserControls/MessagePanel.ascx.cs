@@ -60,6 +60,8 @@ namespace CheckPoint.Views.UserControls
 
         }
 
+        
+
         protected void btnYes_Click(object sender, EventArgs e)
         {
             if (YesButtonClicked != null)
@@ -83,5 +85,7 @@ namespace CheckPoint.Views.UserControls
                 ReloadPage(this, EventArgs.Empty);
             }
         }
+
+        
     }
 }

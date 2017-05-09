@@ -73,7 +73,6 @@
     <Compile Include="ModelInterfaces\IInvalidNavigationModel.cs" />
     <Compile Include="ModelInterfaces\IInviteUserModel.cs" />
     <Compile Include="ModelInterfaces\IManageAppointmentAttendanceModel.cs" />
-    <Compile Include="ModelInterfaces\IManageAttendanceModel.cs" />
     <Compile Include="ModelInterfaces\IManageCourseAttendanceModel.cs" />
     <Compile Include="ModelInterfaces\IManageCourseModel.cs" />
     <Compile Include="ModelInterfaces\IManageSingleAppointmentModel.cs" />
@@ -128,7 +127,6 @@
     <Compile Include="ViewInterfaces\IInviteUserView.cs" />
     <Compile Include="ViewInterfaces\ILoginView.cs" />
     <Compile Include="ViewInterfaces\IManageAppointmentAttendanceView.cs" />
-    <Compile Include="ViewInterfaces\IManageAttendanceView.cs" />
     <Compile Include="ViewInterfaces\IManageCourseAttendanceView.cs" />
     <Compile Include="ViewInterfaces\IManageCourseView.cs" />
     <Compile Include="ViewInterfaces\IManageSingleAppointmentView.cs" />

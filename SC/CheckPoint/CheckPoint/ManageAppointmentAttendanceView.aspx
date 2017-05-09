@@ -4,6 +4,10 @@
 <%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
 <%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
 <%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
+
+
 
 
 
@@ -137,6 +141,7 @@
     <div id="outercontainer" style="height:100%; width:auto;">
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
     <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
+        
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
 ID="ScriptManager1"
@@ -147,12 +152,18 @@ runat="server">
         
 <%-- Appointment Header --%>    
 <asp:Panel ID="panelAppointmentHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader" Visible="true">
+
     <asp:UpdatePanel
     ID="UpdatePanel7"  
     runat="server" > 
-        <ContentTemplate>
+
+        <ContentTemplate> 
+                   
+            <uc1:MessagePanel runat="server" ID="messagePanelAppointments" Visible="true"/>
             <uc1:AppointmentGridViewHeader runat="server" ID="AppointmentGridViewHeader"/>
+
         </ContentTemplate>
+
          </asp:UpdatePanel>
 </asp:Panel>
 
@@ -170,7 +181,7 @@ runat="server">
          </asp:UpdatePanel>
 
 </asp:Panel>
-
+   
 
 <br />
 <br />
@@ -184,8 +195,8 @@ runat="server">
     <asp:UpdatePanel 
     ID="UpdatePanel2"  
     runat="server" >
-
     <ContentTemplate>
+
 <%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
     <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" Visible="true"/>
         </ContentTemplate>

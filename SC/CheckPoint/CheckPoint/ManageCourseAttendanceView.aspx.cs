@@ -17,6 +17,9 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> AcceptAttendanceRequest;
         public event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedCourse;
         public event EventHandler<EventArgs> RedirectToManageAppointmentAttendance;
+        public event EventHandler<EventArgs> YesButtonClicked;
+        public event EventHandler<EventArgs> NoButtonClicked;
+        public event EventHandler<EventArgs> ContinueButtonClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -73,6 +76,9 @@ namespace CheckPoint.Views
         {           
             CourseGridView.RowSelected += OnCourseRowSelected;
             AttendeeGridView.RowSelected += OnAttendeeRowSelected;
+            MessagePanel.YesButtonClicked += OnYesButtonClicked;
+            MessagePanel.NoButtonClicked += OnNoButtonClicked;
+            MessagePanel.ReloadPage += OnContinueButtonClicked;
         }
 
         private void OnCourseRowSelected(object sender, EventArgs e)
@@ -96,6 +102,30 @@ namespace CheckPoint.Views
             if(AcceptAttendanceRequest != null)
             {
                 AcceptAttendanceRequest(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+            if (ContinueButtonClicked != null)
+            {
+                ContinueButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnNoButtonClicked(object sender, EventArgs e)
+        {
+            if (NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnYesButtonClicked(object sender, EventArgs e)
+        {
+            if (YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
             }
         }
 
@@ -125,6 +155,33 @@ namespace CheckPoint.Views
         public bool ShowAcceptAllAttendanceRequestsForSelectedCourseButton
         {
             set{ btnAcceptAllAttendeeRequestsForSelectedCourse.Visible = value; }
+        }
+
+        public string MessagePanelMessage
+        {
+            get { return MessagePanel.Message; }
+
+            set { MessagePanel.Message = value; }
+        }
+
+        public bool MessagePanelVisible
+        {
+            set { MessagePanel.MessagePanelVisible = value; }
+        }
+
+        public bool YesButtonVisible
+        {
+            set { MessagePanel.YesButtonVisible = value; }
+        }
+
+        public bool NoButtonVisible
+        {
+            set { MessagePanel.NoButtonVisible = value; }
+        }
+
+        public bool ContinueButtonVisible
+        {
+            set { MessagePanel.ContinueButtonVisible = value; }
         }
 
         protected void btnManageAppointmentAttendance_Click(object sender, EventArgs e)

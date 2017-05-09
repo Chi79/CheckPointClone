@@ -40,6 +40,15 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel7;
         
         /// <summary>
+        /// messagePanelAppointments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CheckPoint.Views.UserControls.MessagePanel messagePanelAppointments;
+        
+        /// <summary>
         /// AppointmentGridViewHeader control.
         /// </summary>
         /// <remarks>
