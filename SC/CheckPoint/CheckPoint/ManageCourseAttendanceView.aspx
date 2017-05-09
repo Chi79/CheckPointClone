@@ -36,6 +36,7 @@
                 .container{
       position:relative;
       right:0%;
+      height:auto;
       animation: slideright 2s;
 }
         @keyframes slideright {
@@ -173,7 +174,7 @@ runat="server">
 </asp:Panel>
 
 <%-- Course Gridview --%>
-<asp:Panel ID="panelCourseGridView" runat="server" CssClass="PanelCourseGrid">
+<asp:Panel ID="panelCourseGridView" runat="server" CssClass="PanelAppGrid">
 
      <asp:UpdatePanel 
     ID="UpdatePanel0"  
@@ -231,7 +232,6 @@ runat="server">
          </asp:UpdatePanel>
 
 </asp:Panel>           
+     </div>    
     </div>
-     </div>
-    
 </asp:Content>

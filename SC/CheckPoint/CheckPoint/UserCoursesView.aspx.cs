@@ -117,5 +117,29 @@ namespace CheckPoint.Views
         {
             Response.Redirect("UserHomeView.aspx");
         }
+
+        protected void btnFindAppointments_Click(object sender, EventArgs e)
+        {
+            if(FindAppointmentsButtonClicked != null)
+            {
+                FindAppointmentsButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnFindCourses_Click(object sender, EventArgs e)
+        {
+            if(FindCoursesButtonClicked != null)
+            {
+                FindCoursesButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnManageAttendance_Click(object sender, EventArgs e)
+        {
+            if(ManageAttendanceButtonClicked != null)
+            {
+                ManageAttendanceButtonClicked(this, EventArgs.Empty);
+            }
+        }
     }
 }
