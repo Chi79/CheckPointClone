@@ -19,12 +19,12 @@ namespace CheckPoint.Views
 
         public IEnumerable<object> AppointmentsAppliedToHeaderSetDataSource
         {
-            set { AppointmentGridViewHeader.SetDataSource2 = value; }
+            set { AttendeeAppointmentGridViewHeader.SetDataSource2 = value; }
         }
 
         public IEnumerable<object> AppointmentsAppliedToSetDataSource
         {
-            set { AppointmentGridView.SetDataSource = value; }
+            set { AttendeeAppointmentGridView.SetDataSource = value; }
         }
         public IEnumerable<object> AppliedAttendeesHeaderSetDataSource
         {
@@ -38,16 +38,16 @@ namespace CheckPoint.Views
 
         public int SelectedAppointmentRowIndex
         {
-            get { return AppointmentGridView.SelectedRowIndex; }
-            set { AppointmentGridView.SelectedRowIndex = value; }
+            get { return AttendeeAppointmentGridView.SelectedRowIndex; }
+            set { AttendeeAppointmentGridView.SelectedRowIndex = value; }
         }
 
         
 
         public void BindAppointmentData()
         {
-            AppointmentGridViewHeader.BindData();
-            AppointmentGridView.BindData();
+            AttendeeAppointmentGridViewHeader.BindData();
+            AttendeeAppointmentGridView.BindData();
         }
 
         public void BindAttendeeData()
@@ -55,12 +55,6 @@ namespace CheckPoint.Views
             AttendeeGridViewHeader.BindData();
             AttendeeGridView.BindData();
         }
-
-        //public bool ShowAttendeeGridViewHeader
-        //{
-        //    get { return panelAttendeeHeader.Visible; }
-        //    set { panelAttendeeHeader.Visible = value; }
-        //}
 
         public bool ShowAttendeeGridViewHeader
         {
@@ -74,9 +68,14 @@ namespace CheckPoint.Views
             set { panelAttendeeGridView.Visible = value; }
         }
 
+        public bool ShowAttendeeHeader
+        {
+            set { AttendeeHeader.Visible = value; }
+        }
+
         public object SelectedAppointmentRowValueDataKey
         {
-            get { return AppointmentGridView.SelectedRowValueDataKey; }
+            get { return AttendeeAppointmentGridView.SelectedRowValueDataKey; }
         }
 
         public object SelectedAttendeeRowValueDataKey
@@ -120,6 +119,17 @@ namespace CheckPoint.Views
             set { messagePanelAppointments.ContinueButtonVisible = value; }
         }
 
+        public bool AcceptAttendeesButtonVisible
+        {
+            set { btnAcceptAttendanceRequest.Visible = value; }
+        }
+
+        public bool AcceptAllAttendeesButtonVisible
+        {
+            set { btnAcceptAllAttendeeRequestsForSelectedAppointment.Visible = value;}
+        }
+
+
         public int SelectedAttendeeRowIndex
         {
             get { return AttendeeGridView.SelectedRowIndex; }
@@ -128,7 +138,7 @@ namespace CheckPoint.Views
 
         public override void HookUpEvents()
         {
-            AppointmentGridView.RowSelected += OnAppointmentRowSelected;
+            AttendeeAppointmentGridView.RowSelected += OnAppointmentRowSelected;
             AttendeeGridView.RowSelected += OnAttendeeRowSelected;
             messagePanelAppointments.YesButtonClicked += OnYesButtonClicked;
             messagePanelAppointments.NoButtonClicked += OnNoButtonClicked;

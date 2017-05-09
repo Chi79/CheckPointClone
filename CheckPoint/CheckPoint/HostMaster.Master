@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden;" >
 <head runat="server">
     <meta name="viewport"   content="width=device-width, initial-scale=2"/>
     <link href="CSS/StyleMaster.css" rel="stylesheet" />    
@@ -18,11 +18,11 @@
 
     <title></title>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server" >
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <form id="form1" runat="server" style="height:100%;">
+<body >
+    <form id="form1" runat="server">
 
     <div id="main-sidebar">
 

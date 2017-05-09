@@ -1,10 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAppointmentAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAppointmentAttendanceView" EnableEventValidation="false"   MasterPageFile="~/HostMaster.Master" %>
 
-<%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
-<%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
 <%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
 <%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
 <%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+<%@ Register Src="~/UserControls/AttendeeAppointmentGridView.ascx" TagPrefix="uc1" TagName="AttendeeAppointmentGridView" %>
+<%@ Register Src="~/UserControls/AttendeeAppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeAppointmentGridViewHeader" %>
+
+
 
 
 
@@ -16,123 +18,152 @@
     <title></title>
 
     <style>
-        #wrapper{
-            width: 100%;
-            height: 100%;
-            background: #333333;
-        }
-
-        #courseGridContainer{
-            position:relative;        
-        }
-
-        #appointmentGridContainer{
-            position:relative;          
-        }
-
-        #attendeeGridContainer{
-            position:relative;
-            top:50%;
-            width:100%;
-
-        }
-
-        .PanelCourseGrid {
-            position: relative;
-            height: 79px;
-            width: 100%;
-            overflow-y: hidden;
-            right: 1%;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-        .PanelCourseHeader{
-            height:100%;
-            width:100%;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            padding-bottom: 5px;
-            position:relative;
-            right:1%;
-        }
-        .PanelAppGrid{
-            position:relative; 
-            height:315px;
-            width:100%;
-            overflow-y:auto;
-            right:1%;
-            border-bottom-left-radius: 10px;
-        }
-        .PanelAppGridHeader{
-            height:100%;
-            width:100%;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            padding-bottom: 5px;
-            position:relative;
-            right:1%;
-        }
-                
-        .container{
-      position:relative;
-      right:0%;
-      animation: slideright 2s;
-}
-        @keyframes slideright {
-      from { right: -100%; }
-      to { right: 0%;}
+#wrapper{
+    width: 100%;
+    height: 100%;
+    background: #333333;
 }
 
-        .logoslide{
-      position:absolute;
-      left: 85%;
-      top:  -12%;
-      animation: slideleft 2s ;
+#courseGridContainer{
+    position:relative;        
+}
+
+#appointmentGridContainer{
+    position:relative;          
+}
+
+#attendeeGridContainer{
+    position:relative;
+    top:50%;
+    width:100%;
+
+}
+
+.PanelCourseGrid {
+    position: relative;
+    height: 79px;
+    width: 100%;
+    overflow-y: hidden;
+    right: 1%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.PanelCourseHeader{
+    height:100%;
+    width:100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 5px;
+    position:relative;
+    right:1%;
+}
+.PanelAppGrid{
+    position:relative; 
+    height:237px;
+    width:100%;
+    overflow-y:auto;
+    right:1%;
+    border-bottom-left-radius: 10px;
+}
+.PanelAppGridHeader{
+    height:100%;
+    width:100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 5px;
+    position:relative;
+    right:1%;
+}
+        
+.container{
+   position:relative;
+   right:0%;
+   animation: slideright 2s;
+}
+   @keyframes slideright {
+   from { right: -100%; }
+   to { right: 0%;}
+}
+
+.logoslide{
+   position:absolute;
+   left: 85%;
+   top:  -11px;
+   animation: slideleft 2s ;
 }
 @keyframes slideleft {
-      from { left: -100%; }
-      to { left: 85%; }
-        }
-      .Appointmentslide{
-      position:absolute;
-      left: 2%;
-      animation:slidedown 4s;
-      top:-8%;
-        }
+   from { left: -100%; }
+   to { left: 85%; }
+}
+   .Appointmentslide{
+   position:absolute;
+   left: 6%;
+   animation:slidedown 4s;
+   top:4px;
+}
+@keyframes slidedown {
+   from { top: -200px; }
+   to { top: 4px; }
+}
 
-      @keyframes slidedown {
-      from { top: -100%; }
-      to { top: -8%; }
-        }
+.GridviewLabel{
+    font-size: 38px;
+    color: white;            
+}
+.navButtons{
+margin-left: 8px;
+border-radius: 5px;
+border-width: 0px;
+border-color: darkgreen;
+padding-bottom: 1%;
+height: 40px;
+font-family: sans-serif;
+font-size: 15px;
+color: white;
+padding-top: 0.5%;
+font-weight: 600;
+background-image: url(/Images/buttonshade1.png);
+ }
+ .navButtons:hover{
+ border-radius:0px;
+ -webkit-animation:flashingbutton;
+ -webkit-animation-duration:2s;
+ -webkit-animation-iteration-count:infinite;
+ }
+  @-webkit-keyframes flashingbutton{
+  from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+   50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+    to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
+}
+.AttendeePanelHeader{
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    margin-left:-13px;
+}
+.AttendeePanel{
+    margin-left:-13px;
+    height:55px;
+}
 
-        .GridviewLabel{
-            font-size: 38px;
-            color: white;            
-        }
-        .navButtons{
-        border-radius: 5px;
-        border-width: 0px;
-        border-color: darkgreen;
-        padding-bottom: 1%;
-        height: 40px;
-        font-family: sans-serif;
-        font-size: 15px;
-        color: white;
-        padding-top: 0.5%;
-        font-weight: 600;
-        background-image: url(/Images/buttonshade1.png);
-         }
-         .navButtons:hover{
-         border-radius:0px;
-         -webkit-animation:flashingbutton;
-         -webkit-animation-duration:2s;
-         -webkit-animation-iteration-count:infinite;
-         }
-          @-webkit-keyframes flashingbutton{
-          from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
-           50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
-            to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
-         }
+#<%=UpdatePanel3.ClientID%>{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 150px;
+}
+.buttonDiv{
+    margin-top:1%;
+}
+.AttendeeRequestHeader{
+   position:absolute;
+    left: 0%;
+    top: 303px;
+   animation: slideright 2s ;
+}
+@keyframes slideright {
+   from { left: 200%; }
+   to { left: 0%; }
+}
+
     </style>
 
 </asp:Content>
@@ -160,7 +191,8 @@ runat="server">
         <ContentTemplate> 
                    
             <uc1:MessagePanel runat="server" ID="messagePanelAppointments" Visible="true"/>
-            <uc1:AppointmentGridViewHeader runat="server" ID="AppointmentGridViewHeader"/>
+   
+            <uc1:AttendeeAppointmentGridViewHeader runat="server" ID="AttendeeAppointmentGridViewHeader" />
 
         </ContentTemplate>
 
@@ -175,23 +207,28 @@ runat="server">
     runat="server" >
 
     <ContentTemplate>
-        <uc1:AppointmentGridView runat="server" ID="AppointmentGridView" />
+
+        <uc1:AttendeeAppointmentGridView runat="server" ID="AttendeeAppointmentGridView" />
 
         </ContentTemplate>
          </asp:UpdatePanel>
 
 </asp:Panel>
    
+<br />
+    <asp:UpdatePanel runat="server">
+        <ContentTemplate>
 
-<br />
-<br />
-<asp:Button CssClass="navButtons" ID="btnManageCourseAttendance" runat="server" Text="Manage Attendance For Courses" OnClick="btnManageCourseAttendance_Click"/>
+            <div id="AttendeeHeader" runat="server" class="AttendeeRequestHeader" style="z-index:5;" >
+            <img src="Images/AttendeeRequests1.svg" />
+            </div>
 
-<br />
+        </ContentTemplate>
+    </asp:UpdatePanel>
 <br />
 <br />
 <%-- Attendee Header --%>
-<asp:Panel ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" Visible="true">
+<asp:Panel CssClass="AttendeePanelHeader" ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" Visible="true" Width="100%" >
     <asp:UpdatePanel 
     ID="UpdatePanel2"  
     runat="server" >
@@ -205,27 +242,28 @@ runat="server">
 
  
 <%-- Attendee Gridview --%>
-<asp:Panel ID="panelAttendeeGridView" runat="server" Visible="true">
-    <asp:UpdatePanel 
+<asp:Panel CssClass="AttendeePanel" ID="panelAttendeeGridView" runat="server" Visible="true"  Width="100%">
+    <asp:UpdatePanel    
     ID="UpdatePanel3"  
     runat="server" >
 
     <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true"/> 
-        <br />
-<br />
-                <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" Visible="false"/> &nbsp &nbsp
-<asp:Button CssClass="navButtons" ID="btnAcceptAllAttendeeRequestsForSelectedAppointment" runat="server" Text="Accept All Attendance Requests For Selected Appointment" OnClick="btnAcceptAllAttendeeRequestsForSelectedAppointment_Click" Visible="false"/>
-        </ContentTemplate>
-         </asp:UpdatePanel>
-</asp:Panel>
-
-             
+    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true" /> 
  
-         
-    
-  </div>
+        </ContentTemplate>
+        </asp:UpdatePanel>
+    <asp:UpdatePanel runat="server">
+        <ContentTemplate>
+            <div id="buttonDiv" class="buttonDiv">
+            <asp:Button CssClass="navButtons" ID="btnManageCourseAttendance" runat="server" Text="Manage Attendance For Courses" OnClick="btnManageCourseAttendance_Click"/>
+            <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" Visible="false"/> 
+            <asp:Button CssClass="navButtons" ID="btnAcceptAllAttendeeRequestsForSelectedAppointment" runat="server" Text="Accept All Attendance Requests For Selected Appointment" OnClick="btnAcceptAllAttendeeRequestsForSelectedAppointment_Click" Visible="false"/>
+            </div>
+        </ContentTemplate>
+ 
+    </asp:UpdatePanel>
+    </asp:Panel>
+
+     </div>
         </div>
-
-
 </asp:Content>

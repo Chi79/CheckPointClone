@@ -145,6 +145,7 @@
     <Content Include="Images\AppointmentHeading.svg" />
     <Content Include="Images\AppointmentHeading1.svg" />
     <Content Include="Images\AppointmentsInCourse.svg" />
+    <Content Include="Images\AttendeeRequests1.svg" />
     <Content Include="Images\AttendeesRequestingToBeAccepted.svg" />
     <Content Include="Images\BeforeYouRegisterHeading1.svg" />
     <Content Include="Images\bug.png" />
@@ -258,7 +259,9 @@
     <Content Include="UserControls\ApplyToCourseGrid.ascx" />
     <Content Include="UserControls\ApplyToCourseHeader.ascx" />
     <Content Include="UserControls\AppointmentCreator.ascx" />
+    <Content Include="UserControls\AttendeeAppointmentGridView.ascx" />
     <Content Include="UserControls\AppointmentGridView.ascx" />
+    <Content Include="UserControls\AttendeeAppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\AttendeeGridView.ascx" />
     <Content Include="UserControls\AttendeeGridViewHeader.ascx" />
@@ -319,6 +322,7 @@
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.designer.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
@@ -529,24 +533,28 @@
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.cs">
       <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.designer.cs">
       <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGridHeader.ascx.cs">
       <DependentUpon>ApplyToCourseAppGridHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGridHeader.ascx.designer.cs">
       <DependentUpon>ApplyToCourseAppGridHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseGrid.ascx.cs">
       <DependentUpon>ApplyToCourseGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseGrid.ascx.designer.cs">
       <DependentUpon>ApplyToCourseGrid.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseHeader.ascx.cs">
       <DependentUpon>ApplyToCourseHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseHeader.ascx.designer.cs">
       <DependentUpon>ApplyToCourseHeader.ascx</DependentUpon>
@@ -558,12 +566,26 @@
     <Compile Include="UserControls\AppointmentCreator.ascx.designer.cs">
       <DependentUpon>AppointmentCreator.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AttendeeAppointmentGridView.ascx.cs">
+      <DependentUpon>AttendeeAppointmentGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendeeAppointmentGridView.ascx.designer.cs">
+      <DependentUpon>AttendeeAppointmentGridView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AppointmentGridView.ascx.cs">
       <DependentUpon>AppointmentGridView.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\AppointmentGridView.ascx.designer.cs">
       <DependentUpon>AppointmentGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AttendeeAppointmentGridViewHeader.ascx.cs">
+      <DependentUpon>AttendeeAppointmentGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AttendeeAppointmentGridViewHeader.ascx.designer.cs">
+      <DependentUpon>AttendeeAppointmentGridViewHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AppointmentGridViewHeader.ascx.cs">
       <DependentUpon>AppointmentGridViewHeader.ascx</DependentUpon>

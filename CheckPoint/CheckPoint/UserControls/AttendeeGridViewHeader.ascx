@@ -88,7 +88,7 @@ table {
 }
 
 .headertextCourse {
-    padding-bottom: 4%;
+    padding-bottom: 1%;
     font-family: sans-serif;
     font-weight: bold;
     font-size: large;
@@ -182,137 +182,6 @@ CssClass="roundedButtons"/>
 <HeaderStyle />
 </asp:TemplateField>
 
-<%--<asp:TemplateField AccessibleHeaderText="FirstName" HeaderText="FirstName" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">FirstName</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>--%>
-
-<%--<asp:TemplateField AccessibleHeaderText="LastName" HeaderText="LastName" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">LastName</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>
-
-<asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">Address</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>
-
-<asp:TemplateField AccessibleHeaderText="Password" HeaderText="Password" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">Password</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>
-
-<asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">PostalCode</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>
-
-<asp:TemplateField AccessibleHeaderText="ClientType" HeaderText="ClientType" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">ClientType</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="Description" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>--%>
 
 </Columns>
 <HeaderStyle />
