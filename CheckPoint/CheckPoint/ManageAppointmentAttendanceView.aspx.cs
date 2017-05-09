@@ -12,6 +12,11 @@ namespace CheckPoint.Views
 {
     public partial class ManageAppointmentAttendanceView : ViewBase<ManageAppointmentAttendancePresenter>, IManageAppointmentAttendanceView
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public IEnumerable<object> AppointmentsAppliedToHeaderSetDataSource
         {
             set { AppointmentGridViewHeader.SetDataSource2 = value; }
@@ -37,11 +42,7 @@ namespace CheckPoint.Views
             set { AppointmentGridView.SelectedRowIndex = value; }
         }
 
-        public event EventHandler<EventArgs> AcceptAttendanceRequest;
-        public event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedAppointment;
-        public event EventHandler<EventArgs> AppointmentRowSelected;
-        public event EventHandler<EventArgs> AttendeeRowSelected;
-        public event EventHandler<EventArgs> RedirectToManageCourseAttendance;
+        
 
         public void BindAppointmentData()
         {
@@ -93,6 +94,32 @@ namespace CheckPoint.Views
             set { btnAcceptAllAttendeeRequestsForSelectedAppointment.Visible = value; }
         }
 
+        public string MessagePanelMessage
+        {
+            get { return messagePanelAppointments.Message; }
+            set { messagePanelAppointments.Message = value; }
+        }
+
+        public bool MessagePanelVisible
+        {
+            set { messagePanelAppointments.MessagePanelVisible = value; }
+        }
+
+        public bool YesButtonVisible
+        {
+            set { messagePanelAppointments.YesButtonVisible = value; }
+        }
+
+        public bool NoButtonVisible
+        {
+            set { messagePanelAppointments.NoButtonVisible = value; }
+        }
+
+        public bool ContinueButtonVisible
+        {
+            set { messagePanelAppointments.ContinueButtonVisible = value; }
+        }
+
         public int SelectedAttendeeRowIndex
         {
             get { return AttendeeGridView.SelectedRowIndex; }
@@ -102,7 +129,44 @@ namespace CheckPoint.Views
         public override void HookUpEvents()
         {
             AppointmentGridView.RowSelected += OnAppointmentRowSelected;
-            AttendeeGridView.RowSelected += OnAttendeeRowSelected;          
+            AttendeeGridView.RowSelected += OnAttendeeRowSelected;
+            messagePanelAppointments.YesButtonClicked += OnYesButtonClicked;
+            messagePanelAppointments.NoButtonClicked += OnNoButtonClicked;
+            messagePanelAppointments.ReloadPage += OnContinueButtonClicked;
+
+        }
+
+        public event EventHandler<EventArgs> AcceptAttendanceRequest;
+        public event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedAppointment;
+        public event EventHandler<EventArgs> AppointmentRowSelected;
+        public event EventHandler<EventArgs> AttendeeRowSelected;
+        public event EventHandler<EventArgs> RedirectToManageCourseAttendance;
+        public event EventHandler<EventArgs> YesButtonClicked;
+        public event EventHandler<EventArgs> NoButtonClicked;
+        public event EventHandler<EventArgs> ContinueButtonClicked;
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+            if(ContinueButtonClicked != null)
+            {
+                ContinueButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnNoButtonClicked(object sender, EventArgs e)
+        {
+            if(NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        private void OnYesButtonClicked(object sender, EventArgs e)
+        {
+            if(YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
         }
 
         private void OnAppointmentRowSelected(object sender, EventArgs e)
@@ -120,17 +184,6 @@ namespace CheckPoint.Views
                 AttendeeRowSelected(this, EventArgs.Empty);
             }
         }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void ForcePostBack()
-        {
-            Response.Redirect("ManageAppointmentAttendanceView.aspx");
-        }
-
 
         protected void btnManageCourseAttendance_Click(object sender, EventArgs e)
         {

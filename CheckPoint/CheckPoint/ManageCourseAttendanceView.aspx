@@ -4,6 +4,8 @@
 <%@ Register Src="~/UserControls/CourseGridView.ascx" TagPrefix="uc1" TagName="CourseGridView" %>
 <%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
 <%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 
@@ -136,12 +138,14 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-<div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
-<div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageCourseAttendanceHeading.svg" /></div>
+     
 <div id="outercontainer">
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
 
-<div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
+<div id="manageCourseHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageCourseAttendanceHeading.svg" /></div>
+
+<div id="coursecontainer" class="container" style="width:auto; margin-top:3.5%;">
 
 <asp:ScriptManager
 ID="ScriptManager1"
@@ -152,15 +156,16 @@ runat="server">
 
     
 <%-- Course Header --%> 
-<asp:Panel ID="panelCourseHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelCourseHeader">
+<asp:Panel ID="panelCourseHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" CssClass="PanelAppGridHeader">
 
      <asp:UpdatePanel 
     ID="UpdatePanel1"  
     runat="server" >
     <ContentTemplate>
 
-    <uc1:CourseGridViewHeader runat="server" id="CourseGridViewHeader" />
-
+      
+    <uc1:CourseGridViewHeader runat="server" id="CourseGridViewHeader" Visible="true" />
+ <uc1:MessagePanel runat="server" ID="MessagePanel"/>
     </ContentTemplate>
 
     </asp:UpdatePanel>
@@ -175,6 +180,7 @@ runat="server">
     runat="server" >
 
     <ContentTemplate>
+        
     <uc1:CourseGridView runat="server" id="CourseGridView" />
        
         </ContentTemplate>
@@ -184,7 +190,6 @@ runat="server">
 
 <br />
 <br />
-
 <asp:Button CssClass="navButtons" ID="btnManageAppointmentAttendance" runat="server" Text="Manage Attendance For Appointments" OnClick="btnManageAppointmentAttendance_Click"/>
 <br />
 <br />

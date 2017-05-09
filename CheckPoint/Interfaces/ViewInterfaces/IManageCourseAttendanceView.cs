@@ -21,7 +21,11 @@ namespace CheckPointCommon.ViewInterfaces
         bool ShowAttendeeGridView { get; set; }
         bool ShowAcceptAttendanceRequestButton { set; }
         bool ShowAcceptAllAttendanceRequestsForSelectedCourseButton { set; }
-
+        string MessagePanelMessage { get; set; }
+        bool MessagePanelVisible { set; }
+        bool YesButtonVisible { set; }
+        bool NoButtonVisible { set; }
+        bool ContinueButtonVisible { set; }
 
         void RedirectToManageAppointmentAttendanceView();
         void BindCourseData();
@@ -33,6 +37,9 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> AcceptAttendanceRequest;
         event EventHandler<EventArgs> AcceptAllAttendanceRequestsForSelectedCourse;
         event EventHandler<EventArgs> RedirectToManageAppointmentAttendance;
+        event EventHandler<EventArgs> YesButtonClicked;
+        event EventHandler<EventArgs> NoButtonClicked;
+        event EventHandler<EventArgs> ContinueButtonClicked;
     }
         
         

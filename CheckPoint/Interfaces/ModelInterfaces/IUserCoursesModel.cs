@@ -8,6 +8,14 @@ namespace CheckPointCommon.ModelInterfaces
 {
     public interface IUserCoursesModel
     {
+        IEnumerable<object> GetEmptyCourseList();
+        int? GetSessionRowIndex();
+        void SetSessionRowIndex(int index);
+        void ResetSessionState();
+        void SetSessionCourseId(int id);
+        int GetSessionCourseId();
+        string GetLoggedInClient();
+        IEnumerable<object> GetAllCoursesClientIsApprovedToAttend();
 
 
     }

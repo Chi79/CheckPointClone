@@ -50,14 +50,63 @@ namespace CheckPointPresenters.Presenters
             _view.AppointmentRowSelected += OnAppointmentGridViewRowSelected;
             _view.AttendeeRowSelected += OnAttendeeGridViewRowSelected;
             _view.RedirectToManageCourseAttendance += OnManageCourseAttendanceButtonClicked;
+            _view.YesButtonClicked += OnMessagePanelYesButtonClicked;
+            _view.NoButtonClicked += OnMessagePanelNoButtonClicked;
+            _view.ContinueButtonClicked += OnMessagePanelContinueButtonClicked;
+        }
+
+        private void OnMessagePanelContinueButtonClicked(object sender, EventArgs e)
+        {
+            HideContinueButton();
+            HideMessagePanel();
+            
+        }
+
+        private void OnMessagePanelNoButtonClicked(object sender, EventArgs e)
+        {
+            HideMessagePanel();
+            HideNoButton();
+            HideYesButton();
+        }
+
+        private void OnMessagePanelYesButtonClicked(object sender, EventArgs e)
+        {
+            var appointmentIsSelected = IsAppointmentSelected();
+            if (appointmentIsSelected)
+            {
+                ChangeAllAttendeeStatusesToApproved();
+                UpdateGridViews();
+
+                HideYesButton();
+                HideNoButton();
+
+                _view.MessagePanelMessage = "All attendee requests for appointment accepted!";
+
+                ShowContinueButton();
+            }         
         }
 
         private void OnAcceptAttendanceRequestButtonClicked(object sender, EventArgs e)
         {
-            if (IsAttendeeSelected() == true)
+            var isAttendeeSelected = CheckIsAttendeeSelected();
+            if (isAttendeeSelected)
             {
                 ChangeSelectedAttendeesStatusToApproved();
                 UpdateGridViews();
+
+                ShowMessagePanel();
+
+                _view.MessagePanelMessage = "<br /> Attendee request approved for the appointment!<br /><br />";
+
+                ShowContinueButton();
+            }
+            else
+            {
+                ShowMessagePanel();
+
+                _view.MessagePanelMessage = "<br /> No attendee selected!<br /> <br / Please select an attendee<br />";
+
+                ShowContinueButton();
             }
 
         }
@@ -73,8 +122,46 @@ namespace CheckPointPresenters.Presenters
             _model.ChangeSelectedAttendeesStatusToApproved();
         }
 
+        private void ShowMessagePanel()
+        {
+            _view.MessagePanelVisible = true;
+        }
 
-        private bool IsAttendeeSelected()
+        private void HideMessagePanel()
+        {
+            _view.MessagePanelVisible = false;
+        }
+
+        private void ShowYesButton()
+        {
+            _view.YesButtonVisible = true;
+        }
+
+        private void HideYesButton()
+        {
+            _view.YesButtonVisible = false;
+        }
+        private void ShowNoButton()
+        {
+            _view.NoButtonVisible = true;
+        }
+
+        private void HideNoButton()
+        {
+            _view.NoButtonVisible = false;
+        }
+        private void ShowContinueButton()
+        {
+            _view.ContinueButtonVisible = true;
+        }
+
+        private void HideContinueButton()
+        {
+            _view.ContinueButtonVisible = false;
+        }
+
+
+        private bool CheckIsAttendeeSelected()
         {
             string noAttendeeSelected = string.Empty;
 
@@ -106,19 +193,16 @@ namespace CheckPointPresenters.Presenters
         {
             _view.ShowAcceptAttendanceRequestButton = true;
             _view.ShowAcceptAllAttendanceRequestsForSelectedAppointmentButton = true;
-        }
-
-    
-        
+        }       
 
         private void OnAcceptAllAttendanceRequestsForSelectedAppointmentButtonClicked(object sender, EventArgs e)
         {
-            if(IsAppointmentSelected() == true)
-            {
-                ChangeAllAttendeeStatusesToApproved();
-                UpdateGridViews();
+            ShowMessagePanel();
 
-            }
+            _view.MessagePanelMessage = "<br /> Are you sure you would like to approve all attendee requests for this appointment?<br /><br />";
+
+            ShowYesButton();
+            ShowNoButton();
         }
 
         private bool IsAppointmentSelected()
@@ -208,13 +292,6 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        
-
-
-
-  
-
-       
 
         private void ChangeAllAttendeeStatusesToApproved()
         {

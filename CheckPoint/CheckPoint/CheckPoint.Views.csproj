@@ -240,7 +240,6 @@
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\LoginView.js" />
     <Content Include="LoginView.aspx" />
-    <Content Include="ManageAttendanceView.aspx" />
     <Content Include="ManageCourseView.aspx" />
     <Content Include="Config\packages.config" />
     <Content Include="Config\ApplicationInsights.config">
@@ -320,7 +319,6 @@
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ApplyToCourseView.aspx.designer.cs">
       <DependentUpon>ApplyToCourseView.aspx</DependentUpon>
@@ -334,12 +332,14 @@
     </Compile>
     <Compile Include="ChangesSavedCourseView.aspx.cs">
       <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ChangesSavedCourseView.aspx.designer.cs">
       <DependentUpon>ChangesSavedCourseView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangesSavedView.aspx.cs">
       <DependentUpon>ChangesSavedView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ChangesSavedView.aspx.designer.cs">
       <DependentUpon>ChangesSavedView.aspx</DependentUpon>
@@ -477,13 +477,6 @@
     <Compile Include="ManageAppointmentAttendanceView.aspx.designer.cs">
       <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageAttendanceView.aspx.cs">
-      <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageAttendanceView.aspx.designer.cs">
-      <DependentUpon>ManageAttendanceView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCourseAttendanceView.aspx.cs">
       <DependentUpon>ManageCourseAttendanceView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -536,28 +529,24 @@
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.cs">
       <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.designer.cs">
       <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGridHeader.ascx.cs">
       <DependentUpon>ApplyToCourseAppGridHeader.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGridHeader.ascx.designer.cs">
       <DependentUpon>ApplyToCourseAppGridHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseGrid.ascx.cs">
       <DependentUpon>ApplyToCourseGrid.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseGrid.ascx.designer.cs">
       <DependentUpon>ApplyToCourseGrid.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseHeader.ascx.cs">
       <DependentUpon>ApplyToCourseHeader.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseHeader.ascx.designer.cs">
       <DependentUpon>ApplyToCourseHeader.ascx</DependentUpon>
@@ -655,6 +644,7 @@
     </Compile>
     <Compile Include="UserControls\MessagePanel.ascx.cs">
       <DependentUpon>MessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\MessagePanel.ascx.designer.cs">
       <DependentUpon>MessagePanel.ascx</DependentUpon>
@@ -668,6 +658,7 @@
     </Compile>
     <Compile Include="UserControls\SmallMessagePanel.ascx.cs">
       <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\SmallMessagePanel.ascx.designer.cs">
       <DependentUpon>SmallMessagePanel.ascx</DependentUpon>
