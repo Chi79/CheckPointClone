@@ -147,7 +147,7 @@ background-image: url(/Images/buttonshade1.png);
 
 #<%=UpdatePanel3.ClientID%>{
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y:scroll;
     height: 150px;
 }
 .buttonDiv{
