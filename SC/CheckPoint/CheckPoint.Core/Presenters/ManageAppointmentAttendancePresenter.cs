@@ -107,7 +107,7 @@ namespace CheckPointPresenters.Presenters
             {
                 ShowMessagePanel();
 
-                _view.MessagePanelMessage = "<br /> No attendee selected!<br /> <br / Please select an attendee<br />";
+                _view.MessagePanelMessage = "<br /> No attendee selected!<br /> <br /> Please select an attendee <br />";
 
                 ShowContinueButton();
             }
