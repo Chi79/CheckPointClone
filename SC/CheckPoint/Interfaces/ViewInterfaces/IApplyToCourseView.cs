@@ -32,7 +32,7 @@ namespace CheckPointCommon.ViewInterfaces
 
         IEnumerable<object> SetDataSourceAppointmentHeader { set; }
 
-
+        bool MessagePanelVisible { set; }
 
         IEnumerable<object> SetDataSourceAppointmentData { set; }
 

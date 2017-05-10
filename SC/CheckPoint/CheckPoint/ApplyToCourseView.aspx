@@ -6,6 +6,8 @@
 <%@ Register Src="~/UserControls/ApplyToCourseAppGridHeader.ascx" TagPrefix="uc1" TagName="ApplyToCourseAppGridHeader" %>
 <%@ Register Src="~/UserControls/ApplyToCourseAppGrid.ascx" TagPrefix="uc1" TagName="ApplyToCourseAppGrid" %>
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 
@@ -174,6 +176,7 @@ runat="server">
 
 <asp:Image ID="ApplicationToCourseSuccessful" Visible="false" CssClass="AppliedToCourse" runat="server" ImageUrl="~/Images/applicationtocoursesuccessful.svg"  />
 
+ 
 
 <asp:Panel
 ID="Panel2"
@@ -187,7 +190,7 @@ CssClass="PanelCourseHeader">
 ID="UpdatePanel2"  
 runat="server" >
 <ContentTemplate>
-
+        <uc1:MessagePanel runat="server" ID="MessagePanel" />   
 <asp:Label 
 ID="lblMessage" 
 runat="server" 
@@ -218,7 +221,7 @@ ID="lblIndex"
 runat="server">
 </asp:Label>
                         
-                   
+               
  <uc1:ApplyToCourseGrid runat="server" id="ApplyToCourseGrid" />
 
 
@@ -281,7 +284,6 @@ runat="server">
 
 
 
-
 <div id="buttonscontainer" style="margin:auto; width:auto;" class="buttonscontainer" >
 
 <div id="slidebuttons1" class="buttonslider">
@@ -315,48 +317,9 @@ runat="server">
 </asp:UpdatePanel>
 </div>
 
-<div id="buttonsdiv2" runat="server" style="z-index:5;" class="buttons1">
-<asp:UpdatePanel ID="buttonspanel2" runat="server" > 
-<ContentTemplate>
-<asp:Button ID="btnContinue" 
-    CssClass="navButtons" 
-    runat="server" 
-    OnClick="btnContinue_Click" 
-    Text="Continue"  
-    Visible="false"
-    ForeColor="White" />
-</ContentTemplate>
-</asp:UpdatePanel>
-</div>
-
-<div id="buttonsdiv3" runat="server" style="z-index:5;" class="buttons1">
-<asp:UpdatePanel ID="buttonspanel3" runat="server" > 
-<ContentTemplate>
-<asp:Button ID="btnYes" 
-    CssClass="navButtons" 
-    runat="server" 
-    OnClick="btnYes_Click" 
-    Text="Yes"  
-    Visible="False" 
-    ForeColor="White" />
-</ContentTemplate>
-</asp:UpdatePanel>
-</div>
 
 
-<div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons1">
-<asp:UpdatePanel ID="buttonspanel4" runat="server" > 
-<ContentTemplate>
-<asp:Button ID="btnNo" 
-    CssClass="navButtons" 
-    runat="server" 
-    OnClick="btnNo_Click" 
-    Text="No"  
-    Visible="False" 
-    ForeColor="White" />
-</ContentTemplate>
-</asp:UpdatePanel>
-</div>
+
 </div>
 </div>
 </div>

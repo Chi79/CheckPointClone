@@ -17,19 +17,27 @@ namespace CheckPoint.Views
     
 
         public override void HookUpEvents()
-        {        
+        {
             ApplyToCourseAppGridHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             ApplyToCourseAppGridHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
 
+            MessagePanel.YesButtonClicked += OnMessagePanel_YesButtonClicked;
+            MessagePanel.NoButtonClicked += OnMessagePanel_NoButtonClicked;
+            MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
         }
 
- 
+        public bool MessagePanelVisible
+        {
+            set { MessagePanel.MessagePanelVisible = value; }
+        }
         public string Message
         {
+            get { return MessagePanel.Message; }
 
-            set { lblMessage.Text = value; }
-
+            set { MessagePanel.Message = value; }
         }
+
+  
 
         public IEnumerable<object> SetDataSource
         {
@@ -112,7 +120,7 @@ namespace CheckPoint.Views
         public bool BtnYesVisible {
             set
             {
-               btnYes.Visible = value;
+               MessagePanel.YesButtonVisible = value;
             }
         }
 
@@ -120,7 +128,7 @@ namespace CheckPoint.Views
         {
             set
             {
-                btnNo.Visible = value;
+                MessagePanel.NoButtonVisible = value;
             }
         }
 
@@ -143,21 +151,46 @@ namespace CheckPoint.Views
         {
             set
             {
-                btnContinue.Visible = value;
+                MessagePanel.ContinueButtonVisible = value;
             }
         }
-        protected void btnContinue_Click(object sender, EventArgs e)
-        {
-            if (Continue_Click != null)
-            {
-                Continue_Click(this, EventArgs.Empty);
-            }
-        }
+
         protected void btnApplyToCourse_Click(object sender, EventArgs e)
         {
             if (ApplyToCourse_Click != null)
             {
                 ApplyToCourse_Click(this, EventArgs.Empty);
+            }
+        }
+  
+        protected void OnMessagePanel_CancelButtonClicked(object sender, EventArgs e)
+        {
+            if (Cancel_Click != null)
+            {
+                Cancel_Click(this, EventArgs.Empty);
+            }
+        }
+
+        protected void OnMessagePanel_YesButtonClicked(object sender, EventArgs e)
+        {
+            if (Yes_Click != null)
+            {
+                Yes_Click(this, EventArgs.Empty);
+            }
+        }
+
+        protected void OnMessagePanel_NoButtonClicked(object sender, EventArgs e)
+        {
+            if (No_Click != null)
+            {
+                No_Click(this, EventArgs.Empty);
+            }
+        }
+        private void OnMessagePanel_ReloadPage(object sender, EventArgs e)
+        {
+            if (Continue_Click != null)
+            {
+                Continue_Click(this, EventArgs.Empty);
             }
         }
 
@@ -166,22 +199,6 @@ namespace CheckPoint.Views
             if (Cancel_Click != null)
             {
                 Cancel_Click(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnYes_Click(object sender, EventArgs e)
-        {
-            if (Yes_Click != null)
-            {
-                Yes_Click(this, EventArgs.Empty);
-            }
-        }
-
-        protected void btnNo_Click(object sender, EventArgs e)
-        {
-            if (No_Click != null)
-            {
-                No_Click(this, EventArgs.Empty);
             }
         }
     }
