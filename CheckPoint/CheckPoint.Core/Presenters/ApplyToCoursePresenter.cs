@@ -23,12 +23,13 @@ namespace CheckPointPresenters.Presenters
        
         public override void FirstTimeInit()
         {
-
+           
             ShowData();
         }
   
         public override void Load()
         {
+       
             WireUpEvents();
 
         }
@@ -39,7 +40,14 @@ namespace CheckPointPresenters.Presenters
             ShowAppointmentData();
 
             _view.BindData();
-      
+
+        
+
+        }
+
+        public void ShowMessagePanel()
+        {
+            _view.MessagePanelVisible = true;
         }
         private void ShowSelectedCourse()
         {
@@ -76,7 +84,7 @@ namespace CheckPointPresenters.Presenters
         private void OnNo_Click(object sender, EventArgs e)
         {
             ShowDefaultButtons();
-            _view.Message = string.Empty;
+       
         }
 
         private void OnYes_Click(object sender, EventArgs e)
@@ -91,9 +99,10 @@ namespace CheckPointPresenters.Presenters
             bool UpdateSuccessful = _model.UpdateDatabaseWithChanges();
             if (UpdateSuccessful)
             {
-
+               
                 _view.Message = _model.GetJobCompletedMessage();
-                _view.AppliedToAttendCourseMessageVisible = true;
+                
+               
 
             }
             else
@@ -101,14 +110,14 @@ namespace CheckPointPresenters.Presenters
                 _view.Message = "Failed to attend course!" + _model.GetUpdateErrorMessage();
             }
 
-            ShowContinueButton();
+            ShowContinueButtonOnMessagePanel();
 
         }
     
 
         private void OnContinue_Click(object sender, EventArgs e)
         {
-            _view.RedirectToFindPublicCourses();
+            ShowDefaultButtons();
         }
 
         private void OnCancel_Click(object sender, EventArgs e)
@@ -118,31 +127,38 @@ namespace CheckPointPresenters.Presenters
 
         private void OnbtnApplyToCourse_Click(object sender, EventArgs e)
         {
+            
             bool appointmentsInCourse = _model.AppointmentsInCourse();
 
             if(appointmentsInCourse)
             {
+              
+                 ShowDecitionButtonsOnMessagePanel();
                 _model.PrepareCreateMultipleAttendeesJob();
+         
                 _view.Message = _model.GetJobConfirmationMessage();
-                ShowDecitionButtons();
+               
             }
             else
             {
+                ShowContinueButtonOnMessagePanel();
                 _view.Message = "There are no appointments to attend in this course!";
             }
    
         }
-        private void ShowDecitionButtons()
+        private void ShowDecitionButtonsOnMessagePanel()
         {
+            _view.MessagePanelVisible = true;
             _view.BtnCancelVisible = false;
             _view.BtnApplyToCourseVisible = false;
             _view.BtnContinueVisible = false;
             _view.BtnNoVisible = true;
             _view.BtnYesVisible = true;
-            
+
         }
-        private void ShowContinueButton()
+        private void ShowContinueButtonOnMessagePanel()
         {
+            _view.MessagePanelVisible = true;
             _view.BtnContinueVisible = true; 
             _view.BtnCancelVisible = false;
             _view.BtnApplyToCourseVisible = false;
@@ -150,13 +166,15 @@ namespace CheckPointPresenters.Presenters
             _view.BtnYesVisible = false;
         }
     private void ShowDefaultButtons()
-        {
+        {            
+            _view.Message = string.Empty;
+            _view.MessagePanelVisible = false;
             _view.BtnContinueVisible = false;
             _view.BtnCancelVisible = true;
             _view.BtnApplyToCourseVisible = true;
             _view.BtnNoVisible = false;
             _view.BtnYesVisible = false;
-        }
+        }       
 
     
         private void OnSortColumnsAscendingClicked(object sender, EventArgs e)
