@@ -64,6 +64,8 @@
     <Compile Include="Bases\ViewBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Presenters\AcceptedAttendeesForAppointmentPresenter.cs" />
+    <Compile Include="Presenters\AcceptedAttendeesForCoursePresenter.cs" />
     <Compile Include="Presenters\ApplyToAttendAppointmentPresesnter.cs" />
     <Compile Include="Presenters\ChangesSavedCoursePresenter.cs" />
     <Compile Include="Presenters\ChangesSavedPresenter.cs" />
