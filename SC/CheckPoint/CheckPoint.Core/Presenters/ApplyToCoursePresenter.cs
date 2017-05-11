@@ -90,8 +90,14 @@ namespace CheckPointPresenters.Presenters
         private void OnYes_Click(object sender, EventArgs e)
         {
             _model.PerformJob();
-            CheckChangesSaved();
+            CheckChangesSaved();          
+            
 
+        }
+
+        private void RedirectBackToPublicCoursesView()
+        {
+            _view.RedirectToFindPublicCourses();
         }
         private void CheckChangesSaved()
         {
@@ -100,9 +106,7 @@ namespace CheckPointPresenters.Presenters
             if (UpdateSuccessful)
             {
                
-                _view.Message = _model.GetJobCompletedMessage();
-                
-               
+                _view.Message = _model.GetJobCompletedMessage();                               
 
             }
             else
@@ -118,6 +122,7 @@ namespace CheckPointPresenters.Presenters
         private void OnContinue_Click(object sender, EventArgs e)
         {
             ShowDefaultButtons();
+            RedirectBackToPublicCoursesView();
         }
 
         private void OnCancel_Click(object sender, EventArgs e)

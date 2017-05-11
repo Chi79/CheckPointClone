@@ -27,7 +27,7 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<COURSE> GetAllPublicCourses()
         {
-            return CheckPointContext.COURSEs.Where(course => course.IsPrivate == false).ToList();
+            return CheckPointContext.COURSEs.Where(course => course.IsPrivate == false && course.APPOINTMENTs.Count > 0).ToList();
         }
 
         public COURSE GetCourseByCourseName(string courseName)
