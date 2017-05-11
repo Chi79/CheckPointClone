@@ -169,6 +169,12 @@ namespace CheckPoint.Views
             set { MessagePanel.MessagePanelVisible = value; }
         }
 
+        public bool ShowAttendeeHeader
+        {
+            set { AttendeeHeader.Visible = value; }
+        }
+
+
         public bool YesButtonVisible
         {
             set { MessagePanel.YesButtonVisible = value; }

@@ -149,7 +149,7 @@ background-image: url(/Images/buttonshade1.png);
 
 #<%=UpdatePanel3.ClientID%>{
     overflow-x: hidden;
-    overflow-y:scroll;
+    overflow-y:auto;
     height: 150px;
 }
 .buttonDiv{
@@ -171,12 +171,15 @@ background-image: url(/Images/buttonshade1.png);
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div id="outercontainer" style="height:100%; width:auto;">
-        <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+
+<div id="outercontainer" style="height:100%; width:auto;">
+
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
     <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
         
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
-    <asp:ScriptManager
+
+<asp:ScriptManager
 ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
@@ -192,13 +195,14 @@ runat="server">
 
         <ContentTemplate> 
                    
-            <uc1:MessagePanel runat="server" ID="messagePanelAppointments" Visible="true"/>
+        <uc1:MessagePanel runat="server" ID="messagePanelAppointments" Visible="true"/>
    
-            <uc1:AttendeeAppointmentGridViewHeader runat="server" ID="AttendeeAppointmentGridViewHeader" />
+        <uc1:AttendeeAppointmentGridViewHeader runat="server" ID="AttendeeAppointmentGridViewHeader" />
 
         </ContentTemplate>
 
-         </asp:UpdatePanel>
+    </asp:UpdatePanel>
+
 </asp:Panel>
 
 <%-- Appointment Gridview --%>

@@ -26,6 +26,7 @@ namespace CheckPointPresenters.Presenters
             ShowAppointmentData();
 
             HideAttendeeHeader();
+
         }
 
         private void ResetSessionState()

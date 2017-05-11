@@ -40,15 +40,6 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// CourseGridViewHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CheckPoint.Views.UserControls.CourseGridViewHeader CourseGridViewHeader;
-        
-        /// <summary>
         /// MessagePanel control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CheckPoint.Views.UserControls.MessagePanel MessagePanel;
+        
+        /// <summary>
+        /// CourseGridViewHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CheckPoint.Views.UserControls.CourseGridViewHeader CourseGridViewHeader;
         
         /// <summary>
         /// panelCourseGridView control.
@@ -85,13 +85,13 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.CourseGridView CourseGridView;
         
         /// <summary>
-        /// btnManageAppointmentAttendance control.
+        /// AttendeeHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnManageAppointmentAttendance;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AttendeeHeader;
         
         /// <summary>
         /// panelAttendeeHeader control.
@@ -146,6 +146,15 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CheckPoint.Views.UserControls.AttendeeGridView ClientGridView;
+        
+        /// <summary>
+        /// btnManageAppointmentAttendance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageAppointmentAttendance;
         
         /// <summary>
         /// btnAcceptAttendanceRequest control.
