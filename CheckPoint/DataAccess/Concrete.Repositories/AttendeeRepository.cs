@@ -46,7 +46,7 @@ namespace DataAccess.Concrete.Repositories
 
         public object GetAttendeeByTagIdAndAppointmentId(string tagId, int id)
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && a.AppointmentId == id);
+            return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.TagId == tagId && a.AppointmentId == id);
         }
 
         public object GetAttendeeByUserNameAndCourseId(string username, int id)
