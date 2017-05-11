@@ -39,9 +39,14 @@ namespace DataAccess.Concrete.Repositories
            
         }
 
-        public IEnumerable<object> GetAttendeeByTagIdAndAppointmentId(string tagId, int id)
+        public IEnumerable<object> GetAttendeesByTagIdAndAppointmentId(string tagId, int id)
         {
             return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && a.AppointmentId == id).ToList();
+        }
+
+        public object GetAttendeeByTagIdAndAppointmentId(string tagId, int id)
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && a.AppointmentId == id);
         }
 
         public object GetAttendeeByUserNameAndCourseId(string username, int id)

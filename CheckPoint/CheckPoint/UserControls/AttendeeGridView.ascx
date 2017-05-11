@@ -47,6 +47,10 @@ table {
 	border-spacing: 0;
 }
 
+#lblTimeAttended{
+    font-size:42px;
+}
+
 
 .timeAttendedColumnItem{
     width: 9.09%;
@@ -140,7 +144,7 @@ z-index:1"
 AllowSorting="True" 
 OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged"
 OnRowDataBound="gvAttendeeTable_RowDataBound"
-ShowHeaderWhenEmpty="false" 
+ShowHeaderWhenEmpty="true" 
 ShowHeader="false" 
 DataKeyNames="AppointmentId" >
                  
@@ -178,7 +182,7 @@ BackColor="#99FF99" />
 <h3 style="color:white">Date & Time Attended</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("TimeAttended") %>'></asp:Label>
+<asp:Label ID="lblTimeAttended" runat="server" Text='<%# Bind("TimeAttended") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle  />
 </asp:TemplateField>

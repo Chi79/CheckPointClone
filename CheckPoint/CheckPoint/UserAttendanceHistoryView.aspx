@@ -139,7 +139,7 @@ background-image: url(/Images/buttonshade1.png);
 
 #<%=UpdatePanel3.ClientID%>{
     overflow-x: hidden;
-    overflow-y:scroll;
+    overflow-y:hidden;
     height: 150px;
 }
 .buttonDiv{
@@ -163,7 +163,7 @@ background-image: url(/Images/buttonshade1.png);
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div id="outercontainer" style="height:100%; width:auto;">
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentAttendanceHistoryHeading.svg" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/MyAppointmentAttendanceHistoryHeading.svg" /></div>
         
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
@@ -217,6 +217,7 @@ runat="server">
     </asp:UpdatePanel>
 <br />
 <br />
+
 <%-- Attendee Header --%>
 <asp:Panel CssClass="AttendeePanelHeader" ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" Visible="true" Width="100%" >
     <asp:UpdatePanel 
@@ -238,7 +239,7 @@ runat="server">
     runat="server" >
 
     <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" /> 
+    <uc1:AttendeeGridView runat="server" id="AttendeeGridView"/> 
  
         </ContentTemplate>
         </asp:UpdatePanel>   

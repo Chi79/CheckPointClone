@@ -14,7 +14,8 @@ namespace CheckPoint.Views
     {
         public override void HookUpEvents()
         {
-           AppointmentGridView.RowSelected += OnAppointmentRowSelected;
+           AppointmentGridView.AppointmentRowSelected += OnAppointmentRowSelected;
+        
         }
 
         public IEnumerable<object> AppointmentsHistorySetDataSource
@@ -93,6 +94,16 @@ namespace CheckPoint.Views
         public bool ShowAttendeeHeader
         {
             set { AttendeeHeader.Visible = value; }
+        }
+
+        public bool ShowAttendeeHeaderPanel
+        {
+            set { panelAttendeeHeader.Visible = value; }
+        }
+
+        public bool ShowAttendeeGridViewPanel
+        {
+            set { panelAttendeeGridView.Visible = value; }
         }
 
         public void BindAppointmentData()

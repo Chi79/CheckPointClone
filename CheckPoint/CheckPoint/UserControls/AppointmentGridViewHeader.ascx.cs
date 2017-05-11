@@ -39,7 +39,7 @@ namespace CheckPoint.Views.UserControls
 
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
         public event EventHandler<EventArgs> SortColumnsByPropertyDescending;
-        public event EventHandler<EventArgs> RowSelected;
+        public event EventHandler<EventArgs> AppointmentRowSelected;
 
 
         protected void Asc_Command(object sender, CommandEventArgs e)
@@ -67,9 +67,9 @@ namespace CheckPoint.Views.UserControls
         protected void gvHostTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (RowSelected != null)
+            if (AppointmentRowSelected != null)
             {
-                RowSelected(this, EventArgs.Empty);
+                AppointmentRowSelected(this, EventArgs.Empty);
             }
 
         }
