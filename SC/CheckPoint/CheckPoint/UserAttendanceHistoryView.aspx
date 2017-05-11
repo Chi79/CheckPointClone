@@ -163,7 +163,7 @@ background-image: url(/Images/buttonshade1.png);
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div id="outercontainer" style="height:100%; width:auto;">
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentAttendanceHistoryHeading.svg" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
         
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager

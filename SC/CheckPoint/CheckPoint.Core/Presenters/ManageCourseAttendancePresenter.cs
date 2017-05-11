@@ -24,7 +24,10 @@ namespace CheckPointPresenters.Presenters
         public override void FirstTimeInit()
         {
             ResetSessionState();
+
             ShowCourseData();
+
+            HideAttendeeHeader();
         }
 
         private void ResetSessionState()
@@ -197,6 +200,8 @@ namespace CheckPointPresenters.Presenters
 
             ShowAcceptAttendanceButtons();
 
+            ShowAttendeeHeader();
+
         }
 
         private void ShowAttendeeGridView()
@@ -220,6 +225,20 @@ namespace CheckPointPresenters.Presenters
         private void HideMessagePanel()
         {
             _view.MessagePanelVisible = false;
+        }
+
+        private void ShowAttendeeHeader()
+        {
+
+            _view.ShowAttendeeHeader = true;
+
+        }
+
+        private void HideAttendeeHeader()
+        {
+
+            _view.ShowAttendeeHeader = false;
+
         }
 
         private void ShowYesButton()

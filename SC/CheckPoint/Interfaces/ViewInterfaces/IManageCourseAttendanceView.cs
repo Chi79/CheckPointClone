@@ -23,6 +23,9 @@ namespace CheckPointCommon.ViewInterfaces
         bool ShowAcceptAllAttendanceRequestsForSelectedCourseButton { set; }
         string MessagePanelMessage { get; set; }
         bool MessagePanelVisible { set; }
+        bool ShowAttendeeHeader { set; }
+      
+
         bool YesButtonVisible { set; }
         bool NoButtonVisible { set; }
         bool ContinueButtonVisible { set; }

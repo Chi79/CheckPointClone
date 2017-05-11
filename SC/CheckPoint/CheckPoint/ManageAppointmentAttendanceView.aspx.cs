@@ -40,9 +40,7 @@ namespace CheckPoint.Views
         {
             get { return AttendeeAppointmentGridView.SelectedRowIndex; }
             set { AttendeeAppointmentGridView.SelectedRowIndex = value; }
-        }
-
-        
+        }        
 
         public void BindAppointmentData()
         {

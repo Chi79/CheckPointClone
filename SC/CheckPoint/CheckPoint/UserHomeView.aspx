@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
 <%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
-
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
 
 
@@ -35,9 +34,9 @@
 .container{
       position:relative;
       right:0%;
-      animation: slideright 2s;
+      animation: sliderright 2s;
 }
-@keyframes slideright {
+@keyframes sliderright {
       from { right: -100%; }
       to { right: 0%;}
 }
@@ -278,22 +277,6 @@
     </ContentTemplate>
     </asp:UpdatePanel>
     </div>
-
-
-<%--    <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
-    <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
-    <ContentTemplate>
-    <asp:Button ID="btnCreateReport" 
-        CssClass="navButtons" 
-        runat="server" 
-        OnClick="btnCreateReport_Click"
-        Text="Create Report"  
-        Visible="True"  
-        ToolTip="Create a Report" 
-        ForeColor="White"/>
-    </ContentTemplate>
-    </asp:UpdatePanel>
-    </div>--%>
 
     </div>
 
