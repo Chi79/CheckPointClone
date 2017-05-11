@@ -73,13 +73,13 @@ body {
 
 .main-sidebar-menu-list{
 position:absolute;
-top:420%;
+top:40%;
 list-style:none;
 width:100%;
 padding:0;
 margin:0;
-    height: 439px;
-    left: -1px;
+height: 439px;
+left: -1px;
 }
 .main-sidebar-menu-list-item{
  width:100%;
