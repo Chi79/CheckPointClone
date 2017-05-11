@@ -92,6 +92,7 @@
     <Compile Include="Presenters\RegisterClientPresenter.cs" />
     <Compile Include="Presenters\UpdateCoursePresenter.cs" />
     <Compile Include="Presenters\UpdateProfilePresenter.cs" />
+    <Compile Include="Presenters\UserAttendanceHistoryPresenter.cs" />
     <Compile Include="Presenters\UserCoursesPresenter.cs" />
     <Compile Include="Presenters\UserHomePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

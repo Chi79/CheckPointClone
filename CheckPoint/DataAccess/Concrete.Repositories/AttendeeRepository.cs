@@ -16,6 +16,18 @@ namespace DataAccess.Concrete.Repositories
            
         }
 
+        public IEnumerable<ATTENDEE> GetAllAttendedAttendeesForClient(string username)
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username && (a.StatusId == (int)AttendeeStatus.HasAttended ||
+                                                                                                a.StatusId == (int)AttendeeStatus.HasAttended)).ToList();
+        }
+
+        public IEnumerable<ATTENDEE> GetAllAcceptedAttendeeRequestsForClient(string userName)
+        {
+
+            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == userName && a.StatusId == (int)AttendeeStatus.RequestApproved).ToList();
+        }
+
         public CheckPointContext CheckPointContext  // casting our context class as an entity DbContext 
         {
             get { return Context as CheckPointContext; }

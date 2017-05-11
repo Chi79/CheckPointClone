@@ -224,6 +224,7 @@
     <Content Include="Images\uparrow3.png" />
     <Content Include="Images\UpdateAppointmentHeading1.svg" />
     <Content Include="Images\UpdateCourseHeading1.svg" />
+    <Content Include="Images\userAttendanceHistoryIcon.png" />
     <Content Include="Images\vector_smiley.svg" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
@@ -254,6 +255,7 @@
     <Content Include="Scripts\package.json" />
     <Content Include="HostMaster.Master" />
     <Content Include="UpdateCourseView.aspx" />
+    <Content Include="UserAttendanceHistoryView.aspx" />
     <Content Include="UserControls\ApplyToCourseAppGrid.ascx" />
     <Content Include="UserControls\ApplyToCourseAppGridHeader.ascx" />
     <Content Include="UserControls\ApplyToCourseGrid.ascx" />
@@ -530,6 +532,13 @@
     </Compile>
     <Compile Include="UpdateProfileView.aspx.designer.cs">
       <DependentUpon>UpdateProfileView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAttendanceHistoryView.aspx.cs">
+      <DependentUpon>UserAttendanceHistoryView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAttendanceHistoryView.aspx.designer.cs">
+      <DependentUpon>UserAttendanceHistoryView.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ApplyToCourseAppGrid.ascx.cs">
       <DependentUpon>ApplyToCourseAppGrid.ascx</DependentUpon>

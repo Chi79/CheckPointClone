@@ -70,12 +70,14 @@ namespace DataAccess.Concrete.Repositories
 
         }
 
+
         public IEnumerable<ATTENDEE> GetAllAcceptedAttendeeRequestsForClient(string userName)
         {
 
             return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == userName && a.StatusId == (int)AttendeeStatus.RequestApproved).ToList();
-
         }
+
+
 
         public APPOINTMENT GetAppointmentByAppointmentName(string appointmentName)
         {

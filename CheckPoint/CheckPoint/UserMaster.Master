@@ -29,7 +29,7 @@
         <ul class="main-sidebar-menu-list">
 
             <li class="tooltip">
-                <span class="tooltiptext"> My appointments</span>
+                <span class="tooltiptext"> My Appointments and Courses</span>
                 <div class="main-sidebar-menu-list-item">
 
 
@@ -43,8 +43,20 @@
                  </a>
                 </div>
             </li>
+             <li class="tooltip">
+                    <span class="tooltiptext"> My Attendance History</span>
+                <div class="main-sidebar-menu-list-item">
+
+             <%--    <span class="tooltiptext">My Attendance History</span>--%>
+                                   
+                  <a class="main-sidebar-menu-list-item-link" href="UserAttendanceHistoryView.aspx" tabindex="2">                         
+                       <img class="main-sidebar-menu-list-item-icon" alt="[]" src="Images/userAttendanceHistoryIcon.png" />
+                       
+                  </a>   
+                  </div>
+              </li>
             <li class="tooltip">
-                <span class="tooltiptext"> Find appointments and courses</span>
+                <span class="tooltiptext"> Find Appointments and Courses</span>
                 <div class="main-sidebar-menu-list-item">
 
 
@@ -59,7 +71,7 @@
                 </div>
             </li>
               <li class="tooltip">
-                    <span class="tooltiptext">Alter profile</span>
+                    <span class="tooltiptext">Alter Profile</span>
 
                 <div class="main-sidebar-menu-list-item">
              <%--    <span class="tooltiptext">Alter Profile</span>--%>
@@ -70,8 +82,8 @@
                   </a>   
                   </div>
               </li>
-                                                         <li class="tooltip">
-                  <span class="tooltiptext">download the user manual</span>
+              <li class="tooltip">
+                  <span class="tooltiptext">Download User Manual</span>
                 <div class="main-sidebar-menu-list-item">
             <%--     <span class="tooltiptext">Logout</span>--%>
                   <a class="main-sidebar-menu-list-item-link"  href="Downloadable/User/CheckPoint%20UserManual.pdf" tabindex="5">                     

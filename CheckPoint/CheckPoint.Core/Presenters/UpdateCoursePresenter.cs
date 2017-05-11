@@ -25,18 +25,22 @@ namespace CheckPointPresenters.Presenters
             _view = view;
             _model = model;
 
-   
-            _view.UpdateCourseButtonClicked += OnUpdateCourseButtonClicked;
-            _view.YesButtonClicked += OnYesButtonClicked;
-            _view.NoButtonClicked += OnNoButtonClicked;
-            _view.ContinueButtonClicked += OnContinueButtonClicked;
-
         }
 
         private void OnContinueButtonClicked(object sender, EventArgs e)
         {
 
             HideMessagePanel();
+
+        }
+
+        public void WireUpEvents()
+        {
+
+            _view.UpdateCourseButtonClicked += OnUpdateCourseButtonClicked;
+            _view.YesButtonClicked += OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
 
         }
 
@@ -53,6 +57,8 @@ namespace CheckPointPresenters.Presenters
         {
 
             CheckAttemptToResaveStatus();
+
+            WireUpEvents();
 
         }
 
