@@ -88,10 +88,11 @@ table {
 }
 
 .headertextCourse {
-    padding-bottom: 1%;
+    padding: 1%;
     font-family: sans-serif;
     font-weight: bold;
     font-size: large;
+    vertical-align:middle;
 }
 
 
@@ -106,7 +107,7 @@ AutoGenerateColumns="False"
 Height="100%" 
 OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged" 
 ShowHeader="true"
-ShowHeaderWhenEmpty="True"
+ShowHeaderWhenEmpty="true"
 style="
 width:100%;
 z-index:2;"
@@ -114,7 +115,7 @@ ShowFooter="false">
      
 <Columns>
 
-<asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="courseIdHeader" >
+<%--<asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="courseIdHeader" >
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">AppointmentId</h3>
 <asp:ImageButton 
@@ -157,32 +158,19 @@ CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center"/>
 <HeaderStyle/>
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
 
-<asp:TemplateField AccessibleHeaderText="TimeAttended" HeaderText="TimeAttended" HeaderStyle-CssClass="descriptionHeader">
+<asp:TemplateField AccessibleHeaderText="Date & Time Attended" HeaderText="Date & Time Attended" HeaderStyle-CssClass="descriptionHeader">
 <HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">TimeAttended</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="TimeAttended" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="TimeAttended" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
+<h3 class="headertextCourse" style="color:white;">Date & Time Attended</h3>
+
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
 </asp:TemplateField>
 
-    <asp:TemplateField AccessibleHeaderText="TagId" HeaderText="TagId" HeaderStyle-CssClass="descriptionHeader">
+<%--    <asp:TemplateField AccessibleHeaderText="TagId" HeaderText="TagId" HeaderStyle-CssClass="descriptionHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">TagId</h3>
 <asp:ImageButton 
@@ -224,7 +212,7 @@ CssClass="roundedButtons"/>
 </HeaderTemplate>
 <ItemStyle HorizontalAlign="Center" />
 <HeaderStyle />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
 </Columns>
 <HeaderStyle />

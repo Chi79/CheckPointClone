@@ -163,7 +163,7 @@ background-image: url(/Images/buttonshade1.png);
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div id="outercontainer" style="height:100%; width:auto;">
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentAttendanceHistoryHeading.svg" /></div>
         
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
@@ -225,7 +225,7 @@ runat="server">
     <ContentTemplate>
 
 <%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
-    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" Visible="true"/>
+    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" />
         </ContentTemplate>
          </asp:UpdatePanel>
 </asp:Panel>
@@ -238,7 +238,7 @@ runat="server">
     runat="server" >
 
     <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true" /> 
+    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" /> 
  
         </ContentTemplate>
         </asp:UpdatePanel>   
