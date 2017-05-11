@@ -117,7 +117,7 @@ namespace CheckPointModel.Models
             
             foreach (APPOINTMENT appointment in appointmentsInCourse)
             {
-                var attendeeToApprove = _unitOfWork.ATTENDEEs.GetAttendeeByTagIdAndAppointmentId(tagIdForUsername, appointment.AppointmentId);
+                var attendeeToApprove = _unitOfWork.ATTENDEEs.GetAttendeeByTagIdAndAppointmentId(tagIdForUsername, appointment.AppointmentId) as ATTENDEE;
                 if(attendeeToApprove != null)
                 {
                     attendeesToApprove.Add((ATTENDEE)attendeeToApprove);

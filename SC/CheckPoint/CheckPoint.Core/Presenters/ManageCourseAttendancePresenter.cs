@@ -38,7 +38,9 @@ namespace CheckPointPresenters.Presenters
         private void ShowCourseData()
         {
             _view.CoursesAppliedToHeaderSetDataSource = _model.GetEmptyCourseList();
+
             var stuff = _model.GetAllCoursesWithAttendeeRequests();
+
             _view.CoursesAppliedToSetDataSource = stuff;
 
             _view.BindCourseData();
