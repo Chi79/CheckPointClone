@@ -227,6 +227,7 @@
     <Content Include="Images\UpdateAppointmentHeading1.svg" />
     <Content Include="Images\UpdateCourseHeading1.svg" />
     <Content Include="Images\userAttendanceHistoryIcon.png" />
+    <Content Include="Images\userAttendanceHistoryIcon2.png" />
     <Content Include="Images\vector_smiley.svg" />
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />

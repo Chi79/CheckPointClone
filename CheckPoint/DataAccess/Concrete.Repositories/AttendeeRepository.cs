@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<ATTENDEE> GetAllAttendedAttendeesForClient(string tagId)
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && a.StatusId == (int)AttendeeStatus.HasAttended).ToList();
+            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && (a.StatusId == (int)AttendeeStatus.HasAttended || a.StatusId == (int)AttendeeStatus.ObligHasAttended)).ToList();
                                                                                                 
         }
 
@@ -35,13 +35,13 @@ namespace DataAccess.Concrete.Repositories
 
         public object GetAttendeeByUserNameAndAppointmentId(string username, int id)
         {
-            var bob = CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username && a.AppointmentId == id);
-            return bob;
+            return CheckPointContext.ATTENDEEs.FirstOrDefault(a => a.CLIENT_TAG.UserName == username && a.AppointmentId == id);
+           
         }
 
         public IEnumerable<object> GetAttendeeByTagIdAndAppointmentId(string tagId, int id)
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && a.AppointmentId == id);
+            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && a.AppointmentId == id).ToList();
         }
 
         public object GetAttendeeByUserNameAndCourseId(string username, int id)
@@ -52,7 +52,7 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<object> GetAllAttendeesAcceptedForAppointments()
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.StatusId == (int)AttendeeStatus.RequestApproved);
+            return CheckPointContext.ATTENDEEs.Where(a => a.StatusId == (int)AttendeeStatus.RequestApproved).ToList();
         }
 
         public object GetAttendeeByUserName(string username)
@@ -62,7 +62,7 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<object> GetAllAttendeesByUserName(string username)
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username);
+            return CheckPointContext.ATTENDEEs.Where(a => a.CLIENT_TAG.UserName == username).ToList();
         }
 
         public IEnumerable<object> GetAcceptedAttendeesByUserName(string username)

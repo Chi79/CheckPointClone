@@ -48,11 +48,13 @@ table {
 }
 
 
-.courseIdColumnItem{
+.timeAttendedColumnItem{
     width: 9.09%;
     padding-left: 0%;
     padding-right:1%;
     margin: auto;
+    height:15%;
+    font-size:42px;
 }
 .courseNameColumnItem{
     width: 12.09%;
@@ -138,9 +140,9 @@ z-index:1"
 AllowSorting="True" 
 OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged"
 OnRowDataBound="gvAttendeeTable_RowDataBound"
-ShowHeaderWhenEmpty="True" 
+ShowHeaderWhenEmpty="false" 
 ShowHeader="false" 
-DataKeyNames="UserName" >
+DataKeyNames="AppointmentId" >
                  
 <RowStyle BackColor="White" CssClass="Row"/>
 <AlternatingRowStyle
@@ -150,7 +152,7 @@ Wrap="True"
 BackColor="#99FF99" />
 <Columns>
 
- <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" ItemStyle-CssClass="courseIdColumnItem">
+<%-- <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" ItemStyle-CssClass="courseIdColumnItem">
 <HeaderTemplate>
 <h3 style="color:white">TimeStamp</h3>
 </HeaderTemplate>
@@ -168,12 +170,12 @@ BackColor="#99FF99" />
 <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("PersonalNote") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle  />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
                    
-<asp:TemplateField AccessibleHeaderText="TimeStamp" HeaderText="TimeStamp" ItemStyle-CssClass="courseIdColumnItem">
+<asp:TemplateField AccessibleHeaderText="Date & Time Attended" HeaderText="Date & Time Attended" ItemStyle-CssClass="timeAttendedColumnItem"> 
 <HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
+<h3 style="color:white">Date & Time Attended</h3>
 </HeaderTemplate>
 <ItemTemplate>
 <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("TimeAttended") %>'></asp:Label>
@@ -181,7 +183,7 @@ BackColor="#99FF99" />
 <ItemStyle  />
 </asp:TemplateField>
 
-<asp:TemplateField AccessibleHeaderText="StatusId" HeaderText="StatusId" ItemStyle-CssClass="courseIdColumnItem">
+<%--<asp:TemplateField AccessibleHeaderText="StatusId" HeaderText="StatusId" ItemStyle-CssClass="courseIdColumnItem">
 <HeaderTemplate>
 <h3 style="color:white">TimeStamp</h3>
 </HeaderTemplate>
@@ -209,7 +211,7 @@ BackColor="#99FF99" />
 <asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle  />
-</asp:TemplateField>
+</asp:TemplateField>--%>
 
 </Columns>
 <SelectedRowStyle 
