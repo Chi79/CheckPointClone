@@ -33,11 +33,14 @@
     position:relative;
     right:1%;
 }
+.outercontainer{
+    will-change:animation;
+}
 
 .container{
       position:relative;
       right:0%;
-      animation: slideright 2s;
+      animation: slideright 2s ease-in-out;
 }
 @keyframes slideright {
       from { right: -100%; }
