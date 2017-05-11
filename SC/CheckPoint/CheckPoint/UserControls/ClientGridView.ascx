@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AttendeeGridView.ascx.cs" Inherits="CheckPoint.Views.UserControls.AttendeeGridView1" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ClientGridView.ascx.cs" Inherits="CheckPoint.Views.UserControls.AttendeeGridView" %>
 
 <style type="text/css">
 
@@ -128,7 +128,7 @@ table {
 
 
 <asp:GridView
-ID="gvAttendeeTable"
+ID="gvClientTable"
 runat="server"
 AutoGenerateColumns="False" 
 Height="100%" 
@@ -136,8 +136,8 @@ Width="102%"
 style=" table-layout:fixed;
 z-index:1" 
 AllowSorting="True" 
-OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged"
-OnRowDataBound="gvAttendeeTable_RowDataBound"
+OnSelectedIndexChanged="gvClientTable_SelectedIndexChanged"
+OnRowDataBound="gvClientTable_RowDataBound"
 ShowHeaderWhenEmpty="True" 
 ShowHeader="false" 
 DataKeyNames="UserName" >
@@ -150,66 +150,98 @@ Wrap="True"
 BackColor="#99FF99" />
 <Columns>
 
- <asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" ItemStyle-CssClass="courseIdColumnItem">
-<HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
-</HeaderTemplate>
-<ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("AppointmentId") %>'></asp:Label>
-</ItemTemplate>
-<ItemStyle  />
-</asp:TemplateField>
-
- <asp:TemplateField AccessibleHeaderText="PersonalNote" HeaderText="PersonalNote" ItemStyle-CssClass="courseIdColumnItem">
-<HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
-</HeaderTemplate>
-<ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("PersonalNote") %>'></asp:Label>
-</ItemTemplate>
-<ItemStyle  />
-</asp:TemplateField>
-
                    
-<asp:TemplateField AccessibleHeaderText="TimeStamp" HeaderText="TimeStamp" ItemStyle-CssClass="courseIdColumnItem">
+<asp:TemplateField AccessibleHeaderText="UserName" HeaderText="UserName" ItemStyle-CssClass="courseIdColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
+<h3 style="color:white">UserName</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("TimeAttended") %>'></asp:Label>
+<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("UserName") %>'></asp:Label>
 </ItemTemplate>
 <ItemStyle  />
 </asp:TemplateField>
 
-<asp:TemplateField AccessibleHeaderText="StatusId" HeaderText="StatusId" ItemStyle-CssClass="courseIdColumnItem">
+
+<asp:TemplateField AccessibleHeaderText="Email"  HeaderText="Email" ItemStyle-CssClass="courseNameColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
+<h3 style="color:white">Email</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("StatusId") %>'></asp:Label>
+<asp:Label ID="lblCourseName"  runat="server" Text='<%# Bind("Email") %>'></asp:Label>
 </ItemTemplate>
-<ItemStyle  />
+<ItemStyle />
 </asp:TemplateField>
 
-    <asp:TemplateField AccessibleHeaderText="TagId" HeaderText="TagId" ItemStyle-CssClass="courseIdColumnItem">
+
+<asp:TemplateField AccessibleHeaderText="PhoneNumber" HeaderText="PhoneNumber" ItemStyle-CssClass="descriptionColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
+<h3 style="color:white">PhoneNumber</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("TagId") %>'></asp:Label>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("PhoneNumber") %>'></asp:Label>
 </ItemTemplate>
-<ItemStyle  />
+<ItemStyle />
 </asp:TemplateField>
 
-    <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" ItemStyle-CssClass="courseIdColumnItem">
+<%--<asp:TemplateField AccessibleHeaderText="FirstName" HeaderText="FirstName" ItemStyle-CssClass="descriptionColumnItem">
 <HeaderTemplate>
-<h3 style="color:white">TimeStamp</h3>
+<h3 style="color:white">FirstName</h3>
 </HeaderTemplate>
 <ItemTemplate>
-<asp:Label ID="lblCourseId" runat="server" Text='<%# Bind("CourseId") %>'></asp:Label>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("FirstName") %>'></asp:Label>
 </ItemTemplate>
-<ItemStyle  />
+<ItemStyle />
+</asp:TemplateField>--%>
+
+<%--<asp:TemplateField AccessibleHeaderText="LastName" HeaderText="LastName" ItemStyle-CssClass="descriptionColumnItem">
+<HeaderTemplate>
+<h3 style="color:white">LastName</h3>
+</HeaderTemplate>
+<ItemTemplate>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("LastName") %>'></asp:Label>
+</ItemTemplate>
+<ItemStyle />
 </asp:TemplateField>
+
+<asp:TemplateField AccessibleHeaderText="Address" HeaderText="Address" ItemStyle-CssClass="descriptionColumnItem">
+<HeaderTemplate>
+<h3 style="color:white">Address</h3>
+</HeaderTemplate>
+<ItemTemplate>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Address") %>'></asp:Label>
+</ItemTemplate>
+<ItemStyle />
+</asp:TemplateField>
+
+<asp:TemplateField AccessibleHeaderText="Password" HeaderText="Password" ItemStyle-CssClass="descriptionColumnItem">
+<HeaderTemplate>
+<h3 style="color:white">Password</h3>
+</HeaderTemplate>
+<ItemTemplate>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("Password") %>'></asp:Label>
+</ItemTemplate>
+<ItemStyle />
+</asp:TemplateField>
+
+<asp:TemplateField AccessibleHeaderText="PostalCode" HeaderText="PostalCode" ItemStyle-CssClass="descriptionColumnItem">
+<HeaderTemplate>
+<h3 style="color:white">PostalCode</h3>
+</HeaderTemplate>
+<ItemTemplate>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("PostalCode") %>'></asp:Label>
+</ItemTemplate>
+<ItemStyle />
+</asp:TemplateField>
+
+<asp:TemplateField AccessibleHeaderText="ClientType" HeaderText="ClientType" ItemStyle-CssClass="descriptionColumnItem">
+<HeaderTemplate>
+<h3 style="color:white">ClientType</h3>
+</HeaderTemplate>
+<ItemTemplate>
+<asp:Label ID="lblDescription"  runat="server" Text='<%# Bind("ClientType") %>'></asp:Label>
+</ItemTemplate>
+<ItemStyle />
+</asp:TemplateField>--%>
 
 </Columns>
 <SelectedRowStyle 

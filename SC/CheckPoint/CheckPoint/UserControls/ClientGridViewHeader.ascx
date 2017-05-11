@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AttendeeGridViewHeader.ascx.cs" Inherits="CheckPoint.Views.UserControls.AttendeeGridViewHeader1" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ClientGridViewHeader.ascx.cs" Inherits="CheckPoint.Views.UserControls.AttendeeGridViewHeader" %>
 
 
 <style type="text/css">
@@ -99,12 +99,12 @@ table {
 
 
 <asp:GridView 
-ID="gvAttendeeTable1" 
+ID="gvClientTable1" 
 runat="server" 
 AllowSorting="True"
 AutoGenerateColumns="False"
 Height="100%" 
-OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged" 
+OnSelectedIndexChanged="gvClientTable_SelectedIndexChanged" 
 ShowHeader="true"
 ShowHeaderWhenEmpty="True"
 style="
@@ -114,19 +114,19 @@ ShowFooter="false">
      
 <Columns>
 
-<asp:TemplateField AccessibleHeaderText="AppointmentId" HeaderText="AppointmentId" HeaderStyle-CssClass="courseIdHeader" >
+<asp:TemplateField AccessibleHeaderText="UserName" HeaderText="UserName" HeaderStyle-CssClass="courseIdHeader" >
 <HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">AppointmentId</h3>
+<h3 class="headertextCourse" style="color:white;">UserName</h3>
 <asp:ImageButton 
 runat="server" 
-CommandName="AppointmentId" 
+CommandName="CourseId" 
 ImageUrl="~/Images/uparrow3.png" 
 OnCommand="Asc_Command" 
 ToolTip="sort by ascending"
 CssClass="roundedButtons" />
 <asp:ImageButton 
 runat="server" 
-CommandName="AppointmentId" 
+CommandName="CourseId" 
 ImageUrl="~/Images/downarrow3.png" 
 OnCommand="Desc_Command" 
 ToolTip="sort by descending"
@@ -137,19 +137,19 @@ CssClass="roundedButtons"/>
 </asp:TemplateField>
 
 
-<asp:TemplateField AccessibleHeaderText="PersonalNote" HeaderText="PersonalNote" HeaderStyle-CssClass="courseNameHeader">
+<asp:TemplateField AccessibleHeaderText="Email" HeaderText="Email" HeaderStyle-CssClass="courseNameHeader">
 <HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">PersonalNote</h3>
+<h3 class="headertextCourse" style="color:white;">Email</h3>
 <asp:ImageButton 
 runat="server" 
-CommandName="PersonalNote" 
+CommandName="Name" 
 ImageUrl="~/Images/uparrow3.png" 
 OnCommand="Asc_Command" 
 ToolTip="sort by ascending"
 CssClass="roundedButtons" />
 <asp:ImageButton 
 runat="server" 
-CommandName="PersonalNote" 
+CommandName="Name" 
 ImageUrl="~/Images/downarrow3.png" 
 OnCommand="Desc_Command" 
 ToolTip="sort by descending"
@@ -160,19 +160,19 @@ CssClass="roundedButtons"/>
 </asp:TemplateField>
 
 
-<asp:TemplateField AccessibleHeaderText="TimeAttended" HeaderText="TimeAttended" HeaderStyle-CssClass="descriptionHeader">
+<asp:TemplateField AccessibleHeaderText="PhoneNumber" HeaderText="PhoneNumber" HeaderStyle-CssClass="descriptionHeader">
 <HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">TimeAttended</h3>
+<h3 class="headertextCourse" style="color:white;">PhoneNumber</h3>
 <asp:ImageButton 
 runat="server" 
-CommandName="TimeAttended" 
+CommandName="Description" 
 ImageUrl="~/Images/uparrow3.png" 
 OnCommand="Asc_Command"  
 ToolTip="sort by ascending"
 CssClass="roundedButtons" />
 <asp:ImageButton 
 runat="server" 
-CommandName="TimeAttended" 
+CommandName="Description" 
 ImageUrl="~/Images/downarrow3.png" 
 OnCommand="Desc_Command" 
 ToolTip="sort by descending"
@@ -182,49 +182,6 @@ CssClass="roundedButtons"/>
 <HeaderStyle />
 </asp:TemplateField>
 
-    <asp:TemplateField AccessibleHeaderText="TagId" HeaderText="TagId" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">TagId</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="TagId" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="TagId" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>
-
-   <asp:TemplateField AccessibleHeaderText="CourseId" HeaderText="CourseId" HeaderStyle-CssClass="descriptionHeader">
-<HeaderTemplate>
-<h3 class="headertextCourse" style="color:white;">CourseId</h3>
-<asp:ImageButton 
-runat="server" 
-CommandName="CourseId" 
-ImageUrl="~/Images/uparrow3.png" 
-OnCommand="Asc_Command"  
-ToolTip="sort by ascending"
-CssClass="roundedButtons" />
-<asp:ImageButton 
-runat="server" 
-CommandName="CourseId" 
-ImageUrl="~/Images/downarrow3.png" 
-OnCommand="Desc_Command" 
-ToolTip="sort by descending"
-CssClass="roundedButtons"/>
-</HeaderTemplate>
-<ItemStyle HorizontalAlign="Center" />
-<HeaderStyle />
-</asp:TemplateField>
 
 </Columns>
 <HeaderStyle />

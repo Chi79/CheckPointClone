@@ -10,15 +10,15 @@
 namespace CheckPoint.Views.UserControls {
     
     
-    public partial class AttendeeGridView1 {
+    public partial class AttendeeGridView {
         
         /// <summary>
-        /// gvAttendeeTable control.
+        /// gvClientTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAttendeeTable;
+        protected global::System.Web.UI.WebControls.GridView gvClientTable;
     }
 }

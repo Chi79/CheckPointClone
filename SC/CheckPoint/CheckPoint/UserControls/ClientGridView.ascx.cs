@@ -7,8 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace CheckPoint.Views.UserControls
 {
-    public partial class AttendeeGridView1 : System.Web.UI.UserControl
+    public partial class AttendeeGridView : System.Web.UI.UserControl
     {
+
         public int? SessionRowIndex
         {
 
@@ -19,29 +20,29 @@ namespace CheckPoint.Views.UserControls
         public int SelectedRowIndex
         {
 
-            get { return gvAttendeeTable.SelectedIndex; }
-            set { gvAttendeeTable.SelectedIndex = value; }
+            get { return gvClientTable.SelectedIndex; }
+            set { gvClientTable.SelectedIndex = value; }
 
         }
 
         public IEnumerable<object> SetDataSource
         {
 
-            set { gvAttendeeTable.DataSource = value; }
+            set { gvClientTable.DataSource = value; }
 
         }
 
         public void BindData()
         {
 
-            gvAttendeeTable.DataBind();
+            gvClientTable.DataBind();
 
         }
 
         public object SelectedRowValueDataKey
         {
 
-            get { return gvAttendeeTable.DataKeys[(int)SessionRowIndex].Value; }
+            get { return gvClientTable.DataKeys[(int)SessionRowIndex].Value; }
 
         }
 
@@ -52,7 +53,7 @@ namespace CheckPoint.Views.UserControls
 
         public event EventHandler<EventArgs> RowSelected;
 
-        protected void gvAttendeeTable_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvClientTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (RowSelected != null)
@@ -61,12 +62,12 @@ namespace CheckPoint.Views.UserControls
             }
 
         }
-        protected void gvAttendeeTable_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void gvClientTable_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvAttendeeTable, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvClientTable, "Select$" + e.Row.RowIndex);
             }
 
         }

@@ -2,18 +2,8 @@
 
 <%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
 <%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
-<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
 <%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
 <%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
-
-
-
-
-
-
-
-
-
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -173,7 +163,7 @@ background-image: url(/Images/buttonshade1.png);
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div id="outercontainer" style="height:100%; width:auto;">
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentAttendanceHistoryHeading.svg" /></div>
         
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
@@ -220,7 +210,7 @@ runat="server">
         <ContentTemplate>
 
             <div id="AttendeeHeader" runat="server" class="AttendeeRequestHeader" style="z-index:5;" >
-            <img src="Images/AttendeeRequests1.svg" />
+            <img src="Images/AttendanceDetailsHeading.svg" />
             </div>
 
         </ContentTemplate>
@@ -242,7 +232,7 @@ runat="server">
 
  
 <%-- Attendee Gridview --%>
-<asp:Panel CssClass="AttendeePanel" ID="panelAttendeeGridView" runat="server" Visible="true"  Width="100%">
+<asp:Panel CssClass="AttendeePanel" ID="panelAttendeeGridView" runat="server" Visible="true"  Width="100%" ScrollBars="None">
     <asp:UpdatePanel    
     ID="UpdatePanel3"  
     runat="server" >

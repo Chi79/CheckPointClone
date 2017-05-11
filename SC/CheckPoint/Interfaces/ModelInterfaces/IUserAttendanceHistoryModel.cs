@@ -14,7 +14,9 @@ namespace CheckPointCommon.ModelInterfaces
         void SetSessionRowIndex(int index);
         void SetSessionAppointmentId(int id);
         int GetSessionAppointmentId();
-        void SetSessionAttendeeUsername(string username);
+
+        IEnumerable<object> GetAttendanceInformationForSelectedAppointment();
+        IEnumerable<object> GetEmptyAttendeeList();
 
         void ResetSessionState();
         int? GetSessionRowIndex();

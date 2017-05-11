@@ -140,11 +140,13 @@
     <Content Include="Images\ApplyToAttendCourseHeading1.svg" />
     <Content Include="Images\AppointmentAddedMessage.svg" />
     <Content Include="Images\AppointmentAddedMessage1.svg" />
+    <Content Include="Images\AppointmentAttendanceHistoryHeading.svg" />
     <Content Include="Images\AppointmentDeletedMessage.svg" />
     <Content Include="Images\AppointmentDeletedMessage1.svg" />
     <Content Include="Images\AppointmentHeading.svg" />
     <Content Include="Images\AppointmentHeading1.svg" />
     <Content Include="Images\AppointmentsInCourse.svg" />
+    <Content Include="Images\AttendanceDetailsHeading.svg" />
     <Content Include="Images\AttendeeRequests1.svg" />
     <Content Include="Images\AttendeesRequestingToBeAccepted.svg" />
     <Content Include="Images\BeforeYouRegisterHeading1.svg" />
@@ -267,6 +269,8 @@
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\AttendeeGridView.ascx" />
     <Content Include="UserControls\AttendeeGridViewHeader.ascx" />
+    <Content Include="UserControls\ClientGridView.ascx" />
+    <Content Include="UserControls\ClientGridViewHeader.ascx" />
     <Content Include="UserControls\CourseCreator.ascx" />
     <Content Include="UserControls\CourseGridView.ascx" />
     <Content Include="UserControls\CourseGridViewHeader.ascx" />
@@ -616,6 +620,20 @@
     </Compile>
     <Compile Include="UserControls\AttendeeGridViewHeader.ascx.designer.cs">
       <DependentUpon>AttendeeGridViewHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClientGridView.ascx.cs">
+      <DependentUpon>ClientGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientGridView.ascx.designer.cs">
+      <DependentUpon>ClientGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClientGridViewHeader.ascx.cs">
+      <DependentUpon>ClientGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientGridViewHeader.ascx.designer.cs">
+      <DependentUpon>ClientGridViewHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CourseCreator.ascx.cs">
       <DependentUpon>CourseCreator.ascx</DependentUpon>

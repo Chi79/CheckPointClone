@@ -109,7 +109,7 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader AttendeeGridViewHeader;
+        protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader1 AttendeeGridViewHeader;
         
         /// <summary>
         /// panelAttendeeGridView control.
@@ -136,6 +136,6 @@ namespace CheckPoint.Views {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeGridView AttendeeGridView;
+        protected global::CheckPoint.Views.UserControls.AttendeeGridView1 AttendeeGridView;
     }
 }

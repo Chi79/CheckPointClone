@@ -10,7 +10,7 @@
 namespace CheckPoint.Views.UserControls {
     
     
-    public partial class AttendeeGridViewHeader {
+    public partial class AttendeeGridViewHeader1 {
         
         /// <summary>
         /// gvAttendeeTable1 control.

@@ -112,13 +112,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
-        /// AttendeeGridViewHeader control.
+        /// ClientGridViewHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader AttendeeGridViewHeader;
+        protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader ClientGridViewHeader;
         
         /// <summary>
         /// panelAttendeeGridView control.
@@ -139,13 +139,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// AttendeeGridView control.
+        /// ClientGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeGridView AttendeeGridView;
+        protected global::CheckPoint.Views.UserControls.AttendeeGridView ClientGridView;
         
         /// <summary>
         /// btnManageCourseAttendance control.

@@ -15,12 +15,15 @@ namespace CheckPointModel.Models
         private readonly IUnitOfWork _unitOfWork;
         private ISessionService _sessionService;
         private IShowAppointments _appointmentDisplayService;
+        private IShowAttendees _attendeeDisplayService;
 
-        public UserAttendanceHistoryModel(IUnitOfWork unitOfWork, ISessionService sessionService, IShowAppointments appointmentDisplayService)
+        public UserAttendanceHistoryModel(IUnitOfWork unitOfWork, ISessionService sessionService, IShowAppointments appointmentDisplayService,
+                                            IShowAttendees attendeeDisplayService)
         {
             _unitOfWork = unitOfWork;
             _sessionService = sessionService;
             _appointmentDisplayService = appointmentDisplayService;
+            _attendeeDisplayService = attendeeDisplayService;
         }
 
         public IEnumerable<object> GetEmptyAppointmentList()
@@ -43,16 +46,6 @@ namespace CheckPointModel.Models
             return (int)_sessionService.SessionAppointmentId;
         }
 
-        public IEnumerable<object> GetAttendedAppointmentForUser()
-        {
-            return null;
-        }
-
-        public void SetSessionAttendeeUsername(string username)
-        {
-            throw new NotImplementedException();
-        }
-
         public void ResetSessionState()
         {
             int noRowSelected = -1;
@@ -71,7 +64,8 @@ namespace CheckPointModel.Models
             var allAttendedAppointments = new List<APPOINTMENT>();
 
             var client = GetLoggedInClient();
-            var allAttendeesForClient = _unitOfWork.ATTENDEEs.GetAllAttendedAttendeesForClient(client);
+            var clientTagId = _unitOfWork.Client_TagIds.GetClientTagId(client);
+            var allAttendeesForClient = _unitOfWork.ATTENDEEs.GetAllAttendedAttendeesForClient(clientTagId);
 
             foreach (ATTENDEE attendee in allAttendeesForClient)
             {
@@ -88,6 +82,26 @@ namespace CheckPointModel.Models
         public string GetLoggedInClient()
         {
             return _sessionService.LoggedInClient;
+        }
+
+        public IEnumerable<object> GetAttendanceInformationForSelectedAppointment()
+        {
+            var clientTagId = GetClientTagId();
+            var selectedAppointmentId = GetSessionAppointmentId();
+
+            return _unitOfWork.ATTENDEEs.GetAttendeeByTagIdAndAppointmentId(clientTagId, selectedAppointmentId);
+
+        }
+
+        public IEnumerable<object> GetEmptyAttendeeList()
+        {
+            return _appointmentDisplayService.GetEmptyList<ATTENDEE>();
+        }
+
+        public string GetClientTagId()
+        {
+            var client = GetLoggedInClient();
+            return _unitOfWork.Client_TagIds.GetClientTagId(client);
         }
     }
 }
