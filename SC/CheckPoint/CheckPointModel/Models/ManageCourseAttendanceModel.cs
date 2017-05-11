@@ -127,8 +127,9 @@ namespace CheckPointModel.Models
             foreach(ATTENDEE attendee in attendeesToApprove)
             {
                 attendee.StatusId = (int)AttendeeStatus.RequestApproved;
-                _unitOfWork.Complete();
+                
             }
+            _unitOfWork.Complete();
             
         }
 

@@ -121,6 +121,7 @@ namespace CheckPointPresenters.Presenters
         {
             HideMessagePanel();
             HideContinueButton();
+            UpdateGridViews();
         }
 
         private void OnMessagePanelNoButtonClicked(object sender, EventArgs e)
@@ -133,7 +134,7 @@ namespace CheckPointPresenters.Presenters
         private void OnMessagePanelYesButtonClicked(object sender, EventArgs e)
         {           
                 ChangeAllAttendeesStatusesToApproved();
-                UpdateGridViews();
+                
 
                 HideYesButton();
                 HideNoButton();
