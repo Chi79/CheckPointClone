@@ -89,7 +89,7 @@ namespace CheckPointModel.Models
             var clientTagId = GetClientTagId();
             var selectedAppointmentId = GetSessionAppointmentId();
 
-            return _unitOfWork.ATTENDEEs.GetAttendeeByTagIdAndAppointmentId(clientTagId, selectedAppointmentId);
+            return _unitOfWork.ATTENDEEs.GetAttendeesByTagIdAndAppointmentId(clientTagId, selectedAppointmentId);
 
         }
 

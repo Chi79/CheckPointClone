@@ -241,7 +241,7 @@ runat="server">
 
     <ContentTemplate> 
 
-        <uc1:ClientGridViewHeader runat="server" id="ClientGridViewHeader" />
+        <uc1:ClientGridViewHeader runat="server" ID="ClientGridViewHeader" />
 
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -256,7 +256,7 @@ runat="server">
     ID="UpdatePanel7"  
     runat="server" >
     <ContentTemplate>
-        <uc1:ClientGridView runat="server" id="ClientGridView" />
+        <uc1:ClientGridView runat="server" ID="ClientGridView" />
     </ContentTemplate>
     </asp:UpdatePanel>
 

@@ -201,6 +201,7 @@
     <Content Include="Images\ManageCourseAttendanceHeading.svg" />
     <Content Include="Images\managecoursebutton.png" />
     <Content Include="Images\managecoursesbutton1.png" />
+    <Content Include="Images\MyAppointmentAttendanceHistoryHeading.svg" />
     <Content Include="Images\MyAppointmentsHeading.svg" />
     <Content Include="Images\MyAppointmentsHeading1.svg" />
     <Content Include="Images\MyCourses.png" />

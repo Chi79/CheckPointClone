@@ -50,14 +50,14 @@ namespace CheckPoint.Views.UserControls
 
         }
 
-        public event EventHandler<EventArgs> RowSelected;
+        public event EventHandler<EventArgs> AttendeeRowSelected;
 
         protected void gvAttendeeTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (RowSelected != null)
+            if (AttendeeRowSelected != null)
             {
-                RowSelected(this, EventArgs.Empty);
+                AttendeeRowSelected(this, EventArgs.Empty);
             }
 
         }

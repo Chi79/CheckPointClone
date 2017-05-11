@@ -68,6 +68,18 @@ namespace CheckPointPresenters.Presenters
             _view.ShowAttendeeHeader = true;
         }
 
+        private void ShowAttendeePanel()
+        {
+            _view.ShowAttendeeGridViewPanel = true;
+            _view.ShowAttendeeHeaderPanel = true;
+        }
+
+        private void HideAttendeePanel()
+        {
+            _view.ShowAttendeeGridViewPanel = false;
+            _view.ShowAttendeeHeaderPanel = false;
+        }
+
         private void HideAttendeeHeader()
         {
 

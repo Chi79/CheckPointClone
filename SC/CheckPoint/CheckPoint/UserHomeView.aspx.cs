@@ -55,10 +55,10 @@ namespace CheckPoint.Views
         public override void HookUpEvents()
         {
 
-            AppointmentGridView.RowSelected += OnRowSelected;
+            AppointmentGridView.AppointmentRowSelected += OnRowSelected;
             AppointmentGridViewHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             AppointmentGridViewHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
-            AppointmentGridViewHeader.RowSelected += OnAppointmentGridViewHeader_Selected;
+            AppointmentGridViewHeader.AppointmentRowSelected += OnAppointmentGridViewHeader_Selected;
 
         }
 

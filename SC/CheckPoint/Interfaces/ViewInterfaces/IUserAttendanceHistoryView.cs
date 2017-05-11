@@ -14,6 +14,8 @@ namespace CheckPointCommon.ViewInterfaces
 
         IEnumerable<object> AttendanceHistorySetDataSource { set; }
         IEnumerable<object> AttendanceHistoryHeaderSetDataSource { set; }
+        bool ShowAttendeeGridViewPanel { set; }
+        bool ShowAttendeeHeaderPanel { set; }
 
         int SelectedAppointmentRowIndex { get; set; }
         object SelectedAppointmentRowValueDataKey { get; }

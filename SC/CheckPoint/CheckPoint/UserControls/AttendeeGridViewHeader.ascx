@@ -73,7 +73,7 @@ table {
     margin: auto;
     padding-right:0%;
 }
-.descriptionHeader{
+.timeAttendedHeader{
     width: 9%;
     margin: auto;
     padding-right: 0%;
@@ -161,7 +161,7 @@ CssClass="roundedButtons"/>
 </asp:TemplateField>--%>
 
 
-<asp:TemplateField AccessibleHeaderText="Date & Time Attended" HeaderText="Date & Time Attended" HeaderStyle-CssClass="descriptionHeader">
+<asp:TemplateField AccessibleHeaderText="Date & Time Attended" HeaderText="Date & Time Attended" HeaderStyle-CssClass="timeAttendedHeader">
 <HeaderTemplate>
 <h3 class="headertextCourse" style="color:white;">Date & Time Attended</h3>
 
