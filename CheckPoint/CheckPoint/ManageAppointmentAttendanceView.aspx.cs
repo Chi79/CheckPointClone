@@ -28,12 +28,12 @@ namespace CheckPoint.Views
         }
         public IEnumerable<object> AppliedAttendeesHeaderSetDataSource
         {
-            set { AttendeeGridViewHeader.SetDataSource2 = value; }
+            set { ClientGridViewHeader.SetDataSource2 = value; }
         }
 
         public IEnumerable<object> AppliedAttendeesSetDataSource
         {
-            set { AttendeeGridView.SetDataSource = value; }
+            set { ClientGridView.SetDataSource = value; }
         }
 
         public int SelectedAppointmentRowIndex
@@ -52,14 +52,14 @@ namespace CheckPoint.Views
 
         public void BindAttendeeData()
         {
-            AttendeeGridViewHeader.BindData();
-            AttendeeGridView.BindData();
+            ClientGridViewHeader.BindData();
+            ClientGridView.BindData();
         }
 
         public bool ShowAttendeeGridViewHeader
         {
-            get { return AttendeeGridViewHeader.Visible; }
-            set { AttendeeGridViewHeader.Visible = value; }
+            get { return ClientGridViewHeader.Visible; }
+            set { ClientGridViewHeader.Visible = value; }
         }
 
         public bool ShowAttendeeGridView
@@ -80,7 +80,7 @@ namespace CheckPoint.Views
 
         public object SelectedAttendeeRowValueDataKey
         {
-            get { return AttendeeGridView.SelectedRowValueDataKey; }
+            get { return ClientGridView.SelectedRowValueDataKey; }
         }
 
         public bool ShowAcceptAttendanceRequestButton
@@ -132,14 +132,14 @@ namespace CheckPoint.Views
 
         public int SelectedAttendeeRowIndex
         {
-            get { return AttendeeGridView.SelectedRowIndex; }
-            set { AttendeeGridView.SelectedRowIndex = value; }
+            get { return ClientGridView.SelectedRowIndex; }
+            set { ClientGridView.SelectedRowIndex = value; }
         }
 
         public override void HookUpEvents()
         {
             AttendeeAppointmentGridView.RowSelected += OnAppointmentRowSelected;
-            AttendeeGridView.RowSelected += OnAttendeeRowSelected;
+            ClientGridView.RowSelected += OnAttendeeRowSelected;
             messagePanelAppointments.YesButtonClicked += OnYesButtonClicked;
             messagePanelAppointments.NoButtonClicked += OnNoButtonClicked;
             messagePanelAppointments.ReloadPage += OnContinueButtonClicked;

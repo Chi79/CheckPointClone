@@ -24,7 +24,9 @@ namespace CheckPointPresenters.Presenters
         {
             ResetSessionState();
 
-            ShowData();
+            ShowAppointmentData();
+
+            HideAttendeeHeader();
         }
 
         public override void Load()
@@ -39,7 +41,62 @@ namespace CheckPointPresenters.Presenters
 
         private void OnAppointmentRowSelected(object sender, EventArgs e)
         {
-           //display attendee stamp data for selected appointment
+            SaveAppointmentRowIndexToSession();
+
+            GetSelectedAppointmentIdFromGrid();
+
+            DisplayAttendanceInfoForSelectedAppointment();
+
+            ShowAttendeeHeader();
+        }
+
+        private void DisplayAttendanceInfoForSelectedAppointment()
+        {
+            ShowAttendGridView();
+
+            ShowAttendanceData();
+        }
+
+        private void ShowAttendGridView()
+        {
+            _view.ShowAttendeeGridViewHeader = true;
+            _view.ShowAttendeeGridView = true;
+        }
+
+        private void ShowAttendeeHeader()
+        {
+            _view.ShowAttendeeHeader = true;
+        }
+
+        private void HideAttendeeHeader()
+        {
+
+            _view.ShowAttendeeHeader = false;
+
+        }
+
+        private void GetSelectedAppointmentIdFromGrid()
+        {
+            int noRowSelected = -1;
+
+            if (_model.GetSessionRowIndex() != noRowSelected)
+            {
+                SaveSelectedAppointmentIdToSession();
+
+            }
+        }
+
+        private void SaveSelectedAppointmentIdToSession()
+        {
+            var selectedAppointmentId = (int)_view.SelectedAppointmentRowValueDataKey;
+
+            _model.SetSessionAppointmentId(selectedAppointmentId);
+        }
+
+        private void SaveAppointmentRowIndexToSession()
+        {
+            var selectedRowIndex = _view.SelectedAppointmentRowIndex;
+            _model.SetSessionRowIndex(selectedRowIndex);
         }
 
         private void ResetSessionState()
@@ -47,13 +104,32 @@ namespace CheckPointPresenters.Presenters
             _model.ResetSessionState();
         }
 
-        private void ShowData()
+        private void ShowAppointmentData()
         {
-            _view.AppointmentsHistoryToHeaderSetDataSource = GetEmptyAppointmentList();
+            _view.AppointmentsHistoryHeaderSetDataSource = GetEmptyAppointmentList();
 
-            _view.AppointmentsHistoryToSetDataSource = GetAttendedAppointmentsForUser();
+            _view.AppointmentsHistorySetDataSource = GetAttendedAppointmentsForUser();
 
             _view.BindAppointmentData();
+        }
+
+        private void ShowAttendanceData()
+        {
+            _view.AttendanceHistoryHeaderSetDataSource = GetEmptyAttendeeList();
+
+            _view.AttendanceHistorySetDataSource = GetAttendanceInformationForSelectedAppointment();
+
+            _view.BindAttendeeData();
+        }
+
+        private IEnumerable<object> GetAttendanceInformationForSelectedAppointment()
+        {
+            return _model.GetAttendanceInformationForSelectedAppointment();
+        }
+
+        private IEnumerable<object> GetEmptyAttendeeList()
+        {
+            return _model.GetEmptyAttendeeList();
         }
 
         private IEnumerable<object> GetAttendedAppointmentsForUser()

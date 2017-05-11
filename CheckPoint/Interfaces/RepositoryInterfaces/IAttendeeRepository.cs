@@ -21,7 +21,7 @@ namespace CheckPointCommon.RepositoryInterfaces
         IEnumerable<ATTENDEE> GetAllAcceptedAttendeeRequestsForClient(string userName);
 
         object GetAttendeeByUserName(string username);
-        object GetAttendeeByTagIdAndAppointmentId(string tagId, int id);
+        IEnumerable<object> GetAttendeeByTagIdAndAppointmentId(string tagId, int id);
 
         IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourses();
 

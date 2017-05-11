@@ -1,10 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAppointmentAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAppointmentAttendanceView" EnableEventValidation="false"   MasterPageFile="~/HostMaster.Master" %>
 
-<%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
-<%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
 <%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
 <%@ Register Src="~/UserControls/AttendeeAppointmentGridView.ascx" TagPrefix="uc1" TagName="AttendeeAppointmentGridView" %>
 <%@ Register Src="~/UserControls/AttendeeAppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeAppointmentGridViewHeader" %>
+<%@ Register Src="~/UserControls/ClientGridViewHeader.ascx" TagPrefix="uc1" TagName="ClientGridViewHeader" %>
+<%@ Register Src="~/UserControls/ClientGridView.ascx" TagPrefix="uc1" TagName="ClientGridView" %>
+
+
 
 
 
@@ -235,7 +237,7 @@ runat="server">
     <ContentTemplate>
 
 <%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
-    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" Visible="true"/>
+        <uc1:ClientGridViewHeader runat="server" id="ClientGridViewHeader" />
         </ContentTemplate>
          </asp:UpdatePanel>
 </asp:Panel>
@@ -248,7 +250,7 @@ runat="server">
     runat="server" >
 
     <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true" /> 
+        <uc1:ClientGridView runat="server" id="ClientGridView" />
  
         </ContentTemplate>
         </asp:UpdatePanel>

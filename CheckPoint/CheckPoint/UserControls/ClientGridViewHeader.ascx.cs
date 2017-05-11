@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CheckPoint.Views.UserControls
 {
-    public partial class AttendeeGridViewHeader1 : System.Web.UI.UserControl
+    public partial class AttendeeGridViewHeader : System.Web.UI.UserControl
     {
         public string ColumnName
         {
@@ -20,7 +20,7 @@ namespace CheckPoint.Views.UserControls
         public IEnumerable<object> SetDataSource2
         {
 
-            set { gvAttendeeTable1.DataSource = value; }
+            set { gvClientTable1.DataSource = value; }
 
         }
 
@@ -31,7 +31,7 @@ namespace CheckPoint.Views.UserControls
 
         public void BindData()
         {
-            gvAttendeeTable1.DataBind();
+            gvClientTable1.DataBind();
         }
 
         public event EventHandler<EventArgs> SortColumnsByPropertyAscending;
@@ -60,7 +60,7 @@ namespace CheckPoint.Views.UserControls
 
         }
 
-        protected void gvAttendeeTable_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvClientTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (RowSelected != null)

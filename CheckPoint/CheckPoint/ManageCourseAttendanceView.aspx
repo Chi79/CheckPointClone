@@ -2,9 +2,11 @@
 
 <%@ Register Src="~/UserControls/CourseGridViewHeader.ascx" TagPrefix="uc1" TagName="CourseGridViewHeader" %>
 <%@ Register Src="~/UserControls/CourseGridView.ascx" TagPrefix="uc1" TagName="CourseGridView" %>
-<%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
-<%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
 <%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+<%@ Register Src="~/UserControls/ClientGridViewHeader.ascx" TagPrefix="uc1" TagName="ClientGridViewHeader" %>
+<%@ Register Src="~/UserControls/ClientGridView.ascx" TagPrefix="uc1" TagName="ClientGridView" %>
+
+
 
 
 
@@ -205,7 +207,7 @@ runat="server">
 
     <ContentTemplate> 
 
-    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" Visible="true"/>
+        <uc1:ClientGridViewHeader runat="server" id="ClientGridViewHeader" />
 
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -220,7 +222,7 @@ runat="server">
     ID="UpdatePanel7"  
     runat="server" >
     <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView" Visible="true"/>
+        <uc1:ClientGridView runat="server" id="ClientGridView" />
 <br />
 <br />
         <div id="buttoncontainer">
