@@ -17,6 +17,10 @@ namespace CheckPointCommon.ViewInterfaces
 
         void BindData();
 
+        bool MessagePanelVisible { set; }
+
+        bool ContinueButtonVisible { set; }
+
         void RedirectToFindAppointmentsView();
         void RedirectToApplyToCourseView();
 
@@ -27,6 +31,7 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> FindPublicAppointmentsButtonClicked;
         event EventHandler<EventArgs> ApplyToAttendCourseButtonClicked;
 
+        event EventHandler<EventArgs> ContinueButtonClicked;
 
     }
 }

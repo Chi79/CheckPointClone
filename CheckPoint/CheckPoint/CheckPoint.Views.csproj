@@ -284,6 +284,7 @@
     <Content Include="UserControls\ManageCourseAppGridHeader.ascx" />
     <Content Include="UserControls\ManageCourseGrid.ascx" />
     <Content Include="UserControls\ManageCourseHeader.ascx" />
+    <Content Include="UserControls\MediumMessagePanel.ascx" />
     <Content Include="UserControls\MessagePanel.ascx" />
     <Content Include="UserControls\NavigationMessage.ascx" />
     <Content Include="UserControls\SmallMessagePanel.ascx" />
@@ -319,14 +320,12 @@
   <ItemGroup>
     <Compile Include="AcceptedAttendeesForAppointmentView.aspx.cs">
       <DependentUpon>AcceptedAttendeesForAppointmentView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AcceptedAttendeesForAppointmentView.aspx.designer.cs">
       <DependentUpon>AcceptedAttendeesForAppointmentView.aspx</DependentUpon>
     </Compile>
     <Compile Include="AcceptedAttendeesForCourseView.aspx.cs">
       <DependentUpon>AcceptedAttendeesForCourseView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AcceptedAttendeesForCourseView.aspx.designer.cs">
       <DependentUpon>AcceptedAttendeesForCourseView.aspx</DependentUpon>
@@ -709,6 +708,13 @@
     </Compile>
     <Compile Include="UserControls\ManageCourseHeader.ascx.designer.cs">
       <DependentUpon>ManageCourseHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MediumMessagePanel.ascx.cs">
+      <DependentUpon>MediumMessagePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediumMessagePanel.ascx.designer.cs">
+      <DependentUpon>MediumMessagePanel.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MessagePanel.ascx.cs">
       <DependentUpon>MessagePanel.ascx</DependentUpon>

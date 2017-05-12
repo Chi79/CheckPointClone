@@ -38,7 +38,11 @@ namespace CheckPointPresenters.Presenters
         public void DisplayConfirmationMessage()
         {
 
-            _view.Message = "Are you sure you wish to attend this appointment?";
+            ShowMediumMessagePanel();
+
+            _view.MediumMessage = "<br />You have requested to become an attendee for this appointment! <br /> <br /> Do you wish to continue?";
+
+            YesNoButtonShow();
 
         }
 
@@ -70,14 +74,22 @@ namespace CheckPointPresenters.Presenters
         public void WireUpEvents()
         {
 
-            _view.ContinueButtonClicked += OnContinueButtonClicked;
             _view.YesButtonClicked += OnYesButtonClicked;
             _view.NoButtonClicked += OnNoButtonClicked;
+            _view.BackToFindAppointmentsButtonClicked += OnBackToFindAppointmentsButtonClicked;
+
+        }
+
+        private void OnBackToFindAppointmentsButtonClicked(object sender, EventArgs e)
+        {
+
+            _view.RedirectToFindAppointmentsView();
 
         }
 
         private void OnNoButtonClicked(object sender, EventArgs e)
         {
+
 
             _view.RedirectToFindAppointmentsView();
 
@@ -85,6 +97,8 @@ namespace CheckPointPresenters.Presenters
 
         private void OnYesButtonClicked(object sender, EventArgs e)
         {
+
+            HideMediumMessagePanel();
 
             CreateAttendee();
 
@@ -101,30 +115,25 @@ namespace CheckPointPresenters.Presenters
         }
 
         public void CheckIfAttendeeIsSavedToDB()
-        {
+        { 
+
+            ShowMessagePanel();
 
             bool AttendeeIsSavedToDB = _model.UpdateDatabaseWithChanges();
             if(AttendeeIsSavedToDB)
             {
 
                 _view.Message = _model.GetJobCompletedMessage();
-      
+
+                   
             }
             else
             {
-
-                _view.Message = "Failed to save changes!" + _model.GetUpdateErrorMessage();
+              
+                _view.Message = "<br />Unable to complete attendance request!<br /><br />" + _model.GetUpdateErrorMessage();
 
             }
-            DisplayContinueButtons();
-        }
-
-        public void DisplayContinueButtons()
-        {
-
-            _view.ContinueButtonVisible = true;
-            _view.YesButtonVisible = false;
-            _view.NoButtonVisible = false;
+            BackButtonShow();
 
         }
 
@@ -147,8 +156,54 @@ namespace CheckPointPresenters.Presenters
         private void OnContinueButtonClicked(object sender, EventArgs e)
         {
 
-            _view.RedirectToFindAppointmentsView();
+            HideMediumMessagePanel();
+
+            HideMessagePanel();
          
         }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ShowMediumMessagePanel()
+        {
+
+            _view.MediumMessagePanelVisible = true;
+
+        }
+
+        private void HideMediumMessagePanel()
+        {
+
+            _view.MediumMessagePanelVisible = false;
+
+        }
+
+        private void BackButtonShow()
+        {
+
+            _view.BackToFindAppointmentsButtonVisible = true;
+
+        }
+
+        private void YesNoButtonShow()
+        {
+
+            _view.YesButtonMediumPanelVisible = true;
+            _view.NoButtonMediumPanelVisible = true;
+
+        }
+
     }
 }

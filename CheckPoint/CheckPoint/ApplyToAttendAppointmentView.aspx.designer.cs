@@ -13,6 +13,24 @@ namespace CheckPoint.Views {
     public partial class ApplyToAttendAppointmentView {
         
         /// <summary>
+        /// MessagePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CheckPoint.Views.UserControls.MessagePanel MessagePanel;
+        
+        /// <summary>
+        /// MediumMessagePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CheckPoint.Views.UserControls.MediumMessagePanel MediumMessagePanel;
+        
+        /// <summary>
         /// AppointmentCreator control.
         /// </summary>
         /// <remarks>
@@ -40,12 +58,12 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Button btnNo;
         
         /// <summary>
-        /// btnContinue control.
+        /// btnBackToFindAppointments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContinue;
+        protected global::System.Web.UI.WebControls.Button btnBackToFindAppointments;
     }
 }

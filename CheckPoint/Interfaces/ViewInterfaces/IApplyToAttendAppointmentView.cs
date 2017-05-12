@@ -9,7 +9,7 @@ namespace CheckPointCommon.ViewInterfaces
     public interface IApplyToAttendAppointmentView
     {
         string Message { set; }
-
+        string MediumMessage { set; }
         string StartTime { set; }
         string EndTime { set; }
         string PostalCode { set; }
@@ -36,13 +36,16 @@ namespace CheckPointCommon.ViewInterfaces
 
         void RedirectToFindAppointmentsView();
 
-        bool ContinueButtonVisible { set; }
-        bool YesButtonVisible { set; }
-        bool NoButtonVisible { set; }
+
+        bool YesButtonMediumPanelVisible { set; }
+        bool NoButtonMediumPanelVisible { set; }
+        bool BackToFindAppointmentsButtonVisible { set; }
+
+        bool MessagePanelVisible { set; }
+        bool MediumMessagePanelVisible { set; }
 
         event EventHandler<EventArgs> YesButtonClicked;
         event EventHandler<EventArgs> NoButtonClicked;
-        event EventHandler<EventArgs> ContinueButtonClicked;
-
+        event EventHandler<EventArgs> BackToFindAppointmentsButtonClicked;
     }
 }

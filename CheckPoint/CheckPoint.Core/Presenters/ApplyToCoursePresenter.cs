@@ -35,19 +35,20 @@ namespace CheckPointPresenters.Presenters
         }
         private void ShowData()
         {
+
             ShowSelectedCourse();
 
             ShowAppointmentData();
 
-            _view.BindData();
-
-        
+            _view.BindData();       
 
         }
 
         public void ShowMessagePanel()
         {
+
             _view.MessagePanelVisible = true;
+
         }
         private void ShowSelectedCourse()
         {
@@ -67,38 +68,40 @@ namespace CheckPointPresenters.Presenters
         }
         public void WireUpEvents()
         {
+
             _view.SortColumnsByPropertyAscending += OnSortColumnsAscendingClicked;
             _view.SortColumnsByPropertyDescending += OnSortColumnsDescendingClicked;
-
             _view.ApplyToCourse_Click += OnbtnApplyToCourse_Click;
             _view.Cancel_Click += OnCancel_Click;
             _view.Continue_Click += OnContinue_Click;
             _view.Yes_Click += OnYes_Click;
             _view.No_Click += OnNo_Click;
             
-        }
-
-        
-        
+        }               
 
         private void OnNo_Click(object sender, EventArgs e)
         {
+
             ShowDefaultButtons();
        
         }
 
         private void OnYes_Click(object sender, EventArgs e)
         {
+
             _model.PerformJob();
-            CheckChangesSaved();          
-            
+
+            CheckChangesSaved();                  
 
         }
 
         private void RedirectBackToPublicCoursesView()
         {
+
             _view.RedirectToFindPublicCourses();
+
         }
+
         private void CheckChangesSaved()
         {
 
@@ -111,7 +114,9 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
-                _view.Message = "Failed to attend course!" + _model.GetUpdateErrorMessage();
+
+                _view.Message = "<br /><br />Failed to attend course!<br />" + _model.GetUpdateErrorMessage();
+
             }
 
             ShowContinueButtonOnMessagePanel();
@@ -121,13 +126,17 @@ namespace CheckPointPresenters.Presenters
 
         private void OnContinue_Click(object sender, EventArgs e)
         {
+
             ShowDefaultButtons();
             RedirectBackToPublicCoursesView();
+
         }
 
         private void OnCancel_Click(object sender, EventArgs e)
         {
+
             _view.RedirectToFindPublicCourses();
+
         }
 
         private void OnbtnApplyToCourse_Click(object sender, EventArgs e)
@@ -138,7 +147,8 @@ namespace CheckPointPresenters.Presenters
             if(appointmentsInCourse)
             {
               
-                 ShowDecitionButtonsOnMessagePanel();
+                 ShowDecisionButtonsOnMessagePanel();
+
                 _model.PrepareCreateMultipleAttendeesJob();
          
                 _view.Message = _model.GetJobConfirmationMessage();
@@ -146,13 +156,17 @@ namespace CheckPointPresenters.Presenters
             }
             else
             {
+
                 ShowContinueButtonOnMessagePanel();
-                _view.Message = "There are no appointments to attend in this course!";
+
+                _view.Message = " <br /><br /> There are no appointments to attend in this course!<br />";
+
             }
    
         }
-        private void ShowDecitionButtonsOnMessagePanel()
+        private void ShowDecisionButtonsOnMessagePanel()
         {
+
             _view.MessagePanelVisible = true;
             _view.BtnCancelVisible = false;
             _view.BtnApplyToCourseVisible = false;
@@ -163,15 +177,18 @@ namespace CheckPointPresenters.Presenters
         }
         private void ShowContinueButtonOnMessagePanel()
         {
+
             _view.MessagePanelVisible = true;
             _view.BtnContinueVisible = true; 
             _view.BtnCancelVisible = false;
             _view.BtnApplyToCourseVisible = false;
             _view.BtnNoVisible = false;
             _view.BtnYesVisible = false;
+
         }
     private void ShowDefaultButtons()
         {            
+
             _view.Message = string.Empty;
             _view.MessagePanelVisible = false;
             _view.BtnContinueVisible = false;
@@ -179,6 +196,7 @@ namespace CheckPointPresenters.Presenters
             _view.BtnApplyToCourseVisible = true;
             _view.BtnNoVisible = false;
             _view.BtnYesVisible = false;
+
         }       
 
     
@@ -211,8 +229,6 @@ namespace CheckPointPresenters.Presenters
             ShowSelectedCourse();
 
             _view.BindData();
-
-
 
         }
 

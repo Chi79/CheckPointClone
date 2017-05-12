@@ -7,26 +7,26 @@ using System.Web.UI.WebControls;
 
 namespace CheckPoint.Views.UserControls
 {
-    public partial class MessagePanel : System.Web.UI.UserControl
+    public partial class MediumMessagePanel : System.Web.UI.UserControl
     {
         public string Message
         {
-            get { return lblMessage.Text; }
+            get { return lblMediumMessage.Text; }
 
-            set { lblMessage.Text = value; }
+            set { lblMediumMessage.Text = value; }
         }
 
         public bool MessagePanelVisible
         {
 
-            set { MessageDisplayPanel.Visible = value; }
+            set { MediumMessageDisplayPanel.Visible = value; }
 
         }
 
         public bool MessageVisible
         {
 
-            set { lblMessage.Visible = value; }
+            set { lblMediumMessage.Visible = value; }
 
         }
 
@@ -61,7 +61,7 @@ namespace CheckPoint.Views.UserControls
         public bool BackButtonVisible
         {
 
-            set { btnBackToFindAppointments.Visible = value; }
+            set { btnBackToFindAppointmentsMedium.Visible = value; }
 
         }
 
@@ -112,12 +112,10 @@ namespace CheckPoint.Views.UserControls
 
         protected void btnBackToFindAppointments_Click(object sender, EventArgs e)
         {
-
             if(BackButtonClicked != null)
             {
                 BackButtonClicked(this, EventArgs.Empty);
             }
-
         }
     }
 }

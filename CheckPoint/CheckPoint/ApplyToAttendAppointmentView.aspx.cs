@@ -12,10 +12,16 @@ namespace CheckPoint.Views
 {
     public partial class ApplyToAttendAppointmentView : ViewBase<ApplyToAttendAppointmentPresesnter> , IApplyToAttendAppointmentView
     {
+        public string MediumMessage
+        {
+
+            set { MediumMessagePanel.Message = value; }
+
+        }
         public string Message
         {
 
-            set { AppointmentCreator.Message = value; }
+            set { MessagePanel.Message = value; }
 
         }
 
@@ -154,58 +160,128 @@ namespace CheckPoint.Views
 
         }
  
-        public bool ContinueButtonVisible
+
+        public bool BackToFindAppointmentsButtonVisible
         {
 
-            set { btnContinue.Visible = value; }
+            set { MessagePanel.BackButtonVisible = value; }
 
         }
-        public bool YesButtonVisible
+
+        public bool MessagePanelVisible
         {
 
-            set {btnYes.Visible = value; }
+            set { MessagePanel.MessagePanelVisible = value; }
 
         }
-        public bool NoButtonVisible
+
+        public bool YesButtonMediumPanelVisible
         {
 
-            set {btnNo.Visible = value; }
+            set { MediumMessagePanel.YesButtonVisible = value; }
 
         }
-    
+        public bool NoButtonMediumPanelVisible
+        {
+
+            set { MediumMessagePanel.NoButtonVisible = value; }
+
+        }
+
+        public bool MediumMessagePanelVisible
+        {
+
+            set { MediumMessagePanel.MessagePanelVisible = value; }
+
+        }
+
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
-        public event EventHandler<EventArgs> ContinueButtonClicked;
+        public event EventHandler<EventArgs> BackToFindAppointmentsButtonClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnContinue_Click(object sender, EventArgs e)
+        public override void HookUpEvents()
         {
-            if (ContinueButtonClicked != null)
+
+            MessagePanel.BackButtonClicked += OnMessagePanel_BackButtonClicked;
+
+            MediumMessagePanel.YesButtonClicked += OnMediumMessagePanel_YesButtonClicked;
+            MediumMessagePanel.NoButtonClicked += OnMediumMessagePanel_NoButtonClicked;
+            MediumMessagePanel.BackButtonClicked += OnMediumMessagePanel_BackButtonClicked;
+
+        }
+
+        private void OnMediumMessagePanel_BackButtonClicked(object sender, EventArgs e)
+        {
+
+            if (BackToFindAppointmentsButtonClicked != null)
             {
-                ContinueButtonClicked(this, EventArgs.Empty);
+                BackToFindAppointmentsButtonClicked(this, EventArgs.Empty);
             }
+
         }
 
 
-        protected void btnYes_Click(object sender, EventArgs e)
+        private void OnMediumMessagePanel_NoButtonClicked(object sender, EventArgs e)
         {
-            if (YesButtonClicked != null)
-            {
-                YesButtonClicked(this, EventArgs.Empty);
-            }
-        }
 
-        protected void btnNo_Click(object sender, EventArgs e)
-        {
             if (NoButtonClicked != null)
             {
                 NoButtonClicked(this, EventArgs.Empty);
             }
+
         }
 
+        private void OnMediumMessagePanel_YesButtonClicked(object sender, EventArgs e)
+        {
+
+            if (YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
+
+        }
+
+        private void OnMessagePanel_BackButtonClicked(object sender, EventArgs e)
+        {
+            if(BackToFindAppointmentsButtonClicked  != null)
+            {
+                BackToFindAppointmentsButtonClicked(this, EventArgs.Empty);
+            }
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+
+            if (YesButtonClicked != null)
+            {
+                YesButtonClicked(this, EventArgs.Empty);
+            }
+
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+
+            if (NoButtonClicked != null)
+            {
+                NoButtonClicked(this, EventArgs.Empty);
+            }
+
+        }
+
+        protected void btnBackToFindAppointments_Click(object sender, EventArgs e)
+        {
+
+            if(BackToFindAppointmentsButtonClicked != null)
+            {
+                BackToFindAppointmentsButtonClicked(this, EventArgs.Empty);
+            }
+
+        }
     }
 }
