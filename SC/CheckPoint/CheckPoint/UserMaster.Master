@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow:hidden" >
 <head runat="server">
      <link href="CSS/StyleMaster.css" rel="stylesheet" />
      <meta name="viewport"   content="width=device-width, initial-scale=2"/>

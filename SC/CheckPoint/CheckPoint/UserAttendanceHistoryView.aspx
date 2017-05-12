@@ -51,27 +51,27 @@
     right:1%;
 }
 .PanelAppGrid{
-    position:relative; 
-    height:237px;
-    width:100%;
-    overflow-y:auto;
-    right:1%;
+    position: relative;
+    height: 237px;
+    width: 99%;
+    overflow-y: scroll;
+    right: 0%;
     border-bottom-left-radius: 10px;
 }
 .PanelAppGridHeader{
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 99%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-bottom: 12px;
-    position:relative;
-    right:1%;
+    position: relative;
+    right: 0%;
 }
         
-.container{
+.containerpanel{
    position:relative;
    right:0%;
-   animation: slideright 2s ease-in-out;
+   animation: slideright 2s;
 }
    @keyframes slideright {
    from { right: -100%; }
@@ -79,24 +79,24 @@
 }
 
 .logoslide{
-   position:absolute;
-   left: 85%;
-   top:  13px;
-   animation: slideleft 2s ;
+    position: absolute;
+    left: 85%;
+    top: -2%;
+    animation: slideleft 2s;
 }
 @keyframes slideleft {
    from { left: -100%; }
    to { left: 85%; }
 }
    .Appointmentslide{
-   position:absolute;
-   left: 6%;
-   animation:slidedown 4s;
-   top:14px;
+    position: absolute;
+    left: 1%;
+    animation: slidedown 4s;
+    top: 1%;
 }
 @keyframes slidedown {
    from { top: -200px; }
-   to { top: 14px; }
+   to { top: 1%; }
 }
 
 .GridviewLabel{
@@ -158,24 +158,26 @@ background-image: url(/Images/buttonshade1.png);
    position:absolute;
     left: 35%;
     top: 303px;
-   animation: slideright 2s ;
+   animation: slidesright 2s ;
 }
-@keyframes slideright {
+@keyframes slidesright {
    from { left: 200%; }
    to { left: 35%; }
 }
 
     </style>
 
-</asp:Content>
+</asp:Content >
 
-<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div id="outercontainer" style="height:100%; width:auto;">
-        <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server" >
+    <div id="outercontainer" style="height:530px; width:auto; position:relative; overflow:hidden">
+
+    <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
     <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/MyAppointmentAttendanceHistoryHeading.svg" /></div>
        
-<div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
-    <asp:ScriptManager
+<div id="appointmentcontainer" class="containerpanel" style="width:auto; margin-top:3.5%;">
+
+<asp:ScriptManager
 ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
