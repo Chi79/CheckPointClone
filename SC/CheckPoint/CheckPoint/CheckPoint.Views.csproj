@@ -174,6 +174,7 @@
     <Content Include="Images\cross.png" />
     <Content Include="Images\cross2.svg" />
     <Content Include="Images\crowd.png" />
+    <Content Include="Images\DateAndTimeAttendedHeader.svg" />
     <Content Include="Images\DeleteAppointmentHeading1.svg" />
     <Content Include="Images\DeleteCourseHeading1.svg" />
     <Content Include="Images\downarrow2.png" />
