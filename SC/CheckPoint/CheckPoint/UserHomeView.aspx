@@ -265,22 +265,6 @@
     </div>
 
 
-<%--    <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
-    <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
-    <ContentTemplate>
-    <asp:Button ID="btnManageAttendance"
-        CssClass="navButtons" 
-        runat="server" 
-        OnClick="btnManageAttendance_Click"
-        Text="Manage Attendance"  
-        Visible="True" 
-        ToolTip="Manage Attendance" 
-        ForeColor="White"/>
-
-    </ContentTemplate>
-    </asp:UpdatePanel>
-    </div>--%>
-
     </div>
 
     </div>
