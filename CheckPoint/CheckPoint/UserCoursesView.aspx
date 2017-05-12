@@ -267,38 +267,6 @@
     </div>
 
 
-<%--    <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
-    <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
-    <ContentTemplate>
-    <asp:Button ID="btnManageAttendance"
-        CssClass="navButtons" 
-        runat="server" 
-        OnClick="btnManageAttendance_Click"
-        Text="Manage Attendance"  
-        Visible="True" 
-        ToolTip="Manage Attendance" 
-        ForeColor="White"/>
-
-    </ContentTemplate>
-    </asp:UpdatePanel>
-    </div>--%>
-
-
-<%--    <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
-    <asp:UpdatePanel ID="buttonspanel5" runat="server" > 
-    <ContentTemplate>
-    <asp:Button ID="btnCreateReport" 
-        CssClass="navButtons" 
-        runat="server" 
-        OnClick="btnCreateReport_Click"
-        Text="Create Report"  
-        Visible="True"  
-        ToolTip="Create a Report" 
-        ForeColor="White"/>
-    </ContentTemplate>
-    </asp:UpdatePanel>
-    </div>--%>
-
     </div>
 
     </div>
