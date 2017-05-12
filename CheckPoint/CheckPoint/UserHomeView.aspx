@@ -179,7 +179,7 @@
     <asp:Label 
     ID="lblMessage" 
     runat="server" 
-    Text="HostPage">
+    Text="Lambda">
     </asp:Label>
    
     <uc1:AppointmentGridViewHeader runat="server" id="AppointmentGridViewHeader" />

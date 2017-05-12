@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserAttendanceHistoryView.aspx.cs" Inherits="CheckPoint.Views.UserAttendanceHistoryView" EnableEventValidation="false"  MasterPageFile="~/UserMaster.Master" %>
 
-<%@ Register Src="~/UserControls/AttendeeGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeGridViewHeader" %>
-<%@ Register Src="~/UserControls/AttendeeGridView.ascx" TagPrefix="uc1" TagName="AttendeeGridView" %>
 <%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
 <%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
+<%@ Register Src="~/UserControls/SmallMessagePanel.ascx" TagPrefix="uc1" TagName="SmallMessagePanel" %>
+
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -17,11 +17,12 @@
 }
 
 #courseGridContainer{
-    position:relative;        
+    position:relative;            
 }
 
 #appointmentGridContainer{
-    position:relative;          
+    position:relative;
+             
 }
 
 #attendeeGridContainer{
@@ -62,7 +63,7 @@
     width:100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
     position:relative;
     right:1%;
 }
@@ -80,7 +81,7 @@
 .logoslide{
    position:absolute;
    left: 85%;
-   top:  -11px;
+   top:  13px;
    animation: slideleft 2s ;
 }
 @keyframes slideleft {
@@ -91,11 +92,11 @@
    position:absolute;
    left: 6%;
    animation:slidedown 4s;
-   top:4px;
+   top:14px;
 }
 @keyframes slidedown {
    from { top: -200px; }
-   to { top: 4px; }
+   to { top: 14px; }
 }
 
 .GridviewLabel{
@@ -137,23 +138,31 @@ background-image: url(/Images/buttonshade1.png);
     height:55px;
 }
 
-#<%=UpdatePanel3.ClientID%>{
-    overflow-x: hidden;
-    overflow-y:hidden;
-    height: 150px;
-}
 .buttonDiv{
     margin-top:1%;
 }
-.AttendeeRequestHeader{
+.DateAndTimeAttendedMessage{
+    position:absolute;
+    left:34%;
+    top:100%;
+    text-align:center;
+    animation:slideup 2s;
+}
+
+@keyframes slideup {
+   from { top: 250%; }
+   to { top: 100%; }
+}
+
+.DateAndTimeHeader{
    position:absolute;
-    left: 0%;
+    left: 35%;
     top: 303px;
    animation: slideright 2s ;
 }
 @keyframes slideright {
    from { left: 200%; }
-   to { left: 0%; }
+   to { left: 35%; }
 }
 
     </style>
@@ -164,13 +173,12 @@ background-image: url(/Images/buttonshade1.png);
     <div id="outercontainer" style="height:100%; width:auto;">
         <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
     <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/MyAppointmentAttendanceHistoryHeading.svg" /></div>
-        
+       
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
     <asp:ScriptManager
 ID="ScriptManager1"
 runat="server">
 </asp:ScriptManager> 
-    
    
         
 <%-- Appointment Header --%>    
@@ -206,46 +214,41 @@ runat="server">
 </asp:Panel>
    
 <br />
-    <asp:UpdatePanel runat="server">
+<br />
+    <asp:UpdatePanel runat="server" ID="UpdatePanel3">
         <ContentTemplate>
 
-            <div id="AttendeeHeader" runat="server" class="AttendeeRequestHeader" style="z-index:5;" >
-            <img src="Images/AttendanceDetailsHeading.svg" />
+            <div id="TimeAttendedHeader" runat="server" class="DateAndTimeHeader" style="z-index:5" >
+            <img src="Images/DateAndTimeAttendedHeader.svg" />
+                
+                          
             </div>
 
+            <div id="datetimetextbox" runat="server" class="DateAndTimeAttendedMessage" style="z-index:5">
+<asp:TextBox ID="txtDateAndTimeAttended" 
+                runat="server" class="DateAndTimeAttendedMessage" 
+                Font-Size="XX-Large" 
+                BackColor="#006600"
+                Font-Bold="true" 
+                ForeColor="White" 
+                ReadOnly="True" 
+                TextMode="DateTime"
+                Visible="False"
+                style="z-index:5"> 
+                </asp:TextBox> 
+            </div>
+
+                
+           
         </ContentTemplate>
     </asp:UpdatePanel>
-<br />
-<br />
-
-<%-- Attendee Header --%>
-<asp:Panel CssClass="AttendeePanelHeader" ID="panelAttendeeHeader" runat="server" ScrollBars="None" BackImageUrl="~/Images/headershade3.png" Visible="true" Width="100%" >
-    <asp:UpdatePanel 
-    ID="UpdatePanel2"  
-    runat="server" >
-    <ContentTemplate>
-
-<%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
-    <uc1:AttendeeGridViewHeader runat="server" id="AttendeeGridViewHeader" />
-        </ContentTemplate>
-         </asp:UpdatePanel>
-</asp:Panel>
-
- 
-<%-- Attendee Gridview --%>
-<asp:Panel CssClass="AttendeePanel" ID="panelAttendeeGridView" runat="server" Visible="true"  Width="100%" ScrollBars="None">
-    <asp:UpdatePanel    
-    ID="UpdatePanel3"  
-    runat="server" >
-
-    <ContentTemplate>
-    <uc1:AttendeeGridView runat="server" id="AttendeeGridView"/> 
- 
-        </ContentTemplate>
-        </asp:UpdatePanel>   
- 
-    </asp:Panel>
-
-     </div>
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+                        
+                 
+            </ContentTemplate>
+    </asp:UpdatePanel>
+        </div>
+       
         </div>
 </asp:Content>

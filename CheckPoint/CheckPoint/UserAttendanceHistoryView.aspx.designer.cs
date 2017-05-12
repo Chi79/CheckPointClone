@@ -76,51 +76,6 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.GridView AppointmentGridView;
         
         /// <summary>
-        /// AttendeeHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AttendeeHeader;
-        
-        /// <summary>
-        /// panelAttendeeHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAttendeeHeader;
-        
-        /// <summary>
-        /// UpdatePanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
-        /// <summary>
-        /// AttendeeGridViewHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeGridViewHeader1 AttendeeGridViewHeader;
-        
-        /// <summary>
-        /// panelAttendeeGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAttendeeGridView;
-        
-        /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
@@ -130,12 +85,39 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// AttendeeGridView control.
+        /// TimeAttendedHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeGridView1 AttendeeGridView;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TimeAttendedHeader;
+        
+        /// <summary>
+        /// datetimetextbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl datetimetextbox;
+        
+        /// <summary>
+        /// txtDateAndTimeAttended control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateAndTimeAttended;
+        
+        /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
     }
 }

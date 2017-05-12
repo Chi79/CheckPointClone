@@ -26,7 +26,8 @@ namespace CheckPointPresenters.Presenters
 
             ShowAppointmentData();
 
-            HideAttendeeHeader();
+            HideTimeAttendedHeader();
+
         }
 
         public override void Load()
@@ -45,48 +46,16 @@ namespace CheckPointPresenters.Presenters
 
             GetSelectedAppointmentIdFromGrid();
 
-            DisplayAttendanceInfoForSelectedAppointment();
+            ShowTimeAttendedHeader();
 
-            ShowAttendeeHeader();
+            ShowTimeAttendedData();
+
+            ShowDateAndTimeTextBox();
         }
 
-        private void DisplayAttendanceInfoForSelectedAppointment()
+        private void ShowTimeAttendedData()
         {
-            ShowAttendGridView();
-
-            ShowAttendanceData();
-        }
-
-        private void ShowAttendGridView()
-        {
-
-            _view.ShowAttendeeGridViewHeader = true;
-            _view.ShowAttendeeGridView = true;
-    
-        }
-
-        private void ShowAttendeeHeader()
-        {
-            _view.ShowAttendeeHeader = true;
-        }
-
-        private void ShowAttendeePanel()
-        {
-            _view.ShowAttendeeGridViewPanel = true;
-            _view.ShowAttendeeHeaderPanel = true;
-        }
-
-        private void HideAttendeePanel()
-        {
-            _view.ShowAttendeeGridViewPanel = false;
-            _view.ShowAttendeeHeaderPanel = false;
-        }
-
-        private void HideAttendeeHeader()
-        {
-
-            _view.ShowAttendeeHeader = false;
-
+            _view.DateAndTimeTextBoxMessage = GetTimeAttendedForSelectedAttendee().ToString(); 
         }
 
         private void GetSelectedAppointmentIdFromGrid()
@@ -127,18 +96,24 @@ namespace CheckPointPresenters.Presenters
             _view.BindAppointmentData();
         }
 
-        private void ShowAttendanceData()
+        private void ShowTimeAttendedHeader()
         {
-            _view.AttendanceHistoryHeaderSetDataSource = GetEmptyAttendeeList();
-
-            _view.AttendanceHistorySetDataSource = GetAttendanceInformationForSelectedAppointment();
-
-            _view.BindAttendeeData();
+            _view.ShowTimeAttendedHeader = true;
         }
 
-        private IEnumerable<object> GetAttendanceInformationForSelectedAppointment()
+        private void HideTimeAttendedHeader()
         {
-            return _model.GetAttendanceInformationForSelectedAppointment();
+            _view.ShowTimeAttendedHeader = false;
+        }
+
+        private void ShowDateAndTimeTextBox()
+        {
+            _view.ShowDateAndTimeTextBox = true;
+        }
+
+        private DateTime GetTimeAttendedForSelectedAttendee()
+        {
+            return _model.GetTimeAttendedForSelectedAttendee();
         }
 
         private IEnumerable<object> GetEmptyAttendeeList()

@@ -34,15 +34,6 @@ namespace CheckPoint.Views
             }
         }
 
-        public IEnumerable<object> AttendanceHistoryHeaderSetDataSource
-        {
-            set { AttendeeGridViewHeader.SetDataSource2 = value; }
-        }
-
-        public IEnumerable<object> AttendanceHistorySetDataSource
-        {
-            set { AttendeeGridView.SetDataSource = value; }
-        }
 
         public int SelectedAppointmentRowIndex
         {
@@ -65,57 +56,25 @@ namespace CheckPoint.Views
             }
         }
 
-        public bool ShowAttendeeGridView
+        public bool ShowTimeAttendedHeader
         {
-            get
-            {
-                return AttendeeGridView.Visible;
-            }
-
-            set
-            {
-                AttendeeGridView.Visible = value;
-            }
+            set { TimeAttendedHeader.Visible = value; }
         }
 
-        public bool ShowAttendeeGridViewHeader
+        public string DateAndTimeTextBoxMessage
         {
-            get
-            {
-                return AttendeeGridViewHeader.Visible;
-            }
-
-            set
-            {
-                AttendeeGridViewHeader.Visible = value;
-            }
+            set { txtDateAndTimeAttended.Text = value; }
         }
 
-        public bool ShowAttendeeHeader
+        public bool ShowDateAndTimeTextBox
         {
-            set { AttendeeHeader.Visible = value; }
-        }
-
-        public bool ShowAttendeeHeaderPanel
-        {
-            set { panelAttendeeHeader.Visible = value; }
-        }
-
-        public bool ShowAttendeeGridViewPanel
-        {
-            set { panelAttendeeGridView.Visible = value; }
+            set { txtDateAndTimeAttended.Visible = value; }
         }
 
         public void BindAppointmentData()
         {
             AppointmentGridViewHeader.BindData();
             AppointmentGridView.BindData();
-        }
-
-        public void BindAttendeeData()
-        {
-            AttendeeGridViewHeader.BindData();
-            AttendeeGridView.BindData();
         }
 
         public event EventHandler<EventArgs> AppointmentRowSelected;

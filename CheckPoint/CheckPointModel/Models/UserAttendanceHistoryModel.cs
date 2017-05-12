@@ -84,12 +84,14 @@ namespace CheckPointModel.Models
             return _sessionService.LoggedInClient;
         }
 
-        public IEnumerable<object> GetAttendanceInformationForSelectedAppointment()
+        public DateTime GetTimeAttendedForSelectedAttendee()
         {
             var clientTagId = GetClientTagId();
             var selectedAppointmentId = GetSessionAppointmentId();
 
-            return _unitOfWork.ATTENDEEs.GetAttendeesByTagIdAndAppointmentId(clientTagId, selectedAppointmentId);
+            var attendee = (ATTENDEE)_unitOfWork.ATTENDEEs.GetAttendeeByTagIdAndAppointmentId(clientTagId, selectedAppointmentId);
+
+            return (DateTime)attendee.TimeAttended;
 
         }
 
