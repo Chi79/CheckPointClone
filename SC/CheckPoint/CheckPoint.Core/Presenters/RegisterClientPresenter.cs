@@ -36,17 +36,54 @@ namespace CheckPointPresenters.Presenters
             _view.RegisterNewClient += RegisterNewClientButtonClicked;
             _view.BackToHomePageClicked += OnBackToHomePageClicked;
             _view.GoToLoginClicked += OnGoToLoginClicked;
+
+            _view.YesButtonClicked += OnYesButtonClicked;
+            _view.NoButtonClicked += OnNoButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
       
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
+
+            ShowRegisterButton();
+
+        }
+
+        private void OnNoButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
+
+            ShowRegisterButton();
+
+        }
+
+        private void OnYesButtonClicked(object sender, EventArgs e)
+        {
+
+            HideYesNoButtons();
+
+            CreateClientDTOFromInput();
+
+            CheckClientIsValid();
+
         }
 
         private void OnGoToLoginClicked(object sender, EventArgs e)
         {
+
             _view.RedirectToLogin();
+
         }
 
         private void OnBackToHomePageClicked(object sender, EventArgs e)
         {
+
             _view.RedirectBackToHomePage();
+
         }
 
         public override void FirstTimeInit()
@@ -56,9 +93,21 @@ namespace CheckPointPresenters.Presenters
 
         private void RegisterNewClientButtonClicked(object sender, EventArgs e)
         {
-            CreateClientDTOFromInput();
 
-            CheckClientIsValid();
+            HideRegisterButton();
+
+            HideContinueButton();
+
+            ShowMessagePanel();
+
+            ShowYesNoButtons();
+
+            _view.Message = "<br /> You are about to register a new account! <br /> <br /> Do you wish to proceed? <br /> <br />";
+
+            
+            //CreateClientDTOFromInput();
+
+            //CheckClientIsValid();
         }
 
         private void CreateClientDTOFromInput()
@@ -105,6 +154,9 @@ namespace CheckPointPresenters.Presenters
         private void DisplayValidationMessage()
         {
 
+
+            ShowMessagePanel();
+
             _view.Message = string.Empty;
 
             var validationErrorMessage = _clientDTO.GetBrokenBusinessRules().ToList();
@@ -114,24 +166,109 @@ namespace CheckPointPresenters.Presenters
                 _view.Message += message;
             }
 
+            ShowContinueButton();
+
         }
  
 
         private void AttemptSaveToDb()
         {
 
+            ShowMessagePanel();
+
             SaveResult saveResult = _uOW.Complete();
             bool IsSavedToDb = saveResult.Result > 0;
             if (!IsSavedToDb)
             {
-                _view.Message = "Registraion Failed: " + saveResult.ErrorMessage;
+
+                _view.Message = "<br />Sorry! Registraion Failed: <br /><br /> " + saveResult.ErrorMessage;
+
+                ShowContinueButton();
             }
             else
             {
-                _view.Message = "New Registration Succesfull!";
+                _view.Message = "<br />New Registration Succesfull!  <br /><br /> Please continue to login to your new account.. <br /> <br /> <br />";
                 _view.LoginButtonVisible = true;
+
+                ShowLoginButton();
             }
+
+          
+
+        }
+
+
+        private void ShowYesNoButtons()
+        {
+
+            _view.YesButtonVisible = true;
+            _view.NoButtonVisible = true;
+
+        }
+
+        private void HideYesNoButtons()
+        {
+
+            _view.YesButtonVisible = false;
+            _view.NoButtonVisible = false;
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void HideContinueButton()
+        {
+
+            _view.ContinueButtonVisible = false;
+
+        }
+
+        private void ShowContinueButton()
+        {
+
+            _view.ContinueButtonVisible = true;
+
+        }
+
+        private void HideLogInButton()
+        {
+
+            _view.LoginButtonVisible = false;
+
+        }
+
+        private void ShowLoginButton()
+        {
+
+            _view.LoginButtonVisible = true;
+
+        }
+
+        private void HideRegisterButton()
+        {
+
+            _view.RegisterButtonVisible = false;
+
+        }
+
+        private void ShowRegisterButton()
+        {
+
+            _view.RegisterButtonVisible = true;
 
         }
     }
 }
+

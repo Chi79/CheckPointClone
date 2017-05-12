@@ -51,9 +51,17 @@ namespace CheckPoint.Views.UserControls
 
         }
 
+        public bool LoginButtonVisible
+        {
+
+            set { btnLogin.Visible = value; }
+
+        }
+
         public event EventHandler<EventArgs> YesButtonClicked;
         public event EventHandler<EventArgs> NoButtonClicked;
         public event EventHandler<EventArgs> ReloadPage;
+        public event EventHandler<EventArgs> LoginButtonClicked;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -86,6 +94,12 @@ namespace CheckPoint.Views.UserControls
             }
         }
 
-        
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            if(LoginButtonClicked != null)
+            {
+                LoginButtonClicked(this, EventArgs.Empty);
+            }
+        }
     }
 }
