@@ -22,11 +22,25 @@ namespace CheckPointCommon.ViewInterfaces
 
         bool LoginButtonVisible {set; }
 
+        bool MessagePanelVisible { set; }
+
+        bool YesButtonVisible { set; }
+
+        bool NoButtonVisible { set; }
+
+        bool ContinueButtonVisible { set; }
+
+        bool RegisterButtonVisible { set; }
+
         void RedirectBackToHomePage();
         void RedirectToLogin();
 
         event EventHandler<EventArgs> RegisterNewClient;
         event EventHandler<EventArgs> BackToHomePageClicked;
         event EventHandler<EventArgs> GoToLoginClicked;
+
+        event EventHandler<EventArgs> YesButtonClicked;
+        event EventHandler<EventArgs> NoButtonClicked;
+        event EventHandler<EventArgs> ContinueButtonClicked;
     }
 }

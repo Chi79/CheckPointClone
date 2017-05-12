@@ -215,8 +215,8 @@ runat="server">
         
     <uc1:CourseGridView runat="server" id="CourseGridView" />
        
-        </ContentTemplate>
-         </asp:UpdatePanel>
+    </ContentTemplate>
+    </asp:UpdatePanel>
 
 </asp:Panel> 
 
@@ -241,7 +241,7 @@ runat="server">
 
     <ContentTemplate> 
 
-        <uc1:ClientGridViewHeader runat="server" ID="ClientGridViewHeader" />
+    <uc1:ClientGridViewHeader runat="server" ID="ClientGridViewHeader" />
 
     </ContentTemplate>
     </asp:UpdatePanel>
@@ -249,6 +249,7 @@ runat="server">
 </asp:Panel>
 
  
+
 <%-- Attendee Gridview --%>
 <asp:Panel CssClass="AttendeePanel" ID="panelAttendeeGridView" runat="server" Visible="true">
 

@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/RegisterUserView.aspx.cs" Inherits="CheckPoint.Views.RegisterUserView" %>
 
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,14 +39,14 @@ color:white;
 }
 .list-item{
 
-position:relative;
-display:inline-block;
-width:100%;
-left:20%;
-text-align:left;
-padding:0%;
-margin:0;
-border:none;
+     position: relative;
+    display: inline-block;
+    width: 100%;
+    left: 15%;
+    text-align: left;
+    padding: 0%;
+    margin: 3px;
+    border: none;
 }
 .list-item-message {
 position: relative;
@@ -61,16 +64,19 @@ border: none;
 }
 
 .list-item-label{
-    display:inline-block;
-    width:30%;
-    text-align:left;
-    margin:0%;
-    padding:0%;
+    display: inline-block;
+    width: 26%;
+    text-align: left;
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+    font-weight: bolder;
 
 }
 .list-item-box{
-    display:inline-block;
-    background:white;
+    display: inline-block;
+    background: bisque;
+    zoom: 132%;
 }
 
 .RegHeadingslide{
@@ -91,12 +97,12 @@ border: none;
     font-weight: normal;
     padding-left: 2%;
     padding-right: 2%;
-    font-size: medium;
+    font-size:x-large;
     border-radius: 6px;
     border-color: #333333;
     margin-right: 0%;
-    margin-top: 4%;
-    margin-left: 3%;
+    margin-top: 0%;
+    margin-left: 6%;
 }
 .button:hover {
 border-color:gray;
@@ -115,35 +121,39 @@ border-color:gray;
 </head>
 <body>
 <form id="form1" runat="server">
+
+      <uc1:MessagePanel runat="server" id="MessagePanel" />
+
 <div id="container" class="container">
 <div id="panel" class="panel">
 
     <div id="AppointmentHeading" class="RegHeadingslide" style="z-index:5"><img src="Images/RegisterAsUserHeading1.svg" /></div>
     
+  
 
     <ul class="list">
         <li class="list-item">
-            <asp:Label CssClass=" list-item-label" ID="lblUserName" runat="server" Text="User Name:"></asp:Label>
+            <asp:Label CssClass=" list-item-label" ID="lblUserName" runat="server" Text="User Name"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtUserName" runat="server">Sting</asp:TextBox>
 
         </li>
         <li class="list-item">
 
-            <asp:Label CssClass=" list-item-label" ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+            <asp:Label CssClass=" list-item-label" ID="lblPassword" runat="server" Text="Password"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtPassword" runat="server">Lambda</asp:TextBox>
         </li>
         <li class="list-item">
 
-            <asp:Label CssClass=" list-item-label" ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
+            <asp:Label CssClass=" list-item-label" ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtFirstName" runat="server">Sting</asp:TextBox>
         </li>
         <li class="list-item">
-            <asp:Label CssClass=" list-item-label" ID="lblLastName" runat="server" Text="Last Name:"></asp:Label>
+            <asp:Label CssClass=" list-item-label" ID="lblLastName" runat="server" Text="Last Name"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtLastName" runat="server">Stung</asp:TextBox>
 
         </li>
         <li class="list-item">
-            <asp:Label CssClass=" list-item-label" ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+            <asp:Label CssClass=" list-item-label" ID="lblEmail" runat="server" Text="Email"></asp:Label>
 <asp:TextBox  CssClass="list-item-box" ID="txtEmail" runat="server">Sting@Stung.com</asp:TextBox>
 
         </li>
@@ -151,23 +161,23 @@ border-color:gray;
 
             
 
-<asp:Label CssClass=" list-item-label" ID="lblStreetAddress" runat="server" Text="Street Address:"></asp:Label>
+<asp:Label CssClass=" list-item-label" ID="lblStreetAddress" runat="server" Text="Street Address"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtStreetAddress" runat="server">goldenfields</asp:TextBox>
         </li>
         <li class="list-item">
 
             
-<asp:Label CssClass=" list-item-label" ID="lblPostalCode" runat="server" Text="Postal Code:"></asp:Label>
+<asp:Label CssClass=" list-item-label" ID="lblPostalCode" runat="server" Text="Postal Code"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtPostalCode" runat="server">3714</asp:TextBox>
         </li>
         <li class="list-item">
 
-            <asp:Label CssClass=" list-item-label" ID="lblPhoneNumber" runat="server" Text="Phone Number:"></asp:Label>
+            <asp:Label CssClass=" list-item-label" ID="lblPhoneNumber" runat="server" Text="Phone Number"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtPhoneNumber" runat="server">87654321</asp:TextBox>
         </li>
         <li class="list-item">
 
-<asp:Label CssClass=" list-item-label" ID="lblClientType" runat="server" Text="Client Type:"></asp:Label>
+<asp:Label CssClass=" list-item-label" ID="lblClientType" runat="server" Text="Client Type"></asp:Label>
 <asp:TextBox CssClass="list-item-box" ID="txtClientTrype" runat="server" ReadOnly="true" >User</asp:TextBox>
 
         </li>

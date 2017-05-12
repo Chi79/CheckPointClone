@@ -22,15 +22,15 @@ namespace CheckPointModel.Validation
 
             if (!ValidateStringInput.AreStringsValid(propertyList))
             {
-                base.AddBrokenRule("One or more field is empty! Please fill in all fields. ");
+                base.AddBrokenRule("<br /><br />One or more field is empty! Please fill in all fields. <br />");
             }
             if (client.Password.Length < 6)
             {
-                base.AddBrokenRule("Password must be 6 characters or more. ");
+                base.AddBrokenRule("Password must be 6 characters or more.<br /> ");
             }
             if (!client.Email.Contains("@"))
             {
-                base.AddBrokenRule("Email not valid - must contain be in the form 'xxx@xxx.xxx' ");
+                base.AddBrokenRule("Email not valid - must contain be in the form 'xxx@xxx.xxx'<br /> ");
             }
             if (client.ClientType < 0 || client.ClientType > 1)
             {
@@ -38,11 +38,11 @@ namespace CheckPointModel.Validation
             }
             if (client.PhoneNumber.Length < 8)
             {
-                base.AddBrokenRule("PhoneNumber must be 8 digits or more. ");
+                base.AddBrokenRule("PhoneNumber must be 8 digits or more.<br /> ");
             }
             if (client.PostalCode.Length > 4)
             {
-                base.AddBrokenRule("PostalCode must be 4 digits or less. ");
+                base.AddBrokenRule("PostalCode must be 4 digits or less.<br /> ");
             }
             try
             {
@@ -50,7 +50,7 @@ namespace CheckPointModel.Validation
             }
             catch
             {
-                base.AddBrokenRule("Postal Code must be an valid integer value!");
+                base.AddBrokenRule("Postal Code must be an valid integer value!<br />");
             }
         }
     }

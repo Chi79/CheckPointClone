@@ -131,19 +131,25 @@ namespace CheckPoint.Views
 
         public void BindCourseData()
         {
+
             CourseGridViewHeader.BindData();
             CourseGridView.BindData();
+
         }
         public void BindAttendeeData()
         {
+
             ClientGridViewHeader.BindData();
             ClientGridView.BindData();
+
         }
 
         public bool ShowAttendeeGridViewHeader
         {
+
             get { return panelAttendeeHeader.Visible; }
             set { panelAttendeeHeader.Visible = value; }
+
         }
 
         public bool ShowAttendeeGridView

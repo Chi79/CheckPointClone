@@ -107,7 +107,7 @@ AutoGenerateColumns="False"
 Height="100%" 
 OnSelectedIndexChanged="gvAttendeeTable_SelectedIndexChanged" 
 ShowHeader="true"
-ShowHeaderWhenEmpty="true"
+ShowHeaderWhenEmpty="True"
 style="
 width:100%;
 z-index:2;"

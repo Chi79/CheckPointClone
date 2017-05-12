@@ -66,16 +66,21 @@
     background-image: url(/Images/buttonshade1.png);
  }
 .PanelButton:hover {
-        border-radius: 0px;
+        border-radius: 5px;
         -webkit-animation: flashingbutton;
         -webkit-animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
 }
 .MessagePanelContinueButton:hover {
-        border-radius: 0px;
+        border-radius: 5px;
         -webkit-animation: flashingbutton;
         -webkit-animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes flashingbutton{
+    from{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333;}
+     50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
+      to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
 }
 
 
@@ -89,5 +94,6 @@
           <asp:Button CssClass="PanelButton" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="70px" />
           </div>
           <asp:Button CssClass="MessagePanelContinueButton" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Width="130px" Visible="False" />
+          <asp:Button CssClass="MessagePanelContinueButton" ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login.." Width="130px" Visible="False" />
 
     </asp:panel>

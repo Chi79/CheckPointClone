@@ -59,8 +59,10 @@ namespace CheckPointPresenters.Presenters
 
         private void ShowAttendGridView()
         {
+
             _view.ShowAttendeeGridViewHeader = true;
             _view.ShowAttendeeGridView = true;
+    
         }
 
         private void ShowAttendeeHeader()
