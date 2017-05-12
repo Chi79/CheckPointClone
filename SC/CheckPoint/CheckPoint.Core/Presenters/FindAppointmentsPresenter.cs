@@ -60,9 +60,15 @@ namespace CheckPointPresenters.Presenters
             _view.RowSelected += OnRowSelected;
             _view.FindCoursesButtonClicked += OnFindCoursesButtonClicked;
             _view.ApplyToAttendAppointmentButtonClicked += OnApplyToAttendAppointmentButtonClicked;
-
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
         }
 
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
+
+        }
 
         private void OnFindCoursesButtonClicked(object sender, EventArgs e)
         {
@@ -198,7 +204,11 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.Message = "No appointment has been selected!";
+                ShowMessagePanel();
+
+                _view.Message = " <br /> <br />No appointment has been selected! <br /> <br /> Please click a row to select the appointment you wish to attend <br />";
+
+                ContinueButtonShow();
 
             }
 
@@ -217,9 +227,41 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.Message = "User needs a valid tagId to attend appointments!";
+                ShowMessagePanel();
+
+                _view.Message = " <br /> <br />User needs a valid tagId to attend appointments! <br /> <br />Please contact Support@CheckPoint.com to obtain a tagId. <br />";
+
+                ContinueButtonShow();
 
             }
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
+        }
+
+        private void ContinueButtonHide()
+        {
+
+            _view.ContinueButtonVisible = false;
 
         }
 

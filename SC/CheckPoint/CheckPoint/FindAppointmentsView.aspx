@@ -5,6 +5,8 @@
 
 <%@ Register Src="~/UserControls/UserAppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="UserAppointmentGridViewHeader" %>
 <%@ Register Src="~/UserControls/UserAppointmentGridView.ascx" TagPrefix="uc1" TagName="UserAppointmentGridView" %>
+<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+
 
 
 
@@ -179,6 +181,8 @@
    
     <ContentTemplate>
    
+    <uc1:MessagePanel runat="server" ID="MessagePanel" />
+
     <asp:Label 
     ID="lblMessage" 
     runat="server" 

@@ -1,14 +1,13 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MessagePanel.ascx.cs" Inherits="CheckPoint.Views.UserControls.MessagePanel"  %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MediumMessagePanel.ascx.cs" Inherits="CheckPoint.Views.UserControls.MediumMessagePanel"  %>
 
 <style type="text/css">
 
-.container1{
+.container2{
     position: absolute;
-    width: 46%;
-    height: 306px;
-    margin-top: 11%;
-    margin-left: 24.5%;
-
+    width: 28%;
+    height: 311px;
+    margin-top: 22%;
+    margin-left: 61.5%;
     background-color: #333333;
     border: #66cc66;
     border-width: 20px;
@@ -86,15 +85,15 @@
 
 </style>
 
-     <asp:panel runat="server" ID="MessageDisplayPanel"  CssClass="container1"  Visible="false">
+     <asp:panel runat="server" ID="MediumMessageDisplayPanel"  CssClass="container2"  Visible="false">
         
-          <asp:Label  CssClass="Message" ID="lblMessage" runat="server"></asp:Label>
+          <asp:Label  CssClass="Message" ID="lblMediumMessage" runat="server"></asp:Label>
           <div class="MessagePanelButton">
           <asp:Button CssClass="PanelButton" ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Yes" Visible="False" Width="70px" />
           <asp:Button CssClass="PanelButton" ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Visible="False" Width="70px" />
           </div>
           <asp:Button CssClass="MessagePanelContinueButton" ID="btnContinue" runat="server" OnClick="btnContinue_Click" Text="Continue" Width="130px" Visible="False" />
           <asp:Button CssClass="MessagePanelContinueButton" ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login.." Width="130px" Visible="False" />
-          <asp:Button CssClass="MessagePanelContinueButton" ID="btnBackToFindAppointments" runat="server" OnClick="btnBackToFindAppointments_Click" Text="Back To Find Appointments" Visible="False" />
+          <asp:Button CssClass="MessagePanelContinueButton" ID="btnBackToFindAppointmentsMedium" runat="server" OnClick="btnBackToFindAppointments_Click" Text="Back To Find Appointments" Visible="False" />
 
     </asp:panel>

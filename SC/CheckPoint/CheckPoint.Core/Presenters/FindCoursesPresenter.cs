@@ -61,6 +61,14 @@ namespace CheckPointPresenters.Presenters
 
             _view.ApplyToAttendCourseButtonClicked += OnApplyToAttendCourseButtonClicked;
             _view.FindPublicAppointmentsButtonClicked += OnFindPublicAppointmentsButtonClicked;
+            _view.ContinueButtonClicked += OnContinueButtonClicked;
+        }
+
+        private void OnContinueButtonClicked(object sender, EventArgs e)
+        {
+
+            HideMessagePanel();
+
         }
 
         private void OnFindPublicAppointmentsButtonClicked(object sender, EventArgs e)
@@ -72,6 +80,7 @@ namespace CheckPointPresenters.Presenters
 
         private void OnApplyToAttendCourseButtonClicked(object sender, EventArgs e)
         {
+
             bool rowIsSelected = CheckRowIsSelected();
             if (rowIsSelected)
             {
@@ -83,13 +92,13 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.Message = "No Course has been selected!";
+                ShowMessagePanel();
+
+                _view.Message = " <br /> <br />No course has been selected! <br /> <br /> Please click a row to select the course you wish to attend.<br />";
+
+                ContinueButtonShow();
 
             }
-        
-           
-           
-
         }
 
         public override void FirstTimeInit()
@@ -225,9 +234,41 @@ namespace CheckPointPresenters.Presenters
             else
             {
 
-                _view.Message = "User needs a valid tagId to attend appointments!";
+                ShowMessagePanel();
+
+                _view.Message = " <br /> <br /> User needs a valid tagId to attend appointments! <br />  <br /> Please contact Support@CheckPoint.com to obtain a tagId. <br />";
+              
+                ContinueButtonShow();
 
             }
+
+        }
+
+        private void ShowMessagePanel()
+        {
+
+            _view.MessagePanelVisible = true;
+
+        }
+
+        private void HideMessagePanel()
+        {
+
+            _view.MessagePanelVisible = false;
+
+        }
+
+        private void ContinueButtonShow()
+        {
+
+            _view.ContinueButtonVisible = true;
+
+        }
+
+        private void ContinueButtonHide()
+        {
+
+            _view.ContinueButtonVisible = false;
 
         }
 

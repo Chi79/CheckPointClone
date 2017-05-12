@@ -18,12 +18,14 @@ namespace CheckPoint.Views
 
         public override void HookUpEvents()
         {
+
             ApplyToCourseAppGridHeader.SortColumnsByPropertyAscending += OnSortColumnsByPropertyAscending;
             ApplyToCourseAppGridHeader.SortColumnsByPropertyDescending += OnSortColumnsByPropertyDescending;
 
             MessagePanel.YesButtonClicked += OnMessagePanel_YesButtonClicked;
             MessagePanel.NoButtonClicked += OnMessagePanel_NoButtonClicked;
             MessagePanel.ReloadPage += OnMessagePanel_ReloadPage;
+
         }
 
         public bool MessagePanelVisible

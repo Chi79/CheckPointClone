@@ -10,25 +10,25 @@
 namespace CheckPoint.Views.UserControls {
     
     
-    public partial class MessagePanel {
+    public partial class MediumMessagePanel {
         
         /// <summary>
-        /// MessageDisplayPanel control.
+        /// MediumMessageDisplayPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel MessageDisplayPanel;
+        protected global::System.Web.UI.WebControls.Panel MediumMessageDisplayPanel;
         
         /// <summary>
-        /// lblMessage control.
+        /// lblMediumMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label lblMediumMessage;
         
         /// <summary>
         /// btnYes control.
@@ -67,12 +67,12 @@ namespace CheckPoint.Views.UserControls {
         protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
-        /// btnBackToFindAppointments control.
+        /// btnBackToFindAppointmentsMedium control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBackToFindAppointments;
+        protected global::System.Web.UI.WebControls.Button btnBackToFindAppointmentsMedium;
     }
 }
