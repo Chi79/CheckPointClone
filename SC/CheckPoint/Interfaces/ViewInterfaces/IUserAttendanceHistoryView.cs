@@ -16,11 +16,11 @@ namespace CheckPointCommon.ViewInterfaces
         object SelectedAppointmentRowValueDataKey { get; }
 
         void BindAppointmentData();
-        bool ShowTimeAttendedHeader { set; }
+        //bool ShowTimeAttendedHeader { set; }
 
-        string DateAndTimeTextBoxMessage { set; }
+        //string DateAndTimeTextBoxMessage { set; }
 
-        bool ShowDateAndTimeTextBox { set; }
+        //bool ShowDateAndTimeTextBox { set; }
 
         event EventHandler<EventArgs> AppointmentRowSelected;
     }
