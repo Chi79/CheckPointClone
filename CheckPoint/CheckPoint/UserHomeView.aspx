@@ -225,7 +225,7 @@
         CssClass="navButtons" 
         runat="server" 
         OnClick="btnViewCourses_Click1"
-        Text="View Courses"  
+        Text="View My Courses"  
         Visible="True" 
         ToolTip="View All Courses" 
         ForeColor="White"/>
@@ -265,7 +265,7 @@
     </div>
 
 
-    <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
+<%--    <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
     <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
     <ContentTemplate>
     <asp:Button ID="btnManageAttendance"
@@ -279,7 +279,7 @@
 
     </ContentTemplate>
     </asp:UpdatePanel>
-    </div>
+    </div>--%>
 
     </div>
 

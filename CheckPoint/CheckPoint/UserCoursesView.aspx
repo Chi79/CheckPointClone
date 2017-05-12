@@ -227,7 +227,7 @@
     <asp:Button ID="btnViewAppointments" 
         CssClass="navButtons" 
         runat="server" 
-        Text="View Appointments"  
+        Text="View My Appointments"  
         Visible="True" 
         ToolTip="View All Courses" 
         ForeColor="White" OnClick="btnViewAppointments_Click"/>
@@ -267,7 +267,7 @@
     </div>
 
 
-    <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
+<%--    <div id="buttonsdiv4" runat="server" style="z-index:5;" class="buttons4">
     <asp:UpdatePanel ID="buttonspanel4" runat="server" > 
     <ContentTemplate>
     <asp:Button ID="btnManageAttendance"
@@ -281,7 +281,7 @@
 
     </ContentTemplate>
     </asp:UpdatePanel>
-    </div>
+    </div>--%>
 
 
 <%--    <div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
