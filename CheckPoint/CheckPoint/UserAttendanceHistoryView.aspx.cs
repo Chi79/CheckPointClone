@@ -56,20 +56,20 @@ namespace CheckPoint.Views
             }
         }
 
-        public bool ShowTimeAttendedHeader
-        {
-            set { TimeAttendedHeader.Visible = value; }
-        }
+        //public bool ShowTimeAttendedHeader
+        //{
+        //    set { TimeAttendedHeader.Visible = value; }
+        //}
 
-        public string DateAndTimeTextBoxMessage
-        {
-            set { txtDateAndTimeAttended.Text = value; }
-        }
+        //public string DateAndTimeTextBoxMessage
+        //{
+        //    set { txtDateAndTimeAttended.Text = value; }
+        //}
 
-        public bool ShowDateAndTimeTextBox
-        {
-            set { txtDateAndTimeAttended.Visible = value; }
-        }
+        //public bool ShowDateAndTimeTextBox
+        //{
+        //    set { txtDateAndTimeAttended.Visible = value; }
+        //}
 
         public void BindAppointmentData()
         {

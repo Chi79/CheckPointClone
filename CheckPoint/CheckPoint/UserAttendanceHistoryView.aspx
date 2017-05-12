@@ -2,35 +2,13 @@
 
 <%@ Register Src="~/UserControls/AppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentGridViewHeader" %>
 <%@ Register Src="~/UserControls/AppointmentGridView.ascx" TagPrefix="uc1" TagName="AppointmentGridView" %>
-<%@ Register Src="~/UserControls/SmallMessagePanel.ascx" TagPrefix="uc1" TagName="SmallMessagePanel" %>
-
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
     <title></title>
 
     <style>
-#wrapper{
-    width: 100%;
-    height: 100%;
-    background: #333333;
-}
 
-#courseGridContainer{
-    position:relative;            
-}
-
-#appointmentGridContainer{
-    position:relative;
-             
-}
-
-#attendeeGridContainer{
-    position:relative;
-    top:50%;
-    width:100%;
-
-}
 
 .PanelCourseGrid {
     position: relative;
@@ -99,10 +77,6 @@
    to { top: 1%; }
 }
 
-.GridviewLabel{
-    font-size: 38px;
-    color: white;            
-}
 .navButtons{
 margin-left: 8px;
 border-radius: 5px;
@@ -128,19 +102,7 @@ background-image: url(/Images/buttonshade1.png);
    50%{ background-color:#00ff00; border-radius:5px;  -webkit-box-shadow: 0 0 18px #00ff00; }
     to{ background-color:#4dff4d; border-radius:5px;  -webkit-box-shadow: 0 0 9px #333; }
 }
-.AttendeePanelHeader{
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    margin-left:-13px;
-}
-.AttendeePanel{
-    margin-left:-13px;
-    height:55px;
-}
 
-.buttonDiv{
-    margin-top:1%;
-}
 .DateAndTimeAttendedMessage{
     position:absolute;
     left:34%;
@@ -165,7 +127,7 @@ background-image: url(/Images/buttonshade1.png);
    to { left: 35%; }
 }
 
-    </style>
+</style>
 
 </asp:Content >
 
@@ -196,7 +158,8 @@ runat="server">
 
         </ContentTemplate>
 
-         </asp:UpdatePanel>
+    </asp:UpdatePanel>
+
 </asp:Panel>
 
 <%-- Appointment Gridview --%>
@@ -227,7 +190,7 @@ runat="server">
             </div>
 
             <div id="datetimetextbox" runat="server" class="DateAndTimeAttendedMessage" style="z-index:5">
-<asp:TextBox ID="txtDateAndTimeAttended" 
+            <asp:TextBox ID="txtDateAndTimeAttended" 
                 runat="server" class="DateAndTimeAttendedMessage" 
                 Font-Size="XX-Large" 
                 BackColor="#006600"
@@ -243,12 +206,6 @@ runat="server">
                 
            
         </ContentTemplate>
-    </asp:UpdatePanel>
-    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-        <ContentTemplate>
-                        
-                 
-            </ContentTemplate>
     </asp:UpdatePanel>
         </div>
        
