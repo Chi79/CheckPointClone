@@ -29,10 +29,11 @@ namespace CheckPointHTTPServices.Cache
 
         public string ClientTagId
         {
+            
             get
             {
-                var tagId = HttpContext.Current.Session["ClientTagId"].ToString();
-                if(tagId!=null)
+                string tagId = HttpContext.Current.Session["ClientTagId"] as string;
+                if (tagId!=null)
                 {
                     return tagId;
                 }

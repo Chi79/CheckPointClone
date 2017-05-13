@@ -229,7 +229,7 @@ namespace CheckPointPresenters.Presenters
 
                 ShowMessagePanel();
 
-                _view.Message = " <br /> <br />User needs a valid tagId to attend appointments! <br /> <br />Please contact Support@CheckPoint.com to obtain a tagId. <br />";
+                _view.Message = " <br /> <br />User needs a valid tagId to attend appointments! <br /> <br />You will receive an email once your account has been assigned with a tagId. <br />";
 
                 ContinueButtonShow();
 

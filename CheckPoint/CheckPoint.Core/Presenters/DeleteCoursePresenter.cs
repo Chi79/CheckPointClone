@@ -186,6 +186,7 @@ namespace CheckPointPresenters.Presenters
 
         private void ConfirmAction()
         {
+
             ShowMessagePanel();
 
             _view.Message = _model.GetJobConfirmationMessage();
