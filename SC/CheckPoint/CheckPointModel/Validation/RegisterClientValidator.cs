@@ -36,10 +36,19 @@ namespace CheckPointModel.Validation
             {
                 base.AddBrokenRule("ClientType must be either 0 or 1. ");
             }
-            if (client.PhoneNumber.Length < 8)
+            try
             {
-                base.AddBrokenRule("PhoneNumber must be 8 digits or more.<br /> ");
+                int phoneNumber = Convert.ToInt32(client.PhoneNumber);
             }
+            catch
+            {
+                base.AddBrokenRule("Phone number is invalid!<br />");
+            }
+            if (client.PhoneNumber.Length < 8 || client.PhoneNumber.Length > 8)
+            {
+                base.AddBrokenRule("PhoneNumber must be 8 digits.<br /> ");
+            }
+           
             if (client.PostalCode.Length > 4)
             {
                 base.AddBrokenRule("PostalCode must be 4 digits or less.<br /> ");

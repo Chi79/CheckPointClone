@@ -33,10 +33,9 @@ namespace CheckPointModel.Utilities
                     IsIntergerValid = true;
                 }
             }
-            return IsIntergerValid;
-
-                       
+            return IsIntergerValid;                 
             
         }
+
     }
 }
