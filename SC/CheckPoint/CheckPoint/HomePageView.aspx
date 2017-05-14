@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="CSS/homepage.css" rel="stylesheet" type="text/css" />
-      <meta name="viewport"   content="width=device-width, initial-scale=2"/>
+      <meta name="viewport"   content="width=device-width, initial-scale=1"/>
 
     <title>Welcome To CheckPoint!</title>  
     

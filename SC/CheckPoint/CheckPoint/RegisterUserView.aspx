@@ -134,27 +134,27 @@ border-color:gray;
     <ul class="list">
         <li class="list-item">
             <asp:Label CssClass=" list-item-label" ID="lblUserName" runat="server" Text="User Name"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtUserName" runat="server">Sting</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtUserName" runat="server"></asp:TextBox>
 
         </li>
         <li class="list-item">
 
             <asp:Label CssClass=" list-item-label" ID="lblPassword" runat="server" Text="Password"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtPassword" runat="server">Lambda</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtPassword" runat="server"></asp:TextBox>
         </li>
         <li class="list-item">
 
             <asp:Label CssClass=" list-item-label" ID="lblFirstName" runat="server" Text="First Name"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtFirstName" runat="server">Sting</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtFirstName" runat="server"></asp:TextBox>
         </li>
         <li class="list-item">
             <asp:Label CssClass=" list-item-label" ID="lblLastName" runat="server" Text="Last Name"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtLastName" runat="server">Stung</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtLastName" runat="server"></asp:TextBox>
 
         </li>
         <li class="list-item">
             <asp:Label CssClass=" list-item-label" ID="lblEmail" runat="server" Text="Email"></asp:Label>
-<asp:TextBox  CssClass="list-item-box" ID="txtEmail" runat="server">Sting@Stung.com</asp:TextBox>
+<asp:TextBox  CssClass="list-item-box" ID="txtEmail" runat="server"></asp:TextBox>
 
         </li>
         <li class="list-item">
@@ -162,18 +162,18 @@ border-color:gray;
             
 
 <asp:Label CssClass=" list-item-label" ID="lblStreetAddress" runat="server" Text="Street Address"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtStreetAddress" runat="server">goldenfields</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtStreetAddress" runat="server"></asp:TextBox>
         </li>
         <li class="list-item">
 
             
 <asp:Label CssClass=" list-item-label" ID="lblPostalCode" runat="server" Text="Postal Code"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtPostalCode" runat="server">3714</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtPostalCode" runat="server"></asp:TextBox>
         </li>
         <li class="list-item">
 
             <asp:Label CssClass=" list-item-label" ID="lblPhoneNumber" runat="server" Text="Phone Number"></asp:Label>
-<asp:TextBox CssClass="list-item-box" ID="txtPhoneNumber" runat="server">87654321</asp:TextBox>
+<asp:TextBox CssClass="list-item-box" ID="txtPhoneNumber" runat="server"></asp:TextBox>
         </li>
         <li class="list-item">
 
