@@ -82,11 +82,13 @@
     <Compile Include="Presenters\FindCoursesPresenter.cs" />
     <Compile Include="Presenters\HomePagePresenter.cs" />
     <Compile Include="Presenters\HostCoursesPresenter.cs" />
+    <Compile Include="Presenters\ExpiredAppointmentsPresenter.cs" />
     <Compile Include="Presenters\HostHomePresenter.cs" />
     <Compile Include="Presenters\HostIUserInfoPresenter.cs" />
     <Compile Include="Presenters\InvalidNavigationPresenter.cs" />
     <Compile Include="Presenters\InviteUserPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\RecordedAppointmentAttendancePresenter.cs" />
     <Compile Include="Presenters\ManageAppointmentAttendancePresenter.cs" />
     <Compile Include="Presenters\ManageCourseAttendancePresenter.cs" />
     <Compile Include="Presenters\ManageCoursePresenter.cs" />

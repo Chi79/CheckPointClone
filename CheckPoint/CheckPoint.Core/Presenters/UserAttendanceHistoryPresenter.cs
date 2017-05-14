@@ -26,7 +26,7 @@ namespace CheckPointPresenters.Presenters
 
             ShowAppointmentData();
 
-            //HideTimeAttendedHeader();
+            HideTimeAttendedHeader();
 
         }
 
@@ -46,17 +46,17 @@ namespace CheckPointPresenters.Presenters
 
             GetSelectedAppointmentIdFromGrid();
 
-            //ShowTimeAttendedHeader();
+            ShowTimeAttendedHeader();
 
-            //ShowTimeAttendedData();
+            ShowTimeAttendedData();
 
-            //ShowDateAndTimeTextBox();
+            ShowDateAndTimeTextBox();
         }
 
-        //private void ShowTimeAttendedData()
-        //{
-        //    _view.DateAndTimeTextBoxMessage = GetTimeAttendedForSelectedAttendee().ToString(); 
-        //}
+        private void ShowTimeAttendedData()
+        {
+            _view.DateAndTimeTextBoxMessage = GetTimeAttendedForSelectedAttendee().ToString();
+        }
 
         private void GetSelectedAppointmentIdFromGrid()
         {
@@ -96,20 +96,20 @@ namespace CheckPointPresenters.Presenters
             _view.BindAppointmentData();
         }
 
-        //private void ShowTimeAttendedHeader()
-        //{
-        //    _view.ShowTimeAttendedHeader = true;
-        //}
+        private void ShowTimeAttendedHeader()
+        {
+            _view.ShowTimeAttendedHeader = true;
+        }
 
-        //private void HideTimeAttendedHeader()
-        //{
-        //    _view.ShowTimeAttendedHeader = false;
-        //}
+        private void HideTimeAttendedHeader()
+        {
+            _view.ShowTimeAttendedHeader = false;
+        }
 
-        //private void ShowDateAndTimeTextBox()
-        //{
-        //    _view.ShowDateAndTimeTextBox = true;
-        //}
+        private void ShowDateAndTimeTextBox()
+        {
+            _view.ShowDateAndTimeTextBox = true;
+        }
 
         private DateTime GetTimeAttendedForSelectedAttendee()
         {
@@ -130,13 +130,6 @@ namespace CheckPointPresenters.Presenters
         {
             return _model.GetEmptyAppointmentList();
         }
-
-        
-
-
-
-
-
 
     }
 

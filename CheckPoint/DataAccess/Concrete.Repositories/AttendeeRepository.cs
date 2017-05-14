@@ -18,7 +18,8 @@ namespace DataAccess.Concrete.Repositories
 
         public IEnumerable<ATTENDEE> GetAllAttendedAttendeesForClient(string tagId)
         {
-            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && (a.StatusId == (int)AttendeeStatus.HasAttended || a.StatusId == (int)AttendeeStatus.ObligHasAttended)).ToList();
+            return CheckPointContext.ATTENDEEs.Where(a => a.TagId == tagId && (a.StatusId == (int)AttendeeStatus.HasAttended || 
+                                                                               a.StatusId == (int)AttendeeStatus.ObligHasAttended)).ToList();
                                                                                                 
         }
 
@@ -80,6 +81,14 @@ namespace DataAccess.Concrete.Repositories
         {
             return CheckPointContext.ATTENDEEs.Where(a => a.AppointmentId == appointmentId &&
                                                 a.StatusId == (int)AttendeeStatus.RequestedToAttend).ToList();
+        }
+
+        public IEnumerable<ATTENDEE> GetAllAttendeesWhoAttendedAppointmentById(int appointmentId)
+        {
+            return CheckPointContext.ATTENDEEs.Where(a => a.AppointmentId == appointmentId &&
+                                                          a.StatusId == (int)AttendeeStatus.ObligHasAttended || 
+                                                          a.AppointmentId == appointmentId &&
+                                                          a.StatusId == (int)AttendeeStatus.HasAttended).ToList();
         }
 
         public IEnumerable<ATTENDEE> GetAllAttendeesAppliedForCourseById(int courseId)

@@ -21,6 +21,7 @@ namespace CheckPointModel.Services
         public const string appointmentsInCoursesKey = "appointmentInCoursesKey";
         public const string publicAppointmentsKey = "publicAppointmentsKey";
         public const string acceptedAppointmentsKey = "acceptedAppointmentsKey";
+        public const string expiredAppointmentsKey = "expiredAppointmentsKey";
 
         public string client;
         public int? courseId;
@@ -101,6 +102,23 @@ namespace CheckPointModel.Services
             }
         }
 
+        public IEnumerable<T> GetExpiredAppointmentsCached<T>()
+        {
+
+            if (ExpiredAppointmentsCache != null)
+            {
+
+                return ExpiredAppointmentsCache as IEnumerable<T>;
+
+            }
+            else
+            {
+
+                return GetAllExpiredAppointmentsFor<T>(client);
+
+            }
+        }
+
         public List<APPOINTMENT> AppointmentsCache
         {
 
@@ -129,6 +147,13 @@ namespace CheckPointModel.Services
 
         }
 
+        public List<APPOINTMENT> ExpiredAppointmentsCache
+        {
+
+            get { return _cache.FetchCollection<APPOINTMENT>(expiredAppointmentsKey).ToList(); }
+
+        }
+
         public IEnumerable<T> GetAllAppointmentsFor<T>(string client)
         {
 
@@ -137,6 +162,21 @@ namespace CheckPointModel.Services
             var apps = AppointmentsCache;
 
             return apps as IEnumerable<T>;
+
+        }
+
+        public IEnumerable<T> GetAllExpiredAppointmentsFor<T>(string client)
+        {
+
+            _cache.Add(appointmentsKey, _uOW.APPOINTMENTs.GetAllAppointmentsFor(client));
+
+            var apps = AppointmentsCache;
+
+            var expiredAppsList = apps.FindAll(a => a.Date < DateTime.Now || a.Date == DateTime.Now );
+
+            _cache.Add(expiredAppointmentsKey, expiredAppsList);
+
+            return expiredAppsList as IEnumerable<T>;
 
         }
 
@@ -292,12 +332,42 @@ namespace CheckPointModel.Services
 
         }
 
+        public IEnumerable<T> GetExpiredAppointmentsSortedByPropertyAscending<T>(string property)
+        {
+
+            var apps = GetExpiredAppointmentsCached<T>();
+
+
+            var appsSorted = apps.OrderBy(a => typeof(APPOINTMENT)
+                                                   .GetProperty(property)
+                                                   .GetValue(a))
+                                                   .ToList();
+
+            return appsSorted as IEnumerable<T>;
+
+        }
+        public IEnumerable<T> GetExpiredAppointmentsSortedByPropertyDescending<T>(string property)
+        {
+
+            var apps = GetExpiredAppointmentsCached<T>();
+
+            var appsSorted = apps.OrderByDescending(a => typeof(APPOINTMENT)
+                                                               .GetProperty(property)
+                                                               .GetValue(a))
+                                                               .ToList();
+
+            return appsSorted as IEnumerable<T>;
+
+        }
+
         public object GetSelectedAppointmentByAppointmentId(int? AppointmentId)
         {
 
             var apps = GetAppointmentsCached<APPOINTMENT>() as List<APPOINTMENT>;
 
-            return apps.FirstOrDefault(a => a.AppointmentId.Equals(AppointmentId));
+            var app = apps.FirstOrDefault(a => a.AppointmentId.Equals(AppointmentId));
+
+            return app;
 
         }
 

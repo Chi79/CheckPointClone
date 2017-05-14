@@ -64,7 +64,9 @@
     <Compile Include="Models\DeleteCourseModel.cs" />
     <Compile Include="Models\FindCoursesModel.cs" />
     <Compile Include="Models\HostCoursesModel.cs" />
+    <Compile Include="Models\ExpiredAppointmentsModel.cs" />
     <Compile Include="Models\InvalidNavigationModel.cs" />
+    <Compile Include="Models\RecordedAppointmentAttendanceModel.cs" />
     <Compile Include="Models\ManageAppointmentAttendanceModel.cs" />
     <Compile Include="Models\ManageCourseAttendanceModel.cs" />
     <Compile Include="Models\ManageSingleAppointmentModel.cs" />

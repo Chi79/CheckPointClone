@@ -40,6 +40,19 @@
                   </a>
                     </div>
             </li>--%>
+                       <li class="tooltip">
+                  <span class="tooltiptext">View Completed Appointments & Attendance History</span>
+                <div class="main-sidebar-menu-list-item">
+            <%--     <span class="tooltiptext">Logout</span>--%>
+                  <a class="main-sidebar-menu-list-item-link" href="ExpiredAppointmentsView.aspx" tabindex="1">
+                           <img class="main-sidebar-menu-list-item-icon" src="Images/userAttendanceHistoryIcon2.png" alt="[]"></img>
+                
+
+                  </a>
+                    </div>
+            </li>
+
+
             <li class="tooltip">
                   <span class="tooltiptext">Manage attendance</span>
                 <div class="main-sidebar-menu-list-item">

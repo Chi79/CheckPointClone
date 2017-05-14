@@ -10,7 +10,7 @@
 namespace CheckPoint.Views {
     
     
-    public partial class ManageAppointmentAttendanceView {
+    public partial class RecordedAppointmentAttendanceView {
         
         /// <summary>
         /// ScriptManager1 control.
@@ -40,22 +40,13 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.UpdatePanel UpdatePanel7;
         
         /// <summary>
-        /// messagePanelAppointments control.
+        /// AppointmentRecordsGridViewHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.MessagePanel messagePanelAppointments;
-        
-        /// <summary>
-        /// AttendeeAppointmentGridViewHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeAppointmentGridViewHeader AttendeeAppointmentGridViewHeader;
+        protected global::CheckPoint.Views.UserControls.AppointmentRecordsGridViewHeader AppointmentRecordsGridViewHeader;
         
         /// <summary>
         /// panelAppointmentGridView control.
@@ -85,13 +76,13 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.DatePicker DatePicker;
         
         /// <summary>
-        /// AttendeeAppointmentGridView control.
+        /// AppointmentRecordsGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CheckPoint.Views.UserControls.AttendeeAppointmentGridView AttendeeAppointmentGridView;
+        protected global::CheckPoint.Views.UserControls.AppointmentRecordsGridView AppointmentRecordsGridView;
         
         /// <summary>
         /// AttendeeHeader control.
@@ -157,30 +148,12 @@ namespace CheckPoint.Views {
         protected global::CheckPoint.Views.UserControls.AttendeeGridView ClientGridView;
         
         /// <summary>
-        /// btnManageCourseAttendance control.
+        /// btnViewCompletedAppointments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnManageCourseAttendance;
-        
-        /// <summary>
-        /// btnAcceptAttendanceRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcceptAttendanceRequest;
-        
-        /// <summary>
-        /// btnAcceptAllAttendeeRequestsForSelectedAppointment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAcceptAllAttendeeRequestsForSelectedAppointment;
+        protected global::System.Web.UI.WebControls.Button btnViewCompletedAppointments;
     }
 }

@@ -1,12 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageAppointmentAttendanceView.aspx.cs" Inherits="CheckPoint.Views.ManageAppointmentAttendanceView" EnableEventValidation="false"   MasterPageFile="~/HostMaster.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecordedAppointmentAttendanceView.aspx.cs" Inherits="CheckPoint.Views.RecordedAppointmentAttendanceView" EnableEventValidation="false"   MasterPageFile="~/HostMaster.Master" %>
 
-<%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
-<%@ Register Src="~/UserControls/AttendeeAppointmentGridView.ascx" TagPrefix="uc1" TagName="AttendeeAppointmentGridView" %>
-<%@ Register Src="~/UserControls/AttendeeAppointmentGridViewHeader.ascx" TagPrefix="uc1" TagName="AttendeeAppointmentGridViewHeader" %>
 <%@ Register Src="~/UserControls/ClientGridViewHeader.ascx" TagPrefix="uc1" TagName="ClientGridViewHeader" %>
 <%@ Register Src="~/UserControls/ClientGridView.ascx" TagPrefix="uc1" TagName="ClientGridView" %>
+<%@ Register Src="~/UserControls/AppointmentRecordsGridViewHeader.ascx" TagPrefix="uc1" TagName="AppointmentRecordsGridViewHeader" %>
+<%@ Register Src="~/UserControls/AppointmentRecordsGridView.ascx" TagPrefix="uc1" TagName="AppointmentRecordsGridView" %>
 <%@ Register Src="~/UserControls/DatePicker.ascx" TagPrefix="uc1" TagName="DatePicker" %>
-
 
 
 <asp:Content ContentPlaceHolderID="head" runat="server">
@@ -54,11 +52,12 @@
 }
 .PanelAppGrid{
     position:relative; 
-    height:237px;
+    height:79px;
     width:100%;
-    overflow-y:auto;
+    overflow-y:hidden;
     right:1%;
     border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .PanelAppGridHeader{
     height:100%;
@@ -143,7 +142,7 @@ background-image: url(/Images/buttonshade1.png);
 #<%=UpdatePanel3.ClientID%>{
     overflow-x: hidden;
     overflow-y:auto;
-    height: 150px;
+    height: 310px;
 }
 .buttonDiv{
     margin-top:1%;
@@ -151,7 +150,7 @@ background-image: url(/Images/buttonshade1.png);
 .AttendeeRequestHeader{
    position:absolute;
     left: 0%;
-    top: 303px;
+    top: 137px;
    animation: slideright 2s ;
 }
 @keyframes slideright {
@@ -168,7 +167,7 @@ background-image: url(/Images/buttonshade1.png);
 <div id="outercontainer" style="height:100%; width:auto;">
 
     <div id="logo" class="logoslide" style="z-index:5"><img src="Images/logo4.png" /></div>
-    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/ManageAppointmentAttendanceHeading.svg" /></div>
+    <div id="manageAppointmentHeading" class="Appointmentslide" style="z-index:5"><img src="Images/AppointmentAttendanceRecordsHeading1.svg" /></div>
         
 <div id="appointmentcontainer" class="container" style="width:auto; margin-top:3.5%;">
 
@@ -187,10 +186,9 @@ runat="server">
     runat="server" > 
 
         <ContentTemplate> 
-                   
-        <uc1:MessagePanel runat="server" ID="messagePanelAppointments" Visible="true"/>
+                  
    
-        <uc1:AttendeeAppointmentGridViewHeader runat="server" ID="AttendeeAppointmentGridViewHeader" />
+         <uc1:AppointmentRecordsGridViewHeader runat="server" ID="AppointmentRecordsGridViewHeader" />
 
         </ContentTemplate>
 
@@ -208,7 +206,7 @@ runat="server">
     <ContentTemplate>
 
         <uc1:DatePicker runat="server" ID="DatePicker" />
-        <uc1:AttendeeAppointmentGridView runat="server" ID="AttendeeAppointmentGridView" />
+        <uc1:AppointmentRecordsGridView runat="server" ID="AppointmentRecordsGridView" />
 
         </ContentTemplate>
          </asp:UpdatePanel>
@@ -220,7 +218,7 @@ runat="server">
         <ContentTemplate>
 
             <div id="AttendeeHeader" runat="server" class="AttendeeRequestHeader" style="z-index:5;" >
-            <img src="Images/AttendeeRequests1.svg" />
+            <img src="Images/WhoAttendedHeading1.svg" />
             </div>
 
         </ContentTemplate>
@@ -234,7 +232,6 @@ runat="server">
     runat="server" >
     <ContentTemplate>
 
-<%--<asp:Label ID="lblAttendeesApplying" runat="server" Text="Attendees Requesting to be Accepted" CssClass="GridviewLabel"></asp:Label> --%>
         <uc1:ClientGridViewHeader runat="server" id="ClientGridViewHeader" />
         </ContentTemplate>
          </asp:UpdatePanel>
@@ -255,9 +252,7 @@ runat="server">
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
             <div id="buttonDiv" class="buttonDiv">
-            <asp:Button CssClass="navButtons" ID="btnManageCourseAttendance" runat="server" Text="Manage Attendance For Courses" OnClick="btnManageCourseAttendance_Click"/>
-            <asp:Button CssClass="navButtons" ID="btnAcceptAttendanceRequest" runat="server" Text="Accept Attendance Request" OnClick="btnAcceptAttendanceRequest_Click" Visible="false"/> 
-            <asp:Button CssClass="navButtons" ID="btnAcceptAllAttendeeRequestsForSelectedAppointment" runat="server" Text="Accept All Attendance Requests For Selected Appointment" OnClick="btnAcceptAllAttendeeRequestsForSelectedAppointment_Click" Visible="false"/>
+            <asp:Button CssClass="navButtons" ID="btnViewCompletedAppointments" runat="server" Text="View Completed Appointments" OnClick="btnViewCompletedAppointments_Click"/>
             </div>
         </ContentTemplate>
  

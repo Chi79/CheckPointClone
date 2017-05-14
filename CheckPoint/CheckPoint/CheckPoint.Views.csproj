@@ -132,6 +132,7 @@
     <Content Include="FindCoursesView.aspx" />
     <Content Include="HomePageView.aspx" />
     <Content Include="HostCoursesView.aspx" />
+    <Content Include="ExpiredAppointmentsView.aspx" />
     <Content Include="HostHomeView.aspx" />
     <Content Include="HostUserInfoView.aspx" />
     <Content Include="Images\activitiesicon.png" />
@@ -143,6 +144,7 @@
     <Content Include="Images\AppointmentAddedMessage.svg" />
     <Content Include="Images\AppointmentAddedMessage1.svg" />
     <Content Include="Images\AppointmentAttendanceHistoryHeading.svg" />
+    <Content Include="Images\AppointmentAttendanceRecordsHeading1.svg" />
     <Content Include="Images\AppointmentDeletedMessage.svg" />
     <Content Include="Images\AppointmentDeletedMessage1.svg" />
     <Content Include="Images\AppointmentHeading.svg" />
@@ -158,6 +160,7 @@
     <Content Include="Images\calender-white.png" />
     <Content Include="Images\checkpointlogo1.png" />
     <Content Include="Images\cheesy-placeholder3.jpg" />
+    <Content Include="Images\CompletedAppointmentsHeading1.svg" />
     <Content Include="Images\CourseDeletedMessage.svg" />
     <Content Include="Images\CourseDeletedMessage1.svg" />
     <Content Include="Images\CourseManagerHeading.svg" />
@@ -181,6 +184,7 @@
     <Content Include="Images\downarrow3.png" />
     <Content Include="Images\DownloadIcon.png" />
     <Content Include="Images\DownloadPage.svg" />
+    <Content Include="Images\ExpiredAppointmentsHeading1.svg" />
     <Content Include="Images\findappointmentsicon.png" />
     <Content Include="Images\front-page-filler.jpg" />
     <Content Include="Images\greenshade1.png" />
@@ -219,6 +223,7 @@
     <Content Include="Images\RegisterAccountHeading1.svg" />
     <Content Include="Images\RegisterAsHostHeading1.svg" />
     <Content Include="Images\RegisterAsUserHeading1.svg" />
+    <Content Include="Images\ReportAttendace.svg" />
     <Content Include="Images\SelectAppointmentHeading.svg" />
     <Content Include="Images\SelectAppointmentHeading1.svg" />
     <Content Include="Images\SelectCourseHeading.svg" />
@@ -236,10 +241,12 @@
     <Content Include="Images\viewappointmentsbutton.png" />
     <Content Include="Images\viewcoursesbutton.png" />
     <Content Include="Images\white-check.png" />
+    <Content Include="Images\WhoAttendedHeading1.svg" />
     <Content Include="Images\WorkInProgress1.png" />
     <Content Include="index.aspx" />
     <Content Include="InvalidNavigationView.aspx" />
     <Content Include="InviteUserView.aspx" />
+    <Content Include="RecordedAppointmentAttendanceView.aspx" />
     <Content Include="ManageAppointmentAttendanceView.aspx" />
     <Content Include="ManageCourseAttendanceView.aspx" />
     <Content Include="ManageSingleAppointmentView.aspx" />
@@ -268,8 +275,10 @@
     <Content Include="UserControls\ApplyToCourseGrid.ascx" />
     <Content Include="UserControls\ApplyToCourseHeader.ascx" />
     <Content Include="UserControls\AppointmentCreator.ascx" />
+    <Content Include="UserControls\AppointmentRecordsGridView.ascx" />
     <Content Include="UserControls\AttendeeAppointmentGridView.ascx" />
     <Content Include="UserControls\AppointmentGridView.ascx" />
+    <Content Include="UserControls\AppointmentRecordsGridViewHeader.ascx" />
     <Content Include="UserControls\AttendeeAppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\AppointmentGridViewHeader.ascx" />
     <Content Include="UserControls\AttendeeGridView.ascx" />
@@ -320,12 +329,14 @@
   <ItemGroup>
     <Compile Include="AcceptedAttendeesForAppointmentView.aspx.cs">
       <DependentUpon>AcceptedAttendeesForAppointmentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AcceptedAttendeesForAppointmentView.aspx.designer.cs">
       <DependentUpon>AcceptedAttendeesForAppointmentView.aspx</DependentUpon>
     </Compile>
     <Compile Include="AcceptedAttendeesForCourseView.aspx.cs">
       <DependentUpon>AcceptedAttendeesForCourseView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AcceptedAttendeesForCourseView.aspx.designer.cs">
       <DependentUpon>AcceptedAttendeesForCourseView.aspx</DependentUpon>
@@ -449,6 +460,13 @@
     <Compile Include="HostCoursesView.aspx.designer.cs">
       <DependentUpon>HostCoursesView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExpiredAppointmentsView.aspx.cs">
+      <DependentUpon>ExpiredAppointmentsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpiredAppointmentsView.aspx.designer.cs">
+      <DependentUpon>ExpiredAppointmentsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HostHomeView.aspx.cs">
       <DependentUpon>HostHomeView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -497,6 +515,13 @@
     </Compile>
     <Compile Include="LoginView.aspx.designer.cs">
       <DependentUpon>LoginView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecordedAppointmentAttendanceView.aspx.cs">
+      <DependentUpon>RecordedAppointmentAttendanceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecordedAppointmentAttendanceView.aspx.designer.cs">
+      <DependentUpon>RecordedAppointmentAttendanceView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageAppointmentAttendanceView.aspx.cs">
       <DependentUpon>ManageAppointmentAttendanceView.aspx</DependentUpon>
@@ -597,6 +622,13 @@
     <Compile Include="UserControls\AppointmentCreator.ascx.designer.cs">
       <DependentUpon>AppointmentCreator.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AppointmentRecordsGridView.ascx.cs">
+      <DependentUpon>AppointmentRecordsGridView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppointmentRecordsGridView.ascx.designer.cs">
+      <DependentUpon>AppointmentRecordsGridView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AttendeeAppointmentGridView.ascx.cs">
       <DependentUpon>AttendeeAppointmentGridView.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -610,6 +642,13 @@
     </Compile>
     <Compile Include="UserControls\AppointmentGridView.ascx.designer.cs">
       <DependentUpon>AppointmentGridView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppointmentRecordsGridViewHeader.ascx.cs">
+      <DependentUpon>AppointmentRecordsGridViewHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AppointmentRecordsGridViewHeader.ascx.designer.cs">
+      <DependentUpon>AppointmentRecordsGridViewHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AttendeeAppointmentGridViewHeader.ascx.cs">
       <DependentUpon>AttendeeAppointmentGridViewHeader.ascx</DependentUpon>

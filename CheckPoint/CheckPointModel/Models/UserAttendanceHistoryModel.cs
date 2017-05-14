@@ -63,13 +63,14 @@ namespace CheckPointModel.Models
         {
             var allAttendedAppointments = new List<APPOINTMENT>();
 
-            var client = GetLoggedInClient();
-            var clientTagId = _unitOfWork.Client_TagIds.GetClientTagId(client);
+  
+            var clientTagId = _sessionService.ClientTagId;
             var allAttendeesForClient = _unitOfWork.ATTENDEEs.GetAllAttendedAttendeesForClient(clientTagId);
 
             foreach (ATTENDEE attendee in allAttendeesForClient)
             {
                 var appointmentId = attendee.AppointmentId;
+
                 var attendedAppointmentToAdd = _unitOfWork.APPOINTMENTs.GetAppointmentByAppointmentId(appointmentId);
 
                 allAttendedAppointments.Add(attendedAppointmentToAdd);
