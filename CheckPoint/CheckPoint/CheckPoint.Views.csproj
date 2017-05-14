@@ -307,7 +307,7 @@
     <Content Include="WorkInProgressUserView.aspx" />
     <Content Include="Downloadable\Host\CheckPoint Host User Manual.pdf" />
     <Content Include="Downloadable\User\CheckPoint UserManual.pdf" />
-    <Content Include="Downloadable\Host\ReadingTerminalSetup.zip" />
+    <Content Include="Downloadable\Host\CheckPointReaderSetup.zip" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\checkpoint - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CheckPointWebApp.pubxml" />
