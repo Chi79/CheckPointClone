@@ -153,7 +153,7 @@
              </h3>
         </li>
         <li class="list-item">
-                <a class="button" href="Downloadable/Host/ReadingTerminalSetup.zip">Download reading terminal installer</a>
+                <a class="button" href="Downloadable/Host/CheckPointReaderSetup.zip">Download reading terminal installer</a>
         </li>
     </ul>
         
