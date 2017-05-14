@@ -38,6 +38,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCloseApplication = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +117,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.btnCloseApplication);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.picLogo);
             this.panel1.Location = new System.Drawing.Point(-1, -3);
@@ -130,9 +132,23 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(134, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.Size = new System.Drawing.Size(134, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Reading Terminal";
+            // 
+            // btnCloseApplication
+            // 
+            this.btnCloseApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnCloseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCloseApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseApplication.ForeColor = System.Drawing.Color.White;
+            this.btnCloseApplication.Location = new System.Drawing.Point(349, 3);
+            this.btnCloseApplication.Name = "btnCloseApplication";
+            this.btnCloseApplication.Size = new System.Drawing.Size(35, 23);
+            this.btnCloseApplication.TabIndex = 8;
+            this.btnCloseApplication.Text = "X";
+            this.btnCloseApplication.UseVisualStyleBackColor = false;
+            this.btnCloseApplication.Click += new System.EventHandler(this.btnCloseApplication_Click);
             // 
             // LoginView
             // 
@@ -174,6 +190,7 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCloseApplication;
     }
 }
 

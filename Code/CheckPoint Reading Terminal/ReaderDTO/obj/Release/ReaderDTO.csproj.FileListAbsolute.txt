@@ -28,3 +28,8 @@ C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoi
 C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Release\ReaderDTO.csprojResolveAssemblyReference.cache
 C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Release\ReaderDTO.dll
 C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Release\ReaderDTO.pdb
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Release\System.Net.Http.Extensions.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Release\System.Net.Http.Primitives.dll
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Release\System.Net.Http.Extensions.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\bin\Release\System.Net.Http.Primitives.xml
+C:\Users\Carecopter\Source\Workspaces\Checkpoint Attendance System\Code\CheckPoint Reading Terminal\ReaderDTO\obj\Release\ReaderDTO.csproj.App.config

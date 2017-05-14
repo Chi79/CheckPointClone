@@ -41,6 +41,7 @@ namespace ReaderViews
 
         public event EventHandler<EventArgs> Login;
         public event EventHandler<EventArgs> ClosePreviousView;
+        public event EventHandler<EventArgs> CloseApplication;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -68,6 +69,19 @@ namespace ReaderViews
             _hostControlView.Username = this.Username;
             _hostControlView.ClosePreviousView += (s, e) => this.Close(); //closes current view when new view is created.
             _hostControlView.ShowView();           
+        }
+
+        private void btnCloseApplication_Click(object sender, EventArgs e)
+        {
+            if(CloseApplication != null)
+            {
+                CloseApplication(this, EventArgs.Empty);
+            }
+        }
+
+        public void CloseReadingTerminalApplication()
+        {
+            Application.Exit();
         }
     }
 }

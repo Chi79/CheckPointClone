@@ -24,8 +24,13 @@ namespace ReaderPresenters.Presenters
             _dataAccess = dataAccess;
 
             _loginView.Login += _loginView_OnLoginButtonClicked;
+            _loginView.CloseApplication += OnCloseApplicationButtonClicked;
         }
 
+        private void OnCloseApplicationButtonClicked(object sender, EventArgs e)
+        {
+            _loginView.CloseReadingTerminalApplication();
+        }
 
         private async void _loginView_OnLoginButtonClicked(object sender, EventArgs e)
         {

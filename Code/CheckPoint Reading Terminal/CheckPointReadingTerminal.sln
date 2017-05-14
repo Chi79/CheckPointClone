@@ -13,13 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderViews", "ReaderView\R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderPresenters", "ReaderPresenters\ReaderPresenters.csproj", "{BC5034A8-8DF4-4157-955C-D8CC484EECC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionManager", "InjectionManager\InjectionManager.csproj", "{F47EC934-C60B-403B-A03D-29EA3A924122}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingTerminal", "InjectionManager\ReadingTerminal.csproj", "{F47EC934-C60B-403B-A03D-29EA3A924122}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDataAccess", "ReaderDataAccess\ReaderDataAccess.csproj", "{468E2094-0FD7-4E6B-90D6-6D935616D896}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderDTO", "ReaderDTO\ReaderDTO.csproj", "{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{0E0071C6-18BE-4D3B-A91B-C03B0C4644F6}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CheckPointReaderSetup", "CheckPointReaderSetup\CheckPointReaderSetup.vdproj", "{CF51610B-B87E-4760-96B8-F2EA65D229E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,8 +59,8 @@ Global
 		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4D8D6B2-90B9-4E42-8DF4-1ECB81827DD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E0071C6-18BE-4D3B-A91B-C03B0C4644F6}.Debug|Any CPU.ActiveCfg = Debug
-		{0E0071C6-18BE-4D3B-A91B-C03B0C4644F6}.Release|Any CPU.ActiveCfg = Release
+		{CF51610B-B87E-4760-96B8-F2EA65D229E0}.Debug|Any CPU.ActiveCfg = Debug
+		{CF51610B-B87E-4760-96B8-F2EA65D229E0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

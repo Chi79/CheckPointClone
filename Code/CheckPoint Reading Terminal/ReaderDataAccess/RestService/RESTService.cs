@@ -71,14 +71,14 @@ namespace Reader.DataAccessREST
 
                 var loggedInHost = JsonConvert.DeserializeObject<Client>(content);
 
-               return loggedInHost;
-                
+                return loggedInHost;
+
             }
             catch (Exception)
             {
 
                 return null;
-            } 
+            }
 
 
         }
@@ -109,18 +109,18 @@ namespace Reader.DataAccessREST
 
                 return false; //attendee doesnt exists
             }
-            
-            
-            
+
+
+
 
         }
 
         //update attendee with a timestamp and correct attendeestatus
-        
+
         public async Task<RegistrationFeedbackStatus> UpdateAttendeeWithStampAndStatus(string tagId, string appointmentId, bool isAppointmentObligatory)
         {
-            //try
-            //{
+            try
+            {
                 var hasAlreadyStamped = await CheckIfHasAlreadyStamped(appointmentId, tagId);
 
                 if (hasAlreadyStamped)
@@ -133,7 +133,7 @@ namespace Reader.DataAccessREST
                 // create a JSON Patch Document
                 JsonPatchDocument<Attendee> patchDoc = new JsonPatchDocument<Attendee>();
                 //make changeset  
-                           
+
                 patchDoc.Replace(c => c.TimeAttended, DateTime.UtcNow.AddHours(2));
                 if (isAppointmentObligatory)
                 {
@@ -152,7 +152,7 @@ namespace Reader.DataAccessREST
                     new StringContent(serializedItemToUpdate,
                     System.Text.Encoding.Unicode, "application/json"));
 
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     return RegistrationFeedbackStatus.Successful;
                 }
@@ -160,12 +160,13 @@ namespace Reader.DataAccessREST
                 {
                     return RegistrationFeedbackStatus.Failed;
                 }
-               
-            //}           
-            //catch
-            //{
-            //    return RegistrationFeedbackStatus.NoDatabaseConnection;
-            //}
+
+            }
+            catch
+            {
+                return RegistrationFeedbackStatus.NoDatabaseConnection;
+            }
+
         }
     }
 }

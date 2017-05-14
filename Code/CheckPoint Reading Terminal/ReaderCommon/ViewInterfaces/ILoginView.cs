@@ -17,7 +17,9 @@ namespace ReaderCommon.ViewInterfaces
         bool LoginButtonEnabledState { set; }
         
         event EventHandler<EventArgs> Login;
+        event EventHandler<EventArgs> CloseApplication;
 
         void RedirectToHostControlView();
+        void CloseReadingTerminalApplication();
     }
 }

@@ -30,7 +30,7 @@ namespace ReaderPresenters.Presenters
         private async void LoadHostAndAppointments(string hostUserName)
         {
             var loggedInHost = await _dataAccess.GetLoggedInHost(hostUserName);
-            _hostControlView.Username = loggedInHost.FirstName;
+            _hostControlView.Username = loggedInHost.UserName;
 
             var hostAppointments = await _dataAccess.GetHostAppointments(hostUserName);
             _hostControlView.HostAppointmentsDataSource = hostAppointments as IEnumerable<object>;
