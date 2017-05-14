@@ -13,10 +13,13 @@ namespace DataAccess.Concrete.Repositories
 {
     public class UnitOfWork : IUnitOfWork  //specific to our app
     {
+
         private readonly CheckPointContext _context;   //stores ref to our dbcontext
+
 
         public UnitOfWork(CheckPointContext context)   
         {
+
             _context = context;
 
             CLIENTs = new ClientRepository(_context);    //and uses our dbcontext to intiialize our repository
@@ -28,7 +31,9 @@ namespace DataAccess.Concrete.Repositories
             ATTENDEEs = new AttendeeRepository(_context);
 
             Client_TagIds = new ClientTagRepository(_context);
+
         }
+
         public IClientRepository CLIENTs { get; private set; }
 
         public IAppointmentRepository APPOINTMENTs { get; private set; }
@@ -45,10 +50,13 @@ namespace DataAccess.Concrete.Repositories
         //}
         public void Dispose()
         {
+
             _context.Dispose();
+
         }
         public SaveResult Complete()
         {
+
             SaveResult SaveResult = new SaveResult { };
             SaveResult.Result = 0;
             SaveResult.ErrorMessage = string.Empty;
