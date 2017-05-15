@@ -26,13 +26,22 @@
            
         </script> 
     <style>
-html,body
+html
 {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    background:#66cc66;
+}
+ body
+ {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
         #wrapper{
@@ -115,7 +124,6 @@ html,body
         #footer-container1{
             left:0%;
             width:25%;
-            top:0%;
         }
 
         #footer-container2{
@@ -185,8 +193,7 @@ html,body
 		    position:absolute;
             width:100%; 
             text-align:center;
-		    top:30%;
-            line-height:normal;    
+		    top:20%;  
 	    }
          .footer-text h3{
             /*left:15%;*/
