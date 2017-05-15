@@ -61,6 +61,14 @@
     zoom: 171%;
     background-color: blanchedalmond;
 }
+.date{
+    display: inline-block;
+    border: inset;
+    padding: 0%;
+    margin: 0;
+    zoom: 171%;
+    background-color: blanchedalmond;
+}
 </style>
 
 
@@ -78,7 +86,7 @@
         </li>
         <li class="list-item">
                     <asp:Label CssClass="list-item-label" ID="lblDate" runat="server" Text="Date"></asp:Label>
-        <asp:TextBox CssClass="list-item-box" ID="txtDate" runat="server" Text="mm/dd/yyyy"></asp:TextBox>
+        <asp:TextBox CssClass="date" ID="txtDate" runat="server"></asp:TextBox>
         </li>
         <li class="list-item">
                    <asp:Label CssClass="list-item-label" ID="lblStartTime" runat="server" Text="Start Time"></asp:Label>
