@@ -109,7 +109,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> CreateCourseButtonClicked;
         public event EventHandler<EventArgs> ManageCourseButtonClicked;
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        public event EventHandler<EventArgs> CreateReportButtonClicked;
+      
         public event EventHandler<EventArgs> ViewAppointmentsButtonClicked;
         public event EventHandler<EventArgs> ContinueButtonClicked;
 
@@ -178,12 +178,6 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void createreport_Click1(object sender, EventArgs e)
-        {
-            if (CreateReportButtonClicked != null)
-            {
-                CreateReportButtonClicked(this, EventArgs.Empty);
-            }
-        }
+
     }
 }

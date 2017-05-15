@@ -14,7 +14,7 @@ namespace CheckPointCommon.ViewInterfaces
         bool ViewCoursesButtonVisible { set; }
         bool CreateAppointmentButtonVisible { set; }
         bool ManageAppointmentButtonVisible { set; }
-        bool CreateReportButtonVisible { set; }
+     
         bool AddSelectedAppointmenButtonVisible { set; }
         bool MessagePanelVisible { set; }
         bool ContinueButtonVisible { set; }
@@ -38,7 +38,7 @@ namespace CheckPointCommon.ViewInterfaces
         event EventHandler<EventArgs> CreateAppointmentButtonClicked;
         event EventHandler<EventArgs> ManageAppointmentButtonClicked;
         event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        event EventHandler<EventArgs> CreateReportButtonClicked;
+ 
         event EventHandler<EventArgs> ViewCoursesButtonClicked;
         event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
         event EventHandler<EventArgs> ContinueButtonClicked;

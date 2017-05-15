@@ -54,16 +54,7 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnCreateReportButtonClicked(object sender, EventArgs e)
-        {
 
-            ShowMessagePanel();
-
-            _view.Message = "Q: Is 'Average Power' expressed as Lambda? <br /> <br /> A: No! Of course it's not. Have a nice day. <br /> <br /> PS: Joy has made a fresh batch of Lazzan today! Hurry, Yum Yum..";
-
-            ContinueButtonShow();
-
-        }
 
         private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
         {
@@ -128,7 +119,6 @@ namespace CheckPointPresenters.Presenters
             _view.CreateAppointmentButtonClicked += OnCreateAppointmentButtonClicked;
             _view.ManageAppointmentButtonClicked += OnManageAppointmentButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
-            _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ViewCoursesButtonClicked += OnViewCoursesButtonClicked;
             _view.AddSelectedAppointmentToCourseButtonClicked += OnAddSelectedAppointmentToCourseButtonClicked;
             _view.ContinueButtonClicked += OnContinueButtonClicked;
