@@ -1,29 +1,36 @@
 ﻿body{
             margin:0px;
+            padding:0px;
+            margin:0px;
+        }
+
+        #wrapper{
+            width:100%;
+            height:100%;
+
         }
 
         #body {
-            position:absolute;
-            height:58%;
+            position:relative;
+            height:57%;
             width:100%;
             background:#333333; 
-            top:13%;
-            bottom:30%;
+            top:15%;
             left: 0%;
         }
 
         #header {
             position:absolute;
-            height:13%;
+            height:15%;
             width:100%;
             background:#333333; 
         }
 
         #footer {
             position:absolute;
-            height:40%;
+            height:30%;
             width:100%;
-            top:70%;
+            bottom:0%;
             background:#59b959;
         }
 
@@ -48,11 +55,12 @@
             font-weight:bold;
             height: 38%;
             width: 20%;
+            word-wrap: break-word;
         }
 
         #body-main-subtext{
             position:absolute;
-            height: 25%;
+            height:25%;
             left:5%;
             width:30%;
             top: 40%;
@@ -60,17 +68,18 @@
 		    font-size:16px;
 		    font-family: sans-serif;
 		    font-weight:bold;
-		    line-height:25px;
+            word-wrap: break-word;
         }
 
         #body-action-window{
             position:absolute;
             height:100%;
-            width:50%;
-            right:5%;
+            width:55%;
+            left:40%;
             background:url("../Images/cheesy-placeholder3.jpg");
             background-repeat:no-repeat;
-            background-size:contain;    
+            background-color:aqua;
+            background-size:cover;
         }
 
         #footer-container1{
@@ -94,47 +103,47 @@
             background-image:url("../Images/calender-white.png");
             background-repeat:no-repeat;
             background-size:contain;
-            background-position:center;
             height:20%;
-            width:20%;
+            width:100%;
             top:10%;
-            left:40%;          
+            left:42%;          
         }
 
         #footer-container2-img{
             position:absolute;
             height:20%;
-            width:20%;
+            width:100%;
             top:10%;
-            left:40%;
+            left:36%;
             background-image:url("../Images/crowd.png");
             background-repeat:no-repeat;
             background-size:contain;
-            background-position:center;
         }
 
         #footer-container3-img{
             position:absolute;
             height:20%;
-            width:20%;
+            width:100%;
             top:10%;
             left:40%;      
             background-repeat:no-repeat;
-            background-size:contain;
-            background-position:center;
+            background-size:contain;        
             background-image:url("../Images/identify.png");
+        }
+
+        p{
+            line-height:8px;
         }
 
         #footer-container4-img{
             position:absolute;
             height:20%;
-            width:20%;
+            width:100%;
             top:10%;
-            left:40%;
+            left:4%;
             background-image:url("../Images/white-check.png");  
             background-repeat:no-repeat;
-            background-size:contain; 
-            background-position:center;   
+            background-size:contain;   
         }
       
         .footer-text {
@@ -149,12 +158,7 @@
 	    }
          .footer-text h3{
             left:15%;
-		    font-size:28px;		
-		    margin-bottom:5%;  
-	    }
-
-         .footer-text p{           
-		    line-height:6px; 
+		    font-size:28px;				  
 	    }
 
          .footer-container{
@@ -164,16 +168,16 @@
             background:#66cc66;
          }
          #btnLogIn{
-		    width:10%;
-		    height:35%;
+		    width:15%;
+		    height:60%;
             margin-right:5%;
             right:0%;
-            top:35%;
+            top:40%;
          }
 
          #btnGetStarted{
             width:30%;
-		    height:10%;
+		    height:15%;
             top:65%;
             left:5%;
          }

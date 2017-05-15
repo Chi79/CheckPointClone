@@ -90,13 +90,13 @@ body{      background:#333333;}
 
     margin:0 auto;
     display: table;
-    margin-top:20%
+    margin-top:9%;
 }
 .button2{
 
     margin:0 auto;
     display: table;
-    margin-top:15%
+    margin-top:9%
 
 }
 .button3{
@@ -186,8 +186,10 @@ border-color:gray;
         <asp:Label CssClass="HostInfo" ID="lblHostInfo" runat="server"></asp:Label>
           
         <div class="button1">
-        <asp:Button CssClass="button" ID="btnRegisterHost" runat="server" OnClick="btnRegisterHost_Click" Text="Register as Host" />
+<asp:Button CssClass="button" ID="btnRegisterHost" runat="server" OnClick="btnRegisterHost_Click" Text="Register as Host" />
         </div>
+
+        
 
         </div>
 
