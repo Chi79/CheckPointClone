@@ -24,10 +24,11 @@ namespace CheckPointModel.Validation
             {
                 base.AddBrokenRule("<br /><br />One or more field is empty! Please fill in all fields. <br />");
             }
-            if (client.Password.Length < 6)
+            if (client.Password.Length < 6 || client.Password.Length > 20 )
             {
-                base.AddBrokenRule("Password must be 6 characters or more.<br /> ");
+                base.AddBrokenRule("Password must be no less than 6 and no more than 20 characters in length.<br /> ");
             }
+              
             if (!client.Email.Contains("@"))
             {
                 base.AddBrokenRule("Email not valid - must contain be in the form 'xxx@xxx.xxx'<br /> ");
