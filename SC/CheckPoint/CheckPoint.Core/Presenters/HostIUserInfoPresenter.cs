@@ -55,11 +55,21 @@ namespace CheckPointPresenters.Presenters
 
             _view.HostInfoHeading = "Be a Host";
 
-            _view.HostInfo = "As a CheckPoint Host you can create and manage events of any kind for CheckPoint Users to attend. With our simple to use tag system it's easy to see who has attended your events. If you wish to be a Host please click the appropriate button below and lets get started...";
+            _view.HostInfo = @"As a CheckPoint Host you can:
+                            </br>+ Create courses and appointments for users to apply to.  <br/>
+                                 + Manage attendance requests from users. <br/>
+                                 + Track attendance history<br/> 
+                               <br/>When becoming a Host, a reading terminal device will be sent to your address. Make sure you remember
+                               to download and install the reading terminal software located on the download tab on your homepage.";
 
             _view.UserInfoHeading = "Be a User";
 
-            _view.UserInfo = "As a User you can search for, discover and attend events that have been created by a CheckPoint Host.  With the help of a unique identification tag that will be sent to you once registration is complete - whenever you attend an event you can be sure that your attendance will be safely recorded. Just click the button below and get started... ";
+            _view.UserInfo = @"As a CheckPoint User you can:
+                            </br>+ Search for courses and appointments made by hosts.</br>  
+                                 + Apply to courses and appointments.</br>
+                                 + Track your own attendance history</br>
+                            <br/>When becoming a User, an RFID tag will be sent to your address. Once your tag has been registered and sent,
+                            you are ready to apply to courses and appointments";
         }
 
         public override void Load()

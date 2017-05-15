@@ -61,6 +61,10 @@
     font-size:32px;
 }
 
+#lblRegister{
+    position:absolute;
+}
+
 #txtPassword{
     position:absolute;
     width:60%;
@@ -115,3 +119,11 @@
     box-shadow: 0 2px #666;
     transform: translateY(4px);
 }
+a:link{
+    color:#66cc66;
+}
+
+a:visited{
+    color:#66cc66;
+}
+

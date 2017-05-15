@@ -31,33 +31,6 @@ namespace CheckPoint.Views {
         protected global::System.Web.UI.WebControls.Button btnLogIn;
         
         /// <summary>
-        /// btnFeatures control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFeatures;
-        
-        /// <summary>
-        /// btnContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContact;
-        
-        /// <summary>
-        /// btnAbout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAbout;
-        
-        /// <summary>
         /// btnGetStarted control.
         /// </summary>
         /// <remarks>
@@ -65,14 +38,5 @@ namespace CheckPoint.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGetStarted;
-        
-        /// <summary>
-        /// imgBodyActionWindow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBodyActionWindow;
     }
 }
