@@ -78,15 +78,15 @@
         </li>
         <li class="list-item">
                     <asp:Label CssClass="list-item-label" ID="lblDate" runat="server" Text="Date"></asp:Label>
-        <asp:TextBox CssClass="list-item-box" ID="txtDate" runat="server"></asp:TextBox>
+        <asp:TextBox CssClass="list-item-box" ID="txtDate" runat="server" Text="mm/dd/yyyy"></asp:TextBox>
         </li>
         <li class="list-item">
                    <asp:Label CssClass="list-item-label" ID="lblStartTime" runat="server" Text="Start Time"></asp:Label>
-        <asp:TextBox CssClass="list-item-box" ID="txtStartTime" runat="server"></asp:TextBox>
+        <asp:TextBox CssClass="list-item-box" ID="txtStartTime" runat="server" Text="hh:mm"></asp:TextBox>
         </li>
         <li class="list-item">  
                     <asp:Label CssClass="list-item-label" ID="lblEndTime" runat="server" Text="End Time"></asp:Label>
-        <asp:TextBox CssClass="list-item-box" ID="txtEndTime" runat="server"></asp:TextBox>
+        <asp:TextBox CssClass="list-item-box" ID="txtEndTime" runat="server" Text="hh:mm"></asp:TextBox>
         </li>
         <li class="list-item">
                     <asp:Label CssClass="list-item-label" ID="lblPostalCode" runat="server" Text="Postal Code"></asp:Label>
