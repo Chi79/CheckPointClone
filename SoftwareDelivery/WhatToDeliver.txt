@@ -1,0 +1,19 @@
+-DOCUMENTS TO BE DELIVERED-
+
+--Process Documentation--
+Software Development Plan
+System Requirement and Design document
+Test Plan
+Test Documents
+
+--Product Documentation--
+System Documentation
+
+--User Documentation--
+Installation Guides
+User Guides
+
+-FILES TO BE UPLOADED-
+
+installation files.zip
+VSTS.zip
