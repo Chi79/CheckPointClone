@@ -193,7 +193,8 @@ html
 		    position:absolute;
             width:100%; 
             text-align:center;
-		    top:20%;  
+		    top:30%;
+            line-height:12px;  
 	    }
          .footer-text h3{
             /*left:15%;*/
