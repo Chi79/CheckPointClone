@@ -3,6 +3,8 @@
 <%@ Register Src="~/UserControls/AppointmentCreator.ascx" TagPrefix="uc1" TagName="AppointmentCreator" %>
 
 <%@ Register Src="~/UserControls/MessagePanel.ascx" TagPrefix="uc1" TagName="MessagePanel" %>
+<%@ Register Src="~/UserControls/DatePickerInput.ascx" TagPrefix="uc1" TagName="DatePickerInput" %>
+
 
 
 
@@ -98,6 +100,9 @@ border:none;
     
 <ul class="list1">
     <li class="list1-item">
+
+        <uc1:DatePickerInput runat="server" ID="DatePickerInput" />
+
         <uc1:AppointmentCreator runat="server" ID="AppointmentCreator" />
         </li >
     <li class="list1-item">
