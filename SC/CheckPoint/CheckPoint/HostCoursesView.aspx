@@ -262,20 +262,8 @@ runat="server">
 </div>
 
 
-<div id="buttonsdiv5" runat="server" style="z-index:5;" class="buttons5">
-<asp:UpdatePanel ID="buttonspanel5" runat="server" > 
-<ContentTemplate>
-<asp:Button ID="createreport" 
-    CssClass="navButtons" 
-    runat="server" 
-    OnClick="createreport_Click1" 
-    Text="Create a Report"  
-    Visible="True" 
-    ForeColor="White" />
-</ContentTemplate>
-</asp:UpdatePanel>
 
-</div>
+    
 </div>
 
 

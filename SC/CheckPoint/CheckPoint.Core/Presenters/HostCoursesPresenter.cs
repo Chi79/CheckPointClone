@@ -30,15 +30,7 @@ namespace CheckPointPresenters.Presenters
 
         }
 
-        private void OnCreateReportButtonClicked(object sender, EventArgs e)
-        {
-            ShowMessagePanel();
 
-            _view.Message = "<br /> Once upon a time there was a man named Fabio....<br />";
-
-            ContinueButtonShow();
-
-        }
 
         private void OnManageAttendanceButtonClicked(object sender, EventArgs e)
         {
@@ -122,7 +114,6 @@ namespace CheckPointPresenters.Presenters
             _view.ViewAppointmentsButtonClicked += OnViewAppointmentsButtonClicked;
             _view.ManageCourseButtonClicked += OnManageCourseButtonClicked;
             _view.CreateCourseButtonClicked += OnCreateCourseButtonClicked;
-            _view.CreateReportButtonClicked += OnCreateReportButtonClicked;
             _view.ManageAttendanceButtonClicked += OnManageAttendanceButtonClicked;
             _view.ContinueButtonClicked += OnContinueButtonClicked;
         }

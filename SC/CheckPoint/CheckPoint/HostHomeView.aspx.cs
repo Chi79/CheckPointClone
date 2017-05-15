@@ -110,12 +110,7 @@ namespace CheckPoint.Views
 
         }
 
-        public bool CreateReportButtonVisible
-        {
 
-            set { btnCreateReport.Visible = value; }
-
-        }
 
         public bool AddSelectedAppointmenButtonVisible
         {
@@ -159,7 +154,7 @@ namespace CheckPoint.Views
         public event EventHandler<EventArgs> CreateAppointmentButtonClicked;
         public event EventHandler<EventArgs> ManageAppointmentButtonClicked;
         public event EventHandler<EventArgs> ManageAttendanceButtonClicked;
-        public event EventHandler<EventArgs> CreateReportButtonClicked;
+     
         public event EventHandler<EventArgs> ViewCoursesButtonClicked;
         public event EventHandler<EventArgs> AddSelectedAppointmentToCourseButtonClicked;
         public event EventHandler<EventArgs> ContinueButtonClicked;
@@ -213,13 +208,7 @@ namespace CheckPoint.Views
             }
         }
 
-        protected void btnCreateReport_Click(object sender, EventArgs e)
-        {
-            if (CreateReportButtonClicked != null)
-            {
-                CreateReportButtonClicked(this, EventArgs.Empty);
-            }
-        }
+
 
         protected void btnManageAttendance_Click(object sender, EventArgs e)
         {
