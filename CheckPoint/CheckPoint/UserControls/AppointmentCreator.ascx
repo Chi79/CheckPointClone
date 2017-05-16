@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AppointmentCreator.ascx.cs" Inherits="CheckPoint.Views.UserControls.AppointmentCreator" %>
 
 
-
 <style type="text/css">
   
 
@@ -12,7 +11,6 @@
     padding:0%;
     background-color: #333333;
     border: none;
-
 }
 
 .panel{
@@ -61,6 +59,14 @@
     zoom: 171%;
     background-color: blanchedalmond;
 }
+.startTime{
+    display: inline-block;
+    border: inset;
+    padding: 0%;
+    margin: 0;
+    zoom: 171%;
+    background-color: blanchedalmond;
+}
 .date{
     display: inline-block;
     border: inset;
@@ -90,7 +96,7 @@
         </li>
         <li class="list-item">
                    <asp:Label CssClass="list-item-label" ID="lblStartTime" runat="server" Text="Start Time"></asp:Label>
-        <asp:TextBox CssClass="list-item-box" ID="txtStartTime" runat="server" Text="hh:mm"></asp:TextBox>
+        <asp:TextBox CssClass="startTime" ID="txtStartTime" runat="server" Text="hh:mm"></asp:TextBox>
         </li>
         <li class="list-item">  
                     <asp:Label CssClass="list-item-label" ID="lblEndTime" runat="server" Text="End Time"></asp:Label>
