@@ -125,6 +125,7 @@ namespace CheckPointPresenters.Presenters
 
                 _view.Message = _model.GetJobCompletedMessage();
 
+
                    
             }
             else
