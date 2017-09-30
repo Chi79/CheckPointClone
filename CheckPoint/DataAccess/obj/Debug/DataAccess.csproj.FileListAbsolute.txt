@@ -1,0 +1,16 @@
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\CheckPointCommon.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\CheckPointDataTables.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\CheckPointModel.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\CheckPointDataTables.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\CheckPointModel.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\CheckPointCommon.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\DataAccess\obj\Debug\DataAccess.pdb

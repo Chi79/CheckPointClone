@@ -1,0 +1,10 @@
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\CheckPointDataTables.dll.config
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\CheckPointDataTables.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\CheckPointDataTables.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\EntityFramework.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\EntityFramework.xml
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\obj\Debug\CheckPointDataTables.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\obj\Debug\CheckPointDataTables.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointDataTables\obj\Debug\CheckPointDataTables.pdb

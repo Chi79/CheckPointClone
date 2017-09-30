@@ -1,0 +1,12 @@
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointModel.dll.config
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointModel.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointModel.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointCommon.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointDataTables.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\EntityFramework.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointDataTables.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\CheckPointCommon.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\bin\Debug\EntityFramework.xml
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\obj\Debug\CheckPointModel.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\obj\Debug\CheckPointModel.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\CheckPointModel\obj\Debug\CheckPointModel.pdb

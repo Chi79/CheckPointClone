@@ -24,6 +24,7 @@
     height: 79px;
     width: 100%;
     overflow-y: hidden;
+    overflow-x: hidden;
     right: 1%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -42,6 +43,7 @@
     height:315px;
     width:100%;
     overflow-y:scroll;
+    overflow-x: hidden;
     right:1%;
     border-bottom-left-radius: 10px;
 }

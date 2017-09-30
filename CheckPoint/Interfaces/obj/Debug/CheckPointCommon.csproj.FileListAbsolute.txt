@@ -1,0 +1,9 @@
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\bin\Debug\CheckPointCommon.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\bin\Debug\CheckPointCommon.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\bin\Debug\CheckPointDataTables.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\bin\Debug\EntityFramework.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\bin\Debug\CheckPointDataTables.pdb
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\bin\Debug\EntityFramework.xml
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\obj\Debug\CheckPointCommon.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\obj\Debug\CheckPointCommon.dll
+C:\Users\Bruker\Desktop\CheckPointClone\CheckPoint\Interfaces\obj\Debug\CheckPointCommon.pdb
